@@ -1,0 +1,646 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+background-image: url('../Imagenes/fondo.png' ) ;
+background-repeat: no-repeat;
+background-size:cover;
+background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos navbar */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #D8E9F9;
+
+}
+
+header .logo_img{
+height: 80px;
+position: absolute;
+left: 1%;
+}
+
+#navbar {
+  height: 60px;
+  background-color: #D8E9F9;
+  padding:10px;
+}
+
+.opciones {
+  display: flex;
+  list-style: none;
+  padding-top: 9px;
+  gap: 2.2em;
+  margin-left: 10px;
+}
+
+.opciones li {
+  display: inline-block;
+  padding-top: 9px;
+}
+
+.opciones li a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+#login_btn
+{
+  font-size: 20px;
+  background-color: #A3B7DC;
+  border: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+#login_btn:hover
+{
+  background-color: #304C8B;
+  color: white;
+}
+
+.abrir-btn{
+  display: none;
+}
+/* Vitrina de productos */
+.container_general {
+  width: 80%;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-top: 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+
+
+main{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Vitrina de productos */
+.container_productos {
+  width: 60%;
+  background:linear-gradient(45deg,#304b8b88, #a3b7dc7b, #d8e9f97b);
+  margin-top: 60px;
+  padding-bottom: 30px;
+  padding-top: 70px;
+  border-radius: 14px;
+}
+
+.agregar
+{
+  z-index: 1;
+  position: absolute;
+  border: transparent;
+  top: 16%;
+  right: 25%;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Estilos de las cartas/productos */
+
+/* Carta */
+.card {
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-left: 6%;
+  margin-right: 6%;
+  cursor: pointer;
+  background-color: white;
+}
+
+
+.informacion_carta {
+  margin-left: 5px;
+}
+
+.informacion_carta p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+.imagen_carta
+{
+  width: 210px;
+height: 150px;
+overflow: hidden;
+}
+
+.personaje
+{
+  width: 100%;
+height: auto;
+display: block;
+border-radius: 13px 13px 0 0;
+}
+
+.modificar
+{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.modificar button
+{
+  border: transparent;
+  background-color: #A3B7DC;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.modificar button:hover
+{
+  background-color: #304C8B;
+  color: white;
+}
+
+/* paginacion */
+
+.list{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.paginas{
+  margin-top: 10px;
+  bottom: 20px;
+
+  text-align: center;
+    }
+  .flecha{
+    background: none;
+    border: none;
+    }
+    .paginacion{
+    background: none;
+    border: none;
+    }
+    .paginacionuno{
+    background: none;
+    border: none;
+    color: red;
+    }
+    .listPage{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    }
+    .listPage li{
+    background: none;
+    padding: 5px;
+    margin:0 10px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
+    width: 60px;
+    border-radius: 10px;
+    border: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    }
+    .active{
+    color: red;
+    }
+@media  (width<=1682px){
+  .opciones li a
+  {
+    margin-top: 40px;
+    font-size: 25px;
+  }
+.container_productos
+{
+  margin-top: 40px;
+}
+.agregar
+{
+  top: 14%;
+  right: 24%;
+}
+}
+
+@media (width<= 1600px)
+{
+  .opciones li a
+  {
+    font-size: 20px;
+  }
+  .container_productos
+  {
+    margin-top: 15px;
+  }
+  .agregar
+  {
+    top: 13%;
+    font-size: 15px;
+  }
+  .informacion_carta p 
+  {
+    font-size: 10px;
+  }
+.imagen_carta
+{
+height: 130px;
+  width: 190px;
+
+}
+
+.personaje
+{
+  width: 100%;
+height: auto;
+display: block;
+border-radius: 13px 13px 0 0;
+}
+
+.modificar button
+{
+  font-size: 11px;
+}
+.listPage li
+{
+  padding: 1px;
+}
+}
+
+@media  (width<=1656px){
+  
+  .container_productos
+  {
+    width: 70%;
+  }
+  .agregar
+  {
+
+    right: 21%;
+  }
+
+
+}
+
+@media  (width<=1419px){
+  
+  .container_productos
+  {
+    width: 80%;
+  }
+  .agregar
+  {
+    right: 17%;
+  }
+
+}
+@media (width<= 1600px)
+{
+  .opciones li a
+  {
+    font-size: 18px;
+  }
+  .container_productos
+  {
+    margin-top: 15px;
+  }
+  .agregar
+  {
+    top: 16%;
+    font-size: 13px;
+    width: 150px;
+    right: 18%;
+  }
+  .informacion_carta p 
+  {
+    font-size: 10px;
+  }
+.imagen_carta
+{
+height: 110px;
+  width: 160px;
+
+}
+
+.personaje
+{
+  width: 100%;
+height: auto;
+display: block;
+border-radius: 13px 13px 0 0;
+}
+
+.modificar button
+{
+  font-size: 11px;
+}
+.listPage li
+{
+  padding: 1px;
+}
+.card
+{
+  margin-top: -10px;
+}
+.paginas
+{
+  position: relative;
+  top: -560px;
+}
+
+
+}
+@media (height <960px)
+{
+  .agregar
+  {
+    top: 12%;
+  }
+}
+@media (height <800px)
+{
+  .agregar
+  {
+    top: 15%;
+  }
+}
+@media (height <768px)
+{
+  .agregar
+  {
+    top: 16%;
+  }
+}
+@media (height <720px)
+{
+  .agregar
+  {
+    top: 17%;
+  }
+  .imagen_carta
+{
+height: 100px;
+  width: 140px;
+
+}
+.paginas
+{
+  top: -540px;
+}
+.modificar button
+{
+  font-size: 9px;
+}
+}
+@media screen and (max-height:600px)
+{
+  .agregar{
+    top: 21%;
+  }
+}
+@media (width<=1152px)
+{
+  
+  #login_btn
+  {
+    font-size: 15px;
+    width: 150px;
+  }
+}
+@media  (width<=1242px){
+  .opciones
+  {
+    margin-left: 80px;
+  }
+  .opciones li a
+  {
+    font-size: 18px;
+  }
+  
+  .container_productos
+  {
+    width: 93%;
+  }
+  .agregar
+  {
+    right: 12%;
+  }
+
+
+}
+
+@media  (width<=1242px){
+  .opciones
+  {
+    margin-left: 80px;
+  }
+  .opciones li a
+  {
+    font-size: 18px;
+  }
+  
+  .container_productos
+  {
+    width: 93%;
+  }
+  .agregar
+  {
+    right: 12%;
+  }
+
+}
+
+@media screen and (max-width:1266px) {
+
+}
+
+@media screen and (max-width:1212px) {
+  .opciones li a {
+    font-size: 20px;
+  }
+
+  .opciones li {
+    padding-top: 10px;
+  }
+
+  .opciones {
+    gap: 1em;
+    margin-left: 10px;
+  }
+
+  .opciones li button {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 0;
+  }
+}
+/* // */
+@media screen and (max-width:1071px){
+  .card{
+    margin-left: 12px;
+    margin-right: auto;
+  }
+  .container_productos{
+    gap: 1.8em;
+  }
+}
+@media screen and (max-width: 1045px) {
+  .opciones {
+    padding-top: 10px;
+  }
+
+  .opciones li a {
+    font-size: 20px;
+  }
+
+  .opciones li button {
+    font-size: 19px;
+    height: 24px;
+  }
+
+  .opciones {
+    gap: 0.6em;
+  }
+
+}
+@media screen and (max-width:1024px)
+{
+  .container_productos{
+    width: 60%;
+  }
+  .abrir-btn {
+    display: block;
+    margin-left: 80%;
+    height: 5vh;
+    padding-top: 15px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .opciones {
+    flex-direction: column;
+    align-items: end;
+    color: black;
+  }
+
+  .opciones li {
+    margin-top: 2px;
+  }
+
+  .opciones li button {
+    width: 100px;
+  }
+
+  #navbar {
+    position: absolute;
+    top: 9.7%;
+    right: 0;
+    background-color: #D8E9F9;
+    padding: 1.2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+  }
+
+  #navbar.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* carta */
+  .container_productos{
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+  .barra_busqueda .search_input{
+    margin-left: 60px;
+    }
+  }
+
+@media screen and (max-width: 970px) {
+
+  
+}
+
+@media screen and (max-width:660px){
+
+.filtros{
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+ margin-left: 23%;
+  margin-right: 18%;
+  border: 1px solid black;
+  width: 50%;
+}
+
+.tipo_carta,.seleccionar_precio{
+  width: 80%;
+  height: 30px;
+}
+
+.container_general{
+  margin-left: 40px;
+}
+#filtro_input{
+margin-left: 14%;
+width: 70%;
+}
+.barra_busqueda .search_input{
+margin-left: 60px;
+margin-bottom: 90%;
+}
+.search_form .search_icon{
+  right: 28px;
+  top: 2px;
+  width: 20px;
+}
+.logo_img{
+  margin-left: 10px;
+}
+.abrir-btn{
+  margin-left: auto;
+  margin-right: 20px;
+}
+.container_general{
+  height: 800px;
+}
+#rango_precio1,#rango_precio2{
+  width: 35%;
+  margin-left: 5px;
+  margin: 2px;
+  border-radius: 7px;
+  border: 1px solid black;
+  height: 25px;
+}
+.rangos p{
+  margin-right: 2px;
+}
+
+}
