@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce</title>
+  <link rel="stylesheet" href="vitrina_productos/css/e-commerce.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="vitrina_productos/img/logo.png" class="logo_img" alt="">
+    <!-- Barra de navegación -->
+    <img src="vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
+    <nav class="" id="navbar">
+      <ul class="opciones">
+        <li><a href="#">Mi cuenta</a></li>
+        <li><a href="#">Mi banco</a></li>
+        <li><a href="#">Subasta</a></li>
+        <li><a href="#">Jugar online</a></li>
+        <li><a href="#">Torneo</a></li>
+        <li><a href="#">Resumen Flotante</a></li>
+        <li><a href="#">Lista Deseos</a></li>
+        <li><a href="#"><button class="login_btn">Login</button></a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Vitrina de productos -->
+  <main>
+    <!-- filtros -->
+    <div class="filtros">
+      <h1>Filtros</h1>
+      <form action="">
+        <ul class="tipo_filtros">
+          <!-- filtro precios -->
+          <li>
+            <h2>Precios</h2>
+          </li>
+          <li><select class="seleccionar_precio">
+              <option value="#" disabled selected>Precios</soption>
+              <option value="desc">Mayor a menor</option>
+              <option value="asc">Menor a mayor</option>
+              <option value="20-200">20.000 - 200.000</option>
+              <option value="200-800">200.000 - 800.000</option>
+              <option value="800-1400000">800.000 - 1.400.000</option>
+              <option value="1400000-2000000">1.400.000 - 2.000.000</option>
+            </select></li>
+
+          <!-- Tipo de carta -->
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta">
+              <option value="#" disabled selected>Selecciona un tipo</option>
+              <option value="Guerrero Tanque">Guerrero Tanque</option>
+              <option value="Guerrero Armas">Guerrero Armas</option>
+              <option value="Mago fuego">Guerrero fuego</option>
+              <option value="Mago hielo">Guerrero hielo</option>
+              <option value="Picaro veneno">Picaro veneno</option>
+              <option value="Picaro machete">Picaro machete</option>
+            </select></li>
+          <!-- filtro promocion -->
+          <li>
+            <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          </li>
+          <input type="submit" id="filtro_input" value="Filtrar">
+        </ul>
+      </form>
+    </div>
+    <div class="container_general">
+      <!--Parte barra de búsqueda  -->
+      <div class="barra_busqueda">
+        <form action="" class="search_form">
+          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35">
+          <img src="vitrina_productos/img/search_icon.svg" alt="search_icon" class="search_icon">
+        </form>
+      </div>
+      <!-- Cartas -->
+      <div class="container_productos">
+        <div class="list">
+        <% for (var i = 0; i < datos.length; i++) { %>
+        <div class="card" onclick="vistaDetallada()">
+          <div class="imagen_carta">
+            <img src=<%= datos[i].imagen %> class="personaje">
+          </div>
+          <div class="informacion_carta">
+            <p><%= datos[i].nombre %></p>
+            <p>Poder: <%= datos[i].poder %></p>
+            <p>Vida: <%= datos[i].vida %></p>
+            <p>Defensa: <%= datos[i].defensa %></p>
+            <p>Ataque: <%= datos[i].ataque %></p>
+            <p>Daño: <%= datos[i].dano %></p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+      <div class="paginas">
+        <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </main>
+  <script src="vitrina_productos/js/navbar.js"></script>
+  <script src="vitrina_productos/js/vistaDetallada.js"></script>
+  <script src="vitrina_productos/js/paginacion.js"></script>
+</body>
+</html>

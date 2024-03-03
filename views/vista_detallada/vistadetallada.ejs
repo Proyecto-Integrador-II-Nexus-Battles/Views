@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista Detallada</title>
+  <link rel="stylesheet" href="vista_detallada/css/vistadetallada.css">
+</head>
+<body>
+   <!-- Header -->
+   <header>
+    <img src="vista_detallada/img/logo.png" class="logo_img" alt="">
+      <!-- Barra de navegación -->
+    <img src="vista_detallada/img/hamburguer_icon.svg" class="abrir-btn" alt="">
+    <nav class="" id="navbar">
+      <ul class="opciones">
+        <li><a href="#">Mi cuenta</a></li>
+        <li><a href="#">Mi banco</a></li>
+        <li><a href="#">Subasta</a></li>
+        <li><a href="#">Jugar online</a></li>
+        <li><a href="#">Torneo</a></li>
+        <li><a href="#">Resumen Flotante</a></li>
+        <li><a href="#">Lista Deseos</a></li>
+        <li><a href="#"><button class="login_btn">Login</button></a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Main -->
+  <main>
+<div class="container_general">
+  <img class="back_img" src="vista_detallada/img/Vector.png" onclick="vistaEcommerce()">
+  <% for (var i = 0; i < datos.length; i++) { %>
+<div class="imagen_carta">
+  <img src=<%= datos[i].imagen %>  class="card-img">
+<ul class="calificacion_stars">
+  <li><img src="vista_detallada/img/star-regular.svg"></li>
+  <li><img src="vista_detallada/img/star-regular.svg"></li>
+  <li><img src="vista_detallada/img/star-regular.svg"></li>
+  <li><img src="vista_detallada/img/star-regular.svg"></li>
+  <li><img src="vista_detallada/img/star-regular.svg"></li>
+</ul>
+</div>
+<div class="detalles_carta">
+  <p> <b>Nombre:</b><%= datos[i].nombre %></p>
+  <p> <b>Poder:</b> <%= datos[i].poder %></p>
+  <p> <b>Vida:</b> <%= datos[i].vida %></p>
+  <p><b>Defensa:</b> <%= datos[i].defensa %></p>
+  <p><b>Ataque:</b> <%= datos[i].ataque %></p>
+  <p><b>Daño:</b> <%= datos[i].dano %></p>
+  <p><b>Descripción:</b> <%= datos[i].descripcion %></p>
+</div>
+<div class="comentarios_container">
+<h2>Comentarios</h2>
+<div class="comentarios">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veniam consectetur explicabo doloremque dolores id enim culpa deleniti inventore blanditiis illo adipisci quo dolor cumque quibusdam impedit eos eveniet, qui dicta optio nobis! Libero accusantium dignissimos repellat, iste est corporis a temporibus possimus ipsum similique nihil modi inventore doloribus. Totam numquam veritatis aliquam earum atque fugit sapiente adipisci, odio ducimus, qui eligendi quae non vel voluptatibus perspiciatis beatae. Est et possimus, vero error cum nesciunt quaerat voluptate. Itaque rem animi cum ea ratione dolorem repellendus quos officia, quis tempora delectus quo accusantium facilis facere laborum ducimus neque. Error, accusamus. Magni repudiandae dolores ab optio sapiente inventore pariatur id natus quos consequatur fugiat nesciunt obcaecati, saepe quibusdam sequi soluta tenetur, molestiae necessitatibus earum ipsa velit sit et! Alias mollitia tempora, itaque ipsam labore obcaecati accusamus libero quis voluptas excepturi beatae corrupti nemo eaque voluptatibus. Libero aut dolorum fugiat reiciendis minus ullam, ea non delectus magnam. Voluptate, qui? Hic ea, porro officiis, corporis possimus tempora molestias culpa nisi voluptas officia delectus veniam dicta id dolor nesciunt similique tenetur iste suscipit optio reprehenderit a facilis magni! Omnis fugit voluptatibus ad vero sit, necessitatibus ipsa distinctio quod alias vitae molestias repudiandae laudantium commodi deserunt sed autem! Quia, repellendus officiis? Officia ex repellat, voluptatem nam dolorem laborum. Aliquam quos sequi in ipsa obcaecati illo delectus eveniet non eos iusto eius inventore consequatur explicabo perspiciatis at aspernatur libero eum enim sunt adipisci, iure, quidem nihil modi! Vel, numquam sunt. Consequatur earum, minima molestiae officia ducimus ipsa dolores officiis temporibus odio numquam iusto veritatis. Odio voluptatum doloremque odit asperiores quod autem ut delectus debitis, corporis, excepturi qui cumque iste ipsam quam enim quos! A, laboriosam cupiditate! Voluptate nesciunt, hic explicabo unde ut quis reiciendis, tempore incidunt eum nemo quae exercitationem, architecto atque laudantium. Consequuntur id illo molestias!
+</div>
+</div>
+<% } %>
+
+</div>
+</main>
+<script src="vista_detallada/js/navbar.js"></script>
+<script src="vista_detallada/js/vitrina.js"></script>
+</body>
+</html>
