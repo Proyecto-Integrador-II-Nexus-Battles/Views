@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vista Detallada</title>
-  <link rel="stylesheet" href="vista_detallada/css/vistadetallada.css">
+  <link rel="stylesheet" href="vitrina_productos/css/vistadetallada.css">
 </head>
 <body>
    <!-- Header -->
    <header>
-    <img src="vista_detallada/img/logo.png" class="logo_img" alt="">
+    <img src="vitrina_productos/img/logo.png" class="logo_img" alt="">
       <!-- Barra de navegación -->
-    <img src="vista_detallada/img/hamburguer_icon.svg" class="abrir-btn" alt="">
+    <img src="vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
         <li><a href="#">Mi cuenta</a></li>
@@ -28,16 +28,16 @@
   <!-- Main -->
   <main>
 <div class="container_general">
-  <img class="back_img" src="vista_detallada/img/Vector.png" onclick="vistaEcommerce()">
+  <img class="back_img" src="vitrina_productos/img/Vector.png" onclick="vistaEcommerce()">
   <% for (var i = 0; i < datos.length; i++) { %>
 <div class="imagen_carta">
   <img src=<%= datos[i].imagen %>  class="card-img">
 <ul class="calificacion_stars">
-  <li><img src="vista_detallada/img/star-regular.svg"></li>
-  <li><img src="vista_detallada/img/star-regular.svg"></li>
-  <li><img src="vista_detallada/img/star-regular.svg"></li>
-  <li><img src="vista_detallada/img/star-regular.svg"></li>
-  <li><img src="vista_detallada/img/star-regular.svg"></li>
+  <li><img src="vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="vitrina_productos/img/star-regular.svg"></li>
 </ul>
 </div>
 <div class="detalles_carta">
@@ -59,7 +59,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veniam consec
 
 </div>
 </main>
-<script src="vista_detallada/js/navbar.js"></script>
-<script src="vista_detallada/js/vitrina.js"></script>
+<script src="vitrina_productos/js/navbar.js"></script>
+<script src="vitrina_productos/js/vistaDetallada.js"></script>
 </body>
 </html>
