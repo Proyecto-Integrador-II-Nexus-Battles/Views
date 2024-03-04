@@ -172,14 +172,12 @@ border-radius: 7px;
   margin-top: 10px;
   background-color: white;
   height: 230px;
+  display: flex;
   position: relative;
+
 }
 .card:hover{
   transform: translateY(-20px);
-}
-.imagen_carta p{
-  position: relative;
-  z-index: 1;
 }
 
 .informacion_carta {
@@ -212,9 +210,11 @@ border-radius: 7px;
 {
   width: 100%;
 height: auto;
-display: block;
+
   border-radius: 13px 13px 0 0;
 }
+
+
 
 /* paginacion */
 
@@ -312,8 +312,8 @@ padding-bottom: 23px;
 }
 
 .container_general{
-  width: 60%;
-  margin-left: 13%;
+  width: 50%;
+  margin-left: 15%;
 }
 span{
   top: -23px;

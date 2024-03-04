@@ -82,9 +82,10 @@
         <div class="list">
         <% for (var i = 0; i < datos.length; i++) { %>
         <div class="card" >
+          
           <div class="imagen_carta">
-            <p>$80000</p>
             <img src=<%= datos[i].imagen %> class="personaje" onclick="vistaDetallada()">
+            <p id="precio">$80000</p>
           </div>
           <div class="informacion_carta">
             <p><%= datos[i].nombre %></p>
