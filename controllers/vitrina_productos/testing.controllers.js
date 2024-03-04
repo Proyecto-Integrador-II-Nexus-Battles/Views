@@ -132,7 +132,9 @@ export const defaultR2 = (req, res) => {
     ataque: "si",
     dano: "si",
     imagen: "vitrina_productos/img/cedric.jpg",
-    descripcion:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquid."
+    descripcion:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, aliquid.",
+    tipo: 'noo',
+    subtipo: 'siiis'
   },
 
 

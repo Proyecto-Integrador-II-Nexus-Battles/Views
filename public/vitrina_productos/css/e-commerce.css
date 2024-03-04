@@ -253,9 +253,9 @@ display: block;
 .paginas{
   margin-top: 10px;
   bottom: 20px;
-  left: 50%;
+  left: 10%;
   text-align: center;
-  margin-left: 10rem;
+  margin-left:7rem;
     }
   .flecha{
     background: none;
@@ -504,4 +504,7 @@ margin-bottom: 90%;
   margin-right: 2px;
 }
 
+.paginas{
+  margin-left: 10px;
+}
 }
