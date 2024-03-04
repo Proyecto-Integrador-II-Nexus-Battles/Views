@@ -224,6 +224,6 @@ export const defaultR = (req, res) => {
 };
 
 export const defaultR2 = (req, res) => {
-  res.render("creacion_carta");
+  res.render("inventario/creacion_carta");
 };
 

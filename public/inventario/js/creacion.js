@@ -1,4 +1,4 @@
-const defaultFIle = "../Imagenes/usuario.png";
+const defaultFIle = "/inventario/imagenes/usuario.png";
 const file =document.getElementById('foto');
 const img = document.getElementById('img');
 file.addEventListener('change', e => {

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/creacion.css">
+    <link rel="stylesheet" href="inventario/css/creacion.css">
     <title>Inventario</title>
 </head>
 <body>
     <header>
         <a href="../HTML/visualizacion_inventario.html
-        "><img src="../Imagenes/logo_nb2_v2.png" class="logo_img" alt="" ></a>
+        "><img src="/inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="" ></a>
           <!-- Barra de navegación -->
-        <img src="../Imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
+        <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
         <nav class="" id="navbar">
           <ul class="opciones">
             <li><a href="#">Mi cuenta</a></li>
@@ -26,14 +26,16 @@
         </nav>
       </header>
     <main>
-        <!-- Cartas -->
+        <div class="fondo">
+                <!-- Cartas -->
         <div class="container_productos">
             <!-- /////////// -->
+            
             
             <img src="../Imagenes/flecha.png" alt="" class="flecha">
             <div class="card">
                 <div class="imagen_carta">
-                    <img src="../Imagenes/usuario.png" class="personaje" id="img">
+                    <img src="/inventario/imagenes/usuario.png" class="personaje" id="img">
                    
                 </div>
                 <div class="informacion_carta">
@@ -88,8 +90,10 @@
                 </a>
             </div>
         </div>
+        </div>
+        
     </main>
-    <script src="../JS/creacion.js"></script>
+    <script src="/inventario/js/creacion.js"></script>
     <script src="../JS/nav.js"></script>
 </body>
 </html>
