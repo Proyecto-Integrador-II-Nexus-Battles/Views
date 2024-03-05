@@ -221,54 +221,6 @@ main {
 .active {
   color: red;
 }
-@media (width<=1682px) {
-  .opciones li a {
-    margin-top: 40px;
-    font-size: 25px;
-  }
-  .container_productos {
-    margin-top: 40px;
-  }
-  .agregar {
-    top: 14%;
-    right: 24%;
-  }
-}
-
-@media (width<= 1600px) {
-  .opciones li a {
-    font-size: 20px;
-  }
-  .container_productos {
-    margin-top: 15px;
-  }
-  .agregar {
-    top: 13%;
-    font-size: 15px;
-  }
-  .informacion_carta p {
-    font-size: 10px;
-  }
-  .imagen_carta {
-    height: 130px;
-    width: 190px;
-  }
-
-  .personaje {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 13px 13px 0 0;
-  }
-
-  .modificar button {
-    font-size: 11px;
-  }
-  .listPage li {
-    padding: 1px;
-  }
-}
-
 @media screen and (min-width:1600px) and (max-width:1920px){
   .search_form .search_icon{
     top: -2px;
