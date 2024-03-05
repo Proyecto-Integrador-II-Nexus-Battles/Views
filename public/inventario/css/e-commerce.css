@@ -269,294 +269,273 @@ main {
   }
 }
 
-@media (width<=1656px) {
-  .container_productos {
-    width: 70%;
+@media screen and (min-width:1600px) and (max-width:1920px){
+  .search_form .search_icon{
+    top: -2px;
   }
-  .agregar {
-    right: 21%;
+  .search_form .search_input{
+    width: 500px;
+    height: 30px;
   }
-}
-
-@media (width<=1419px) {
-  .container_productos {
-    width: 80%;
+  .tipo_filtros{
+    width: 300px;
   }
-  .agregar {
-    right: 17%;
+  .tipo_filtros li{
+    font-size: 20px;
   }
-}
-@media (width<= 1600px) {
-  .opciones li a {
+  .seleccionar_precio, .tipo_carta{
     font-size: 18px;
+    width: 180px;
   }
-  .container_productos {
-    margin-top: 15px;
+  .promociones + b {
+    font-size: 24px;
+  padding-top: 2px;
   }
-  .agregar {
-    top: 16%;
-    font-size: 13px;
-    width: 150px;
-    right: 18%;
+  .promociones{
+    transform: scale(1.4);
   }
-  .informacion_carta p {
-    font-size: 10px;
+  #filtro_input{
+  width: 150px;
+  margin-left: 20px;
+  font-size: 18px;
+  padding-bottom: 23px;
   }
-  .imagen_carta {
-    height: 110px;
-    width: 160px;
+  
+  .container_general{
+    width: 50%;
+    margin-left: 15%;
   }
-
-  .personaje {
+  span{
+    top: -23px;
+  }
+  .carrito
+  {
+    top: -30px;
+  }
+  
+  .imagen_carta{
+    width: 200px;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .personaje
+  {
     width: 100%;
-    height: auto;
-    display: block;
+  height: auto;
+  display: block;
     border-radius: 13px 13px 0 0;
   }
-
-  .modificar button {
-    font-size: 11px;
-  }
-  .listPage li {
-    padding: 1px;
-  }
   .card {
-    margin-top: -10px;
+    height: 325px;
   }
-  .paginas {
-    position: relative;
-    top: -560px;
+  .informacion_carta p{
+    font-size: 13px;
   }
-}
-@media (height <960px) {
-  .agregar {
-    top: 12%;
+  
   }
-}
-@media (height <800px) {
-  .agregar {
-    top: 15%;
+  @media screen and (min-width: 1630px) {
+    header {
+      margin-right: 15%;
+    }
+    .opciones li a {
+      font-size: 30px;
+    }
+    .opciones{
+      margin-top: -10px;
+    }
+    .opciones li button {
+      font-size: 35px;
+      width: 150px;
+    }
+    .search_form .search_input{
+      width: 300px;
+    }
   }
-}
-@media (height <768px) {
-  .agregar {
-    top: 16%;
-  }
-}
-@media (height <720px) {
-  .agregar {
-    top: 17%;
-  }
-  .imagen_carta {
-    height: 100px;
-    width: 140px;
-  }
-  .paginas {
-    top: -540px;
-  }
-  .modificar button {
-    font-size: 9px;
-  }
-}
-@media screen and (max-height: 600px) {
-  .agregar {
-    top: 21%;
-  }
-}
-@media (width<=1152px) {
-  #login_btn {
-    font-size: 15px;
-    width: 150px;
-  }
-}
-@media (width<=1242px) {
-  .opciones {
-    margin-left: 80px;
-  }
-  .opciones li a {
-    font-size: 18px;
-  }
-
-  .container_productos {
-    width: 93%;
-  }
-  .agregar {
-    right: 12%;
-  }
-}
-
-@media (width<=1242px) {
-  .opciones {
-    margin-left: 80px;
-  }
-  .opciones li a {
-    font-size: 18px;
-  }
-
-  .container_productos {
-    width: 93%;
-  }
-  .agregar {
-    right: 12%;
-  }
-}
-
-@media screen and (max-width: 1266px) {
-}
-
-@media screen and (max-width: 1212px) {
-  .opciones li a {
-    font-size: 20px;
-  }
-
-  .opciones li {
-    padding-top: 10px;
-  }
-
-  .opciones {
-    gap: 1em;
-    margin-left: 10px;
-  }
-
-  .opciones li button {
-    font-size: 22px;
-    width: 100px;
-    margin-left: 0;
-  }
-}
-/* // */
-@media screen and (max-width: 1071px) {
-  .card {
-    margin-left: 12px;
-    margin-right: auto;
-  }
-  .container_productos {
-    gap: 1.8em;
-  }
-}
-@media screen and (max-width: 1045px) {
-  .opciones {
-    padding-top: 10px;
-  }
-
-  .opciones li a {
-    font-size: 20px;
-  }
-
-  .opciones li button {
-    font-size: 19px;
-    height: 24px;
-  }
-
-  .opciones {
-    gap: 0.6em;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .container_productos {
-    width: 60%;
-  }
-  .abrir-btn {
+  
+  @media screen and (max-width:1280px) {
+    .opciones li a {
+      font-size: 20px;
+    }
+    .informacion_carta p {
+      font-size:9px;
+      font-weight: bold;
+    }
+    .card{
+      height: 210px;
+    }
+    .imagen_carta
+    {
+      width: 150px;
+      height: 100px;
+      overflow: hidden;
+    }
+    
+    .personaje
+    {
+      width: 100%;
+    height: auto;
     display: block;
-    margin-left: 80%;
-    height: 5vh;
-    padding-top: 15px;
-    cursor: pointer;
-    margin-right: 20px;
+      border-radius: 13px 13px 0 0;
+    }
+    span{
+  
+      top: -24px;
+    }
+    .carrito
+    {
+      font-size: 16px;
+      top: -29px;
+    }
   }
-
-  .opciones {
-    flex-direction: column;
-    align-items: end;
-    color: black;
+  
+  @media screen and (max-width:1212px) {
+    .opciones li a {
+      font-size: 20px;
+    }
+  
+    .opciones li {
+      padding-top: 10px;
+    }
+  
+    .opciones {
+      gap: 1em;
+      margin-left: 10px;
+    }
+  
+    .opciones li button {
+      font-size: 22px;
+      width: 100px;
+      margin-left: 0;
+    }
   }
-
-  .opciones li {
-    margin-top: 2px;
+  /* // */
+  @media screen and (max-width:1071px){
+    .card{
+      margin-left: 12px;
+      margin-right: auto;
+    }
+    .container_productos{
+      gap: 1.8em;
+    }
   }
-
-  .opciones li button {
-    width: 100px;
+  @media screen and (max-width: 1045px) {
+    .opciones {
+      padding-top: 10px;
+    }
+  
+    .opciones li a {
+      font-size: 20px;
+    }
+  
+    .opciones li button {
+      font-size: 19px;
+      height: 24px;
+    }
+  
+    .opciones {
+      gap: 0.6em;
+    }
+  
   }
-
-  #navbar {
-    position: absolute;
-    top: 9.7%;
-    right: 0;
-    background-color: #d8e9f9;
-    padding: 1.2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin-right: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 2;
+  
+  @media screen and (max-width: 970px) {
+  
+    .abrir-btn {
+      display: block;
+      margin-left: 80%;
+      height: 5vh;
+      padding-top: 15px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+  
+    .opciones {
+      flex-direction: column;
+      align-items: end;
+      color: black;
+    }
+  
+    .opciones li {
+      margin-top: 2px;
+    }
+  
+    .opciones li button {
+      width: 100px;
+    }
+  
+    #navbar {
+      position: absolute;
+      top: 9.7%;
+      right: 0;
+      background-color: #D8E9F9;
+      padding: 1.2rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      margin-right: 0;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 2;
+    }
+  
+    #navbar.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    /* carta */
+    .container_productos{
+      margin-left: 40px;
+      margin-right: 20px;
+    }
+    .barra_busqueda .search_input{
+      margin-left: 60px;
+      }
   }
-
-  #navbar.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  /* carta */
-  .container_productos {
-    margin-left: 40px;
-    margin-right: 20px;
-  }
-  .barra_busqueda .search_input {
-    margin-left: 60px;
-  }
-}
-
-@media screen and (max-width: 970px) {
-}
-
-@media screen and (max-width: 660px) {
-  .filtros {
+  
+  @media screen and (max-width:660px){
+  
+  .filtros{
     position: absolute;
     z-index: 1;
     top: 120px;
-    margin-left: 23%;
+   margin-left: 23%;
     margin-right: 18%;
     border: 1px solid black;
     width: 50%;
   }
-
-  .tipo_carta,
-  .seleccionar_precio {
+  
+  .tipo_carta,.seleccionar_precio{
     width: 80%;
     height: 30px;
   }
-
-  .container_general {
+  
+  .container_general{
     margin-left: 40px;
   }
-  #filtro_input {
-    margin-left: 14%;
-    width: 70%;
+  #filtro_input{
+  margin-left: 14%;
+  width: 70%;
   }
-  .barra_busqueda .search_input {
-    margin-left: 60px;
-    margin-bottom: 90%;
+  .barra_busqueda .search_input{
+  margin-left: 60px;
+  margin-bottom: 90%;
   }
-  .search_form .search_icon {
+  .search_form .search_icon{
     right: 28px;
     top: 2px;
     width: 20px;
   }
-  .logo_img {
+  .logo_img{
     margin-left: 10px;
   }
-  .abrir-btn {
+  .abrir-btn{
     margin-left: auto;
     margin-right: 20px;
   }
-  .container_general {
-    height: 800px;
-  }
-  #rango_precio1,
-  #rango_precio2 {
+  
+  #rango_precio1,#rango_precio2{
     width: 35%;
     margin-left: 5px;
     margin: 2px;
@@ -564,7 +543,103 @@ main {
     border: 1px solid black;
     height: 25px;
   }
-  .rangos p {
+  .rangos p{
     margin-right: 2px;
   }
-}
+  
+  .paginas{
+    margin-left: 10px;
+  }
+  }
+  @media screen and (min-width:591px) and (max-width:660px){
+    .container_general{
+      background: transparent;
+    }
+    .card
+    {
+     top: 5vh;
+    left: 5vh;
+    }
+  }
+  @media screen and (min-width:340px) and (max-width:390px){
+    .container_general
+    {
+      background:transparent;
+    }
+    .card
+    {
+     top: 25vh;
+     margin-left: 30px;
+    }
+    .listPage{
+      position: relative;
+      top: 25vh;
+    }
+  }
+  
+  @media screen and (min-width:391px) and (max-width:430px){
+    .container_general
+    {
+      background: transparent;
+    }
+    .card{
+      top: 20vh;
+      margin-left: 44px;
+    }
+    .listPage{
+      position: relative;
+      top: 20vh;
+    }
+  }
+  @media screen and (min-width:540px) and (max-width:590px){
+    .container_general{
+      background: transparent;
+    }
+    .card{
+      top: 20vh;
+      margin-left: 100px;
+    }
+    .listPage{
+      position: relative;
+      top: 20vh;
+    }
+  }
+  @media screen and (min-width:280px) and (max-width:300px){
+    .container_general{
+      background:transparent;
+    }
+    .card{
+      top: 40vh;
+    }
+    .listPage{
+      position: relative;
+      top: 40vh;
+    }
+  }
+  
+  @media (width<=339px){
+    .container_general
+    {
+      background:transparent;
+    }
+    .card{
+      top: 20vh;
+    }
+    .listPage{
+      position: relative;
+      top: 20vh;
+    }
+  }
+  @media screen and (min-width:431px) and (max-width:539px)
+  {
+    .container_general
+    {
+      background: transparent;
+    }
+    .card
+    {
+      top: 17vh;
+      margin-left: 8vh;
+    }
+  }
+  

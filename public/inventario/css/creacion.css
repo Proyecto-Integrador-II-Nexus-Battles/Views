@@ -6,7 +6,6 @@
 
 body {
   background-image: url("../Imagenes/fondo2.jpeg");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -205,10 +204,6 @@ header .logo_img {
     font-size: 15px;
   }
 
-  .guardar-cambios {
-    bottom: 13%;
-    left: 55%;
-  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -238,25 +233,7 @@ header .logo_img {
     font-size: 15px;
     margin-left: 218px;
   }
-  .guardar-cambios {
-    font-size: 15px;
-    bottom: 11%;
-    left: 60%;
-  }
 }
-
-@media screen and (max-width: 1440px) {
-  .guardar-cambios {
-    font-size: 15px;
-    bottom: 11%;
-    left: 56%;
-  }
-
-  @media screen and (max-height: 1050px) {
-    .guardar-cambios {
-      bottom: 24%;
-    }
-  }
 
   @media (width<=1366px) {
     .container_productos {
@@ -298,11 +275,6 @@ header .logo_img {
       font-size: 15px;
       margin-left: 170px;
     }
-    .guardar-cambios {
-      font-size: 12px;
-      bottom: 15%;
-      left: 55%;
-    }
   }
 
   @media (width <= 1280px) {
@@ -343,12 +315,7 @@ header .logo_img {
       font-size: 10px;
       margin-left: 160px;
     }
-    .guardar-cambios {
-      font-size: 10px;
-      bottom: 10%;
-      left: 55%;
-    }
-  }
+
 }
 
 @media screen and (max-width: 1152px) {
@@ -386,11 +353,7 @@ header .logo_img {
     font-size: 10px;
     margin-left: 200px;
   }
-  .guardar-cambios {
-    font-size: 15px;
-    bottom: 17%;
-    left: 55%;
-  }
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -428,11 +391,7 @@ header .logo_img {
     font-size: 10px;
     margin-left: 160px;
   }
-  .guardar-cambios {
-    font-size: 15px;
-    bottom: 11%;
-    left: 53%;
-  }
+
 }
 
 @media screen and (max-width: 1262px) {
@@ -515,11 +474,7 @@ header .logo_img {
       font-size: 10px;
       margin-left: 160px;
     }
-    .guardar-cambios {
-      font-size: 15px;
-      bottom: 45%;
-      left: 50%;
-    }
+
   }
 }
 
@@ -558,11 +513,7 @@ header .logo_img {
     font-size: 15px;
     width: 50px;
   }
-  .guardar-cambios {
-    font-size: 15px;
-    bottom: 33%;
-    left: 5%;
-  }
+
 }
 
 @media screen and (max-width: 375px) {
@@ -580,4 +531,5 @@ header .logo_img {
     position: relative;
     right: 20%;
   }
+}
 }
