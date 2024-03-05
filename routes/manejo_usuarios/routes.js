@@ -1,4 +1,4 @@
-import { userLogging, renderLogin } from "../../../Manejo_Usuarios_Nuevo/controllers/controller.js";
+import { userLogging, renderLogin } from "../../controllers/manejo_usuarios/controller.js";
 import { Router } from "express";
 
 const router = new Router();

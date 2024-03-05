@@ -1,5 +1,5 @@
 import express from "express";
-import testingRoutes from "./routes/usuario.routes.js";
+import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
 import { PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
