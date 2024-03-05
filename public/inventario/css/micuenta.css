@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-image: url("../Imagenes/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Estilos navbar */
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #d8e9f9;
+  }
+  
+  header .logo_img {
+    height: 80px;
+    position: absolute;
+    left: 1%;
+  }
+  
+  #navbar {
+    height: 60px;
+    background-color: #d8e9f9;
+    padding: 10px;
+  }
+  
+  .opciones {
+    display: flex;
+    list-style: none;
+    padding-top: 9px;
+    gap: 2.2em;
+    margin-left: 10px;
+  }
+  
+  .opciones li {
+    display: inline-block;
+    padding-top: 9px;
+  }
+  
+  .opciones li a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+  }
+  
+  #login_btn {
+    font-size: 20px;
+    background-color: #a3b7dc;
+    border: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  #login_btn:hover {
+    background-color: #304c8b;
+    color: white;
+  }
+  
+  .abrir-btn {
+    display: none;
+  }
