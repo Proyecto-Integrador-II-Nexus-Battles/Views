@@ -82,7 +82,6 @@
         <div class="list">
         <% for (var i = 0; i < datos.length; i++) { %>
         <div class="card" >
-          
           <div class="imagen_carta">
             <img src=<%= datos[i].imagen %> class="personaje" onclick="vistaDetallada()">>
             <p id="precio">$80000</p>
@@ -96,7 +95,7 @@
             <p>Daño: <%= datos[i].dano %></p>
             <br><hr>
             <p>Daño efectivo: 4</p>
-            <span onclick="cambiarColor(this)">&#9829</span>
+            <span onclick="envioID('<%= datos[i].id %>')">&#9829</span>
             <span class="carrito">&#128722;</span>
           </div>
         </div>
@@ -116,5 +115,6 @@
   <script src="vitrina_productos/js/vistaDetallada.js"></script>
   <script src="vitrina_productos/js/paginacion.js"></script>
   <script src="vitrina_productos/js/animacion.js"></script>
+  <script src="vitrina_productos/js/postID.js"></script>
 </body>
 </html>
