@@ -2,7 +2,7 @@ import axios from "axios";
 import { PORT, HOST } from "../../config.js";
 
 export const renderLogin = (req, res) => {
-    res.render("manejo_usuarios/login");
+    res.render("manejo_usuarios/login.ejs");
 }
 
 export const userLogging = async (req, res) => {
