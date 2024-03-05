@@ -58,10 +58,8 @@
   <h1>Comentarios de la Carta</h1>
   <section class="comentarios_container_section01">
       <form action="/upload" method="post" enctype="multipart/form-data" class="comentarios_container_section01_form">
-
           <textarea name="comentarioUsuario" id="comentarioUsuario" placeholder="Agrega un comentario..." maxlength="100"></textarea>
-
-          <input name="submitComentario" id="submitComentario" type="submit" value="Publicar Comentario"> 
+          <input name="submitComentario" id="submitComentario" type="submit" value="Publicar Comentario">
           <label for="imagenComentario">
               Subir Imagen
               <input name="imagenComentario" id="imagenComentario" type="file">
@@ -70,10 +68,10 @@
   </section>
   <section class="comentarios_container_section02">
       <article class="comentarios_container_section02_article">
-          <div>
-              <h3>
+          <div class="comentario_info">
+              <h2>
                   Samir London
-              </h3>
+              </h2>
               <time datetime="2024-02-25">
                   2024-02-25
               </time>
@@ -81,18 +79,16 @@
           <p>
               Esta carta es espectacular, siempre gano con ella todas mis partidas, es fuerte pero tambien esta balanceada, se las recomiendo a todos muchachos,no van a perder dinero comprando esta carta. Muy buena.
           </p>
+
           <figure class="comentarios_container_section02_article_figure">
-              <img src="https://media.istockphoto.com/id/1500623143/es/foto/renderizado-3d-de-una-escena-de-fantas%C3%ADa-con-un-orco-sosteniendo-a-su-camarada-ca%C3%ADdo-una-chica.jpg?s=1024x1024&w=is&k=20&c=Pl_8RpVd1o0_Hfg3g9ycwGRkRVYMJwnduwbOHYCsmyo=" alt="Orco">
-          </figure>
-          <figure class="comentarios_container_section02_article_figure">
-              <img src="https://cdn.pixabay.com/photo/2021/01/29/05/14/character-5959714_1280.png" alt="Orco">
+              <img src="/vitrina_productos/img/Zephyr Shadowblade.jpg" alt="Orco">
           </figure>
       </article>
       <article class="comentarios_container_section02_article">
-          <div>
-              <h3>
+          <div class="comentario_info">
+              <h2>
                   Saitamasensei07
-              </h3>
+              </h2>
               <time datetime="2024-03-25">
                   2024-03-25
               </time>
@@ -101,12 +97,12 @@
               Esta carta, es buena, pero me parece muy cara para su precio, deberia ser un poco mas precio calidad, por otro lado tiene buenas calidades, la tengo en mi mazo en todas mis partidas.
           </p>
           <figure class="comentarios_container_section02_article_figure">
-              <img src="https://cdn.pixabay.com/photo/2024/02/21/19/41/ai-generated-8588442_1280.jpg" alt="Orco">
+              <img src="/vitrina_productos/img/Zephyr Shadowblade.jpg" alt="img_comentario">
           </figure>
       </article>
 
   </section>
-  
+
 </div>
 <% } %>
 
