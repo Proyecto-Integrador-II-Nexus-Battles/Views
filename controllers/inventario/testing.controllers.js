@@ -2,6 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 export const defaultR = (req, res) => {
+  const response = await fetch ()
   const datos = [
     {
       nombre: "Nuevo personaje",
@@ -225,5 +226,12 @@ export const defaultR = (req, res) => {
 
 export const defaultR2 = (req, res) => {
   res.render("inventario/creacion_carta");
+};
+
+export const defaultR4 = (req, res) => {
+  res.render("inventario/descripcion");
+};
+export const defaultR5 = (req, res) => {
+  res.render("inventario/miCuenta");
 };
 

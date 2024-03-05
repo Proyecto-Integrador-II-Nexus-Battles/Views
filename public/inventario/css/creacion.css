@@ -197,7 +197,7 @@ header .logo_img {
 @media screen and (max-width: 1680px) {
   /* Carta */
   .card {
-    height: 625px;
+    height: 700px;
   }
 
   .informacion_carta p {
@@ -213,7 +213,7 @@ header .logo_img {
   /* Carta */
   .card {
     margin-top: -25px;
-    height: 557px;
+    height: 620px;
     width: 310px;
   }
 
@@ -231,7 +231,6 @@ header .logo_img {
 
   .siguiente {
     font-size: 15px;
-    margin-left: 218px;
   }
 }
 
@@ -248,7 +247,7 @@ header .logo_img {
     }
     .card {
       margin-top: -25px;
-      height: 459px;
+      height: 520px;
       width: 250px;
     }
 
@@ -273,7 +272,6 @@ header .logo_img {
     }
     .siguiente {
       font-size: 15px;
-      margin-left: 170px;
     }
   }
 
@@ -287,7 +285,7 @@ header .logo_img {
     /* Carta */
     .card {
       margin-top: -30px;
-      height: 430px;
+      height: 480px;
       width: 230px;
     }
 
@@ -313,7 +311,6 @@ header .logo_img {
 
     .siguiente {
       font-size: 10px;
-      margin-left: 160px;
     }
 
 }
@@ -325,7 +322,7 @@ header .logo_img {
   /* Carta */
   .card {
     margin-top: -30px;
-    height: 480px;
+    height: 530px;
     width: 280px;
   }
 
@@ -351,7 +348,7 @@ header .logo_img {
 
   .siguiente {
     font-size: 10px;
-    margin-left: 200px;
+
   }
 
 }
@@ -363,7 +360,7 @@ header .logo_img {
   /* Carta */
   .card {
     margin-top: -30px;
-    height: 450px;
+    height: 500px;
     width: 230px;
   }
 
@@ -389,7 +386,6 @@ header .logo_img {
 
   .siguiente {
     font-size: 10px;
-    margin-left: 160px;
   }
 
 }
@@ -398,7 +394,7 @@ header .logo_img {
   .abrir-btn {
     display: block;
     margin-left: 80%;
-    height: 5vh;
+    height: 3vh;
     padding-top: 15px;
     cursor: pointer;
     margin-right: 20px;
@@ -420,7 +416,7 @@ header .logo_img {
 
   #navbar {
     position: absolute;
-    top: 9.7%;
+    top: 5%;
     right: 0;
     background-color: #d8e9f9;
     padding: 1.2rem;
@@ -446,7 +442,7 @@ header .logo_img {
     /* Carta */
     .card {
       margin-top: -30px;
-      height: 450px;
+      height: 500px;
       width: 230px;
     }
 
@@ -472,7 +468,6 @@ header .logo_img {
 
     .siguiente {
       font-size: 10px;
-      margin-left: 160px;
     }
 
   }
@@ -503,7 +498,7 @@ header .logo_img {
     height: 300px;
   }
   .card {
-    height: 600px;
+    height: 690px;
     width: 680px;
   }
   .informacion_carta p {
@@ -531,5 +526,4 @@ header .logo_img {
     position: relative;
     right: 20%;
   }
-}
 }
