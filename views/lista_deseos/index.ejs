@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></</title>
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-    <img src="images/logo.png" class="logo_img" alt="">
+    <img src="img/logo.png" class="logo_img" alt="">
     <!-- Barra de navegación -->
-    <img src="images/hamburguesa_icon.svg" class="abrir-btn" alt="">
+    <img src="img/hamburguesa_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
         <li><a href="#">Mi cuenta</a></li>
@@ -68,15 +68,16 @@
       <div class="barra_busqueda">
         <form action="" class="search_form">
           <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35">
-          <img src="images/search_icon.svg" alt="search_icon" class="search_icon">
+          <img src="img/search_icon.svg" alt="search_icon" class="search_icon">
         </form>
       </div>
       <!-- CARTAS -->
       <div class="container_productos">>
         <div class="card">
           <div class="imagen_carta">
-            <img src="images/carta.png" class="personaje">
+            <img src="img/carta.png" class="personaje">
         </div>
+        
         <div class="informacion_carta">
           <p>Cedric Cogswell</p>
           <p>Poder</p>
@@ -84,15 +85,16 @@
           <p>Defensa:</p>
           <p>Ataque:</p>
           <p>Daño:</p>
-      
               
           <div class="rectangulo">
-            <!-- <div class="cantidad">
+            <div class="mover-carrito">
                 <p>Mover al carrito</p>
-            </div> -->
-            <div class="">
-              <button><i class="fa-solid fa-trash"></i></button>
             </div>
+          <% products.forEach(function(item) { %>
+          <div class="eliminar">
+            <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
+          </div>
+          <% }); %>
             
           </div>
           </div>
@@ -110,7 +112,7 @@
 </html>
 
 <!-- CUADRO DE SEGUIR AL CARRO DE COMPRA -->
-<aside class="resumen">
+<!-- <aside class="resumen">
 <div class="compra">
     <h2>Resumen de tus deseos</h2>
     <hr class="lineados">
@@ -126,51 +128,51 @@
     <button class="realizar" id="checkout"> Ir al carro de compras</button>
     <p class="añadir">¿Quieres añadir más productos?</p>
 </div>
-</aside>
+</aside> -->
 
 <!-- peticiones de la base de datos para la funcion de eliminar carta -->
-  <div class="card-container">
+<div class="card-container">
     
 
-    <% products.forEach(function(item) { %>
-    <ul id="item-<%= item.id %>">
-        <li><%= item.nombre %></li>
-        <li><%= item.precio %></li>
-        <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
-    </ul>
-    <% }); %>
-    
-
-  </div>
-
-  <script> 
-  function eliminar(item_id) {
-    // Crear instancia de XMLHttpRequest
-    const xhr = new XMLHttpRequest();
+  <% products.forEach(function(item) { %>
+  <ul id="item-<%= item.id %>">
+      <li><%= item.nombre %></li>
+      <li><%= item.precio %></li>
+      <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
+  </ul>
+  <% }); %>
   
-    // Configurar la solicitud
-    xhr.open('POST', 'http://192.168.1.15:3000/lista_deseos/eliminar/' + item_id, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-  
-    // Definir el callback para manejar la respuesta
-    xhr.onload = function() {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        // La solicitud fue exitosa
-        alert('Se elimino correctamente');
-        
-        // Obtener el elemento que deseas eliminar
+
+</div>
+
+<script> 
+function eliminar(item_id) {
+  // Crear instancia de XMLHttpRequest
+  const xhr = new XMLHttpRequest();
+
+  // Configurar la solicitud
+  xhr.open('POST', 'http://172.24.112.1:3000/lista_deseos/eliminar/' + item_id, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+
+  // Definir el callback para manejar la respuesta
+  xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      // La solicitud fue exitosa
+      alert('Se elimino correctamente');
+      
+      // Obtener el elemento que deseas eliminar
 const elementoAEliminar = document.getElementById('item-'+item_id);
 
 // Eliminar el elemento
 elementoAEliminar.remove();
 
-      } else {
-        // La solicitud falló
-        alert('No se pudo eliminar correctamente');
-      }
-    };
-  
-    // Enviar la solicitud con los datos
-    xhr.send();
-  }
-  </script>
+    } else {
+      // La solicitud falló
+      alert('No se pudo eliminar correctamente');
+    }
+  };
+
+  // Enviar la solicitud con los datos
+  xhr.send();
+}
+</script>
