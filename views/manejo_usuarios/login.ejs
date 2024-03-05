@@ -11,16 +11,16 @@
     <div class="full-screen-container">
       <div class="login-container">
         <h1 class="login-title">Ingresar</h1>
-        <form class="form" method="post" action="/logging">
+        <form class="form" id="login">
           <div class="input-group success">
             <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" required />
             <span class="msg" style="display: none">Valid email</span>
           </div>
 
           <div class="input-group error">
             <label for="password">Clave</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" id="password" required />
             <span class="msg" style="display: none">Incorrect password</span>
           </div>
 
@@ -28,5 +28,7 @@
         </form>
       </div>
     </div>
+
+    <script src="/manejo_usuarios/js/login.js"></script>
   </body>
 </html>
