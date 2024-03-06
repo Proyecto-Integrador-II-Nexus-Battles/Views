@@ -1,4 +1,4 @@
-document.getElementById('carta').addEventListener('click', abrir);
+document.getElementById('carta')?.addEventListener('click', abrir);
 
 function abrir() {
     document.getElementById('tipocarta').style.display = 'block';
