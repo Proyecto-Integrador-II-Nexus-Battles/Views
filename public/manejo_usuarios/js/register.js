@@ -15,12 +15,11 @@ function handleSubmit(event) {
     let jsonData = JSON.stringify(data);
     console.log(jsonData);
 
-    fetch('http://localhost:3000/usuario/registro', {
+    fetch('http://localhost:3000/usuario/register', {
         method: 'POST',
         headers: {
-
             'Content-Type': 'application/json',
-
+            'Access-Control-Allow-Methods': 'POST'
         },
         body: jsonData
 
