@@ -12,71 +12,74 @@ body {
 }
 
 /* Estilos navbar */
-header {
-  width: 100%;
-  display: flex;
-  background-color: #d8e9f9;
-  justify-content: space-evenly;
+header{
+width: 100%;
+display: flex;
+background-color: #d8e9f9;
+justify-content: space-between;
 }
 
 header .logo_img {
-  height: 80px;
-  position: absolute;
-  left: 1%;
+height: 80px;
 }
-.nav{
-  display: flex;
-  justify-content: space-evenly;
+
+.nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+width: 100%;
 }
 
 #navbar {
-  height: 60px;
-  background-color: #d8e9f9;
-  padding: 10px;
-  display: flex;
-  justify-content: space-evenly;
+height: 60px;
+background-color: #d8e9f9;
+padding: 10px;
+display: flex;
+justify-content: space-evenly;
+flex-grow: 1;
 }
 
 .opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
+display: flex;
+list-style: none;
+gap: 2.2em;
+margin: 0;
+padding: 0;
 }
 
 .opciones li {
-  display: inline-block;
-  padding-top: 9px;
+display: inline-block;
 }
 
 .opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
+text-decoration: none;
+color: black;
+font-size: 20px;
+}
+
+.cerrar-sesion {
+margin-left: auto; /* Este estilo coloca el botón en la esquina derecha */
 }
 
 #login_btn {
-  font-size: 20px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  position: relative;
-  left: 200px;
-  top: 20px;
+font-size: 20px;
+background-color: #a3b7dc;
+border: transparent;
+border-radius: 5px;
+padding: 10px;
+cursor: pointer;
 }
+
 #login_btn:hover {
-  background-color: #304c8b;
-  color: white;
+background-color: #304c8b;
+color: white;
 }
 
 .abrir-btn {
-  display: none;
+display: none;
 }
-/* Vitrina de productos */
-
+/* Main */
 main {
   display: flex;
   justify-content: center;
@@ -84,35 +87,39 @@ main {
 
 /* Vitrina de productos */
 .container_general {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Filas para el botón, cartas y paginación */
   position: relative;
   width: 70%;
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   margin-top: 10px;
   padding-bottom: 30px;
-  padding-top: 70px;
+  padding-top: 20px; /* Ajustado para dar espacio al botón */
   border-radius: 14px;
 }
 
 .agregar {
-  z-index: 1;
-  position: absolute;
+  margin-bottom: 10px; /* Ajuste para dar espacio entre el botón y las cartas */
+  width: 100px;
   border: transparent;
-  top:2%;
-  right: 8%;
-  font-size: 20px;
   width: 200px;
   height: 40px;
+  font-size: 20px;
+  margin-left: 8%;
+  margin-bottom: 30px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
 .agregar:hover{
   background-color: #304c8b;
   color: white;
 }
 
-/* Estilos de las cartas/productos */
+.list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
-/* Carta */
 .card {
   border: 1px solid #9e9e9e;
   border-radius: 14px;
@@ -127,18 +134,9 @@ main {
   margin-top: -10px;
 }
 
-.informacion_carta {
-  margin-left: 5px;
-}
-
-.informacion_carta p {
-  font-size: 9px;
-  font-weight: bold;
-}
-
-#imagen_carta {
-  width: 200px;
-  height: 110px;
+.imagen_carta {
+  width: 250px;
+  height: 150px;
   overflow: hidden;
   background-color: red;
   border-radius: 14px 14px 0 0;
@@ -150,6 +148,13 @@ main {
   display: block;
   border-radius: 13px 13px 0 0;
 }
+
+.informacion_carta p {
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 10px;
+
+}
 #nombre{
   display: flex;
   justify-content: space-between;
@@ -158,20 +163,20 @@ main {
 }
 #nombre p{
   margin-top: 5px;
-  font-size: 10px;
+  font-size: 15px;
 }
 .heroe{
   height:30px;
-  margin-right: 10px;
+  margin-right:10px;
 }
-
 .modificar {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end; /* Cambiado a 'flex-end' */
   gap: 10px;
   margin-right: 10px;
   margin-top: 10px;
 }
+
 .modificar button {
   border: transparent;
   background-color: #a3b7dc;
@@ -180,39 +185,22 @@ main {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   cursor: pointer;
 }
+
 .modificar button:hover {
   background-color: #304c8b;
   color: white;
 }
 
-/* paginacion */
-
-.list {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
 .paginas {
-  margin-top: 10px;
-  bottom: 20px;
-
   text-align: center;
+  margin-top: 10px;
 }
-.flecha {
+
+.flecha, .paginacion, .paginacionuno {
   background: none;
   border: none;
 }
-.paginacion {
-  background: none;
-  border: none;
-}
-.paginacionuno {
-  background: none;
-  border: none;
-  color: red;
-}
+
 .listPage {
   display: flex;
   padding: 5px;
@@ -220,8 +208,8 @@ main {
   text-align: center;
   list-style: none;
 }
+
 .listPage li {
-  background: none;
   padding: 5px;
   margin: 0 10px;
   cursor: pointer;
@@ -232,19 +220,35 @@ main {
   border: transparent;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
-.listPage li:hover{
+
+.listPage li:hover {
   background-color: #304c8b;
   color: white;
 }
+
 .active {
   color: red;
 }
 
-@media screen and (max-width:1458px) and (min-width:1400px){
-  #login_btn{
-    left: 100px;
+@media  screen and (max-width:1687px) {
+  .container_general{
+    width: 90%;
+  }
+  .agregar{
+    margin-left: 10%;
   }
 }
+
+@media (width<=1600px){
+  .imagen_carta {
+    width: 210px;
+    height: 130px;
+  }
+  .informacion_carta p{
+    font-size: 10px;
+  }
+}
+
 @media screen and (max-width:1399px) and (min-width:1300px){
   #login_btn{
     left: 80px;
@@ -261,4 +265,44 @@ main {
   .container_general{
     height: 500px;
   }
+}
+/* Media Query para pantallas más pequeñas */
+@media screen and (max-width: 1000px) {
+  .nav {
+    flex-direction: row; /* Cambia la dirección de la flexbox a columna para pantallas más pequeñas */
+  }
+
+  #navbar {
+    display: none; /* Oculta la barra de navegación en pantallas pequeñas */
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .abrir-btn {
+    display: inline-block;
+    cursor: pointer;
+    height: 50px;
+  }
+
+  .opciones {
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #d8e9f9;
+    display: none;
+  }
+
+  .opciones.active {
+    display: flex;
+  }
+
+  .opciones li {
+    padding: 10px;
+    width: 100%;
+  }
+
 }
