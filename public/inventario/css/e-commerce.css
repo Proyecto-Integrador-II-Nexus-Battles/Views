@@ -250,24 +250,30 @@ main {
 }
 
 @media screen and (max-width:1399px) and (min-width:1300px){
-  #login_btn{
-    left: 80px;
+  .agregar{
+    font-size: 15px;
+    height: 30px;
   }
-  #imagen_carta {
+  .imagen_carta{
+    width: 200px;
+    height: 100px;
+  }
+  .botones button{
+    font-size: 10px;
+  } 
+
+}
+@media (width:1280px){
+  .imagen_carta{
     width: 180px;
     height: 100px;
   }
-  .paginas {
-    position: relative;
-    top: -119%;
-    right:50px;
-  }
-  .container_general{
-    height: 500px;
+  .informacion_carta p{
+    font-size: 9px;
   }
 }
 /* Media Query para pantallas más pequeñas */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .nav {
     flex-direction: row; /* Cambia la dirección de la flexbox a columna para pantallas más pequeñas */
   }
@@ -303,6 +309,16 @@ main {
   .opciones li {
     padding: 10px;
     width: 100%;
+  }
+
+}
+@media screen and (max-width:375px) and (min-width:360px)
+{
+  .container_general{
+    background: transparent;
+  }
+  .card{
+    margin-left: 5px;
   }
 
 }
