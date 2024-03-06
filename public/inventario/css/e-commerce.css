@@ -90,7 +90,7 @@ main {
   display: grid;
   grid-template-rows: auto 1fr auto; /* Filas para el botón, cartas y paginación */
   position: relative;
-  width: 70%;
+  width: 60%;
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   margin-top: 10px;
   padding-bottom: 30px;
@@ -150,7 +150,7 @@ main {
 }
 
 .informacion_carta p {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: bold;
   padding-left: 10px;
 
@@ -163,7 +163,7 @@ main {
 }
 #nombre p{
   margin-top: 5px;
-  font-size: 15px;
+  font-size: 9px;
 }
 .heroe{
   height:30px;
@@ -239,13 +239,16 @@ main {
   }
 }
 
-@media (width<=1600px){
+@media (width<=1680px){
   .imagen_carta {
     width: 210px;
     height: 130px;
   }
   .informacion_carta p{
     font-size: 10px;
+  }
+  .container_general{
+    width: 60%;
   }
 }
 
@@ -261,6 +264,9 @@ main {
   .botones button{
     font-size: 10px;
   } 
+  .container_general{
+    width: 50%;
+  }
 
 }
 @media (width:1280px){
