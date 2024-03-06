@@ -16,7 +16,7 @@ login.addEventListener('submit', async (event) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // Include any required authorization headers (consult API documentation)
+
             },
             body: JSON.stringify(jsonData),
         });
@@ -24,10 +24,10 @@ login.addEventListener('submit', async (event) => {
         if (response.ok) {
             console.log('holis')
         } else {
-            // Handle login failure (e.g., display error message)
+
         }
     } catch (error) {
-        // Handle network errors or other exceptions
+
         console.error('Error submitting login form:', error);
     }
 })
