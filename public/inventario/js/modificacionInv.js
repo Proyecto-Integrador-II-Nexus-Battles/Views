@@ -1,6 +1,6 @@
-function modificacionCarta(){
+function modificacionCarta() {
     window.location.href = "/modificacionCarta";
-}
+  }
 const defaultFIle = "../Imagenes/Frostfang.jpg";
 const img = document.getElementById('imagen');
 const file = document.getElementById('pic');

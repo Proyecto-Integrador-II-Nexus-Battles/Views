@@ -243,4 +243,7 @@ export const defaultR5 = (req, res) => {
 export const defaultR3 = (req, res) => {
   res.render("inventario/modificacionCarta");
 };
+export const defaultR6 = (req, res) => {
+  res.render("inventario/modificacionCartaDescripcion");
+};
 

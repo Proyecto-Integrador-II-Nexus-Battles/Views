@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(../imagenes/fondo-modificacion.jpeg);
+    background-image: url(../Imagenes/fondo-modificacion.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 50px;
@@ -69,6 +69,10 @@ header {
     height: 100px;
 }
 
+.logo {
+    height: 100px;
+}
+
 .close {
     height: 50px;
     border: none;
@@ -96,12 +100,18 @@ header {
     transition: transform 0.8s ease;
     font-size: 5px;
     margin-bottom: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     background-color: white;
+    display: flex;
+    align-items: center;
 }
 
 .informacion_carta {
     margin-left: 5px;
+    padding-right: 10px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .informacion_carta p {
@@ -119,15 +129,9 @@ header {
     margin-top: 1px;
 }
 
-.imagen_carta
-{
-    display: flex;
-    flex-direction: column;
-}
-
 .personaje 
 {
-    height: 310px;
+    height: 400px;
     background-size: cover;
     border-radius: 13px 13px 0 0;
 }
@@ -158,109 +162,31 @@ header {
 
 .container-buttons{
     display: flex;
-    margin-left: 100px;
-}
-.informacion_carta {
-    margin-left: 5px;
-    display: flex;
-    flex-direction: column;
+    margin-left: 120px;
+    margin-top: 10px;
 }
 
-.informacion_carta p {
-    font-size: 15px;
-    font-weight: lighter;
-    font-weight: bold;
+h2{
+    font-size: 1.5rem;
+    margin: 1rem;
 }
 
-#nombre
-{
-    font-weight: bolder;
+h3{
+    font-size: 16px;
+    margin-left: 1rem;
+    margin-right:1rem ;
+    margin-bottom: 58.2%;
+}
+.textarea-container{
+    text-align: center;
 }
 
-.nombre
-{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
+textarea{
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+
 }
-
-.nombre input
-{
-    border: transparent;
-    padding-left: 5px;
-}
-
-.informacion_carta .stats_card {
-    list-style: none;
-    margin-top: 5px;
-}
-
-.stats_card li {
-    font-size: 19px;
-    margin-top: 1px;
-}
-
-.imagen_carta
-{
-    display: flex;
-    flex-direction: column;
-}
-
-@media screen and (max-width: 768px) {
-    .container_productos {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    
-    .card {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    .siguiente {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-    }
-    
-    .guardar-cambios {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }
-
-    .contenedor-guardar{
-        justify-content: center;
-    }
-}
-
-
-#nombre-tipo
-{
-    font-weight: bolder;
-}
-
-.nombre-tipo
-{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    padding-right: 1rem;
-}
-
-.nombre-tipo input
-{
-    border: transparent;
-    padding-left: 5px;
-}
-
-select{
-    border: 0px;
-}
-
-
-
-
-
-
-  
