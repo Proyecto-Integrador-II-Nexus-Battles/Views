@@ -11,188 +11,184 @@
     background-attachment: fixed;
   }
   
-  /* Estilos navbar */
-  header {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #d8e9f9;
-    margin-right: 9%;
-  }
+ /* Estilos navbar */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #18233F;
+  margin-right: 9%;
+}
+
+header .logo_img{
+width: 70px;
+}
+
+#navbar {
+  height: 60px;
+  background-color: #18233F;
+}
+
+.opciones {
+  display: flex;
+  list-style: none;
+  padding-top: 9px;
+  gap: 2.2em;
+  margin-left: 10px;
+}
+
+.opciones li {
+  display: inline-block;
+  padding-top: 9px;
+}
+
+.opciones li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+.opciones li button {
+  font-size: 24px;
+  height: 90%;
+  width: 110px;
+  cursor: pointer;
+  margin-right: 1%;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.abrir-btn{
+  display: none;
+}
+
+.logo {
+  height: 100px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.close {
+  height: 50px;
+  border: none;
+  width: 100px;
+}
+
+/* Estilos de las cartas/productos */
+.container_productos {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  background-color: transparent;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+/* Carta */
+.card {
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgb(0, 0, 0);
+  transition: transform 0.8s ease;
+  font-size: 5px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.informacion_carta {
+  margin-left: 5px;
+  padding-right: 10px;
+  padding-left: 5px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.informacion_carta p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.informacion_carta .stats_card {
+  list-style: none;
+  margin-top: 5px;
+}
+
+.stats_card li {
+  font-size: 19px;
+  margin-top: 1px;
+}
+
+.personaje 
+{
+  height: 400px;
+  background-size: cover;
+  border-radius: 13px 13px 0 0;
+}
+
+.siguiente {
   
-  header .logo_img {
-    width: 70px;
-  }
-  
-  #navbar {
-    height: 60px;
-    background-color: #d8e9f9;
-    padding: 10px;
-  }
-  
-  .opciones {
-    display: flex;
-    list-style: none;
-    padding-top: 9px;
-    gap: 2.2em;
-    margin-left: 10px;
-  }
-  
-  .opciones li {
-    display: inline-block;
-    padding-top: 9px;
-  }
-  
-  .opciones li a {
-    text-decoration: none;
-    color: black;
-    font-size: 24px;
-  }
-  
-  .opciones li button {
-    font-size: 24px;
-    height: 90%;
-    width: 200px;
-    cursor: pointer;
-    margin-right: 1%;
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    margin-top: 2px;
-  }
-  
-  .abrir-btn {
-    display: none;
-  }
-  
-  .logo {
-    height: 100px;
-  }
-  
-  .close {
-    height: 50px;
-    border: none;
-    width: 100px;
-  }
-  
-  /* Estilos de las cartas/productos */
-  .container_productos {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    /* background:linear-gradient(45deg,#304b8b88, #a3b7dc7b, #d8e9f97b); */
-    padding-top: 1rem;
-    padding-bottom: 4rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    /* box-shadow: 0 5px 25px rgb(0, 0, 1); */
-    border-radius: 14px;
-  }
-  /* Carta */
-  .card {
-    border: 1px solid #9e9e9e;
-    border-radius: 14px;
-    box-shadow: 0 5px 25px rgb(0, 0, 0);
-    transition: transform 0.8s ease;
-    font-size: 5px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    background-color: white;
-    width: 350px;
-    height: 700px;
-  }
-  
-  .informacion_carta {
-    margin-left: 5px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .informacion_carta p {
-    font-size: 15px;
-    font-weight: lighter;
-  }
-  
-  .nombre {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-  }
-  
-  .nombre input {
-    border: transparent;
-    padding-left: 5px;
-  }
-  .nombre select {
-    border: transparent;
-    position: relative;
-  }
-  
-  .informacion_carta .stats_card {
-    list-style: none;
-    margin-top: 5px;
-  }
-  
-  .stats_card li {
-    font-size: 19px;
-    margin-top: 1px;
-  }
-  
-  .imagen_carta {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    height: 350px;
-  }
-  
-  .personaje {
-    height: 100%;
-    border-radius: 13px 13px 0 0;
-  }
-  
-  .botones {
-    display: flex;
-    justify-content: end;
-    gap: 3em;
-    margin-right: 10px;
-    margin-top: 15px;
-  }
-  
-  .siguiente {
-    font-size: 1.2rem;
-    background-color: #a3b7dc;
-    border: none;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  .siguiente:hover {
-    background-color: #304c8b;
-    color: white;
-  }
-  .guardar-cambios {
-    font-size: 1.5rem;
-    background-color: #789dca;
-    border: none;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 310px;
-    position: absolute;
-    bottom: 4.5rem;
-    left: 60%;
-    bottom: 10%;
-    margin-bottom: -25px;
-  }
-  
-  .flecha {
-    z-index: 1;
-    position: absolute;
-  }
+  font-size: 1.2rem;
+  background-color: #a3b7dc;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.guardar-cambios {
+  font-size: 1.2rem;
+  background-color: #a3b7dc;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.container-buttons{
+  display: flex;
+  margin-left: 120px;
+  margin-top: 10px;
+}
+
+h2{
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+h3{
+  font-size: 16px;
+  margin-left: 1rem;
+  margin-right:1rem ;
+  margin-bottom: 58.2%;
+}
+.textarea-container{
+  text-align: center;
+}
+
+textarea{
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+
+}
   
   @media screen and (max-width: 1680px) {
     /* Carta */

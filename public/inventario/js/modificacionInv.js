@@ -11,6 +11,7 @@ function listenerInput(event) {
     img.src = url;
 }
 
+
 file.addEventListener('change', listenerInput);
 
 function navRouter(rute) {
