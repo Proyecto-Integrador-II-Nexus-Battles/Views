@@ -2,9 +2,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 export const defaultR = async (req, res) => {
-  const dataResponse = await fetch('http://localhost:3000/getAllCards');
-  const data = await dataResponse.json();
-  res.render("inventario/index",{data});
+  // const dataResponse = await fetch('http://localhost:3000/getAllCards');
+  // const data = await dataResponse.json();
+  // res.render("inventario/index",{data});
 };
 
 export const defaultR2 = (req, res) => {

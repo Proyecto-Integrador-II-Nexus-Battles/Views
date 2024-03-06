@@ -154,10 +154,11 @@ main {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+
 }
 #nombre p{
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 10px;
 }
 .heroe{
   height:30px;
@@ -239,3 +240,25 @@ main {
   color: red;
 }
 
+@media screen and (max-width:1458px) and (min-width:1400px){
+  #login_btn{
+    left: 100px;
+  }
+}
+@media screen and (max-width:1399px) and (min-width:1300px){
+  #login_btn{
+    left: 80px;
+  }
+  #imagen_carta {
+    width: 180px;
+    height: 100px;
+  }
+  .paginas {
+    position: relative;
+    top: -119%;
+    right:50px;
+  }
+  .container_general{
+    height: 500px;
+  }
+}
