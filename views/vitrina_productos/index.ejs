@@ -81,25 +81,6 @@
       <div class="container_productos">
         <div class="list">
 
-        <% for (var i = 0; i < datos.length; i++) { %>
-        <div class="card" >
-          <div class="imagen_carta">
-            <img src=<%= datos[i].imagen %> class="personaje" onclick="vistaDetallada()">>
-            <p id="precio">$80000</p>
-          </div>
-          <div class="informacion_carta">
-            <p><%= datos[i].nombre %></p>
-            <p>Poder: <%= datos[i].poder %></p>
-            <p>Vida: <%= datos[i].vida %></p>
-            <p>Defensa: <%= datos[i].defensa %></p>
-            <p>Ataque: <%= datos[i].ataque %></p>
-            <p>Daño: <%= datos[i].dano %></p>
-            <br><hr>
-            <p>Daño efectivo: 4</p>
-            <span onclick="envioID('<%= datos[i].id %>')">&#9829</span>
-            <span class="carrito">&#128722;</span>
-          </div>
-
             <% for (var i = 0; i < datos.length; i++) { %>
                 <% if (datos[i].TypeCard === "Hero") { %>
                     <div class="card">
@@ -122,7 +103,6 @@
                     </div>
                 <% } %>
             <% } %>
-
         </div>
     </div>
 
