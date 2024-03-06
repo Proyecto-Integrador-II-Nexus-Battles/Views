@@ -246,4 +246,7 @@ export const defaultR3 = (req, res) => {
 export const defaultR6 = (req, res) => {
   res.render("inventario/modificacionCartaDescripcion");
 };
+export const defaultR7 = (req, res) => {
+  res.render("inventario/jugarOnline");
+};
 
