@@ -134,11 +134,10 @@ main {
   margin-top: -10px;
 }
 
-.imagen_carta {
-  width: 250px;
-  height: 150px;
+#imagen_carta {
+  width: 160px;
+  height: 110px;
   overflow: hidden;
-  background-color: red;
   border-radius: 14px 14px 0 0;
 }
 
@@ -265,7 +264,7 @@ main {
     font-size: 10px;
   } 
   .container_general{
-    width: 50%;
+    width: 60%;
   }
 
 }
