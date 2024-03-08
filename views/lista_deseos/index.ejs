@@ -72,33 +72,31 @@
         </form>
       </div>
       <!-- CARTAS -->
-      <div class="container_productos">>
+
+      <div class="container_productos">
+        <% products.forEach(function(item) { %>
         <div class="card">
           <div class="imagen_carta">
             <img src="img/carta.png" class="personaje">
-        </div>
-        
-        <div class="informacion_carta">
-          <p>Cedric Cogswell</p>
-          <p>Poder</p>
-          <p>Vida:</p>
-          <p>Defensa:</p>
-          <p>Ataque:</p>
-          <p>Daño:</p>
-              
-          <div class="rectangulo">
-            <div class="mover-carrito">
+          </div>
+          <div class="informacion_carta">
+            <p><%= item.nombre %></p>
+            <p>Poder</p>
+            <p>Vida:</p>
+            <p>Defensa:</p>
+            <p>Ataque:</p>
+            <p>Daño:</p>
+            <div class="rectangulo">
+              <div class="mover-carrito">
                 <p>Mover al carrito</p>
-            </div>
-          <% products.forEach(function(item) { %>
-          <div class="eliminar">
-            <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
-          </div>
-          <% }); %>
+              </div>
+              <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
             
-          </div>
+            </div>
           </div>
         </div>
+        <% }); %>
+
       </div>
   </main>
       <!-- Cartas -->
@@ -132,16 +130,6 @@
 
 <!-- peticiones de la base de datos para la funcion de eliminar carta -->
 <div class="card-container">
-    
-
-  <% products.forEach(function(item) { %>
-  <ul id="item-<%= item.id %>">
-      <li><%= item.nombre %></li>
-      <li><%= item.precio %></li>
-      <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
-  </ul>
-  <% }); %>
-  
 
 </div>
 
@@ -151,7 +139,7 @@ function eliminar(item_id) {
   const xhr = new XMLHttpRequest();
 
   // Configurar la solicitud
-  xhr.open('POST', 'http://172.24.112.1:3000/lista_deseos/eliminar/' + item_id, true);
+  xhr.open('POST', 'http://192.168.1.17:3001/lista_deseos/eliminar/' + item_id, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
 
   // Definir el callback para manejar la respuesta
