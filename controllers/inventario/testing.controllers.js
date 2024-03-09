@@ -1,5 +1,5 @@
-import path from "path";
-import { fileURLToPath } from "url";
+//import path from "path";
+//import { fileURLToPath } from "url";
 
 // export const defaultR = async (req, res) => {
 //   const dataResponse = await fetch('http://localhost:3000/getAllCards');

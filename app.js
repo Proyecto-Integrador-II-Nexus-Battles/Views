@@ -1,27 +1,41 @@
-import express from "express";
-import testingRoutes from "./routes/inventario/testing.routes.js";
-import { PORT } from "./config.js";
-import { fileURLToPath } from "url";
-import * as path from "path";
-import bodyParser from "body-parser";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const express = require('express');
+const mongoose = require("mongoose");
+require("dotenv").config();
+const heroRoutes = require("./routes/inventario/hero");
+const itemsRoutes = require("./routes/inventario/items");
+const weaponsRoutes = require("./routes/inventario/weapons");
+const epicsRoutes = require("./routes/inventario/epics");
+const armorsRoutes = require("./routes/inventario/armors");
+const cors = require('cors')
 
-const app = express();
+const app = express(); 
+const port =  process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, "public")));
+//middleware
+app.use(cors())
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(heroRoutes);
+app.use(itemsRoutes);
+app.use(epicsRoutes);
+app.use(weaponsRoutes);
+app.use(armorsRoutes);
 
-app.use(testingRoutes);
 
-app.use((req, res) => {
-    res.status(404).json({
-        message: "Endpoint not found",
-    });
-});
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-app.listen(PORT);
-console.log(`Server is running on port ${PORT}`);
+//permite la consulta desde cualquier dominio
+
+
+
+//PARA LAS OSLICITUDES
+//CUANDO SOLICITEN LA RUTA , QUIERO QUE RESOPNDA UN TEXTO QUE DIGA PONG
+
+
+//mongodb connection, devuelve un mensaje si se realiza la coneccion ademas del puerdo que se usa
+mongoose
+.connect(process.env.MONGODB_URI)
+.then(() => console.log('conected to Mongodb atlas'))
+.catch((error => console.error(error))); 
+
+app.listen(port, () => console.log('server listering on port', port));
+
+
