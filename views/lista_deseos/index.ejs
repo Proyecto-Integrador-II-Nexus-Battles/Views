@@ -138,7 +138,7 @@ function eliminar(item_id) {
   // Crear instancia de XMLHttpRequest
   const xhr = new XMLHttpRequest();
 
-  // Configurar la solicitud
+  // Configurar la solicitud  //Tengo que revisar si se puede hacer con process sino me toca ir a controler y añadirlo como variable dentro de la funcion y colocarlo aca como variabole ejs
   xhr.open('POST', 'http://192.168.1.17:3001/lista_deseos/eliminar/' + item_id, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
 
