@@ -137,10 +137,14 @@
 function eliminar(item_id) {
   // Crear instancia de XMLHttpRequest
   const xhr = new XMLHttpRequest();
-
-  // Configurar la solicitud  //Tengo que revisar si se puede hacer con process sino me toca ir a controler y añadirlo como variable dentro de la funcion y colocarlo aca como variabole ejs
-  xhr.open('POST', 'http://192.168.1.17:3001/lista_deseos/eliminar/' + item_id, true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
+  const url = process.env.WHIS_URL;
+  if (!url) {
+    console.error('La variable WHIS_URL no esta definida')
+  }
+  else {
+    xhr.open('POST', `${url}/lista_deseos/eliminar/${item_id}`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+  }
 
   // Definir el callback para manejar la respuesta
   xhr.onload = function() {

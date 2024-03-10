@@ -4,22 +4,14 @@ import axios from 'axios';
 
 // Funcion de llamar a mis cartas de lista de deseos  //process.env.WISH_URL para cambiar la IP añadido como variable 
 export const listaDeseos = async (req, res) => { 
-  const respuesta = await axios.post('http://192.168.1.17:3001/lista_deseos', {user_id : 15}); //conexion con el back
-  res.render('lista_deseos/index.ejs', { title: 'Lista de Deseos', user: {id : 15}, products: respuesta.data});
-  console.log(respuesta.data)  //user: req.session.user, products: rows sesion de usuarios
+  const url = process.env.WHIS_URL; // Utiliza la variable de entorno si está definida
+  if (!url) {
+    // Manejar el caso en que la variable de entorno no esté definida
+    console.error('La variable de entorno WISH_URL no está definida');
+    return res.status(500).send('Error interno del servidor');
+  }
+  const respuesta = await axios.post(`${url}/lista_deseos`, {user_id: 15}); // Conexión con el backend
+  res.render('lista_deseos/index.ejs', { title: 'Lista de Deseos', user: {id: 15}, products: respuesta.data});
+  console.log(respuesta.data); //user: req.session.user, products: rows sesion de usuarios
 };
 
-
-
-/* export const informacionCarta = async (req, res) => {
-  try{
-    const respuesta = await axios.get('http://172.24.112.1:3000/lista_deseos', {user_id:15});
-    const datos = respuesta.data;
-
-    res.render('lista_deseos/index.ejs', { title: 'Lista de Deseos', user: {id : 15}, datos: respuesta.data}); 
-    
-  } catch (error) {
-    console.error('Error obteniendo la informacion del servidor', error);
-    res.status(500).send('Error al obtener datos del servidor');
-    }
-}; */
