@@ -79,15 +79,15 @@ function ValidarFecha() {
 
 function ValidarNombreUsuario() {
     const inputUsuario = document.getElementById('username')
-
-    fetch('ApodosInhabilitados.json')
-        .then(function (res){
+    console.log('hola')
+    fetch('../ApodosInhabilitados.json')
+        .then(function (res) {
             return res.json();
         })
-        .then(function(data){
+        .then(function (data) {
             let flag = false;
             let value = inputUsuario.value.replace(/\s/g, "").toLowerCase();
-            data.forEach(function(nombre){
+            data.forEach(function (nombre) {
                 if (value.includes(nombre.name.toLowerCase())) {
                     flag = true;
                 }
@@ -98,7 +98,7 @@ function ValidarNombreUsuario() {
                 inputUsuario.setCustomValidity("");
             }
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error('Error al cargar el JSON:', error);
         });
 }

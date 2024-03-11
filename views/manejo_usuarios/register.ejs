@@ -29,7 +29,7 @@
                 name="apellido"
                 id="apellido"
                 maxlength="50"
-                oninput="LimitarCaracteres(event)"
+                oninput="ValidarNombreUsuario()"
                 required
               />
               <label for="username">Apodo</label>
@@ -39,6 +39,7 @@
                 id="username"
                 maxlength="50"
                 required
+                oninput="(event)"
               />
               <p>
                 Este apodo se mostrará en el juego. <br />El apodo no puede ser
@@ -185,7 +186,9 @@
             value="REGISTRAR"
             class="btn_submit"
             id="submit"
-          ></button>
+          >
+            REGISTRAR
+          </button>
         </form>
         <img src="/manejo_usuarios/img/logo_nb2_v2.png" />
       </div>

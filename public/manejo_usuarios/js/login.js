@@ -1,36 +1,28 @@
-import { extractTokenFromHeader, setCookie } from "./cookieManager";
+let form = document.querySelector('form')
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
+form.addEventListener('submit', handleSubmit);
 
-login.addEventListener("submit", async (event) => {
+
+function handleSubmit(event) {
+
   event.preventDefault();
+  let formData = new FormData(form);
+  console.log(formData);
+  let data = Object.fromEntries(formData);
+  console.log(data);
+  let jsonData = JSON.stringify(data);
+  console.log(jsonData);
 
-  console.log(email);
-  const jsonData = {
-    email,
-    password,
-  };
+  fetch('http://localhost:3000/usuario/logIn', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Methods': 'POST'
+    },
+    body: jsonData
 
-  try {
-    const response = await fetch("/logging", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(jsonData),
-    });
+  }).then(res => res.json())
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
 
-    if (response.ok) {
-      const token = extractTokenFromHeader(
-        response.headers.get("Authorization")
-      );
-      setCookie("webToken", token, 1);
-      window.location.href = "/";
-    } else {
-      console.error("Error submitting login form:", response);
-    }
-  } catch (error) {
-    console.error("Error submitting login form:", error);
-  }
-});
+}

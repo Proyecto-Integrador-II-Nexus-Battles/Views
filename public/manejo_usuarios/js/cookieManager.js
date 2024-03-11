@@ -1,5 +1,5 @@
 // Una función para poner un token en una cookie HTTP-only
-function setCookie(name, value, days) {
+export function setCookie(name, value, days) {
   let expires = "";
   if (days) {
     const date = new Date();
@@ -31,9 +31,9 @@ function getCookie(name) {
 }
 
 //Extrae el token del header de autorización y lo retorna
-function extractTokenFromHeader(authorizationHeader) {
+export function extractTokenFromHeader(authorizationHeader) {
   const token = authorizationHeader.split(" ")[1];
   return token;
 }
 
-module.exports = { setCookie, extractTokenFromHeader };
+// module.exports = { extractTokenFromHeader, setCookie };
