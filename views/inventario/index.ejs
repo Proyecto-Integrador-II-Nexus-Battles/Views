@@ -35,147 +35,22 @@
       <div class="container_general">
         <button class="agregar" onclick="a()">Agregar Carta</button>
         <div class="list">
-          <% for (var i = 0; i < data.length; i++) { %>
-            <% if (data[i].Subtype === "Armas") { %>
-              <div class="card">
-                <div id="imagen_carta">
-                  <img src="/inventario/imagenes/cedric.jpg" class="personaje">
-                </div>
-                <div class="informacion_carta">
-                  <div id="nombre">
-                    <p><%= data[i].Name %></p>
-                    <img src="/inventario/imagenes/espadas.png" class="heroe">
-                  </div>
-                  <p>Poder: <%= data[i].Power %></p>
-                  <p>Vida: <%= data[i].Live %></p>
-                  <p>Defensa: <%= data[i].Defense %></p>
-                  <p>Ataque: <%= data[i].AttackBase %></p>
-                  <p>Daño: <%= data[i].DamageSides %></p>
-                  <div class="botones">
-                    <div class="modificar">
-                      <button>Suspender</button>
-                      <button>Modificar</button>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-            <% } else if (data[i].Subtype === "Tanque") { %> 
-              <div class="card">
-                <div id="imagen_carta">
-                  <img src="/inventario/imagenes/juan camilo.jpeg" class="personaje">
-                </div>
-                <div class="informacion_carta">
-                  <div id="nombre">
-                    <p><%= data[i].Name %></p>
-                    <img src="/inventario/imagenes/blindaje.png" class="heroe">
-                  </div>
-                  <p>Poder: <%= data[i].Power %></p>
-                  <p>Vida: <%= data[i].Live %></p>
-                  <p>Defensa: <%= data[i].Defense %></p>
-                  <p>Ataque: <%= data[i].AttackBase %></p>
-                  <p>Daño: <%= data[i].DamageSides %></p>
-                  <div class="botones">
-                    <div class="modificar">
-                      <button>Suspender</button>
-                      <button>Modificar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% } else if (data[i].Subtype === "Fuego") { %> 
-              <div class="card">
-                <div id="imagen_carta">
-                  <img src="/inventario/imagenes/luminara.jpeg"class="personaje">
-                </div>
-                <div class="informacion_carta">
-                  <div id="nombre">
-                    <p><%= data[i].Name %></p>
-                    <img src="/inventario/imagenes/Fuego.png" class="heroe">
-                  </div>
-                  <p>Poder: <%= data[i].Power %></p>
-                  <p>Vida: <%= data[i].Live %></p>
-                  <p>Defensa: <%= data[i].Defense %></p>
-                  <p>Ataque: <%= data[i].AttackBase %></p>
-                  <p>Daño: <%= data[i].DamageSides %></p>
-                  <div class="botones">
-                    <div class="modificar">
-                      <button>Suspender</button>
-                      <button>Modificar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% }else if (data[i].Subtype === "Hielo") { %> 
-              <div class="card">
-                <div id="imagen_carta">
-                  <img src="/inventario/imagenes/frostfang.jpg" class="personaje">
-                </div>
-                <div class="informacion_carta">
-                  <div id="nombre">
-                    <p><%= data[i].Name %></p>
-                    <img src="/inventario/imagenes/hielo.png" class="heroe">
-                  </div>
-                  <p>Poder: <%= data[i].Power %></p>
-                  <p>Vida: <%= data[i].Live %></p>
-                  <p>Defensa: <%= data[i].Defense %></p>
-                  <p>Ataque: <%= data[i].AttackBase %></p>
-                  <p>Daño: <%= data[i].DamageSides %></p>
-                  <div class="botones">
-                    <div class="modificar">
-                      <button>Suspender</button>
-                      <button>Modificar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% }else if (data[i].Subtype === "Veneno") { %> 
-              <div class="card">
-                <div id="imagen_carta">
-                  <img src="/inventario/imagenes/fabiana.jpeg" class="personaje">
-                </div>
-                <div class="informacion_carta">
-                  <div id="nombre">
-                    <p><%= data[i].Name %></p>
-                    <img src="/inventario/imagenes/veneno.png" class="heroe">
-                  </div>
-                  <p>Poder: <%= data[i].Power %></p>
-                  <p>Vida: <%= data[i].Live %></p>
-                  <p>Defensa: <%= data[i].Defense %></p>
-                  <p>Ataque: <%= data[i].AttackBase %></p>
-                  <p>Daño: <%= data[i].DamageSides %></p>
-                  <div class="botones">
-                    <div class="modificar">
-                      <button>Suspender</button>
-                      <button>Modificar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% }else if (data[i].Subtype === "Machete") { %> 
-              <div class="card">
-                <div id="imagen_carta">
-                  <img src="/inventario/imagenes/picaro_silueta.jpg" class="personaje">
-                </div>
-                <div class="informacion_carta">
-                  <div id="nombre">
-                    <p><%= data[i].Name %></p>
-                    <img src="/inventario/imagenes/machete.png" class="heroe">
-                  </div>
-                  <p>Poder: <%= data[i].Power %></p>
-                  <p>Vida: <%= data[i].Live %></p>
-                  <p>Defensa: <%= data[i].Defense %></p>
-                  <p>Ataque: <%= data[i].AttackBase %></p>
-                  <p>Daño: <%= data[i].DamageSides %></p>
-                  <div class="botones">
-                    <div class="modificar">
-                      <button>Suspender</button>
-                      <button>Modificar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% } %> %> %> %>%>
+          <% for (var i = 0; i < datos.length; i++) { %>
+          <div class="card" >
+            <div class="imagen_carta">
+              <img src=<%= datos[i].imagen %> class="personaje">
+            </div>
+            <div class="informacion_carta">
+              <p><%= datos[i].nombre %></p>
+              <p>Poder: <%= datos[i].poder %></p>
+              <p>Vida: <%= datos[i].vida %></p>
+              <p>Defensa: <%= datos[i].defensa %></p>
+              <p>Ataque: <%= datos[i].ataque %></p>
+              <p>Daño: <%= datos[i].dano %></p>
+            </div>
+          </div>
           <% } %>
+
         </div>
         
         
