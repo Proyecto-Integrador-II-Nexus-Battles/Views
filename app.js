@@ -1,5 +1,6 @@
 import express from "express";
-import testingRoutes from "./routes/vitrina_productos/testing.routes.js";
+import testing2Routes from "./routes/vitrina_productos/testing.routes.js";
+import testingRoutes from "./routes/manejo_usuarios/routes.js";
 import { PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(testingRoutes);
+app.use(testing2Routes);
 
 app.use((req, res) => {
     res.status(404).json({
