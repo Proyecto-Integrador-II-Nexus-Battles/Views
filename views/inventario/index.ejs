@@ -20,7 +20,7 @@
           <li><a href="#" onclick="miCuenta()">Mi cuenta</a></li>
           <li><a href="#">Mi banco</a></li>
           <li><a href="#">Subasta</a></li>
-          <li><a href="#">Jugar online</a></li>
+          <li><a href="/jugarOnline" onclick="jugarOnline()">Jugar online</a></li>
           <li><a href="#">Torneo</a></li>
           <li><a href="#">Resumen Flotante</a></li>
           <li><a href="#">Lista Deseos</a></li>
@@ -30,27 +30,38 @@
     </section>
   </header>
   <!-- Vitrina de productos -->
-  <main>
-          <!-- Cartas -->
-      <div class="container_general">
-        <button class="agregar" onclick="a()">Agregar Carta</button>
-        <div class="list">
-          <% for (var i = 0; i < datos.length; i++) { %>
-          <div class="card" >
-            <div class="imagen_carta">
-              <img src=<%= datos[i].imagen %> class="personaje">
-            </div>
-            <div class="informacion_carta">
-              <p><%= datos[i].nombre %></p>
-              <p>Poder: <%= datos[i].poder %></p>
-              <p>Vida: <%= datos[i].vida %></p>
-              <p>Defensa: <%= datos[i].defensa %></p>
-              <p>Ataque: <%= datos[i].ataque %></p>
-              <p>Daño: <%= datos[i].dano %></p>
-            </div>
+  <main>    
+    
+         <!-- Cartas -->
+         <div class="container_general">
+          <button class="agregar" onclick="a()">Agregar Carta</button>
+          <div class="list">
+              <% for (var i = 0; i < datos.length; i++) { %>
+              <div class="card">
+                  <div class="imagen_carta">
+                      <img src="<%= datos[i].imagen %>" class="personaje">
+                  </div>
+                  <div class="informacion_carta">
+                    <div id="nombre">
+                      <p><%= datos[i].nombre %></p>
+                      <img src="/inventario/imagenes/espadas.png" class="heroe">
+                    </div>
+                      <p>Poder: <%= datos[i].poder %></p>
+                      <p>Vida: <%= datos[i].vida %></p>
+                      <p>Defensa: <%= datos[i].defensa %></p>
+                      <p>Ataque: <%= datos[i].ataque %></p>
+                      <p>Daño: <%= datos[i].dano %></p>
+                      <div class="botones">
+                          <div class="modificar">
+                              <button>Suspender</button>
+                              <button onclick="modificacionCarta()">Modificar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <% } %>
           </div>
           <% } %>
-
         </div>
         
         
@@ -63,10 +74,23 @@
           </div>
       </div>
     </div>
+      <div class="wrapper" id="modal-toast">
+        <div class="toast">
+          <div class="content">
+            <div class="details">
+              <span>ALERTA!</span>
+              <p>Cambios correctamente realizados</p>
+            </div>
+          </div>
+        </div>
+    </div>
   </main>
   <script src="/inventario/js/nav.js"></script>
   <script src="/inventario/js/vistaCrea.js"></script>
   <script src="/inventario/js/paginacion.js"></script>
   <script src="/inventario/js/miCuenta.js"></script>
+  <script src="/inventario/js/modificacionInv.js"></script>
+  <script src="/inventario/js/index.js" type="module"></script>
+  <script src="/inventario/js/jugarOnline.js"></script>
 </body>
 </html>

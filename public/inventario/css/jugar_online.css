@@ -5,13 +5,12 @@
 }
 
 body {
-    background-image: url(../Imagenes/fondo-modificacion.jpeg);
+    background-image: url(../Imagenes/Fondo_online.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 50px;
     background-color: #304C8B;
 }
-
 /* Estilos navbar */
 header {
     width: 100%;
@@ -52,7 +51,7 @@ header {
   .opciones li button {
     font-size: 24px;
     height: 90%;
-    width: 110px;
+    width: 180px;
     cursor: pointer;
     margin-right: 1%;
     border-radius: 10px;
@@ -65,53 +64,45 @@ header {
     display: none;
   }
 
-.logo {
+.logo 
+{
     height: 100px;
 }
 
-.logo {
-    height: 100px;
-}
-
-.close {
+.close 
+{
     height: 50px;
     border: none;
     width: 100px;
 }
-
-/* Estilos de las cartas/productos */
 .container_productos {
     display: flex;
-    justify-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 5rem;
     background-color: transparent;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+
 }
 /* Carta */
 .card {
-    border: 1px solid #9e9e9e;
+    position: relative;
+    border: 0px solid #9e9e9e;
     border-radius: 14px;
     box-shadow: 0 5px 25px rgb(0, 0, 0);
     transition: transform 0.8s ease;
     font-size: 5px;
     margin-bottom: 20px;
-    padding-bottom: 5px;
+    padding-bottom: -5px;
     background-color: white;
+    position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .informacion_carta {
     margin-left: 5px;
-    padding-right: 10px;
-    padding-left: 5px;
-    padding-top: 20px;
-    padding-bottom: 30px;
 }
 
 .informacion_carta p {
@@ -129,64 +120,97 @@ header {
     margin-top: 1px;
 }
 
+.imagen_carta
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.capa-opaca{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  border-radius: 14px;
+}
+
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
 .personaje 
 {
-    height: 400px;
+    height: 600px;
     background-size: cover;
-    border-radius: 13px 13px 0 0;
+    border-radius: 10px;
+    opacity: 100%;
+    display: block;
 }
 
-.siguiente {
-    
-    font-size: 1.2rem;
-    background-color: #a3b7dc;
-    border: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-.guardar-cambios {
-    font-size: 1.2rem;
-    background-color: #a3b7dc;
-    border: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-right: 10px;
+.contenedor-intermedio{
+  width: 350px;
+  background-color:transparent;
+  overflow: hidden;
+  text-align: center;
+  /* margin-right: -20rem;
+  margin-left: -20rem; */
 }
 
-.container-buttons{
-    display: flex;
-    margin-left: 120px;
-    margin-top: 10px;
+.texto-arriba{
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
 }
 
-h2{
-    font-size: 1.5rem;
-    margin: 1rem;
+.imagen-medio{
+  width: 20rem;
+  height: auto;
+  margin-bottom: 9rem;
 }
 
-h3{
-    font-size: 16px;
-    margin-left: 1rem;
-    margin-right:1rem ;
-    margin-bottom: 58.2%;
-}
-.textarea-container{
-    text-align: center;
+.texto-abajo{
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-textarea{
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 12px 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
+.capa-opaca:hover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+  border-radius: 14px;
 
+}
+
+.card:hover{
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .container_productos {
+      justify-content: center; 
+      margin-left: 2rem; 
+      margin-right: 2rem; 
+  }
+
+  .card {
+      margin-right: 20px; 
+      margin-left: 20px; 
+  }
 }

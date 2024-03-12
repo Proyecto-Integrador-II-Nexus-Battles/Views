@@ -241,4 +241,13 @@ export const defaultR4 = (req, res) => {
 export const defaultR5 = (req, res) => {
   res.render("inventario/miCuenta");
 };
+export const defaultR3 = (req, res) => {
+  res.render("inventario/modificacionCarta");
+};
+export const defaultR6 = (req, res) => {
+  res.render("inventario/modificacionCartaDescripcion");
+};
+export const defaultR7 = (req, res) => {
+  res.render("inventario/jugarOnline");
+};
 
