@@ -358,6 +358,15 @@ display: block;
   .search_form .search_input{
     width: 300px;
   }
+
+}
+
+@media (width>=1360px) and (width<=1366px)
+{
+  .imagen_carta
+  {
+    width: 160px;
+  }
 }
 
 @media screen and (max-width:1280px) {
