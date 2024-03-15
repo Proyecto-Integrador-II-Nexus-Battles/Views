@@ -124,30 +124,34 @@
       // Crear instancia de XMLHttpRequest
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', `<%= process.env.WISH_URL %>/lista_deseos/eliminar/${item_id}`, true);
+      // Definir la URL de la solicitud utilizando una variable de entorno
+      const url = `${process.env.WISH_URL}/lista_deseos/eliminar/${item_id}`;
+      xhr.open('POST', url, true);
+
+      // Establecer el encabezado de la solicitud
       xhr.setRequestHeader('Content-Type', 'application/json');
-    
+
       // Definir el callback para manejar la respuesta
       xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          // La solicitud fue exitosa
-          alert('Se elimino correctamente');
-          
-          // Obtener el elemento que deseas eliminar
-    const elementoAEliminar = document.getElementById('carta-'+item_id);
-    
-    // Eliminar el elemento
-    elementoAEliminar.remove();
-    
-        } else {
-          // La solicitud falló
-          alert('No se pudo eliminar correctamente');
-        }
+          if (xhr.status >= 200 && xhr.status < 300) {
+              // La solicitud fue exitosa
+              alert('Se eliminó correctamente');
+
+              // Obtener el elemento que deseas eliminar
+              const elementoAEliminar = document.getElementById('carta-' + item_id);
+
+              // Eliminar el elemento
+              elementoAEliminar.remove();
+          } else {
+              // La solicitud falló
+              alert('No se pudo eliminar correctamente');
+          }
       };
-    
+
       // Enviar la solicitud con los datos
       xhr.send();
     }
+
     </script>
 </body>
 </html>
