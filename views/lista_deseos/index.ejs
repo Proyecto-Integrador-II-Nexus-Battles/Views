@@ -1,170 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <!-- Header -->
   <header>
-    <img src="img/logo.png" class="logo_img" alt="">
-    <!-- Barra de navegación -->
-    <img src="img/hamburguesa_icon.svg" class="abrir-btn" alt="">
-    <nav class="" id="navbar">
-      <ul class="opciones">
-        <li><a href="#">Mi cuenta</a></li>
-        <li><a href="#">Mi banco</a></li>
-        <li><a href="#">Subasta</a></li>
-        <li><a href="#">Jugar online</a></li>
-        <li><a href="#">Torneo</a></li>
-        <li><a href="#">Resumen Flotante</a></li>
-        <li><a href="#">Lista Deseos</a></li>
-        <li><a href="#"><button class="login_btn">Login</button></a></li>
-      </ul>
-    </nav>
+    <section class="nav">
+      <img src="img/logo.png" class="logo_img" alt="">
+      <!-- Barra de navegación -->
+      <img src="img/hamburguesa_icon.svg" class="abrir-btn" alt="">
+      <nav class="" id="navbar">
+        <ul class="opciones">
+          <li><a href="#"">Mi cuenta</a></li>
+          <li><a href="#">Mi banco</a></li>
+          <li><a href="#">Subasta</a></li>
+          <li><a href="#" >Jugar online</a></li>
+          <li><a href="#">Torneo</a></li>
+          <li><a href="#">Resumen Flotante</a></li>
+          <li><a href="#">Lista Deseos</a></li>
+          <li class="cerrar-sesion"><a href="#"><button id="login_btn">Iniciar Sesion</button></a></li>
+        </ul>
+      </nav>
+    </section>
   </header>
   <!-- Vitrina de productos -->
-  <main>
-    <!-- filtros -->
-    <div class="filtros">
-      <h1>Filtros</h1>
-      <form action="">
-        <ul class="tipo_filtros">
-          <!-- filtro precios -->
-          <li>
-            <h2>Precios</h2>
-          </li>
-          <li><select class="seleccionar_precio">
-              <option value="#" disabled selected>Precios</soption>
-              <option value="desc">Mayor a menor</option>
-              <option value="asc">Menor a mayor</option>
-            </select></li>
+  <main>    
+    
+<!-- Cartas -->
 
-          <!-- Tipo de carta -->
-          <li>
-            <h2>Tipo de carta</h2>
-          </li>
-          <li><select class="tipo_carta">
-              <option value="#" disabled selected>Selecciona un tipo</option>
-              <option value="Guerrero Tanque">Guerrero Tanque</option>
-              <option value="Guerrero Armas">Guerrero Armas</option>
-              <option value="Mago fuego">Guerrero fuego</option>
-              <option value="Mago hielo">Guerrero hielo</option>
-              <option value="Picaro veneno">Picaro veneno</option>
-              <option value="Picaro machete">Picaro machete</option>
-            </select></li>
-          <!-- filtro promocion -->
-          <li>
-            <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
-          </li>
-          <input type="submit" id="filtro_input" value="Filtrar">
-        </ul>
-      </form>
-    </div>
-    <div class="container_general">
-      <!--Parte barra de búsqueda  -->
-      <div class="barra_busqueda">
-        <form action="" class="search_form">
-          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35">
-          <img src="img/search_icon.svg" alt="search_icon" class="search_icon">
-        </form>
-      </div>
-      <!-- CARTAS -->
-
-      <div class="container_productos">
-        <% products.forEach(function(item) { %>
+  <div class="container_general">
+    <h3 class="agregar">Mi Lista de Deseos</h3>
+    <div class="list">
+      
+      <% products.forEach(function(item) { %>
         <div class="card">
           <div class="imagen_carta">
-            <img src="img/carta.png" class="personaje">
+            <img src="img/carta.png" class="personaje" />
           </div>
           <div class="informacion_carta">
-            <p><%= item.nombre %></p>
-            <p>Poder</p>
-            <p>Vida:</p>
-            <p>Defensa:</p>
-            <p>Ataque:</p>
-            <p>Daño:</p>
-            <div class="rectangulo">
-              <div class="mover-carrito">
-                <p>Mover al carrito</p>
+            <div id="nombre">
+              <p> <%= item.nombre %> </p>
+              <img src="img/espadas.png" class="heroe" />
+            </div>
+            <p>Poder: </p>
+            <p>Vida: </p>
+            <p>Defensa: </p>
+            <p>Ataque: </p>
+            <p>Daño: </p>
+            <div class="botones">
+              <div class="modificar">
+                <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
+                <button onclick="">Mover al carrito</button>
               </div>
-              <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
-            
             </div>
           </div>
         </div>
-        <% }); %>
-
+      <% }); %>
       </div>
+      <div class="paginas">
+        <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</div>
+  </div>
   </main>
-      <!-- Cartas -->
-
-  <!-- ////////////// -->
-    
-  
-  
+  <script src="js/nav.js"></script>
+  <script src="js/vistaCrea.js"></script>
+  <script src="js/paginacion.js"></script>
+  <script src="js/miCuenta.js"></script>
+  <script src="js/modificacionInv.js"></script>
+  <script src="js/index.js" type="module"></script>
+  <script src="js/jugarOnline.js"></script>
   <script src="js/hamburguer.js"></script>
+
+  <script> 
+    function eliminar(item_id) {
+      // Crear instancia de XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', `http://172.26.240.1:3001/lista_deseos/eliminar/${item_id}`, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      /* const url = process.env.WHIS_URL;
+      if (!url) {
+        console.error('La variable WHIS_URL no esta definida')
+      }
+      else {
+      } */
+    
+      // Definir el callback para manejar la respuesta
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          // La solicitud fue exitosa
+          alert('Se elimino correctamente');
+          
+          // Obtener el elemento que deseas eliminar
+    const elementoAEliminar = document.getElementById('item-'+item_id);
+    
+    // Eliminar el elemento
+    elementoAEliminar.remove();
+    
+        } else {
+          // La solicitud falló
+          alert('No se pudo eliminar correctamente');
+        }
+      };
+    
+      // Enviar la solicitud con los datos
+      xhr.send();
+    }
+    </script>
 </body>
 </html>
-
-<!-- CUADRO DE SEGUIR AL CARRO DE COMPRA -->
-<!-- <aside class="resumen">
-<div class="compra">
-    <h2>Resumen de tus deseos</h2>
-    <hr class="lineados">
-</div>
-<div class="productos">
-    <p>Productos:</p>
-    
-    
-    <hr class="lineados">
-    
-</div>
-<div class="pedido">
-    <button class="realizar" id="checkout"> Ir al carro de compras</button>
-    <p class="añadir">¿Quieres añadir más productos?</p>
-</div>
-</aside> -->
-
-<!-- peticiones de la base de datos para la funcion de eliminar carta -->
-<div class="card-container">
-
-</div>
-
-<script> 
-function eliminar(item_id) {
-  // Crear instancia de XMLHttpRequest
-  const xhr = new XMLHttpRequest();
-  const url = process.env.WHIS_URL;
-  if (!url) {
-    console.error('La variable WHIS_URL no esta definida')
-  }
-  else {
-    xhr.open('POST', `${url}/lista_deseos/eliminar/${item_id}`, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-  }
-
-  // Definir el callback para manejar la respuesta
-  xhr.onload = function() {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      // La solicitud fue exitosa
-      alert('Se elimino correctamente');
-      
-      // Obtener el elemento que deseas eliminar
-const elementoAEliminar = document.getElementById('item-'+item_id);
-
-// Eliminar el elemento
-elementoAEliminar.remove();
-
-    } else {
-      // La solicitud falló
-      alert('No se pudo eliminar correctamente');
-    }
-  };
-
-  // Enviar la solicitud con los datos
-  xhr.send();
-}
-</script>
