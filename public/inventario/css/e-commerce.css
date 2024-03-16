@@ -85,21 +85,21 @@ main {
   justify-content: center;
 }
 
-/* Vitrina de productos */
+/* Vizualizacion del inventario */
 .container_general {
   display: grid;
-  grid-template-rows: auto 1fr auto; /* Filas para el botón, cartas y paginación */
+  grid-template-rows: auto 1fr auto;
   position: relative;
   width: 60%;
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   margin-top: 10px;
   padding-bottom: 30px;
-  padding-top: 20px; /* Ajustado para dar espacio al botón */
+  padding-top: 20px; 
   border-radius: 14px;
 }
 
 .agregar {
-  margin-bottom: 10px; /* Ajuste para dar espacio entre el botón y las cartas */
+  margin-bottom: 10px; 
   width: 100px;
   border: transparent;
   width: 200px;
@@ -164,7 +164,7 @@ main {
   margin-top: 5px;
   font-size: 9px;
 }
-.heroe{
+.foto{
   height:30px;
   margin-right:10px;
 }
