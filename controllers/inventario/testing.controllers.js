@@ -99,9 +99,10 @@ export const defaultR = (req, res) => {
       Type: "Guerrero",
       OnSale: true
     },
+    //ITEMS
     {
       "_id": "I#0001",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/escudo_de_pinchos.jpeg",
       "TypeCard": "Item",
       "Name": "Pincho de escudo",
       "Type": "Guerrero",
@@ -112,7 +113,7 @@ export const defaultR = (req, res) => {
     },
     {
       "_id": "I#0002",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/empuñadura_de_furia.jpeg",
       "TypeCard": "Item",
       "Name": "Empuñadura de furia",
       "Type": "Guerrero",
@@ -166,6 +167,67 @@ export const defaultR = (req, res) => {
       "Subtype": "Tanque",
       "Description": "Explota por 2 el valor en turno causado por cierra sanguiente en el oponente",
       "DamageXBurst": 2,
+      "OnSale": false
+    },
+    //ARMAS
+    {
+      "_id": "A#0001",
+      "imagePath": "String",
+      "TypeCard": "Armor",
+      "Name": "Pesada",
+      "Type": "Guerrero",
+      "Subtype": "Tanque",
+      "DefenseBuff": 4,
+      "OnSale": true
+    },
+    {
+      "_id": "A#0002",
+      "imagePath": "String",
+      "TypeCard": "Armor",
+      "Name": "Media",
+      "Type": "Guerrero",
+      "Subtype": "Armas",
+      "DefenseBuff": 3,
+      "OnSale": false
+    },
+    {
+      "_id": "A#0003",
+      "imagePath": "String",
+      "TypeCard": "Armor",
+      "Name": "Tela",
+      "Type": "Mago",
+      "Subtype": "Fuego",
+      "DefenseBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "A#0004",
+      "imagePath": "String",
+      "TypeCard": "Armor",
+      "Name": "Tela",
+      "Type": "Mago",
+      "Subtype": "Hielo",
+      "DefenseBuff": 1,
+      "OnSale": true
+    },
+    {
+      "_id": "A#0005",
+      "imagePath": "String",
+      "TypeCard": "Armor",
+      "Name": "Media liviana",
+      "Type": "Picaro",
+      "Subtype": "Veneno",
+      "DefenseBuff": 2,
+      "OnSale": false
+    },
+    {
+      "_id": "A#0006",
+      "imagePath": "String",
+      "TypeCard": "Armor",
+      "Name": "Media liviana",
+      "Type": "Picaro",
+      "Subtype": "Machete",
+      "DefenseBuff": 2,
       "OnSale": false
     }
   ];
