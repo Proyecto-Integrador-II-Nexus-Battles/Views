@@ -9,11 +9,11 @@ function handleSubmit(event) {
 
     event.preventDefault();
     let formData = new FormData(form);
-    console.log(formData);
+
     let data = Object.fromEntries(formData);
-    console.log(data);
+
     let jsonData = JSON.stringify(data);
-    console.log(jsonData);
+
 
     fetch('http://localhost:3000/usuario/register', {
         method: 'POST',
