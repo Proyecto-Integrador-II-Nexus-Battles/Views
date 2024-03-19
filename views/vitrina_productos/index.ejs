@@ -56,8 +56,8 @@
               <option value="#" disabled selected>Selecciona un tipo</option>
               <option value="Guerrero Tanque">Guerrero Tanque</option>
               <option value="Guerrero Armas">Guerrero Armas</option>
-              <option value="Mago fuego">Guerrero fuego</option>
-              <option value="Mago hielo">Guerrero hielo</option>
+              <option value="Mago fuego">Mago fuego</option>
+              <option value="Mago hielo">Mago hielo</option>
               <option value="Picaro veneno">Picaro veneno</option>
               <option value="Picaro machete">Picaro machete</option>
             </select></li>
@@ -82,7 +82,7 @@
         <div class="list">
         <% for (var i = 0; i < datos.length; i++) { %>
         <div class="card" >
-          
+
           <div class="imagen_carta">
             <img src=<%= datos[i].imagen %> class="personaje" onclick="vistaDetallada()">>
             <p id="precio">$80000</p>
