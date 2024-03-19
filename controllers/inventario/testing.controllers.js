@@ -229,6 +229,197 @@ export const defaultR = (req, res) => {
       "Subtype": "Machete",
       "DefenseBuff": 2,
       "OnSale": false
+    },
+    //TALENT
+    {
+      "_id": "E#0001",
+      "imagePath": "String",
+      "TypeCard": "Talent",
+      "Name": "Golpe de defensa",
+      "Type": "Guerrero",
+      "Subtype": "Tanque",
+      "EspecialDamageBuff": 4,
+      "NormalAttackBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "E#0002",
+      "imagePath": "String",
+      "TypeCard": "Talent",
+      "Name": "Segundo impulso",
+      "Type": "Guerrero",
+      "Subtype": "Armas",
+      "EspecialLiveBuff": 3,
+      "NormalLiveBuff_WithDice": 4,
+      "OnSale": false
+    },
+    {
+      "_id": "E#0004",
+      "imagePath": "String",
+      "TypeCard": "Talent",
+      "Name": "Luz cegadora",
+      "Type": "Mago",
+      "Subtype": "Fuego",
+      "EspecialDescriptionBuff": "No recibe daño en el siguiente turno",
+      "NormalLiveBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "E#0003",
+      "imagePath": "String",
+      "TypeCard": "Talent",
+      "Name": "Frio concentrado",
+      "Type": "Mago",
+      "Subtype": "Hielo",
+      "EspecialDamageBuff": 2,
+      "NormalDamageDebuff": -1,
+      "NormalDescriptionDebuff": "menos 1 de poder al oponente",
+      "OnSale": true
+    },
+    {
+      "_id": "E#0005",
+      "imagePath": "String",
+      "TypeCard": "Talent",
+      "Name": "Toma y lleva",
+      "Type": "Picaro",
+      "Subtype": "Veneno",
+      "EspecialDescriptionBuff": "Disminuye a la mitad del daño causado por el oponente y se lo retorna",
+      "NormalDamageBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "E#0006",
+      "imagePath": "String",
+      "TypeCard": "Talent",
+      "Name": "Intim_idación sangrienta",
+      "Type": "Picaro",
+      "Subtype": "Machete",
+      "EspecialLiveBuff": 2,
+      "NormalDamageBuff": 1,
+      "OnSale": true
+    },
+    //Weapon
+    {
+      "_id": "W#0001",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Espada de una mano",
+      "Type": "Guerrero",
+      "Subtype": "Tanque",
+      "AttackBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0002",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Espada de dos manos",
+      "Type": "Guerrero",
+      "Subtype": "Armas",
+      "AttackBuff": 1,
+      "OnSale": true
+    },
+    {
+      "_id": "W#0003",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Escudo de dragón",
+      "Type": "Guerrero",
+      "Subtype": "Tanque",
+      "DefenseBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0004",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Piedra de afilar",
+      "Type": "Guerrero",
+      "Subtype": "Armas",
+      "DamageBuff": 2,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0005",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Orbe de manos ardientes",
+      "Type": "Mago",
+      "Subtype": "Fuego",
+      "DamageBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0006",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Fuego fatuo",
+      "Type": "Mago",
+      "Subtype": "Fuego",
+      "DamageBuff": 1,
+      "OnSale": true
+    },
+    {
+      "_id": "W#0007",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Báculo de permafrost",
+      "Type": "Mago",
+      "Subtype": "Hielo",
+      "EnemyDamageNerf": -1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0008",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Venas heladas",
+      "Type": "Mago",
+      "Subtype": "Hielo",
+      "DamageBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0009",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Daga purulenta",
+      "Type": "Picaro",
+      "Subtype": "Veneno",
+      "Rounds": 2,
+      "DamageBuff": 1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0010",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Vision borrosa",
+      "Type": "Picaro",
+      "Subtype": "Veneno",
+      "EnemyDamageNerf": -1,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0011",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Machete vendito",
+      "Type": "Picaro",
+      "Subtype": "Machete",
+      "DamageBuff": 2,
+      "OnSale": false
+    },
+    {
+      "_id": "W#0012",
+      "imagePath": "String",
+      "TypeCard": "Weapon",
+      "Name": "Cierra sangrienta",
+      "Type": "Picaro",
+      "Subtype": "Machete",
+      "Rounds": 2,
+      "DamageBuff": 2,
+      "OnSale": false
     }
   ];
   res.render("inventario/index", { datos });

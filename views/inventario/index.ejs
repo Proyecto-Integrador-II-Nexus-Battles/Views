@@ -51,7 +51,9 @@
           const subtipoIcono = {
             "Hero": "foto",
             "Item": "foto",
-            "Armor": "foto"
+            "Armor": "foto",
+            "Talent": "foto",
+            "Weapon": "foto"
           };
           
           for (let i = 0; i < datos.length; i++) {
@@ -110,7 +112,7 @@
                     %><p>Buff: <%= carta.DefenseBuff %></p><%
                     break;
                   case "Hielo":
-                  %><p>Buff: <%= carta.DefenseBuff %></p><%
+                    %><p>Buff: <%= carta.DefenseBuff %></p><%
                     break;
                   case "Fuego":
                     %><p>Buff: <%= carta.DefenseBuff %></p><%
@@ -123,11 +125,43 @@
                     break;
                 }
                 %>
+              <% } else if (carta.TypeCard === "Weapon") { %>
+                <%
+                switch (carta.Subtype) {
+                  case "Tanque":
+                    %>
+                    <p>Buff: <%= carta.AttackBuff %></p>
+                    <%
+                    break;
+                  case "Veneno":
+                    %><p>Buff: <%= carta.DamageBuff %></p><%
+                    break;
+                  case "Hielo":
+                    %><p>Buff: <%= carta.EnemyDamageNerf %></p>
+                    <p>Buff: <%= carta.DamageBuff %></p>
+                    <%
+                    break;
+                  case "Fuego":
+                    %><p>Buff: <%= carta.DamageBuff %></p><%
+                    break;
+                  case "Armas":
+                    %><p>Poder: <%= carta.AttackBuff %></p>
+                    <%
+                    break;
+                  case "Machete":
+                    %><p>Poder: <%= carta.DamageBuff %></p>
+                    
+                    <%
+                    break;
+                }
+                %>
               <% } %>
             </div>
           </div>
           
           <% } %>
+          
+          
           
           
 <div class="paginas">
