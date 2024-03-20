@@ -132,6 +132,9 @@ main {
   cursor: pointer;
   background-color: white;
   margin-top: -10px;
+  max-width:200px;
+  min-height: 300px;
+  max-height: 350px;
 }
 
 .imagen_carta {
@@ -149,9 +152,10 @@ main {
 }
 
 .informacion_carta p {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: bold;
   padding-left: 10px;
+  margin-top: 1px;
 
 }
 #nombre{
@@ -162,7 +166,7 @@ main {
 }
 #nombre p{
   margin-top: 5px;
-  font-size: 9px;
+  font-size: 13px;
 }
 .foto{
   height:30px;
@@ -170,11 +174,34 @@ main {
 }
 .modificar {
   display: flex;
-  justify-content: flex-end; /* Cambiado a 'flex-end' */
+  justify-content: flex-end; 
   gap: 10px;
   margin-right: 10px;
   margin-top: 10px;
 }
+
+/* CARTAS ITEMS, ARMOS ETC */
+
+#cart {
+  background-color: #2ecc71;
+  text-align: center;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 8px;
+}
+#cart2 {
+  background-color: #d8e9f9;
+  text-align: center;
+  width: 150px;
+  margin-top: 10px;
+  margin-left: 17px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* MODIFICAR */
 
 .modificar button {
   border: transparent;
