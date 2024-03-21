@@ -3,8 +3,8 @@ import { fileURLToPath } from "url";
 
 // export const defaultR = async (req, res) => {
 //   const dataResponse = await fetch('http://localhost:1234/inventario/getAllCards');
-//   const data = await dataResponse.json();
-//   res.render("inventario/index",{data});
+//   const datos = await dataResponse.json();
+//   res.render("inventario/index",{datos});
 // };
 
 export const defaultR = (req, res) => {
@@ -126,7 +126,7 @@ export const defaultR = (req, res) => {
     },
     {
       "_id": "I#0003",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/Anillo_para_piro_exploción.jpeg",
       "TypeCard": "Item",
       "Name": "Anillo para piro-exploción",
       "Type": "Mago",
@@ -137,7 +137,7 @@ export const defaultR = (req, res) => {
     },
     {
       "_id": "I#0004",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/Libro_de_la_ventisca_helada.jpeg",
       "TypeCard": "Item",
       "Name": "Libro de la ventisca helada",
       "Type": "Mago",
@@ -148,7 +148,7 @@ export const defaultR = (req, res) => {
     },
     {
       "_id": "I#0005",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/Veneno_lacerante.jpeg",
       "TypeCard": "Item",
       "Name": "Veneno lacerante",
       "Type": "Picaro",
@@ -160,7 +160,7 @@ export const defaultR = (req, res) => {
     },
     {
       "_id": "I#0006",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/Mancuerna_yugular.jpeg",
       "TypeCard": "Item",
       "Name": "Mancuerna yugular",
       "Type": "Guerrero",
@@ -172,7 +172,7 @@ export const defaultR = (req, res) => {
     //ARMAS
     {
       "_id": "A#0001",
-      "imagePath": "String",
+      "imagePath": "/inventario/imagenes/pesada.jpeg",
       "TypeCard": "Armor",
       "Name": "Pesada",
       "Type": "Guerrero",
@@ -445,4 +445,7 @@ export const defaultR6 = (req, res) => {
 export const defaultR7 = (req, res) => {
   res.render("inventario/jugarOnline");
 };
+export const defaultR8 = (req, res) => {
+  res.render("inventario/creacion_carta_items")
+}
 

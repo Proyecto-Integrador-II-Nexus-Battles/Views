@@ -35,7 +35,7 @@
 <!-- Cartas -->
 
       <div class="container_general">
-        <button class="agregar" onclick="a()">Agregar Carta</button>
+        <button class="agregar" onclick="abrir()">Agregar Carta</button>
         <div class="list">
           <%
           // Mapeo de subtipos a imágenes y tipo de icono
@@ -201,6 +201,14 @@
           </div>
         </div>
     </div>
+    <div id="tipocarta" class="ventana-emergente">
+      <div class="contenido-ventana">
+        <span class="cerrar" onclick="cerrar()">&times;</span>
+        <button onclick="a()">Heroe</button>
+        <button onclick="creacion_carta_items()">Item, Arma, Habilidad</button>
+      </div>
+    </div>
+    
   </main>
   <script src="/inventario/js/nav.js"></script>
   <script src="/inventario/js/vistaCrea.js"></script>
@@ -209,5 +217,7 @@
   <script src="/inventario/js/modificacionInv.js"></script>
   <script src="/inventario/js/index.js" type="module"></script>
   <script src="/inventario/js/jugarOnline.js"></script>
+  <script src="/inventario/js/tipo_crea.js"></script>
+  <script src="/inventario/js/vista_crea_items.js"></script>
 </body>
 </html>

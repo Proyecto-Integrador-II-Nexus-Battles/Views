@@ -238,11 +238,12 @@ textarea{
         font-size: 10px;
       }
   
-      .informacion_carta p {
-        font-size: 12px;
+      h2{
+        font-size: 1rem;
+        margin-top: -3rem;
       }
       .card {
-        margin-top: -25px;
+        margin-top: -100px;
         height: 520px;
         width: 250px;
       }
@@ -268,6 +269,15 @@ textarea{
       }
       .siguiente {
         font-size: 15px;
+      }
+      textarea{
+        width: 60%;;
+        margin-left: 10px;
+        font-size: 10px;
+      }
+      .container-buttons button{
+        font-size: 8px;
+        padding: 10px;
       }
     }
   
