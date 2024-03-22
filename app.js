@@ -22,6 +22,8 @@ app.use((req, res) => {
 });
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(PORT);
-console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server listen on port http://localhost:${PORT}`)
+})
+
 
