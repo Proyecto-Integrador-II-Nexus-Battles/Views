@@ -317,6 +317,9 @@ height: auto;
   width: 500px;
   height: 30px;
 }
+.filtros{
+  margin-left: 5%;
+}
 .tipo_filtros{
   width: 300px;
 }
@@ -529,9 +532,7 @@ display: block;
     margin-left: 40px;
     margin-right: 20px;
   }
-  .barra_busqueda .search_input{
-    margin-left: 60px;
-    }
+
 }
 
 @media screen and (max-width:660px){
@@ -559,8 +560,13 @@ margin-left: 14%;
 width: 70%;
 }
 .barra_busqueda .search_input{
-margin-left: 60px;
 margin-bottom: 90%;
+width: 100%;
+}
+
+.search_form{
+  margin-left: 20px;
+  width: 100%;
 }
 .search_form .search_icon{
   right: 28px;

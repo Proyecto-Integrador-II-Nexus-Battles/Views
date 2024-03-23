@@ -66,7 +66,7 @@ width: 70px;
 }
 /* main */
 .container_general{
-  background-color: #A3B7DC;
+  background:linear-gradient(45deg,#304b8b88, #a3b7dc7b, #d8e9f97b);
   margin-left: 12%;
   margin-right: 10%;
   margin-top: 2%;
