@@ -68,21 +68,96 @@
                             </p>
 
                             <div class="eliminar">
-                                <p class="eliminarx">X</p>
+                                <p class="eliminarx" data-id="<%= cartas[i].CARTA_ID %>">X</p>
                             </div>
 
-                            <div class="rectangulo">
-                                <div class="cantidad">
-                                    <button class="masmenos">-</button>
-                                    <p>
-                                        <%= cartas[i].CANTIDAD%>
-                                    </p>
-                                    <button class="masmenos">+</button>
-                                </div>
-                                <div class="valor">
-                                    <p>$168.000</p>
-                                </div>
-                            </div>
+                            <script>
+                                 document.querySelector('.list').addEventListener('click', async (event) => {
+        if (event.target.classList.contains('eliminarx')) {
+            try {
+                const idCarta = event.target.getAttribute('data-id');
+                await axios.post('http://localhost:4000/carro_compras/DELETE-CARD', { IdUsuario: 1, IdCard: idCarta });
+                console.log('Carta eliminada correctamente');
+
+                const itemToRemove = event.target.closest('.item');
+                itemToRemove.remove();
+
+                // Verificar si la carta eliminada estaba en la primera página
+                if (document.querySelectorAll('.list .item').length < limit && thisPage !== 1) {
+                    // Si hay elementos en la segunda página, mover el primero a la primera página
+                    const secondPageItems = document.querySelectorAll('.list .item');
+                    if (secondPageItems.length > 0) {
+                        const firstItemOfSecondPage = secondPageItems[0];
+                        document.querySelector('.list').prepend(firstItemOfSecondPage);
+                    }
+                }
+
+                // Actualizar automáticamente el HTML
+                loadItem();
+            } catch (error) {
+                console.error('Error al realizar la solicitud:', error);
+            }
+        }
+    });
+                            </script>
+
+<div class="rectangulo">
+    <div class="cantidad">
+        <button class="masmenos menos" data-cartaid="<%= cartas[i].IdCard %>">-</button>
+        <p><%= cartas[i].CANTIDAD %></p>
+        <button class="masmenos mas" data-cartaid="<%= cartas[i].IdCard %>">+</button>
+    </div>
+    <div class="valor">
+        <p>$168.000</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.masmenos');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', async (event) => {
+                const quantityElement = event.target.parentElement.querySelector('p');
+                let quantity = parseInt(quantityElement.innerText);
+
+                // Obtener el ID de la carta asociada al botón clickeado
+                const cartaId = event.target.dataset.cartaid;
+
+                // Verificar si se hizo clic en el botón de suma
+                if (event.target.classList.contains('mas')) {
+                    quantity++;
+                } 
+                // Verificar si se hizo clic en el botón de resta
+                else if (event.target.classList.contains('menos')) {
+                    // Verificar si la cantidad actual es mayor que 0 antes de restar
+                    if (quantity > 0) {
+                        quantity--;
+                    }
+                }
+
+                // Actualizar la cantidad en el HTML
+                quantityElement.innerText = quantity;
+
+                try {
+                    // Enviar la cantidad actualizada al servidor
+                    await axios.post('http://localhost:4000/carro_compras/ADD-CARD', { IdCard: cartaId, Cantidad: quantity });
+                } catch (error) {
+                    console.error('Error al enviar la solicitud:', error);
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+                            
+                            
                         </div>
                     </div>
                     <% } %>
