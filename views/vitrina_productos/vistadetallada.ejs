@@ -80,24 +80,29 @@
     <p><b>Defensa:</b> <%= carta.Defense %></p>
     <p><b>Ataque</b>: <%= carta.AttackBase %></p>
     <p><b>Daño:</b> <%= carta.DamageSides %></p>
+    <p><b>Descripción:</b> <%= carta.description %></p>
   <% } else if (carta.TypeCard === "Item") { %>
     <% switch (carta.Subtype) {
       case "Tanque": %>
         <p id="cart"><b>Buff:</b> <%= carta.DamageXBurst %></p>
         <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Veneno": %>
         <p id="cart"><b>Buff:</b> <%= carta.EnemyDamageNerf %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Hielo":
       case "Fuego": %>
         <p id="cart"><b>Buff:</b> <%= carta.DamageBuff %></p>
         <p id="cart2"><b>Buff:</b><%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Armas": %>
         <p id="cart"><b>Poder:</b> <%= carta.DamageBuff %></p>
         <p id="cart2"><b>Vida:</b> <%= carta.LiveNerf %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
     } %>
   <% } else if (carta.TypeCard === "Armor") { %>
@@ -105,22 +110,27 @@
       case "Tanque": %>
         <p id="cart"><b>Buff:</b> <%= carta.DefenseBuff %></p>
         <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Veneno": %>
         <p id="cart"><b>Buff:</b> <%= carta.DefenseBuff %></p>
         <p id="cart2"><b>Buff:</b>  <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Hielo": %>
         <p id="cart"><b>Buff:</b> <%= carta.DefenseBuff %></p>
         <p id="cart2"><b>Buff:</b>  <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Fuego": %>
         <p id="cart"><b>Buff:</b>  <%= carta.DefenseBuff %></p>
         <p id="cart2"><b>Buff:</b>  <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Armas": %>
         <p id="cart"><b>Poder:</b> <%= carta.DefenseBuff %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
     } %>
   <% } else if (carta.TypeCard === "Weapon") { %>
@@ -128,26 +138,32 @@
       case "Tanque": %>
         <p id="cart"><b>Buff:</b> <%= carta.AttackBuff %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Veneno": %>
         <p id="cart"><b>Buff:</b><%= carta.DamageBuff %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Hielo": %>
         <p id="cart"><b>Buff:</b> <%= carta.EnemyDamageNerf %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Fuego": %>
         <p id="cart"><b>Buff:</b> <%= carta.DamageBuff %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Armas": %>
         <p id="cart"><b>Poder:</b><%= carta.AttackBuff %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
       case "Machete": %>
         <p id="cart"><b>Poder:</b> <%= carta.DamageBuff %></p>
         <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
         <% break;
     } %>
   <% } %>
