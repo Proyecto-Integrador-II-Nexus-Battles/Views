@@ -285,14 +285,33 @@
     padding: 14px;
     margin-bottom: 1rem;
   }
-  
+
+  .productosp{
+    display: flex;
+  }
+
+  .numproductos{
+    margin-left: 20px;
+  }
+
   .totalb{
+    display: flex;
     margin-top: 19px;
+  }
+
+  .numtotalb{
+    margin-left: 20px;
   }
   
   .iva{
+    display: flex;
     margin-top: 19px;
   }
+
+  .numiva{
+    margin-left: 20px;
+  }
+  
   
   .lineatres{
     margin-top: 1rem;
@@ -300,8 +319,15 @@
   }
   
   .total{
+    display: flex;
+    text-align: center;
     margin-top: 1rem;
     margin-left: 0.5rem;
+  }
+
+  .numtotal{
+    margin-top: 3px;
+    margin-left: 20px;
   }
   
   .pedido{
