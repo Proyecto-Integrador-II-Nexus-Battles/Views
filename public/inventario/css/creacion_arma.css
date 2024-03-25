@@ -101,7 +101,7 @@ header .logo_img {
   padding-bottom: 10px;
   background-color: white;
   width: 350px;
-  height: 700px;
+  height: 650px;
 }
 
 .informacion_carta {
@@ -111,7 +111,7 @@ header .logo_img {
 }
 
 .informacion_carta p {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: lighter;
 }
 
@@ -129,15 +129,6 @@ header .logo_img {
     border: transparent;
     position: relative;
   }
-
-.nom input {
-  border: transparent;
-  padding-left: 5px;
-}
-.nom select {
-  border: transparent;
-  position: relative;
-}
 
 .informacion_carta .stats_card {
   list-style: none;

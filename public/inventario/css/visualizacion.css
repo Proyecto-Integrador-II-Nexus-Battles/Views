@@ -20,7 +20,7 @@ justify-content: space-between;
 }
 
 header .logo_img {
-height: 80px;
+height: 70px;
 }
 
 .nav {
@@ -133,8 +133,8 @@ main {
   background-color: white;
   margin-top: -10px;
   max-width:200px;
-  min-height: 300px;
-  max-height: 350px;
+  /* min-height: 300px;
+  max-height: 350px; */
 }
 
 .imagen_carta {
@@ -410,14 +410,14 @@ main {
 
 @media (width<=1680px){
   .imagen_carta {
-    width: 210px;
+    width: 200px;
     height: 130px;
   }
   .informacion_carta p{
     font-size: 10px;
   }
   .container_general{
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -469,7 +469,7 @@ main {
     font-size: 7px;
   }
   .container_general{
-    width: 80%;
+    width: 60%;
   }
   .modificar button {
     font-size: 8px;
