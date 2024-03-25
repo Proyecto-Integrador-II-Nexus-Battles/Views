@@ -11,7 +11,7 @@ export const listaDeseos = async (req, res) => {
   }
   try {
     const respuesta = await axios.post(`${url}/lista_deseos`, { user_id: 15 }); // Conexión con el backend
-    console.log(respuesta.status)
+    console.log(respuesta.status);
     if (respuesta.status === 200) {
       // La respuesta fue exitosa, renderizar la vista con los datos obtenidos
       res.render("lista_deseos/index.ejs", {
@@ -23,7 +23,7 @@ export const listaDeseos = async (req, res) => {
     } else {
       // La respuesta no fue exitosa, responder con un error 500
       console.error("La solicitud no fue exitosa");
-      res.status(500).send(respuesta.data['status']);
+      res.status(500).send(respuesta.data["status"]);
     }
   } catch (error) {
     // Capturar cualquier error que ocurra durante la solicitud

@@ -125,7 +125,7 @@
       const xhr = new XMLHttpRequest();
       
       // Definir la URL de la solicitud utilizando una variable de entorno
-      const url = `${process.env.WISH_URL}/lista_deseos/eliminar/${item_id}`;
+      const url = `<%= process.env.WISH_URL %>/lista_deseos/eliminar/${item_id}`;
       xhr.open('POST', url, true);
 
       // Establecer el encabezado de la solicitud

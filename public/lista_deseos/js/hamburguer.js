@@ -1,8 +1,9 @@
-const boton_abrir = document.querySelector('.abrir-btn')
-const navbar = document.getElementById('navbar')
+const abrir_btn = document.querySelector('.abrir-btn');
+const navbar = document.getElementById('navbar');
 
-boton_abrir.addEventListener('click',abrir_btn);
-function abrir_btn(){
+abrir_btn.addEventListener('click', toggleNavbar);
+
+function toggleNavbar() {
     navbar.classList.toggle('visible');
-    console.log("si")
+    console.log("si");
 }
