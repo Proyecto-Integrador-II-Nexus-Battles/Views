@@ -94,7 +94,7 @@
             <div class="botones">
               <div class="modificar">
                 <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
-                <button onclick="">Mover al carrito</button>
+                <button onclick='moverCarroCompras(<%= item.id %>)'>Mover al carrito</button>
               </div>
             </div>
           </div>
@@ -147,11 +147,43 @@
               alert('No se pudo eliminar correctamente');
           }
       };
-
       // Enviar la solicitud con los datos
       xhr.send();
     }
 
+    </script>
+    <script>
+      function moverCarroCompras(item_id){
+        const url = `<%= process.env.WISH_URL %>/dummy/ADD-CARD`;
+        const data = {
+          'IdUsuario': <%= user['id'] %>,
+          'IdCard': item_id,
+          'Cantidad': 1
+        };
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+
+        fetch(url, options)
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Error en la solicitud POST');
+        })
+        .then(data => {
+          console.log('Respuesta del servidor: ', data);
+          alert('Su producto fue agregado exitosamente al carro de compras');
+          // eliminar(item_id); //preguntar si se debe eliminar al enviar
+        })
+        .catch(error => {
+          console.error('Error en la solicutud: ', error)
+        });
+      }
     </script>
 </body>
 </html>

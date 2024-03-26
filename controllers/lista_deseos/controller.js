@@ -51,13 +51,11 @@ export const listaDeseos = async (req, res) => {
 
       console.log(listaDeseos);
 
-
-
       // La respuesta fue exitosa, renderizar la vista con los datos obtenidos
       res.render("lista_deseos/index.ejs", {
-        title: "Lista de Deseos",
-        user: { id: userId },
-        products: listaDeseos,
+        'title': "Lista de Deseos",
+        'user': { 'id': userId },
+        'products': listaDeseos,
       });
       console.log(listaDeseos); //user: req.session.user, products: rows sesion de usuarios
 
