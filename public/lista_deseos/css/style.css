@@ -31,6 +31,7 @@ padding: 10px;
 width: 100%;
 }
 
+
 #navbar {
 height: 50px;
 background-color: #d8e9f9;
@@ -86,6 +87,19 @@ main {
   justify-content: center;
 }
 
+.card-support  {
+  background-color: blue!important; 
+  
+}
+.card-support .botones button {
+  background-color: #2ecc71;
+}
+.card-support p {
+  color: purple;
+}
+.card-support #nombre p {
+  color: gold;
+}
 /* Vitrina de productos */
 .container_general {
   display: grid;

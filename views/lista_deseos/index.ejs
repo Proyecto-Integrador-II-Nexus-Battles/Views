@@ -23,7 +23,7 @@
           <li><a href="#" >Jugar online</a></li>
           <li><a href="#">Torneo</a></li>
           <li><a href="#">Resumen Flotante</a></li>
-          <li><a href="#">Lista Deseos</a></li>
+          <li><a href="/lista_deseos">Lista Deseos</a></li>
           <li class="cerrar-sesion"><a href="#"><button id="login_btn">Iniciar Sesion</button></a></li>
         </ul>
       </nav>
@@ -77,20 +77,22 @@
     <div class="list">
       
       <% products.forEach(function(item) { %>
-        <div class="card" id="carta-<%= item.id %>">
+        
+
+        <div class="card card-<%= item.TypeCard %> " id="carta-<%= item.id %>">
           <div class="imagen_carta">
-            <img src="img/carta.png" class="personaje" />
+            <img src="<%= item.imagePath %>" class="personaje" />
           </div>
           <div class="informacion_carta">
             <div id="nombre">
-              <p> <%= item.nombre %> </p>
+              <p> <%= item.Name %> </p>
+              <p>PRECIO: <%= item.divisa %><%= item.precio %></p> 
               <img src="img/espadas.png" class="heroe" />
             </div>
-            <p>Poder: </p>
-            <p>Vida: </p>
-            <p>Defensa: <%= item.defensa %></p>
-            <p>Ataque: <%= item.ataque %> </p>
-            <p>Daño: <%= item.daño %></p>
+            <p>Poder: <%= item.TypeCard %> </p>
+            <p>Vida: <%= item.Type %> </p>
+            <p>Defensa: <%= item.Subtype %></p>
+            <p>Ataque: <%= item.defenseBuff %> </p>
             <div class="botones">
               <div class="modificar">
                 <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
@@ -125,7 +127,7 @@
       const xhr = new XMLHttpRequest();
       
       // Definir la URL de la solicitud utilizando una variable de entorno
-      const url = `<%= process.env.WISH_URL %>/lista_deseos/eliminar/${item_id}`;
+      const url = `<%= process.env.GATEWAY_URL %>/lista_deseos/eliminar/${item_id}`;
       xhr.open('POST', url, true);
 
       // Establecer el encabezado de la solicitud
@@ -154,7 +156,7 @@
     </script>
     <script>
       function moverCarroCompras(item_id){
-        const url = `<%= process.env.WISH_URL %>/dummy/ADD-CARD`;
+        const url = `<%= process.env.GATEWAY_URL %>/dummy/ADD-CARD`;
         const data = {
           'IdUsuario': <%= user['id'] %>,
           'IdCard': item_id,

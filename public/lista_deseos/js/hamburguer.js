@@ -1,9 +1,15 @@
-const abrir_btn = document.querySelector('.abrir-btn');
-const navbar = document.getElementById('navbar');
+const boton_abrir = document.querySelector(".abrir-btn");
+const navbar = document.getElementById("navbar");
 
-abrir_btn.addEventListener('click', toggleNavbar);
-
-function toggleNavbar() {
-    navbar.classList.toggle('visible');
-    console.log("si");
+boton_abrir.addEventListener("click", abrir_btn);
+function abrir_btn() {
+  navbar.classList.toggle("visible");
+  console.log("si");
+}
+function cambiarColor(elemento) {
+  if (elemento.style.color === "red") {
+    elemento.style.color = "black";
+  } else {
+    elemento.style.color = "red";
+  }
 }
