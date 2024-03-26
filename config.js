@@ -9,3 +9,4 @@ config({ path: path.resolve(__dirname, ".env") });
 export const HOST = process.env.HOST;
 export const APP_PORT = process.env.APP_PORT;
 export const HOST_PORT = process.env.HOST_PORT
+
