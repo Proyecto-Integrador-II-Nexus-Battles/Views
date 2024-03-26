@@ -1,7 +1,7 @@
 import express from "express";
 import testing2Routes from "./routes/vitrina_productos/testing.routes.js";
 import testingRoutes from "./routes/manejo_usuarios/routes.js";
-import { PORT } from "./config.js";
+import { APP_PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
 import bodyParser from "body-parser";
@@ -25,5 +25,8 @@ app.use((req, res) => {
 });
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(PORT);
-console.log(`Server is running on port ${PORT}`);
+
+app.listen(APP_PORT, () => {
+    console.log(`Server listen on port ${APP_PORT}`)
+})
+
