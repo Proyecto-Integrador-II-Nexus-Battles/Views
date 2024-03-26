@@ -460,7 +460,8 @@ main {
   margin-left: 20px;
   background:linear-gradient(45deg,#304b8b88, #a3b7dc7b, #d8e9f97b); 
   width: 200px;
-  margin-top: 20px;
+  margin-top: 10px;
+  border-radius: 14px;
   }
   .filtros h1{
   text-align: center;
