@@ -3,6 +3,6 @@ import { defaultR, defaultR2 } from "../../controllers/vitrina_productos/testing
 
 const router = Router();
 router.get("/", defaultR);
-router.get("/vistaDetallada", defaultR2);
+router.get("/vistaDetallada/:id", defaultR2);
 
 export default router;
