@@ -132,7 +132,6 @@
                   <% break;
                 case "Hielo": %>
                 <p id="cart">Buff: <%= carta.DamageBuff %></p>
-
                 <%break;
                 case "Fuego": %>
                   <p id="cart">Buff: <%= carta.DamageBuff %></p>
@@ -145,21 +144,21 @@
             <% } else if (carta.TypeCard === "Armor") { %>
               <% switch (carta.Subtype) {
                 case "Tanque": %>
-                  <p id="cart">BuffDefensa: <%= carta.DefenseBuff %></p>
+                  <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
                   <% break;
                 case "Veneno": %>
-                <p id="cart">BuffDefensa: <%= carta.DefenseBuff %></p>
+                <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
                 <% break;
                 case "Hielo": %>
-                <p id="cart">BuffDefensa: <%= carta.DefenseBuff %></p>
+                <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
 
                   <% break;
                 case "Fuego": %>
-                <p id="cart">BuffDefensa: <%= carta.DefenseBuff %></p>
+                <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
 
                   <% break;
                 case "Armas": %>
-                <p id="cart">BuffDefensa: <%= carta.DefenseBuff %></p>
+                <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
 
                   <% break;
               } %>
@@ -190,7 +189,7 @@
                 <p id="cart2">BuffDefensa: <%= carta.DamageBuff %></p>
                   <% break;
               } %>
-<% } else if (carta.TypeCard === "Weapon") { %>
+            <% } else if (carta.TypeCard === "Weapon") { %>
               <% switch (carta.Subtype) {
                 case "Tanque": %>
                   <p id="cart">BuffAtaque: <%= carta.AttackBuff %></p>
