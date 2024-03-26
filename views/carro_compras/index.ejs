@@ -104,9 +104,10 @@
 <div class="rectangulo">
     <div class="cantidad">
         <button class="masmenos-menos">-</button>
-        <p class="cantidadx"><%= cartas[i].CANTIDAD %></p>
+        <p class="cantidadx" data-Id="<%= cartas[i].CARTA_ID %>" data-IdUsuario="<%= cartas[i].IdUsuario %>" data-cantidad="<%= cartas[i].CANTIDAD %>"><%= cartas[i].CANTIDAD %></p>
         <button class="masmenos-mas">+</button>
     </div>
+    
     <div class="valor">
         <p>$168.000</p>
     </div>
@@ -114,43 +115,58 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const cantidadElements = document.querySelectorAll('.cantidad');
+    const cantidadElements = document.querySelectorAll('.cantidad');
 
-        cantidadElements.forEach(cantidadElement => {
-            const cantidadParagraph = cantidadElement.querySelector('p');
-            const menosButton = cantidadElement.querySelector('.masmenos-menos');
-            const masButton = cantidadElement.querySelector('.masmenos-mas');
+    // Agregar eventos de clic a cada elemento de cantidad
+    cantidadElements.forEach(cantidadElement => {
+        const menosButton = cantidadElement.querySelector('.masmenos-menos');
+        const masButton = cantidadElement.querySelector('.masmenos-mas');
+        const cantidadParagraph = cantidadElement.querySelector('.cantidadx');
+        const idUsuario = cantidadParagraph.dataset.idUsuario;
+        const idCarta = cantidadParagraph.dataset.id;
 
-            menosButton.addEventListener('click', function() {
-                let cantidad = parseInt(cantidadParagraph.textContent);
-                if (cantidad > 0) {
-                    cantidad--;
-                    cantidadParagraph.textContent = cantidad;
-                    actualizarCantidad(cantidadElement, cantidad);
-                }
-            });
-
-            masButton.addEventListener('click', function() {
-                let cantidad = parseInt(cantidadParagraph.textContent);
-                cantidad++;
-                cantidadParagraph.textContent = cantidad;
-                actualizarCantidad(cantidadElement, cantidad);
-            });
+        menosButton.addEventListener('click', function() {
+            restarCantidad(cantidadParagraph, idUsuario, idCarta);
         });
 
-        function actualizarCantidad(cantidadElement, cantidad) {
-            const IdCard = cantidadElement.querySelector('.masmenos-menos').dataset.cartaid;
-            axios.post('http://localhost:4000/carro_compras/ADD-CARD', { IdCard, Cantidad: cantidad })
-                .then(response => {
-                    console.log(response.data.message); // Mensaje de éxito desde el servidor
-                })
-                .catch(error => {
-                    console.error('Error al actualizar la cantidad:', error);
-                    // Aquí puedes manejar el error de acuerdo a tus necesidades
-                });
-        }
+        masButton.addEventListener('click', function() {
+            sumarCantidad(cantidadParagraph, idUsuario, idCarta);
+        });
     });
+
+    function restarCantidad(cantidadParagraph, idUsuario, idCarta) {
+        let cantidad = parseInt(cantidadParagraph.textContent);
+        if (cantidad > 0) {
+            cantidad--;
+            cantidadParagraph.textContent = cantidad;
+            actualizarCantidad(idUsuario, idCarta, cantidad);
+        }
+    }
+
+    function sumarCantidad(cantidadParagraph, idUsuario, idCarta) {
+        let cantidad = parseInt(cantidadParagraph.textContent);
+        cantidad++;
+        cantidadParagraph.textContent = cantidad;
+        actualizarCantidad(idUsuario, idCarta, cantidad);
+    }
+
+    function actualizarCantidad(idUsuario, idCarta, cantidad) {
+        axios.post('http://localhost:4000/carro_compras/ADD-CARD', { IdUsuario: 1, IdCard: idCarta, Cantidad: cantidad })
+            .then(response => {
+                console.log(response.data.message); // Mensaje de éxito desde el servidor
+            })
+            .catch(error => {
+                console.error('Error al actualizar la cantidad:', error);
+                // Aquí puedes manejar el error de acuerdo a tus necesidades
+            });
+    }
+});
 </script>
+
+
+
+
+
 
 
 
