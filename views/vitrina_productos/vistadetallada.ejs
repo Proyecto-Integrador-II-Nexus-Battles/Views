@@ -65,7 +65,7 @@
 </ul>
 </div>
 <div class="detalles_carta">
-  <p> <b>Nombre:</b> <%= carta.Name %></p>
+  <p><b>Nombre:</b> <%= carta.Name %></p>
   <% if (carta.TypeCard === "Hero") { %>
     <p><b>Tipo: <%= carta.Type></b></p>
     <p><b>Subtipo: <%= carta.Subtype></b></p>
@@ -83,7 +83,7 @@
       <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
       <p><b>Subtipo:</b> <%= carta.Type %></p>
       <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Veneno": %>
@@ -97,7 +97,7 @@
       <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
       <p><b>Subtipo:</b> <%= carta.Type %></p>
       <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
         <p><b>Descripción:</b> <%= carta.Description %></p>
       <% break;
 
@@ -105,14 +105,14 @@
       <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
       <p><b>Subtipo:</b> <%= carta.Type %></p>
       <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Armas": %>
       <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
       <p><b>Subtipo:</b> <%= carta.Type %></p>
       <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
     } %>
@@ -208,7 +208,7 @@
         case "Tanque": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
-        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
           <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
           <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
           <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
@@ -216,7 +216,7 @@
         case "Veneno": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
-        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
           <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
           <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
           <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
@@ -224,7 +224,7 @@
         case "Hielo": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
-        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
           <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
           <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
           <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
@@ -232,7 +232,7 @@
         case "Fuego": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
-        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
           <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
           <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
           <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
@@ -240,7 +240,7 @@
         case "Armas": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
-        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
           <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
           <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
           <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
@@ -248,7 +248,7 @@
         case "Machete": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
-        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
           <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
           <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
           <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
