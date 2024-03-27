@@ -47,8 +47,6 @@ export const listaDeseos = async (req, res) => {
       listaDeseos[i]['divisa'] = priceCard['divisa']; 
       listaDeseos[i]['descuento'] = priceCard['descuento'];
       listaDeseos[i]['id_carta'] = priceCard['id_carta'];
-
-      
     }
 
       console.log(listaDeseos);

@@ -17,7 +17,7 @@
       <img src="img/hamburguesa_icon.svg" class="abrir-btn" alt="">
       <nav class="" id="navbar">
         <ul class="opciones">
-          <li><a href="#"">Mi cuenta</a></li>
+          <li><a href="/miCuenta"">Mi cuenta</a></li>
           <li><a href="#">Mi banco</a></li>
           <li><a href="#">Subasta</a></li>
           <li><a href="#" >Jugar online</a></li>
@@ -112,80 +112,14 @@
       </div>
   </div>
   </main>
+  
+  <script src="js/enviar.js"></script>
+  <script src="js/eliminar.js"></script>
+
   <script src="js/nav.js"></script>
-  <script src="js/vistaCrea.js"></script>
   <script src="js/paginacion.js"></script>
-  <script src="js/miCuenta.js"></script>
-  <script src="js/modificacionInv.js"></script>
-  <script src="js/index.js" type="module"></script>
   <script src="js/jugarOnline.js"></script>
   <script src="js/hamburguer.js"></script>
 
-  <script> 
-    function eliminar(item_id) {
-      // Crear instancia de XMLHttpRequest
-      const xhr = new XMLHttpRequest();
-      
-      // Definir la URL de la solicitud utilizando una variable de entorno
-      const url = `<%= process.env.GATEWAY_URL %>/lista_deseos/eliminar/${item_id}`;
-      xhr.open('POST', url, true);
-
-      // Establecer el encabezado de la solicitud
-      xhr.setRequestHeader('Content-Type', 'application/json');
-
-      // Definir el callback para manejar la respuesta
-      xhr.onload = function() {
-          if (xhr.status >= 200 && xhr.status < 300) {
-              // La solicitud fue exitosa
-              alert('Se eliminó correctamente');
-
-              // Obtener el elemento que deseas eliminar
-              const elementoAEliminar = document.getElementById('carta-' + item_id);
-
-              // Eliminar el elemento
-              elementoAEliminar.remove();
-          } else {
-              // La solicitud falló
-              alert('No se pudo eliminar correctamente');
-          }
-      };
-      // Enviar la solicitud con los datos
-      xhr.send();
-    }
-
-    </script>
-    <script>
-      function moverCarroCompras(item_id){
-        const url = `<%= process.env.GATEWAY_URL %>/dummy/ADD-CARD`;
-        const data = {
-          'IdUsuario': <%= user['id'] %>,
-          'IdCard': item_id,
-          'Cantidad': 1
-        };
-        const options = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        };
-
-        fetch(url, options)
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Error en la solicitud POST');
-        })
-        .then(data => {
-          console.log('Respuesta del servidor: ', data);
-          alert('Su producto fue agregado exitosamente al carro de compras');
-          // eliminar(item_id); //preguntar si se debe eliminar al enviar
-        })
-        .catch(error => {
-          console.error('Error en la solicutud: ', error)
-        });
-      }
-    </script>
 </body>
 </html>
