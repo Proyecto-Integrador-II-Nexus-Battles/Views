@@ -107,7 +107,7 @@
 
         <div class="card">
           <div class="imagen_carta">
-            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada()"/>
+            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')"/>
           </div>
           <div class="informacion_carta">
             <div id="nombre">
@@ -151,15 +151,15 @@
                 <% break;
                 case "Hielo": %>
                 <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
-
                   <% break;
                 case "Fuego": %>
                 <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
-
                   <% break;
                 case "Armas": %>
                 <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
-
+                  <% break;
+                case "Machete": %>
+                <p id="cart">Defensa: <%= carta.DefenseBuff %></p>
                   <% break;
               } %>
             <% } else if (carta.TypeCard === "Weapon") { %>
