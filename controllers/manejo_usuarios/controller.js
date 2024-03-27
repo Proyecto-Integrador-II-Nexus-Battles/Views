@@ -12,12 +12,27 @@ export const userLogging = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    .then((response) => {});
+    .then((response) => { });
 };
 
 export const renderRegister = (req, res) => {
   res.render("manejo_usuarios/register.ejs");
 };
+
+export const admin = (req, res) => {
+  res.render("manejo_usuarios/admin_main_page.ejs");
+};
+
+
+
+export const rendervitrina = (req, res) => {
+  res.render("manejo_usuarios/vitrina.ejs");
+};
+
+export const irrvitrina = (req, res) => {
+  res.redirect("manejo_usuarios/vitrina.ejs")
+};
+
 
 export const register = async (req, res) => {
   const endpoint = "/usuario/registro";

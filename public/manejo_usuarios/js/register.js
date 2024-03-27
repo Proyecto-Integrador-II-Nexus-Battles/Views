@@ -1,7 +1,6 @@
-
+import { HOST, PORT, PORT_BACK } from "../../config.js"
 
 let form = document.querySelector('form')
-
 form.addEventListener('submit', handleSubmit);
 
 
@@ -15,7 +14,7 @@ function handleSubmit(event) {
     let jsonData = JSON.stringify(data);
 
 
-    fetch('http://localhost:3000/usuario/register', {
+    fetch(`http://${HOST}:${PORT_BACK}/usuario/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

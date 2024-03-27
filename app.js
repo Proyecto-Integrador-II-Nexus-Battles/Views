@@ -1,5 +1,6 @@
 import express from "express";
 import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
+import configRoutes from "./routes/config.routes.js"
 import { PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(usuarioRoutes);
+app.use(configRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
