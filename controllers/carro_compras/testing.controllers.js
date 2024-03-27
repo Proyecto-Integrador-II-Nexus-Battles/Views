@@ -16,6 +16,8 @@ export const defaultR = (req, res) => {
       console.error('Error al realizar la solicitud:', error);
     });
 
+    
+
 
 };
 
