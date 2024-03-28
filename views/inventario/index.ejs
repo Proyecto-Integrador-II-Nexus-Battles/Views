@@ -30,8 +30,8 @@
     </section>
   </header>
   <!-- Vitrina de productos -->
-  <main>    
-    
+  <main>
+
 <!-- Cartas -->
 
       <div class="container_general">
@@ -47,7 +47,7 @@
             "Veneno": "/inventario/imagenes/veneno.png",
             "Machete": "/inventario/imagenes/machete.png"
           };
-          
+
           const subtipoIcono = {
             "Hero": "foto",
             "Item": "foto",
@@ -55,13 +55,13 @@
             "Talent": "foto",
             "Weapon": "foto"
           };
-          
+
           for (let i = 0; i < datos.length; i++) {
             const carta = datos[i];
             const imagen = subtipoImagen[carta.Subtype];
             const tipoIcono = subtipoIcono[carta.TypeCard];
           %>
-          
+
           <div class="card">
             <div class="imagen_carta">
               <img src="<%= carta.imagePath %>" class="personaje" />
@@ -171,12 +171,9 @@
               </div>
             </div>
           </div>
-          
+
           <% } %>
-          
-          
-          
-          
+<!-- PAGINACIÖN -->
 <div class="paginas">
         <ul class="listPage">
             <li class="active">1</li>
@@ -184,11 +181,11 @@
             <li>3</li>
         </ul>
       </div>
-        </div> 
-        
-     
+        </div>
+
+
       </div>
-  
+
       </div>
     </div>
       <div class="wrapper" id="modal-toast">
@@ -208,7 +205,7 @@
         <button onclick="creacion_carta_items()">Item, Arma, Habilidad</button>
       </div>
     </div>
-    
+
   </main>
   <script src="/inventario/js/nav.js"></script>
   <script src="/inventario/js/vistaCrea.js"></script>
