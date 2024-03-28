@@ -141,7 +141,7 @@ width: 100%;
 @media screen and (min-width:1682px) and (max-width:1920px){
   .detalles_carta p{
     font-size: 30px;
-    margin-top: 15px;
+    margin-top: 20px;
   }
   .imagen_carta{
     margin-left: 20px;
