@@ -77,8 +77,6 @@
     <div class="list">
       
       <% products.forEach(function(item) { %>
-        
-
         <div class="card card-<%= item.TypeCard %> " id="carta-<%= item.id %>">
           <div class="imagen_carta">
             <img src="<%= item.imagePath %>" class="personaje" />
@@ -86,13 +84,22 @@
           <div class="informacion_carta">
             <div id="nombre">
               <p> <%= item.Name %> </p>
-              <p> Precio: <%= item.divisa %><%= item.precio %></p> 
+              <p> Precio: <%= item.divisa %><%= item.precio %></p>
               <img src="<%= item.imgType %>" class="heroe" />
             </div>
+            <p>Tipo: <%= item.Type %> </p>
             <p>Poder: <%= item.poder %> </p>
             <p>Vida: <%= item.vida %> </p>
             <p>Defensa: <%= item.defensa %></p>
             <p>Ataque: <%= item.ataque %> </p>
+
+            <% if (item.SubType === 'hielo') { %>
+              <div class="subtipo-<%= item.SubType %>">
+                  <p id="cart">Buff: <%= item.poder %></p>
+                  <p id="cart2">Poder: <%= item.vida %></p>
+              </div>
+            <% } %>
+        
             <div class="botones">
               <div class="modificar">
                 <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
@@ -102,6 +109,7 @@
           </div>
         </div>
       <% }); %>
+
       </div>
       <div class="paginas">
         <ul class="listPage">

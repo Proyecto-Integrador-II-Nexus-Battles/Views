@@ -105,6 +105,12 @@ main {
 /* ---------------------------- */
 /* Carta de tipo ARMAS  */
 
+/* carta buff */
+.informacion_carta .subtipo-hielo p {
+  color: gold;
+  background-color: #2ecc71 !important;
+}
+
 
 /* ---------------------------- */
 
