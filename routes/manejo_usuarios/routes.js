@@ -7,7 +7,6 @@ router.get("/login", renderLogin);
 router.post("/logging", userLogging);
 router.get("/register", renderRegister);
 router.get("/vitrina", rendervitrina)
-router.get("/admin", admin)
 
 
 export default router;

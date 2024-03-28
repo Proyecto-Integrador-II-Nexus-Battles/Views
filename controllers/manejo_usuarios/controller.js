@@ -36,6 +36,8 @@ export const irrvitrina = (req, res) => {
 
 export const register = async (req, res) => {
   const endpoint = "/usuario/registro";
+
+
   axios.post(`${HOST}:${PORT}${endpoint}`, {
     nombre: req.body.nombre,
     apellido: req.body.apellido,
@@ -48,5 +50,8 @@ export const register = async (req, res) => {
     pregunta_1: req.body.pregunta_1,
     pregunta_2: req.body.pregunta_2,
     pregunta_3: req.body.pregunta_3,
+    avataroculto: req.body.avataroculto,
   });
+
+
 };

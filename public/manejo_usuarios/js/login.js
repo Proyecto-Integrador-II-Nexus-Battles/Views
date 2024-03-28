@@ -1,5 +1,5 @@
 
-import { HOST, PORT, PORT_BACK } from "../../config.js"
+import { HOST, PORT, PORT_BACK, PORT_VITRINA } from "../../config.js"
 
 
 console.log(PORT)
@@ -32,8 +32,11 @@ function handleSubmit(event) {
       } else {
         mensaje.classList.remove("error-message");
         console.log("aaa si inicio jiajia");
+        localStorage.setItem('token', JSON.stringify(result.token));
 
-        fetch(`http://${HOST}:${PORT}/inventario/XXX`, {
+        //http://${HOST}:${PORT}/usuario/recibir
+
+        fetch(`http://${HOST}:${PORT_VITRINA}/usuario/vitrinarecibir`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -45,10 +48,13 @@ function handleSubmit(event) {
         }).then(res => res.json())
           .then(result => {
             localStorage.setItem('result', JSON.stringify(result));
+
+            //a la página donde redirecciona
             window.location.href = `http://${HOST}:${PORT}/inventario/getEcommerceCard`
 
           })
-
+        //http://${HOST}:${PORT}/inventario/getEcommerceCard
+        //`http://${HOST}:${PORT}/vitrina`
       }
 
     })

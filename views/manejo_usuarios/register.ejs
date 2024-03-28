@@ -71,11 +71,26 @@
               </p>
               <div class="file_input_container">
                 <label for="avatar" required>Avatar</label>
-                <!--<input type="file" name="avatar" id="avatar" class="file_input" accept=".jpg, .png" required onchange="ValidarArchivo()">-->
+                <input
+                  type="file"
+                  name="avatar"
+                  id="avatar"
+                  class="file_input"
+                  accept=".jpg, .png"
+                  required
+                  onchange="ValidarArchivo()"
+                />
               </div>
               <p>Solo se permiten archivos .jpg y .png de maximo 500 kbs.</p>
             </div>
           </div>
+          <input
+            type="text"
+            id="avataroculto"
+            name=" avataroculto"
+            value=""
+            style="display: none"
+          />
           <div class="col_container2">
             <div class="metodo_pago">
               <h2>Metodo de pago</h2>
@@ -194,8 +209,8 @@
       </div>
     </main>
 
-    <script src="/manejo_usuarios/js/validaciones.js"></script>
-    <script src="/manejo_usuarios/js/register.js"></script>
+    <script src="/manejo_usuarios/js/validaciones.js" type="module"></script>
+    <script src="/manejo_usuarios/js/register.js" type="module"></script>
 
     -->
   </body>

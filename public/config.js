@@ -6,6 +6,7 @@ const options = {
 let HOST = "";
 let PORT = "";
 let PORT_BACK = "";
+let PORT_VITRINA = "";
 
 try {
     const response = await fetch("/variables", options);
@@ -13,6 +14,7 @@ try {
     HOST = data.host || 'localhost';
     PORT = data.port || 5000;
     PORT_BACK = data.port_back || 3000;
+    PORT_VITRINA = data.port_vitrina || 4443;
 
     console.log("Hizo fetch")
     console.log(HOST, PORT, PORT_BACK)
@@ -20,5 +22,5 @@ try {
     console.error(error);
 }
 
-export { HOST, PORT, PORT_BACK };
+export { HOST, PORT, PORT_BACK, PORT_VITRINA };
 
