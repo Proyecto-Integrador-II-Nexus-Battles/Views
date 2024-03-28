@@ -141,6 +141,13 @@ width: 100%;
 @media screen and (min-width:1682px) and (max-width:1920px){
   .detalles_carta p{
     font-size: 30px;
+    margin-top: 15px;
+  }
+  .imagen_carta{
+    margin-left: 20px;
+  }
+  .calificacion_stars li{
+    margin-right: 10px;
   }
 }
 
@@ -160,23 +167,23 @@ width: 100%;
   }
 
 }
-@media (width >=1267px){
+
+@media screen and (min-width:1267px){
   .detalles_carta p{
-    font-size: 23px;
+    font-size: 22px;
   }
 }
+
 @media screen and (max-width:1266px) {
   .opciones li a {
     font-size: 20px;
   }
   .detalles_carta p{
-    font-size: 23px;
+    font-size: 26px;
   }
 }
 
 @media screen and (max-width:1212px) {
-
-
   .opciones li {
     padding-top: 10px;
   }
