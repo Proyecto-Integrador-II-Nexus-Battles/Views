@@ -28,9 +28,14 @@ export const listaDeseos = async (req, res) => {
       }
       const infoCard = inventarioRespuesta.data;
       listaDeseos[i]['_id'] = infoCard['_id'];
-      listaDeseos[i]['imagePath'] = infoCard['imagePath'];
-      listaDeseos[i]['Name'] = infoCard['Name'];
       listaDeseos[i]['TypeCard'] = infoCard['TypeCard'];
+      listaDeseos[i]['imagePath'] = infoCard['imagePath'];
+      listaDeseos[i]['imgType'] = infoCard['imgType'];
+      listaDeseos[i]['Name'] = infoCard['Name'];
+      listaDeseos[i]['poder'] = infoCard['poder'];
+      listaDeseos[i]['vida'] = infoCard['vida'];
+      listaDeseos[i]['defensa'] = infoCard['defensa'];
+      listaDeseos[i]['ataque'] = infoCard['ataque'];
       listaDeseos[i]['Type'] = infoCard['Type'];
       listaDeseos[i]['Subtype'] = infoCard['Subtype'];
       listaDeseos[i]['defenseBuff'] = infoCard['defenseBuff'];

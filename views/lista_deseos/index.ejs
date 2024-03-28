@@ -86,13 +86,13 @@
           <div class="informacion_carta">
             <div id="nombre">
               <p> <%= item.Name %> </p>
-              <p>PRECIO: <%= item.divisa %><%= item.precio %></p> 
-              <img src="img/espadas.png" class="heroe" />
+              <p> Precio: <%= item.divisa %><%= item.precio %></p> 
+              <img src="<%= item.imgType %>" class="heroe" />
             </div>
-            <p>Poder: <%= item.TypeCard %> </p>
-            <p>Vida: <%= item.Type %> </p>
-            <p>Defensa: <%= item.Subtype %></p>
-            <p>Ataque: <%= item.defenseBuff %> </p>
+            <p>Poder: <%= item.poder %> </p>
+            <p>Vida: <%= item.vida %> </p>
+            <p>Defensa: <%= item.defensa %></p>
+            <p>Ataque: <%= item.ataque %> </p>
             <div class="botones">
               <div class="modificar">
                 <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
