@@ -1,6 +1,5 @@
 import express from "express";
 import testingRoutes from "./routes/vitrina_productos/testing.routes.js";
-import { PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
 import bodyParser from "body-parser";
@@ -23,5 +22,5 @@ app.use((req, res) => {
 });
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(PORT);
-console.log(`Server is running on port ${PORT}`);
+app.listen(process.env.PORT);
+console.log(`Server is running on port ${process.env.PORT}`);

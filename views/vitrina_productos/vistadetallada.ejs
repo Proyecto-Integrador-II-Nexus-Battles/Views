@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vista Detallada</title>
@@ -29,9 +30,32 @@
   <main>
 <div class="container_general">
   <img class="back_img" src="vitrina_productos/img/Vector.png" onclick="vistaEcommerce()">
-  <% for (var i = 0; i < datos.length; i++) { %>
+  <% // Mapeo de subtipos a imágenes y tipo de icono
+        const subtipoImagen = {
+          "Armas": "/inventario/imagenes/espadas.png",
+          "Tanque": "/inventario/imagenes/blindaje.png",
+          "Fuego": "/inventario/imagenes/Fuego.png",
+          "Hielo": "/inventario/imagenes/hielo.png",
+          "Veneno": "/inventario/imagenes/veneno.png",
+          "Machete": "/inventario/imagenes/machete.png"
+        };
+
+        const subtipoIcono = {
+          "Hero": "foto",
+          "Item": "foto",
+          "Armor": "foto",
+          "Talent": "foto",
+          "Weapon": "foto"
+        };
+
+        for (let i = 0; i < datos.length; i++) {
+          const carta = datos[i];
+          const imagen = subtipoImagen[carta.Subtype];
+          const tipoIcono = subtipoIcono[carta.TypeCard];
+        %>
+
 <div class="imagen_carta">
-  <img src=<%= datos[i].imagen %>  class="card-img">
+  <img src="<%= carta.imagePath %>"  class="card-img">
 <ul class="calificacion_stars">
   <li><img src="vitrina_productos/img/star-regular.svg"></li>
   <li><img src="vitrina_productos/img/star-regular.svg"></li>
@@ -41,23 +65,206 @@
 </ul>
 </div>
 <div class="detalles_carta">
-  <p> <b>Nombre:</b><%= datos[i].nombre %></p>
-  <p> <b>Poder:</b> <%= datos[i].poder %></p>
-  <p> <b>Vida:</b> <%= datos[i].vida %></p>
-  <p><b>Defensa:</b> <%= datos[i].defensa %></p>
-  <p><b>Ataque:</b> <%= datos[i].ataque %></p>
-  <p><b>Daño:</b> <%= datos[i].dano %></p>
-  <p><b>Tipo:</b> <%= datos[i].tipo %></p>
-  <p><b>Subtipo:</b> <%= datos[i].subtipo %></p>
-  <p><b>Descripción:</b> <%= datos[i].descripcion %></p>
+  <p><b>Nombre:</b> <%= carta.Name %></p>
+  <% if (carta.TypeCard === "Hero") { %>
+    <p><b>Tipo: <%= carta.Type %></b></p>
+    <p><b>Subtipo: <%= carta.Subtype%> </b></p>
+    <p><b>Poder:</b> <%= carta.Power %></p>
+    <p><b>Vida:</b> <%= carta.Live %></p>
+    <p><b>Defensa:</b> <%= carta.Defense %></p>
+    <p><b>Ataque</b>: <%= carta.AttackBase %></p>
+    <p><b>Daño:</b> <%= carta.DamageSides %></p>
+    <p><b>Descripción:</b> <%= carta.description %></p>
+
+<!-- Tipo de carta Item -->
+  <% } else if (carta.TypeCard === "Item") { %>
+    <% switch (carta.Subtype) {
+      case "Tanque": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Veneno": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Hielo": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+      <% break;
+
+      case "Fuego": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Armas": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+    } %>
+    <!-- Type Armor -->
+  <% } else if (carta.TypeCard === "Armor") { %>
+    <% switch (carta.Subtype) {
+      case "Tanque": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+         <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Veneno": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+     <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+     <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Hielo": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+     <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+     <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Fuego": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+         <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Armas": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+     <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+     <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+    } %>
+    <!-- Type Weapon -->
+  <% } else if (carta.TypeCard === "Weapon") { %>
+    <% switch (carta.Subtype) {
+      case "Tanque": %>
+         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+        <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+        <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.description %></p>
+        <% break;
+      case "Veneno": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+      <p><b>Descripción:</b> <%= carta.description %></p>
+        <% break;
+      case "Hielo": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+      <p><b>Descripción:</b> <%= carta.description %></p>
+        <% break;
+      case "Fuego": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+      <p><b>Descripción:</b> <%= carta.description %></p>
+        <% break;
+      case "Armas": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+      <p><b>Descripción:</b> <%= carta.description %></p>
+        <% break;
+      case "Machete": %>
+      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+      <p><b>Subtipo:</b> <%= carta.Type %></p>
+      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+      <p><b>Descripción:</b> <%= carta.description %></p>
+        <% break;
+    } %>
+    <!-- Type Talent -->
+    <% } else if (carta.TypeCard === "Talent") { %>
+      <% switch (carta.Subtype) {
+        case "Tanque": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
+          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+          <% break;
+        case "Veneno": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
+          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+          <% break;
+        case "Hielo": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
+          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+          <% break;
+        case "Fuego": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
+          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+          <% break;
+        case "Armas": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
+          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+          <% break;
+        case "Machete": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
+          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+          <% break;
+      } %>
+  <% } %>
+  <% } %>
+
 </div>
 <div class="comentarios_container">
 <h2>Comentarios</h2>
 <div class="comentarios">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veniam consectetur explicabo doloremque dolores id enim culpa deleniti inventore blanditiis illo adipisci quo dolor cumque quibusdam impedit eos eveniet, qui dicta optio nobis! Libero accusantium dignissimos repellat, iste est corporis a temporibus possimus ipsum similique nihil modi inventore doloribus. Totam numquam veritatis aliquam earum atque fugit sapiente adipisci, odio ducimus, qui eligendi quae non vel voluptatibus perspiciatis beatae. Est et possimus, vero error cum nesciunt quaerat voluptate. Itaque rem animi cum ea ratione dolorem repellendus quos officia, quis tempora delectus quo accusantium facilis facere laborum ducimus neque. Error, accusamus. Magni repudiandae dolores ab optio sapiente inventore pariatur id natus quos consequatur fugiat nesciunt obcaecati, saepe quibusdam sequi soluta tenetur, molestiae necessitatibus earum ipsa velit sit et! Alias mollitia tempora, itaque ipsam labore obcaecati accusamus libero quis voluptas excepturi beatae corrupti nemo eaque voluptatibus. Libero aut dolorum fugiat reiciendis minus ullam, ea non delectus magnam. Voluptate, qui? Hic ea, porro officiis, corporis possimus tempora molestias culpa nisi voluptas officia delectus veniam dicta id dolor nesciunt similique tenetur iste suscipit optio reprehenderit a facilis magni! Omnis fugit voluptatibus ad vero sit, necessitatibus ipsa distinctio quod alias vitae molestias repudiandae laudantium commodi deserunt sed autem! Quia, repellendus officiis? Officia ex repellat, voluptatem nam dolorem laborum. Aliquam quos sequi in ipsa obcaecati illo delectus eveniet non eos iusto eius inventore consequatur explicabo perspiciatis at aspernatur libero eum enim sunt adipisci, iure, quidem nihil modi! Vel, numquam sunt. Consequatur earum, minima molestiae officia ducimus ipsa dolores officiis temporibus odio numquam iusto veritatis. Odio voluptatum doloremque odit asperiores quod autem ut delectus debitis, corporis, excepturi qui cumque iste ipsam quam enim quos! A, laboriosam cupiditate! Voluptate nesciunt, hic explicabo unde ut quis reiciendis, tempore incidunt eum nemo quae exercitationem, architecto atque laudantium. Consequuntur id illo molestias!
+prueba
 </div>
 </div>
-<% } %>
+
 
 </div>
 </main>
