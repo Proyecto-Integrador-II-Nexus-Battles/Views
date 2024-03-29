@@ -12,72 +12,73 @@ body {
 }
 
 /* Estilos navbar */
-header{
-width: 100%;
-display: flex;
-background-color: #d8e9f9;
-justify-content: space-between;
+header {
+  width: 100%;
+  display: flex;
+  background-color: #d8e9f9;
+  justify-content: space-between;
+  height: 90px;
 }
 
 header .logo_img {
-height: 70px;
+  height: 70px;
+  padding: 15px;
 }
 
 .nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px;
-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
 }
 
 #navbar {
-height: 60px;
-background-color: #d8e9f9;
-padding: 10px;
-display: flex;
-justify-content: space-evenly;
-flex-grow: 1;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
 }
 
 .opciones {
-display: flex;
-list-style: none;
-gap: 2.2em;
-margin: 0;
-padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 2.2em;
+  margin: 0;
+  padding: 20px;
 }
 
 .opciones li {
-display: inline-block;
+  display: inline-block;
 }
 
 .opciones li a {
-text-decoration: none;
-color: black;
-font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
 }
 
 .cerrar-sesion {
-margin-left: auto; /* Este estilo coloca el botón en la esquina derecha */
+  margin-left: auto; /* Este estilo coloca el botón en la esquina derecha */
 }
 
 #login_btn {
-font-size: 20px;
-background-color: #a3b7dc;
-border: transparent;
-border-radius: 5px;
-padding: 10px;
-cursor: pointer;
+  font-size: 20px;
+  background-color: #a3b7dc;
+  border: transparent;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 #login_btn:hover {
-background-color: #304c8b;
-color: white;
+  background-color: #304c8b;
+  color: white;
 }
 
 .abrir-btn {
-display: none;
+  display: none;
 }
 /* Main */
 main {
@@ -109,7 +110,7 @@ main {
   margin-bottom: 30px;
   border-radius: 10px;
 }
-.agregar:hover{
+.agregar:hover {
   background-color: #304c8b;
   color: white;
 }
@@ -132,7 +133,7 @@ main {
   cursor: pointer;
   background-color: white;
   margin-top: -10px;
-  max-width:200px;
+  max-width: 200px;
   /* min-height: 300px;
   max-height: 350px; */
 }
@@ -156,21 +157,19 @@ main {
   font-weight: bold;
   padding-left: 10px;
   margin-top: 1px;
-
 }
-#nombre{
+#nombre {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-
 }
-#nombre p{
+#nombre p {
   margin-top: 5px;
   font-size: 13px;
 }
-.foto{
-  height:30px;
-  margin-right:10px;
+.foto {
+  height: 30px;
+  margin-right: 10px;
 }
 .modificar {
   display: flex;
@@ -211,7 +210,7 @@ main {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .contenido-ventana {
@@ -222,7 +221,7 @@ main {
   width: 80%;
 }
 
-.contenido-ventana button { 
+.contenido-ventana button {
   border: transparent;
   background-color: #a3b7dc;
   padding: 5px;
@@ -267,7 +266,9 @@ main {
   margin-top: 10px;
 }
 
-.flecha, .paginacion, .paginacionuno {
+.flecha,
+.paginacion,
+.paginacionuno {
   background: none;
   border: none;
 }
@@ -301,7 +302,7 @@ main {
   color: red;
 }
 
-.wrapper{
+.wrapper {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -309,55 +310,57 @@ main {
   z-index: 9999;
 }
 @keyframes show_toast {
-  0%{
+  0% {
     transform: translateX(-100%);
   }
-  40%{
+  40% {
     transform: translateX(10%);
   }
-  80%, 100%{
+  80%,
+  100% {
     transform: translateX(20px);
   }
 }
-.wrapper.hide{
+.wrapper.hide {
   animation: hide_toast 1s ease forwards;
 }
 @keyframes hide_toast {
-  0%{
+  0% {
     transform: translateX(20px);
   }
-  40%{
+  40% {
     transform: translateX(10%);
   }
-  80%, 100%{
+  80%,
+  100% {
     opacity: 0;
     pointer-events: none;
     transform: translateX(-100%);
   }
 }
-.wrapper{
+.wrapper {
   display: none;
 }
-.wrapper .toast{
+.wrapper .toast {
   display: none;
   background: #fff;
   padding: 20px 15px 20px 20px;
   border-radius: 10px;
   border-left: 5px solid #2ecc71;
-  box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.15);
+  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.15);
   width: 430px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.wrapper .toast.offline{
+.wrapper .toast.offline {
   border-color: #ccc;
 }
-.toast .content{
+.toast .content {
   display: flex;
   align-items: center;
 }
-.content .icon{
+.content .icon {
   font-size: 25px;
   color: #fff;
   height: 50px;
@@ -367,20 +370,20 @@ main {
   border-radius: 50%;
   background: #2ecc71;
 }
-.toast.offline .content .icon{
+.toast.offline .content .icon {
   background: #ccc;
 }
-.content .details{
+.content .details {
   margin-left: 15px;
 }
-.details span{
+.details span {
   font-size: 20px;
   font-weight: 500;
 }
-.details p{
+.details p {
   color: #878787;
 }
-.toast .close-icon{
+.toast .close-icon {
   color: #878787;
   font-size: 23px;
   cursor: pointer;
@@ -392,51 +395,51 @@ main {
   background: #f2f2f2;
   transition: all 0.3s ease;
 }
-.close-icon:hover{
+.close-icon:hover {
   background: #efefef;
 }
-.toast.show{
+.toast.show {
   display: block;
 }
 
-@media  screen and (max-width:1687px) {
-  .container_general{
+@media screen and (max-width: 1687px) {
+  .container_general {
     width: 90%;
   }
-  .agregar{
+  .agregar {
     margin-left: 10%;
   }
 }
 
-@media (width<=1680px){
+@media (width<=1680px) {
   .imagen_carta {
     width: 200px;
     height: 130px;
   }
-  .informacion_carta p{
+  .informacion_carta p {
     font-size: 10px;
   }
-  .container_general{
+  .container_general {
     width: 80%;
   }
 }
 
-@media screen and (max-width:1399px) and (min-width:1300px){
-  .agregar{
+@media screen and (max-width: 1399px) and (min-width: 1300px) {
+  .agregar {
     font-size: 15px;
     height: 30px;
   }
-  .imagen_carta{
+  .imagen_carta {
     width: 150px;
     height: 100px;
   }
-  .botones button{
+  .botones button {
     font-size: 10px;
   }
-  .container_general{
+  .container_general {
     width: 80%;
   }
-  .card{
+  .card {
     max-width: 150px;
     min-height: 200px;
   }
@@ -452,23 +455,32 @@ main {
   #cart2 {
     width: 100px;
   }
-  #nombre p{
+  #nombre p {
     font-size: 10px;
   }
+  header .logo_img {
+    height: 50px;
   }
-@media (width:1280px){
-  .card{
+  .opciones li a {
+    font-size: 15px;
+  }
+  #login_btn {
+    font-size: 13px;
+  }
+}
+@media (width: 1280px) {
+  .card {
     max-width: 130px;
     min-height: 200px;
   }
-  .imagen_carta{
+  .imagen_carta {
     width: 130px;
     height: 100px;
   }
-  .informacion_carta p{
+  .informacion_carta p {
     font-size: 7px;
   }
-  .container_general{
+  .container_general {
     width: 60%;
   }
   .modificar button {
@@ -480,12 +492,10 @@ main {
   #cart2 {
     width: 80px;
   }
-  #nombre p{
+  #nombre p {
     font-size: 8px;
   }
 }
-
-
 
 /* Media Query para pantallas más pequeñas */
 @media screen and (max-width: 1200px) {
@@ -498,7 +508,6 @@ main {
     width: 100%;
     text-align: center;
   }
-
 
   .abrir-btn {
     display: inline-block;
@@ -525,16 +534,14 @@ main {
     padding: 10px;
     width: 100%;
   }
-
 }
 
-@media screen and (max-width:375px) and (min-width:360px)
-{
+@media screen and (max-width: 768px) and (min-width: 360px) {
+  .listPage li:nth-child(3) {
+    display: none !important;
+  }
   .container_general{
-    background: transparent;
+    display: flex;
+    flex-direction: column;
   }
-  .card{
-    margin-left: 5px;
-  }
-
 }

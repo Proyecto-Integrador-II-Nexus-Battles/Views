@@ -82,21 +82,28 @@
                 switch (carta.Subtype) {
                   case "Tanque":
                     %>
-                    <p id="cart">Buff: <%= carta.DamageXBurst %></p>
-                    <p id="cart2">Poder: <%= carta.DamageBuff %></p><%
+                    <p id="cart">Buff: <%= carta.DamageBuff %></p>
+                    <p id="cart2">Poder: <%= carta.EnemyDamageNerf %></p><%
                     break;
                   case "Veneno":
-                    %><p id="cart">Buff: <%= carta.EnemyDamageNerf %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                    break;
+                  case "Machete":
+                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                     break;
                   case "Hielo":
+                  %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                  <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                  break;
                   case "Fuego":
                     %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                     break;
                   case "Armas":
                     %><p id="cart">Poder: <%= carta.DamageBuff %></p>
-                      <p id="cart2">Vida: <%= carta.LiveNerf %></p><%
+                      <p id="cart2">Vida: <%= carta.EnemyDamageNerf %></p><%
                     break;
                   default:
                     break;
@@ -109,6 +116,10 @@
                     %>
                     <p id="cart">Buff: <%= carta.DefenseBuff %></p>
                     <p id="cart2">Poder: <%= carta.DamageBuff %></p><%
+                    break;
+                    case "Machete":
+                    %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                     break;
                   case "Veneno":
                     %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
@@ -134,35 +145,76 @@
                 <%
                 switch (carta.Subtype) {
                   case "Tanque":
-                    %>
-                    <p id="cart">Buff: <%= carta.AttackBuff %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                    %><p>Ataque: <%= carta.AttackBuff %></p>
+                    <p>Daño: <%= carta.DamageBuff %></p>
+                    <p>Defensa: <%= carta.DefenseBuff %></p>
+                    <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                     break;
                   case "Veneno":
-                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                  <p>Daño: <%= carta.DamageBuff %></p>
+                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                  break;
+                  case "Hielo":
+                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                  <p>Daño: <%= carta.DamageBuff %></p>
+                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                  break;
+                  case "Fuego":
+                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                  <p>Daño: <%= carta.DamageBuff %></p>
+                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                  break;
+                  case "Armas":
+                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                  <p>Daño: <%= carta.DamageBuff %></p>
+                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                  break;
+                  case "Machete":
+                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                  <p>Daño: <%= carta.DamageBuff %></p>
+                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                  break;
+                }
+                %>
+              <% } else if (carta.TypeCard === "Talent") { %>
+                <%
+                switch (carta.Subtype) {
+                  case "Tanque":
+                    %>
+                    <p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+                    break;
+                  case "Veneno":
+                    %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                     break;
                   case "Hielo":
-                    %><p id="cart">Buff: <%= carta.EnemyDamageNerf %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p>
+                    %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
                     <%
                     break;
                   case "Fuego":
-                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                    %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                     break;
                   case "Armas":
-                    %><p id="cart">Poder: <%= carta.AttackBuff %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                    %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                     break;
                   case "Machete":
-                    %><p id="cart">Poder: <%= carta.DamageBuff %></p>
-                    <p id="cart2">Buff: <%= carta.DamageBuff %></p>
+                    %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
+                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
                     <%
                     break;
                 }
                 %>
-              <% } %>
+              <% }%>
               <div class="botones">
                 <div class="modificar">
                   <button>Suspender</button>
