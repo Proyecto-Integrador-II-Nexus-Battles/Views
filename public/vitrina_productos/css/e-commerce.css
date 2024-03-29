@@ -319,34 +319,43 @@ height: auto;
 }
 .filtros{
   margin-left: 5%;
+  width: 300px;
+}
+.filtros h1{
+  font-size: 40px;
 }
 .tipo_filtros{
   width: 300px;
 }
 .tipo_filtros li{
-  font-size: 20px;
+  font-size: 25px;
 }
 .seleccionar_precio, .tipo_carta{
   font-size: 18px;
-  width: 180px;
+  width: 270px;
+  font-size: 23px;
+  height: 30px;
 }
 .promociones + b {
-  font-size: 24px;
-padding-top: 2px;
+  font-size: 28px;
+padding-top: 7px;
+margin-left: 10px;
 }
 .promociones{
-  transform: scale(1.4);
+  transform: scale(2.4);
+  margin-left: 12px;
 }
 #filtro_input{
-width: 150px;
+width: 250px;
 margin-left: 20px;
-font-size: 18px;
+font-size: 23px;
+height: 30px;
 padding-bottom: 23px;
 }
 
 .container_general{
   width: 50%;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 span{
   top: -23px;
