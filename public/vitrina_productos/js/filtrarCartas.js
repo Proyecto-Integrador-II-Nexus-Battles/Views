@@ -1,6 +1,5 @@
 function filtrarCartas() {
   const filtros = {}; // donde se almacenaran los filtros seleccionados
-  const form = document.querySelector("form"); // Select the form element
 
   const sortOrder = document.querySelector('select[name="sortOrder"]').value;
   const min_max = document.querySelector('select[name="min_max"]').value;
@@ -27,12 +26,5 @@ function filtrarCartas() {
   const url = '/filteredCards/?' + queryParams;
 
   window.location.href = url
-
-  // console.log(url);
-
-  // form.action = url;
-  // console.log(form.action);
-  // console.log(form.submit());
-  // form.submit();
 
 }
