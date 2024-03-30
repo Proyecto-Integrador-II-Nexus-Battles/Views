@@ -115,7 +115,7 @@
               <span onclick="cambiarColor(this)" id="like">&#9829;</span>
 
             </section>
-            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada()">
+            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')"/>
           </div>
           <div class="informacion_carta">
             <div id="nombre">
