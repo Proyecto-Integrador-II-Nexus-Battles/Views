@@ -4,7 +4,7 @@
 }
 :root {
   --carta:white;
-  --precio:#EBC793;
+  --precio:#a3b7dc;
 }
 
 body {
@@ -181,9 +181,20 @@ border-radius: 7px;
   transform: translateY(-20px);
   display: block;
 }
-.card:hover .icons,
+.card:hover #like,
 .card:hover .carrito {
   display: block;
+}
+#like{
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 33%;
+  left: 85%;
+  display: none;
+}
+#like:hover{
+  color: red;
 }
 .imagen_carta {
   width: 150px;
@@ -200,9 +211,11 @@ border-radius: 7px;
   display: block;
   border-radius: 13px 13px 0 0;
 }
-#precio{
-  background-color: var(--precio);
+#precio button{
   display: flex;
+  background-color: var(--precio);
+  border: transparent;
+  padding: 5px;
 }
 .carrito
 {
@@ -229,14 +242,7 @@ border-radius: 7px;
   padding-left: 10px;
   margin-top: 1px;
 }
-.icons{
-  position: absolute;
-  display: none;
-}
-#like{
-  font-size: 20px;
-  color: white;
-}
+
 
 
 /* .card {
