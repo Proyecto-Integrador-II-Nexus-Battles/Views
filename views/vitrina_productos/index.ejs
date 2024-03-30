@@ -111,8 +111,11 @@
 
         <div class="card">
           <div class="imagen_carta">
-            <p id="precio">Precio: <%= carta.price %></p>
-            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')"/>
+            <section class="icons">
+              <span onclick="cambiarColor(this)" id="like">&#9829;</span>
+
+            </section>
+            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada()">
           </div>
           <div class="informacion_carta">
             <div id="nombre">
@@ -263,9 +266,12 @@
               }
               %>
             <% }%>
-            <div class="icons">
-              <span onclick="cambiarColor(this)">&#9829;</span>
+            <div id="precio">
               <span class="carrito">&#128722;</span>
+              <p>Precio: <%= carta.price %></p>
+            </div>
+            <div class="icons">
+              
             </div>
           </div>
         </div>
