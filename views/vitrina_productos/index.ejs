@@ -111,8 +111,8 @@
 
         <div class="card">
           <div class="imagen_carta">
-            <p id="precio">precio:800000</p>
-            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada()">
+            <p id="precio">Precio: <%= carta.price %></p>
+            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')"/>
           </div>
           <div class="informacion_carta">
             <div id="nombre">
