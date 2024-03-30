@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --carta:white;
+  --precio:#EBC793;
+}
 
 body {
   background-image: url('/vitrina_productos/img/fondo.png' ) ;
@@ -159,7 +163,63 @@ border-radius: 7px;
 /* Estilos de las cartas/productos */
 
 /* Carta */
-.card {
+.card{
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-left: 6%;
+  margin-right: 6%;
+  cursor: pointer;
+  background-color: var(--carta);
+  margin-top: 20px;
+  min-height: 200px;
+}
+.card:hover{
+  transform: translateY(-20px);
+}
+.imagen_carta {
+  width: 150px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.personaje {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 13px 13px 0 0;
+}
+#precio{
+  background-color: var(--precio);
+  position: absolute;
+}
+#nombre {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#nombre p {
+  margin-top: 5px;
+  font-size: 8px;
+}
+.foto {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.informacion_carta p {
+  font-size: 8px;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-top: 1px;
+}
+/* .card {
   border: 1px solid #9e9e9e;
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -171,7 +231,7 @@ border-radius: 7px;
   cursor: pointer;
   margin-top: 10px;
   background-color: white;
-  height: 230px;
+  max-height: 200px;
   display: flex;
   position: relative;
 
@@ -185,7 +245,7 @@ border-radius: 7px;
 }
 
 .informacion_carta p {
-  font-size: 11px;
+  font-size: 8px;
   font-weight: bold;
 }
 
@@ -199,16 +259,14 @@ border-radius: 7px;
   margin-top: 1px;
 }
 
-.imagen_carta
-{
-  width: 170px;
+.imagen_carta {
+  width: 150px;
   height: 100px;
 }
-
 .personaje
 {
   width: 100%;
-height: auto;
+  height: 140px;
   border-radius: 13px 13px 0 0;
 }
 
@@ -220,10 +278,10 @@ height: auto;
 }
 #nombre p{
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 10px;
 }
 .foto{
-  height:30px;
+  height:20px;
   margin-right:10px;
 }
 
@@ -244,7 +302,7 @@ height: auto;
   margin-left: 17px;
   padding: 8px;
   border-radius: 8px;
-}
+} */
 
 /* paginacion */
 
@@ -293,21 +351,21 @@ height: auto;
     .active{
     color: red;
     }
-    span{
-      font-size: 30px;
+    .icons{
       position: relative;
-      top: -26px;
-      left: 60%;
+      top: -20px;
+      left: 63%;
+    }
+    span{
+      font-size: 20px;
     }
     span:hover{
       color: red;
     }
     .carrito
     {
-      font-size: 19px;
-      position: relative;
-      top: -32px;
-      left: 63%;
+      font-size: 12px;
+
     }
 @media screen and (min-width:1600px) and (max-width:1920px){
 .search_form .search_icon{
@@ -629,6 +687,8 @@ width: 100%;
   .container_general
   {
     background:transparent;
+    margin-left: 20%;
+    margin-top: 50px;
   }
   .card
   {
@@ -645,6 +705,8 @@ width: 100%;
   .container_general
   {
     background: transparent;
+    margin-left: 20%;
+    margin-top: 50px;
   }
   .card{
     top: 20vh;
@@ -658,6 +720,7 @@ width: 100%;
 @media screen and (min-width:540px) and (max-width:590px){
   .container_general{
     background: transparent;
+
   }
   .card{
     top: 20vh;
