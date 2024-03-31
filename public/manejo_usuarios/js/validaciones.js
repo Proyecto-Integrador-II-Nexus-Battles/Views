@@ -79,7 +79,7 @@ function ValidarFecha() {
 
 function ValidarNombreUsuario() {
     const inputUsuario = document.getElementById('username')
-    fetch('/public/manejo_usuarios/ApodosInhabilitados.json')
+    fetch('manejo_usuarios/ApodosInhabilitados.json')
         .then(function (res){
             return res.json();
         })
