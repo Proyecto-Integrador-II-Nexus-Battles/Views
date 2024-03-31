@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --carta:white;
+  --precio:#a3b7dc;
+  --precio_hover:#304c8b;
+}
 
 body {
   background-image: url('/vitrina_productos/img/fondo.png' ) ;
@@ -159,59 +164,113 @@ border-radius: 7px;
 /* Estilos de las cartas/productos */
 
 /* Carta */
-.card {
+.card{
   border: 1px solid #9e9e9e;
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  margin-left: 3%;
-  margin-right:3%;
+  margin-left: 6%;
+  margin-right: 6%;
   cursor: pointer;
-  margin-top: 10px;
-  background-color: white;
-  height: 230px;
-  display: flex;
-  position: relative;
+  background-color: var(--carta);
+  margin-top: 20px;
 
 }
-.card:hover{
+.card:hover {
   transform: translateY(-20px);
+  display: block;
+}
+.card:hover #like,
+.card:hover .carrito {
+  display: block;
+}
+.card:hover #precio button{
+  left: 40%;
+  background-color: var(--precio_hover);
+  color: white;
+}
+#like{
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 33%;
+  left: 85%;
+  display: none;
+}
+#like:hover{
+  color: red;
+}
+.imagen_carta {
+  width: 150px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.informacion_carta {
-  margin-left: 5px;
+.personaje {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 13px 13px 0 0;
+}
+#precio button{
+  display: flex;
+  background-color: var(--precio);
+  border: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  left: 50%;
+  cursor: pointer;
+}
+.carrito
+{
+  font-size: 12px;
+  display: none;
+}
+#nombre {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#nombre p {
+  margin-top: 5px;
+  font-size: 8px;
+}
+.foto {
+  height: 20px;
+  margin-right: 10px;
 }
 
 .informacion_carta p {
-  font-size: 11px;
+  font-size: 8px;
   font-weight: bold;
-}
-
-.informacion_carta .stats_card {
-  list-style: none;
-  margin-top: 5px;
-}
-
-.stats_card li {
-  font-size: 19px;
+  padding-left: 10px;
   margin-top: 1px;
 }
-
-.imagen_carta
-{
-  width: 170px;
-  height: 100px;
+#cart {
+  background-color: #2ecc71;
+  text-align: center;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 8px;
 }
-
-.personaje
-{
-  width: 100%;
-height: auto;
-  border-radius: 13px 13px 0 0;
+#cart2 {
+  background-color: #d8e9f9;
+  text-align: center;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 17px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
-
 
 /* paginacion */
 
@@ -260,22 +319,7 @@ height: auto;
     .active{
     color: red;
     }
-    span{
-      font-size: 30px;
-      position: relative;
-      top: -26px;
-      left: 60%;
-    }
-    span:hover{
-      color: red;
-    }
-    .carrito
-    {
-      font-size: 19px;
-      position: relative;
-      top: -32px;
-      left: 63%;
-    }
+
 @media screen and (min-width:1600px) and (max-width:1920px){
 .search_form .search_icon{
   top: -2px;
@@ -284,33 +328,45 @@ height: auto;
   width: 500px;
   height: 30px;
 }
+.filtros{
+  margin-left: 5%;
+  width: 300px;
+}
+.filtros h1{
+  font-size: 40px;
+}
 .tipo_filtros{
   width: 300px;
 }
 .tipo_filtros li{
-  font-size: 20px;
+  font-size: 25px;
 }
 .seleccionar_precio, .tipo_carta{
   font-size: 18px;
-  width: 180px;
+  width: 270px;
+  font-size: 23px;
+  height: 30px;
 }
 .promociones + b {
-  font-size: 24px;
-padding-top: 2px;
+  font-size: 28px;
+padding-top: 7px;
+margin-left: 10px;
 }
 .promociones{
-  transform: scale(1.4);
+  transform: scale(2.4);
+  margin-left: 12px;
 }
 #filtro_input{
-width: 150px;
+width: 250px;
 margin-left: 20px;
-font-size: 18px;
+font-size: 23px;
+height: 30px;
 padding-bottom: 23px;
 }
 
 .container_general{
   width: 50%;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 span{
   top: -23px;
@@ -329,15 +385,31 @@ span{
 .personaje
 {
   width: 100%;
-height: auto;
-display: block;
-  border-radius: 13px 13px 0 0;
 }
 .card {
   height: 325px;
 }
+#nombre p {
+  font-size: 15px;
+}
 .informacion_carta p{
   font-size: 13px;
+}
+#cart {
+  width: 150px;
+}
+#cart2 {
+  width: 150px;
+}
+#precio button{
+  left: 42%;
+}
+.card:hover #precio button{
+  left: 35%;
+}
+#like{
+  top: 43%;
+  left: 85%;
 }
 
 }
@@ -358,6 +430,15 @@ display: block;
   .search_form .search_input{
     width: 300px;
   }
+
+}
+
+@media (width>=1360px) and (width<=1366px)
+{
+  .imagen_carta
+  {
+    width: 160px;
+  }
 }
 
 @media screen and (max-width:1280px) {
@@ -368,16 +449,13 @@ display: block;
     font-size:9px;
     font-weight: bold;
   }
-  .card{
-    height: 210px;
-  }
   .imagen_carta
   {
     width: 150px;
     height: 100px;
     overflow: hidden;
   }
-  
+
   .personaje
   {
     width: 100%;
@@ -385,14 +463,24 @@ display: block;
   display: block;
     border-radius: 13px 13px 0 0;
   }
-  span{
-
-    top: -24px;
+  #cart {
+    width: 90px;
   }
-  .carrito
-  {
-    font-size: 16px;
-    top: -29px;
+  #cart2 {
+    width: 90px;
+  }
+  #precio button{
+    left: 40%;
+  }
+  .card:hover #precio button{
+    left: 35%;
+  }
+  #like{
+    top: 33%;
+    left: 85%;
+  }
+  .carrito{
+    font-size: 10px;
   }
 }
 
@@ -496,9 +584,7 @@ display: block;
     margin-left: 40px;
     margin-right: 20px;
   }
-  .barra_busqueda .search_input{
-    margin-left: 60px;
-    }
+
 }
 
 @media screen and (max-width:660px){
@@ -526,8 +612,13 @@ margin-left: 14%;
 width: 70%;
 }
 .barra_busqueda .search_input{
-margin-left: 60px;
 margin-bottom: 90%;
+width: 100%;
+}
+
+.search_form{
+  margin-left: 20px;
+  width: 100%;
 }
 .search_form .search_icon{
   right: 28px;
@@ -572,6 +663,8 @@ margin-bottom: 90%;
   .container_general
   {
     background:transparent;
+    margin-left: 20%;
+    margin-top: 50px;
   }
   .card
   {
@@ -582,12 +675,17 @@ margin-bottom: 90%;
     position: relative;
     top: 25vh;
   }
+  .container_general{
+    margin-top: 210px;
+  }
 }
 
 @media screen and (min-width:391px) and (max-width:430px){
   .container_general
   {
     background: transparent;
+    margin-left: 20%;
+    margin-top: 50px;
   }
   .card{
     top: 20vh;
@@ -597,10 +695,14 @@ margin-bottom: 90%;
     position: relative;
     top: 20vh;
   }
+  .container_general{
+    margin-top: 210px;
+  }
 }
 @media screen and (min-width:540px) and (max-width:590px){
   .container_general{
     background: transparent;
+
   }
   .card{
     top: 20vh;
@@ -628,6 +730,9 @@ margin-bottom: 90%;
   .container_general
   {
     background:transparent;
+    margin-top: 90%;
+    margin-left: 65px;
+
   }
   .card{
     top: 20vh;

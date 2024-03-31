@@ -11,4 +11,3 @@ export const PORT_BACK = process.env.PORT_BACK || 3000;
 export const HOST = process.env.HOST;
 export const APP_PORT = process.env.APP_PORT;
 export const HOST_PORT = process.env.HOST_PORT
-
