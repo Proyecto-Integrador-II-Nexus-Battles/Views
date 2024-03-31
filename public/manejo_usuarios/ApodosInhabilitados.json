@@ -1,0 +1,764 @@
+[
+    {
+        "name": "Apple"
+    },
+    {
+        "name": "Google"
+    },
+    {
+        "name": "Amazon"
+    },
+    {
+        "name": "Microsoft"
+    },
+    {
+        "name": "CocaCola"
+    },
+    {
+        "name": "Samsung"
+    },
+    {
+        "name": "Toyota"
+    },
+    {
+        "name": "McDonald"
+    },
+    {
+        "name": "Nike"
+    },
+    {
+        "name": "Walmart"
+    },
+    {
+        "name": "Facebook"
+    },
+    {
+        "name": "IBM"
+    },
+    {
+        "name": "MercedesBenz"
+    },
+    {
+        "name": "Disney"
+    },
+    {
+        "name": "BMW"
+    },
+    {
+        "name": "Intel"
+    },
+    {
+        "name": "LouisVuitton"
+    },
+    {
+        "name": "Verizon"
+    },
+    {
+        "name": "AT&T"
+    },
+    {
+        "name": "Sony"
+    },
+    {
+        "name": "Honda"
+    },
+    {
+        "name": "Pepsi"
+    },
+    {
+        "name": "Visa"
+    },
+    {
+        "name": "Marlboro"
+    },
+    {
+        "name": "GeneralElectric"
+    },
+    {
+        "name": "Netflix"
+    },
+    {
+        "name": "LOreal"
+    },
+    {
+        "name": "Ford"
+    },
+    {
+        "name": "Target"
+    },
+    {
+        "name": "HP"
+    },
+    {
+        "name": "Nestle"
+    },
+    {
+        "name": "Colgate"
+    },
+    {
+        "name": "Adidas"
+    },
+    {
+        "name": "Volkswagen"
+    },
+    {
+        "name": "AmericanExpress"
+    },
+    {
+        "name": "Cisco"
+    },
+    {
+        "name": "Uber"
+    },
+    {
+        "name": "KFC"
+    },
+    {
+        "name": "Tiffany"
+    },
+    {
+        "name": "Xiaomi"
+    },
+    {
+        "name": "Zara"
+    },
+    {
+        "name": "Lamborghini"
+    },
+    {
+        "name": "Gucci"
+    },
+    {
+        "name": "Chanel"
+    },
+    {
+        "name": "Tesla"
+    },
+    {
+        "name": "Rolex"
+    },
+    {
+        "name": "Starbucks"
+    },
+    {
+        "name": "H&M"
+    },
+    {
+        "name": "puta"
+    },
+    {
+        "name": "mierda"
+    },
+    {
+        "name": "coño"
+    },
+    {
+        "name": "joder"
+    },
+    {
+        "name": "cabrón"
+    },
+    {
+        "name": "pendejo"
+    },
+    {
+        "name": "maricón"
+    },
+    {
+        "name": "culero"
+    },
+    {
+        "name": "chucha"
+    },
+    {
+        "name": "verga"
+    },
+    {
+        "name": "huevón"
+    },
+    {
+        "name": "perra"
+    },
+    {
+        "name": "cagada"
+    },
+    {
+        "name": "chingar"
+    },
+    {
+        "name": "puto"
+    },
+    {
+        "name": "putita"
+    },
+    {
+        "name": "maldito"
+    },
+    {
+        "name": "zorra"
+    },
+    {
+        "name": "gilipollas"
+    },
+    {
+        "name": "baboso"
+    },
+    {
+        "name": "idiota"
+    },
+    {
+        "name": "estúpido"
+    },
+    {
+        "name": "tonto"
+    },
+    {
+        "name": "imbécil"
+    },
+    {
+        "name": "cabrón"
+    },
+    {
+        "name": "pendejo"
+    },
+    {
+        "name": "maricón"
+    },
+    {
+        "name": "culero"
+    },
+    {
+        "name": "chucha"
+    },
+    {
+        "name": "verga"
+    },
+    {
+        "name": "huevón"
+    },
+    {
+        "name": "perra"
+    },
+    {
+        "name": "cagada"
+    },
+    {
+        "name": "chingar"
+    },
+    {
+        "name": "puto"
+    },
+    {
+        "name": "putita"
+    },
+    {
+        "name": "maldito"
+    },
+    {
+        "name": "zorra"
+    },
+    {
+        "name": "gilipollas"
+    },
+    {
+        "name": "baboso"
+    },
+    {
+        "name": "idiota"
+    },
+    {
+        "name": "estúpido"
+    },
+    {
+        "name": "tonto"
+    },
+    {
+        "name": "imbécil"
+    },
+    {
+        "name": "cabrón"
+    },
+    {
+        "name": "pendejo"
+    },
+    {
+        "name": "maricón"
+    },
+    {
+        "name": "culero"
+    },
+    {
+        "name": "chucha"
+    },
+    {
+        "name": "paraco"
+    },
+    {
+        "name": "Uribe"
+    },
+    {
+        "name": "Albert"
+    },
+    {
+        "name": "Einstein"
+    },
+    {
+        "name": "Marie"
+    },
+    {
+        "name": "Curie"
+    },
+    {
+        "name": "Leonardo"
+    },
+    {
+        "name": "da Vinci"
+    },
+    {
+        "name": "Marilyn"
+    },
+    {
+        "name": "Monroe"
+    },
+    {
+        "name": "William"
+    },
+    {
+        "name": "Shakespeare"
+    },
+    {
+        "name": "Nelson"
+    },
+    {
+        "name": "Mandela"
+    },
+    {
+        "name": "Amelia"
+    },
+    {
+        "name": "Earhart"
+    },
+    {
+        "name": "Pablo"
+    },
+    {
+        "name": "Picasso"
+    },
+    {
+        "name": "Jane"
+    },
+    {
+        "name": "Austen"
+    },
+    {
+        "name": "Vincent"
+    },
+    {
+        "name": "van Gogh"
+    },
+    {
+        "name": "Charles"
+    },
+    {
+        "name": "Darwin"
+    },
+    {
+        "name": "Coco"
+    },
+    {
+        "name": "Chanel"
+    },
+    {
+        "name": "Wolfgang Amadeus"
+    },
+    {
+        "name": "Mozart"
+    },
+    {
+        "name": "Martin Luther"
+    },
+    {
+        "name": "King Jr."
+    },
+    {
+        "name": "Queen"
+    },
+    {
+        "name": "Elizabeth II"
+    },
+    {
+        "name": "Frida"
+    },
+    {
+        "name": "Kahlo"
+    },
+    {
+        "name": "Mahatma"
+    },
+    {
+        "name": "Gandhi"
+    },
+    {
+        "name": "Mother"
+    },
+    {
+        "name": "Teresa"
+    },
+    {
+        "name": "Elon"
+    },
+    {
+        "name": "Musk"
+    },
+    {
+        "name": "Steve"
+    },
+    {
+        "name": "Jobs"
+    },
+    {
+        "name": "Michael"
+    },
+    {
+        "name": "Jackson"
+    },
+    {
+        "name": "Bob"
+    },
+    {
+        "name": "Dylan"
+    },
+    {
+        "name": "Oprah"
+    },
+    {
+        "name": "Winfrey"
+    },
+    {
+        "name": "Stephen"
+    },
+    {
+        "name": "Hawking"
+    },
+    {
+        "name": "John"
+    },
+    {
+        "name": "Lennon"
+    },
+    {
+        "name": "Alberto"
+    },
+    {
+        "name": "Santos Dumont"
+    },
+    {
+        "name": "Cristiano"
+    },
+    {
+        "name": "Ronaldo"
+    },
+    {
+        "name": "David"
+    },
+    {
+        "name": "Bowie"
+    },
+    {
+        "name": "Leonardo"
+    },
+    {
+        "name": "DiCaprio"
+    },
+    {
+        "name": "Stephen"
+    },
+    {
+        "name": "King"
+    },
+    {
+        "name": "J.K."
+    },
+    {
+        "name": "Rowling"
+    },
+    {
+        "name": "Neil"
+    },
+    {
+        "name": "Armstrong"
+    },
+    {
+        "name": "Amancio"
+    },
+    {
+        "name": "Ortega"
+    },
+    {
+        "name": "Celine"
+    },
+    {
+        "name": "Dion"
+    },
+    {
+        "name": "Angelina"
+    },
+    {
+        "name": "Jolie"
+    },
+    {
+        "name": "Tom"
+    },
+    {
+        "name": "Hanks"
+    },
+    {
+        "name": "Barack"
+    },
+    {
+        "name": "Obama"
+    },
+    {
+        "name": "Malala"
+    },
+    {
+        "name": "Yousafzai"
+    },
+    {
+        "name": "Rosa"
+    },
+    {
+        "name": "Parks"
+    },
+    {
+        "name": "Audrey"
+    },
+    {
+        "name": "Hepburn"
+    },
+    {
+        "name": "Bruce"
+    },
+    {
+        "name": "Lee"
+    },
+    {
+        "name": "Salvador"
+    },
+    {
+        "name": "Dalí"
+    },
+    {
+        "name": "Grace"
+    },
+    {
+        "name": "Kelly"
+    },
+    {
+        "name": "Madonna"
+    },
+    {
+        "name": "Charles"
+    },
+    {
+        "name": "Chaplin"
+    },
+    {
+        "name": "Muhammad"
+    },
+    {
+        "name": "Ali"
+    },
+    {
+        "name": "Pele"
+    },
+    {
+        "name": "Sigmund"
+    },
+    {
+        "name": "Freud"
+    },
+    {
+        "name": "Petro"
+    },
+    {
+        "name": "Santos"
+    },
+    {
+        "name": "Pastrana"
+    },
+    {
+        "name": "Escobar"
+    },
+    {
+        "name": "Guzman"
+    },
+    {
+        "name": "Lenin"
+    },
+    {
+        "name": "Hitler"
+    },
+    {
+        "name": "Mussolini"
+    },
+    {
+        "name": "Roostvelt"
+    },
+    {
+        "name": "Guzman"
+    },
+    {
+        "name": "fuck"
+    },
+    {
+        "name": "shit"
+    },
+    {
+        "name": "asshole"
+    },
+    {
+        "name": "bitch"
+    },
+    {
+        "name": "damn"
+    },
+    {
+        "name": "motherfucker"
+    },
+    {
+        "name": "cunt"
+    },
+    {
+        "name": "cock"
+    },
+    {
+        "name": "dick"
+    },
+    {
+        "name": "piss"
+    },
+    {
+        "name": "bastard"
+    },
+    {
+        "name": "twat"
+    },
+    {
+        "name": "wanker"
+    },
+    {
+        "name": "bollocks"
+    },
+    {
+        "name": "arse"
+    },
+    {
+        "name": "arsehole"
+    },
+    {
+        "name": "bugger"
+    },
+    {
+        "name": "prick"
+    },
+    {
+        "name": "fucker"
+    },
+    {
+        "name": "fucking"
+    },
+    {
+        "name": "shithead"
+    },
+    {
+        "name": "douchebag"
+    },
+    {
+        "name": "crap"
+    },
+    {
+        "name": "craphead"
+    },
+    {
+        "name": "idiot"
+    },
+    {
+        "name": "moron"
+    },
+    {
+        "name": "screw"
+    },
+    {
+        "name": "screwed"
+    },
+    {
+        "name": "screwup"
+    },
+    {
+        "name": "screwedup"
+    },
+    {
+        "name": "bullshit"
+    },
+    {
+        "name": "dumbass"
+    },
+    {
+        "name": "jackass"
+    },
+    {
+        "name": "damnation"
+    },
+    {
+        "name": "nigger"
+    },
+    {
+        "name": "retard"
+    },
+    {
+        "name": "retarded"
+    },
+    {
+        "name": "faggot"
+    },
+    {
+        "name": "gaylord"
+    },
+    {
+        "name": "dyke"
+    },
+    {
+        "name": "fag"
+    },
+    {
+        "name": "pussy"
+    },
+    {
+        "name": "pissed"
+    },
+    {
+        "name": "wank"
+    },
+    {
+        "name": "wanking"
+    },
+    {
+        "name": "whore"
+    },
+    {
+        "name": "gay"
+    },
+    {
+        "name": "lesbian"
+    },
+    {
+        "name": "bisexual"
+    },
+    {
+        "name": "sexual"
+    },
+    {
+        "name": "xxx"
+    }
+]

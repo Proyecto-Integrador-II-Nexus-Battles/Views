@@ -110,6 +110,8 @@
         %>
 
         <div class="card">
+        <% for (var i = 0; i < datos.length; i++) { %>
+        <div class="card" >
           <div class="imagen_carta">
             <section class="icons">
               <span onclick="cambiarColor(this)" id="like">&#9829;</span>
@@ -305,5 +307,6 @@
   <script src="vitrina_productos/js/vistaDetallada.js"></script>
   <script src="vitrina_productos/js/paginacion.js"></script>
   <script src="vitrina_productos/js/animacion.js"></script>
+  <script src="vitrina_productos/js/postID.js"></script>
 </body>
 </html>
