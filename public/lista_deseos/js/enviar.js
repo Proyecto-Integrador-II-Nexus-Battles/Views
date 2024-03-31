@@ -1,8 +1,6 @@
 function moverCarroCompras(item_id){
-    const url = `http://192.168.39.193:3001/dummy/ADD-CARD`;
-    const userId = 15;
+    const url = `/deseos/moverCarta`;
     const data = {
-      'IdUsuario': userId,
       'IdCard': item_id,
       'Cantidad': 1
     };

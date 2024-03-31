@@ -1,9 +1,9 @@
-import fetch from 'node-fetch';
-import {HOST, HOST_PORT} from "../../config.js";
+import fetch from "node-fetch";
+import { HOST, PORT } from "../../config.js";
 
 export const renderAdmin = async (req, res) => {
   try {
-    const data = await fetch(`http://${HOST}:${HOST_PORT}/usuario/admin`);
+    const data = await fetch(`${HOST}:${PORT}/usuario/admin`);
     const users = await data.json();
     res.render("manejo_usuarios/admin_main_page", { users });
   } catch (error) {
@@ -15,7 +15,9 @@ export const renderAdmin = async (req, res) => {
 export const buscarUsername = async (req, res) => {
   try {
     const query = req.query.q;
-    const response = await fetch(`http://${HOST}:${HOST_PORT}/usuario/buscar_usuario?q=${query}`);
+    const response = await fetch(
+      `http://${HOST}:${PORT}/usuario/buscar_usuario?q=${query}`
+    );
     const resultados = await response.json();
     res.json(resultados);
   } catch (error) {
@@ -40,7 +42,7 @@ export const renderUser = async (req, res) => {
 
 async function fetchUserInfo(username) {
   try {
-    const response = await fetch(`http://${HOST}:${HOST_PORT}/usuario/${username}`);
+    const response = await fetch(`http://${HOST}:${PORT}/usuario/${username}`);
     const text = await response.text();
     const userInfo = text ? JSON.parse(text) : null;
     return userInfo;
