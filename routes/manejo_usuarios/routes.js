@@ -10,6 +10,6 @@ router.get("/register", renderRegister);
 router.get("/vitrina", rendervitrina);
 router.get("/adminpage", renderAdmin);
 router.get('/buscar_user', buscarUsername);
-router.get("/:username", renderUser);
+router.get("/user/:username", renderUser);
 
 export default router;

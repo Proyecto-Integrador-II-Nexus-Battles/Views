@@ -98,7 +98,7 @@ export const renderUser = async (req, res) => {
 
 async function fetchUserInfo(username) {
   try {
-    const response = await fetch(`http://${HOST}:${HOST_PORT}/usuario/${username}`);
+    const response = await fetch(`http://${HOST}:${HOST_PORT}/usuario/user/${username}`);
     const text = await response.text();
     const userInfo = text ? JSON.parse(text) : null;
     return userInfo;
