@@ -1,7 +1,8 @@
 import express from "express";
 import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
 import configRoutes from "./routes/config.routes.js"
-import { PORT } from "./config.js";
+import testing2Routes from "./routes/vitrina_productos/testing.routes.js";
+import { APP_PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
 import bodyParser from "body-parser";
@@ -24,9 +25,10 @@ const app = express();
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(usuarioRoutes);
 app.use(configRoutes);
+app.use(testing2Routes);
 
 app.use((req, res) => {
   res.status(404).json({
@@ -35,5 +37,6 @@ app.use((req, res) => {
 });
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(PORT);
-console.log(`Server is running on port ${PORT}`);
+app.listen(APP_PORT, () => {
+    console.log(`Server listen on port ${APP_PORT}`)
+})

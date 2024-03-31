@@ -14,7 +14,7 @@ function LimitarCaracteres(event) {
 
 function ValidarContrasena() {
     const password = document.getElementById('password');
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]+$/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/;
 
     if (!regex.test(password.value)) {
         if (!/(?=.*[a-z])/.test(password.value)) {
@@ -23,7 +23,7 @@ function ValidarContrasena() {
             password.setCustomValidity("La contraseña debe contener al menos una mayúscula.");
         } else if (!/(?=.*\d)/.test(password.value)) {
             password.setCustomValidity("La contraseña debe contener al menos un numero.");
-        } else if (!/(?=.*[$@$!%*?&])/.test(password.value)) {
+        } else if (!/(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(password.value)) {
             password.setCustomValidity("La contraseña debe contener al menos un carácter especial ($@$!%*?&).");
         }
         return false;
@@ -79,15 +79,14 @@ function ValidarFecha() {
 
 function ValidarNombreUsuario() {
     const inputUsuario = document.getElementById('username')
-    console.log('hola')
-    fetch('../ApodosInhabilitados.json')
-        .then(function (res) {
+    fetch('/public/manejo_usuarios/ApodosInhabilitados.json')
+        .then(function (res){
             return res.json();
         })
-        .then(function (data) {
+        .then(function(data){
             let flag = false;
             let value = inputUsuario.value.replace(/\s/g, "").toLowerCase();
-            data.forEach(function (nombre) {
+            data.forEach(function(nombre){
                 if (value.includes(nombre.name.toLowerCase())) {
                     flag = true;
                 }
@@ -98,7 +97,7 @@ function ValidarNombreUsuario() {
                 inputUsuario.setCustomValidity("");
             }
         })
-        .catch(function (error) {
+        .catch(function(error) {
             console.error('Error al cargar el JSON:', error);
         });
 }

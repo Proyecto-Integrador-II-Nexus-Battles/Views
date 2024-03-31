@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-    <link rel="stylesheet" href="manejo_usuarios/css/register-style.css" />
+    <link rel="stylesheet" href="../../public/manejo_usuarios/css/register-style.css" />
   </head>
 
   <body>
@@ -29,7 +29,7 @@
                 name="apellido"
                 id="apellido"
                 maxlength="50"
-                oninput="ValidarNombreUsuario()"
+                oninput="LimitarCaracteres(event)"
                 required
               />
               <label for="username">Apodo</label>
@@ -38,8 +38,8 @@
                 name="username"
                 id="username"
                 maxlength="50"
+                oninput="ValidarNombreUsuario()"
                 required
-                oninput="(event)"
               />
               <p>
                 Este apodo se mostrará en el juego. <br />El apodo no puede ser
@@ -80,6 +80,7 @@
                   required
                   onchange="ValidarArchivo()"
                 />
+
               </div>
               <p>Solo se permiten archivos .jpg y .png de maximo 500 kbs.</p>
             </div>
@@ -205,13 +206,11 @@
             REGISTRAR
           </button>
         </form>
-        <img src="/manejo_usuarios/img/logo_nb2_v2.png" />
+        <img src="../../public/manejo_usuarios/img/logo_nb2_v2.png" /> 
       </div>
     </main>
-
-    <script src="/manejo_usuarios/js/validaciones.js" type="module"></script>
-    <script src="/manejo_usuarios/js/register.js" type="module"></script>
-
-    -->
+    <script src="../../public/manejo_usuarios/js/card.js"></script>
+    <script src="../../public/manejo_usuarios/js/validaciones.js"></script>
+  
   </body>
 </html>
