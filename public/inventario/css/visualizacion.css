@@ -197,7 +197,7 @@ main {
 /* VENTANA EMERGENTE */
 
 .ventana-emergente {
-  display: none;
+  display:none ;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -211,20 +211,30 @@ main {
 .contenido-ventana {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
+  padding-right:10px ;
+  border-radius: 10px;
+}
+.button{
+  margin-left: 20%;
 }
 
 .contenido-ventana button {
   border: transparent;
   background-color: #a3b7dc;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   cursor: pointer;
-  margin-left: 100px;
-  /* margin-top: 150px; */
+  margin-left: 30px;
+  font-size: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.contenido-ventana button:hover{
+  background-color: #304c8b;
+  color: white;
 }
 
 .cerrar {
@@ -232,6 +242,8 @@ main {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  position: relative;
+
 }
 
 .cerrar:hover,
@@ -397,6 +409,7 @@ main {
   display: block;
 }
 
+
 @media screen and (max-width: 1687px) {
   .container_general {
     width: 90%;
@@ -542,6 +555,12 @@ main {
   .modificar button{
     font-size:10px ;
   }
+  .contenido-ventana {
+    width: 40%;
+  }
+  .button{
+    margin-left: 15%;
+  }
 }
 
 @media screen and (max-width:1212px) {
@@ -658,7 +677,12 @@ main {
     margin-left: 40px;
     margin-right: 20px;
   }
-
+  .contenido-ventana {
+    width: 70%;
+  }
+  .button{
+    margin-left: 20%;
+  }
 }
 
 @media screen and (max-width:660px){
@@ -701,6 +725,18 @@ main {
     width: 70%;
     font-size: 10px;
   }
+  
+  .contenido-ventana {
+    width: 70%;
+  }
+  .button{
+    margin-left: 5%;
+  }
+  
+  .contenido-ventana button {
+    font-size:9px;
+  }
+  
 }
 
 @media screen and (min-width:391px) and (max-width:430px){
@@ -717,6 +753,16 @@ main {
     left: -10%;
     width: 70%;
     font-size: 10px;
+  }
+  .contenido-ventana {
+    width: 70%;
+  }
+  .button{
+    margin-left: 5%;
+  }
+  
+  .contenido-ventana button {
+    font-size:10px;
   }
 }
 @media screen and (min-width:540px) and (max-width:590px){
@@ -760,6 +806,16 @@ main {
     left: -10%;
     width: 70%;
     font-size: 10px;
+  }
+  .contenido-ventana {
+    width: 70%;
+  }
+  .button{
+    margin-left: 5%;
+  }
+  
+  .contenido-ventana button {
+    font-size:10px;
   }
 }
 @media screen and (min-width:431px) and (max-width:539px)
