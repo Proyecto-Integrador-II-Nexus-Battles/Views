@@ -11,7 +11,7 @@
     <main>
       <h1>¡Regístrate!</h1>
       <div class="container">
-        <form action="http://localhost:5000/registro" method="POST">
+        <form id="register">
           <div class="col_container">
             <div class="col">
               <label for="nombre">Nombre</label>
@@ -71,11 +71,27 @@
               </p>
               <div class="file_input_container">
                 <label for="avatar" required>Avatar</label>
-                <input type="file" name="avatar" id="avatar" class="file_input" accept=".jpg, .png" required onchange="ValidarArchivo()">
+                <input
+                  type="file"
+                  name="avatar"
+                  id="avatar"
+                  class="file_input"
+                  accept=".jpg, .png"
+                  required
+                  onchange="ValidarArchivo()"
+                />
+
               </div>
               <p>Solo se permiten archivos .jpg y .png de maximo 500 kbs.</p>
             </div>
           </div>
+          <input
+            type="text"
+            id="avataroculto"
+            name=" avataroculto"
+            value=""
+            style="display: none"
+          />
           <div class="col_container2">
             <div class="metodo_pago">
               <h2>Metodo de pago</h2>
@@ -181,12 +197,20 @@
               />
             </div>
           </div>
-          <input type="submit" value="REGISTRAR" class="btn_submit" />
+          <button
+            type="submit"
+            value="REGISTRAR"
+            class="btn_submit"
+            id="submit"
+          >
+            REGISTRAR
+          </button>
         </form>
-        <img src="../../public/manejo_usuarios/img/logo_nb2_v2.png" />
+        <img src="../../public/manejo_usuarios/img/logo_nb2_v2.png" /> 
       </div>
     </main>
     <script src="../../public/manejo_usuarios/js/card.js"></script>
     <script src="../../public/manejo_usuarios/js/validaciones.js"></script>
+  
   </body>
 </html>

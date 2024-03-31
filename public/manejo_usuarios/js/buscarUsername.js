@@ -5,7 +5,7 @@ async function buscarUsuarios() {
   const query = searchInput.value;
   const userList = document.querySelector('.swiper-wrapper');
   userList.innerHTML = '';
-
+  
   const response = await fetch(`/buscar_user?q=${query}`);
   if (response.ok) {
     const data = await response.json();

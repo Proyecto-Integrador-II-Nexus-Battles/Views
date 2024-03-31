@@ -1,5 +1,63 @@
+
+import axios from "axios";
+import { PORT, HOST, HOST_PORT} from "../../config.js";
 import fetch from 'node-fetch';
-import {HOST, HOST_PORT} from "../../config.js";
+
+export const renderLogin = (req, res) => {
+  res.render("manejo_usuarios/login.ejs");
+};
+
+export const userLogging = async (req, res) => {
+  const endpoint = "/usuario/logIn";
+  axios
+    .post(`${HOST}:${PORT}${endpoint}`, {
+      email: req.body.email,
+      password: req.body.password,
+    })
+    .then((response) => { });
+};
+
+export const renderRegister = (req, res) => {
+  res.render("manejo_usuarios/register.ejs");
+};
+
+export const admin = (req, res) => {
+  res.render("manejo_usuarios/admin_main_page.ejs");
+};
+
+
+
+export const rendervitrina = (req, res) => {
+  res.render("manejo_usuarios/vitrina.ejs");
+};
+
+export const irrvitrina = (req, res) => {
+  res.redirect("manejo_usuarios/vitrina.ejs")
+};
+
+
+export const register = async (req, res) => {
+  const endpoint = "/usuario/registro";
+
+
+  axios.post(`${HOST}:${PORT}${endpoint}`, {
+    nombre: req.body.nombre,
+    apellido: req.body.apellido,
+    username: req.body.username,
+    email: req.body.email,
+    metodospago: req.body.metodospago,
+    numero_tarjeta: req.body.numero_tarjeta,
+    cvv: req.body.cvv,
+    fecha_exp: req.body.fecha_exp,
+    pregunta_1: req.body.pregunta_1,
+    pregunta_2: req.body.pregunta_2,
+    pregunta_3: req.body.pregunta_3,
+    avataroculto: req.body.avataroculto,
+  });
+
+
+};
+
 
 export const renderAdmin = async (req, res) => {
   try {
@@ -49,3 +107,4 @@ async function fetchUserInfo(username) {
     throw error;
   }
 }
+
