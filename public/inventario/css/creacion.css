@@ -509,57 +509,66 @@ textarea{
   }
 
 
-@media (width <= 874px) {
+@media (width <= 800px) {
+  .card{
+    margin-top: 50px;
+  }
   .guardar-cambios {
     font-size: 15px;
     bottom: 33%;
     left: 5%;
   }
+  textarea{
+    width: 60%;
+    max-height: 250px;
+  }
+  .siguiente {
+    font-size: 1rem;
+    background-color: #a3b7dc;
+    border: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .guardar-cambios {
+    font-size: 12px;
+    width: 40%;
+    margin-top: 140px;
+    margin-left: 125px;
+  }
+
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 400px) {
   header {
     width: 500px;
     padding-left: 20px;
     padding-right: 20px;
   }
-
   .container_productos {
     width: 330px;
-    margin-left: 100px;
+    margin-left: 5px;
   }
 
   .imagen_carta {
-    width: 300px;
-    height: 300px;
+    width: 230px;
+    height: 280px;
   }
   .card {
-    height: 690px;
-    width: 680px;
+    height: 580px;
   }
   .informacion_carta p {
-    font-size: 20px;
+    font-size: 10px;
   }
   .opcion {
-    font-size: 15px;
+    font-size: 10px;
     width: 50px;
   }
-
-}
-
-@media screen and (max-width: 375px) {
-  .container_productos {
-    background: transparent;
-    box-shadow: none;
+  .siguiente{
+    font-size: 10px;
   }
-  .fondo {
-    /* background:linear-gradient(45deg,#304b8b88, #a3b7dc7b, #d8e9f97b); */
-    position: relative;
-    top: 30%;
-    left: 20%;
-  }
-  .card {
-    position: relative;
-    right: 20%;
+  .guardar-cambios{
+    margin-top: 220px;
   }
 }

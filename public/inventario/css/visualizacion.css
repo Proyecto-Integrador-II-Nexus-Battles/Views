@@ -129,8 +129,7 @@ main {
   background-color: white;
   margin-top: -10px;
   max-width: 200px;
-  /* min-height: 300px;
-  max-height: 350px; */
+  max-height: 330px;
 }
 
 .imagen_carta {
@@ -522,6 +521,7 @@ main {
   .container_general{
     width: 60%;
   }
+  .card
   .informacion_carta p {
     font-size:9px;
     font-weight: bold;
