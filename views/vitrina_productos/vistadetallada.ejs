@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vista Detallada</title>
-  <link rel="stylesheet" href="vitrina_productos/css/vistadetallada.css">
+  <link rel="stylesheet" href="/vitrina_productos/css/vistadetallada.css">
 </head>
 <body>
    <!-- Header -->
    <header>
-    <img src="vitrina_productos/img/logo.png" class="logo_img" alt="">
+    <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
       <!-- Barra de navegación -->
-    <img src="vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
+    <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
         <li><a href="#">Mi cuenta</a></li>
@@ -29,7 +29,7 @@
   <!-- Main -->
   <main>
 <div class="container_general">
-  <img class="back_img" src="vitrina_productos/img/Vector.png" onclick="vistaEcommerce()">
+  <img class="back_img" src="/vitrina_productos/img/Vector.png" onclick="vistaEcommerce()">
   <% // Mapeo de subtipos a imágenes y tipo de icono
         const subtipoImagen = {
           "Armas": "/inventario/imagenes/espadas.png",
@@ -57,11 +57,11 @@
 <div class="imagen_carta">
   <img src="<%= carta.imagePath %>"  class="card-img">
 <ul class="calificacion_stars">
-  <li><img src="vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
 </ul>
 </div>
 <div class="detalles_carta">
@@ -271,7 +271,7 @@ prueba
 
 </div>
 </main>
-<script src="vitrina_productos/js/navbar.js"></script>
-<script src="vitrina_productos/js/vistaDetallada.js"></script>
+<script src="/vitrina_productos/js/navbar.js"></script>
+<script src="/vitrina_productos/js/vistaDetallada.js"></script>
 </body>
 </html>

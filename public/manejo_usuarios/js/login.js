@@ -33,8 +33,8 @@ function handleSubmit(event) {
         localStorage.setItem("token", JSON.stringify(result.token));
 
         //http://${HOST}:${PORT}/usuario/recibir
-        window.location.href = "/";
-        /* fetch(`${HOST}:${PORT_VITRINA}/usuario/vitrinarecibir`, {
+
+        /* fetch(`http://${HOST}:${PORT_VITRINA}/usuario/vitrinarecibir`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -51,6 +51,7 @@ function handleSubmit(event) {
             window.location.href = `http://${HOST}:${PORT}/inventario/getEcommerceCard`
 
           }) */
+        window.location.href = "/"
         //http://${HOST}:${PORT}/inventario/getEcommerceCard
         //`http://${HOST}:${PORT}/vitrina`
       }
