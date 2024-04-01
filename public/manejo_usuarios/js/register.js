@@ -10,9 +10,6 @@ function handleSubmit(event) {
 
     let formData = new FormData(form);
 
-
-
-
     const fileInput = document.getElementById('avatar');
 
     const reader = new FileReader();
@@ -35,7 +32,7 @@ function handleSubmit(event) {
         jsonData = JSON.stringify(data);
         console.log("4")
         console.log(jsonData)
-        fetch(`http://${HOST}:${PORT_BACK}/usuario/register`, {
+        fetch(`/usuario/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +42,11 @@ function handleSubmit(event) {
             body: jsonData
 
         }).then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result)
+                window.location.href = "/"
+
+            })
             .catch(err => console.log(err))
 
     }

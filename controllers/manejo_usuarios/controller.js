@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PORT, HOST, HOST_PORT } from "../../config.js";
+import { HOST, PORT } from "../../config.js";
 import fetch from "node-fetch";
 
 export const renderLogin = (req, res) => {
@@ -13,7 +13,7 @@ export const userLogging = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    .then((response) => {});
+    .then((response) => { });
 };
 
 export const renderRegister = (req, res) => {
@@ -101,3 +101,41 @@ async function fetchUserInfo(username) {
     throw error;
   }
 }
+
+export const fetchLogin = async (req, res) => {
+  fetch(`${HOST}:${PORT}/usuario/logIn`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Methods": "POST",
+    },
+    body: JSON.stringify(req.body),
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        res.json(data)
+      })
+    }).catch((error) => {
+      console.log("Error" + error)
+    })
+};
+
+
+export const fetchRegister = async (req, res) => {
+  fetch(`${HOST}:${PORT}/usuario/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      'enctype': 'multipart/form-data',
+      "Access-Control-Allow-Methods": "POST",
+    },
+    body: JSON.stringify(req.body),
+  })
+    .then((response) => {
+      response.json().then((data) => {
+        res.json(data)
+      })
+    }).catch((error) => {
+      console.log("Error" + error)
+    })
+};
