@@ -637,7 +637,7 @@ margin-left: 14%;
 width: 70%;
 }
 .barra_busqueda .search_input{
-margin-bottom: 90%;
+margin-bottom: 420px;
 width: 100%;
 }
 
@@ -700,8 +700,9 @@ width: 100%;
     position: relative;
     top: 25vh;
   }
-  .container_general{
-    margin-top: 210px;
+
+  .filtros{
+    margin-top: 40px;
   }
 }
 
@@ -720,8 +721,8 @@ width: 100%;
     position: relative;
     top: 20vh;
   }
-  .container_general{
-    margin-top: 210px;
+  .filtros{
+    margin-top: 40px;
   }
 }
 @media screen and (min-width:540px) and (max-width:590px){
@@ -729,6 +730,7 @@ width: 100%;
     background: transparent;
 
   }
+
   .card{
     top: 20vh;
     margin-left: 100px;
@@ -755,10 +757,10 @@ width: 100%;
   .container_general
   {
     background:transparent;
-    margin-top: 90%;
     margin-left: 65px;
 
   }
+
   .card{
     top: 20vh;
   }
@@ -773,6 +775,8 @@ width: 100%;
   {
     background: transparent;
   }
+
+
   .card
   {
     top: 17vh;
