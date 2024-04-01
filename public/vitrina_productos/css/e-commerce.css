@@ -224,8 +224,10 @@ border-radius: 7px;
   padding: 5px;
   border-radius: 5px;
   position: relative;
+  top: 10px;
   left: 50%;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 .carrito
 {
@@ -386,11 +388,8 @@ span{
 {
   width: 100%;
 }
-.card {
-  height: 325px;
-}
 #nombre p {
-  font-size: 15px;
+  font-size: 12px;
 }
 .informacion_carta p{
   font-size: 13px;
@@ -403,6 +402,7 @@ span{
 }
 #precio button{
   left: 42%;
+  margin-bottom: 10px;
 }
 .card:hover #precio button{
   left: 35%;
@@ -411,9 +411,8 @@ span{
   top: 43%;
   left: 85%;
 }
-
 }
-@media screen and (min-width: 1630px) {
+@media screen and (max-width: 1630px) {
   header {
     margin-right: 15%;
   }
@@ -430,16 +429,39 @@ span{
   .search_form .search_input{
     width: 300px;
   }
-
-}
-
-@media (width>=1360px) and (width<=1366px)
-{
+  .informacion_carta p{
+    font-size: 10px;
+  }
   .imagen_carta
   {
-    width: 160px;
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+  }
+  #nombre p{
+    font-size: 8px;
+  }
+  #cart {
+    width: 90px;
+  }
+  #cart2 {
+    width: 90px;
+  }
+  #precio button{
+    left: 36%;
+  }
+  .card:hover #precio button{
+    left: 34%;
+  }
+  #like{
+    top: 30%;
+    left: 85%;
+  }
+  .carrito{
+    font-size: 10px;
   }
 }
+
 
 @media screen and (max-width:1280px) {
   .opciones li a {
@@ -502,6 +524,9 @@ span{
     font-size: 22px;
     width: 100px;
     margin-left: 0;
+  }
+  .container_general{
+    width: 70%;
   }
 }
 /* // */

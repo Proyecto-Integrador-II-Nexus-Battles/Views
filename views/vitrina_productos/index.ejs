@@ -110,8 +110,6 @@
         %>
 
         <div class="card">
-        <% for (var i = 0; i < datos.length; i++) { %>
-        <div class="card" >
           <div class="imagen_carta">
             <section class="icons">
               <span onclick="cambiarColor(this)" id="like">&#9829;</span>
@@ -166,30 +164,23 @@
               <%
               switch (carta.Subtype) {
                 case "Tanque":
-                  %>
-                  <p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                  <p id="cart2">Poder: <%= carta.DamageBuff %></p><%
+                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
                   break;
                   case "Machete":
-                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                  <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
                   break;
                 case "Veneno":
-                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                  <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
-                  break;
+                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
+                break;
                 case "Hielo":
-                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                  <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
-                  break;
+                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
+                break;
                 case "Fuego":
-                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                  <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
-                  break;
+                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
+                break;
                 case "Armas":
-                  %><p id="cart">Poder: <%= carta.DefenseBuff %></p>
-                  <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
-                  break;
+                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
+                break;
                 default:
                   break;
               }
