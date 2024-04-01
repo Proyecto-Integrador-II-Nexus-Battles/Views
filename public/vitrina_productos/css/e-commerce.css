@@ -326,6 +326,17 @@ border-radius: 7px;
 .search_form .search_icon{
   top: -2px;
 }
+.opciones li a{
+  font-size: 35px;
+}
+.opciones{
+  padding-top:1px;
+}
+.opciones li button{
+  width: 120px;
+padding-top: 5px;
+font-size: 30px;
+}
 .search_form .search_input{
   width: 500px;
   height: 30px;
@@ -421,7 +432,7 @@ span{
     margin-top: -8px;
   }
   .opciones li button {
-    font-size: 35px;
+    font-size: 24px;
     width: 150px;
   }
   .search_form .search_input{
@@ -620,6 +631,7 @@ span{
   margin-right: 18%;
   border: 1px solid black;
   width: 50%;
+  margin-top: 40px;
 }
 
 .tipo_carta,.seleccionar_precio{
@@ -642,6 +654,7 @@ width: 100%;
 .search_form{
   margin-left: 20px;
   width: 100%;
+  margin-bottom: 150px;
 }
 .search_form .search_icon{
   right: 28px;
@@ -718,7 +731,14 @@ width: 100%;
     position: relative;
     top: 20vh;
   }
+  .search_form .search_input{
+width:90%;
+margin-right: 60px;
+  }
 
+  .search_icon{
+    left: -90px;
+  }
 }
 @media screen and (min-width:540px) and (max-width:590px){
   .container_general{
