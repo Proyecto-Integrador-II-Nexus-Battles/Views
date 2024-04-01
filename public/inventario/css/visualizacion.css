@@ -55,12 +55,12 @@ header .logo_img {
 
 .opciones li {
   display: inline-block;
+  font-size: 10px;
 }
 
 .opciones li a {
   text-decoration: none;
   color: black;
-  font-size: 20px;
 }
 
 #login_btn {

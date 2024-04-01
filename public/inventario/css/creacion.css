@@ -101,7 +101,6 @@ header .logo_img {
   padding-bottom: 10px;
   background-color: white;
   width: 350px;
-  height: 700px;
 }
 h2{
   font-size: 15px;
@@ -175,7 +174,6 @@ textarea{
   border-radius: 4px;
   background-color: #f8f8f8;
   width: 80%;
-
 }
 .siguiente {
   font-size: 1rem;
@@ -212,230 +210,197 @@ textarea{
   position: absolute;
 }
 
-@media screen and (max-width: 1680px) {
-  /* Carta */
-  .card {
-    height: 700px;
+@media screen and (max-width: 1687px) {
+  .container_general {
+    width: 90%;
   }
-
-  .informacion_carta p {
-    font-size: 15px;
+  .agregar {
+    margin-left: 10%;
   }
-
-}
-
-@media screen and (max-width: 1600px) {
-  .container_productos {
-    height: 540px;
+  .nombre p{
+    font-size: 13px;
   }
-  /* Carta */
-  .card {
-    margin-top: -25px;
+  .nombre select,
+  .nombre input{
+    font-size: 10px;
+  }
+  .imagen_carta{
+    width: 350px;
+    height: 330px;
+  }
+  .card{
     height: 620px;
-    width: 310px;
   }
-
-  .imagen_carta {
-    display: flex;
-    flex-direction: column;
-    width: 310px;
-    height: 290px;
-  }
-
-  .personaje {
-    height: 100%;
-    border-radius: 13px 13px 0 0;
-  }
-
-  .siguiente {
+  .guardar-cambios{
+    margin-top: 110px;
     font-size: 15px;
   }
 }
 
-  @media (width<=1366px) {
-    .container_productos {
-      height: 400px;
-    }
-    .opciones {
-      font-size: 10px;
-    }
-
-    .informacion_carta p {
-      font-size: 12px;
-    }
-    .card {
-      margin-top: -25px;
-      height: 520px;
-      width: 250px;
-    }
-
-    .imagen_carta {
-      width: 250px;
-      height: 220px;
-    }
-
-    .personaje {
-      height: 100%;
-      border-radius: 13px 13px 0 0;
-    }
-
-    .nombre input {
-      width: 100px;
-      font-size: 10px;
-    }
-
-    .nombre select {
-      width: 100px;
-      font-size: 10px;
-    }
-    .siguiente {
-      font-size: 15px;
-    }
+@media screen and (min-width: 1630px) {
+  header {
+    margin-right: 15%;
+  }
+  .opciones li a {
+    font-size: 30px;
+  }
+  .opciones{
+    margin-top: -10px;
+  }
+  .opciones li button {
+    font-size: 35px;
+    width: 150px;
   }
 
-  @media (width <= 1280px) {
-    .opciones li {
-      font-size: 9px;
-    }
-    .container_productos {
-      height: 380px;
-    }
-    /* Carta */
-    .card {
-      margin-top: -30px;
-      height: 500px;
-      width: 230px;
-    }
-
-    .informacion_carta p {
-      font-size: 11px;
-    }
-    .imagen_carta {
-      display: flex;
-      flex-direction: column;
-      width: 230px;
-      height: 200px;
-    }
-
-    .personaje {
-      height: 100%;
-      border-radius: 13px 13px 0 0;
-    }
-
-    .opcion {
-      width: 100px;
-      font-size: 10px;
-    }
-
-    .siguiente {
-      font-size: 10px;
-    }
-    textarea{
-      width: 60%;
-      max-height: 250px;
-    }
-    .siguiente {
-      font-size: 1rem;
-      background-color: #a3b7dc;
-      border: none;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-      padding: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .guardar-cambios {
-      font-size: 12px;
-      width: 40%;
-      margin-top: 140px;
-      margin-left: 125px;
-    }
 }
 
-@media screen and (max-width: 1114px) {
-  .container_productos {
-    height: 460px;
+@media (width>=1360px) and (width<=1366px)
+{
+  header{
+    height: 60px;
   }
-  /* Carta */
-  .card {
-    margin-top: -30px;
-    height: 530px;
-    width: 280px;
+  header .logo_img{
+    height: 50px;
   }
-
-  .informacion_carta p {
-    font-size: 10px;
+  .opciones li a{
+    font-size: 15px;
+  }
+  #login_btn{
+    font-size: 15px;
+  }
+  .card{
+    width: 250px;
+    height: 550px;
   }
   .imagen_carta {
-    display: flex;
-    flex-direction: column;
-    width: 280px;
-    height: 250px;
+    width: 250px;
+    height: 255px;
   }
 
-  .personaje {
-    height: 100%;
-    border-radius: 13px 13px 0 0;
-  }
-
-  .opcion {
-    width: 100px;
+  .nombre p{
     font-size: 10px;
   }
-
-  .siguiente {
+  .nombre select,
+  .nombre input{
     font-size: 10px;
-
   }
-
+  .textarea-container{
+    width: 90%;
+  }
+  .guardar-cambios{
+    font-size: 10px;
+    margin-top: 50px;
+    margin-left: 130px;
+  }
 }
 
-@media screen and (max-width: 1024px) {
-  .container_productos {
-    height: 420px;
+@media screen and (max-width:1280px) {
+  header{
+    height: 60px;
   }
-  /* Carta */
-  .card {
-    margin-top: -30px;
-    height: 500px;
-    width: 230px;
+  header .logo_img{
+    height: 50px;
   }
-
+  .opciones li a{
+    font-size: 15px;
+  }
+  #login_btn{
+    font-size: 15px;
+  }
+  .agregar{
+    font-size: 10px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .container_general{
+    width: 60%;
+  }
+  .card{
+    width: 320px;
+  }
   .informacion_carta p {
-    font-size: 10px;
+    font-size:9px;
+    font-weight: bold;
   }
-  .imagen_carta {
-    display: flex;
-    flex-direction: column;
-    width: 230px;
-    height: 220px;
+  .imagen_carta{
+    width: 320px;
   }
-
-  .personaje {
-    height: 100%;
-    border-radius: 13px 13px 0 0;
+  .guardar-cambios{
+    margin-left: 180px;
   }
-
-  .opcion {
-    width: 100px;
-    font-size: 10px;
-  }
-
-  .siguiente {
-    font-size: 10px;
-  }
-
 }
 
-@media screen and (max-width: 1262px) {
+@media screen and (max-width:1212px) {
+  header{
+    height: 60px;
+  }
+  header .logo_img{
+    height: 50px;
+  }
+  .opciones li a{
+    font-size: 15px;
+  }
+  #login_btn{
+    font-size: 11px;
+  }
+
+  .opciones {
+    gap: 1em;
+    margin-left: 10px;
+  }
+
+  .opciones li button {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 0;
+  }
+  .container_general{
+    width: 70%;
+  }
+  .listPage li {
+    width: 30px;
+  }
+  
+}
+/* // */
+@media screen and (max-width:1071px){
+  .card{
+    margin-left: 12px;
+    margin-right: auto;
+  }
+  .container_productos{
+    gap: 1.8em;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1045px) {
+  .opciones {
+    padding-top: 10px;
+  }
+
+  .opciones li a {
+    font-size: 20px;
+  }
+
+  .opciones li button {
+    font-size: 19px;
+    height: 24px;
+  }
+
+  .opciones {
+    gap: 0.6em;
+  }
+}
+
+@media screen and (max-width: 970px) {
+
   .abrir-btn {
     display: block;
     margin-left: 80%;
-    height: 3vh;
-    padding-top: 15px;
+    height: 30px;
     cursor: pointer;
     margin-right: 20px;
   }
-
   .opciones {
     flex-direction: column;
     align-items: end;
@@ -452,9 +417,9 @@ textarea{
 
   #navbar {
     position: absolute;
-    top: 5%;
+    top: 9.7%;
     right: 0;
-    background-color: #d8e9f9;
+    background-color: #D8E9F9;
     padding: 1.2rem;
     height: 100%;
     display: flex;
@@ -470,105 +435,128 @@ textarea{
     opacity: 1;
     visibility: visible;
   }
-}
-  @media (width <= 997px) {
-    .container_productos {
-      height: 420px;
-    }
-    /* Carta */
-    .card {
-      margin-top: -30px;
-      height: 500px;
-      width: 230px;
-    }
-
-    .informacion_carta p {
-      font-size: 10px;
-    }
-    .imagen_carta {
-      display: flex;
-      flex-direction: column;
-      width: 230px;
-      height: 220px;
-    }
-
-    .personaje {
-      height: 100%;
-      border-radius: 13px 13px 0 0;
-    }
-
-    .opcion {
-      width: 100px;
-      font-size: 10px;
-    }
-
-    .siguiente {
-      font-size: 10px;
-    }
-
-  }
-
-
-@media (width <= 800px) {
   .card{
-    margin-top: 50px;
+    width: 300px;
   }
-  .guardar-cambios {
-    font-size: 15px;
-    bottom: 33%;
-    left: 5%;
-  }
-  textarea{
-    width: 60%;
-    max-height: 250px;
-  }
-  .siguiente {
-    font-size: 1rem;
-    background-color: #a3b7dc;
-    border: none;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  .guardar-cambios {
-    font-size: 12px;
-    width: 40%;
-    margin-top: 140px;
-    margin-left: 125px;
-  }
-
-}
-
-@media screen and (max-width: 400px) {
-  header {
-    width: 500px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .container_productos {
-    width: 330px;
-    margin-left: 5px;
-  }
-
-  .imagen_carta {
-    width: 230px;
-    height: 280px;
-  }
-  .card {
-    height: 580px;
-  }
-  .informacion_carta p {
+  .informacion_carta p{
     font-size: 10px;
   }
-  .opcion {
-    font-size: 10px;
-    width: 50px;
+  .imagen_carta{
+    width: 300px;
   }
-  .siguiente{
-    font-size: 10px;
+  .textarea-container{
+    width: 90%;
   }
   .guardar-cambios{
-    margin-top: 220px;
+    font-size: 10px;
+    margin-left: 150px;
   }
+}
+
+@media screen and (max-width:660px){
+
+.logo_img{
+  margin-left: 10px;
+}
+.abrir-btn{
+  margin-left: auto;
+  margin-right: 20px;
+}
+.paginas{
+  margin-left: 10px;
+}
+}
+@media screen and (min-width:591px) and (max-width:660px){
+  .container_general{
+    background: transparent;
+  }
+  .card
+  {
+   top: 5vh;
+  left: 5vh;
+  }
+}
+@media screen and (min-width:340px) and (max-width:390px){
+  .container_general{
+    position: relative;
+    left: -500px;
+  }
+}
+
+@media screen and (min-width:391px) and (max-width:430px){
+  .container_general
+  {
+    background: transparent;
+  }
+  
+  .listPage{
+    position: relative;
+    left: -10%;
+    width: 70%;
+    font-size: 10px;
+  }
+  .contenido-ventana {
+    width: 70%;
+  }
+  .button{
+    margin-left: 5%;
+  }
+  
+  .contenido-ventana button {
+    font-size:10px;
+  }
+}
+@media screen and (min-width:540px) and (max-width:590px){
+  .container_general{
+    background: transparent;
+
+  }
+
+  .listPage{
+    position: relative;
+    top: 20vh;
+  }
+}
+@media screen and (min-width:280px) and (max-width:300px){
+  .container_general{
+    background:transparent;
+  }
+
+  .listPage{
+    position: relative;
+    top: 40vh;
+  }
+}
+
+@media (width<=339px){
+  .container_general
+  {
+    background:transparent;
+
+  }
+  
+  .listPage{
+    position: relative;
+    left: -10%;
+    width: 70%;
+    font-size: 10px;
+  }
+  .contenido-ventana {
+    width: 70%;
+  }
+  .button{
+    margin-left: 5%;
+  }
+  
+  .contenido-ventana button {
+    font-size:10px;
+  }
+}
+@media screen and (min-width:431px) and (max-width:539px)
+{
+  .container_general
+  {
+    background: transparent;
+  }
+
 }
