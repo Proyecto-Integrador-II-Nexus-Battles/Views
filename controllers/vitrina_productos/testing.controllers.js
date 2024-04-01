@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 export const defaultR = async (req, res) => {
   try {
-    const response = await fetch(`http://${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard`);
+    const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
     datos.forEach((dato) => {
       dato.imagePath = "vitrina_productos/img/cedric.jpg"; 
@@ -19,7 +19,7 @@ export const defaultR = async (req, res) => {
 export const defaultR2 = async (req, res) => {
   const { id } = req.params;
   const encodedID = encodeURIComponent(id);
-  const response = await fetch(`http://${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard/${encodedID}`);
+  const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard/${encodedID}`);
   const datos = await response.json();
   datos.forEach((dato) => {
     dato.imagePath = "vitrina_productos/img/cedric.jpg";
@@ -35,7 +35,7 @@ export const defaultR4 = async (req, res) => {
   try {
     const query = req.query;
     const params = new URLSearchParams(query).toString();
-    const response = await fetch(`http://${process.env.I_HOST}:${process.env.I_PORT}/inventario/cards?${params}`);
+    const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/cards?${params}`);
     const datos = await response.json();
 
     datos.forEach((dato) => {
