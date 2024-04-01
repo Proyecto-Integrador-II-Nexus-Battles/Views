@@ -2,13 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/carro_compras/css/style.css">
@@ -47,33 +40,191 @@
     <main>
         <div class="container">
             <div class="list">
-                <% for (var i=0; i < cartas.length; i++) { %>
+                <%
+                // Mapeo de subtipos a imágenes y tipo de icono
+                const subtipoImagen = {
+                  "Armas": "/inventario/imagenes/espadas.png",
+                  "Tanque": "/inventario/imagenes/blindaje.png",
+                  "Fuego": "/inventario/imagenes/Fuego.png",
+                  "Hielo": "/inventario/imagenes/hielo.png",
+                  "Veneno": "/inventario/imagenes/veneno.png",
+                  "Machete": "/inventario/imagenes/machete.png"
+                };
+      
+                const subtipoIcono = {
+                  "Hero": "foto",
+                  "Item": "foto",
+                  "Armor": "foto",
+                  "Talent": "foto",
+                  "Weapon": "foto"
+                };
+      
+                for (let i = 0; i < datos.length; i++) {
+                  const carta = datos[i];
+                  const imagen = subtipoImagen[carta.Subtype];
+                  const tipoIcono = subtipoIcono[carta.TypeCard];
+                %>
                     <div class="item">
                         <div class="imagen_carta">
-                            <img src=<%=cartas[i].imagen %> class="personaje">
+                            <img src="inventario/imagenes/cedric.jpg" class="personaje" />
                         </div>
                         <div class="informacion_carta">
-                            <p>
-                                <%= cartas[i].CARTA_ID%>
-                            </p>
-                            <p>Poder: <%= cartas[i].CANTIDAD%>
-                            </p>
-                            <p>Vida: <%= cartas[i].vida%>
-                            </p>
-                            <p>Defensa: <%= cartas[i].defensa%>
-                            </p>
-                            <p>Ataque: <%= cartas[i].ataque%>
-                            </p>
-                            <p>Daño: <%= cartas[i].dano%>
-                            </p>
+                            <div id="nombre">
+                                <p><%= carta.Name %></p>
+                                <img src="<%= imagen %>" class="<%= tipoIcono %>" />
+                              </div>
+                              <% if (carta.TypeCard === "Hero") { %>
+                                <p>Poder: <%= carta.Power %></p>
+                                <p>Vida: <%= carta.Live %></p>
+                                <p>Defensa: <%= carta.Defense %></p>
+                                <p>Ataque: <%= carta.AttackBase %></p>
+                                <p>Daño: <%= carta.DamageSides %></p>
+                              <% } else if (carta.TypeCard === "Item") { %>
+                                <%
+                                switch (carta.Subtype) {
+                                  case "Tanque":
+                                    %>
+                                    <p id="cart">Buff: <%= carta.DamageBuff %></p>
+                                    <p id="cart2">Poder: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  case "Veneno":
+                                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  case "Machete":
+                                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  case "Hielo":
+                                  %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                                  <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                                  break;
+                                  case "Fuego":
+                                    %><p id="cart">Buff: <%= carta.DamageBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  case "Armas":
+                                    %><p id="cart">Poder: <%= carta.DamageBuff %></p>
+                                      <p id="cart2">Vida: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  default:
+                                    break;
+                                }
+                                %>
+                              <% } else if (carta.TypeCard === "Armor") { %>
+                                <%
+                                switch (carta.Subtype) {
+                                  case "Tanque":
+                                    %>
+                                    <p id="cart">Buff: <%= carta.DefenseBuff %></p>
+                                    <p id="cart2">Poder: <%= carta.DamageBuff %></p><%
+                                    break;
+                                    case "Machete":
+                                    %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  case "Veneno":
+                                    %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                                    break;
+                                  case "Hielo":
+                                    %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                                    break;
+                                  case "Fuego":
+                                    %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                                    break;
+                                  case "Armas":
+                                    %><p id="cart">Poder: <%= carta.DefenseBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+                                    break;
+                                  default:
+                                    break;
+                                }
+                                %>
+                              <% } else if (carta.TypeCard === "Weapon") { %>
+                                <%
+                                switch (carta.Subtype) {
+                                  case "Tanque":
+                                    %><p>Ataque: <%= carta.AttackBuff %></p>
+                                    <p>Daño: <%= carta.DamageBuff %></p>
+                                    <p>Defensa: <%= carta.DefenseBuff %></p>
+                                    <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                                    break;
+                                  case "Veneno":
+                                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                                  <p>Daño: <%= carta.DamageBuff %></p>
+                                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                                  break;
+                                  case "Hielo":
+                                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                                  <p>Daño: <%= carta.DamageBuff %></p>
+                                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                                  break;
+                                  case "Fuego":
+                                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                                  <p>Daño: <%= carta.DamageBuff %></p>
+                                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                                  break;
+                                  case "Armas":
+                                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                                  <p>Daño: <%= carta.DamageBuff %></p>
+                                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                                  break;
+                                  case "Machete":
+                                  %><p>Ataque: <%= carta.AttackBuff %></p>
+                                  <p>Daño: <%= carta.DamageBuff %></p>
+                                  <p>Defensa: <%= carta.DefenseBuff %></p>
+                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+                                  break;
+                                }
+                                %>
+                              <% } else if (carta.TypeCard === "Talent") { %>
+                                <%
+                                switch (carta.Subtype) {
+                                  case "Tanque":
+                                    %>
+                                    <p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+                                    break;
+                                  case "Veneno":
+                                    %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+                                    break;
+                                  case "Hielo":
+                                    %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
+                                    <%
+                                    break;
+                                  case "Fuego":
+                                    %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+                                    break;
+                                  case "Armas":
+                                    %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+                                    break;
+                                  case "Machete":
+                                    %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
+                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
+                                    <%
+                                    break;
+                                }
+                                %>
+                              <% }%>
 
                             <div class="eliminar">
-                                <p class="eliminarx" data-id="<%= cartas[i].CARTA_ID %>">X</p>
+                                <p class="eliminarx">X</p>
                             </div>
                             <div class="rectangulo">
                                 <div class="cantidad">
                                     <button class="masmenos-menos">-</button>
-                                    <p class="cantidadx" data-Id="<%= cartas[i].CARTA_ID %>" data-IdUsuario="<%= cartas[i].IdUsuario %>" data-cantidad="<%= cartas[i].CANTIDAD %>"><%= cartas[i].CANTIDAD %></p>
+                                    <p ></p>
                                     <button class="masmenos-mas">+</button>
                                 </div>
                                 
@@ -131,18 +282,18 @@
             <hr class="lineados">
             <div class="resumen-flotante-contenido">
                 <div class="comprados">
-                    <% for (var i=0; i < cartas.length; i++) { %>
+                    
                         <div class="guardar_cartas">
                             <div class="imagen_cartados">
-                                <img src=<%=cartas[i].imagen %> class="personajedos">
+                                <img class="personajedos" />
                             </div>
                             <div class="informacion_cartados">
                                 <p>
-                                    <%= cartas[i].CARTA_ID%>
+                                   
                                 </p>
                             </div>
                         </div>
-                        <% } %>
+                        
                 </div>
             </div>
             <div class="productosdos">

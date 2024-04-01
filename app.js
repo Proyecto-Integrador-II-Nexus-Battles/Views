@@ -1,9 +1,9 @@
 import express from "express";
 import testingRoutes from "./routes/carro_compras/testing.routes.js";
-import { PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
 import bodyParser from "body-parser";
+import { APP_PORT } from "./config.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,5 +23,6 @@ app.use((req, res) => {
 });
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(PORT);
-console.log(`Server is running on port ${PORT}`);
+app.listen(APP_PORT, () => {
+    console.log(`Server is running on port ${APP_PORT}`);
+});
