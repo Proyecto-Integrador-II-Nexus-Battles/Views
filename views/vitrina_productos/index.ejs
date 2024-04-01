@@ -12,6 +12,30 @@
 <body>
   <!-- Header -->
   <header>
+
+    <!-- <script src="/vitrina_productos/js/logInVitrina.js">
+      document.addEventListener('DOMContentLoaded', function () {
+        logInVitrina();
+      });
+      </script> -->
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var token = localStorage.getItem('token');
+
+        if (token !== null) {
+          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.querySelector('.login_btn').addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.reload(true);
+          });
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
+
     <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
     <!-- Barra de navegación -->
     <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">

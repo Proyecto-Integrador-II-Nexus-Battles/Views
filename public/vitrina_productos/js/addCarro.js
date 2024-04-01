@@ -1,8 +1,13 @@
-import { authHeader } from "../../js/authentication.js";
+const { response } = require("express");
 
-window.addCarro = function addCarro(IdCard) {
+function addCarro(IdCard) {
     console.log("ID del producto: ", IdCard);
     const url = "/vitrina/enviarCarro";
+    const token = "Bearer " + localStorage.getItem("token");
+    if (token === "Bearer null") {
+      window.location.href = "/login";
+    }
+    console.log("Token: ", token);
     const data = {
       IdCard: IdCard,
     };
@@ -10,7 +15,7 @@ window.addCarro = function addCarro(IdCard) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${authHeader()}`,
+        Authorization: `${token}`,
       },
       body: JSON.stringify(data),
     };
