@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 function addCarro(IdCard) {
     console.log("ID del producto: ", IdCard);
     const url = "/vitrina/enviarCarro";
