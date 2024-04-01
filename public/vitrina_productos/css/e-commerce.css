@@ -416,11 +416,9 @@ span{
   header {
     margin-right: 15%;
   }
-  .opciones li a {
-    font-size: 30px;
-  }
+
   .opciones{
-    margin-top: -10px;
+    margin-top: -8px;
   }
   .opciones li button {
     font-size: 35px;
@@ -700,8 +698,8 @@ width: 100%;
     position: relative;
     top: 25vh;
   }
-  .container_general{
-    margin-top: 210px;
+  .filtros{
+    margin-top: 40px;
   }
 }
 
@@ -720,9 +718,7 @@ width: 100%;
     position: relative;
     top: 20vh;
   }
-  .container_general{
-    margin-top: 210px;
-  }
+
 }
 @media screen and (min-width:540px) and (max-width:590px){
   .container_general{
@@ -755,7 +751,6 @@ width: 100%;
   .container_general
   {
     background:transparent;
-    margin-top: 90%;
     margin-left: 65px;
 
   }
