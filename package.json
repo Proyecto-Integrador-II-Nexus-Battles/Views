@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "delay": "nodemon --delay 1000 app.js",
-    "dev": "nodemon --env-file=.env app.js -e ejs,css"
+    "dev": "nodemon --env-file=.env --legacy-watch app.js -e ejs,css,js"
   },
   "keywords": [],
   "author": "",
