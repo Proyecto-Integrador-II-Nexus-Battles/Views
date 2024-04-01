@@ -36,7 +36,7 @@ function handleSubmit(event) {
 
         //http://${HOST}:${PORT}/usuario/recibir
 
-        fetch(`http://${HOST}:${PORT_VITRINA}/usuario/vitrinarecibir`, {
+        /* fetch(`http://${HOST}:${PORT_VITRINA}/usuario/vitrinarecibir`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -52,7 +52,8 @@ function handleSubmit(event) {
             //a la página donde redirecciona
             window.location.href = `http://${HOST}:${PORT}/inventario/getEcommerceCard`
 
-          })
+          }) */
+        window.location.href = "/"
         //http://${HOST}:${PORT}/inventario/getEcommerceCard
         //`http://${HOST}:${PORT}/vitrina`
       }
