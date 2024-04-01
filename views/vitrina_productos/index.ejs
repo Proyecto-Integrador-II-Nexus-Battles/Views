@@ -260,7 +260,7 @@
               %>
             <% }%>
             <div id="precio">
-              <button>
+              <button onclick="addCarro('<%= carta._id %>')">
                 <span class="carrito">&#128722;</span>
                 <p>Precio: <%= carta.price %></p>
               </button>
@@ -298,6 +298,7 @@
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
   <script src="/vitrina_productos/js/paginacion.js"></script>
   <script src="/vitrina_productos/js/animacion.js"></script>
-  <script src="/vitrina_productos/js/postID.js"></script>
+  <script src="/vitrina_productos/js/addCarro.js"></script>
+  <!-- <script src="/vitrina_productos/js/postID.js"></script> -->
 </body>
 </html>

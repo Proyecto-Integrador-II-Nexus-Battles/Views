@@ -7,7 +7,7 @@ export const defaultR = async (req, res) => {
     const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
     datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg"; 
+      dato.imagePath = "vitrina_productos/img/cedric.jpg";
     });
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
@@ -39,13 +39,42 @@ export const defaultR4 = async (req, res) => {
     const datos = await response.json();
 
     datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg"; 
+      dato.imagePath = "vitrina_productos/img/cedric.jpg";
     });
 
     res.render("vitrina_productos/index", { datos });
-
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 };
+
+export const defaultR5 = async (req, res) => {
+  const url = `${HOST}:${PORT}/carro/ADD-CARD`;
+  const { IdCard } = req.body;
+  const data = {
+    IdCard: IdCard,
+    Cantidad: 1,
+  };
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: req.headers.authorization,
+    },
+    body: JSON.stringify(data),
+  };
+  fetch(url, options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      if (response.status === 301) {
+        res.status(301).send("No autorizado");
+      }
+      throw new Error("Error en la solicitud POST");
+    })
+    .catch((error) => {
+      console.error("Error en la solicutud: ", error);
+    });
+}

@@ -1,7 +1,6 @@
-
 import axios from "axios";
-import { PORT, HOST, HOST_PORT} from "../../config.js";
-import fetch from 'node-fetch';
+import { PORT, HOST } from "../../config.js";
+import fetch from "node-fetch";
 
 export const renderLogin = (req, res) => {
   res.render("manejo_usuarios/login.ejs");
@@ -14,7 +13,7 @@ export const userLogging = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    .then((response) => { });
+    .then((response) => {});
 };
 
 export const renderRegister = (req, res) => {
@@ -25,20 +24,16 @@ export const admin = (req, res) => {
   res.render("manejo_usuarios/admin_main_page.ejs");
 };
 
-
-
 export const rendervitrina = (req, res) => {
   res.render("manejo_usuarios/vitrina.ejs");
 };
 
 export const irrvitrina = (req, res) => {
-  res.redirect("manejo_usuarios/vitrina.ejs")
+  res.redirect("manejo_usuarios/vitrina.ejs");
 };
-
 
 export const register = async (req, res) => {
   const endpoint = "/usuario/registro";
-
 
   axios.post(`${HOST}:${PORT}${endpoint}`, {
     nombre: req.body.nombre,
@@ -54,14 +49,11 @@ export const register = async (req, res) => {
     pregunta_3: req.body.pregunta_3,
     avataroculto: req.body.avataroculto,
   });
-
-
 };
-
 
 export const renderAdmin = async (req, res) => {
   try {
-    const data = await fetch(`http://${HOST}:${HOST_PORT}/usuario/admin`);
+    const data = await fetch(`${HOST}:${PORT}/usuario/admin`);
     const users = await data.json();
     res.render("manejo_usuarios/admin_main_page", { users });
   } catch (error) {
@@ -73,7 +65,9 @@ export const renderAdmin = async (req, res) => {
 export const buscarUsername = async (req, res) => {
   try {
     const query = req.query.q;
-    const response = await fetch(`http://${HOST}:${HOST_PORT}/usuario/buscar_usuario?q=${query}`);
+    const response = await fetch(
+      `${HOST}:${PORT}/usuario/buscar_usuario?q=${query}`
+    );
     const resultados = await response.json();
     res.json(resultados);
   } catch (error) {
@@ -98,7 +92,7 @@ export const renderUser = async (req, res) => {
 
 async function fetchUserInfo(username) {
   try {
-    const response = await fetch(`http://${HOST}:${HOST_PORT}/usuario/user/${username}`);
+    const response = await fetch(`${HOST}:${PORT}/usuario/user/${username}`);
     const text = await response.text();
     const userInfo = text ? JSON.parse(text) : null;
     return userInfo;
@@ -107,4 +101,3 @@ async function fetchUserInfo(username) {
     throw error;
   }
 }
-
