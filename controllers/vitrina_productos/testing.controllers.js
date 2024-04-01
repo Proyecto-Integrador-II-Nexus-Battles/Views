@@ -7,7 +7,7 @@ export const defaultR = async (req, res) => {
     const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
     datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg"; 
+      dato.imagePath = "vitrina_productos/img/cedric.jpg";
     });
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
@@ -39,11 +39,10 @@ export const defaultR4 = async (req, res) => {
     const datos = await response.json();
 
     datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg"; 
+      dato.imagePath = "vitrina_productos/img/cedric.jpg";
     });
 
     res.render("vitrina_productos/index", { datos });
-
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

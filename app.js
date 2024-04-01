@@ -1,13 +1,15 @@
 import express from "express";
 import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
-import configRoutes from "./routes/config.routes.js"
+import configRoutes from "./routes/config.routes.js";
 import testing2Routes from "./routes/vitrina_productos/testing.routes.js";
 import { APP_PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
 import bodyParser from "body-parser";
 import cors from "cors";
-
+import fs from "fs";
+import http from "http";
+import https from "https";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,8 +37,15 @@ app.use((req, res) => {
     message: "Endpoint not found!!!!",
   });
 });
+
+const options = {
+  key: fs.readFileSync("certs/privkey.pem"),
+  cert: fs.readFileSync("certs/cert.pem"),
+};
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.listen(APP_PORT, () => {
-    console.log(`Server listen on port ${APP_PORT}`)
-})
+
+http.createServer(app).listen(80);
+https.createServer(options, app).listen(APP_PORT);
+console.log(`Server is runing on ${APP_PORT}`);
