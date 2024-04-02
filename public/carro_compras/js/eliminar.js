@@ -2,7 +2,9 @@
                                  document.querySelector('.list').addEventListener('click', async (event) => {
         if (event.target.classList.contains('eliminarx')) {
             try {
+                
                 const idCarta = event.target.getAttribute('data-id');
+                console.log(idCarta)
                 await axios.post('http://localhost:4000/carro_compras/DELETE-CARD', { IdUsuario: 1, IdCard: idCarta });
                 console.log('Carta eliminada correctamente');
 

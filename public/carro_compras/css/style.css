@@ -227,15 +227,19 @@
   .eliminar{
     position: absolute;
     width: 2rem;
+    height: 25px;
     background-color: #ebc793;
     border-radius: 14px 0px 14px 0px;
     text-align: center;
-    margin-top: -16.9rem;
-    margin-left: -0.3rem;
+    margin-top: -20rem;
+    margin-left: -0.1rem;
+
   }
   
   .eliminarx{
     margin-left: 1px;
+    height: 25px;
+    font-size: 20px;
   }
   
   .eliminarx:hover{
@@ -450,7 +454,7 @@
     top: 50%;
     left: 50%;
     width: 17rem;
-    height: 40rem;
+    height: 37rem;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
@@ -458,7 +462,7 @@
     border-radius: 5px;
     z-index: 1000;
     margin-left: 19rem;
-    margin-top: -4rem;
+    margin-top: -6.5rem;
   }
   
   .resumen-flotante-oculto {
@@ -467,6 +471,8 @@
 
 .comprados{
   text-align: center;
+  width: 240px;
+  height: 220px;
 }
 
 .productosdos{

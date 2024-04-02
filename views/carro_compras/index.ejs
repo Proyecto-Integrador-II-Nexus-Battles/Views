@@ -220,17 +220,18 @@
                               <% }%>
                         </div>
                         <div class="eliminar">
-                          <p class="eliminarx">X</p>
+                          <p class="eliminarx" data-id="<%= cantidad[i].CARTA_ID %>">X</p>
                       </div>
                       <div class="rectangulo">
-                          <div class="cantidad">
-                              <button class="masmenos-menos">-</button>
-                              <p class="cantidadnum">1</p>
-                              <button class="masmenos-mas">+</button>
-                          </div>
+                        <div class="cantidad">
+                          <button class="masmenos-menos">-</button>
+                          <p class="cantidadnum" data-id="<%= cantidad[i].CARTA_ID %>" data-idUsuario="<%= cantidad[i].IdUsuario %>" data-cantidad="<%= cantidad[i].CANTIDAD %>"><%= cantidad[i].CANTIDAD %></p>
+                          <button class="masmenos-mas">+</button>
+                      </div>
+                      
                           
                           <div class="valor">
-                              <p class="valorp">$168.000</p>
+                              <p class="valorp"><%= totales[i] %></p>
                           </div>
                       </div>
                     </div>
@@ -252,11 +253,11 @@
             <div class="productos">
                 <div class="productosp">
                     <p>Productos:</p>
-                    <p class="numproductos">1</p>
+                    <p class="numproductos"><%= cantidadtotal %></p>
                 </div>
                 <div class="totalb">
                     <p>Total bruto:</p>
-                    <p class="numtotalb">1</p>
+                    <p class="numtotalb"><%= totalBruto %></p>
                 </div>
                 <div class="iva">
                     <p>Impuesto(IVA):</p>
@@ -265,7 +266,7 @@
                 <hr class="lineatres">
                 <div class="total">
                     <h3>Total</h3>
-                    <p class="numtotal">1</p>
+                    <p class="numtotal"><%= totalNeto %></p>
                 </div>
             </div>
 
@@ -282,28 +283,28 @@
             <hr class="lineados">
             <div class="resumen-flotante-contenido">
                 <div class="comprados">
-                    
+                        <% for (let i = 0; i < info.length; i++) { 
+                          const carta = info[i];
+                          %>
                         <div class="guardar_cartas">
                             <div class="imagen_cartados">
-                                <img class="personajedos" />
+                              <img src="<%= carta.imagePath %>" class="personajedos" /> 
                             </div>
                             <div class="informacion_cartados">
-                                <p>
-                                   
-                                </p>
+                              <p><%= carta.Name %></p>
                             </div>
                         </div>
-                        
+                        <% } %>
                 </div>
             </div>
             <div class="productosdos">
                 <div class="productosp">
                     <p>Productos:</p>
-                    <p class="numproductos">1</p>
+                    <p class="numproductos"><%= cantidadtotal %></p>
                 </div>
                 <div class="totalb">
                     <p>Total bruto:</p>
-                    <p class="numtotalb">1</p>
+                    <p class="numtotalb"><%= totalBruto %></p>
                 </div>
                 <div class="iva">
                     <p>Impuesto(IVA):</p>
@@ -312,7 +313,7 @@
                 <hr class="lineatres">
                 <div class="total">
                     <h3>Total</h3>
-                    <p class="numtotal">1</p>
+                    <p class="numtotal"><%= totalNeto %></p>
                 </div>
             </div>
             <div class="pedidodos">

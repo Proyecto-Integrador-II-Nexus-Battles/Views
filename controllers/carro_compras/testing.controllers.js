@@ -3,34 +3,41 @@ import { fileURLToPath } from "url";
 import axios from "axios";
 import { HOST, HOST_PORT } from "../../config.js";
 
-//export const defaultR = (req, res) => {
+export const defaultR = (req, res) => {
 
-//  axios.post('http://localhost:4000/carro_compras/LIST-CARD', { IdUsuario: 1 })
-//    .then(async response => {
-//      const cartas = response.data.cartas;
-//      console.log(cartas);
-//      res.render("carro_compras/index", { cartas });
-//
-//    })
-//    .catch(error => {
-//      console.error('Error al realizar la solicitud:', error);
-//    });
+  axios.post('http://localhost:4000/carro_compras/INFO-CARDS', { IdUsuario: 1 })
+    .then(async response => {
+     const responseData = response.data;
+     console.log(responseData);
 
-export const defaultR = async (req, res) => {
-  try {
+    const info = responseData.Info;
+    const totales = responseData.totales;
+    const totalNeto = responseData.totalNeto;
+    const totalBruto = responseData.totalBruto;
+    const cantidad = responseData.list_price_unit;
+    const cantidadtotal = cantidad.reduce((total, item) => total + item.CANTIDAD, 0);
 
-    const dataResponse = await fetch(`http://localhost:4000/carro_compras/INFO-CARDS`, { IdUsuario: 1 });
-    console.log(dataResponse.data)
-    // Accede a la información dentro del objeto devuelto
-   
-  } catch (error) {
-    console.error('Error al obtener los datos:', error);
-    res.status(500).send('Error interno del servidor');
-  }
-};
+    console.log(cantidadtotal);
+    // Renderiza la vista con los datos obtenidos
+    res.render("carro_compras/index", {
+      info: info,
+      totales: totales,
+      totalNeto: totalNeto,
+      totalBruto: totalBruto,
+      cantidad: cantidad,
+      cantidadtotal: cantidadtotal
+    });
+ 
+ 
+    })
+    .catch(error => {
+      console.error('Error al realizar la solicitud:', error);
+    });
+ 
+ };
 
 
-//};
+
 
 
 // export const defaultR = (req, res) => {
