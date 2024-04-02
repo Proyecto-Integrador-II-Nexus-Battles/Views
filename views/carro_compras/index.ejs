@@ -59,8 +59,8 @@
                   "Weapon": "foto"
                 };
       
-                for (let i = 0; i < datos.length; i++) {
-                  const carta = datos[i];
+                for (let i = 0; i < info.length; i++) {
+                  const carta = info[i];
                   const imagen = subtipoImagen[carta.Subtype];
                   const tipoIcono = subtipoIcono[carta.TypeCard];
                 %>
@@ -70,7 +70,7 @@
                             <img src="carro_compras/img/astrid.jpeg" class="personaje" />
                         </div>
                         <div class="informacion_carta">
-                            <div id="nombre">
+                            <div class="nombre">
                                 <p><%= carta.Name %></p>
                                 <img src="<%= imagen %>" class="<%= tipoIcono %>" />
                               </div>
@@ -218,22 +218,21 @@
                                 }
                                 %>
                               <% }%>
-
-                            <div class="eliminar">
-                                <p class="eliminarx">X</p>
-                            </div>
-                            <div class="rectangulo">
-                                <div class="cantidad">
-                                    <button class="masmenos-menos">-</button>
-                                    <p ></p>
-                                    <button class="masmenos-mas">+</button>
-                                </div>
-                                
-                                <div class="valor">
-                                    <p>$168.000</p>
-                                </div>
-                            </div>
                         </div>
+                        <div class="eliminar">
+                          <p class="eliminarx">X</p>
+                      </div>
+                      <div class="rectangulo">
+                          <div class="cantidad">
+                              <button class="masmenos-menos">-</button>
+                              <p class="cantidadnum">1</p>
+                              <button class="masmenos-mas">+</button>
+                          </div>
+                          
+                          <div class="valor">
+                              <p class="valorp">$168.000</p>
+                          </div>
+                      </div>
                     </div>
                     <% } %>
             </div>

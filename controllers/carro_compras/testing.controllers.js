@@ -17,10 +17,17 @@ import { HOST, HOST_PORT } from "../../config.js";
 //    });
 
 export const defaultR = async (req, res) => {
-  const dataResponse = await fetch(`http://${HOST}:${HOST_PORT}/inventario/getAllCards`);
-  const datos = await dataResponse.json();
-  res.render("carro_compras/index",{datos});
-};    
+  try {
+
+    const dataResponse = await fetch(`http://localhost:4000/carro_compras/INFO-CARDS`, { IdUsuario: 1 });
+    console.log(dataResponse.data)
+    // Accede a la información dentro del objeto devuelto
+   
+  } catch (error) {
+    console.error('Error al obtener los datos:', error);
+    res.status(500).send('Error interno del servidor');
+  }
+};
 
 
 //};

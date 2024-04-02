@@ -175,6 +175,11 @@
     background-color: white;
     padding-left: 5px;
     border-radius: 0px 0px 14px 14px;
+    min-height: 170px;
+  }
+
+  .nombre{
+    display: flex;
   }
   
   .informacion_carta p {
@@ -210,11 +215,13 @@
   .rectangulo{
     display: flex;
     height: 2rem;
+    width: 220px;
     background-color: #9e9e9e;
     border-radius: 0px 0px 14px 14px;
     margin-left: -0.3rem;
-    margin-top: 1.1rem;
+    margin-top: -2rem;
     background-color: rgba(130, 125, 125, 0.4);
+   
   }
   
   .eliminar{
@@ -247,11 +254,26 @@
     padding-left: 4px;
     padding-right: 4px;
     
+
   }
+
+.cantidadnum{
+  font-size: 16px;
+  width: 17px;
+  margin-left: 5px;
+}
   
   .valor{
-    margin-top: 0.4rem;
-    margin-left: 7rem;
+    width: 110px;
+    margin-top: 0.2rem;
+    margin-left: 6.5rem;
+   
+  }
+
+  .valorp{
+    font-size: 20px;
+    height: 50px;
+   
   }
   
   .resumen{
