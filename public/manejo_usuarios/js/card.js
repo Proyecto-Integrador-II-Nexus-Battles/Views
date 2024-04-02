@@ -13,11 +13,11 @@ function card_display() {
             fechaExpInput.required = true;
         }
     });
-    
-        if(!visaRadio.checked){
-            cardDiv.style.display = 'none';
-            nombreTarjetaInput.required = false;
-            cvvInput.required = false;
-            fechaExpInput.required = false;
-        }
+
+    if (!visaRadio.checked) {
+        cardDiv.style.display = 'none';
+        numeroTarjetaInput.required = false;
+        cvvInput.required = false;
+        fechaExpInput.required = false;
+    }
 }

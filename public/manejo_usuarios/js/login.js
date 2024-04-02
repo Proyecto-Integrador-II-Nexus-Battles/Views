@@ -13,7 +13,7 @@ function handleSubmit(event) {
   let jsonData = JSON.stringify(data);
   console.log("hola");
 
-  fetch(`http://${HOST}:${PORT_BACK}/usuario/logIn`, {
+  fetch(`/usuario/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,7 @@ function handleSubmit(event) {
   })
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
+      console.log(JSON.stringify(result));
       if (result.error === "Invalid credentials") {
         mensaje.innerHTML = "Inicio de sesión fallido, intente de nuevo";
         mensaje.classList.add("error-message");
@@ -31,29 +31,7 @@ function handleSubmit(event) {
         mensaje.classList.remove("error-message");
         console.log("aaa si inicio jiajia");
         localStorage.setItem("token", result.token);
-
-        //http://${HOST}:${PORT}/usuario/recibir
-
-        /* fetch(`http://${HOST}:${PORT_VITRINA}/usuario/vitrinarecibir`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `${}`,
-            'Access-Control-Allow-Methods': 'POST'
-          },
-          body: JSON.stringify({ result })
-
-        }).then(res => res.json())
-          .then(result => {
-            localStorage.setItem('result', JSON.stringify(result));
-
-            //a la página donde redirecciona
-            window.location.href = `http://${HOST}:${PORT}/inventario/getEcommerceCard`
-
-          }) */
         window.location.href = "/"
-        //http://${HOST}:${PORT}/inventario/getEcommerceCard
-        //`http://${HOST}:${PORT}/vitrina`
       }
     })
     .catch((err) => {
