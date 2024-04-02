@@ -1,9 +1,15 @@
 import { Router } from "express";
-import { defaultR, defaultR2 } from "../../controllers/carro_compras/testing.controllers.js";
+import {
+  defaultR,
+  addCantidad,
+  deleteCard,
+  createOrder,
+} from "../../controllers/carro_compras/testing.controllers.js";
 
 const router = Router();
-router.get("/", defaultR);
-router.get("/", defaultR2);
+router.post("/carro/carroCompras", defaultR);
+router.post("/carro/changeCant", addCantidad);
+router.post("/carro/deleteCard", deleteCard);
+router.post("/portal/createOrder", createOrder);
 
 export default router;
-

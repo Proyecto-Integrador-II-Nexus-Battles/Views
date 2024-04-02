@@ -2,45 +2,45 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/carro_compras/css/style.css">
-        <title>Document</title>
-    </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/carro_compras/css/style.css">
+  <title>Document</title>
+</head>
 
 <body>
-    <header>
-        <img src="/carro_compras/img/logo.png" class="logo_img" alt="">
-        <!-- Barra de navegación -->
-        <img src="/carro_compras/img/hamburguer_icon.svg" class="abrir-btn" alt="">
-        <nav class="" id="navbar">
-            <ul class="opciones">
-                <li><a href="#">Mi cuenta</a></li>
-                <li><a href="#">Mi banco</a></li>
-                <li><a href="#">Subasta</a></li>
-                <li><a href="#">Jugar online</a></li>
-                <li><a href="#">Torneo</a></li>
-                <li><a id="mostrar-resumen-flotante" href="#">Resumen Flotante</a></li>
-                <li><a href="#">Lista Deseos</a></li>
-                <li><a href="#"><button class="login_btn">Login</button></a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <div>
-            <button class="regresar">
-                <img class="flecha" src="carro_compras/img/flechablanca.png">
-            </button>
-        </div>
-        <div class="carrito">
-            <h1 class="titulo">Tu carro de compra</h1>
-            <hr class="linea">
-        </div>
-    </section>
-    <main>
-        <div class="container">
-            <div class="list">
-                <%
+  <header>
+    <img src="/carro_compras/img/logo.png" class="logo_img" alt="">
+    <!-- Barra de navegación -->
+    <img src="/carro_compras/img/hamburguer_icon.svg" class="abrir-btn" alt="">
+    <nav class="" id="navbar">
+      <ul class="opciones">
+        <li><a href="#">Mi cuenta</a></li>
+        <li><a href="#">Mi banco</a></li>
+        <li><a href="#">Subasta</a></li>
+        <li><a href="#">Jugar online</a></li>
+        <li><a href="#">Torneo</a></li>
+        <li><a id="mostrar-resumen-flotante" href="#">Resumen Flotante</a></li>
+        <li><a href="#">Lista Deseos</a></li>
+        <li><a href="#"><button class="login_btn">Login</button></a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div>
+      <button class="regresar">
+        <img class="flecha" src="carro_compras/img/flechablanca.png">
+      </button>
+    </div>
+    <div class="carrito">
+      <h1 class="titulo">Tu carro de compra</h1>
+      <hr class="linea">
+    </div>
+  </section>
+  <main>
+    <div class="container">
+      <div class="list">
+        <%
                 // Mapeo de subtipos a imágenes y tipo de icono
                 const subtipoImagen = {
                   "Armas": "/inventario/imagenes/espadas.png",
@@ -64,277 +64,276 @@
                   const imagen = subtipoImagen[carta.Subtype];
                   const tipoIcono = subtipoIcono[carta.TypeCard];
                 %>
-                    <div class="item">
-                        <div class="imagen_carta">
-                            <img src="<%= carta.imagePath %>" class="personaje" /> 
-                            <img src="carro_compras/img/astrid.jpeg" class="personaje" />
-                        </div>
-                        <div class="informacion_carta">
-                            <div class="nombre">
-                                <p><%= carta.Name %></p>
-                                <img src="<%= imagen %>" class="<%= tipoIcono %>" />
-                              </div>
-                              <% if (carta.TypeCard === "Hero") { %>
-                                <p>Poder: <%= carta.Power %></p>
-                                <p>Vida: <%= carta.Live %></p>
-                                <p>Defensa: <%= carta.Defense %></p>
-                                <p>Ataque: <%= carta.AttackBase %></p>
-                                <p>Daño: <%= carta.DamageSides %></p>
-                              <% } else if (carta.TypeCard === "Item") { %>
-                                <%
+        <div class="item">
+          <div class="imagen_carta">
+            <img src="<%= carta.imagePath %>" class="personaje" />
+            <img src="carro_compras/img/astrid.jpeg" class="personaje" />
+          </div>
+          <div class="informacion_carta">
+            <div class="nombre">
+              <p><%= carta.Name %></p>
+              <img src="<%= imagen %>" class="<%= tipoIcono %>" />
+            </div>
+            <% if (carta.TypeCard === "Hero") { %>
+            <p>Poder: <%= carta.Power %></p>
+            <p>Vida: <%= carta.Live %></p>
+            <p>Defensa: <%= carta.Defense %></p>
+            <p>Ataque: <%= carta.AttackBase %></p>
+            <p>Daño: <%= carta.DamageSides %></p>
+            <% } else if (carta.TypeCard === "Item") { %>
+            <%
                                 switch (carta.Subtype) {
                                   case "Tanque":
                                     %>
-                                    <p id="cart">Buff: <%= carta.DamageBuff %></p>
-                                    <p id="cart2">Poder: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart">Buff: <%= carta.DamageBuff %></p>
+            <p id="cart2">Poder: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   case "Veneno":
                                     %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   case "Machete":
                                     %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   case "Hielo":
                                   %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                                  <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                                   break;
                                   case "Fuego":
                                     %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   case "Armas":
                                     %><p id="cart">Poder: <%= carta.DamageBuff %></p>
-                                      <p id="cart2">Vida: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart2">Vida: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   default:
                                     break;
                                 }
                                 %>
-                              <% } else if (carta.TypeCard === "Armor") { %>
-                                <%
+            <% } else if (carta.TypeCard === "Armor") { %>
+            <%
                                 switch (carta.Subtype) {
                                   case "Tanque":
                                     %>
-                                    <p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                                    <p id="cart2">Poder: <%= carta.DamageBuff %></p><%
+            <p id="cart">Buff: <%= carta.DefenseBuff %></p>
+            <p id="cart2">Poder: <%= carta.DamageBuff %></p><%
                                     break;
                                     case "Machete":
                                     %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
+            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   case "Veneno":
                                     %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
                                     break;
                                   case "Hielo":
                                     %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
                                     break;
                                   case "Fuego":
                                     %><p id="cart">Buff: <%= carta.DefenseBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
                                     break;
                                   case "Armas":
                                     %><p id="cart">Poder: <%= carta.DefenseBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.DamageBuff %></p><%
                                     break;
                                   default:
                                     break;
                                 }
                                 %>
-                              <% } else if (carta.TypeCard === "Weapon") { %>
-                                <%
+            <% } else if (carta.TypeCard === "Weapon") { %>
+            <%
                                 switch (carta.Subtype) {
                                   case "Tanque":
                                     %><p>Ataque: <%= carta.AttackBuff %></p>
-                                    <p>Daño: <%= carta.DamageBuff %></p>
-                                    <p>Defensa: <%= carta.DefenseBuff %></p>
-                                    <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+            <p>Daño: <%= carta.DamageBuff %></p>
+            <p>Defensa: <%= carta.DefenseBuff %></p>
+            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                                     break;
                                   case "Veneno":
                                   %><p>Ataque: <%= carta.AttackBuff %></p>
-                                  <p>Daño: <%= carta.DamageBuff %></p>
-                                  <p>Defensa: <%= carta.DefenseBuff %></p>
-                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+            <p>Daño: <%= carta.DamageBuff %></p>
+            <p>Defensa: <%= carta.DefenseBuff %></p>
+            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                                   break;
                                   case "Hielo":
                                   %><p>Ataque: <%= carta.AttackBuff %></p>
-                                  <p>Daño: <%= carta.DamageBuff %></p>
-                                  <p>Defensa: <%= carta.DefenseBuff %></p>
-                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+            <p>Daño: <%= carta.DamageBuff %></p>
+            <p>Defensa: <%= carta.DefenseBuff %></p>
+            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                                   break;
                                   case "Fuego":
                                   %><p>Ataque: <%= carta.AttackBuff %></p>
-                                  <p>Daño: <%= carta.DamageBuff %></p>
-                                  <p>Defensa: <%= carta.DefenseBuff %></p>
-                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+            <p>Daño: <%= carta.DamageBuff %></p>
+            <p>Defensa: <%= carta.DefenseBuff %></p>
+            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                                   break;
                                   case "Armas":
                                   %><p>Ataque: <%= carta.AttackBuff %></p>
-                                  <p>Daño: <%= carta.DamageBuff %></p>
-                                  <p>Defensa: <%= carta.DefenseBuff %></p>
-                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+            <p>Daño: <%= carta.DamageBuff %></p>
+            <p>Defensa: <%= carta.DefenseBuff %></p>
+            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                                   break;
                                   case "Machete":
                                   %><p>Ataque: <%= carta.AttackBuff %></p>
-                                  <p>Daño: <%= carta.DamageBuff %></p>
-                                  <p>Defensa: <%= carta.DefenseBuff %></p>
-                                  <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
+            <p>Daño: <%= carta.DamageBuff %></p>
+            <p>Defensa: <%= carta.DefenseBuff %></p>
+            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
                                   break;
                                 }
                                 %>
-                              <% } else if (carta.TypeCard === "Talent") { %>
-                                <%
+            <% } else if (carta.TypeCard === "Talent") { %>
+            <%
                                 switch (carta.Subtype) {
                                   case "Tanque":
                                     %>
-                                    <p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+            <p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
+            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                                     break;
                                   case "Veneno":
                                     %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                                     break;
                                   case "Hielo":
                                     %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
-                                    <%
+            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
+            <%
                                     break;
                                   case "Fuego":
                                     %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                                     break;
                                   case "Armas":
                                     %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
+            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
                                     break;
                                   case "Machete":
                                     %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
-                                    <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
-                                    <%
+            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
+            <%
                                     break;
                                 }
                                 %>
-                              <% }%>
-                        </div>
-                        <div class="eliminar">
-                          <p class="eliminarx" data-id="<%= cantidad[i].CARTA_ID %>">X</p>
-                      </div>
-                      <div class="rectangulo">
-                        <div class="cantidad">
-                          <button class="masmenos-menos">-</button>
-                          <p class="cantidadnum" data-id="<%= cantidad[i].CARTA_ID %>" data-idUsuario="<%= cantidad[i].IdUsuario %>" data-cantidad="<%= cantidad[i].CANTIDAD %>"><%= cantidad[i].CANTIDAD %></p>
-                          <button class="masmenos-mas">+</button>
-                      </div>
-                      
-                          
-                          <div class="valor">
-                              <p class="valorp"><%= totales[i] %></p>
-                          </div>
-                      </div>
-                    </div>
-                    <% } %>
-            </div>
-            <div class="paginas">
-                <ul class="listPage">
-                    <li class="active">1</li>
-                    <li class="numeros">2</li>
-                    <li class="numeros">3</li>
-                </ul>
-            </div>
-        </div>
-        <div class="resumen">
-            <div class="compra">
-                <h2>Resumen de compra</h2>
-                <hr class="lineados">
-            </div>
-            <div class="productos">
-                <div class="productosp">
-                    <p>Productos:</p>
-                    <p class="numproductos"><%= cantidadtotal %></p>
-                </div>
-                <div class="totalb">
-                    <p>Total bruto:</p>
-                    <p class="numtotalb"><%= totalBruto %></p>
-                </div>
-                <div class="iva">
-                    <p>Impuesto(IVA):</p>
-                    <p class="numiva">19%</p>
-                </div>
-                <hr class="lineatres">
-                <div class="total">
-                    <h3>Total</h3>
-                    <p class="numtotal"><%= totalNeto %></p>
-                </div>
+            <% }%>
+          </div>
+          <div class="eliminar">
+            <p class="eliminarx" data-id="<%= cantidad[i].CARTA_ID %>">X</p>
+          </div>
+          <div class="rectangulo">
+            <div class="cantidad">
+              <button class="masmenos-menos">-</button>
+              <p class="cantidadnum" data-id="<%= cantidad[i].CARTA_ID %>" data-idUsuario="<%= cantidad[i].IdUsuario %>" data-cantidad="<%= cantidad[i].CANTIDAD %>"><%= cantidad[i].CANTIDAD %></p>
+              <button class="masmenos-mas">+</button>
             </div>
 
-            <div class="pedido">
-                <button class="realizar" id="checkout"> Realizar pedido</button>
-                <p class="añadir">¿Quieres añadir más productos?</p>
 
-                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-                
+            <div class="valor">
+              <p class="valorp"><%= totales[i] %></p>
             </div>
+          </div>
         </div>
-        <div id="resumen-flotante" class="resumen-flotante-oculto">
-            <h2>Resumen de compra</h2>
-            <hr class="lineados">
-            <div class="resumen-flotante-contenido">
-                <div class="comprados">
-                        <% for (let i = 0; i < info.length; i++) { 
+        <% } %>
+      </div>
+      <div class="paginas">
+        <ul class="listPage">
+          <li class="active">1</li>
+          <li class="numeros">2</li>
+          <li class="numeros">3</li>
+        </ul>
+      </div>
+    </div>
+    <div class="resumen">
+      <div class="compra">
+        <h2>Resumen de compra</h2>
+        <hr class="lineados">
+      </div>
+      <div class="productos">
+        <div class="productosp">
+          <p>Productos:</p>
+          <p class="numproductos"><%= cantidadtotal %></p>
+        </div>
+        <div class="totalb">
+          <p>Total bruto:</p>
+          <p class="numtotalb"><%= totalBruto %></p>
+        </div>
+        <div class="iva">
+          <p>Impuesto(IVA):</p>
+          <p class="numiva">19%</p>
+        </div>
+        <hr class="lineatres">
+        <div class="total">
+          <h3>Total</h3>
+          <p class="numtotal"><%= totalNeto %></p>
+        </div>
+      </div>
+
+      <div class="pedido">
+        <button class="realizar" id="checkout"> Realizar pedido</button>
+        <p class="añadir">¿Quieres añadir más productos?</p>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      </div>
+    </div>
+    <div id="resumen-flotante" class="resumen-flotante-oculto">
+      <h2>Resumen de compra</h2>
+      <hr class="lineados">
+      <div class="resumen-flotante-contenido">
+        <div class="comprados">
+          <% for (let i = 0; i < info.length; i++) { 
                           const carta = info[i];
                           %>
-                        <div class="guardar_cartas">
-                            <div class="imagen_cartados">
-                              <img src="<%= carta.imagePath %>" class="personajedos" /> 
-                            </div>
-                            <div class="informacion_cartados">
-                              <p><%= carta.Name %></p>
-                            </div>
-                        </div>
-                        <% } %>
-                </div>
+          <div class="guardar_cartas">
+            <div class="imagen_cartados">
+              <img src="<%= carta.imagePath %>" class="personajedos" />
             </div>
-            <div class="productosdos">
-                <div class="productosp">
-                    <p>Productos:</p>
-                    <p class="numproductos"><%= cantidadtotal %></p>
-                </div>
-                <div class="totalb">
-                    <p>Total bruto:</p>
-                    <p class="numtotalb"><%= totalBruto %></p>
-                </div>
-                <div class="iva">
-                    <p>Impuesto(IVA):</p>
-                    <p class="numiva">19%</p>
-                </div>
-                <hr class="lineatres">
-                <div class="total">
-                    <h3>Total</h3>
-                    <p class="numtotal"><%= totalNeto %></p>
-                </div>
+            <div class="informacion_cartados">
+              <p><%= carta.Name %></p>
             </div>
-            <div class="pedidodos">
-                <button class="realizardos" id="checkout"> Realizar pedido</button>
-            </div>
-            <div class="ircarrito">
-                <button class="ircarritodos" id="checkout"> Ir al carrito</button>
-            </div>
-            <div class="guardar">
-                <p>^</p>
-            </div>
+          </div>
+          <% } %>
         </div>
+      </div>
+      <div class="productosdos">
+        <div class="productosp">
+          <p>Productos:</p>
+          <p class="numproductos"><%= cantidadtotal %></p>
         </div>
-    </main>
-    <script src="carro_compras/js/navbar.js"></script>
-    <script src="carro_compras/js/paginacion.js"></script>
-    <script src="carro_compras/js/resumen_flotante.js"></script>
-    <script src="carro_compras/js/cantidad.js"></script>
-    <script src="carro_compras/js/eliminar.js"></script>
-    <script src="carro_compras/js/paypal.js"></script>
-    <script src="carro_compras/js/valores.js"></script>
+        <div class="totalb">
+          <p>Total bruto:</p>
+          <p class="numtotalb"><%= totalBruto %></p>
+        </div>
+        <div class="iva">
+          <p>Impuesto(IVA):</p>
+          <p class="numiva">19%</p>
+        </div>
+        <hr class="lineatres">
+        <div class="total">
+          <h3>Total</h3>
+          <p class="numtotal"><%= totalNeto %></p>
+        </div>
+      </div>
+      <div class="pedidodos">
+        <button class="realizardos" id="checkout"> Realizar pedido</button>
+      </div>
+      <div class="ircarrito">
+        <button class="ircarritodos" id="checkout"> Ir al carrito</button>
+      </div>
+      <div class="guardar">
+        <p>^</p>
+      </div>
+    </div>
+    </div>
+  </main>
+  <script src="carro_compras/js/navbar.js"></script>
+  <script src="carro_compras/js/paginacion.js"></script>
+  <script src="carro_compras/js/resumen_flotante.js"></script>
+  <script src="carro_compras/js/cantidad.js"></script>
+  <script src="carro_compras/js/eliminar.js"></script>
+  <script src="carro_compras/js/paypal.js"></script>
 </body>
 
 </html>

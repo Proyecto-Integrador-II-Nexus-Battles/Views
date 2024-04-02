@@ -1,10 +1,38 @@
 function cambiarColor(elemento, IdCard) {
-  if (elemento.style.color === 'red') {
+  if (elemento.style.color === "red") {
     eliminarListaDeseos(IdCard);
-    elemento.style.color = 'black';
+    elemento.style.color = "black";
   } else {
     addListaDeseos(IdCard);
-    elemento.style.color = 'red';
+    elemento.style.color = "red";
+  }
+}
+
+async function redirectListaDeseos() {
+  const url = "/lista_deseos";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `${token}`,
+    },
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.ok) {
+      const responseData = await response.json();
+      console.log("Respuesta del servidor: ", responseData);
+      window.location.href = "/lista_deseos";
+    } else if (response.status === 301) {
+      window.location.href = "/";
+    } else {
+      throw new Error("Error en la solicitud GET");
+    }
+  } catch (error) {
+    console.error("Error en la solicitud: ", error);
   }
 }
 

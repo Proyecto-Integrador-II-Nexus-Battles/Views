@@ -1,10 +1,8 @@
-import { log } from "console";
-import path from "path";
-import { fileURLToPath } from "url";
+import { HOST, PORT } from "../../config.js";
 
 export const defaultR = async (req, res) => {
   try {
-    const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard`);
+    const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
     datos.forEach((dato) => {
       dato.imagePath = "vitrina_productos/img/cedric.jpg";
@@ -19,7 +17,9 @@ export const defaultR = async (req, res) => {
 export const defaultR2 = async (req, res) => {
   const { id } = req.params;
   const encodedID = encodeURIComponent(id);
-  const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard/${encodedID}`);
+  const response = await fetch(
+    `${HOST}:${PORT}/inventario/getEcommerceCard/${encodedID}`
+  );
   const datos = await response.json();
   datos.forEach((dato) => {
     dato.imagePath = "vitrina_productos/img/cedric.jpg";
@@ -35,7 +35,7 @@ export const defaultR4 = async (req, res) => {
   try {
     const query = req.query;
     const params = new URLSearchParams(query).toString();
-    const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/cards?${params}`);
+    const response = await fetch(`${HOST}:${PORT}/inventario/cards?${params}`);
     const datos = await response.json();
 
     datos.forEach((dato) => {
@@ -50,7 +50,7 @@ export const defaultR4 = async (req, res) => {
 };
 
 export const defaultR5 = async (req, res) => {
-  const url = `${process.env.HOST_C}:${process.env.PORT_C}/carro_compras/ADD-CARD`;
+  const url = `${HOST}:${PORT}/carro_compras/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
@@ -77,10 +77,11 @@ export const defaultR5 = async (req, res) => {
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
-}
+};
 
 export const defaultR6 = async (req, res) => {
-  const url = `${process.env.HOST_L}:${process.env.PORT_L}/deseos/agregar`;
+  console.log("entro a defaultR6");
+  const url = `${HOST}:${PORT}/deseos/agregar`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
@@ -106,10 +107,10 @@ export const defaultR6 = async (req, res) => {
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
-}
+};
 
 export const defaultR7 = async (req, res) => {
-  const url = `${process.env.HOST_L}:${process.env.PORT_L}/deseos/eliminar`;
+  const url = `${HOST}:${PORT}/deseos/eliminar`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
@@ -135,4 +136,4 @@ export const defaultR7 = async (req, res) => {
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
-}
+};

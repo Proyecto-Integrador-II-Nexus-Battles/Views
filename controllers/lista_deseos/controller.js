@@ -12,10 +12,14 @@ export const listaDeseos = async (req, res) => {
     return res.status(500).send("Error interno del servidor");
   }
 
+  const options = {
+    headers: {
+      Authorization: req.headers.authorization,
+    },
+  };
+
   try {
-    const deseosRespuesta = await axios.post(`${url}/deseos`, {
-      user_id: userId,
-    }); // Conexión con el backend
+    const deseosRespuesta = await axios.post(`${url}/deseos`, {}, options); // Conexión con el backend
     if (deseosRespuesta.status >= 300) {
       console.error("La solicitud de lista de deseos no fue exitosa");
       return res
@@ -24,13 +28,14 @@ export const listaDeseos = async (req, res) => {
     }
 
     const listaDeseos = deseosRespuesta.data;
+    console.log(listaDeseos);
 
     for (let i = 0; i < listaDeseos.length; i++) {
-      const cardId = listaDeseos[i]["producto_id"];
+      const cardId = listaDeseos[i]["CARTAS_ID"];
       const inventarioRespuesta = await axios.post(
-        `${url}/inventario/getCard`,
+        `${url}/inventario/getCardsbyID`,
         {
-          cardID: cardId.toString(),
+          ids: [cardId],
         }
       ); // Conexión con el backend
       if (inventarioRespuesta.status >= 300) {
@@ -54,18 +59,22 @@ export const listaDeseos = async (req, res) => {
       listaDeseos[i]["defenseBuff"] = infoCard["defenseBuff"];
       listaDeseos[i]["price"] = infoCard["price"];
 
-      const vitrinaRespuesta = await axios.post(`${url}/vitrina/prices`, {
-        id_cartas: [cardId],
-      });
+      const vitrinaRespuesta = await axios.post(
+        `${url}/vitrina/prices`,
+        {
+          id_cartas: [cardId],
+        },
+        options
+      );
       if (vitrinaRespuesta.status >= 300) {
         console.error("La solicitud de inventario no fue exitosa");
         return res.status(vitrinaRespuesta.status).send(vitrinaRespuesta.data);
       }
       const priceCard = vitrinaRespuesta.data[0];
-      listaDeseos[i]["precio"] = priceCard["precio"];
-      listaDeseos[i]["divisa"] = priceCard["divisa"];
-      listaDeseos[i]["descuento"] = priceCard["descuento"];
-      listaDeseos[i]["id_carta"] = priceCard["id_carta"];
+      listaDeseos[i]["PRECIO"] = priceCard["precio"];
+      listaDeseos[i]["DIVISA"] = priceCard["divisa"];
+      listaDeseos[i]["DESCUENTO"] = priceCard["descuento"];
+      listaDeseos[i]["CARTAS_ID"] = priceCard["id_carta"];
     }
 
     console.log(listaDeseos);
