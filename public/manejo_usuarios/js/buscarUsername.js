@@ -19,10 +19,10 @@ async function buscarUsuarios() {
       userElement.className = 'user_article';
       userElement.innerHTML = `
           <i class="fa-solid fa-circle-user user_icon"></i>
-          <p class="user_apodo">${usuario.usuario}</p>
+          <p class="user_apodo">${usuario.username}</p>
         `;
       userElement.addEventListener('click', () => {
-        UserReview(usuario.usuario)
+        UserReview(usuario.username)
       });
 
       return userElement;
