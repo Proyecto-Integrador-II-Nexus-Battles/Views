@@ -30,7 +30,7 @@ function handleSubmit(event) {
       } else {
         mensaje.classList.remove("error-message");
         console.log("aaa si inicio jiajia");
-        localStorage.setItem("token", JSON.stringify(result.token));
+        localStorage.setItem("token", result.token);
 
         //http://${HOST}:${PORT}/usuario/recibir
 

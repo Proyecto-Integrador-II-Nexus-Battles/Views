@@ -50,7 +50,7 @@ export const defaultR4 = async (req, res) => {
 };
 
 export const defaultR5 = async (req, res) => {
-  const url = `${process.env.HOST}:${process.env.PORT}/carro/ADD-CARD`;
+  const url = `${process.env.HOST_C}:${process.env.PORT_C}/carro_compras/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
@@ -75,6 +75,6 @@ export const defaultR5 = async (req, res) => {
       throw new Error("Error en la solicitud POST");
     })
     .catch((error) => {
-      console.error("Error en la solicutud: ", error, 'response: ');
+      console.error("Error en la solicutud: ", error);
     });
 }
