@@ -50,11 +50,69 @@ export const defaultR4 = async (req, res) => {
 };
 
 export const defaultR5 = async (req, res) => {
-  const url = `${HOST}:${PORT}/carro/ADD-CARD`;
+  const url = `${process.env.HOST_C}:${process.env.PORT_C}/carro_compras/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
     Cantidad: 1,
+  };
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: req.headers.authorization,
+    },
+    body: JSON.stringify(data),
+  };
+  fetch(url, options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      if (response.status === 301) {
+        res.status(301).send("No autorizado");
+      }
+      throw new Error("Error en la solicitud POST");
+    })
+    .catch((error) => {
+      console.error("Error en la solicutud: ", error);
+    });
+}
+
+export const defaultR6 = async (req, res) => {
+  const url = `${process.env.HOST_L}:${process.env.PORT_L}/deseos/agregar`;
+  const { IdCard } = req.body;
+  const data = {
+    IdCard: IdCard,
+  };
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: req.headers.authorization,
+    },
+    body: JSON.stringify(data),
+  };
+  fetch(url, options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      if (response.status === 301) {
+        res.status(301).send("No autorizado");
+      }
+      throw new Error("Error en la solicitud POST");
+    })
+    .catch((error) => {
+      console.error("Error en la solicutud: ", error);
+    });
+}
+
+export const defaultR7 = async (req, res) => {
+  const url = `${process.env.HOST_L}:${process.env.PORT_L}/deseos/eliminar`;
+  const { IdCard } = req.body;
+  const data = {
+    IdCard: IdCard,
   };
   const options = {
     method: "POST",

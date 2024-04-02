@@ -13,7 +13,7 @@ try {
     const data = await response.json();
     HOST = data.host || 'localhost';
     PORT = data.port || 5000;
-    PORT_BACK = data.port_back || 3000;
+    PORT_BACK = data.port_back || 3020;
     PORT_VITRINA = data.port_vitrina || 4443;
 
     console.log("Hizo fetch")
