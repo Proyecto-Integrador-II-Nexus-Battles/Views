@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  front:
+    container_name: ecommerce-front
+    restart: unless-stopped
+    build:
+      context: ..
+      dockerfile: local/Dockerfile
+    volumes:
+      - ../:/app
+      - /app/node_modules
+    ports:
+      - "8000:8000"
+    stdin_open: true
+    tty: true
+
