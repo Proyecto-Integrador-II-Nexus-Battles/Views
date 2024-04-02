@@ -1,11 +1,9 @@
 async function addCarro(IdCard) {
-  console.log("ID del producto: ", IdCard);
   const url = "/vitrina/enviarCarro";
   const token = "Bearer " + localStorage.getItem("token");
   if (token === "Bearer null") {
     window.location.href = "/login";
   }
-  console.log("Token: ", token);
   const data = {
     IdCard: IdCard,
   };
