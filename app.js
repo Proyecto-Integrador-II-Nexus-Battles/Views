@@ -1,4 +1,5 @@
 import express from "express";
+import inventarioRoutes from "./routes/inventario/testing.routes.js";
 import testingRoutes from "./routes/carro_compras/testing.routes.js";
 import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
 import configRoutes from "./routes/config.routes.js";
@@ -29,6 +30,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(inventarioRoutes);
 app.use(testingRoutes);
 app.use(usuarioRoutes);
 app.use(configRoutes);
