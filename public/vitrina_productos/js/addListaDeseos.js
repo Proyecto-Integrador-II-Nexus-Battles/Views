@@ -14,26 +14,7 @@ async function redirectListaDeseos() {
   if (token === "Bearer null") {
     window.location.href = "/login";
   }
-  const options = {
-    method: "GET",
-    headers: {
-      Authorization: `${token}`,
-    },
-  };
-  try {
-    const response = await fetch(url, options);
-    if (response.ok) {
-      const responseData = await response.json();
-      console.log("Respuesta del servidor: ", responseData);
-      window.location.href = "/lista_deseos";
-    } else if (response.status === 301) {
-      window.location.href = "/";
-    } else {
-      throw new Error("Error en la solicitud GET");
-    }
-  } catch (error) {
-    console.error("Error en la solicitud: ", error);
-  }
+  window.location.href = url + "?token=" + token;
 }
 
 async function addListaDeseos(IdCard) {

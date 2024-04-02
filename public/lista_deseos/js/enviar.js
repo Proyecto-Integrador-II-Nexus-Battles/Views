@@ -8,7 +8,7 @@ function moverCarroCompras(item_id) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${authHeader()}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(data),
   };
@@ -16,6 +16,7 @@ function moverCarroCompras(item_id) {
   fetch(url, options)
     .then((response) => {
       if (response.ok) {
+        eliminar(item_id);
         return response.json();
       }
       if (response.status === 301) {

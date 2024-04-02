@@ -137,7 +137,7 @@
           <div class="informacion_carta">
             <div id="nombre">
               <p><%= carta.Name %></p>
-              <img src="<%= imagen %>" class="<%= tipoIcono %>" />
+              <img src="<%= carta.imagePath %>" class="<%= tipoIcono %>" />
             </div>
             <% if (carta.TypeCard === "Hero") { %>
             <p>Poder: <%= carta.Power %></p>
