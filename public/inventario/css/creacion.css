@@ -15,64 +15,66 @@ body {
 header {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
   background-color: #d8e9f9;
-  margin-right: 9%;
+  justify-content: space-between;
+  height: 90px;
 }
 
 header .logo_img {
-  width: 70px;
+  height: 70px;
+  padding: 15px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
 }
 
 #navbar {
   height: 60px;
-  background-color: #d8e9f9;
   padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
 }
 
 .opciones {
   display: flex;
   list-style: none;
-  padding-top: 9px;
   gap: 2.2em;
-  margin-left: 10px;
+  margin: 0;
+  padding: 20px;
 }
 
 .opciones li {
   display: inline-block;
-  padding-top: 9px;
 }
 
 .opciones li a {
   text-decoration: none;
   color: black;
-  font-size: 24px;
+  font-size: 20px;
 }
 
-.opciones li button {
-  font-size: 24px;
-  height: 90%;
-  width: 200px;
+#login_btn {
+  font-size: 20px;
+  background-color: #a3b7dc;
+  border: transparent;
+  border-radius: 5px;
+  padding: 5px;
   cursor: pointer;
-  margin-right: 1%;
-  border-radius: 10px;
-  border: none;
-  text-align: center;
-  margin-top: 2px;
+}
+
+#login_btn:hover {
+  background-color: #304c8b;
+  color: white;
 }
 
 .abrir-btn {
   display: none;
-}
-
-.logo {
-  height: 100px;
-}
-
-.close {
-  height: 50px;
-  border: none;
-  width: 100px;
 }
 
 /* Estilos de las cartas/productos */

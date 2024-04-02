@@ -15,3 +15,9 @@ file.addEventListener('change', e => {
         img.src = defaultFIle;
     }
 });
+file?.addEventListener('change', listenerInput);
+
+function navRouter(rute) {
+    localStorage.setItem('showmodal', 'true')
+}
+

@@ -449,4 +449,9 @@ export const defaultR7 = (req, res) => {
 export const defaultR8 = (req, res) => {
   res.render("inventario/creacion_carta_items")
 }
-
+export const defaultR9 = (req, res) => {
+  res.render("inventario/torneo")
+}
+export const default10 = (req ,res) => {
+  res.render("inventario/subasta")
+}

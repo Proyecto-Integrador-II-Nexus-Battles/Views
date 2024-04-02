@@ -13,7 +13,7 @@
         <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
         <nav class="" id="navbar">
           <ul class="opciones">
-            <li><a href="#" onclick="miCuenta()">Mi cuenta</a></li>
+            <li><a href="#" onclick="index()">Creación cartas</a></li>            <li><a href="#" onclick="miCuenta()">Mi cuenta</a></li>
             <li><a href="#">Mi banco</a></li>
             <li><a href="#">Subasta</a></li>
             <li><a href="/jugarOnline" onclick="jugar_online()">Jugar online</a></li>
@@ -74,12 +74,20 @@
                             <option value="value6">picaro veneno</option>
                           </select>
                     </div>
+                
+                </div>
+            </div>
+            <div class="card">
+                <div class="informacion_carta">
+                    <h2>
+                        Descripcion:
+                    </h2>
+                    <div class="textarea-container">
+                        <textarea name="" id="" cols="45" rows="23">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend aliquet justo,non fermentum est convallis nec. Integer varius eu justo nec cursus. In euismod lacus et semper aliquam. Aliquam vel mollis lorem. Integer dictum feugiat risus,a tempus nibh efficitur sit amet.Suspendisse potenti.Donec nec diam nec felis commodo auctor.Vivamus malesuada libero ac mi lobortis, at rhoncus lectus hendrerit. Suspendisse potenti. Ut nec fermentum nunc.Nam interdum quam at mi venenatis fermentum.
+                        </textarea>
+                    </div>
                     <div class="container-buttons">
-                        <a  href="/modificacionCartaDescripcion" onclick="modificacionCartaDescripcion()">
-                            <button class="siguiente">
-                                Siguiente
-                            </button>
-                        </a>
                         <a href="/" onclick="navRouter()">
                             <button id="guardar-cambios" class="guardar-cambios">
                                 Guardar Cambios
@@ -91,6 +99,7 @@
         </div>
     </main>
     <script src="/inventario/js/modificacionInv.js"></script>
+    <script src="/inventario/js/index.js"></script>
     <script src="/inventario/js/miCuenta.js"></script>
 </body>
 </html>

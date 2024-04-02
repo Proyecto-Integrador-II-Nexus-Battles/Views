@@ -1,4 +1,7 @@
-
+function index() {
+    window.location.href = "/";
+  }
+  
 if (localStorage.getItem('showmodal')) validateModal()
 
 function validateModal() {
@@ -12,3 +15,4 @@ function validateModal() {
     }, 5000);
     localStorage.removeItem('showmodal')
 }
+
