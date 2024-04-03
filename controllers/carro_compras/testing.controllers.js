@@ -83,7 +83,6 @@ export const createOrder = (req, res) => {
   const options = {
     headers: { Authorization: `${req.headers.authorization}` },
   };
-  console.log(options);
   axios
     .post(`${HOST}:${PORT}/pagos/create-order`, {}, options)
     .then((response) => {
