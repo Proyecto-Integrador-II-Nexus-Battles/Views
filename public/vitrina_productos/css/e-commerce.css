@@ -69,6 +69,15 @@ width: 70px;
 .abrir-btn{
   display: none;
 }
+
+#login_btn {
+  font-size: 20px;
+  background-color: #a3b7dc;
+  border: transparent;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
 /* Vitrina de productos */
 .container_general {
   width:60%;

@@ -25,7 +25,10 @@
         }
       });
     </script>
-    <img src="../Imagenes/logo_nb2_v2.png" class="logo_img" alt="">
+    <a href="/">
+      <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
+    </a>
+    
     <!-- Barra de navegación -->
     <img src="../img/hamburguesa_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
@@ -35,9 +38,9 @@
         <li><a href="/subasta">Subasta</a></li>
         <li><a href="/jugarOnline">Jugar online</a></li>
         <li><a href="/torneo">Torneo</a></li>
-        <li><a href="#">Resumen Flotante</a></li>
+        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
         <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
-        <li><a href="#"><button class="login_btn">Login</button></a></li>
+        <li><a href="/login"><button class="login_btn">Login</button></a></li>
       </ul>
     </nav>
   </header>
@@ -68,9 +71,15 @@
         <h2 class="texto"> BATALLA <br> CONTRA <br> IA</h2>
 
       </div>
+      <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
+  
   </main>
   <script src="../JS/jugarOnline.js"></script>
   <script src="/js/redirects.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <script src="/carro_compras/js/resumen_flotante.js"></script>
+  <script src="/resumen_flotante/js/deployResumen.js"></script>
 
 </body>
 

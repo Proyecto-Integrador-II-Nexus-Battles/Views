@@ -50,7 +50,7 @@ function deployEjsScript(data) {
       <button class="realizardos" id="checkout"> Realizar pedido</button>
     </div>
     <div class="ircarrito">
-      <button class="ircarritodos" id="checkout"> Ir al carrito</button>
+      <button onclick= "redirectCarroCompra()" class="ircarritodos" id="checkout"> Ir al carrito</button>
     </div>
     <div class="guardar">
       <p>^</p>
