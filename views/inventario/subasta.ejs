@@ -25,29 +25,28 @@
         }
       });
     </script>
-    <a href="/">
-      <img src="/inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
-    </a>
 
 
     <!-- Barra de navegación -->
-    <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
-    <nav class="" id="navbar">
-      <ul class="opciones">
-        <li><a href="#">Creación cartas</a></li>
-        <li><a href="#">Mi cuenta</a></li>
-        <li><a href="#">Mi banco</a></li>
-        <li><a href="/subasta">Subasta</a></li>
-        <li><a href="/jugarOnline">Jugar online</a></li>
-        <li><a href="/torneo">Torneo</a></li>
-        <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
-        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
-
-        <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
-        <li><a href="/login"><button id="login_btn" class="login_btn">Login</button></a></li>
-
-      </ul>
-    </nav>
+    <section class="nav">
+      <a href="/">
+        <img src="/inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
+      </a>
+      <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
+      <nav class="" id="navbar">
+        <ul class="opciones">
+          <li><a href="/miCuenta" onclick="miCuenta()">Mi cuenta</a></li>
+          <li><a href="/mi_banco">Mi banco</a></li>
+          <li><a href="/subasta">Subasta</a></li>
+          <li><a href="/jugarOnline">Jugar online</a></li>
+          <li><a href="/torneo">Torneo</a></li>
+          <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
+          <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
+          <li><a href="/login"><button id="login_btn">Login</button></a></li>
+          <li id="btn-listica"><a href="/register"><button id="login_btn" id="register_btn">Sign Up</button></a></li>
+        </ul>
+      </nav>
+    </section>
   </header>
   <main>
     <div class="title-container">

@@ -26,7 +26,9 @@ header {
 }
 
 header .logo_img{
-width: 70px;
+  height: 50px;
+  position: absolute;
+  left: 1%;
 }
 
 #navbar {
@@ -716,9 +718,8 @@ width: 100%;
 }
 }
 @media screen and (min-width:591px) and (max-width:660px){
-  .container_general{
-    background: transparent;
-    width: 50%;
+  #nombre p{
+    font-size:10px ;
   }
   .card
   {
@@ -775,6 +776,9 @@ margin-right: 60px;
   .container_general{
     background: transparent;
 
+  }
+  .informacion_carta p {
+    font-size: 5px;
   }
   .card{
     top: 20vh;
