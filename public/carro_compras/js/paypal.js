@@ -2,6 +2,7 @@ const botonPago = document.getElementById("checkout");
 
 botonPago.addEventListener("click", async () => {
   try {
+    console.log("Botón de pago presionado");
     const options = {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     };
@@ -9,6 +10,7 @@ botonPago.addEventListener("click", async () => {
       .post("/portal/createOrder", {}, options)
       .then((response) => {
         if (response.status === 200) {
+          console.log("Orden creada correctamente");
           const paypalUrl = response.data.paypalUrl;
           window.location.href = paypalUrl;
           res.redirect(paypalUrl);
@@ -19,7 +21,6 @@ botonPago.addEventListener("click", async () => {
       .catch((error) => {
         console.error("Error al realizar la solicitud:", error);
       });
-    console.log("Respuesta del servidor:", respo < nse.data);
   } catch (error) {
     console.error("Error al realizar la solicitud:", error);
   }

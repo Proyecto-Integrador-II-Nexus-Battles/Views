@@ -3,7 +3,7 @@ import { HOST, PORT } from "../../config.js";
 
 export const defaultR = (req, res) => {
   const options = {
-    headers: { Authorization: `${req.headers.Authorization}` },
+    headers: { Authorization: `${req.query.token}` },
   };
   axios
     .post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, options)
@@ -40,8 +40,9 @@ export const defaultR = (req, res) => {
 export const addCantidad = (req, res) => {
   const { IdCard, Cantidad } = req.body;
   const options = {
-    headers: { Authorization: `${req.headers.Authorization}` },
+    headers: { Authorization: `${req.headers.authorization}` },
   };
+  console.log(options);
   axios
     .post(
       `${HOST}:${PORT}/carro/CHANGE-CANT`,
@@ -80,10 +81,11 @@ export const deleteCard = (req, res) => {
 
 export const createOrder = (req, res) => {
   const options = {
-    headers: { Authorization: `${req.headers.Authorization}` },
+    headers: { Authorization: `${req.headers.authorization}` },
   };
+  console.log(options);
   axios
-    .post(`${HOST}:${PORT}/portal_pagos/create-order`, {}, options)
+    .post(`${HOST}:${PORT}/pagos/create-order`, {}, options)
     .then((response) => {
       const paypalUrl = response.data.paypalUrl;
       console.log("Respuesta del servidor:", response.data);

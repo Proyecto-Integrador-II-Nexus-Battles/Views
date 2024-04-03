@@ -40,8 +40,7 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
       }
     )
     .then((response) => {
-      console.log(response.data.message);
-      if (response.ok) {
+      if (response.status === 200) {
         loadItem();
       } else {
         console.error("Error al actualizar la cantidad");
