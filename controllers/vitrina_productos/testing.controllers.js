@@ -19,6 +19,7 @@ export const defaultR2 = async (req, res) => {
     `${HOST}:${PORT}/inventario/getEcommerceCard/${encodedID}`
   );
   const datos = await response.json();
+  console.log(datos);
   res.render("vitrina_productos/vistadetallada", { datos });
 };
 
