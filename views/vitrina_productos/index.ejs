@@ -39,7 +39,7 @@
         <li><a href="/subasta">Subasta</a></li>
         <li><a href="/jugar">Jugar online</a></li>
         <li><a href="/torneos">Torneo</a></li>
-        <li><a href="#">Resumen Flotante</a></li>
+        <li><a onclick="redirectCarroCompra()">Resumen Flotante</a></li>
         <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
         <li><a href="/login"><button class="login_btn">Login</button></a></li>
         <li><a href="/register"><button class="login_btn" id="register_btn">Sing Up</button></a></li>
@@ -139,7 +139,7 @@
           <div class="informacion_carta">
             <div id="nombre">
               <p><%= carta.Name %></p>
-              <img src="<%= imagen %>" class="<%= tipoIcono %>" />
+              <img src="<%= carta.imagePath %>" class="<%= tipoIcono %>" />
             </div>
             <% if (carta.TypeCard === "Hero") { %>
             <p>Poder: <%= carta.Power %></p>
@@ -312,6 +312,7 @@
     </div>
     
   </main>
+  <script src="/js/redirects.js"></script>
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>

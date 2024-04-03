@@ -18,9 +18,9 @@
       <nav class="" id="navbar">
         <ul class="opciones">
           <li><a href="/miCuenta"">Mi cuenta</a></li>
-          <li><a href="#">Mi banco</a></li>
+          <li><a href=" #">Mi banco</a></li>
           <li><a href="#">Subasta</a></li>
-          <li><a href="#" >Jugar online</a></li>
+          <li><a href="#">Jugar online</a></li>
           <li><a href="#">Torneo</a></li>
           <li><a href="#">Resumen Flotante</a></li>
           <li><a href="/lista_deseos">Lista Deseos</a></li>
@@ -30,8 +30,8 @@
     </section>
   </header>
   <!-- Vitrina de productos -->
-  <main>    
-    
+  <main>
+
     <!-- filtros -->
     <div class="filtros">
       <h1>Filtros</h1>
@@ -42,16 +42,16 @@
             <h2>Precios</h2>
           </li>
           <li><select class="seleccionar_precio">
-            <option value="#" disabled selected>Precios</soption>
+              <option value="#" disabled selected>Precios</soption>
               <option value="desc">Mayor a menor</option>
               <option value="asc">Menor a mayor</option>
             </select></li>
-            
-            <!-- Tipo de carta -->
-            <li>
-              <h2>Tipo de carta</h2>
-            </li>
-            <li><select class="tipo_carta">
+
+          <!-- Tipo de carta -->
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta">
               <option value="#" disabled selected>Selecciona un tipo</option>
               <option value="Guerrero Tanque">Guerrero Tanque</option>
               <option value="Guerrero Armas">Guerrero Armas</option>
@@ -60,23 +60,23 @@
               <option value="Picaro veneno">Picaro veneno</option>
               <option value="Picaro machete">Picaro machete</option>
             </select></li>
-            <!-- filtro promocion -->
-            <li>
-              <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
-            </li>
-            <input type="submit" id="filtro_input" value="Filtrar">
-          </ul>
-        </form>
-      </div>
-    
-    <!-- Parte barra de búsqueda  -->
-<!-- Cartas -->
+          <!-- filtro promocion -->
+          <li>
+            <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          </li>
+          <input type="submit" id="filtro_input" value="Filtrar">
+        </ul>
+      </form>
+    </div>
 
-  <div class="container_general">
-    <h3 class="agregar">Mi Lista de Deseos</h3>
-    <div class="list">
-      
-      <% products.forEach(function(item) { %>
+    <!-- Parte barra de búsqueda  -->
+    <!-- Cartas -->
+
+    <div class="container_general">
+      <h3 class="agregar">Mi Lista de Deseos</h3>
+      <div class="list">
+
+        <% products.forEach(function(item) { %>
         <div class="card card-<%= item.TypeCard %> " id="carta-<%= item.id %>">
           <div class="imagen_carta">
             <img src="<%= item.imagePath %>" class="personaje" />
@@ -94,40 +94,41 @@
             <p>Ataque: <%= item.ataque %> </p>
 
             <% if (item.SubType === 'hielo') { %>
-              <div class="subtipo-<%= item.SubType %>">
-                  <p id="cart">Buff: <%= item.poder %></p>
-                  <p id="cart2">Poder: <%= item.vida %></p>
-              </div>
+            <div class="subtipo-<%= item.SubType %>">
+              <p id="cart">Buff: <%= item.poder %></p>
+              <p id="cart2">Poder: <%= item.vida %></p>
+            </div>
             <% } %>
-        
+
             <div class="botones">
               <div class="modificar">
-                <button onclick='eliminar(<%= item.id %>)'>Eliminar</button>
-                <button onclick='moverCarroCompras(<%= item.id %>)'>Mover al carrito</button>
+                <button onclick='eliminar("<%= item.id %>")'>Eliminar</button>
+                <button onclick='moverCarroCompras("<%= item.id %>")'>Mover al carrito</button>
               </div>
             </div>
           </div>
         </div>
-      <% }); %>
+        <% }); %>
 
       </div>
       <div class="paginas">
         <ul class="listPage">
-            <li class="active">1</li>
-            <li>2</li>
-            <li>3</li>
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
         </ul>
       </div>
-  </div>
+    </div>
   </main>
-  
-  <script src="js/enviar.js"></script>
-  <script src="js/eliminar.js"></script>
 
-  <script src="js/nav.js"></script>
-  <script src="js/paginacion.js"></script>
-  <script src="js/jugarOnline.js"></script>
-  <script src="js/hamburguer.js"></script>
+  <script src="/js/redirects.js"></script>
+  <script src="/lista_deseos/js/enviar.js"></script>
+  <script src="/lista_deseos/js/eliminar.js"></script>
+  <script src="/lista_deseos/js/nav.js"></script>
+  <script src="/lista_deseos/js/paginacion.js"></script>
+  <script src="/lista_deseos/js/jugarOnline.js"></script>
+  <script src="/lista_deseos/js/hamburguer.js"></script>
 
 </body>
+
 </html>

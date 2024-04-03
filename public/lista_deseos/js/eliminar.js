@@ -1,16 +1,17 @@
-import { authHeader } from "../../js/authentication";
-
 function eliminar(item_id) {
+  console.log("Eliminar item con id: ", item_id);
   // Crear instancia de XMLHttpRequest
   const xhr = new XMLHttpRequest();
 
   // Definir la URL de la solicitud utilizando una variable de entorno
-  const url = `/deseos/eliminar/${item_id}`;
+  const url = `/deseos/eliminar/${encodeURIComponent(item_id)}`;
   xhr.open("POST", url, true);
-
   // Establecer el encabezado de la solicitud
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", `${authHeader()}`);
+  xhr.setRequestHeader(
+    "Authorization",
+    `Bearer ${localStorage.getItem("token")}`
+  );
 
   // Definir el callback para manejar la respuesta
   xhr.onload = function () {

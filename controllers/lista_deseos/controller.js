@@ -3,7 +3,6 @@ import { HOST, PORT } from "../../config.js";
 
 // Funcion de llamar a mis cartas de lista de deseos  //process.env.GATEWAY_URL para cambiar la IP añadido como variable
 export const listaDeseos = async (req, res) => {
-  const userId = 15;
   const url = HOST + ":" + PORT; // Utiliza la variable de entorno si está definida
   console.log(url);
   if (!url) {
@@ -14,7 +13,7 @@ export const listaDeseos = async (req, res) => {
 
   const options = {
     headers: {
-      Authorization: req.headers.authorization,
+      Authorization: req.query.token,
     },
   };
 
@@ -28,14 +27,13 @@ export const listaDeseos = async (req, res) => {
     }
 
     const listaDeseos = deseosRespuesta.data;
-    console.log(listaDeseos);
 
     for (let i = 0; i < listaDeseos.length; i++) {
       const cardId = listaDeseos[i]["CARTAS_ID"];
       const inventarioRespuesta = await axios.post(
-        `${url}/inventario/getCardsbyID`,
+        `${url}/inventario/getCardsByIDs`,
         {
-          ids: [cardId],
+          IDs: [cardId],
         }
       ); // Conexión con el backend
       if (inventarioRespuesta.status >= 300) {
@@ -45,25 +43,23 @@ export const listaDeseos = async (req, res) => {
           .send(inventarioRespuesta.data);
       }
       const infoCard = inventarioRespuesta.data;
-      listaDeseos[i]["_id"] = infoCard["_id"];
-      listaDeseos[i]["TypeCard"] = infoCard["TypeCard"];
-      listaDeseos[i]["imagePath"] = infoCard["imagePath"];
-      listaDeseos[i]["imgType"] = infoCard["imgType"];
-      listaDeseos[i]["Name"] = infoCard["Name"];
-      listaDeseos[i]["poder"] = infoCard["poder"];
-      listaDeseos[i]["vida"] = infoCard["vida"];
-      listaDeseos[i]["defensa"] = infoCard["defensa"];
-      listaDeseos[i]["ataque"] = infoCard["ataque"];
-      listaDeseos[i]["Type"] = infoCard["Type"];
-      listaDeseos[i]["Subtype"] = infoCard["Subtype"];
-      listaDeseos[i]["defenseBuff"] = infoCard["defenseBuff"];
-      listaDeseos[i]["price"] = infoCard["price"];
+      listaDeseos[i]["_id"] = infoCard[0]["_id"];
+      listaDeseos[i]["TypeCard"] = infoCard[0]["TypeCard"];
+      listaDeseos[i]["imagePath"] = infoCard[0]["imagePath"];
+      listaDeseos[i]["imgType"] = infoCard[0]["imgType"];
+      listaDeseos[i]["Name"] = infoCard[0]["Name"];
+      listaDeseos[i]["poder"] = infoCard[0]["Power"];
+      listaDeseos[i]["vida"] = infoCard[0]["Live"];
+      listaDeseos[i]["defensa"] = infoCard[0]["Defense"];
+      listaDeseos[i]["ataque"] = infoCard[0]["AttackBase"];
+      listaDeseos[i]["Type"] = infoCard[0]["Type"];
+      listaDeseos[i]["Subtype"] = infoCard[0]["Subtype"];
+      listaDeseos[i]["defenseBuff"] = infoCard[0]["DefenseBuff"];
+      listaDeseos[i]["price"] = infoCard[0]["price"];
 
       const vitrinaRespuesta = await axios.post(
         `${url}/vitrina/prices`,
-        {
-          id_cartas: [cardId],
-        },
+        [cardId],
         options
       );
       if (vitrinaRespuesta.status >= 300) {
@@ -71,18 +67,15 @@ export const listaDeseos = async (req, res) => {
         return res.status(vitrinaRespuesta.status).send(vitrinaRespuesta.data);
       }
       const priceCard = vitrinaRespuesta.data[0];
-      listaDeseos[i]["PRECIO"] = priceCard["precio"];
-      listaDeseos[i]["DIVISA"] = priceCard["divisa"];
-      listaDeseos[i]["DESCUENTO"] = priceCard["descuento"];
-      listaDeseos[i]["CARTAS_ID"] = priceCard["id_carta"];
+      listaDeseos[i]["precio"] = priceCard["precio"];
+      listaDeseos[i]["divisa"] = priceCard["divisa"];
+      listaDeseos[i]["descuento"] = priceCard["descuento"];
+      listaDeseos[i]["id"] = priceCard["id_carta"];
     }
-
-    console.log(listaDeseos);
 
     // La respuesta fue exitosa, renderizar la vista con los datos obtenidos
     res.render("lista_deseos/index.ejs", {
       title: "Lista de Deseos",
-      user: { id: userId },
       products: listaDeseos,
     });
     console.log(listaDeseos); //user: req.session.user, products: rows sesion de usuarios
@@ -100,50 +93,38 @@ export const moverCartaCarro = async (req, res) => {
     IdCard: IdCard,
     Cantidad: Cantidad,
   };
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: req.headers.authorization,
-    },
-    body: JSON.stringify(data),
-  };
-  fetch(url, options)
+  axios
+    .post(url, data, { headers: { Authorization: req.headers.authorization } })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
+      if (response.status >= 300) {
+        console.error("Error al mover la carta al carro");
+        return res.status(response.status).send(response.data);
       }
-      if (response.status === 301) {
-        res.status(301).send("No autorizado");
-      }
-      throw new Error("Error en la solicitud POST");
+      res.status(200).send("Se movió correctamente");
     })
     .catch((error) => {
-      console.error("Error en la solicutud: ", error);
+      console.error("Error al mover la carta al carro:", error);
+      res.status(500).send("Error interno del servidor");
     });
 };
 
 export const eliminarItemDeseos = async (req, res) => {
-  const url = `${HOST}:${PORT}/deseos/eliminar/${req.params.id}`;
-  fetch(url, {
-    method: "POST",
-    headers: { Authorization: req.headers.authorization },
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-      if (response.status === 301) {
-        res.status(301).send("No autorizado");
-      }
-      throw new Error("Error en la solicitud POST");
+  const url = `${HOST}:${PORT}/deseos/eliminar`;
+  const data = { IdCard: req.params.id };
+
+  axios
+    .post(url, data, {
+      headers: { Authorization: req.headers.authorization },
     })
-    .then((data) => {
-      console.log("Respuesta del servidor: ", data);
+    .then((response) => {
+      if (response.status >= 300) {
+        console.error("Error al eliminar el item de la lista de deseos");
+        return res.status(response.status).send(response.data);
+      }
       res.status(200).send("Se eliminó correctamente");
     })
     .catch((error) => {
-      console.error("Error en la solicutud: ", error);
-      res.status(500).send("No se pudo eliminar correctamente");
+      console.error("Error al eliminar el item de la lista de deseos:", error);
+      res.status(500).send("Error interno del servidor");
     });
 };
