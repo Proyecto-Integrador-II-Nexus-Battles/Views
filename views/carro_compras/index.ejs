@@ -25,8 +25,10 @@
         }
       });
     </script>
-    <img src="/carro_compras/img/logo.png" class="logo_img" alt="">
-    <!-- Barra de navegación -->
+    <a href="/">
+      <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
+    
+    </a><!-- Barra de navegación -->
     <img src="/carro_compras/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
@@ -85,10 +87,6 @@
             <img src="carro_compras/img/astrid.jpeg" class="personaje" />
           </div>
           <div class="informacion_carta">
-            <div class="nombre">
-              <p><%= carta.Name %></p>
-              <img src="<%= imagen %>" class="<%= tipoIcono %>" />
-            </div>
             <% if (carta.TypeCard === "Hero") { %>
             <p>Poder: <%= carta.Power %></p>
             <p>Vida: <%= carta.Live %></p>
