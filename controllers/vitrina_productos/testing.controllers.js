@@ -4,9 +4,7 @@ export const defaultR = async (req, res) => {
   try {
     const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
-    datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg";
-    });
+    
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
     console.error(error);
@@ -21,9 +19,6 @@ export const defaultR2 = async (req, res) => {
     `${HOST}:${PORT}/inventario/getEcommerceCard/${encodedID}`
   );
   const datos = await response.json();
-  datos.forEach((dato) => {
-    dato.imagePath = "vitrina_productos/img/cedric.jpg";
-  });
   res.render("vitrina_productos/vistadetallada", { datos });
 };
 
@@ -38,9 +33,7 @@ export const defaultR4 = async (req, res) => {
     const response = await fetch(`${HOST}:${PORT}/inventario/cards?${params}`);
     const datos = await response.json();
 
-    datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg";
-    });
+
 
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
