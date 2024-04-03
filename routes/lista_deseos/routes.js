@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   listaDeseos,
   moverCartaCarro,
+  eliminarItemDeseos,
 } from "../../controllers/lista_deseos/controller.js";
 
 const listaDeseosRouter = Router();

@@ -1,14 +1,9 @@
-import { log } from "console";
-import path from "path";
-import { fileURLToPath } from "url";
+import { HOST, PORT } from "../../config.js";
 
 export const defaultR = async (req, res) => {
   try {
-    const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard`);
+    const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
-    datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg";
-    });
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
     console.error(error);
@@ -19,11 +14,10 @@ export const defaultR = async (req, res) => {
 export const defaultR2 = async (req, res) => {
   const { id } = req.params;
   const encodedID = encodeURIComponent(id);
-  const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/getEcommerceCard/${encodedID}`);
+  const response = await fetch(
+    `${HOST}:${PORT}/inventario/getEcommerceCard/${encodedID}`
+  );
   const datos = await response.json();
-  datos.forEach((dato) => {
-    dato.imagePath = "vitrina_productos/img/cedric.jpg";
-  });
   res.render("vitrina_productos/vistadetallada", { datos });
 };
 
@@ -35,12 +29,8 @@ export const defaultR4 = async (req, res) => {
   try {
     const query = req.query;
     const params = new URLSearchParams(query).toString();
-    const response = await fetch(`${process.env.I_HOST}:${process.env.I_PORT}/inventario/cards?${params}`);
+    const response = await fetch(`${HOST}:${PORT}/inventario/cards?${params}`);
     const datos = await response.json();
-
-    datos.forEach((dato) => {
-      dato.imagePath = "vitrina_productos/img/cedric.jpg";
-    });
 
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
@@ -50,11 +40,14 @@ export const defaultR4 = async (req, res) => {
 };
 
 export const defaultR5 = async (req, res) => {
-  const url = `${process.env.HOST_C}:${process.env.PORT_C}/carro_compras/ADD-CARD`;
+  console.log("hola");
+  console.log(HOST);
+  console.log(PORT);
+
+  const url = `${HOST}:${PORT}/carro/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
-    Cantidad: 1,
   };
   const options = {
     method: "POST",
@@ -64,23 +57,31 @@ export const defaultR5 = async (req, res) => {
     },
     body: JSON.stringify(data),
   };
+  console.log("1");
   fetch(url, options)
     .then((response) => {
+      console.log("3");
       if (response.ok) {
+        console.log("4");
         return response.json();
       }
       if (response.status === 301) {
         res.status(301).send("No autorizado");
+        console.log("5");
       }
-      throw new Error("Error en la solicitud POST");
+      console.log(response);
+      /*
+      throw new Error("Error en la solicitud POST ");
+      */
     })
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
-}
+};
 
 export const defaultR6 = async (req, res) => {
-  const url = `${process.env.HOST_L}:${process.env.PORT_L}/deseos/agregar`;
+  console.log("entro a defaultR6");
+  const url = `${HOST}:${PORT}/deseos/agregar`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
@@ -101,15 +102,15 @@ export const defaultR6 = async (req, res) => {
       if (response.status === 301) {
         res.status(301).send("No autorizado");
       }
-      throw new Error("Error en la solicitud POST");
+      throw new Error("Error en la solicitud POST hola");
     })
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
-}
+};
 
 export const defaultR7 = async (req, res) => {
-  const url = `${process.env.HOST_L}:${process.env.PORT_L}/deseos/eliminar`;
+  const url = `${HOST}:${PORT}/deseos/eliminar`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
@@ -135,4 +136,4 @@ export const defaultR7 = async (req, res) => {
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
-}
+};

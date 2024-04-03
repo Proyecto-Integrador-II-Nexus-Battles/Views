@@ -1,4 +1,6 @@
 async function addCarro(IdCard) {
+  console.log("Hola");
+  console.log(IdCard);
   const url = "/vitrina/enviarCarro";
   const token = "Bearer " + localStorage.getItem("token");
   if (token === "Bearer null") {
@@ -25,9 +27,11 @@ async function addCarro(IdCard) {
     } else if (response.status === 301) {
       window.location.href = "/";
     } else {
+      console.log("aaaaa")
       throw new Error("Error en la solicitud POST");
+    
     }
   } catch (error) {
-    console.error("Error en la solicitud: ", error);
+    console.error("Error en la solicitud: :)", error);
   }
 }

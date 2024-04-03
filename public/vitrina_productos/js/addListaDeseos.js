@@ -1,11 +1,20 @@
 function cambiarColor(elemento, IdCard) {
-  if (elemento.style.color === 'red') {
+  if (elemento.style.color === "red") {
     eliminarListaDeseos(IdCard);
-    elemento.style.color = 'black';
+    elemento.style.color = "black";
   } else {
     addListaDeseos(IdCard);
-    elemento.style.color = 'red';
+    elemento.style.color = "red";
   }
+}
+
+async function redirectListaDeseos() {
+  const url = "/lista_deseos";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
 }
 
 async function addListaDeseos(IdCard) {

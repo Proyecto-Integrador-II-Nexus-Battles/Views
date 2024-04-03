@@ -1,6 +1,3 @@
-import { HOST, PORT, PORT_BACK, PORT_VITRINA } from "../../config.js";
-
-console.log(PORT);
 let form = document.querySelector("form");
 
 form.addEventListener("submit", handleSubmit);
@@ -31,7 +28,7 @@ function handleSubmit(event) {
         mensaje.classList.remove("error-message");
         console.log("aaa si inicio jiajia");
         localStorage.setItem("token", result.token);
-        window.location.href = "/"
+        window.location.href = "/";
       }
     })
     .catch((err) => {
