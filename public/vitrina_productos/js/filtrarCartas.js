@@ -28,3 +28,17 @@ function filtrarCartas() {
   window.location.href = url
 
 }
+
+function filtrarPorBusqueda(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    const valorBusqueda = document.querySelector(".search_input").value.replace(/ /g, "_");
+    if (valorBusqueda === "") {
+      window.location.href = "/";
+      return;
+    }
+    const url = `/search/${valorBusqueda}`;
+    console.log(url);
+    window.location.href = url
+  }
+}

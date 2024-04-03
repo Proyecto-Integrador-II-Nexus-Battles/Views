@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("/inventario/imagenes/Background.jpg");
+  background-image: url("/inventario/imagenes/Fondo_online.PNG");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -159,6 +159,13 @@ header .logo_img {
   }
 }
 @media screen and (max-width: 1366px) {
+
+  .opciones li a{
+    font-size: 15px;
+  }
+  #login_btn{
+    font-size: 15px;
+  }
   .personaje {
     height: 190px;
   }

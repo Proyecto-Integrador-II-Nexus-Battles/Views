@@ -42,6 +42,6 @@ const options = {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-http.createServer(app).listen(80);
+// http.createServer(app).listen(80);
 https.createServer(options, app).listen(APP_PORT);
 console.log(`Server is runing on ${APP_PORT}`);
