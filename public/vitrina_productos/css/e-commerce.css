@@ -50,11 +50,10 @@ width: 70px;
 .opciones li a {
   text-decoration: none;
   color: black;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .opciones li button {
-  font-size: 24px;
   color:white;
   height: 90%;
   width: 110px;
@@ -71,7 +70,7 @@ width: 70px;
 }
 
 #login_btn {
-  font-size: 20px;
+  font-size: 15px;
   background-color: #a3b7dc;
   border: transparent;
   border-radius: 5px;
@@ -234,7 +233,7 @@ border-radius: 7px;
   border-radius: 5px;
   position: relative;
   top: 10px;
-  left: 50%;
+  left: 10%;
   cursor: pointer;
   margin-bottom: 10px;
 }
@@ -432,7 +431,7 @@ span{
   left: 85%;
 }
 }
-@media screen and (max-width: 1630px) {
+@media screen and (max-width: 1630px) and (min-width:1400px) {
   header {
     margin-right: 15%;
   }
