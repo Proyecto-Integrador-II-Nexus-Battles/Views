@@ -41,10 +41,6 @@ export const defaultR4 = async (req, res) => {
 };
 
 export const defaultR5 = async (req, res) => {
-  console.log("hola");
-  console.log(HOST);
-  console.log(PORT);
-
   const url = `${HOST}:${PORT}/carro/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
@@ -137,4 +133,27 @@ export const defaultR7 = async (req, res) => {
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
     });
+};
+
+export const defaultR8 = async (req, res) => {
+  try {
+    const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
+    const allDatos = await response.json();
+    const searchTerm = req.params.searchTerm;
+
+    const datos = allDatos.filter((dato) => {
+      const lowerSearchTerm = searchTerm.toLowerCase();
+      const lowerName = dato.Name.toLowerCase();
+      const lowerType = dato.Type.toLowerCase();
+      const lowerSubtype = dato.Subtype.toLowerCase();
+      const lowerTypeCard = dato.TypeCard.toLowerCase();
+
+      return lowerName.includes(lowerSearchTerm) || lowerType.includes(lowerSearchTerm) || lowerSubtype.includes(lowerSearchTerm) || lowerTypeCard.includes(lowerSearchTerm);
+    });
+
+    res.render("vitrina_productos/index", { datos });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 };
