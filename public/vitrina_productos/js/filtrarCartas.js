@@ -28,3 +28,13 @@ function filtrarCartas() {
   window.location.href = url
 
 }
+
+function filtrarPorBusqueda() {
+  const input = document.querySelector(".search_input");
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      const search = input.value;
+      console.log(search);
+    }
+  });
+}
