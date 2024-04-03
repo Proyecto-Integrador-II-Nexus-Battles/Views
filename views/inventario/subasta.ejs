@@ -1,70 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/inventario/css/subasta.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/inventario/css/subasta.css">
 </head>
+
 <body>
-    <header>
-      <img src="inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
-        <!-- Barra de navegación -->
-      <img src="inventario/imagenes/hamburguesa_icon.svg" class="abrir-btn" alt="">
-      <nav class="" id="navbar">
-        <ul class="opciones">
-          <li><a href="#">Creación cartas</a></li>
-          <li><a href="#">Mi cuenta</a></li>
-          <li><a href="#">Mi banco</a></li>
-          <li><a href="#">Subasta</a></li>
-          <li><a href="/jugarOnline">Jugar online</a></li>
-          <li><a href="#">Torneo</a></li>
-          <li><a href="#">Resumen Flotante</a></li>
-          <li><a href="#">Lista Deseos</a></li>
-          <li><a href="#"><button id="login_btn">Login</button></a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-        <div class="title-container">
-            <h2 class="title-text">
-            SUBASTA
-            </h2>
-            <div class="game-coin-container">
-                <h2 class="game-coin">
-                0
-                </h2>
-                <img src="inventario/imagenes/game-coin.png" class="coin-img">
-            </div>
-        </div>
-      <!-- Cartas -->
-      <div class="container_productos">
-          <!-- <div class="front">
+  <header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var token = localStorage.getItem('token');
+
+        if (token !== null) {
+          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.getElementById('register_btn').remove();
+          document.querySelector('.login_btn').addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.reload(true);
+          });
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
+
+    <img src="inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
+    <!-- Barra de navegación -->
+    <img src="inventario/imagenes/hamburguesa_icon.svg" class="abrir-btn" alt="">
+    <nav class="" id="navbar">
+      <ul class="opciones">
+        <li><a href="#">Creación cartas</a></li>
+        <li><a href="#">Mi cuenta</a></li>
+        <li><a href="#">Mi banco</a></li>
+        <li><a href="/subasta">Subasta</a></li>
+        <li><a href="/jugarOnline">Jugar online</a></li>
+        <li><a href="/torneo">Torneo</a></li>
+        <li><a href="#">Resumen Flotante</a></li>
+        <li><a href="#">Lista Deseos</a></li>
+        <li><a href="#"><button id="login_btn">Login</button></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="title-container">
+      <h2 class="title-text">
+        SUBASTA
+      </h2>
+      <div class="game-coin-container">
+        <h2 class="game-coin">
+          0
+        </h2>
+        <img src="inventario/imagenes/game-coin.png" class="coin-img">
+      </div>
+    </div>
+    <!-- Cartas -->
+    <div class="container_productos">
+      <!-- <div class="front">
               <img class="agregar" src="../Imagenes/agregar.png" alt="">
           </div> -->
-          <!-- /////////// -->
+      <!-- /////////// -->
 
-          <div class="card">
-              
-                  <div class="capa-opaca"></div>
-                  <img src="/inventario/imagenes/comprar-cartas.JPG" class="personaje" id="imagen">
-                  <h2 class="texto"> COMPRA <br> CARTAS </h2>
-              
-          </div>
-          <div class="card">
-              
-                <div class="capa-opaca"></div>
-                <img src="inventario/imagenes/vender-cartas.JPG" class="personaje" id="imagen">
-                <h2 class="texto"> VENTA <br> CARTAS</h2>
-        
-        </div>
+      <div class="card">
 
-            <div class="card">
-                    <div class="capa-opaca"></div>
-                    <img src="/inventario/imagenes/recoleccion-ventas.JPG" class="personaje" id="imagen">
-                    <h2 class="texto"> RECOLECCIÓN <br> DE <br> VENTAS</h2>
-                
-            </div>
-      </main>
-      <script src="../JS/jugarOnline.js"></script>
+        <div class="capa-opaca"></div>
+        <img src="/inventario/imagenes/comprar-cartas.JPG" class="personaje" id="imagen">
+        <h2 class="texto"> COMPRA <br> CARTAS </h2>
+
+      </div>
+      <div class="card">
+
+        <div class="capa-opaca"></div>
+        <img src="inventario/imagenes/vender-cartas.JPG" class="personaje" id="imagen">
+        <h2 class="texto"> VENTA <br> CARTAS</h2>
+
+      </div>
+
+      <div class="card">
+        <div class="capa-opaca"></div>
+        <img src="/inventario/imagenes/recoleccion-ventas.JPG" class="personaje" id="imagen">
+        <h2 class="texto"> RECOLECCIÓN <br> DE <br> VENTAS</h2>
+
+      </div>
+  </main>
+  <script src="../JS/jugarOnline.js"></script>
 </body>
+
 </html>
