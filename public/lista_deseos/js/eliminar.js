@@ -17,13 +17,14 @@ function eliminar(item_id) {
   xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 300) {
       // La solicitud fue exitosa
-      alert("Se eliminó correctamente");
+      
 
       // Obtener el elemento que deseas eliminar
       const elementoAEliminar = document.getElementById("carta-" + item_id);
 
       // Eliminar el elemento
       elementoAEliminar.remove();
+      alert("Se eliminó correctamente de la lista de deseos");
     } else if (xhr.status === 301) {
       // El usuario no está autorizado
       window.location.href = "/";
