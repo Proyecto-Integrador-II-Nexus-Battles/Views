@@ -65,7 +65,7 @@ export const addCantidad = (req, res) => {
 export const deleteCard = (req, res) => {
   const { IdCard } = req.body;
   const options = {
-    headers: { Authorization: `${req.headers.Authorization}` },
+    headers: { Authorization: `${req.headers.authorization}` },
   };
   axios
     .post(`${HOST}:${PORT}/carro/DELETE-CARD`, { IdCard: IdCard }, options)

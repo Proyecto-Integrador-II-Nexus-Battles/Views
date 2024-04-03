@@ -17,13 +17,13 @@ export const defaultR5 = (req, res) => {
   res.render("inventario/miCuenta");
 };
 export const defaultR3 = (req, res) => {
-  res.render("inventario/modificacionCarta");
+  res.render("inventario/modificacioncarta");
 };
 export const defaultR6 = (req, res) => {
-  res.render("inventario/modificacionCartaDescripcion");
+  res.render("inventario/modificacioncartadescripcion");
 };
 export const defaultR7 = (req, res) => {
-  res.render("inventario/jugarOnline");
+  res.render("inventario/jugaronline");
 };
 export const defaultR8 = (req, res) => {
   res.render("inventario/creacion_carta_items");

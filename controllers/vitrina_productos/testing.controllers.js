@@ -5,38 +5,6 @@ export const defaultR = async (req, res) => {
   try {
     const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
-    const options = {
-      headers: { Authorization: `${req.query.token}` },
-    };
-    axios
-      .post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, options)
-      .then(async (response) => {
-        const responseData = response.data;
-
-        const info = responseData.Info;
-        const totales = responseData.totales;
-        const totalNeto = responseData.totalNeto;
-        const totalBruto = responseData.totalBruto;
-        const cantidad = responseData.list_price_unit;
-        const cantidadtotal = cantidad.reduce(
-          (total, item) => total + item.CANTIDAD,
-          0
-        );
-
-        console.log(cantidadtotal);
-        // Renderiza la vista con los datos obtenidos
-        res.render("carro_compras/index", {
-          info: info,
-          totales: totales,
-          totalNeto: totalNeto,
-          totalBruto: totalBruto,
-          cantidad: cantidad,
-          cantidadtotal: cantidadtotal,
-        });
-      })
-      .catch((error) => {
-        console.error("Error al realizar la solicitud:", error);
-      });
     res.render("vitrina_productos/index", { datos });
   } catch (error) {
     console.error(error);
