@@ -16,6 +16,7 @@ function moverCarroCompras(item_id) {
   fetch(url, options)
     .then((response) => {
       if (response.ok) {
+        alert("Su producto fue agregado exitosamente al carro de compras");
         eliminar(item_id);
         return response.json();
       }
@@ -26,7 +27,7 @@ function moverCarroCompras(item_id) {
     })
     .then((data) => {
       console.log("Respuesta del servidor: ", data);
-      alert("Su producto fue agregado exitosamente al carro de compras");
+      
       eliminar(item_id);
     })
     .catch((error) => {

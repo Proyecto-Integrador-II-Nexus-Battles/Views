@@ -11,6 +11,22 @@
 <body>
   <!-- Header -->
   <header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var token = localStorage.getItem('token');
+
+        if (token !== null) {
+          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.querySelector('.login_btn').addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.reload(true);
+          });
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
     <section class="nav">
       <img src="img/logo.png" class="logo_img" alt="">
       <!-- Barra de navegación -->
@@ -22,9 +38,9 @@
           <li><a href="#">Subasta</a></li>
           <li><a href="#">Jugar online</a></li>
           <li><a href="#">Torneo</a></li>
-          <li><a href="#">Resumen Flotante</a></li>
-          <li><a href="/lista_deseos">Lista Deseos</a></li>
-          <li class="cerrar-sesion"><a href="#"><button id="login_btn">Iniciar Sesion</button></a></li>
+          <li><a onclick="redirectCarroCompra()">Carro Compra</a></li>
+          <li><a id="btn-listica" href="#">Lista Deseos</a></li>
+          <li class="cerrar-sesion"><a href="/login"><button class="login_btn" id="login_btn">Cerrar Sesión</button></a></li>
         </ul>
       </nav>
     </section>
@@ -128,6 +144,8 @@
   <script src="/lista_deseos/js/paginacion.js"></script>
   <script src="/lista_deseos/js/jugarOnline.js"></script>
   <script src="/lista_deseos/js/hamburguer.js"></script>
+  <script src="/js/redirects.js"></script>
+
 
 </body>
 
