@@ -4,6 +4,7 @@ import {
   addCantidad,
   deleteCard,
   createOrder,
+  resumenFlotante,
 } from "../../controllers/carro_compras/testing.controllers.js";
 
 const router = Router();
@@ -11,5 +12,6 @@ router.get("/carro/carroCompras", defaultR);
 router.post("/carro/changeCant", addCantidad);
 router.post("/carro/deleteCard", deleteCard);
 router.post("/portal/createOrder", createOrder);
+router.get("/carro/resumenFlotante", resumenFlotante);
 
 export default router;

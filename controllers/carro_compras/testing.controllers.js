@@ -95,3 +95,19 @@ export const createOrder = (req, res) => {
       res.status(500).json({ message: "Error al crear la orden" });
     });
 };
+
+export const resumenFlotante = (req, res) => {
+  const options = {
+    headers: { Authorization: `${req.headers.authorization}` },
+  };
+  axios
+    .post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, options)
+    .then((response) => {
+      const responseData = response.data;
+      console.log(responseData);
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.error("Error al realizar la solicitud:", error);
+    });
+};

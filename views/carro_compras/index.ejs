@@ -10,6 +10,21 @@
 
 <body>
   <header>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var token = localStorage.getItem('token');
+
+        if (token !== null) {
+          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.querySelector('.login_btn').addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.reload(true);
+          });
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
     <img src="/carro_compras/img/logo.png" class="logo_img" alt="">
     <!-- Barra de navegación -->
     <img src="/carro_compras/img/hamburguer_icon.svg" class="abrir-btn" alt="">
@@ -17,12 +32,12 @@
       <ul class="opciones">
         <li><a href="#">Mi cuenta</a></li>
         <li><a href="#">Mi banco</a></li>
-        <li><a href="#">Subasta</a></li>
-        <li><a href="#">Jugar online</a></li>
-        <li><a href="#">Torneo</a></li>
+        <li><a href="/subasta">Subasta</a></li>
+        <li><a href="/jugarOnline">Jugar online</a></li>
+        <li><a href="/torneo">Torneo</a></li>
         <li><a id="mostrar-resumen-flotante" href="#">Resumen Flotante</a></li>
-        <li><a href="#">Lista Deseos</a></li>
-        <li><a href="#"><button class="login_btn">Login</button></a></li>
+        <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
+        <li><a href="/login"><button class="login_btn">Login</button></a></li>
       </ul>
     </nav>
   </header>
@@ -328,6 +343,7 @@
     </div>
     </div>
   </main>
+  <script src="/js/redirects.js"></script>
   <script src="/carro_compras/js/navbar.js"></script>
   <script src="/carro_compras/js/paginacion.js"></script>
   <script src="/carro_compras/js/resumen_flotante.js"></script>

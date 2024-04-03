@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecommerce</title>
   <link rel="stylesheet" href="/vitrina_productos/css/e-commerce.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
 </head>
 
 <body>
@@ -37,9 +38,9 @@
         <li><a href="/cuenta">Mi cuenta</a></li>
         <li><a href="/mi_banco">Mi banco</a></li>
         <li><a href="/subasta">Subasta</a></li>
-        <li><a href="/jugar">Jugar online</a></li>
-        <li><a href="/torneos">Torneo</a></li>
-        <li><a onclick="redirectCarroCompra()">Carro Compras</a></li>
+        <li><a href="/jugarOnline">Jugar online</a></li>
+        <li><a href="/torneo">Torneo</a></li>
+        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
         <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
         <li><a href="/login"><button class="login_btn">Login</button></a></li>
         <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
@@ -291,7 +292,7 @@
 
         <% } %>
       </div>
-     
+
 
       <div class="paginas">
         <ul class="listPage">
@@ -309,8 +310,11 @@
     </div>
     </div>
     </div>
-
+    <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/carro_compras/js/resumen_flotante.js"></script>
+  <script src="/resumen_flotante/js/deployResumen.js"></script>
   <script src="/js/redirects.js"></script>
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
