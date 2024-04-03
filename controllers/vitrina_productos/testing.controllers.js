@@ -40,11 +40,14 @@ export const defaultR4 = async (req, res) => {
 };
 
 export const defaultR5 = async (req, res) => {
-  const url = `${HOST}:${PORT}/carro_compras/ADD-CARD`;
+  console.log("hola");
+  console.log(HOST);
+  console.log(PORT);
+  
+  const url = `${HOST}:${PORT}/carro/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
     IdCard: IdCard,
-    Cantidad: 1,
   };
   const options = {
     method: "POST",
@@ -54,15 +57,23 @@ export const defaultR5 = async (req, res) => {
     },
     body: JSON.stringify(data),
   };
+  console.log("1");
   fetch(url, options)
     .then((response) => {
+      console.log("3");
       if (response.ok) {
+        console.log("4");
         return response.json();
       }
       if (response.status === 301) {
         res.status(301).send("No autorizado");
+        console.log("5");
       }
-      throw new Error("Error en la solicitud POST");
+      console.log(response);
+      /*
+      throw new Error("Error en la solicitud POST ");
+      */
+      
     })
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
@@ -92,7 +103,7 @@ export const defaultR6 = async (req, res) => {
       if (response.status === 301) {
         res.status(301).send("No autorizado");
       }
-      throw new Error("Error en la solicitud POST");
+      throw new Error("Error en la solicitud POST hola");
     })
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
@@ -127,3 +138,5 @@ export const defaultR7 = async (req, res) => {
       console.error("Error en la solicutud: ", error);
     });
 };
+
+
