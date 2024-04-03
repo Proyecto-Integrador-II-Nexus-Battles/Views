@@ -1,5 +1,6 @@
 import express from "express";
 import carroComprasRoutes from "./routes/carro_compras/testing.routes.js";
+import inventarioRoutes from "./routes/inventario/testing.routes.js";
 import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
 import vitrinaProductosRoutes from "./routes/vitrina_productos/testing.routes.js";
 import listaDeseosRoutes from "./routes/lista_deseos/routes.js";
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(carroComprasRoutes);
+app.use(inventarioRoutes);
 app.use(usuarioRoutes);
 app.use(vitrinaProductosRoutes);
 app.use(listaDeseosRoutes);
