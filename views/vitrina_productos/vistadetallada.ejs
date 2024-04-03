@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <base href="/public">
   <meta charset="UTF-8">
@@ -7,9 +8,10 @@
   <title>Vista Detallada</title>
   <link rel="stylesheet" href="/vitrina_productos/css/vistadetallada.css">
 </head>
+
 <body>
-   <!-- Header -->
-   <header>
+  <!-- Header -->
+  <header>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         var token = localStorage.getItem('token');
@@ -27,7 +29,7 @@
       });
     </script>
     <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
-      <!-- Barra de navegación -->
+    <!-- Barra de navegación -->
     <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
@@ -40,14 +42,15 @@
         <li><a href="#">Lista Deseos</a></li>
         <li><a href="/login"><button class="login_btn">Login</button></a></li>
         <li><a href="/register"><button class="login_btn" id="register_btn">Sing Up</button></a></li>
+        <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
       </ul>
     </nav>
   </header>
   <!-- Main -->
   <main>
-<div class="container_general">
-  <img class="back_img" src="/vitrina_productos/img/Vector.png" onclick="vistaEcommerce()">
-  <% // Mapeo de subtipos a imágenes y tipo de icono
+    <div class="container_general">
+      <img class="back_img" src="/vitrina_productos/img/Vector.png" onclick="vistaEcommerce()">
+      <% // Mapeo de subtipos a imágenes y tipo de icono
         const subtipoImagen = {
           "Armas": "/inventario/imagenes/espadas.png",
           "Tanque": "/inventario/imagenes/blindaje.png",
@@ -71,107 +74,107 @@
           const tipoIcono = subtipoIcono[carta.TypeCard];
         %>
 
-<div class="imagen_carta">
-  <img src="<%= carta.imagePath %>"  class="card-img">
-<ul class="calificacion_stars">
-  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
-  <li><img src="/vitrina_productos/img/star-regular.svg"></li>
-</ul>
-</div>
-<div class="detalles_carta">
-  <p><b>Nombre:</b> <%= carta.Name %></p>
-  <% if (carta.TypeCard === "Hero") { %>
-    <p><b>Tipo: <%= carta.Type %></b></p>
-    <p><b>Subtipo: <%= carta.Subtype%> </b></p>
-    <p><b>Poder:</b> <%= carta.Power %></p>
-    <p><b>Vida:</b> <%= carta.Live %></p>
-    <p><b>Defensa:</b> <%= carta.Defense %></p>
-    <p><b>Ataque</b>: <%= carta.AttackBase %></p>
-    <p><b>Daño:</b> <%= carta.DamageSides %></p>
-    <p><b>Descripción:</b> <%= carta.Description %></p>
+      <div class="imagen_carta">
+        <img src="<%= carta.imagePath %>" class="card-img">
+        <ul class="calificacion_stars">
+          <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+          <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+          <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+          <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+          <li><img src="/vitrina_productos/img/star-regular.svg"></li>
+        </ul>
+      </div>
+      <div class="detalles_carta">
+        <p><b>Nombre:</b> <%= carta.Name %></p>
+        <% if (carta.TypeCard === "Hero") { %>
+        <p><b>Tipo: <%= carta.Type %></b></p>
+        <p><b>Subtipo: <%= carta.Subtype%> </b></p>
+        <p><b>Poder:</b> <%= carta.Power %></p>
+        <p><b>Vida:</b> <%= carta.Live %></p>
+        <p><b>Defensa:</b> <%= carta.Defense %></p>
+        <p><b>Ataque</b>: <%= carta.AttackBase %></p>
+        <p><b>Daño:</b> <%= carta.DamageSides %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
 
-<!-- Tipo de carta Item -->
-  <% } else if (carta.TypeCard === "Item") { %>
-    <% switch (carta.Subtype) {
-      case "Tanque": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
-        <p><b>Descripción:</b> <%= carta.Description %></p>
-        <% break;
-      case "Veneno": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
-        <p><b>Descripción:</b> <%= carta.Description %></p>
-        <% break;
-      case "Hielo": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
-        <p><b>Descripción:</b> <%= carta.Description %></p>
-      <% break;
-
-      case "Fuego": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
-        <p><b>Descripción:</b> <%= carta.Description %></p>
-        <% break;
-      case "Armas": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
-      <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
-        <p><b>Descripción:</b> <%= carta.Description %></p>
-        <% break;
-    } %>
-    <!-- Type Armor -->
-  <% } else if (carta.TypeCard === "Armor") { %>
-    <% switch (carta.Subtype) {
+        <!-- Tipo de carta Item -->
+        <% } else if (carta.TypeCard === "Item") { %>
+        <% switch (carta.Subtype) {
       case "Tanque": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-         <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Veneno": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Hielo": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+
+      case "Fuego": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+      case "Armas": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart2"><b>Poder:</b> <%= carta.DamageBuff %></p>
+        <p><b>Nerf Daño Enemigo:</b> <%= carta.EnemyDamageNerf %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
+        <% break;
+    } %>
+        <!-- Type Armor -->
+        <% } else if (carta.TypeCard === "Armor") { %>
+        <% switch (carta.Subtype) {
+      case "Tanque": %>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Veneno": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-     <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
-     <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Hielo": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-     <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
-     <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Fuego": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-         <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Armas": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-     <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
-     <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Buff Defensa:</b> <%= carta.DefenseBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
     } %>
-    <!-- Type Weapon -->
-  <% } else if (carta.TypeCard === "Weapon") { %>
-    <% switch (carta.Subtype) {
+        <!-- Type Weapon -->
+        <% } else if (carta.TypeCard === "Weapon") { %>
+        <% switch (carta.Subtype) {
       case "Tanque": %>
-         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
         <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
@@ -179,116 +182,117 @@
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Veneno": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
-      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
-      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
-      <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+        <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+        <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Hielo": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
-      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
-      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
-      <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+        <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+        <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Fuego": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
-      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
-      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
-      <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+        <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+        <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Armas": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
-      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
-      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
-      <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+        <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+        <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       case "Machete": %>
-      <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
-      <p><b>Subtipo:</b> <%= carta.Type %></p>
-      <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
-      <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
-      <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
-      <p><b>Descripción:</b> <%= carta.Description %></p>
+        <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
+        <p><b>Subtipo:</b> <%= carta.Type %></p>
+        <p id="cart"><b>Ataque Buff:</b> <%= carta.AttackBuff %></p>
+        <p id="cart"><b>Defensa Buff:</b> <%= carta.DefenseBuff %></p>
+        <p id="cart2"><b>Buff:</b> <%= carta.DamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
     } %>
-    <!-- Type Talent -->
-    <% } else if (carta.TypeCard === "Talent") { %>
-      <% switch (carta.Subtype) {
+        <!-- Type Talent -->
+        <% } else if (carta.TypeCard === "Talent") { %>
+        <% switch (carta.Subtype) {
         case "Tanque": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
-          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
-          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
-          <% break;
+        <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+        <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <% break;
         case "Veneno": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
-          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
-          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
-          <% break;
+        <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+        <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <% break;
         case "Hielo": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
-          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
-          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
-          <% break;
+        <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+        <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <% break;
         case "Fuego": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
-          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
-          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
-          <% break;
+        <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+        <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <% break;
         case "Armas": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
-          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
-          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
-          <% break;
+        <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+        <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <% break;
         case "Machete": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
         <p><b>Subtipo:</b> <%= carta.Type %></p>
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
-          <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
-          <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-          <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
-          <% break;
+        <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
+        <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
+        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <% break;
       } %>
-  <% } %>
-  <% } %>
+        <% } %>
+        <% } %>
 
-</div>
+      </div>
 
-<!-- COMENTARIOS -->
+      <!-- COMENTARIOS -->
 
-<div class="comentarios_container">
-<h2>Comentarios</h2>
-<div class="comentarios">
-Esta Carta es muy buena
-</div>
-</div>
+      <div class="comentarios_container">
+        <h2>Comentarios</h2>
+        <div class="comentarios">
+          Esta Carta es muy buena
+        </div>
+      </div>
 
 
-</div>
-</main>
-<script src="/vitrina_productos/js/navbar.js"></script>
-<script src="/vitrina_productos/js/vistaDetallada.js"></script>
+    </div>
+  </main>
+  <script src="/vitrina_productos/js/navbar.js"></script>
+  <script src="/vitrina_productos/js/vistaDetallada.js"></script>
 </body>
+
 </html>

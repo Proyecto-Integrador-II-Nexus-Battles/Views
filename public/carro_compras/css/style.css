@@ -144,6 +144,7 @@
     position: relative;
   }
   
+  
   .card-new p
   {
     color: rgba(0, 0, 0, 0.613);
@@ -179,7 +180,9 @@
   }
 
   .nombre{
-    display: flex;
+    width: 10px;
+    height: 10px;
+
   }
   
   .informacion_carta p {

@@ -2,10 +2,10 @@ document.querySelector(".list").addEventListener("click", async (event) => {
   if (event.target.classList.contains("eliminarx")) {
     try {
       const idCarta = event.target.getAttribute("data-id");
-      console.log(idCarta);
       const options = {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       };
+      console.log(options);
       const response = await axios.post(
         "/carro/deleteCard",
         {

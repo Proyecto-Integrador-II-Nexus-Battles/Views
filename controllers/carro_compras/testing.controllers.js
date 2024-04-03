@@ -65,7 +65,7 @@ export const addCantidad = (req, res) => {
 export const deleteCard = (req, res) => {
   const { IdCard } = req.body;
   const options = {
-    headers: { Authorization: `${req.headers.Authorization}` },
+    headers: { Authorization: `${req.headers.authorization}` },
   };
   axios
     .post(`${HOST}:${PORT}/carro/DELETE-CARD`, { IdCard: IdCard }, options)
@@ -93,5 +93,21 @@ export const createOrder = (req, res) => {
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
       res.status(500).json({ message: "Error al crear la orden" });
+    });
+};
+
+export const resumenFlotante = (req, res) => {
+  const options = {
+    headers: { Authorization: `${req.headers.authorization}` },
+  };
+  axios
+    .post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, options)
+    .then((response) => {
+      const responseData = response.data;
+      console.log(responseData);
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.error("Error al realizar la solicitud:", error);
     });
 };
