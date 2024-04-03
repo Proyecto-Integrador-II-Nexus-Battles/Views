@@ -43,7 +43,7 @@ export const defaultR5 = async (req, res) => {
   console.log("hola");
   console.log(HOST);
   console.log(PORT);
-  
+
   const url = `${HOST}:${PORT}/carro/ADD-CARD`;
   const { IdCard } = req.body;
   const data = {
@@ -73,7 +73,6 @@ export const defaultR5 = async (req, res) => {
       /*
       throw new Error("Error en la solicitud POST ");
       */
-      
     })
     .catch((error) => {
       console.error("Error en la solicutud: ", error);
@@ -138,5 +137,3 @@ export const defaultR7 = async (req, res) => {
       console.error("Error en la solicutud: ", error);
     });
 };
-
-
