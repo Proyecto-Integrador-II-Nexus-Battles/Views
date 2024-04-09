@@ -41,8 +41,8 @@ border-radius: 15px;
 .info_carta .detalles_card{
   list-style: none;
   margin-left: 1%;
-  margin-bottom: 2%;
-  font-size: 20px;
+  padding-bottom: 15%;
+  font-size: 17px;
   color: #AEA2A2;
 }
 
