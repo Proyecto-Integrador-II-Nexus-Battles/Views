@@ -29,7 +29,7 @@
               <h2>Precios</h2>
             </li>
             <li><select class="seleccionar_precio">
-                <option value="#" disabled selected>Precios</soption>
+                <option value="#" disabled selected>Precios</option>
                 <option value="desc">Mayor a menor</option>
                 <option value="asc">Menor a mayor</option>
               </select></li>
@@ -51,7 +51,7 @@
             <li>
               <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
             </li>
-            <input type="submit" id="filtro_input" value="Filtrar">
+            <li><input type="submit" id="filtro_input" value="Filtrar"></li>
           </ul>
         </form>
       </div>
@@ -95,24 +95,24 @@
               <p id="cart2">Poder: <%= item.vida %></p>
             </div>
             <% } %>
-            <<<<<<< HEAD=======>>>>>>> lista_deseos
-              <div class="botones">
-                <div class="modificar">
-                  <button onclick='eliminar("<%= item.id %>")'>Eliminar</button>
-                  <button onclick='moverCarroCompras("<%= item.id %>")'>Mover al carrito</button>
-                </div>
+            <div class="botones">
+              <div class="modificar">
+                <button onclick='eliminar("<%= item.id %>")'>Eliminar</button>
+                <button onclick='moverCarroCompras("<%= item.id %>")'>Mover al carrito</button>
               </div>
+            </div>
           </div>
         </div>
-        <<<<<<< HEAD <% }); %> </div>
-          <div class="paginas">
-            <ul class="listPage">
-              <li class="active">1</li>
-              <li>2</li>
-              <li>3</li>
-            </ul>
-          </div>
+        <% }); %>
       </div>
+      <div class="paginas">
+        <ul class="listPage">
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </div>
+    </div>
   </main>
 
   <script src="/js/redirects.js"></script>
@@ -122,18 +122,10 @@
   <script src="/lista_deseos/js/paginacion.js"></script>
   <script src="/lista_deseos/js/jugarOnline.js"></script>
   <script src="/lista_deseos/js/hamburguer.js"></script>
-  <script src="/js/redirects.js"></script>
-  =======
-  <% }); %>
-  </div>
-  </div>
-  </main>
-
   <script src="js/enviar.js"></script>
   <script src="js/eliminar.js"></script>
   <script src="js/paginacion.js"></script>
   <script src="js/jugarOnline.js"></script>
-  >>>>>>> lista_deseos
 
 
 </body>
