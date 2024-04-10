@@ -13,7 +13,7 @@ export const userLogging = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    .then((response) => { });
+    .then((response) => {});
 };
 
 export const renderRegister = (req, res) => {
@@ -21,12 +21,7 @@ export const renderRegister = (req, res) => {
 };
 
 export const admin = (req, res) => {
-
   res.render("manejo_usuarios/admin_main_page.ejs");
-
-
-
-
 };
 
 export const rendervitrina = (req, res) => {
@@ -38,7 +33,7 @@ export const irrvitrina = (req, res) => {
 };
 
 export const register = async (req, res) => {
-  const endpoint = "/usuario/registro";
+  const endpoint = "/usuario/register";
 
   axios.post(`${HOST}:${PORT}${endpoint}`, {
     nombre: req.body.nombre,
@@ -118,29 +113,31 @@ export const fetchLogin = async (req, res) => {
   })
     .then((response) => {
       response.json().then((data) => {
-        res.json(data)
-      })
-    }).catch((error) => {
-      console.log("Error" + error)
+        res.json(data);
+      });
     })
+    .catch((error) => {
+      console.log("Error" + error);
+    });
 };
 
-
 export const fetchRegister = async (req, res) => {
+  console.log(req.body);
   fetch(`${HOST}:${PORT}/usuario/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'enctype': 'multipart/form-data',
+      enctype: "multipart/form-data",
       "Access-Control-Allow-Methods": "POST",
     },
     body: JSON.stringify(req.body),
   })
     .then((response) => {
       response.json().then((data) => {
-        res.json(data)
-      })
-    }).catch((error) => {
-      console.log("Error" + error)
+        res.json(data);
+      });
     })
+    .catch((error) => {
+      console.log("Error" + error);
+    });
 };
