@@ -79,13 +79,12 @@
   </div>
 </div>
 <div class="buttons">
-  <button class="pujar"><b>Pujar</b></button>
-  <button class="compra_rapida"><b>Compra rápida</b></button>
+  <button class="pujar" onclick="abrirPujar()"><b>Pujar</b></button>
+  <button class="compra_rapida" onclick="abrirCompraRapida()" ><b>Compra rápida</b></button>
 </div>
 </div>
-
 <!-- Emergente Puja-->
-<div class="puja_container" id="hidden">
+<div class="puja_container" >
   <label for="cantidad_creditos" class="c_creditos">
     Cantidad de créditos
   </label>
@@ -101,12 +100,11 @@
   </select>
   <div class="buttons">
     <button class="pujar_b">Realizar puja</button>
-    <button class="Cancelar">Cancelar</button>
+    <button class="Cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
-
 <!--Compra rápida emergente-->
-<div class="compra_rapida_container" id="hidden">
+<div class="compra_rapida_container">
   <label for="cantidad_creditos" class="c_creditos">
     Cantidad de créditos
   </label>
@@ -122,9 +120,10 @@
   </div>
   <div class="buttons">
     <button class="comprar">Comprar</button>
-    <button class="Cancelar">Cancelar</button>
+    <button class="cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
 </main>
+<script src="../../public/subasta/js/emergentes.js"></script>
 </body>
 </html>
