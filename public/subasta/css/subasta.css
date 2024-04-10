@@ -140,3 +140,104 @@ border-radius: 15px;
 .buttons .compra_rapida{
   margin-left: 3%;
 }
+
+/* Emergente compra rapida*/
+.puja_container{
+  position: absolute;
+  background-color: #A3B7DC;
+  top: 30%;
+  left: 37%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 26%;
+  display: none;
+}
+.puja_container label{
+font-size: 26px;
+font-weight: bold;
+margin: 10px 10px 5px 1px;
+text-align: center;
+}
+.puja_container .c_creditos{
+  padding-top: 7%
+}
+.puja_container input, select{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  margin:10px 20% 2% 15%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.puja_container .buttons{
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  padding-top: 20%;
+}
+.puja_container .pujar_b, .Cancelar, .comprar {
+  font-size: 20px;
+  width: 40%;
+  height: 38px;
+  background-color: #A3B7DC;
+  border: none;
+  margin-left: 4%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+.puja_container .Cancelar{
+  margin-left: 5%;
+}
+/*Emergente Compra rápida*/
+.compra_rapida_container{
+  position: absolute;
+  background-color: #A3B7DC;
+  top: 30%;
+  left: 37%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 26%;
+}
+ #hidden{
+  display: none;
+}
+
+.compra_rapida_container label{
+  font-size: 26px;
+font-weight: bold;
+margin: 20px 10px 0px 1px;
+text-align: center;
+}
+.compra_rapida_container input{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  margin:10px 20% 0 15%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cards_container{
+  background-color: white;
+ margin:5% 15% 2% 15%;
+ border-radius: 10px;
+ border: 1px solid black;
+ }
+ .cards_container p{
+  font-size: 18px;
+  margin-left:5%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+ }
+
+
+
