@@ -196,18 +196,18 @@ text-align: center;
   margin-left: 5%;
 }
 /*Emergente Compra rápida*/
+
 .compra_rapida_container{
   position: absolute;
   background-color: #A3B7DC;
   top: 20%;
   left: 37%;
-  display: none;
   flex-direction: column;
   border-radius: 10px;
+  height:70vh;
   width: 26%;
-  height: 70vh;
+  display: none;
 }
-
 .compra_rapida_container label{
   font-size: 30px;
   font-weight: bold;

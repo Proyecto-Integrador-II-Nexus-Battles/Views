@@ -11,12 +11,13 @@ function abrirCompraRapida(){
 if(compraRapida.style.display = 'none'){
 compraRapida.style.display = 'flex'
 }
+
 }
 function cerrarEmer(){
-
   if(pujaContainer.style.display = 'flex'){
     pujaContainer.style.display ='none'
-  } else if(compraRapida.style.display = 'flex'){
+  }
+  if(compraRapida.style.display = 'flex'){
     compraRapida.style.display = 'none'
   }
 }
