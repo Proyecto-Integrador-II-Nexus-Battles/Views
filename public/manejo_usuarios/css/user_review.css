@@ -1,0 +1,304 @@
+body {
+    font-family: 'Segoe UI';
+    margin: 0px;
+}
+
+img {
+    width: 70px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    justify-content: space-between;
+    border-bottom: 15px solid #304C8B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.sesion_btn {
+    background-color: #EEEEEE;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    border-radius: 8px 18px 18px 8px;
+    cursor: pointer;
+}
+
+.sesion_icon {
+    font-size: 40px;
+    color: #304C8B;
+}
+
+main {
+    padding: 10px 2%;
+}
+
+.back_icon {
+    font-size: large;
+    padding-top: 4px;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.user_container {
+    background-color: #F4F4F4;
+    padding: 30px 0px 0px 2%;
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.img_user_container {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.user_avatar {
+    width: 170px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.user_icon{
+    font-size: 125px;
+    color: #789DCA;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+.info_container {
+    margin-top: 20px;
+    margin-left: 1%;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+p {
+    padding-top: 6px;
+    font-size: 150%;
+}
+
+.ban {
+    display: flex;
+}
+
+
+.bton-ban {
+    border-radius: 6px;
+    font-family: 'Segoe UI';
+    font-size: 25px;
+    color: #f1efef;
+    border: none;
+    width: 200px;
+    margin: 10px;
+    background-color: #304c8b;
+    height: 40px;
+    cursor: pointer;
+}
+
+form {
+    font-size: 12px;
+    background-color: #f1efef;
+    border-radius: 10px;
+    padding: 0px 15px 8px 15px;
+    border: 3px solid #304c8b;
+    line-height: 25px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form p {
+    padding: 0px;
+    margin: 0px;
+}
+
+form a {
+    display: block;
+    text-align: center;
+}
+
+
+label {
+    font-size: medium;
+}
+
+#apply-button {
+    margin-bottom: 0px;
+}
+
+.window-notice {
+    background: rgba(158, 158, 158, .65);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+}
+
+.content {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 35%;
+    padding: 2rem;
+    font-size: 1.3rem;
+    border: 3px solid #304C8B;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-justify: auto;
+}
+
+.alert_icon {
+    font-size: 100px;
+    color: #304C8B;
+}
+
+.content-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width:750px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 15px;
+        gap: 20px;
+        font-size: 25px;
+    }
+
+    img {
+        width: 120px;
+    }
+
+    .sesion_btn {
+        flex-direction: row-reverse;
+        padding-left: 0px;
+        padding-right: 10px;
+        border-radius: 18px 8px 8px 18px;
+    }
+
+    .ban {
+        flex-direction: column;
+    }
+
+    form {
+        width: 250px;
+        margin-left: 1.5%;
+    }
+
+    .content-text {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .content-buttons{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media(max-width:500px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        gap: 20px;
+        font-size: 25px;
+    }
+
+    img {
+        width: 120px;
+    }
+
+    .logo {
+        align-self: center;
+    }
+
+    .sesion_btn {
+        flex-direction: row-reverse;
+        padding-left: 0px;
+        padding-right: 10px;
+        border-radius: 18px 8px 8px 18px;
+    }
+
+    .user_container {
+        padding: 30px 0px 20px 2%;
+    }
+
+    .img_user_container {
+        flex-direction: column;
+    }
+
+    .user_avatar {
+        width: 250px;
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .ban {
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .bton-ban {
+        width: 80%;
+    }
+
+    form {
+        align-items: center;
+    }
+    .content {
+        width: 60%;
+    }
+}

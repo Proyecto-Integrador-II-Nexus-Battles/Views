@@ -1,0 +1,181 @@
+#resumen-flotante {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 17rem;
+  height: 37rem;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 1000;
+  margin-left: 19rem;
+  margin-top: -6.5rem;
+}
+
+.resumen-flotante-oculto {
+  display: none;
+}
+
+.comprados {
+  text-align: center;
+  width: 240px;
+  height: 220px;
+}
+
+.productosdos {
+  margin-top: 1rem;
+}
+
+.productosp {
+  display: flex;
+}
+
+.numproductos {
+  margin-left: 20px;
+}
+
+.totalb {
+  display: flex;
+  margin-top: 19px;
+}
+
+.numtotalb {
+  margin-left: 20px;
+}
+
+.iva {
+  display: flex;
+  margin-top: 19px;
+}
+
+.numiva {
+  margin-left: 20px;
+}
+
+.total {
+  display: flex;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+.numtotal {
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+.cartas_flotante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carta_resumen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.price {
+  font-size: 16px;
+  color: #666;
+}
+
+.pedidodos {
+  border-radius: 10px;
+  background-color: #ebc793;
+  width: 9rem;
+  height: 1.8rem;
+  text-align: center;
+  margin-top: 1.6rem;
+  margin-left: 4.5rem;
+  padding-top: 10px;
+  border: 1px solid black;
+}
+
+.realizardos {
+  margin-top: -1rem;
+  width: 9rem;
+  height: 2.3rem;
+  background: none;
+  border: none;
+}
+
+.ircarrito {
+  border-radius: 10px;
+  background-color: #ebc793;
+  width: 9rem;
+  height: 1.8rem;
+  text-align: center;
+  margin-top: 0.4rem;
+  margin-left: 4.5rem;
+  padding-top: 10px;
+  border: 1px solid black;
+}
+
+.ircarritodos {
+  margin-top: -1rem;
+  width: 9rem;
+  height: 2.3rem;
+  background: none;
+  border: none;
+}
+
+.informacion_cartados {
+  width: 120px;
+  height: 100px;
+  background-color: white;
+  padding-left: 5px;
+  border-radius: 0px 0px 14px 14px;
+}
+
+.informacion_carta p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.imagen_cartados {
+  width: 100px; /* ajusta el ancho según tus necesidades */
+  height: 100px; /* ajusta la altura según tus necesidades */
+  overflow: hidden;
+}
+
+.personajedos {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.resumen-flotante-contenido {
+  /* Otros estilos que ya tienes */
+
+  /* Añadir scroll vertical */
+  overflow-y: auto; /* Esto agrega un scroll vertical cuando sea necesario */
+
+  /* Establecer una altura máxima para el div */
+  max-height: 300px; /* Puedes ajustar este valor según tus necesidades */
+}
+
+.guardar_cartas {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.guardar {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left: 8.5rem;
+}
