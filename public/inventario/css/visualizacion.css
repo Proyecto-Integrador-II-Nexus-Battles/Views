@@ -82,8 +82,8 @@ header .logo_img {
 }
 /* Main */
 main {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  padding: 20px;
 }
 
 /* Vizualizacion del inventario */

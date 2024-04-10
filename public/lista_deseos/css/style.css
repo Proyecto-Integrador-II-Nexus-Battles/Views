@@ -4,25 +4,25 @@
   
 } */
 
-main {
+/* main {
   display: grid;
   grid-template-columns: 30% 70%;
   padding: 20px;
   background-image: url("../img/Recibo.png");
   background-size: cover;
   background-position: center;
-}
+} */
 
 /* LADO IZQUIERDO */
-.left-side {
+/* .left-side {
   padding: 20px;
   display: grid;
   justify-content: center;
   align-items: flex-start;
 }
-
+ */
 /* LADO DERECHO */
-.right-side {
+/* .right-side {
   padding: 20px;
   display: grid;
   grid-template-rows: auto auto;
@@ -47,9 +47,9 @@ main {
   grid-template-rows: repeat(2, 1fr);
   margin-top: 28px;
 }
-
+ */
 /* FILTROS */
-.filtros {
+/* .filtros {
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   width: 300px;
   border-radius: 14px;
@@ -101,9 +101,9 @@ main {
   cursor: pointer;
   border-radius: 7px;
 }
-
+ */
 /* CARTA */
-.card {
+/* .card {
   border: 1px solid #9e9e9e;
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -148,9 +148,9 @@ main {
   height: 30px;
   margin-right: 10px;
 }
-
+ */
 /* BOTONES ELIMINAR/ENVIAR*/
-.modificar button {
+/* .modificar button {
   border: transparent;
   background-color: #a3b7dc;
   padding: 5px;
@@ -167,7 +167,7 @@ main {
 .modificar button:hover {
   background-color: #304c8b;
   color: white;
-}
+} */
 
 /* LOGIN Y REGISTER */
 #login_btn {
@@ -190,7 +190,7 @@ main {
 }
 
 /* PAGINACION */
-.list {
+/* .list {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
@@ -249,7 +249,7 @@ main {
 .active {
   color: red;
 }
-
+ */
 /* CSS DE LA NAVBAR ------------------------------------------------------------------- */
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap");
