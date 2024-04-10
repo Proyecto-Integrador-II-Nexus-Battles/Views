@@ -21,7 +21,7 @@ function handleSubmit(event) {
     .then((res) => res.json())
     .then((result) => {
       console.log(JSON.stringify(result));
-      if (result.error === "Invalid credentials") {
+      if (result.error === "Invalid credentials" || result.error === "No JWT_SECRET provided in ENV" || result.error === "An error occurred during login") {
         mensaje.innerHTML = "Inicio de sesión fallido, intente de nuevo";
         mensaje.classList.add("error-message");
       } else {
