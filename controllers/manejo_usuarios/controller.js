@@ -21,7 +21,12 @@ export const renderRegister = (req, res) => {
 };
 
 export const admin = (req, res) => {
+
   res.render("manejo_usuarios/admin_main_page.ejs");
+
+
+
+
 };
 
 export const rendervitrina = (req, res) => {
