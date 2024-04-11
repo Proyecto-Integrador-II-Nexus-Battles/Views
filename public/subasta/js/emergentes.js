@@ -11,7 +11,6 @@ function abrirCompraRapida(){
 if(compraRapida.style.display = 'none'){
 compraRapida.style.display = 'flex'
 }
-
 }
 function cerrarEmer(){
   if(pujaContainer.style.display = 'flex'){
