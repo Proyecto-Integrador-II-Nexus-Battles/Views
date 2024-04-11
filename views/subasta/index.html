@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../../public/subasta/css/subasta.css">
 </head>
 <body>
-<h1>Acá va el navbar</h1>
+<h1>Acá va el navbar</h1> 
 <main class="container_general">
 <!-- Informacion y foto de la carta -->
   <div class="info_carta">
@@ -23,35 +23,35 @@
       puedan acertar un golpe.</li>
    </ul>
   </div>
-   <!-- Informacion de la subasta -->
-<div class="subasta_info">
-<h2 class="subasta_info_title">Información de la subasta</h2>
-<div class="valor_base_subasta">
-  <p><b>Valor base</b></p>
-  <p><b>Créditos:</b> 60</p>
-  <p><b>Cartas:</b></p>
-  <li>Pícaro Machete</li>
-</div>
-
-<div class="valor_maximo_subasta">
-  <p><b>Valor Máximo / Compra Inmediata</b></p>
-  <p><b>Créditos:</b> 200</p>
-  <p><b>Cartas:</b></p>
-  <ul class="cartas_v_max">
+<!-- Informacion de la subasta -->
+  <div class="subasta_info">
+  <h2 class="subasta_info_title">Información de la subasta</h2>
+  <div class="valor_base_subasta">
+    <p><b>Valor base</b></p>
+    <p><b>Créditos:</b> 60</p>
+    <p><b>Cartas:</b></p>
     <li>Pícaro Machete</li>
-    <li>Golpe de Defensa</li>
-    <li>Guerrero Tanque</li>
-  </ul>
-</div>
-<div class="fechas_subasta">
-  <p><b>Fecha de Inicio:</b> 7/04/2024</p>
-  <p><b>Fecha Fin:</b> 8/04/2024</p>
-  <p><b>Duración de la subasta:</b> 24 horas</p>
-</div>
-<div class="tiempo_restante">
-  <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
-</div>
-</div>
+  </div>
+
+  <div class="valor_maximo_subasta">
+    <p><b>Valor Máximo / Compra Inmediata</b></p>
+    <p><b>Créditos:</b> 200</p>
+    <p><b>Cartas:</b></p>
+    <ul class="cartas_v_max">
+      <li>Pícaro Machete</li>
+      <li>Golpe de Defensa</li>
+      <li>Guerrero Tanque</li>
+    </ul>
+  </div>
+  <div class="fechas_subasta">
+    <p><b>Fecha de Inicio:</b> 7/04/2024</p>
+    <p><b>Fecha Fin:</b> 8/04/2024</p>
+    <p><b>Duración de la subasta:</b> 24 horas</p>
+  </div>
+  <div class="tiempo_restante">
+    <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
+  </div>
+  </div>
 
 <!-- Ofertas -->
 <div class="ofertas">
@@ -124,6 +124,84 @@
   </div>
 </div>
 </main>
+<!-- Ventana Modal_Compra carta -->
+<dialog class="modal_01">
+  <h2>¡Haz ganado la subasta!</h2>
+  <hr>
+  <p><b>Carta:</b> <span>Nombre de la carta</span></p>
+  <p><b>Créditos pagados:</b> <span>120</span></p>
+  <p><b>Fecha de inicio de Subasta:</b> <span>7/14/2024</span></p>
+  <p><b>Fecha Fin de Subasta:</b> <span>8/14/2024</span></p>
+  <div class="buttons">
+    <button class="Detalles_Modal_01">Detalles</button>
+    <button class="Cerrar_Modal_01">Cerrar</button>
+  </div>
+</dialog>
+<!-- Ventana Modal_Venta carta -->
+<dialog class="modal_02">
+  <h2>Tu carta ha sido vendida</h2>
+  <hr>
+  <p><b>Carta:</b> <span>Nombre de la carta</span></p>
+  <p><b>Créditos pagados:</b> <span>120</span></p>
+  <p><b>Fecha de inicio de Subasta:</b> <span>7/14/2024</span></p>
+  <p><b>Fecha Fin de Subasta:</b> <span>8/14/2024</span></p>
+  <div class="buttons">
+    <button class="Detalles_Modal_02">Detalles</button>
+    <button class="Cerrar_Modal_02">Cerrar</button>
+  </div>
+</dialog>
+<!-- Ventana Modal_Detalles -->
+<dialog  class="modal_Detalles_01">
+  <!-- Informacion y foto de la carta -->
+  <div class="container_ModalDetalles">
+    <div class="info_carta">
+      <img src="../../public/subasta/img/picaro_ejemplo_img.jpeg" alt="">
+      <p class="nombre_carta"><b>Pícaro Veneno: Nébula Tóxica</b></p>
+  
+     <ul class="detalles_card">
+      <li class="tipo"><b>Tipo carta:</b>&nbsp Héroe</li>
+      <li class="description"><b>Descripción:</b>&nbsp Entrenado en alquimia
+        puede causar gran daño al adversario
+        afectando sus habilidades y
+        reduciendo la posibilidad de que
+        puedan acertar un golpe.</li>
+     </ul>
+    </div>
+  <!-- Datos de Compra -->
+    <div class="subasta_info">
+    <h2 class="subasta_info_title">Datos de Compra</h2>
+    <div class="valor_base_subasta">
+      <p><b>Producto:</b> <span>Pícaro Veneno: Nébula Tóxica</span></p>
+      <p><b>Créditos:</b> 60</p>
+      <p><b>Cartas:</b></p>
+      <li>Pícaro Machete</li>
+    </div>
+  
+    <div class="valor_maximo_subasta">
+      <p><b>Valor Máximo / Compra Inmediata</b></p>
+      <p><b>Créditos:</b> 200</p>
+      <p><b>Cartas:</b></p>
+      <ul class="cartas_v_max">
+        <li>Pícaro Machete</li>
+        <li>Golpe de Defensa</li>
+        <li>Guerrero Tanque</li>
+      </ul>
+    </div>
+    <div class="fechas_subasta">
+      <p><b>Fecha de Inicio:</b> 7/04/2024</p>
+      <p><b>Fecha Fin:</b> 8/04/2024</p>
+      <p><b>Duración de la subasta:</b> 24 horas</p>
+    </div>
+    <div class="tiempo_restante">
+      <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
+    </div>
+    </div>
+  </div>
+    <button class="Cerrar_Modal_02">Cerrar</button>
+  </div>
+</dialog>
+<button id="btn_AbrirModal_01">Abrir_Modal</button>
+<button id="btn_AbrirModal_02">Abrir_Modal</button>
 <script src="../../public/subasta/js/emergentes.js"></script>
 </body>
 </html>
