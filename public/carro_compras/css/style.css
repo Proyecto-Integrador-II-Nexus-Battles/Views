@@ -562,6 +562,140 @@ h1 {
   margin-left: 8.5rem;
 }
 
+/* VENTANA EMERGENTE */
+
+.resumentres{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 800px;
+  background-color: white;
+  height: 360px;
+  z-index: 9999;
+  margin-left: -65rem;
+  margin-top: 7rem;
+  border-radius: 2px;
+  border: 4px solid #304C8B;
+}
+
+.productostres{
+  grid-column: 1 / 2;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+.totaltres{
+  font-weight: bold;
+}
+
+.lineacuatro{
+  margin-top: 2.5rem;
+  width: 230px;
+}
+
+.productosptres{
+  display: flex;
+  margin-top: 1rem;
+}
+
+.convertidor{
+  width: 400px;
+  height: 250px;
+  grid-column: 2 / 3;
+  border: 1px solid black;
+  margin-left: 22rem;
+  margin-top: -15rem;
+}
+
+.cajauno{
+  display: grid;
+  padding-left: 7px;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 10px;
+  width: 300px;
+  height: 32px;
+  align-items: center;
+  margin-top: 2.1rem;
+  background-color: #D8E9F9;
+}
+
+.cajados{
+  display: grid;
+  padding-left: 7px;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 10px;
+  width: 300px;
+  height: 32px;
+  align-items: center;
+  background-color: #D8E9F9;
+}
+
+.flechados{
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  font-size: 1.3rem;
+}
+
+.tasacambio{
+  margin-left: 3rem;
+  margin-top: 1.3rem;
+}
+
+.tituloconv{
+  font-size: 1.1rem;
+  margin-left: 2rem;
+  margin-top: 1.3rem;
+}
+
+
+.tasa{
+  font-weight: bold;
+}
+
+.botones{
+  display: grid;
+  grid-template-columns: 100px 100px;
+  margin-top: 1rem;
+  margin-left: 35.8rem;
+}
+
+.cancelar{
+  border: 1px solid black;
+  border-radius: 10px;
+  grid-column: 1 / 2;
+  width: 80px;
+  height: 36px;
+  text-align: center;
+  background-color: #D8E9F9;
+}
+
+.confirmar{
+  border: 1px solid black;
+  border-radius: 10px;
+  grid-column: 2 / 3;
+  width: 80px;
+  height: 36px;
+  text-align: center;
+  background-color: #EBC793;
+}
+
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  z-index: 999; /* Asegura que esté por encima de otros elementos */
+  display: none; /* Por defecto oculto */
+}
+
+
+
 /* MEDIA QUERY */
 
 @media screen and (min-width: 1630px) {

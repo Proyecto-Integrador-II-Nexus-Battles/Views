@@ -1,6 +1,10 @@
 import axios from "axios";
 import { HOST, PORT } from "../../config.js";
 
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 export const defaultR = (req, res) => {
   const options = {
     headers: { Authorization: `${req.query.token}` },
@@ -12,7 +16,7 @@ export const defaultR = (req, res) => {
       console.log(responseData);
 
       const info = responseData.Info;
-      const totales = responseData.totales;
+      const totales = responseData.totales.map(formatNumber);
       const totalNeto = responseData.totalNeto;
       const totalBruto = responseData.totalBruto;
       const cantidad = responseData.list_price_unit;
@@ -21,15 +25,26 @@ export const defaultR = (req, res) => {
         0
       );
 
+      const tasaCambio = 3804; // Tasa de cambio: 1 USD = 3804 COP
+      const totalNetoUSD = totalNeto / tasaCambio;
+
+      const totalNetoFormateado = formatNumber(totalNeto);
+      const totalBrutoFormateado = formatNumber(totalBruto);
+
+      
+      console.log(totalNetoUSD);
+
+
       console.log(cantidadtotal);
       // Renderiza la vista con los datos obtenidos
       res.render("carro_compras/index", {
         info: info,
         totales: totales,
-        totalNeto: totalNeto,
-        totalBruto: totalBruto,
+        totalNeto: totalNetoFormateado,
+        totalBruto: totalBrutoFormateado,
         cantidad: cantidad,
         cantidadtotal: cantidadtotal,
+        totalNetoUSD: totalNetoUSD,
       });
     })
     .catch((error) => {

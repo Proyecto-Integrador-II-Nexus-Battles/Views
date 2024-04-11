@@ -28,6 +28,8 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
   const headers = {
     Authorization: "Bearer " + localStorage.getItem("token"),
   };
+
+  // Actualiza la cantidad en el servidor
   axios
     .post(
       "/carro/changeCant",
@@ -41,7 +43,23 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
     )
     .then((response) => {
       if (response.status === 200) {
-        loadItem();
+        // Obtén los nuevos totales del servidor
+        axios
+          .post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, { headers: headers })
+          .then((response) => {
+            const responseData = response.data;
+            const totalNeto = responseData.totalNeto;
+            const totalBruto = responseData.totalBruto;
+            const totalNetoFormateado = formatNumber(totalNeto);
+            const totalBrutoFormateado = formatNumber(totalBruto);
+
+            // Actualiza el contenido de los elementos HTML correspondientes
+            document.getElementById("totalNeto").textContent = totalNetoFormateado;
+            document.getElementById("totalBruto").textContent = totalBrutoFormateado;
+          })
+          .catch((error) => {
+            console.error("Error al obtener los nuevos totales:", error);
+          });
       } else {
         console.error("Error al actualizar la cantidad");
       }
