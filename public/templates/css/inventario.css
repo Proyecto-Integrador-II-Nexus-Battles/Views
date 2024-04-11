@@ -9,11 +9,12 @@
   .container_general {
     display: grid;
     grid-template-rows: auto auto;
-    width: 50%;
+    width: 65%;
     background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
     border-radius: 10px;
     justify-self: center;
     grid-gap: 20px;
+    margin: 0 auto; /
   }
   .grid-container {
     display: grid;
@@ -35,7 +36,7 @@
     margin-bottom: 30px;
     border-radius: 10px;
     cursor: pointer;
-    justify-self: end;
+    justify-self: center;
   }
   .agregar:hover {
     background-color: #304c8b;
@@ -51,8 +52,8 @@
     margin-bottom: 25px;
     padding-bottom: 10px;
     background-color: var(--color-card);
-    max-height: 345px;
-    min-height: 345px;
+    max-height: 330px;
+    min-height: 330px;
   }
   .imagen_carta {
     width: 200px;
@@ -68,7 +69,7 @@
     border-radius: 13px 13px 0 0;
   }
   .informacion_carta p {
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 10px;
     margin-top: 1px;
   }
@@ -80,7 +81,7 @@
   #nombre p {
     margin-top: 5px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 11px;
   }
   .foto {
     height: 30px;
@@ -162,14 +163,19 @@
     color: white;
   }
   @media screen and (max-width: 1680px) {
-    .container_general {
-      width: 0%;
+    .container_general{
+      width: 60%;
+    }
+    .grid-container{
+      margin-top: -45px;
+    }
+    .agregar{
+      font-size: 11px;
     }
     .card {
-      max-height: 305px;
-      min-height: 305px;
+      max-height: 280px;
+      min-height: 280px;
     }
-  
     .imagen_carta {
       width: 180px;
       height: 130px;
@@ -185,21 +191,28 @@
     .foto {
       height: 25px;
     }
-    .like {
-      font-size: 25px;
+    #cart {
+      width: 140px;
     }
-    .carrito {
-      font-size: 18px;
+    #cart2 {
+      width: 140px;
+    }
+    .listPage li {
+      font-size: 11px;
     }
   }
-  
+  @media screen and (max-width:1400px){
+    .container_general{
+      width: 60%;
+    }
+  }
   @media screen and (max-width: 1360px) {
     .row1 { 
         grid-template-columns: 60% 25%;
       }
-    .row1 .agregar{
-        justify-self: center;
-    }
+      .agregar{
+        font-size: 10px;
+      }
     .container_general {
       max-width: 55%;
       min-width: 55%;
@@ -239,7 +252,7 @@
     #cart2 {
       width: 80px;
     }
-    .listPage li {
+    .listPage li{
         font-size: 10px;
         width: 100px;
       }
@@ -250,8 +263,66 @@
         font-size: 9px;
       }
   }
-  
-  
+  @media screen and (max-width:1152px){
+    .grid-container{
+      width: 58%;
+    }
+    .card {
+      max-height: 225px;
+      min-height: 225px;
+    }
+    #nombre p {
+      font-size:8px;
+    }
+    .foto {
+      height: 17px;
+    }
+    #cart {
+      width: 100px;
+    }
+    #cart2 {
+      width: 100px;
+    }
+    .listPage{
+      margin-left: -40px;
+    }
+    .listPage li{
+        font-size: 8px;
+        width: 100px;
+      }
+      .agregar{
+        font-size: 9px;
+      }
+  }
+  @media screen and (max-width:1024px){
+    .grid-container{
+      width: 60%;
+    }
+    #nombre p{
+      width: 80px;
+    }
+    .imagen_carta{
+      width: 120px;
+    }
+    #cart {
+      width: 80px;
+    }
+    #cart2 {
+      width: 80px;
+    }
+    .listPage li{
+      font-size: 7px;
+      width: 100px;
+    }
+    .agregar{
+      font-size: 8px;
+      padding: 10px;
+      margin-left: -50px;
+    }
+    .modificar button{
+      font-size: 8px;
+    }
+  }
   /* @media screen and (min-width: 340px) and (max-width: 390px) {
       .container_general{
           width: 50%;
@@ -259,5 +330,4 @@
       .informacion_carta p{
       }
   } */
-  
   

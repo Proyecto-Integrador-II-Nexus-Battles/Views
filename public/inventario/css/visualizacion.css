@@ -8,10 +8,7 @@
 }
 
 body {
-  background-image: url("../Imagenes/fondo.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -24,64 +21,13 @@ header {
   height: 90px;
 }
 
-header .logo_img {
-  height: 70px;
-  padding: 15px;
-}
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-}
-
-#navbar {
-  height: 60px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-grow: 1;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  gap: 2.2em;
-  margin: 0;
-  padding: 20px;
-}
-
-.opciones li {
-  display: inline-block;
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-}
-
-#login_btn {
-  font-size: 20px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-}
-
-#login_btn:hover {
-  background-color: #304c8b;
-  color: white;
-}
-
-.abrir-btn {
-  display: none;
-}
 /* Main */
 main {
+  background-image: url("../Imagenes/fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   display: grid;
   padding: 20px;
 }
