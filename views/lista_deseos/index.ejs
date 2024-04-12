@@ -6,95 +6,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-  <!-- Header -->
+
   <header>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var token = localStorage.getItem('token');
-
-        if (token !== null) {
-          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
-          document.querySelector('.login_btn').addEventListener('click', function() {
-            localStorage.removeItem('token');
-            window.location.reload(true);
-          });
-        } else {
-          console.log('Not logged in');
-        }
-      });
-    </script>
-    <!-- Barra de navegación -->
-    <section class="nav">
-      <a href="/">
-        <img src="/inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
-      </a>
-      <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
-      <nav class="" id="navbar">
-        <ul class="opciones">
-          <li><a href="/miCuenta" onclick="miCuenta()">Mi cuenta</a></li>
-          <li><a href="/mi_banco">Mi banco</a></li>
-          <li><a href="/subasta">Subasta</a></li>
-          <li><a href="/jugarOnline">Jugar online</a></li>
-          <li><a href="/torneo">Torneo</a></li>
-          <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
-          <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
-          <li><a href="/login"><button id="login_btn">Login</button></a></li>
-          <li id="btn-listica"><a href="/register"><button id="login_btn" id="register_btn">Sign Up</button></a></li>
-        </ul>
-      </nav>
-    </section>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
   </header>
-  <!-- Vitrina de productos -->
+
   <main>
+    <div class="left-side">
+      <div class="filtros">
+        <h1>Filtros</h1>
+        <form action="">
+          <ul class="tipo_filtros">
+            <!-- filtro precios -->
+            <li>
+              <h2>Precios</h2>
+            </li>
+            <li><select class="seleccionar_precio">
+                <option value="#" disabled selected>Precios</option>
+                <option value="desc">Mayor a menor</option>
+                <option value="asc">Menor a mayor</option>
+              </select></li>
 
-    <!-- filtros -->
-    <div class="filtros">
-      <h1>Filtros</h1>
-      <form action="">
-        <ul class="tipo_filtros">
-          <!-- filtro precios -->
-          <li>
-            <h2>Precios</h2>
-          </li>
-          <li><select class="seleccionar_precio">
-              <option value="#" disabled selected>Precios</soption>
-              <option value="desc">Mayor a menor</option>
-              <option value="asc">Menor a mayor</option>
-            </select></li>
-
-          <!-- Tipo de carta -->
-          <li>
-            <h2>Tipo de carta</h2>
-          </li>
-          <li><select class="tipo_carta">
-              <option value="#" disabled selected>Selecciona un tipo</option>
-              <option value="Guerrero Tanque">Guerrero Tanque</option>
-              <option value="Guerrero Armas">Guerrero Armas</option>
-              <option value="Mago fuego">Guerrero fuego</option>
-              <option value="Mago hielo">Guerrero hielo</option>
-              <option value="Picaro veneno">Picaro veneno</option>
-              <option value="Picaro machete">Picaro machete</option>
-            </select></li>
-          <!-- filtro promocion -->
-          <li>
-            <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
-          </li>
-          <input type="submit" id="filtro_input" value="Filtrar">
-        </ul>
-      </form>
+            <!-- Tipo de carta -->
+            <li>
+              <h2>Tipo de carta</h2>
+            </li>
+            <li><select class="tipo_carta">
+                <option value="#" disabled selected>Selecciona un tipo</option>
+                <option value="Guerrero Tanque">Guerrero Tanque</option>
+                <option value="Guerrero Armas">Guerrero Armas</option>
+                <option value="Mago fuego">Guerrero fuego</option>
+                <option value="Mago hielo">Guerrero hielo</option>
+                <option value="Picaro veneno">Picaro veneno</option>
+                <option value="Picaro machete">Picaro machete</option>
+              </select></li>
+            <!-- filtro promocion -->
+            <li>
+              <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+            </li>
+            <li><input type="submit" id="filtro_input" value="Filtrar"></li>
+          </ul>
+        </form>
+      </div>
     </div>
-
-    <!-- Parte barra de búsqueda  -->
-    <!-- Cartas -->
-
-    <div class="container_general">
-      <h3 class="agregar">Mi Lista de Deseos</h3>
-      <div class="list">
-
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;">LISTA DE DESEOS</h3>
+        <form class="form-search" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row2">
         <% products.forEach(function(item) { %>
         <div class="card card-<%= item.TypeCard %> " id="carta-<%= item.id %>">
           <div class="imagen_carta">
@@ -118,7 +95,6 @@
               <p id="cart2">Poder: <%= item.vida %></p>
             </div>
             <% } %>
-
             <div class="botones">
               <div class="modificar">
                 <button onclick='eliminar("<%= item.id %>")'>Eliminar</button>
@@ -128,7 +104,6 @@
           </div>
         </div>
         <% }); %>
-
       </div>
       <div class="paginas">
         <ul class="listPage">
@@ -147,7 +122,10 @@
   <script src="/lista_deseos/js/paginacion.js"></script>
   <script src="/lista_deseos/js/jugarOnline.js"></script>
   <script src="/lista_deseos/js/hamburguer.js"></script>
-  <script src="/js/redirects.js"></script>
+  <script src="js/enviar.js"></script>
+  <script src="js/eliminar.js"></script>
+  <script src="js/paginacion.js"></script>
+  <script src="js/jugarOnline.js"></script>
 
 
 </body>
