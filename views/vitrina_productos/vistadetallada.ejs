@@ -5,6 +5,7 @@
   <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
   <title>Vista Detallada</title>
   <link rel="stylesheet" href="/vitrina_productos/css/vistadetallada.css">
 </head>
@@ -17,7 +18,7 @@
         var token = localStorage.getItem('token');
 
         if (token !== null) {
-          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.querySelector('.login_btn').innerHTML = 'Cerrar&nbsp;Sesión';
           document.getElementById('register_btn').remove();
           document.querySelector('.login_btn').addEventListener('click', function() {
             localStorage.removeItem('token');
@@ -39,10 +40,9 @@
         <li><a href="#">Jugar online</a></li>
         <li><a href="#">Torneo</a></li>
         <li><a href="#">Resumen Flotante</a></li>
-        <li><a href="#">Lista Deseos</a></li>
+        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
         <li><a href="/login"><button class="login_btn">Login</button></a></li>
-        <li><a href="/register"><button class="login_btn" id="register_btn">Sing Up</button></a></li>
-        <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
+        <li><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
       </ul>
     </nav>
   </header>
@@ -231,7 +231,7 @@
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
         <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
         <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
         case "Veneno": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
@@ -239,7 +239,7 @@
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
         <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
         <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
         case "Hielo": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
@@ -247,7 +247,7 @@
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
         <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
         <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
         case "Fuego": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
@@ -255,7 +255,7 @@
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
         <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
         <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
         case "Armas": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
@@ -263,7 +263,7 @@
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
         <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
         <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
         case "Machete": %>
         <p><b>Tipo de Carta:</b> <%= carta.TypeCard %></p>
@@ -271,7 +271,7 @@
         <p><b>Vida Buff:</b><%= carta.NormalLiveBuff %></p>
         <p id="cart"><b>Daño:</b> <%= carta.NormalDamageBuff %></p>
         <p id="cart2"><b>Buff daño:</b> <%= carta.EspecialDamageBuff %></p>
-        <p><b>Descripción:</b> <%= carta.EspecialDescriptionBuff %></p>
+        <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
       } %>
         <% } %>

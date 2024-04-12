@@ -1,126 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="inventario/css/creacion_arma.css">
-    <title>Inventario</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="inventario/css/creacion_arma.css">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+  <title>Inventario</title>
 </head>
+
 <body>
-    <header>
-        <section class="nav">
-          <img src="/inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
-          <!-- Barra de navegación -->
-          <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
-          <nav class="" id="navbar">
-            <ul class="opciones">
-                <li><a href="#" onclick="index()">Creación cartas</a></li>
-              <li><a href="#" onclick="miCuenta()">Mi cuenta</a></li>
-              <li><a href="#">Mi banco</a></li>
-              <li><a href="#">Subasta</a></li>
-              <li><a href="/jugarOnline" onclick="jugar_online()">Jugar online</a></li>
-              <li><a href="#">Torneo</a></li>
-              <li><a href="#">Resumen Flotante</a></li>
-              <li><a href="#">Lista Deseos</a></li>
-              <li><a href="#"><button id="login_btn">Cerrar Sesion</button></a></li>
-            </ul>
-          </nav>
-        </section>
-        
-      </header>
-    <main>
-        <div class="fondo">
-            <!-- Cartas -->
-            <form action="">
-                <div class="container_productos">
-                    <!-- /////////// -->
-                    <img src="../Imagenes/flecha.png" alt="" class="flecha">
-                    <div class="card">
-                        <div class="imagen_carta">
-                            <img src="/inventario/imagenes/usuario.png" class="personaje" id="img">
-                        </div>
-                        <div class="informacion_carta">
-                            <input type="file" name="foto" id="foto" accept="img">
-                            <div class="nombre">
-                                <p>Nombre de la carta</p>
-                                <input type="text" name="" id="" class="opcion" placeholder="Nombre del personaje">
-                            </div>
-                            <div class="nombre">
-                                <p>Poder:</p>
-                                <input type="text" name="" id=""class="opcion" placeholder="Poder">
-                            </div>
-                            <div class="nombre">
-                                <p>Vida:</p>
-                                <input type="text" name="" class="opcion" placeholder="Vida">
-                            </div>
-                            <div class="nombre">
-                                <p>Tipo de carta:</p>
-                                <select name="" id="" class="opcion">
-                                    <option value="#" >Escoge tipo de carta</option>
-                                    <option value="#">Arma Guerrero</option>
-                                    <option value="#">Arma Tanque</option>
-                                    <option value="#">Arma Mago de Hielo</option>
-                                    <option value="#">Arma Mago de fuego</option>
-                                    <option value="#">Arma Picaro machete</option>
-                                    <option value="#">Arma Picaro veneno</option>
-                                    <option value="#">Item Guerrero</option>
-                                    <option value="#">Item Tanque</option>
-                                    <option value="#">Item Mago de Hielo</option>
-                                    <option value="#">Item Mago de fuego</option>
-                                    <option value="#">Item Picaro machete</option>
-                                    <option value="#">Item Picaro veneno</option>
-                                    <option value="#">Armadura Guerrero</option>
-                                    <option value="#">Armadura Tanque</option>
-                                    <option value="#">Armadura Mago de Hielo</option>
-                                    <option value="#">Armadura Mago de fuego</option>
-                                    <option value="#">Armadura Picaro machete</option>
-                                    <option value="#">Armadura Picaro veneno</option>
-                                    <option value="#">Talento Guerrero</option>
-                                    <option value="#">Talento Tanque</option>
-                                    <option value="#">Talento Mago de Hielo</option>
-                                    <option value="#">Talento Mago de fuego</option>
-                                    <option value="#">Talento Picaro machete</option>
-                                    <option value="#">Talento Picaro veneno</option>
-                                </select>
-                            </div>
-                            <div class="nombre">
-                                <p>Cantidad de cartas:</p>
-                                <input type="number" name="" id="" placeholder="Cantidad de cartas">
-                            </div>
-                            <div class="nombre">
-                                <p>Escoge la tienda:</p>
-                                <select name="" id="" class="opcion">
-                                    <option value="" disabled>Tienda</option>
-                                    <option value="">E-commerce</option>
-                                    <option value="">Subasta</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="informacion_carta">
-                            <h2>Descripción:</h2>
-                            <div class="textarea-container">
-                                <textarea name="" id="" cols="45" rows="23" placeholder="Ingrese la descripción de la carta"></textarea>
-                            </div>
-                            <div class="container-buttons">
-                                <a href="/" onclick="navRouter()">
-                                    <button id="guardar-cambios" class="guardar-cambios">
-                                        Guardar Carta
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </form>
+  <header>
+    <section class="nav">
+      <img src="/inventario/imagenes/logo_nb2_v2.png" class="logo_img" alt="">
+      <!-- Barra de navegación -->
+      <img src="/inventario/imagenes/hamburguer_icon.svg" class="abrir-btn" alt="">
+      <nav class="" id="navbar">
+        <ul class="opciones">
+          <li><a href="#" onclick="index()">Creación cartas</a></li>
+          <li><a href="#" onclick="miCuenta()">Mi cuenta</a></li>
+          <li><a href="#">Mi banco</a></li>
+          <li><a href="#">Subasta</a></li>
+          <li><a href="/jugarOnline" onclick="jugar_online()">Jugar online</a></li>
+          <li><a href="#">Torneo</a></li>
+          <li><a href="#">Resumen Flotante</a></li>
+          <li><a href="#">Lista Deseos</a></li>
+          <li><a href="#"><button id="login_btn">Cerrar Sesion</button></a></li>
+        </ul>
+      </nav>
+    </section>
+
+  </header>
+  <main>
+    <div class="fondo">
+      <!-- Cartas -->
+      <form action="">
+        <div class="container_productos">
+          <!-- /////////// -->
+          <img src="../Imagenes/flecha.png" alt="" class="flecha">
+          <div class="card">
+            <div class="imagen_carta">
+              <img src="/inventario/imagenes/usuario.png" class="personaje" id="img">
+            </div>
+            <div class="informacion_carta">
+              <input type="file" name="foto" id="foto" accept="img">
+              <div class="nombre">
+                <p>Nombre de la carta</p>
+                <input type="text" name="" id="" class="opcion" placeholder="Nombre del personaje">
+              </div>
+              <div class="nombre">
+                <p>Poder:</p>
+                <input type="text" name="" id="" class="opcion" placeholder="Poder">
+              </div>
+              <div class="nombre">
+                <p>Vida:</p>
+                <input type="text" name="" class="opcion" placeholder="Vida">
+              </div>
+              <div class="nombre">
+                <p>Tipo de carta:</p>
+                <select name="" id="" class="opcion">
+                  <option value="#">Escoge tipo de carta</option>
+                  <option value="#">Arma Guerrero</option>
+                  <option value="#">Arma Tanque</option>
+                  <option value="#">Arma Mago de Hielo</option>
+                  <option value="#">Arma Mago de fuego</option>
+                  <option value="#">Arma Picaro machete</option>
+                  <option value="#">Arma Picaro veneno</option>
+                  <option value="#">Item Guerrero</option>
+                  <option value="#">Item Tanque</option>
+                  <option value="#">Item Mago de Hielo</option>
+                  <option value="#">Item Mago de fuego</option>
+                  <option value="#">Item Picaro machete</option>
+                  <option value="#">Item Picaro veneno</option>
+                  <option value="#">Armadura Guerrero</option>
+                  <option value="#">Armadura Tanque</option>
+                  <option value="#">Armadura Mago de Hielo</option>
+                  <option value="#">Armadura Mago de fuego</option>
+                  <option value="#">Armadura Picaro machete</option>
+                  <option value="#">Armadura Picaro veneno</option>
+                  <option value="#">Talento Guerrero</option>
+                  <option value="#">Talento Tanque</option>
+                  <option value="#">Talento Mago de Hielo</option>
+                  <option value="#">Talento Mago de fuego</option>
+                  <option value="#">Talento Picaro machete</option>
+                  <option value="#">Talento Picaro veneno</option>
+                </select>
+              </div>
+              <div class="nombre">
+                <p>Cantidad de cartas:</p>
+                <input type="number" name="" id="" placeholder="Cantidad de cartas">
+              </div>
+              <div class="nombre">
+                <p>Escoge la tienda:</p>
+                <select name="" id="" class="opcion">
+                  <option value="" disabled>Tienda</option>
+                  <option value="">E-commerce</option>
+                  <option value="">Subasta</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="informacion_carta">
+              <h2>Descripción:</h2>
+              <div class="textarea-container">
+                <textarea name="" id="" cols="45" rows="23" placeholder="Ingrese la descripción de la carta"></textarea>
+              </div>
+              <div class="container-buttons">
+                <a href="/" onclick="navRouter()">
+                  <button id="guardar-cambios" class="guardar-cambios">
+                    Guardar Carta
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-    </main>
-    <script src="/inventario/js/creacion.js"></script>
-    <script src="/inventario/js/nav.js"></script>
-    <script src="/inventario/js/descripcion.js"></script>
-    <script src="/inventario/js/index.js"></script>
-    <script src="/inventario/js/modificacionInv.js"></script>
+
+      </form>
+    </div>
+  </main>
+  <script src="/inventario/js/creacion.js"></script>
+  <script src="/inventario/js/nav.js"></script>
+  <script src="/inventario/js/descripcion.js"></script>
+  <script src="/inventario/js/index.js"></script>
+  <script src="/inventario/js/modificacionInv.js"></script>
 </body>
 </html>
