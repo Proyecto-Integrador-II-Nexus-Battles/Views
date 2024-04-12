@@ -1,0 +1,64 @@
+.card {
+    border: 1px solid #9e9e9e;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .imagen_carta {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 14px 14px 0 0;
+  }
+  
+  .personaje {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 13px 13px 0 0;
+  }
+  
+  .informacion_carta p {
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  #nombre {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  #nombre p {
+    margin-top: 5px;
+    font-size: 9px;
+  }
+  .heroe {
+    height: 30px;
+    margin-right: 10px;
+  }
+  /* BOTONES ELIMINAR/ENVIAR*/
+  .modificar button {
+    border: transparent;
+    background-color: #a3b7dc;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    align-items: center;
+    align-self: center;
+    margin-left: 12px;
+  }
+  
+  .modificar button:hover {
+    background-color: #304c8b;
+    color: white;
+  }
