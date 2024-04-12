@@ -157,3 +157,28 @@ export const defaultR8 = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
+export const defaultR9 = async (req, res) => {
+  const url = `${HOST}:${PORT}/deseos/getWishedCards`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: req.headers.authorization,
+    }
+  };
+  fetch(url, options)
+    .then(async (response) => {
+      if (response.ok) {
+        const responseData = await response.json();
+        return res.status(200).json(responseData);
+      }
+      if (response.status === 301) {
+        res.status(301).send("No autorizado");
+      }
+      throw new Error("Error en la solicitud POST");
+    })
+    .catch((error) => {
+      console.error("Error en la solicitud: ", error);
+    });
+};

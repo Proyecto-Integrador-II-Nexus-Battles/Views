@@ -14,10 +14,22 @@
   <!-- Header -->
   <header>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", async function() {
         var token = localStorage.getItem('token');
 
         if (token !== null) {
+
+          const cartasEnLista = await comprobarListaDeseos();
+          const datos = <%- JSON.stringify(datos) %>;
+          for (let  i = 0; i < datos.length; i++) {
+            const carta = datos[i];
+            const cartaEnLista = cartasEnLista.includes(carta._id);
+            if (cartaEnLista) {
+              console.log('cartas en lista de deseos');
+              document.querySelector('.carta-' + i).style.color = 'red';
+            }
+          }
+
           document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
           document.getElementById('register_btn').remove();
           document.querySelector('.login_btn').addEventListener('click', function() {
@@ -133,7 +145,7 @@
 
           <div class="imagen_carta">
             <section class="icons">
-              <span onclick="cambiarColor(this, '<%= carta._id %>')" id="like">&#9829;</span>
+              <span class="carta-<%= i %>" onclick="cambiarColor(this, '<%= carta._id %>')" id="like">&#9829;</span>
             </section>
             <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
           </div>

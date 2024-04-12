@@ -1,3 +1,31 @@
+async function comprobarListaDeseos() {
+  console.log("Comprobando lista de deseos");
+  const url = "/vitrina/comprobarListaDeseos";
+  const token = "Bearer " + localStorage.getItem("token");
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${token}`,
+    }
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.ok) {
+      const responseData = await response.json();
+      console.log("Se obtuvieron las cartas en la lista de deseos");
+      return responseData;
+    } else if (response.status === 301) {
+      window.location.href = "/";
+    } else {
+      throw new Error("Error en la solicitud POST");
+    }
+  } catch (error) {
+    console.error("Error en la solicitud: ", error);
+  }
+}
+
 function cambiarColor(elemento, IdCard) {
   if (elemento.style.color === "red") {
     eliminarListaDeseos(IdCard);
