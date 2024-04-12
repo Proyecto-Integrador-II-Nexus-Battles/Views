@@ -138,7 +138,7 @@ border-radius: 15px;
   border-radius: 10px;
   height:70vh;
   width: 26%;
-  display: none;
+  display: flex; /*aa*/
 }
 .puja_container label{
 font-size: 28px;
@@ -229,4 +229,88 @@ text-align: center;
   cursor: pointer;
   font-weight: bold;
 }
-
+/* Responsive */
+@media screen and (min-width: 1600px) and (max-width: 1920px){
+  .info_carta .detalles_card{
+  font-size: 24px;
+  }
+  .info_carta .nombre_carta{
+    font-size: 26px;
+  }
+  .subasta_info .subasta_info_title{
+    font-size: 30px;
+  }
+  .subasta_info .valor_maximo_subasta,
+  .subasta_info .valor_base_subasta,
+  .fechas_subasta {
+      font-size: 25px !important;
+      margin-top: 7%;
+  }
+  .subasta_info .tiempo_restante{
+    font-size: 30px;
+    margin: 12% 5% 0 0;
+  }
+.ofertas h2{
+  font-size: 35px;
+  padding-bottom: 5%;
+}
+.ofertas .oferta_players{
+  margin-top: -7px;
+}
+.oferta_players .player_name{
+  font-size: 23px;
+}
+.oferta_players .credits_player, .cards_player{
+  font-size: 20px;
+}
+/* buttons */
+.buttons{
+  text-align: center;
+  margin-top: 15%;
+}
+.buttons .pujar, .compra_rapida{
+  font-size: 25px;
+  width: 41%;
+  height: 50px;
+  background-color: #A3B7DC;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+/* Ventanas emergentes */
+/* puja */
+.puja_container{
+  top: 15%;
+}
+.puja_container label{
+font-size: 37px;
+margin-top: 5%;
+}
+.puja_container input, select{
+  height: 6vh;
+  font-size: 30px;
+}
+.puja_container .pujar_b, .Cancelar{
+  font-size: 30px;
+  margin-top: 6%;
+}
+/* compra rapida */
+.compra_rapida_container{
+  top: 15%;
+}
+.compra_rapida_container label{
+font-size: 37px;
+margin-top: 5%;
+}
+.compra_rapida_container input{
+  height: 6vh;
+  font-size: 30px;
+}
+.compra_rapida_container .cards_container p{
+  font-size: 25px;
+}
+.compra_rapida_container .comprar, .cancelar{
+  font-size: 30px;
+}
+}
