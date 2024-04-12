@@ -188,9 +188,15 @@
                   %>
                 <% }%>
                 <article class="icons">
-                  <span onclick="cambiarColor(this, '<%= carta._id %>')" class="like">&#9829;</span>
-                  <span class="carrito" onclick="addCarro('<%= carta._id %>')">&#128722;</span>
-                  <p id="precio">Precio: <%= carta.price %></p>
+                  <% if ( carta.TypeCard === 'Hero' ) { %>
+                  <button onclick="seleccionarHeroe('<%= carta.Name %>')">
+                    <p>Seleccionar &nbsp</p>
+                  </button>
+                <% } else { %>
+                  <button onclick="seleccionarCarta('<%= carta.Name %>')">
+                    <p>Seleccionar &nbsp</p>
+                  </button>
+                <% } %>
                 </article>
               </div>
             </div>
@@ -203,5 +209,6 @@
     </div>
   
   </main>
+  <script src="/mi_banco/js/selectCard.js"></script>
   </body>
   
