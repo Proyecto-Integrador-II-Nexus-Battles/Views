@@ -334,8 +334,8 @@ main {
 .active {
   color: red;
 }
-
-@media screen and (min-width: 1600px) and (max-width: 1920px) {
+@media screen and (min-width: 1600px) and (max-width: 1920px)
+ {
   .search_form .search_icon {
     top: -2px;
   }
