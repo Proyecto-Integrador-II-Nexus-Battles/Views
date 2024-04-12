@@ -5,11 +5,9 @@
   <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/img/icon.png" type="image/x-icon">
-  <title>THE NEXUS BATTLES II</title>
-  <link rel="stylesheet" href="/vitrina_productos/css/e-commerce.css">
+  <title>Mi Banco</title>
+  <link rel="stylesheet" href="/mi_banco/css/e-commerce_banco.css">
   <link rel="stylesheet" href="/resumen_flotante/css/style.css">
-  <link rel="stylesheet" href="/lista_deseos/css/style.css">
 </head>
 
 <body>
@@ -18,7 +16,6 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         var token = localStorage.getItem('token');
-
         if (token !== null) {
           document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
           document.getElementById('register_btn').remove();
@@ -39,7 +36,7 @@
     <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
-        <li><a href="/miCuenta" onclick="miCuenta()">Mi cuenta</a></li>
+        <li><a href="/cuenta">Mi cuenta</a></li>
         <li><a onclick="redirectMiBanco()">Mi banco</a></li>
         <li><a href="/subasta">Subasta</a></li>
         <li><a href="/jugarOnline">Jugar online</a></li>
@@ -56,24 +53,6 @@
     <!-- filtros -->
     <div class="filtros">
       <ul class="tipo_filtros">
-        <!-- filtro precios -->
-        <li>
-          <h2>Precios</h2>
-        </li>
-
-        <li><select class="seleccionar_precio" name="sortOrder">
-            <option value="" disabled selected>Orden</soption>
-            <option value="desc">Mayor a menor</option>
-            <option value="asc">Menor a mayor</option>
-          </select></li>
-
-        <li><select class="seleccionar_precio" name="min_max">
-            <option value="" disabled selected>Precios</soption>
-            <option value="20000-200000">20.000 - 200.000</option>
-            <option value="200000-800000">200.000 - 800.000</option>
-            <option value="800000-1400000">800.000 - 1.400.000</option>
-            <option value="1400000-2000000">1.400.000 - 2.000.000</option>
-          </select></li>
 
         <!-- Tipo de carta -->
         <li>
@@ -86,34 +65,37 @@
             <option value="Hero">Héroes</option>
             <option value="Item">Items</option>
             <option value="Talent">Talentos</option>
-          </select></li>
-        <!-- filtro promocion -->
-        <li>
-          <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          </select>
         </li>
         <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+        <li class="stats" > 0/30 </li>
+        <li class="stats" > Armas/0 </li>
+        <li class="stats" > Armadura/0 </li>
+        <li class="stats" > Items/0 </li>
+        <li class="stats" > Talentos/0 </li>
+        <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
       </ul>
     </div>
     <div class="container_general">
       <!--Parte barra de búsqueda  -->
       <div class="barra_busqueda">
-        <div class="paginas">
-          <ul class="listPage">
-            <li class="active">1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
         <form action="" class="search_form">
-          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35">
           <img src="/vitrina_productos/img/search_icon.svg" alt="search_icon" class="search_icon">
         </form>
       </div>
 
       <!-- Cartas -->
 
-      <%- include('../../templates/cartas_vitrina'); %>
-      
+      <%- include('cartas_banco'); %>
+
+      <div class="paginas">
+        <ul class="listPage">
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </div>
     </div>
 
 
@@ -135,7 +117,7 @@
   <script src="/vitrina_productos/js/paginacion.js"></script>
   <script src="/vitrina_productos/js/addCarro.js"></script>
   <script src="/vitrina_productos/js/addListaDeseos.js"></script>
-  <script src="/inventario/js/miCuenta.js"></script>
+
 </body>
 
 </html>
