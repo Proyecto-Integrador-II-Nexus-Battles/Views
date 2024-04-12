@@ -68,11 +68,14 @@
           </select>
         </li>
         <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
-        <li class="stats" > 0/30 </li>
-        <li class="stats" > Armas/0 </li>
-        <li class="stats" > Armadura/0 </li>
-        <li class="stats" > Items/0 </li>
-        <li class="stats" > Talentos/0 </li>
+        <li>
+          <h3>Mazo de cartas</h3>
+        </li>
+        <li class="stats" ><span id="totalDeck">0</span>/30 </li>
+        <li class="stats" > Armas/<span id="wDeck">0</span> </li>
+        <li class="stats" > Armadura/<span id="aDeck">0</span> </li>
+        <li class="stats" > Items/<span id="iDeck">0</span> </li>
+        <li class="stats" > Talentos/<span id="eDeck">0</span> </li>
         <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
       </ul>
     </div>
