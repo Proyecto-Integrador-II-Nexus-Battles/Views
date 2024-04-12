@@ -18,16 +18,34 @@
         var token = localStorage.getItem('token');
 
         if (token !== null) {
-
           const cartasEnLista = await comprobarListaDeseos();
-          const datos = <%- JSON.stringify(datos) %>;
-          for (let  i = 0; i < datos.length; i++) {
-            const carta = datos[i];
-            const cartaEnLista = cartasEnLista.includes(carta._id);
-            if (cartaEnLista) {
-              console.log('cartas en lista de deseos');
-              document.querySelector('.carta-' + i).style.color = 'red';
+          const cartasEnBanco = await comprobarMiBanco();
+          if (cartasEnLista.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let  i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnLista = cartasEnLista.includes(carta._id);
+              if (cartaEnLista) {
+                console.log('cartas en lista de deseos');
+                document.querySelector('.carta-' + i).style.color = 'red';
+              }
             }
+          } else {
+            console.log('Error encontrando cartas en lista de deseos');
+          }
+          console.log(cartasEnBanco);
+          if (cartasEnBanco.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let  i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnBanco = cartasEnBanco.includes(carta._id);
+              if (cartaEnBanco) {
+                console.log('cartas en banco');
+                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" style="background-color: blue;">MI BANCOOO</span>';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en el banco');
           }
 
           document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
@@ -144,7 +162,7 @@
         <div class="card">
 
           <div class="imagen_carta">
-            <section class="icons">
+            <section class="icons-<%= i %>">
               <span class="carta-<%= i %>" onclick="cambiarColor(this, '<%= carta._id %>')" id="like">&#9829;</span>
             </section>
             <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
