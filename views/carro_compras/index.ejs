@@ -9,7 +9,6 @@
   <title>Carro Compras</title>
 </head>
 
-
 <body>
   <header>
     <script>
@@ -59,6 +58,7 @@
   <main>
     <div class="container">
       <%- include('../../templates/cartas_carrito'); %>
+      </div>
       <div class="paginas">
         <ul class="listPage">
           <li class="active">1</li>
@@ -93,7 +93,7 @@
       </div>
 
       <div class="pedido">
-        <button class="realizar"> Realizar pedido</button>
+        <button class="realizar" id="checkout"> Realizar pedido</button>
         <p class="añadir">¿Quieres añadir más productos?</p>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -139,7 +139,7 @@
         </div>
       </div>
       <div class="pedidodos">
-        <button class="realizardos" id="realizarPedido">Realizar pedido</button>
+        <button class="realizardos" id="checkout"> Realizar pedido</button>
       </div>
       <div class="ircarrito">
         <button class="ircarritodos" id="checkout"> Ir al carrito</button>
@@ -149,45 +149,6 @@
       </div>
     </div>
     </div>
-    <div class="fondo"></div>
-     <div class="resumentres" style="display: none;">
-      <div class="resumenptres">
-        <div class="productostres">
-          <h2 class="titulotres">Resumen compra</h2>
-          <div class="productosptres">
-            <p>Productos:&nbsp;&nbsp;&nbsp;<%= cantidadtotal %></p>
-          </div>
-          <div class="totalb">
-            <p class="p2">Total bruto:&nbsp;&nbsp;&nbsp;<%= totalBruto %></p>
-          </div>
-          <div class="iva">
-            <p class="p3">Impuesto(IVA):&nbsp;&nbsp;&nbsp;19%</p>
-          </div>
-          <hr class="lineacuatro">
-          <div class="total">
-            <p class="totaltres">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= totalNeto %></p>
-          </div>
-        </div>
-        <div class="convertidor">
-          <h2 class="tituloconv">Convertidor de divisas</h2>
-          <div class="cajauno">
-            <div class="divisauno">COP&nbsp;<%= totalNeto %></div>
-          </div>
-          <div class="flechados">↓</div>
-          <div class="cajados">
-            <div class="divisados">USD&nbsp;<%= totalNetoUSD.toFixed(2) %></div>
-          </div>
-          <div class="tasacambio">
-            <p class="tasa">Tasa de cambio</p>
-            <p class="cambiodiv">1 USD =&nbsp; 3773&nbsp;COP</p>
-          </div>
-        </div>
-        <div class="botones">
-          <button class="cancelar">Cancelar</button>
-          <button class="confirmar" id="realizarConfirmar">Confirmar</button>
-        </div>
-      </div>
-     </div>
   </main>
   <script src="/js/redirects.js"></script>
   <script src="/carro_compras/js/navbar.js"></script>
@@ -196,8 +157,6 @@
   <script src="/carro_compras/js/cantidad.js"></script>
   <script src="/carro_compras/js/eliminar.js"></script>
   <script src="/carro_compras/js/paypal.js"></script>
-  <script src="/carro_compras/js/ventana_emergente.js"></script>
-  
 </body>
 
 </html>
