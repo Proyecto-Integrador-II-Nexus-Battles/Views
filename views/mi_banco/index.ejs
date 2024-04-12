@@ -16,7 +16,6 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         var token = localStorage.getItem('token');
-
         if (token !== null) {
           document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
           document.getElementById('register_btn').remove();
@@ -37,13 +36,8 @@
     <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav class="" id="navbar">
       <ul class="opciones">
-<<<<<<< Updated upstream
         <li><a href="/cuenta">Mi cuenta</a></li>
-        <li><a href="/mi_banco">Mi banco</a></li>
-=======
-        <li><a href="/miCuenta" onclick="miCuenta()">Mi cuenta</a></li>
         <li><a onclick="redirectMiBanco()">Mi banco</a></li>
->>>>>>> Stashed changes
         <li><a href="/subasta">Subasta</a></li>
         <li><a href="/jugarOnline">Jugar online</a></li>
         <li><a href="/torneo">Torneo</a></li>
@@ -129,7 +123,7 @@
         };
 
         for (let i = 0; i < datos.length; i++) {
-          const carta = datos[i];
+          const carta = datos[i].carta;
           const imagen = subtipoImagen[carta.Subtype];
           const tipoIcono = subtipoIcono[carta.TypeCard];
         %>
@@ -329,6 +323,7 @@
   <script src="/vitrina_productos/js/paginacion.js"></script>
   <script src="/vitrina_productos/js/addCarro.js"></script>
   <script src="/vitrina_productos/js/addListaDeseos.js"></script>
+
 </body>
 
 </html>
