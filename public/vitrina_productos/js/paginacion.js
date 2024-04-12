@@ -48,7 +48,7 @@ function listPage() {
     // Agregar botón 'PREV' si no estamos en la primera página
     if (thisPage != 1) {
         let prev = document.createElement('li');
-        prev.innerText = 'PREV';
+        prev.innerText = '<-';
         prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
         listPageContainer.appendChild(prev);
     }
@@ -67,7 +67,7 @@ function listPage() {
     // Agregar botón 'NEXT' si no estamos en la última página
     if (thisPage != count) {
         let next = document.createElement('li');
-        next.innerText = 'NEXT';
+        next.innerText = '->';
         next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
         listPageContainer.appendChild(next);
     }

@@ -97,6 +97,13 @@
     <div class="container_general">
       <!--Parte barra de búsqueda  -->
       <div class="barra_busqueda">
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
         <form action="" class="search_form">
           <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
           <img src="/vitrina_productos/img/search_icon.svg" alt="search_icon" class="search_icon">
@@ -106,13 +113,7 @@
       <!-- Cartas -->
 
       <%- include('../../templates/cartas_vitrina'); %>
-      <div class="paginas">
-        <ul class="listPage">
-          <li class="active">1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-      </div>
+      
     </div>
 
 
