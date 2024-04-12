@@ -22,3 +22,9 @@ function cerrarEmer(){
 }
 
 
+function validarNumero(input) {
+  input.value = input.value.replace(/\D/g, '');
+  if (input.value.length > 10) {
+      input.value = input.value.slice(0, 10);
+  }
+}
