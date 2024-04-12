@@ -147,7 +147,9 @@
   border-radius: 10px;
   border: transparent;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  font-size: 12px;
 }
+
 
 .listPage li:hover {
   background-color: #304c8b;
