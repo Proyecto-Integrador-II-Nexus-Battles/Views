@@ -18,30 +18,34 @@ export const defaultR = (req, res) => {
       const info = responseData.Info;
       const totales = responseData.totales.map(formatNumber);
       const totalNeto = responseData.totalNeto;
-      const totalBruto = responseData.totalBruto;
+      let totalBruto = responseData.totalBruto;
+
+      if (!isNaN(totalBruto)) {
+        // Formatea el número con coma como separador decimal
+        totalBruto = parseFloat(totalBruto).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
       const cantidad = responseData.list_price_unit;
       const cantidadtotal = cantidad.reduce(
         (total, item) => total + item.CANTIDAD,
         0
       );
 
-      const tasaCambio = 3804; // Tasa de cambio: 1 USD = 3804 COP
+      const tasaCambio = 3900; 
       const totalNetoUSD = totalNeto / tasaCambio;
 
       const totalNetoFormateado = formatNumber(totalNeto);
-      const totalBrutoFormateado = formatNumber(totalBruto);
+      // No es necesario volver a formatear totalBruto aquí, ya que lo formateamos arriba
 
-      
       console.log(totalNetoUSD);
-
-
       console.log(cantidadtotal);
+      
       // Renderiza la vista con los datos obtenidos
       res.render("carro_compras/index", {
         info: info,
         totales: totales,
         totalNeto: totalNetoFormateado,
-        totalBruto: totalBrutoFormateado,
+        totalBruto: totalBruto, // No es necesario volver a formatearlo aquí
         cantidad: cantidad,
         cantidadtotal: cantidadtotal,
         totalNetoUSD: totalNetoUSD,

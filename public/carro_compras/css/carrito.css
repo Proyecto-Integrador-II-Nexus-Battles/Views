@@ -10,22 +10,37 @@
   .container {
     display: grid;
     grid-template-rows: auto auto;
-    width: 50%;
-    margin-left: 10%;
+    width: 1101px;
+    height: 700px;
+    margin-left: 20%;
     margin-top: 10px;
-    background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
+
     border-radius: 10px;
     
   }
   .grid-container {
     display: grid;
+    width: 1140px;
     grid-template-columns: repeat(3, 1fr);
-    width: 80%;
     margin: 0 auto;
     padding-top: 20px;
   }
+
+  .list{
+    width: 1000px;
+    margin-top: -1rem;
+    margin-left: 3rem;
+  }
+
+  .listPage{
+    margin-left: -3rem;
+    margin-top: 0.6rem;
+
+  }
+
   .item {
-    height: 307px;
+    height: 280px;
+    width: 210px;
     border: 1px solid #9e9e9e;
     border-radius: 14px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -67,11 +82,12 @@
   
   .informacion_carta {
     width: 205px;
-    height: 170px;
+    height: 110px;
     background-color: white;
+    padding-top: 10px;
     padding-left: 5px;
     border-radius: 0px 0px 14px 14px;
-    min-height: 170px;
+    min-height: 140px;
   }
   
   .nombre {
@@ -94,18 +110,8 @@
     margin-top: 1px;
   }
   
-  .imagen_carta {
-    width: 210px; /* ajusta el ancho según tus necesidades */
-    height: 150px; /* ajusta la altura según tus necesidades */
-    overflow: hidden;
-  }
-  
-  .personaje {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 13px 13px 0 0;
-  }
+ 
+
   
   .rectangulo {
     display: flex;
@@ -125,7 +131,7 @@
     background-color: #ebc793;
     border-radius: 14px 0px 14px 0px;
     text-align: center;
-    margin-top: -20rem;
+    margin-top: -18.7rem;
     margin-left: -0.1rem;
   }
   
@@ -133,6 +139,7 @@
     margin-left: 1px;
     height: 25px;
     font-size: 20px;
+    cursor: pointer;
   }
   
   .eliminarx:hover {
@@ -144,12 +151,21 @@
     position: absolute;
     border: 1px solid black;
     display: flex;
-    width: 2.6rem;
+    width: 2.9rem;
     justify-content: space-between;
-    margin-left: 2.7rem;
+    margin-left: 2.4rem;
     margin-top: 0.4rem;
     padding-left: 4px;
     padding-right: 4px;
+  }
+
+  .masmenos-menos{
+    cursor: pointer;
+    width: 13.13px;
+  }
+
+  .masmenos-mas{
+    cursor: pointer;
   }
   
   .cantidadnum {
@@ -165,7 +181,8 @@
   }
   
   .valorp {
-    font-size: 20px;
+    padding-top: 3px;
+    font-size: 15px;
     height: 50px;
   }
   
@@ -187,11 +204,10 @@
   }
   
   .imagen_carta {
-    width: 200px;
+    width: 210px;
     height: 150px;
     overflow: hidden;
     border-radius: 14px 14px 0 0;
-    cursor: pointer;
   }
   
   .personaje {
@@ -302,80 +318,6 @@
     color: red;
   }
   
-  @media screen and (max-width: 1680px) {
-    .container_general {
-      width: 60%;
-    }
-    .card {
-      max-height: 305px;
-      min-height: 305px;
-    }
-  
-    .imagen_carta {
-      width: 180px;
-      height: 130px;
-    }
-    .informacion_carta p {
-      font-size: 11px;
-      padding-left: 10px;
-      margin-top: 1px;
-    }
-    #nombre p {
-      font-size: 11px;
-    }
-    .foto {
-      height: 25px;
-    }
-    .like {
-      font-size: 25px;
-    }
-    .carrito {
-      font-size: 18px;
-    }
-  }
-  
-  @media screen and (max-width: 1360px) {
-    .container_general {
-      width: 60%;
-    }
-    .card {
-      max-height: 250px;
-      min-height: 250px;
-    }
-  
-    .imagen_carta {
-      width: 160px;
-      height: 100px;
-    }
-    .informacion_carta p {
-      font-size: 8px;
-      padding-left: 10px;
-      margin-top: 1px;
-    }
-    #nombre p {
-      font-size: 8px;
-    }
-    .foto {
-      height: 25px;
-    }
-    .like {
-      font-size: 21px;
-      margin-top: -6px;
-    }
-    .carrito {
-      font-size: 15px;
-      margin-top: -1px;
-    }
-    #precio {
-      font-size: 9px;
-    }
-    #cart {
-      width: 130px;
-    }
-    #cart2 {
-      width: 130px;
-    }
-  }
   
   
   /* @media screen and (min-width: 340px) and (max-width: 390px) {

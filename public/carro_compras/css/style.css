@@ -78,6 +78,7 @@ header .logo_img {
 
 section {
   display: flex;
+  margin-top: 2rem;
 }
 
 .regresar {
@@ -218,13 +219,10 @@ h1 {
 }
 
 .paginas {
-  position: fixed; /* Cambiar a posición fija */
-  bottom: 20px; /* Ajustar la distancia desde la parte inferior */
-  left: 50%; /* Centrar horizontalmente */
-  transform: translateX(-50%); /* Centrar completamente horizontalmente */
-  width: 100%; /* Ocupar todo el ancho */
-  text-align: center; /* Centrar el contenido horizontalmente */
-  margin-left: 10rem;
+  width: 400px;
+  height: 40px;
+  margin-top: 43rem;
+  margin-left: -14rem;
 }
 
 .realizar {
@@ -274,21 +272,7 @@ h1 {
 
 /* RESUMEN FLOTANTE */
 
-#resumen-flotante {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 17rem;
-  height: 37rem;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  z-index: 1000;
-  margin-left: 19rem;
-  margin-top: -6.5rem;
-}
+
 
 .resumen-flotante-oculto {
   display: none;
