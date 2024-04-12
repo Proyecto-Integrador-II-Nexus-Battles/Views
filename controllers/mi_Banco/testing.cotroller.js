@@ -10,7 +10,6 @@ export const defaultR = async (req, res) => {
         'Content-Type': 'application/json', 
         'Authorization': `${req.query.token}`,
       },
-      // body: JSON.stringify({ IdUsuario: 7 }) // Corrección aquí
     });
     const datos = await response.json(); 
     console.log(datos);
