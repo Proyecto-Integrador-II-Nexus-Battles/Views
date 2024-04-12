@@ -1,28 +1,28 @@
-/* body {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   
-} */
+}
 
-/* main {
+main {
   display: grid;
   grid-template-columns: 30% 70%;
   padding: 20px;
   background-image: url("../img/Recibo.png");
   background-size: cover;
   background-position: center;
-} */
+}
 
 /* LADO IZQUIERDO */
-/* .left-side {
+.left-side {
   padding: 20px;
   display: grid;
   justify-content: center;
   align-items: flex-start;
 }
- */
+
 /* LADO DERECHO */
-/* .right-side {
+.right-side {
   padding: 20px;
   display: grid;
   grid-template-rows: auto auto;
@@ -47,9 +47,9 @@
   grid-template-rows: repeat(2, 1fr);
   margin-top: 28px;
 }
- */
+
 /* FILTROS */
-/* .filtros {
+.filtros {
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   width: 300px;
   border-radius: 14px;
@@ -101,7 +101,7 @@
   cursor: pointer;
   border-radius: 7px;
 }
- */
+
 /* CARTA */
 /* .card {
   border: 1px solid #9e9e9e;
