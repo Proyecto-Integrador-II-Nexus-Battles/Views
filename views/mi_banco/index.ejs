@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <!-- Header -->
+
   <header>
 
     <nav>
@@ -20,60 +20,59 @@
     </nav>
 
   </header>
-  <!-- Vitrina de productos -->
+
   <main>
-    <!-- filtros -->
-    <div class="filtros">
-      <ul class="tipo_filtros">
-        <li>
-          <h2>Tipo de carta</h2>
-        </li>
-        <li><select class="tipo_carta" name="Type">
-            <option value="" disabled selected>Selecciona un tipo</option>
-            <option value="Weapon">Armas</option>
-            <option value="Armor">Armaduras</option>
-            <option value="Hero">Héroes</option>
-            <option value="Item">Items</option>
-            <option value="Talent">Talentos</option>
-          </select>
-        </li>
-        <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
-        <li class="stats" > 0/30 </li>
-        <li class="stats" > Armas/0 </li>
-        <li class="stats" > Armadura/0 </li>
-        <li class="stats" > Items/0 </li>
-        <li class="stats" > Talentos/0 </li>
-        <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
-      </ul>
-    </div>
-    <div class="container_general">
-      <!--Parte barra de búsqueda  -->
-      <div class="barra_busqueda">
-        <form action="" class="search_form">
-          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
-        </form>
-      </div>
-
-      <!-- Cartas -->
-
-      <%- include('cartas_banco'); %>
-
-      <div class="paginas">
-        <ul class="listPage">
-          <li class="active">1</li>
-          <li>2</li>
-          <li>3</li>
+    <div class="left-side">
+      <div class="filtros">
+        <ul class="tipo_filtros">
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+          <li class="stats" > 0/30 </li>
+          <li class="stats" > Armas/0 </li>
+          <li class="stats" > Armadura/0 </li>
+          <li class="stats" > Items/0 </li>
+          <li class="stats" > Talentos/0 </li>
+          <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
         </ul>
       </div>
     </div>
 
+      <!-- Cartas -->
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;">MI BANCO</h3>
+        <div class="filtro_busqueda">
+          <form action="" class="form-search">
+            <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+        </div>
 
-    </div>
+    
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      
 
+      <div class="row2">
+        <%- include('cartas_banco'); %>
     </div>
-    </div>
-    </div>
-    </div>
+  </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
 

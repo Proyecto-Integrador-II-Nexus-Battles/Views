@@ -25,7 +25,7 @@ main {
   display: grid;
   justify-content: center;
   align-items: flex-start;
-  margin-top: -11px;
+  transform: translate(0, -2%);
 }
 
 /* LADO DERECHO */
@@ -33,17 +33,16 @@ main {
   padding: 20px;
   display: grid;
   grid-template-rows: auto auto;
+  border-radius: 14px;
   background:#02020279;
   border: 3px solid #0202021f;
   backdrop-filter: blur(0.2rem);
-  border-radius: 14px;
-  margin-top: 4px;
 }
 
 /* FILAS */
 .row1 {
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 20% 40% 40%;
   align-items: center;
 }
 .row1 h3 {
@@ -123,16 +122,14 @@ main {
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  margin-left: 6%;
-  margin-right: 6%;
   cursor: pointer;
-  background-color: var(--carta);
-  margin-top: 20px;
+  background-color: white;
+  max-height: 345px;
+  min-height: 345px;
 }
+
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-5px);
   display: block;
 }
 .card:hover #like,
