@@ -11,60 +11,8 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilos navbar */
 header {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #D8E9F9;
-  margin-right: 9%;
-}
-
-header .logo_img {
-  height: 50px;
-  position: absolute;
-  left: 1%;
-}
-
-#navbar {
-  height: 60px;
-  background-color: #d8e9f9;
-  padding: 10px;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
-}
-
-.opciones li {
-  display: inline-block;
-
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-}
-#login_btn {
-  font-size: 15px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-#login_btn:hover {
-  background-color: #304c8b;
-  color: white;
-}
-
-.abrir-btn {
-  display: none;
+  background-color: #f5faff;
 }
 
 .container_general {
@@ -74,6 +22,7 @@ header .logo_img {
   background-color: rgba(9, 32, 43, 0.74);
   border-radius: 10px;
   padding: 20px;
+  transform: translate(0, 25%);
 }
 form{
   display: flex;
