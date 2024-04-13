@@ -32,28 +32,6 @@ background-color: white;
   border-radius: 10px;
 }
 
-/* Barra de búsqueda */
-.container_general .search_form {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 8%
-}
-
-.search_form .search_input {
-  margin-top: 1%;
-  height: 27px;
-  width: 350px;
-  border: 2px solid black;
-  text-align: center;
-}
-
-/* search icon */
-.search_icon {
-  position: relative;
-  height: 24px;
-  margin-top: 1.4%;
-  right: 30px;
-}
 
 main{
   display: flex;
