@@ -1,14 +1,13 @@
-
-<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     var token = localStorage.getItem("token");
 
     if (token !== null) {
       document.querySelector(".login_btn").textContent = "Cerrar Sesión";
       document
         .querySelector(".login_btn")
-        .addEventListener("click", function () {
+        .addEventListener("click", function() {
           localStorage.removeItem("token");
           window.location.reload(true);
         });
@@ -18,6 +17,7 @@
   });
 </script>
 <!-- Barra de navegación -->
+
 <body>
   <div id="page">
     <div class="site">
@@ -34,7 +34,7 @@
               <nav>
                 <ul>
                   <li><a href="/miCuenta">Mi Cuenta</a></li>
-                  <li><a href="/mi_banco">Mi Banco</a></li>
+                  <li><a onclick="redirectMiBanco()">Mi Banco</a></li>
                   <li><a href="/subasta">Subasta</a></li>
                   <li><a href="/jugarOnline">Jugar Online</a></li>
                   <li><a href="/torneo">Torneo</a></li>
@@ -45,7 +45,7 @@
             </div>
             <div class="right">
               <ul>
-                
+
                 <li>
                   <a onclick="redirectListaDeseos()" id="lista-deseos"><i class="ri-heart-line"></i></a>
                 </li>
@@ -85,7 +85,7 @@
                   <a><span>MIS SERVICIOS</span></a>
                   <ul>
                     <li><a href="/miCuenta">Mi Cuenta</a></li>
-                    <li><a href="/mi_banco">Mi Banco</a></li>
+                    <li><a onclick="redirectMiBanco()"></a>Mi Banco</a></li>
                     <li><a href="/subasta">Subasta</a></li>
                     <li><a href="/jugarOnline">Jugar Online</a></li>
                     <li><a href="/torneo">Torneo</a></li>
@@ -103,9 +103,9 @@
     </div>
   </div>
   <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
-  
-  <script src="/carro_compras/js/navbar.js"></script>
 
+  <script src="/carro_compras/js/navbar.js"></script>
+  <script src="/js/redirects.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/resumen_flotante/js/deployResumen.js"></script>
   <script src="/carro_compras/js/resumen_flotante.js"></script>
