@@ -18,66 +18,10 @@ body {
 
 /* Estilos navbar */
 header {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #D8E9F9;
-  margin-right: 9%;
+background-color: white;
 }
 
-header .logo_img{
-width: 70px;
-}
 
-#navbar {
-  height: 60px;
-  background-color: #D8E9F9;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
-}
-
-.opciones li {
-  display: inline-block;
-  padding-top: 9px;
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 24px;
-}
-
-.opciones li button {
-  font-size: 24px;
-  color:white;
-  height: 90%;
-  width: 110px;
-  cursor: pointer;
-  margin-right: 1%;
-  border-radius: 10px;
-  border: none;
-  text-align: center;
-  margin-top: 2px;
-  background-color: #789DCA;
-}
-.abrir-btn{
-  display: none;
-}
-
-#login_btn {
-  font-size: 20px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-}
 /* Vitrina de productos */
 .container_general {
   width:60%;

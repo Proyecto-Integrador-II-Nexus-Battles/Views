@@ -6,7 +6,6 @@
   --color-button-hover: #304c8b;
 }
 
-/* visualizacion de las cartas */
 .container_general {
   display: grid;
   grid-template-rows: auto auto;
@@ -15,8 +14,8 @@
   margin-top: 10px;
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   border-radius: 10px;
-  
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -58,44 +57,41 @@
   font-size: 12px;
   font-weight: bold;
   padding-left: 10px;
-  padding-left: 10px;
 }
+
 #nombre {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
+
 #nombre p {
   margin-top: 5px;
   font-size: 9px;
 }
-.heroe {
-  height: 30px;
-  margin-right: 10px;
-}
+
+.heroe,
 .foto {
   height: 30px;
   margin-right: 10px;
 }
-/* CARTAS ITEMS, ARMOS ETC */
 
-#cart {
-  background-color: var(--color-card-power);
-  text-align: center;
-  width: 150px;
-  margin-top: 13px;
-  margin-left: 17px;
-  padding: 5px;
-  border-radius: 8px;
-}
+#cart,
 #cart2 {
-  background-color: var(--color-card-power2);
   text-align: center;
   width: 150px;
   margin-top: 10px;
   margin-left: 17px;
   padding: 5px;
   border-radius: 8px;
+}
+
+#cart {
+  background-color: var(--color-card-power);
+}
+
+#cart2 {
+  background-color: var(--color-card-power2);
 }
 
 .icons {
@@ -104,31 +100,29 @@
   gap: 15px;
   height: 20px;
 }
+
 .like {
   font-size: 30px;
   cursor: pointer;
   margin-top: -14px;
 }
+
 .like:hover {
   color: red;
 }
+
 .carrito {
   font-size: 20px;
   cursor: pointer;
   margin-top: -5px;
 }
+
 #precio {
   background-color: var(--color-price);
   height: 25px;
   padding: 5px;
   cursor: pointer;
   border-radius: 5px;
-}
-.flecha,
-.paginacion,
-.paginacionuno {
-  background: none;
-  border: none;
 }
 
 .listPage {
@@ -152,7 +146,6 @@
   font-size: 12px;
 }
 
-
 .listPage li:hover {
   background-color: #304c8b;
   color: white;
@@ -170,7 +163,6 @@
     max-height: 305px;
     min-height: 305px;
   }
-
   .imagen_carta {
     width: 180px;
     height: 130px;
@@ -202,7 +194,6 @@
     max-height: 250px;
     min-height: 250px;
   }
-
   .imagen_carta {
     width: 160px;
     height: 100px;
@@ -215,9 +206,6 @@
   #nombre p {
     font-size: 8px;
   }
-  .foto {
-    height: 25px;
-  }
   .like {
     font-size: 21px;
     margin-top: -6px;
@@ -229,20 +217,8 @@
   #precio {
     font-size: 9px;
   }
-  #cart {
-    width: 130px;
-  }
+  #cart,
   #cart2 {
     width: 130px;
   }
 }
-
-
-/* @media screen and (min-width: 340px) and (max-width: 390px) {
-    .container_general{
-        width: 50%;
-    }
-    .informacion_carta p{
-    }
-} */
-

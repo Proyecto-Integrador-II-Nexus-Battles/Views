@@ -8,53 +8,23 @@
   <title>Mi Banco</title>
   <link rel="stylesheet" href="/mi_banco/css/e-commerce_banco.css">
   <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var token = localStorage.getItem('token');
-        if (token !== null) {
-          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
-          document.getElementById('register_btn').remove();
-          document.querySelector('.login_btn').addEventListener('click', function() {
-            localStorage.removeItem('token');
-            window.location.reload(true);
-          });
-        } else {
-          console.log('Not logged in');
-        }
-      });
-    </script>
-    <a href="/">
-      <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
 
-    </a>
-    <!-- Barra de navegación -->
-    <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
-    <nav class="" id="navbar">
-      <ul class="opciones">
-        <li><a href="/cuenta">Mi cuenta</a></li>
-        <li><a onclick="redirectMiBanco()">Mi banco</a></li>
-        <li><a href="/subasta">Subasta</a></li>
-        <li><a href="/jugarOnline">Jugar online</a></li>
-        <li><a href="/torneo">Torneo</a></li>
-        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
-        <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
-        <li><a href="/login"><button class="login_btn">Login</button></a></li>
-        <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
-      </ul>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
     </nav>
+
   </header>
   <!-- Vitrina de productos -->
   <main>
     <!-- filtros -->
     <div class="filtros">
       <ul class="tipo_filtros">
-
-        <!-- Tipo de carta -->
         <li>
           <h2>Tipo de carta</h2>
         </li>
@@ -80,8 +50,7 @@
       <!--Parte barra de búsqueda  -->
       <div class="barra_busqueda">
         <form action="" class="search_form">
-          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35">
-          <img src="/vitrina_productos/img/search_icon.svg" alt="search_icon" class="search_icon">
+          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
         </form>
       </div>
 
@@ -107,9 +76,7 @@
     </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/carro_compras/js/resumen_flotante.js"></script>
-  <script src="/resumen_flotante/js/deployResumen.js"></script>
+
   <script src="/js/redirects.js"></script>
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
