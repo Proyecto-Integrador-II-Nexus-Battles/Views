@@ -1,7 +1,7 @@
 function toggleVisibility() {
-    var eye = document.getElementById('eye');
-    var show = document.getElementById('show');
-    var passwordInput = document.getElementById('password');
+    let eye = document.getElementById('eye');
+    let show = document.getElementById('show');
+    let passwordInput = document.getElementById('password');
 
     if (this.id === 'eye') {
         eye.style.display = 'none';
