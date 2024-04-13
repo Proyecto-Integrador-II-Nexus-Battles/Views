@@ -42,15 +42,15 @@
 
 .Active {
   transition: all 0.3s ease;
-  border: 2px solid rgb(94, 255, 0);
-  box-shadow: 0px 0px 50px rgb(94, 255, 0); /* Sombra */  
+  border: 2px solid #2ecc71;
+  box-shadow: 0px 0px 20px #2ecc71; /* Sombra */  
 
 }
 
 .activeHero {
   transition: all 1s ease;
-  border: 2px solid rgb(217, 255, 0); /* Borde sólido */
-  box-shadow: 0px 0px 100px rgb(217, 255, 0); /* Sombra */  
+  border: 2px solid #304c8b; /* Borde sólido */
+  box-shadow: 0px 0px 50px #304c8b; /* Sombra */  
 }
 
 .card:hover {
@@ -65,6 +65,35 @@
   border-radius: 14px 14px 0 0;
   cursor: pointer;
 }
+
+.Empty{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 150px;
+  border: 1px solid black;
+  background: #49494973;
+  border-radius: 10%;
+
+  button {
+    padding: 10px 20px;
+    border-radius: 10%;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+  }
+}
+
 
 .personaje {
   width: 100%;
