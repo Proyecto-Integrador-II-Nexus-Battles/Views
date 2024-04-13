@@ -11,18 +11,6 @@
     display: flex;
   }
   
-  header {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #D8E9F9;
-    margin-right: 9%;
-  }
-  
-  header .logo_img{
-  width: 70px;
-  }
-  
   #navbar {
     height: 60px;
     background-color: #D8E9F9;

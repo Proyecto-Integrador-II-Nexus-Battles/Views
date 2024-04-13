@@ -13,7 +13,6 @@
   width: 50%;
   margin-left: 10%;
   margin-top: 10px;
-  background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   border-radius: 10px;
 
 }
@@ -23,7 +22,7 @@
   grid-template-columns: repeat(3, 1fr);
   width: 80%;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 22px;
 }
 
 .card {
@@ -32,10 +31,12 @@
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
-  margin-right: 70px;
-  background-color: var(--color-card);
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background-color: white;
   max-height: 345px;
   min-height: 345px;
 }
@@ -54,7 +55,7 @@
 }
 
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-5px);
   display: block;
 }
 
@@ -150,7 +151,6 @@
 .icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
   height: 20px;
 }
 
@@ -357,7 +357,7 @@
   align-items: center;
   margin: 18px 19px 10px 10px;
   width: auto;
-  height: 20px;
+  height: 35px;
   font-weight: lighter;
   font-size: 16px;
   padding-top: 10px;
