@@ -35,7 +35,6 @@
   padding-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  cursor: pointer;
   background-color: white;
   max-height: 345px;
   min-height: 345px;
@@ -50,8 +49,8 @@
 
 .activeHero {
   transition: all 1s ease;
-  border: 2px solid #304c8b; /* Borde sólido */
-  box-shadow: 0px 0px 50px #304c8b; /* Sombra */  
+  border: 2px solid gold; /* Borde sólido */
+  box-shadow: 0px 0px 50px gold; /* Sombra */  
 }
 
 .card:hover {
@@ -151,6 +150,7 @@
 .icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 20px;
 }
 
@@ -225,6 +225,8 @@
   background-color: #ebc793;
   border-radius: 14px 0px 14px 0px;
   text-align: center;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
 }
 
 /* .quantity {
@@ -363,7 +365,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 7px;
-  background-color: rgb(106, 122, 167);
+  background-color: rgba(156, 156, 156, 0.123);
   border: 1px solid black;
   text-align: center;
   color: white;
@@ -372,13 +374,17 @@
 .heroe {
   position: relative;
   border: solid 1px gold;
+  padding: 20px;
 }
 
 .heroe > h3 {
   position: absolute;
   top: 0;
-  left: 30%;
-  transform: translate(-50%, -60%) ;
+  left: 10%;
+  font-weight: bold;
+  font-size: 20px;
+  transform: translate(0%, -50%);
+  -webkit-text-stroke: .5px gold;
 }
 
 #currentlyHero {
