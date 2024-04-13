@@ -19,7 +19,7 @@ header {
     align-items: center;
     padding-left: 8rem;
     padding-right: 8rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .title-text{
@@ -51,9 +51,8 @@ header {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    margin-top: 1rem;
     background-color: transparent;
-    padding-top: 0rem;
     padding-bottom: 4rem;
 
 }
