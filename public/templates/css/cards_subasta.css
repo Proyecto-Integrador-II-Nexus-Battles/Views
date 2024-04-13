@@ -15,7 +15,6 @@
   margin-top: 10px;
   background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
   border-radius: 10px;
-
 }
 .grid-container {
   display: grid;
@@ -102,26 +101,7 @@
   gap: 15px;
   height: 20px;
 }
-.like {
-  font-size: 30px;
-  cursor: pointer;
-  margin-top: -14px;
-}
-.like:hover {
-  color: red;
-}
-.carrito {
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: -5px;
-}
-#precio {
-  background-color: var(--color-price);
-  height: 25px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
+
 .flecha,
 .paginacion,
 .paginacionuno {
