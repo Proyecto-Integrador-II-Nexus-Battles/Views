@@ -136,7 +136,7 @@ border-radius: 15px;
   border-radius: 10px;
   height:70vh;
   width: 26%;
-  display: flex; /*aa*/
+  display: none; /*aa*/
 }
 .puja_container label{
 font-size: 28px;
@@ -338,12 +338,30 @@ margin-top: 5%;
   .detalles_card li{
     margin-top: 2%;
   }
-  .buttons{
+  .buttons, .tiempo_restante{
     padding-bottom: 10px;
   }
-  .tiempo_restante{
-    padding-bottom: 10px;
+
+  /* Emergente puja */
+  .puja_container,
+  .compra_rapida_container{
+    width: 40%;
+    left: 30%;
+    top: 90%;
+    height: auto;
   }
+  .puja_container .pujar_b{
+    width: auto;
+    white-space: wrap;
+  }
+  .puja_container,
+  .compra_rapida_container label{
+    margin-top: 10%;
+  }
+  .compra_rapida_container .comprar, .cancelar{
+    padding-top: 2%;
+  }
+
 }
 @media screen and (max-width:668px){
   .container_general {
@@ -379,5 +397,15 @@ margin-top: 5%;
   }
   .compra_rapida{
     white-space: wrap;
+  }
+  /* Emergente puja */
+  .puja_container, .compra_rapida_container{
+    width: 60%;
+    left: 20%;
+    top: 90%;
+  }
+  .puja_container .pujar_b, .Cancelar{
+    padding-top: 5%;
+    text-align: center;
   }
 }
