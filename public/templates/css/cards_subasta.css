@@ -5,7 +5,6 @@
   --color-price: #a3b7dc;
   --color-button-hover: #304c8b;
 }
-
 /* visualizacion de las cartas */
 .container_general {
   display: grid;
@@ -23,7 +22,6 @@
   margin: 0 auto;
   padding-top: 20px;
 }
-
 .card {
   border: 1px solid #9e9e9e;
   border-radius: 14px;
@@ -40,7 +38,6 @@
   transform: translateY(-20px);
   display: block;
 }
-
 .imagen_carta {
   width: 200px;
   height: 150px;
@@ -94,21 +91,18 @@
   padding: 5px;
   border-radius: 8px;
 }
-
 .icons {
   display: flex;
   justify-content: center;
   gap: 15px;
   height: 20px;
 }
-
 .flecha,
 .paginacion,
 .paginacionuno {
   background: none;
   border: none;
 }
-
 .listPage {
   display: flex;
   padding: 5px;
@@ -116,7 +110,6 @@
   text-align: center;
   list-style: none;
 }
-
 .listPage li {
   padding: 5px;
   margin: 0 10px;
@@ -129,17 +122,13 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   font-size: 12px;
 }
-
-
 .listPage li:hover {
   background-color: #304c8b;
   color: white;
 }
-
 .active {
   color: red;
 }
-
 @media screen and (max-width: 1680px) {
   .container_general {
     width: 60%;
@@ -171,7 +160,6 @@
     font-size: 18px;
   }
 }
-
 @media screen and (max-width: 1360px) {
   .container_general {
     width: 60%;
@@ -180,7 +168,6 @@
     max-height: 250px;
     min-height: 250px;
   }
-
   .imagen_carta {
     width: 160px;
     height: 100px;
