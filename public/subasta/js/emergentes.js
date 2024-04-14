@@ -31,6 +31,8 @@ const Detalles_Modal_01 = document.querySelector(".Detalles_Modal_01");
 const Detalles_Modal_02 = document.querySelector(".Detalles_Modal_02");
 const modal_01 = document.querySelector(".modal_01");
 const modal_02 = document.querySelector(".modal_02");
+const modal_Detalles_01 = document.querySelector(".modal_Detalles_01");
+const Cerrar_Modal_Detalle = document.querySelector(".Cerrar_Modal_Detalle");
 
 // abrir modales de venta y compra
 btn_AbrirModal_01.addEventListener("click",() =>{
@@ -49,4 +51,17 @@ Cerrar_Modal_02.addEventListener("click",() =>{
 })
 
 // detalles modal
+Detalles_Modal_01.addEventListener("click",() =>{
+  modal_01.close()
+  modal_Detalles_01.showModal()
+})
+
+Detalles_Modal_02.addEventListener("click",() =>{
+  modal_02.close()
+  modal_Detalles_01.showModal()
+})
+
+Cerrar_Modal_Detalle.addEventListener("click",()=>{
+  modal_Detalles_01.close()
+});
 
