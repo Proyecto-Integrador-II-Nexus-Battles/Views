@@ -59,7 +59,6 @@ border-radius: 15px;
   color: #5B5656;
   margin: 3% 0 0 8%;
 }
-
 .subasta_info .valor_maximo_subasta{
   font-size: 20px;
   color: #5B5656;
@@ -68,7 +67,6 @@ border-radius: 15px;
 .valor_maximo_subasta .cartas_v_max{
   margin-left: 7%;
 }
-
 .subasta_info .fechas_subasta{
   margin-top: 5%;
   font-size: 20px;
@@ -313,4 +311,51 @@ margin-top: 5%;
 .compra_rapida_container .comprar, .cancelar{
   font-size: 30px;
 }
+}
+@media screen and (max-width:1216px){
+.compra_rapida{
+  width: auto;
+  white-space: wrap;
+}
+.tiempo_restante{
+  margin-top: -10px;
+}
+.buttons{
+  margin-top: 30px;
+}
+}
+@media screen and (max-width:930px){
+  .container_general {
+    grid-template-columns: 1.5fr 1.5fr;
+  }
+  .ofertas {
+    grid-column: span 1;
+    order: 3;
+  }
+  .subasta_info{
+    margin-right: 5%;
+  }
+  .detalles_card li{
+    margin-top: 2%;
+  }
+  .buttons{
+    padding-bottom: 10px;
+  }
+  .tiempo_restante{
+    padding-bottom: 10px;
+  }
+}
+@media screen and (max-width:668px){
+  .container_general {
+    grid-template-columns: 1fr; 
+  }
+
+  .info_carta,
+  .subasta_info,
+  .ofertas {
+    grid-column: span 1;
+    margin-right: 5%;
+    margin-top: 2%;
+  }
+
 }
