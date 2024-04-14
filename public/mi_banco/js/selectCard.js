@@ -20,7 +20,11 @@ function seleccionarHeroe(nombreCarta, idCarta) {
         if (carta.classList.contains('activeHero')) {
             botonSeleccionar.textContent = 'Tu héroe';
         } else {
-            botonSeleccionar.textContent = 'Seleccionar';
+            if (carta.classList.contains('Active')) {
+
+            }else {
+                botonSeleccionar.textContent = 'Seleccionar';
+            }
         }
     });
 }

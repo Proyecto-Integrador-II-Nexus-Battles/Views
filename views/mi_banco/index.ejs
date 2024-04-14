@@ -37,12 +37,17 @@
             </select>
           </li>
           <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+          <hr>
+          <li>
+            <h2>Mi mazo</h2>
+          </li>
           <li class="stats" ><span id="totalDeck">0</span>/30 </li>
           <li class="stats" > Armas/<span id="wDeck">0</span> </li>
           <li class="stats" > Armadura/<span id="aDeck">0</span> </li>
           <li class="stats" > Items/<span id="iDeck">0</span> </li>
           <li class="stats" > Talentos/<span id="eDeck">0</span> </li>
           <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
+          <button id="filtro_input" onclick="saveDeck()">Guardar mazo</button>
         </ul>
       </div>
     </div>
@@ -76,12 +81,15 @@
   </main>
 
   <script src="/js/redirects.js"></script>
+  <script src="/mi_banco/js/saveDeck.js"></script>
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
   <script src="/vitrina_productos/js/paginacion.js"></script>
   <script src="/vitrina_productos/js/addCarro.js"></script>
   <script src="/vitrina_productos/js/addListaDeseos.js"></script>
+  <script src=" /mi_banco/js/selectCard.js"></script>
+
 
 </body>
 
