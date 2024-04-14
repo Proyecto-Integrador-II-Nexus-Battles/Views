@@ -347,9 +347,8 @@ margin-top: 5%;
 }
 @media screen and (max-width:668px){
   .container_general {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
-
   .info_carta,
   .subasta_info,
   .ofertas {
@@ -357,5 +356,28 @@ margin-top: 5%;
     margin-right: 5%;
     margin-top: 2%;
   }
-
+  .info_carta .detalles_card li{
+    font-size: 21px;
+  }
+  .info_carta .nombre_carta{
+    font-size: 25px;
+  }
+  .subasta_info .valor_maximo_subasta,
+  .subasta_info .valor_base_subasta,
+  .subasta_info .fechas_subasta {
+      font-size: 21px;
+  }
+  .subasta_info .tiempo_restante{
+    padding-bottom: 4%;
+    font-size: 25px;
+  }
+  .ofertas .pujar{
+    width: 30%;
+  }
+  .oferta .oferta_players{
+    margin-top: -5%;
+  }
+  .compra_rapida{
+    white-space: wrap;
+  }
 }
