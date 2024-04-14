@@ -1,8 +1,18 @@
 function deployEjsScript() {
 
-  function formatNumber(number) {
-    return number.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  // Función para formatear un número con puntos como separador de miles
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+// Función para formatear el total bruto
+function formatTotalBruto(totalBruto) {
+  if (!isNaN(totalBruto)) {
+    return parseFloat(totalBruto).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
+  return totalBruto;
+}
+
   // Create a wrapper div element
   const resumen = document.getElementById("mostrar-resumen-flotante");
   resumen.addEventListener("click", async () => {
@@ -44,7 +54,7 @@ function deployEjsScript() {
       </div>
       <div class="totalb">
         <p>Total bruto:</p>
-        <p class="numtotalb">${formatNumber(data.totalBruto)}</p>
+        <p class="numtotalb">${formatTotalBruto(data.totalBruto)}</p>
       </div>
       <div class="iva">
         <p>Impuesto(IVA):</p>
