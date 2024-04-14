@@ -34,7 +34,7 @@ main {
   display: grid;
   grid-template-rows: auto auto;
   border-radius: 14px;
-  background:#02020279;
+  background: #02020279;
   border: 3px solid #0202021f;
   backdrop-filter: blur(0.2rem);
 }
@@ -55,10 +55,9 @@ main {
   grid-template-rows: repeat(2, 1fr);
 }
 
-
 /* Filtros */
 .filtros {
-  background:#02020279;
+  background: #02020279;
   border: 3px solid #0202021f;
   backdrop-filter: blur(0.2rem);
   width: 300px;
@@ -99,6 +98,7 @@ main {
   transform: scale(1.4);
 }
 
+/* Filtro boton enviar */
 #filtro_input {
   margin-top: 18px;
   width: 160px;
@@ -114,7 +114,6 @@ main {
 }
 
 /* Estilos de las cartas/productos */
-
 
 /* Carta */
 .card {
@@ -277,10 +276,7 @@ main {
 .active {
   color: red;
 }
-@media screen and (min-width: 1600px) and (max-width: 1920px)
- {
-
-
+@media screen and (min-width: 1600px) and (max-width: 1920px) {
   .search_form .search_icon {
     top: -2px;
   }
@@ -335,7 +331,6 @@ main {
     height: 30px;
     padding-bottom: 23px;
   }
-
 }
 @media screen and (max-width: 1630px) and (min-width: 1400px) {
   header {
@@ -530,7 +525,6 @@ main {
     }
   }
   @media screen and (min-width: 591px) and (max-width: 660px) {
-
     .rangos p {
       margin-right: 2px;
     }
@@ -565,16 +559,12 @@ main {
     }
   }
   @media screen and (min-width: 540px) and (max-width: 590px) {
-
   }
   @media screen and (min-width: 280px) and (max-width: 300px) {
-  
   }
 
   @media (width<=339px) {
-    
   }
   @media screen and (min-width: 431px) and (max-width: 539px) {
-
   }
 }
