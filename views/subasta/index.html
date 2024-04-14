@@ -150,55 +150,50 @@
     <button class="Cerrar_Modal_02">Cerrar</button>
   </div>
 </dialog>
-<!-- Ventana Modal_Detalles -->
-<dialog  class="modal_Detalles_01">
-  <!-- Informacion y foto de la carta -->
-  <div class="container_ModalDetalles">
-    <div class="info_carta">
-      <img src="../../public/subasta/img/picaro_ejemplo_img.jpeg" alt="">
-      <p class="nombre_carta"><b>Pícaro Veneno: Nébula Tóxica</b></p>
-  
-     <ul class="detalles_card">
-      <li class="tipo"><b>Tipo carta:</b>&nbsp Héroe</li>
-      <li class="description"><b>Descripción:</b>&nbsp Entrenado en alquimia
-        puede causar gran daño al adversario
-        afectando sus habilidades y
-        reduciendo la posibilidad de que
-        puedan acertar un golpe.</li>
-     </ul>
+<!-- Ventana Modal_Detalles_Buzon -->
+
+<dialog  open class="modal_Detalles_01">
+    <!-- Informacion y foto de la carta -->
+    <div class="container_Modal_Detalles">
+      <div class="container_Buzon">
+        <h1 class="nombre_carta"><b>Bandeja de compra y venta</b></h1>
+      </div>
+      <hr>
+      <div class="info_Buzon_Modal">
+        <div class="valor_maximo_subasta_Modal">
+          <h2>Carta Vendida</h2>
+          <p><b>Carta:</b></p>
+          <p class="credits_player"><b>Créditos:</b> 80</p>
+        </div>
+        <div class="fechas_subasta_Modal">
+          <p> Fecha de Inicio: 7/04/2024</p>
+          <p> Fecha Fin: 8/04/2024</p>
+        </div>
+        <div class="Creditos_Total">
+          <p><b>Creditos Totales: </b>120</p>
+          <div class="buttons">
+            <button class="Reclamar_Venta">Reclamar</button>
+          </div>
+        </div>
+      </div>
+      <div class="info_Buzon_Modal">
+        <div class="valor_maximo_subasta_Modal">
+          <h2>Carta Comprada</h2>
+          <p><b>Carta:</b></p>
+          <p class="credits_player"><b>Créditos:</b> 80</p>
+        </div>
+        <div class="fechas_subasta_Modal">
+          <p> Fecha de Inicio: 7/04/2024</p>
+          <p> Fecha Fin: 8/04/2024</p>
+        </div>
+        <div class="Compra_carta">
+          <p><b>Carta:</b> 1x Pícaro Veneno: Nébula Toxica</p>
+          <div class="buttons">
+            <button class="Reclamar_Compra">Reclamar</button>
+          </div>
+        </div>
+      </div>
     </div>
-  <!-- Datos de Compra -->
-    <div class="subasta_info">
-    <h2 class="subasta_info_title">Datos de Compra</h2>
-    <div class="valor_base_subasta">
-      <p><b>Producto:</b> <span>Pícaro Veneno: Nébula Tóxica</span></p>
-      <p><b>Créditos:</b> 60</p>
-      <p><b>Cartas:</b></p>
-      <li>Pícaro Machete</li>
-    </div>
-  
-    <div class="valor_maximo_subasta">
-      <p><b>Valor Máximo / Compra Inmediata</b></p>
-      <p><b>Créditos:</b> 200</p>
-      <p><b>Cartas:</b></p>
-      <ul class="cartas_v_max">
-        <li>Pícaro Machete</li>
-        <li>Golpe de Defensa</li>
-        <li>Guerrero Tanque</li>
-      </ul>
-    </div>
-    <div class="fechas_subasta">
-      <p><b>Fecha de Inicio:</b> 7/04/2024</p>
-      <p><b>Fecha Fin:</b> 8/04/2024</p>
-      <p><b>Duración de la subasta:</b> 24 horas</p>
-    </div>
-    <div class="tiempo_restante">
-      <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
-    </div>
-    </div>
-  </div>
-    <button class="Cerrar_Modal_02">Cerrar</button>
-  </div>
 </dialog>
 <button id="btn_AbrirModal_01">Abrir_Modal</button>
 <button id="btn_AbrirModal_02">Abrir_Modal</button>

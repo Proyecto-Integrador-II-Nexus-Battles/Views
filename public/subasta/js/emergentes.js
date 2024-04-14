@@ -39,6 +39,7 @@ btn_AbrirModal_01.addEventListener("click",() =>{
 btn_AbrirModal_02.addEventListener("click",() =>{
   modal_02.showModal();
 })
+
 // cerrar modal
 Cerrar_Modal_01.addEventListener("click",() =>{
   modal_01.close()
@@ -48,3 +49,4 @@ Cerrar_Modal_02.addEventListener("click",() =>{
 })
 
 // detalles modal
+
