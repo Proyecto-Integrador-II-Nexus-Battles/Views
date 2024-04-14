@@ -15,6 +15,7 @@ main {
   padding: 20px;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 /* Vitrina de productos */
@@ -28,26 +29,8 @@ main {
   transform: translate(0, -2%);
 }
 
-/* LADO DERECHO */
-.right-side {
-  padding: 20px;
-  display: grid;
-  grid-template-rows: auto auto;
-  border-radius: 14px;
-  background: #02020279;
-  border: 3px solid #0202021f;
-  backdrop-filter: blur(0.2rem);
-}
 
 /* FILAS */
-.row1 {
-  display: grid;
-  grid-template-columns: 20% 40% 40%;
-  align-items: center;
-}
-.row1 h3 {
-  text-decoration: underline;
-}
 
 .grid-container {
   display: grid;
@@ -116,166 +99,6 @@ main {
 /* Estilos de las cartas/productos */
 
 /* Carta */
-.card {
-  border: 1px solid #9e9e9e;
-  border-radius: 14px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  background-color: white;
-  max-height: 345px;
-  min-height: 345px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  display: block;
-}
-.card:hover #like,
-.card:hover .carrito {
-  display: block;
-}
-.card:hover #precio button {
-  left: 40%;
-  background-color: var(--precio_hover);
-  color: white;
-}
-#like {
-  font-size: 20px;
-  color: white;
-  position: absolute;
-  top: 33%;
-  left: 85%;
-  display: none;
-}
-#like:hover {
-  color: red;
-}
-.imagen_carta {
-  width: 150px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 14px 14px 0 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.personaje {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 13px 13px 0 0;
-}
-#precio button {
-  display: flex;
-  background-color: var(--precio);
-  border: transparent;
-  padding: 5px;
-  border-radius: 5px;
-  position: relative;
-  top: 10px;
-  left: 10%;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-.carrito {
-  font-size: 12px;
-  display: none;
-}
-#nombre {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-#nombre p {
-  margin-top: 5px;
-  font-size: 8px;
-}
-.foto {
-  height: 20px;
-  margin-right: 10px;
-}
-
-.informacion_carta p {
-  font-size: 11px;
-  font-weight: bold;
-  padding-left: 10px;
-  margin-top: 1px;
-}
-#cart {
-  background-color: #2ecc71;
-  text-align: center;
-  width: 100px;
-  margin-top: 10px;
-  margin-left: 20px;
-  padding: 5px;
-  border-radius: 8px;
-}
-#cart2 {
-  background-color: #d8e9f9;
-  text-align: center;
-  width: 100px;
-  margin-top: 10px;
-  margin-left: 17px;
-  padding: 8px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* paginacion */
-
-.list {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.paginas {
-  margin-top: 10px;
-  bottom: 20px;
-  left: 10%;
-  text-align: center;
-  margin-left: 7rem;
-}
-.flecha {
-  background: none;
-  border: none;
-}
-.opciones li a {
-  font-size: 25px;
-}
-.paginacion {
-  background: none;
-  border: none;
-}
-.paginacionuno {
-  background: none;
-  border: none;
-  color: red;
-}
-.opciones li button {
-  width: 200px;
-  padding-top: 5px;
-  font-size: 25px;
-}
-.listPage {
-  display: flex;
-  padding: 5px;
-  text-align: center;
-  list-style: none;
-}
-.listPage li {
-  background: none;
-  padding: 5px;
-  margin: 0 10px;
-  cursor: pointer;
-  border: 1px solid black;
-  background-color: white;
-}
-.active {
-  color: red;
-}
 @media screen and (min-width: 1600px) and (max-width: 1920px) {
   .search_form .search_icon {
     top: -2px;
@@ -331,7 +154,6 @@ main {
     height: 30px;
     padding-bottom: 23px;
   }
-}
 @media screen and (max-width: 1630px) and (min-width: 1400px) {
   header {
     margin-right: 15%;
@@ -567,4 +389,5 @@ main {
   }
   @media screen and (min-width: 431px) and (max-width: 539px) {
   }
+}
 }
