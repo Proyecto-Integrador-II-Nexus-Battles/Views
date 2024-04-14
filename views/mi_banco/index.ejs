@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Banco</title>
+  <link rel="stylesheet" href="/mi_banco/css/e-commerce_banco.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+
+  </header>
+
+  <main>
+    <div class="left-side">
+      <div class="filtros">
+        <ul class="tipo_filtros">
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+          <li class="stats" > 0/30 </li>
+          <li class="stats" > Armas/0 </li>
+          <li class="stats" > Armadura/0 </li>
+          <li class="stats" > Items/0 </li>
+          <li class="stats" > Talentos/0 </li>
+          <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
+        </ul>
+      </div>
+    </div>
+
+      <!-- Cartas -->
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;">MI BANCO</h3>
+        <div class="filtro_busqueda">
+          <form action="" class="form-search">
+            <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+        </div>
+
+    
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <div class="row2">
+        <%- include('cartas_banco'); %>
+    </div>
+  </div>
+    <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
+  </main>
+
+  <script src="/js/redirects.js"></script>
+  <script src="/vitrina_productos/js/navbar.js"></script>
+  <script src="/vitrina_productos/js/filtrarCartas.js"></script>
+  <script src="/vitrina_productos/js/vistaDetallada.js"></script>
+  <script src="/vitrina_productos/js/paginacion.js"></script>
+  <script src="/vitrina_productos/js/addCarro.js"></script>
+  <script src="/vitrina_productos/js/addListaDeseos.js"></script>
+
+</body>
+
+</html>

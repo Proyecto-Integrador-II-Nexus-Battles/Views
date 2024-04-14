@@ -54,8 +54,10 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
             const totalBrutoFormateado = formatNumber(totalBruto);
 
             // Actualiza el contenido de los elementos HTML correspondientes
-            document.getElementById("totalNeto").textContent = totalNetoFormateado;
-            document.getElementById("totalBruto").textContent = totalBrutoFormateado;
+            document.getElementById("totalNeto").textContent =
+              totalNetoFormateado;
+            document.getElementById("totalBruto").textContent =
+              totalBrutoFormateado;
           })
           .catch((error) => {
             console.error("Error al obtener los nuevos totales:", error);

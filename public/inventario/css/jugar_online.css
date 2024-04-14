@@ -1,81 +1,23 @@
 /* Estilos generales */
-* {
-  padding: 0;
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
   background-image: url(/inventario/imagenes/Fondo_online.PNG);
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 50px;
-  background-color: #304c8b;
 }
 
 header {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #D8E9F9;
-  margin-right: 9%;
+  background-color: #f5faff;
 }
 
-header .logo_img {
-  height: 50px;
-  position: absolute;
-  left: 1%;
-}
-
-#navbar {
-  height: 60px;
-  background-color: #d8e9f9;
-  padding: 10px;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
-}
-
-.opciones li {
-  display: inline-block;
-
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-}
-#login_btn {
-  font-size: 15px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-.abrir-btn {
-  display: none;
-}
-
-
-.container_productos {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 5rem;
-  background-color: transparent;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+main {
+  display: grid;
+  padding: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  transform: translate(0, 8%);
 }
 
 .card {
-  position: relative;
   border: 0px solid #9e9e9e;
   border-radius: 14px;
   box-shadow: 0 5px 25px rgb(0, 0, 0);
@@ -136,7 +78,7 @@ header .logo_img {
 }
 
 .personaje {
-  height: 600px;
+  height: 620px;
   background-size: cover;
   border-radius: 10px;
   opacity: 100%;
@@ -148,6 +90,7 @@ header .logo_img {
   background-color: transparent;
   overflow: hidden;
   text-align: center;
+  justify-self: center;
 }
 
 .texto-arriba {

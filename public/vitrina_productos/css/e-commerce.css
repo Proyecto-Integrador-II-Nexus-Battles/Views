@@ -8,120 +8,64 @@
   --precio_hover: #304c8b;
 }
 
-body {
-  background-image: url("/vitrina_productos/img/fondo.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Estilos navbar */
-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #d8e9f9;
-  margin-right: 9%;
-}
-
-header .logo_img {
-  width: 70px;
-}
-
-#navbar {
-  height: 60px;
-  background-color: #d8e9f9;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
-}
-
-.opciones li {
-  display: inline-block;
-  padding-top: 9px;
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-}
-
-.opciones li button {
-  color: white;
-  height: 90%;
-  width: 110px;
-  cursor: pointer;
-  margin-right: 1%;
-  border-radius: 10px;
-  border: none;
-  text-align: center;
-  background-color: #789dca;
-  margin-top: 2px;
-  background-color: #789dca;
-  font-size: 17px;
-}
-.abrir-btn {
-  display: none;
-}
-
-#login_btn {
-  font-size: 15px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-}
-/* Vitrina de productos */
-.container_general {
-  width: 60%;
-  margin-left: 10%;
-  margin-top: 10px;
-  position: relative;
-  background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
-  border-radius: 10px;
-}
-
-/* Barra de búsqueda */
-.container_general .search_form {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 8%;
-}
-
-.search_form .search_input {
-  margin-top: 1%;
-  height: 27px;
-  width: 350px;
-  border: 2px solid black;
-  text-align: center;
-}
-
-/* search icon */
-.search_icon {
-  position: relative;
-  height: 24px;
-  margin-top: 1.4%;
-  right: 30px;
-}
-
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-image: url("/vitrina_productos/img/fondo.png");
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
 }
+
+/* Vitrina de productos */
+
+/* LADO IZQUIERDO */
+.left-side {
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translate(0, -2%);
+}
+
+/* LADO DERECHO */
+.right-side {
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto;
+  border-radius: 14px;
+  background: #02020279;
+  border: 3px solid #0202021f;
+  backdrop-filter: blur(0.2rem);
+}
+
+/* FILAS */
+.row1 {
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  align-items: center;
+}
+.row1 h3 {
+  text-decoration: underline;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
 /* Filtros */
 .filtros {
-  margin-left: 20px;
-  background: linear-gradient(45deg, #304b8b88, #a3b7dc7b, #d8e9f97b);
-  width: 200px;
-  margin-top: 20px;
+  background: #02020279;
+  border: 3px solid #0202021f;
+  backdrop-filter: blur(0.2rem);
+  width: 300px;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
 }
+
 .filtros h1 {
   text-align: center;
   border-bottom: 1px solid white;
@@ -135,9 +79,9 @@ main {
   font-size: 18px;
   cursor: pointer;
   margin-left: 10px;
+  text-align: center;
 }
 
-/* Filtro selects */
 .tipo_carta,
 .seleccionar_precio {
   width: 170px;
@@ -177,16 +121,14 @@ main {
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  margin-left: 6%;
-  margin-right: 6%;
   cursor: pointer;
-  background-color: var(--carta);
-  margin-top: 20px;
+  background-color: white;
+  max-height: 345px;
+  min-height: 345px;
 }
+
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-5px);
   display: block;
 }
 .card:hover #like,
@@ -334,7 +276,6 @@ main {
 .active {
   color: red;
 }
-
 @media screen and (min-width: 1600px) and (max-width: 1920px) {
   .search_form .search_icon {
     top: -2px;
@@ -390,60 +331,6 @@ main {
     height: 30px;
     padding-bottom: 23px;
   }
-  .container_general {
-    width: 70%;
-    margin-left: 10%;
-  }
-  span {
-    top: -23px;
-  }
-  .carrito {
-    top: -30px;
-  }
-
-  .container_general {
-    width: 50%;
-    margin-left: 10%;
-  }
-  span {
-    top: -23px;
-  }
-  .carrito {
-    top: -30px;
-  }
-
-  .imagen_carta {
-    width: 200px;
-    height: 180px;
-    overflow: hidden;
-  }
-
-  .personaje {
-    width: 100%;
-  }
-  #nombre p {
-    font-size: 12px;
-  }
-  .informacion_carta p {
-    font-size: 13px;
-  }
-  #cart {
-    width: 150px;
-  }
-  #cart2 {
-    width: 150px;
-  }
-  #precio button {
-    left: 42%;
-    margin-bottom: 10px;
-  }
-  .card:hover #precio button {
-    left: 35%;
-  }
-  #like {
-    top: 43%;
-    left: 85%;
-  }
 }
 @media screen and (max-width: 1630px) and (min-width: 1400px) {
   header {
@@ -462,79 +349,14 @@ main {
     .opciones li a {
       font-size: 22px;
     }
-    .search_form .search_input {
-      width: 300px;
-    }
-    .informacion_carta p {
-      font-size: 10px;
-    }
-    .imagen_carta {
-      width: 150px;
-      height: 100px;
-      overflow: hidden;
-    }
-    #nombre p {
-      font-size: 8px;
-    }
-    #cart {
-      width: 90px;
-    }
-    #cart2 {
-      width: 90px;
-    }
-    #precio button {
-      left: 36%;
-    }
-    .card:hover #precio button {
-      left: 34%;
-    }
-    #like {
-      top: 30%;
-      left: 85%;
-    }
-    .carrito {
-      font-size: 10px;
+    .search_input {
+      width: 500px;
     }
   }
 
   @media screen and (max-width: 1280px) {
     .opciones li a {
       font-size: 18px;
-    }
-    .informacion_carta p {
-      font-size: 9px;
-      font-weight: bold;
-    }
-    .imagen_carta {
-      width: 150px;
-      height: 100px;
-      overflow: hidden;
-    }
-
-    .personaje {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 13px 13px 0 0;
-    }
-    #cart {
-      width: 90px;
-    }
-    #cart2 {
-      width: 90px;
-    }
-    #precio button {
-      left: 40%;
-    }
-    .card:hover #precio button {
-      left: 35%;
-    }
-    #like {
-      top: 33%;
-      left: 85%;
-    }
-    .carrito {
-      font-size: 10px;
     }
   }
 
@@ -557,24 +379,11 @@ main {
       width: 120px;
       margin-left: 0;
     }
-    .container_general {
-      width: 70%;
-    }
   }
   /* // */
   @media screen and (max-width: 1071px) {
     .opciones li a {
       font-size: 15px;
-    }
-    .container_general {
-      width: 60%;
-    }
-    .card {
-      margin-left: 12px;
-      margin-right: auto;
-    }
-    .container_productos {
-      gap: 1.8em;
     }
   }
   @media screen and (max-width: 1045px) {
@@ -640,10 +449,6 @@ main {
       opacity: 1;
       visibility: visible;
     }
-    /* carta */
-    .container_general {
-      width: 50%;
-    }
   }
 
   @media screen and (max-width: 660px) {
@@ -693,25 +498,6 @@ main {
       margin-left: auto;
       margin-right: 20px;
     }
-    .container_general {
-      width: 80%;
-      margin-left: 40px;
-    }
-    .card {
-      margin-top: 0;
-      top: -10vh;
-      left: 5vh;
-    }
-    #precio button {
-      font-size: 10px;
-    }
-    #nombre p {
-      font-size: 10px;
-    }
-    .informacion_carta p {
-      font-size: 5px;
-    }
-
     #filtro_input {
       margin-left: 14%;
       width: 70%;
@@ -739,9 +525,6 @@ main {
     }
   }
   @media screen and (min-width: 591px) and (max-width: 660px) {
-    .container_general {
-      background: transparent;
-    }
     .rangos p {
       margin-right: 2px;
     }
@@ -760,38 +543,12 @@ main {
     }
   }
   @media screen and (min-width: 340px) and (max-width: 390px) {
-    .container_general {
-      background: transparent;
-      margin-left: 20%;
-      margin-top: 50px;
-    }
-    .card {
-      top: 25vh;
-      margin-left: 30px;
-    }
-    .listPage {
-      position: relative;
-      top: 25vh;
-    }
     .filtros {
       margin-top: 40px;
     }
   }
 
   @media screen and (min-width: 391px) and (max-width: 430px) {
-    .container_general {
-      background: transparent;
-      margin-left: 20%;
-      margin-top: 50px;
-    }
-    .card {
-      top: 20vh;
-      margin-left: 44px;
-    }
-    .listPage {
-      position: relative;
-      top: 20vh;
-    }
     .search_form .search_input {
       width: 90%;
       margin-right: 60px;
@@ -802,54 +559,12 @@ main {
     }
   }
   @media screen and (min-width: 540px) and (max-width: 590px) {
-    .container_general {
-      background: transparent;
-    }
-    .informacion_carta p {
-      font-size: 5px;
-    }
-    .card {
-      top: 20vh;
-      margin-left: 100px;
-    }
-    .listPage {
-      position: relative;
-      top: 20vh;
-    }
   }
   @media screen and (min-width: 280px) and (max-width: 300px) {
-    .container_general {
-      background: transparent;
-    }
-    .card {
-      top: 40vh;
-    }
-    .listPage {
-      position: relative;
-      top: 40vh;
-    }
   }
 
   @media (width<=339px) {
-    .container_general {
-      background: transparent;
-      margin-left: 65px;
-    }
-    .card {
-      top: 20vh;
-    }
-    .listPage {
-      position: relative;
-      top: 20vh;
-    }
   }
   @media screen and (min-width: 431px) and (max-width: 539px) {
-    .container_general {
-      background: transparent;
-    }
-    .card {
-      top: 17vh;
-      margin-left: 8vh;
-    }
   }
 }

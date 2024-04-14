@@ -22,7 +22,10 @@ export const defaultR = (req, res) => {
 
       if (!isNaN(totalBruto)) {
         // Formatea el número con coma como separador decimal
-        totalBruto = parseFloat(totalBruto).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        totalBruto = parseFloat(totalBruto).toLocaleString("es-ES", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
       }
 
       const cantidad = responseData.list_price_unit;
@@ -31,7 +34,7 @@ export const defaultR = (req, res) => {
         0
       );
 
-      const tasaCambio = 3900; 
+      const tasaCambio = 3900;
       const totalNetoUSD = totalNeto / tasaCambio;
 
       const totalNetoFormateado = formatNumber(totalNeto);
@@ -39,7 +42,7 @@ export const defaultR = (req, res) => {
 
       console.log(totalNetoUSD);
       console.log(cantidadtotal);
-      
+
       // Renderiza la vista con los datos obtenidos
       res.render("carro_compras/index", {
         info: info,

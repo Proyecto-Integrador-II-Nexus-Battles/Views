@@ -13,7 +13,7 @@ export const userLogging = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    .then((response) => { });
+    .then((response) => {});
 };
 
 export const renderRegister = (req, res) => {
@@ -113,29 +113,30 @@ export const fetchLogin = async (req, res) => {
   })
     .then((response) => {
       response.json().then((data) => {
-        res.json(data)
-      })
-    }).catch((error) => {
-      console.log("Error" + error)
+        res.json(data);
+      });
     })
+    .catch((error) => {
+      console.log("Error" + error);
+    });
 };
-
 
 export const fetchRegister = async (req, res) => {
   fetch(`${HOST}:${PORT}/usuario/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'enctype': 'multipart/form-data',
+      enctype: "multipart/form-data",
       "Access-Control-Allow-Methods": "POST",
     },
     body: JSON.stringify(req.body),
   })
     .then((response) => {
       response.json().then((data) => {
-        res.json(data)
-      })
-    }).catch((error) => {
-      console.log("Error" + error)
+        res.json(data);
+      });
     })
+    .catch((error) => {
+      console.log("Error" + error);
+    });
 };

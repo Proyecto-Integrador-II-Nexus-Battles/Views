@@ -1,17 +1,19 @@
 function deployEjsScript() {
-
   // Función para formatear un número con puntos como separador de miles
-function formatNumber(num) {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
-
-// Función para formatear el total bruto
-function formatTotalBruto(totalBruto) {
-  if (!isNaN(totalBruto)) {
-    return parseFloat(totalBruto).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
-  return totalBruto;
-}
+
+  // Función para formatear el total bruto
+  function formatTotalBruto(totalBruto) {
+    if (!isNaN(totalBruto)) {
+      return parseFloat(totalBruto).toLocaleString("es-ES", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    }
+    return totalBruto;
+  }
 
   // Create a wrapper div element
   const resumen = document.getElementById("mostrar-resumen-flotante");

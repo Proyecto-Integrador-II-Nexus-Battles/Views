@@ -1,9 +1,12 @@
-const boton_abrir = document.querySelector('.abrir-btn')
-const navbar = document.getElementById('navbar')
+// ABRIR Y CERRAR MENU RESPONSIVE
 
-boton_abrir.addEventListener('click',abrir_btn);
-function abrir_btn(){
-  navbar.classList.toggle('visible');
-  console.log("si")
-}
+const menuTrigger = document.querySelector(".trigger"),
+  closeTrigger = document.querySelector(".mini-close"),
+  giveClass = document.querySelector(".site");
 
+menuTrigger.addEventListener("click", function () {
+  giveClass.classList.toggle("showmenu");
+});
+closeTrigger.addEventListener("click", function () {
+  giveClass.classList.remove("showmenu");
+});
