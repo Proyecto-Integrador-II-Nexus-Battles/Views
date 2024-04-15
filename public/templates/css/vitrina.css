@@ -5,7 +5,6 @@
   --color-price: #a3b7dc;
   --color-button-hover: #304c8b;
 }
-
 /* LADO DERECHO */
 .right-side {
   padding: 20px;
@@ -16,7 +15,6 @@
   border: 3px solid #0202021f;
   backdrop-filter: blur(0.2rem);
 }
-
 .row1 {
   display: grid;
   grid-template-columns: 20% 40% 40%;
@@ -25,14 +23,12 @@
 .row1 h3 {
   text-decoration: underline;
 }
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 80%;
   margin: 20px auto;
 }
-
 .card {
   border: 1px solid #9e9e9e;
   border-radius: 14px;
@@ -57,37 +53,31 @@
   overflow: hidden;
   border-radius: 14px 14px 0 0;
 }
-
 .personaje {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 13px 13px 0 0;
 }
-
 .informacion_carta p {
   font-size: 12px;
   font-weight: bold;
   padding-left: 10px;
 }
-
 #nombre {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
-
 #nombre p {
   margin-top: 5px;
   font-size: 9px;
 }
-
 .heroe,
 .foto {
   height: 30px;
   margin-right: 10px;
 }
-
 #cart,
 #cart2 {
   text-align: center;
@@ -97,15 +87,12 @@
   padding: 5px;
   border-radius: 8px;
 }
-
 #cart {
   background-color: var(--color-card-power);
 }
-
 #cart2 {
   background-color: var(--color-card-power2);
 }
-
 .icons {
   display: flex;
   justify-content: center;
@@ -113,23 +100,19 @@
   height: 20px;
   margin-top: 10px;
 }
-
 .like {
   font-size: 30px;
   cursor: pointer;
   margin-top: -14px;
 }
-
 .like:hover {
   color: red;
 }
-
 .carrito {
   font-size: 20px;
   cursor: pointer;
   margin-top: -5px;
 }
-
 #precio {
   background-color: var(--color-price);
   height: 25px;
@@ -137,7 +120,6 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
 .listPage {
   display: flex;
   padding: 5px;
@@ -145,7 +127,6 @@
   text-align: center;
   list-style: none;
 }
-
 .listPage li {
   padding: 5px;
   margin: 0 10px;
@@ -158,16 +139,13 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   font-size: 12px;
 }
-
 .listPage li:hover {
   background-color: #304c8b;
   color: white;
 }
-
 .active {
   color: red;
 }
-
 @media screen and (max-width: 1680px) {
   .container_general {
     width: 60%;
@@ -204,7 +182,6 @@
     font-size: 18px;
   }
 }
-
 @media screen and (max-width: 1360px) {
   .container_general {
     width: 60%;
@@ -250,7 +227,6 @@
     width: 130px;
   }
 }
-
 @media screen and (max-width:1152px)
 {
   .listPage{
@@ -260,7 +236,6 @@
     font-size: 8px;
   }
 }
-
 @media screen and (max-width:1024px)
 {
   .right-side{
