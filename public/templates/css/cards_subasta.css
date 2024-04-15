@@ -127,6 +127,15 @@
 .active {
   color: red;
 }
+#ver_mas{
+  background-color: var(--color-price);
+  height: 25px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px 2px 5px 90px;
+  border: none;
+}
 @media screen and (max-width: 1680px) {
   .container_general {
     width: 60%;
