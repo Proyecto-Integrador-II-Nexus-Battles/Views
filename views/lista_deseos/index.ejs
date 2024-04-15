@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+  </header>
+
+  <main>
+    <div class="left-side">
+      <div class="filtros">
+        <ul class="tipo_filtros">
+          <li>
+            <h2>Precios</h2>
+          </li>
+          <li><select class="seleccionar_precio" name="sortOrder">
+              <option value="" disabled selected>Orden</soption>
+              <option value="desc">Mayor a menor</option>
+              <option value="asc">Menor a mayor</option>
+            </select>
+          </li>
+
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="seleccionar_precio" name="min_max">
+              <option value="" disabled selected>Precios</soption>
+              <option value="20000-200000">20.000 - 200.000</option>
+              <option value="200000-800000">200.000 - 800.000</option>
+              <option value="800000-1400000">800.000 - 1.400.000</option>
+              <option value="1400000-2000000">1.400.000 - 2.000.000</option>
+            </select>
+          </li>
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <li>
+            <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          </li>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+        </ul>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;">LISTA DE DESEOS</h3>
+        <form action="" class="form-search" role="search">
+          <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+        </form>
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row2">
+        <% products.forEach(function(item) { %>
+        <div class="card card-<%= item.TypeCard %> " id="carta-<%= item.id %>">
+          <div class="imagen_carta">
+            <img src="<%= item.imagePath %>" class="personaje" />
+          </div>
+          <div class="informacion-carta">
+            <div id="nombre">
+              <p> <%= item.Name %> </p>
+              <p> Precio: <%= item.divisa %><%= item.precio %></p>
+              <img src="<%= item.imgType %>" class="heroe" />
+            </div>
+            <p>Tipo: <%= item.Type %> </p>
+            <p>Poder: <%= item.poder %> </p>
+            <p>Vida: <%= item.vida %> </p>
+            <p>Defensa: <%= item.defensa %></p>
+            <p>Ataque: <%= item.ataque %> </p>
+
+            <% if (item.SubType === 'hielo') { %>
+            <div class="subtipo-<%= item.SubType %>">
+              <p id="cart">Buff: <%= item.poder %></p>
+              <p id="cart2">Poder: <%= item.vida %></p>
+            </div>
+            <% } %>
+            <div class="botones">
+              <div class="modificar">
+                <button onclick='eliminar("<%= item.id %>")'>Eliminar</button>
+                <button onclick='moverCarroCompras("<%= item.id %>")'>Mover al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/redirects.js"></script>
+  <script src="/lista_deseos/js/enviar.js"></script>
+  <script src="/lista_deseos/js/eliminar.js"></script>
+  <script src="/lista_deseos/js/paginacion.js"></script>
+  <script src="/lista_deseos/js/jugarOnline.js"></script>
+  <script src="/lista_deseos/js/hamburguer.js"></script>
+  <script src="js/enviar.js"></script>
+  <script src="js/eliminar.js"></script>
+  <script src="js/paginacion.js"></script>
+  <script src="js/jugarOnline.js"></script>
+  <script src="/vitrina_productos/js/filtrarCartas.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/inventario/css/torneo.css" />
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <title>Torneo</title>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container_general">
+      <article>
+        <div class="card">
+          <div class="capa-opaca"></div>
+          <img src="/inventario/imagenes/inscripcion.png" class="personaje" id="imagen">
+          <h2 class="texto"> INSRIPCIÓN</h2>
+        </div>
+        <div class="card">
+          <div class="capa-opaca"></div>
+          <img src="/inventario/imagenes/consulta.png" class="personaje" id="imagen">
+          <h2 class="texto"> CONSULTA <br> EQUIPOS</h2>
+        </div>
+      </article>
+      <article class="contenedor-intermedio">
+        <p class="texto-arriba"> TORNEO</p>
+        <img src="/inventario/imagenes/logo.png" class="imagen-medio" id="imagen">
+      </article>
+      <article>
+        <div class="card">
+          <div class="capa-opaca"></div>
+          <img src="/inventario/imagenes/participa.png" class="personaje" id="imagen">
+          <h2 class="texto"> PARTICIPA</h2>
+        </div>
+        <div class="card">
+          <div class="capa-opaca"></div>
+          <img src="/inventario/imagenes/stream.png" class="personaje" id="imagen">
+          <h2 class="texto"> LIVE-STREAM</h2>
+        </div>
+      </article>
+    </section>
+    <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
+
+  </main>
+  <script src="/js/redirects.js"></script>
+
+  <script src="/inventario/js/creacion.js"></script>
+  <script src="/inventario/js/index.js" type="module"></script>
+</body>
+
+</html>

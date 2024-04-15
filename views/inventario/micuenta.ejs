@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/inventario/css/micuenta.css">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <title>Mi cuenta</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container_general">
+      <article>
+        <form action="">
+          <div class="imagen_usuario">
+            <img src="inventario/imagenes/cedric.jpg" id="img" class="personaje">
+            <input type="file" name="foto" id="foto" accept="img">
+          </div>
+          <div class="info_usuario">
+            <label>Username</label>
+            <input type="text" placeholder="Kintanuki" class="input">
+            <p>Juan Diego Q</p>
+            <div class="cambio_contraseña">
+              <label>Cambio de contraseña</label>
+              <label>Ingresa la contraseña nueva</label>
+              <input type="password" placeholder="Ingresa la nueva contraseña" class="input">
+              <label>Ingresa nuevamente la contraseña</label>
+              <input type="password" placeholder="Vuelve a ingresar la contraseña" class="input">
+            </div>
+            <input type="submit" name="" id="" class="guardar">
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+  <script src="/js/redirects.js"></script>
+  <script src="/inventario/js/nav.js"></script>
+  <script src="/inventario/js/creacion.js"></script>
+</body>
+
+</html>
