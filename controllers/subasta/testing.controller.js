@@ -13,6 +13,9 @@ export const cartasSubasta = async (_req, res) => {
             body: JSON.stringify({IDs: idCartas}),
         })
         const cartasInventario = await conexionInventario.json();
+        cartasInventario.forEach((carta, index) => {
+            carta.ID_SUBASTA= datos[index].ID;
+        });
         res.json(cartasInventario);
 
        
