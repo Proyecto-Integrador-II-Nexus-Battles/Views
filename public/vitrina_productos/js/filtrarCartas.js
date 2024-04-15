@@ -1,17 +1,23 @@
+document.addEventListener("DOMContentLoaded", function() {   
+  const botonFiltrar = document.getElementById("botonFiltrar");
+  botonFiltrar.addEventListener("click", filtrarCartas);
+ });
 function filtrarCartas() {
+  console.log("Ejecutando función filtrarCartas()...");
   const filtros = {}; // donde se almacenaran los filtros seleccionados
-
   const sortOrder = document.querySelector('select[name="sortOrder"]').value;
-  const min_max = document.querySelector('select[name="min_max"]').value;
-  const [min, max] = min_max.split('-');
+  const min = document.querySelector('select[name="min"]').value;
+  const max = document.querySelector('select[name="max"]').value;
   const Type = document.querySelector('select[name="Type"]').value;
   const sale = document.querySelector('input[name="sale"]').checked;
 
   if (sortOrder !== "") {
     filtros.sortOrder = sortOrder;
   }
-  if (min_max !== "") {
+  if (min !== "") {
     filtros.minPrice = min;
+  }
+  if (max !== "") {
     filtros.maxPrice = max;
   }
   if (Type !== "") {
@@ -21,6 +27,8 @@ function filtrarCartas() {
     filtros.sale = sale;
   }
 
+  
+  console.log("Filtros:", filtros);
   const queryParams = new URLSearchParams(filtros).toString();
   console.log(queryParams);
   const url = '/filteredCards/?' + queryParams;

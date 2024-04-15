@@ -57,23 +57,7 @@
     <div class="filtros">
       <ul class="tipo_filtros">
         <!-- filtro precios -->
-        <li>
-          <h2>Precios</h2>
-        </li>
-
-        <li><select class="seleccionar_precio" name="sortOrder">
-            <option value="" disabled selected>Orden</soption>
-            <option value="desc">Mayor a menor</option>
-            <option value="asc">Menor a mayor</option>
-          </select></li>
-
-        <li><select class="seleccionar_precio" name="min_max">
-            <option value="" disabled selected>Precios</soption>
-            <option value="20000-200000">20.000 - 200.000</option>
-            <option value="200000-800000">200.000 - 800.000</option>
-            <option value="800000-1400000">800.000 - 1.400.000</option>
-            <option value="1400000-2000000">1.400.000 - 2.000.000</option>
-          </select></li>
+        <li> <h2>Precios</h2> </li> <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min\_price" name="min" min="0" step="1000"> </li> <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max\_price" name="max" min="0" step="1000"> </li> <li> <h2>Orden</h2> </li> <li><select class="seleccionar\_precio" name="sortOrder"> <option value="" disabled selected>Orden</option> <option value="desc">Mayor a menor</option> <option value="asc">Menor a mayor</option> </select></li>
 
         <!-- Tipo de carta -->
         <li>
@@ -91,7 +75,7 @@
         <li>
           <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
         </li>
-        <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+          <button id="botonFiltrar">Filtrar</button>
       </ul>
     </div>
     <div class="container_general">
