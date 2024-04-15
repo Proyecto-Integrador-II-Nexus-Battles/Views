@@ -34,3 +34,14 @@ export const defaultR9 = (req, res) => {
 export const default10 = (req, res) => {
   res.render("inventario/subasta");
 };
+
+export const prueba = async (req, res) => {
+  try {
+    const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
+    const datos = await response.json();
+    res.render("subasta/subasta_vitrina", { datos });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
