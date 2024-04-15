@@ -1,6 +1,6 @@
 const defaultFIle = "/inventario/imagenes/usuario.png";
 const file =document.getElementById('foto');
-const img = document.getElementById('img');
+const img = document.getElementById('user_img');
 file.addEventListener('change', e => {
     if(e.target.files[0])
     {
@@ -17,7 +17,4 @@ file.addEventListener('change', e => {
 });
 file?.addEventListener('change', listenerInput);
 
-function navRouter(rute) {
-    localStorage.setItem('showmodal', 'true')
-}
 
