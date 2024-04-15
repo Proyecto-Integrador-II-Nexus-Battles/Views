@@ -24,7 +24,7 @@ main {
   margin-left: 20px;
   background: rgba(120, 157, 202, 0.5);
   width: 270px;
-  margin: 6% 0 0 5%;
+  margin: 1% 0 0 5%;
   border-radius: 10px;
   text-align: center;
 }
@@ -46,17 +46,20 @@ main {
   font-weight: bold;
 }
 .tipo_filtros li input, select{
-  height: 25px;
-  width: 65%;
+  height: 30px;
+  width: 70%;
   margin-bottom: 1%;
+  border: none;
+  text-align: center;
+  font-size: 18px;
 }
 
 /* Filtro boton enviar */
 #filtro_input {
   width: 160px;
-  height: 20px;
+  height: 30px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   padding-bottom: 20px;
   cursor: pointer;
   border-radius: 7px;
