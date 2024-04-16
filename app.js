@@ -5,6 +5,7 @@ import usuarioRoutes from "./routes/manejo_usuarios/routes.js";
 import vitrinaProductosRoutes from "./routes/vitrina_productos/testing.routes.js";
 import miBancoRoutes from "./routes/mi_banco/testing.routes.js";
 import listaDeseosRoutes from "./routes/lista_deseos/routes.js";
+import subastaRoutes from "./routes/subasta/routes.js";
 import { APP_PORT } from "./config.js";
 import { fileURLToPath } from "url";
 import * as path from "path";
@@ -29,6 +30,7 @@ app.use(miBancoRoutes);
 app.use(usuarioRoutes);
 app.use(vitrinaProductosRoutes);
 app.use(listaDeseosRoutes);
+app.use(subastaRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
@@ -46,4 +48,4 @@ app.set("views", path.join(__dirname, "views"));
 
 // http.createServer(app).listen(80);
 https.createServer(options, app).listen(APP_PORT);
-console.log(`Server is runing on https://localhost:${APP_PORT}`);
+console.log(`Server is runing on ${APP_PORT}`);
