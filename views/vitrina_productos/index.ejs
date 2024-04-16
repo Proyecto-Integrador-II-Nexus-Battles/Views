@@ -57,13 +57,21 @@
     <div class="filtros">
       <ul class="tipo_filtros">
         <!-- filtro precios -->
-        <li> <h2>Precios</h2> </li> <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min\_price" name="min" min="0" step="1000"> </li> <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max\_price" name="max" min="0" step="1000"> </li> <li> <h2>Orden</h2> </li> <li><select class="seleccionar\_precio" name="sortOrder"> <option value="" disabled selected>Orden</option> <option value="desc">Mayor a menor</option> <option value="asc">Menor a mayor</option> </select></li>
+        <li> <h2>Precios</h2> </li> 
+        <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min_price" min="0" step="1000"> </li> 
+        <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max_price" min="0" step="1000"> </li> 
+        <li> <h2>Orden</h2> </li>
+        <li><select class="seleccionar\_precio" id="sortOrder"> 
+          <option value="" disabled selected>Orden</option> 
+          <option value="desc">Mayor a menor</option> 
+          <option value="asc">Menor a mayor</option> 
+        </select></li>
 
         <!-- Tipo de carta -->
         <li>
           <h2>Tipo de carta</h2>
         </li>
-        <li><select class="tipo_carta" name="Type">
+        <li><select class="tipo_carta" id="Type">
             <option value="" disabled selected>Selecciona un tipo</option>
             <option value="Weapon">Armas</option>
             <option value="Armor">Armaduras</option>
@@ -73,9 +81,9 @@
           </select></li>
         <!-- filtro promocion -->
         <li>
-          <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          <input type="checkbox" class="promociones" id="sale" value="promociones"> <b>Promoción</b>
         </li>
-          <button id="botonFiltrar">Filtrar</button>
+          <button id="botonFiltrar" onclick="filtrarCartas()">Filtrar</button>
       </ul>
     </div>
     <div class="container_general">
