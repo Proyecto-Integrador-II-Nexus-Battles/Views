@@ -34,7 +34,8 @@
             <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
           </div>
           <div class="informacion_carta">
-            <div id="nombre">
+            <div class="info">
+              <div id="nombre">
               <p><%= carta.Name %></p>
               <img src="<%= imagen %>" class="<%= tipoIcono %>" />
             </div>
@@ -175,6 +176,7 @@
                   }
                   %>
             <% }%>
+            </div>
             <article class="icons">
               <span onclick="cambiarColor(this, '<%= carta._id %>')" class="like">&#9829;</span>
               <span class="carrito" onclick="addCarro('<%= carta._id %>')">&#128722;</span>

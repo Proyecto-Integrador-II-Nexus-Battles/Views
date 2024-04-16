@@ -59,10 +59,15 @@
   display: block;
   border-radius: 13px 13px 0 0;
 }
-.informacion_carta p {
+.info p{
   font-size: 12px;
   font-weight: bold;
   padding-left: 10px;
+}
+.informacion_carta{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 #nombre {
   display: flex;
