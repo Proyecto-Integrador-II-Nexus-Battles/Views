@@ -56,7 +56,7 @@ function deployEjsScript() {
       </div>
       <div class="totalb">
         <p>Total bruto:</p>
-        <p class="numtotalb">${formatTotalBruto(data.totalBruto)}</p>
+        <p class="numtotalb">${formatTotalBruto(data.totalBruto)}&nbsp;COP</p>
       </div>
       <div class="iva">
         <p>Impuesto(IVA):</p>
@@ -65,7 +65,7 @@ function deployEjsScript() {
       <hr class="lineatres">
       <div class="total">
         <h3>Total</h3>
-        <p class="numtotal">${formatNumber(data.totalNeto)}</p>
+        <p class="numtotal">${formatNumber(data.totalNeto)}&nbsp;COP</p>
       </div>
     </div>
     <div class="pedidodos">
