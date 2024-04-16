@@ -9,19 +9,123 @@
 <body>
 <h1>Acá va el navbar</h1>
 <main class="container_general">
+
+  <% // Mapeo de subtipos a imágenes y tipo de icono
+  const subtipoImagen = {
+    "Armas": "/inventario/imagenes/espadas.png",
+    "Tanque": "/inventario/imagenes/blindaje.png",
+    "Fuego": "/inventario/imagenes/Fuego.png",
+    "Hielo": "/inventario/imagenes/hielo.png",
+    "Veneno": "/inventario/imagenes/veneno.png",
+    "Machete": "/inventario/imagenes/machete.png"
+  };
+
+  const subtipoIcono = {
+    "Hero": "foto",
+    "Item": "foto",
+    "Armor": "foto",
+    "Talent": "foto",
+    "Weapon": "foto"
+  };
+
+  for (let i = 0; i < datos.length; i++) {
+    const carta = datos[i];
+    const imagen = subtipoImagen[carta.Subtype];
+    const tipoIcono = subtipoIcono[carta.TypeCard];
+  %>
+
 <!-- Informacion y foto de la carta -->
   <div class="info_carta">
-    <img src="../../public/subasta/img/picaro_ejemplo_img.jpeg" alt="">
-    <p class="nombre_carta"><b>Pícaro Veneno: Nébula Tóxica</b></p>
+    <img src="<%= carta.imagePath %>" alt="">
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
    <ul class="detalles_card">
-    <li class="tipo"><b>Tipo carta:</b>&nbsp Héroe</li>
-    <li class="description"><b>Descripción:</b>&nbsp Entrenado en alquimia
-      puede causar gran daño al adversario
-      afectando sus habilidades y
-      reduciendo la posibilidad de que
-      puedan acertar un golpe.</li>
+    <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+    <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
    </ul>
+   <!-- <% } else if (carta.TypeCard === "Item") { %>
+    <% switch (carta.Subtype) {
+      case "Tanque": %>
+      <p class="nombre_carta"><b><%= carta.Name %></b></p>
+      <ul class="detalles_card">
+       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+      </ul>
+      <% break;
+      case "Veneno": %>
+      <p class="nombre_carta"><b><%= carta.Name %></b></p>
+      <ul class="detalles_card">
+       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+      </ul>
+      <% break;
+      case "Hielo": %>
+      <p class="nombre_carta"><b><%= carta.Name %></b></p>
+      <ul class="detalles_card">
+       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+      </ul>
+      <% break;
+      case "Fuego": %>
+      <p class="nombre_carta"><b><%= carta.Name %></b></p>
+      <ul class="detalles_card">
+       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+      </ul>
+      <% break;
+      case "Armas": %>
+      <p class="nombre_carta"><b><%= carta.Name %></b></p>
+      <ul class="detalles_card">
+       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+      </ul>
+      <% break;
+    } %>
+
+    <-- type armor -->
+    <!-- <% } else if (carta.TypeCard === "Armor") { %>
+      <% switch (carta.Subtype) {
+    case "Tanque": %>
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
+    <ul class="detalles_card">
+     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+    </ul>
+    <% break;
+    case "Veneno": %>
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
+    <ul class="detalles_card">
+     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+    </ul>
+    <% break;
+    case "Hielo": %>
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
+    <ul class="detalles_card">
+     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+    </ul>
+    <% break;
+    case "Fuego": %>
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
+    <ul class="detalles_card">
+     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+    </ul>
+    <% break;
+    case "Armas": %>
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
+    <ul class="detalles_card">
+     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
+    </ul>
+    <% break;
+  } %> -->
+
+  <!-- acá paro porque tengo pregunta -->
+
   </div>
+  } %>
+  
    <!-- Informacion de la subasta -->
 <div class="subasta_info">
 <h2 class="subasta_info_title">Información de la subasta</h2>
@@ -82,6 +186,8 @@
   <button class="compra_rapida" onclick="abrirCompraRapida()" ><b>Compra rápida</b></button>
 </div>
 </div>
+<!-- <% } %>
+<% } %> -->
 <!-- Emergente Puja-->
 <div class="puja_container" >
   <label for="cantidad_creditos" class="c_creditos">
