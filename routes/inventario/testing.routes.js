@@ -16,7 +16,7 @@ import {
 const router = Router();
 router.get("/inventario", defaultR);
 router.get("/creacionCarta", defaultR2);
-router.get("/modificacionCarta", defaultR3);
+router.get("/modificacionCarta/:id", defaultR3);
 router.get("/descripcion", defaultR4);
 router.get("/miCuenta", defaultR5);
 router.get("/modificacionCartaDescripcion", defaultR6);

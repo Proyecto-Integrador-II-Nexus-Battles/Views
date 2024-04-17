@@ -173,11 +173,15 @@
                       break;
                   }
                   %>
-          <% }%>
-          <article class="botones">
-            <div class="modificar">
-              <button>Suspender</button>
-              <button onclick="modificacionCarta()">Modificar</button>
+                <% }%>
+                <article class="botones">
+                    <div class="modificar">
+                        <button>Suspender</button>
+                        <button onclick="modificarCarta('<%= carta._id %>')">Modificar</button>
+                    </div>
+                </article>
+              </div>
+
             </div>
           </article>
         </div>
@@ -190,4 +194,7 @@
 
 
   <script src="/inventario/js/tipo_crea.js"></script>
-</body>
+  <script src="/inventario/js/modificarCarta.js"></script>
+  // <script src="/vitrina_productos/js/vistaDetallada.js"></script>
+  </body>
+  
