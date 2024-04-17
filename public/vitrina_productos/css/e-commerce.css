@@ -387,9 +387,5 @@ main {
   @media screen and (min-width: 280px) and (max-width: 300px) {
   }
 
-  @media (width<=339px) {
-  }
-  @media screen and (min-width: 431px) and (max-width: 539px) {
-  }
 }
 }
