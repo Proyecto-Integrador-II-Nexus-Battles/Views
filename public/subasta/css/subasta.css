@@ -409,3 +409,166 @@ margin-top: 5%;
     text-align: center;
   }
 }
+
+/* Modal emergente  */
+.modal_01, .modal_02{
+  max-width: 50ch;
+  background-color: #A3B7DC;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto;
+
+}
+.modal_01::backdrop{
+  background-color: rgba(163, 183, 220, 0.6);
+}
+.modal_02::backdrop{
+  background-color: rgba(163, 183, 220, 0.6);
+}
+.modal_01 hr, .modal_02 hr {
+  border-color: #7f7c7c;
+  margin: 10px 0 10px 0px;
+}
+
+/* button Modal */
+.Detalles_Modal_01,.Detalles_Modal_02, .Cerrar_Modal_01, .Cerrar_Modal_02{
+  width: 30%;
+  background-color: #ffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+
+/* Detalles_Buzon_Modal */
+.modal_Detalles_01{
+  width: 70%;
+  margin: auto;
+  background-color: rgba(163, 183, 220, 0.6);
+  border: none;
+  border-radius: 20px;
+}
+.container_Modal_Detalles{
+  width: 100%;
+  margin: auto;
+  display: grid;
+  border-radius: 20px;
+  grid-template-columns: 1.3fr ;
+  gap: 20px;
+
+  border: none;
+}
+.container_Buzon{
+  margin-left: 10px;
+  margin-top: 10px;
+
+}
+/* Detalles_Buzon_Modal */
+.container_Modal_Detalles hr{
+  width: 90%;
+  margin: auto;
+}
+
+.info_Buzon_Modal{
+  background-color: white;
+  margin: 20px;
+  grid-column: 1;
+  border-radius: 15px;
+  }
+  .info_Buzon_Modal .valor_maximo_subasta_Modal{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .info_Buzon_Modal .fechas_subasta_Modal{
+    list-style: none;
+    margin-left: 10px;
+    font-size: 17px;
+    color: #AEA2A2;
+  }
+  .info_Buzon_Modal .Creditos_Total{
+    margin-left: 80%;
+    margin-bottom: 10px;
+  }
+  .info_Buzon_Modal .Compra_carta{
+    margin-left: 67%;
+    margin-bottom: 10px;
+  }
+
+  .buttons .Reclamar_Venta{
+    font-size: 15px;
+    width: 50%;
+    height: 38px;
+    background-color: #A3B7DC;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 35%;
+  }
+  .buttons .Reclamar_Compra{
+    font-size: 15px;
+    width: 30%;
+    height: 38px;
+    background-color: #A3B7DC;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 60%;
+  }
+  .buttons_Detalle_Modal .Cerrar_Modal_Detalle{
+    width: 15%;
+    background-color: #ffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 15px;
+    font-weight: bold;
+    margin-left: 80%;
+    margin-bottom: 15px;
+  }
+@media screen and (max-width:800px){
+  .modal_01, .modal_02{
+    margin: auto;
+  }
+}
+@media screen and (min-width:801px) {
+  .modal_01, .modal_02{
+    margin: auto;
+  }
+}
+@media  screen and (max-width:1300px) {
+    .info_Buzon_Modal .Creditos_Total{
+      margin-left: 70%;
+    }
+    .info_Buzon_Modal .Compra_carta{
+      margin-left: 55%;
+    }
+    .buttons .Reclamar_Venta{
+      margin-left: 0px;
+    }
+    .buttons .Reclamar_Compra{
+      margin-left: 35%;
+    }
+}
+@media script, (max-width:950px){
+  .container_Buzon h1{
+    font-size: 1.5em;
+  }
+  .info_Buzon_Modal .Creditos_Total{
+    margin-left: 10px;
+  }
+  .info_Buzon_Modal .Compra_carta{
+    margin-left: 10px;
+  }
+  .buttons .Reclamar_Venta{
+    margin-left: 0%;
+    width: 30%;
+  }
+  .buttons .Reclamar_Compra{
+    margin-left: 0%;
+  }
+}

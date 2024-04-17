@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subasta</title>
+  <link rel="stylesheet" href="../../public/subasta/css/subasta.css">
+</head>
+<body> 
+<br>
+<!-- Ventana Modal_Compra carta -->
+<dialog class="modal_01">
+  <h2>¡Haz ganado la subasta!</h2>
+  <hr>
+  <p><b>Carta:</b> <span>Nombre de la carta</span></p>
+  <p><b>Créditos pagados:</b> <span>120</span></p>
+  <p><b>Fecha de inicio de Subasta:</b> <span>7/14/2024</span></p>
+  <p><b>Fecha Fin de Subasta:</b> <span>8/14/2024</span></p>
+  <div class="buttons">
+    <button class="Detalles_Modal_01">Detalles</button>
+    <button class="Cerrar_Modal_01">Cerrar</button>
+  </div>
+</dialog>
+<!-- Ventana Modal_Venta carta -->
+<dialog class="modal_02">
+  <h2>Tu carta ha sido vendida</h2>
+  <hr>
+  <p><b>Carta:</b> <span>Nombre de la carta</span></p>
+  <p><b>Créditos pagados:</b> <span>120</span></p>
+  <p><b>Fecha de inicio de Subasta:</b> <span>7/14/2024</span></p>
+  <p><b>Fecha Fin de Subasta:</b> <span>8/14/2024</span></p>
+  <div class="buttons">
+    <button class="Detalles_Modal_02">Detalles</button>
+    <button class="Cerrar_Modal_02">Cerrar</button>
+  </div>
+</dialog>
+<!-- Ventana Modal_Detalles_Buzon -->
+
+<dialog open class="modal_Detalles_01">
+    <!-- Informacion y foto de la carta -->
+    <div class="container_Modal_Detalles">
+      <div class="container_Buzon">
+        <h1 class="nombre_carta"><b>Bandeja de compra y venta</b></h1>
+      </div>
+      <hr>
+      <div class="info_Buzon_Modal">
+        <div class="valor_maximo_subasta_Modal">
+          <h2>Carta Vendida</h2>
+          <p><b>Carta:</b></p>
+          <p class="credits_player"><b>Créditos:</b> 80</p>
+        </div>
+        <div class="fechas_subasta_Modal">
+          <p> Fecha de Inicio: 7/04/2024</p>
+          <p> Fecha Fin: 8/04/2024</p>
+        </div>
+        <div class="Creditos_Total">
+          <p><b>Creditos Totales: </b>120</p>
+          <div class="buttons">
+            <button class="Reclamar_Venta">Reclamar</button>
+          </div>
+        </div>
+      </div>
+      <div class="info_Buzon_Modal">
+        <div class="valor_maximo_subasta_Modal">
+          <h2>Carta Comprada</h2>
+          <p><b>Carta:</b></p>
+          <p class="credits_player"><b>Créditos:</b> 80</p>
+        </div>
+        <div class="fechas_subasta_Modal">
+          <p> Fecha de Inicio: 7/04/2024</p>
+          <p> Fecha Fin: 8/04/2024</p>
+        </div>
+        <div class="Compra_carta">
+          <p><b>Carta:</b> 1x Pícaro Veneno: Nébula Toxica</p>
+          <div class="buttons">
+            <button class="Reclamar_Compra">Reclamar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons_Detalle_Modal">
+        <a href="https://thenexusbattlesii.online/subasta/"><button class="Cerrar_Modal_Detalle" onclick="subasta" >Cerrar</a></button>
+    </div>
+</dialog>
+<button id="btn_AbrirModal_01">Abrir_Modal</button>
+<button id="btn_AbrirModal_02">Abrir_Modal</button>
+<script src="../../public/subasta/js/emergentes.js"></script>
+</body>
+</html>
