@@ -13,7 +13,7 @@ export const userLogging = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    .then((response) => {});
+    .then((response) => { });
 };
 
 export const renderRegister = (req, res) => {
@@ -122,6 +122,7 @@ export const fetchLogin = async (req, res) => {
 };
 
 export const fetchRegister = async (req, res) => {
+  console.log(req.body.pregunta_1)
   fetch(`${HOST}:${PORT}/usuario/register`, {
     method: "POST",
     headers: {

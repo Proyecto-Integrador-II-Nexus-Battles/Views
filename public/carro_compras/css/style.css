@@ -68,6 +68,7 @@ header .logo_img {
 }
 
 .titulo {
+  margin-top: -1rem;
   color: white;
 }
 
@@ -195,11 +196,11 @@ h1 {
   border-radius: 10px;
   background-color: #ebc793;
   width: 9rem;
-  height: 1.8rem;
+  height: 2.4rem;
   text-align: center;
-  margin-top: 5.6rem;
+  margin-top: 3.7rem;
   margin-left: 4.5rem;
-  padding-top: 10px;
+  padding-top: 5px;
   border: 1px solid black;
 }
 
@@ -208,10 +209,11 @@ h1 {
 }
 
 .añadir {
-  margin-top: 0.3rem;
+  margin-top: -0.7rem;
   padding: 14px;
-  width: 15rem;
-  margin-left: -4rem;
+  width: 20rem;
+  margin-left: -5.5rem;
+  cursor: pointer;
 }
 
 .añadir:hover {
@@ -221,7 +223,7 @@ h1 {
 .paginas {
   width: 400px;
   height: 40px;
-  margin-top: 43rem;
+  margin-top: 41.7rem;
   margin-left: -14rem;
 }
 
@@ -231,6 +233,7 @@ h1 {
   height: 2.3rem;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .flecha {
@@ -441,7 +444,7 @@ h1 {
   grid-column: 2 / 3;
   border: 1px solid black;
   margin-left: 22rem;
-  margin-top: -15rem;
+  margin-top: -17.5rem;
 }
 
 .cajauno {
@@ -454,7 +457,7 @@ h1 {
   width: 300px;
   height: 32px;
   align-items: center;
-  margin-top: 2.1rem;
+  margin-top: 1.6rem;
   background-color: #d8e9f9;
 }
 
@@ -473,14 +476,15 @@ h1 {
 
 .flechados {
   width: 30px;
-  height: 25px;
+  height: 30px;
   margin: auto;
   font-size: 1.3rem;
+  margin-top: -0.2rem;
 }
 
 .tasacambio {
   margin-left: 3rem;
-  margin-top: 1.3rem;
+  margin-top: 0.7rem;
 }
 
 .tituloconv {

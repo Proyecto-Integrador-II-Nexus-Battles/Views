@@ -130,6 +130,12 @@ export const resumenFlotante = (req, res) => {
       res.json(response.data);
     })
     .catch((error) => {
+      if (error.response && error.response.status === 401) {
+        res.status(401).json({
+          message:
+            "Debes iniciar sesión para poder acceder al carrito de compras.",
+        });
+      }
       console.error("Error al realizar la solicitud:", error);
     });
 };
