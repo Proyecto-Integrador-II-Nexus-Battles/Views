@@ -42,120 +42,39 @@
     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
    </ul>
-   <!-- <% } else if (carta.TypeCard === "Item") { %>
-    <% switch (carta.Subtype) {
-      case "Tanque": %>
-      <p class="nombre_carta"><b><%= carta.Name %></b></p>
-      <ul class="detalles_card">
-       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-      </ul>
-      <% break;
-      case "Veneno": %>
-      <p class="nombre_carta"><b><%= carta.Name %></b></p>
-      <ul class="detalles_card">
-       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-      </ul>
-      <% break;
-      case "Hielo": %>
-      <p class="nombre_carta"><b><%= carta.Name %></b></p>
-      <ul class="detalles_card">
-       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-      </ul>
-      <% break;
-      case "Fuego": %>
-      <p class="nombre_carta"><b><%= carta.Name %></b></p>
-      <ul class="detalles_card">
-       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-      </ul>
-      <% break;
-      case "Armas": %>
-      <p class="nombre_carta"><b><%= carta.Name %></b></p>
-      <ul class="detalles_card">
-       <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-       <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-      </ul>
-      <% break;
-    } %>
-
-    <-- type armor -->
-    <!-- <% } else if (carta.TypeCard === "Armor") { %>
-      <% switch (carta.Subtype) {
-    case "Tanque": %>
-    <p class="nombre_carta"><b><%= carta.Name %></b></p>
-    <ul class="detalles_card">
-     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-    </ul>
-    <% break;
-    case "Veneno": %>
-    <p class="nombre_carta"><b><%= carta.Name %></b></p>
-    <ul class="detalles_card">
-     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-    </ul>
-    <% break;
-    case "Hielo": %>
-    <p class="nombre_carta"><b><%= carta.Name %></b></p>
-    <ul class="detalles_card">
-     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-    </ul>
-    <% break;
-    case "Fuego": %>
-    <p class="nombre_carta"><b><%= carta.Name %></b></p>
-    <ul class="detalles_card">
-     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-    </ul>
-    <% break;
-    case "Armas": %>
-    <p class="nombre_carta"><b><%= carta.Name %></b></p>
-    <ul class="detalles_card">
-     <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
-     <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
-    </ul>
-    <% break;
-  } %> -->
-
-  <!-- acá paro porque tengo pregunta -->
-
   </div>
-  } %>
-  
    <!-- Informacion de la subasta -->
 <div class="subasta_info">
 <h2 class="subasta_info_title">Información de la subasta</h2>
 <div class="valor_base_subasta">
   <p><b>Valor base</b></p>
-  <p><b>Créditos:</b>60</p>
+  <p><b>Créditos:</b><%= carta.creditos_min %>></p>
   <p><b>Cartas:</b></p>
-  <li>Pícaro Machete</li>
+  <li><%= aca va el render de cartas minimas%></li>
 </div>
 
 <div class="valor_maximo_subasta">
   <p><b>Valor Máximo / Compra Inmediata</b></p>
-  <p><b>Créditos:</b> 200</p>
+  <p><b>Créditos:</b> <%= carta.creditos_max %></p>
   <p><b>Cartas:</b></p>
   <ul class="cartas_v_max">
+
     <li>Pícaro Machete</li>
     <li>Golpe de Defensa</li>
     <li>Guerrero Tanque</li>
+
   </ul>
 </div>
 <div class="fechas_subasta">
-  <p><b>Fecha de Inicio:</b> 7/04/2024</p>
+  <p><b>Fecha de Inicio:</b> 7/04/2024 </p>
   <p><b>Fecha Fin:</b> 8/04/2024</p>
   <p><b>Duración de la subasta:</b> 24 horas</p>
 </div>
 <div class="tiempo_restante">
-  <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
+  <p><b>Tiempo Restante: &nbsp <%=  %>00:24:00</b></p>
 </div>
 </div>
-
+} %>
 <!-- Ofertas -->
 <div class="ofertas">
 <h2>Ofertas</h2>
