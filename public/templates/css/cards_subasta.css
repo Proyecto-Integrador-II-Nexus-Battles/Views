@@ -106,15 +106,27 @@
   height: 20px;
   margin-top: 5px;
 }
-
-#ver_mas{
+.like {
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: -14px;
+}
+.like:hover {
+  color: red;
+}
+.carrito {
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: -5px;
+}
+#precio {
   background-color: var(--color-price);
   height: 25px;
   padding: 5px;
   cursor: pointer;
   border-radius: 5px;
-  margin: 20px 2px 5px 90px;
-  border: none;
+  font-size: 10px;
+  font-weight: bold;
 }
 .listPage {
   display: flex;
@@ -139,7 +151,9 @@
   background-color: #304c8b;
   color: white;
 }
-
+.active {
+  color: red;
+}
 @media screen and (max-width: 1680px) {
   .container_general {
     width: 60%;
@@ -171,7 +185,12 @@
   .icons{
     margin-top: 5px;
   }
-
+  .like {
+    font-size: 25px;
+  }
+  .carrito {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 1360px) {
   .container_general {
@@ -212,10 +231,13 @@
     font-size: 15px;
     margin-top: -1px;
   }
-  #ver_mas {
+  #precio {
     font-size: 9px;
   }
-
+  #cart,
+  #cart2 {
+    width: 130px;
+  }
 }
 @media screen and (max-width:1152px)
 {
