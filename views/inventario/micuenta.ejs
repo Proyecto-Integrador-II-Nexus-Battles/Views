@@ -24,14 +24,18 @@
     <section class="container_general">
       <h1>Mi cuenta</h1>
       <form action="">
-        <div class="imagen_usuario">
-          <img src="inventario/imagenes/usuario.png" id="user_img" class="user_img">
+        <div class="container_img">
+          <div class="imagen_usuario">
+            <img src="<%= avatarText %>" id="user_img" class="user_img">
+          </div>
           <h2>Cambiar Avatar</h2>
-          <input type="file" name="foto" id="foto" accept="img">
+          <input type="file" name="foto" id="foto" accept=".jpg, .png" onchange="ValidarArchivo()">
         </div>
         <div class="user_container">
           <h2>Nombre y Apellidos</h2>
-          <h3>Lorem Ipsum</h3>
+          <h3>
+            <%= userinfo.nombre %><span>&nbsp<%= userinfo.apellido %></span>
+          </h3>
 
           <div class="u_container">
             <h2>Nombre de Usuario</h2>
@@ -41,23 +45,30 @@
               <!-- Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
             </svg>
           </div>
-          <h3>Username</h3>
-          <input type="text" class="input" placeholder="Ingresa el nuevo nombre de usuario" id="user_input">
+          <h3>
+            <%= userinfo.username %>
+          </h3>
+          <input type="text" class="input" placeholder="Ingresa el nuevo nombre de usuario" id="user_input"
+            oninput="ValidarNombreUsuario()">
 
 
           <div class="cambio_contraseña">
             <h2>Cambio de contraseña</h2>
-            <input type="password" placeholder="Ingresa la nueva contraseña" class="input">
-            <input type="password" placeholder="Vuelve a ingresar la contraseña" class="input">
+            <input type="password" placeholder="Ingresa la nueva contraseña" class="input" id="new_password"
+              oninput="ValidarContrasena(); ConfirmPassword()">
+            <input type="password" placeholder="Vuelve a ingresar la contraseña" class="input" id="confirm_password"
+              oninput="ConfirmPassword()">
           </div>
           <input type="submit" name="" id="submit_btn" class="submit_btn">
         </div>
       </form>
     </section>
   </main>
+  <script src="/js/redirects.js"></script>
   <script src="/inventario/js/nav.js"></script>
   <script src="/inventario/js/creacion.js"></script>
   <script src="/inventario/js/username_change.js"></script>
+  <script src="/inventario/js/validaciones_miCuenta.js"></script>
 </body>
 
 </html>

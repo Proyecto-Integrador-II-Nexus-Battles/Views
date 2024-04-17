@@ -6,5 +6,6 @@ function display_input(){
         input.style.display = 'block';
     } else {
         input.style.display = 'none';
+        input.value="";
     }
 }

@@ -15,6 +15,6 @@ file.addEventListener('change', e => {
         img.src = defaultFIle;
     }
 });
-file?.addEventListener('change', listenerInput);
+
 
 

@@ -13,9 +13,30 @@ export const defaultR2 = (req, res) => {
 export const defaultR4 = (req, res) => {
   res.render("inventario/descripcion");
 };
-export const defaultR5 = (req, res) => {
-  res.render("inventario/miCuenta");
+
+export const rendermiCuenta = async (req, res) => {
+  try {
+    console.log("1")
+    console.log(req.query);
+    const data = await fetch('https://localhost:3000/usuario/cuenta',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', 
+        'Authorization': `${req.query.token}`,
+      },
+      body: JSON.stringify({ "IdUsuario": 21 })
+    });
+    const userinfo = await data.json();
+  
+    const avatarText = Buffer.from(userinfo.avatar.data).toString('utf-8');
+
+    res.render("inventario/miCuenta", { userinfo, avatarText });
+  } catch (error) {
+    console.error("Error al obtener datos del usuario:", error);
+    res.status(500).send("Error al obtener datos del usuario");
+  }
 };
+
 export const defaultR3 = (req, res) => {
   res.render("inventario/modificacioncarta");
 };

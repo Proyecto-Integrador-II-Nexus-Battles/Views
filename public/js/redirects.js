@@ -24,3 +24,12 @@ async function redirectMiBanco() {
   }
   window.location.href = url + "?token=" + token;
 }
+
+async function redirectMiCuenta() {
+  const url = "/miCuenta";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
