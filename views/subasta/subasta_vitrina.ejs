@@ -42,10 +42,14 @@
         </li>
 
         <li><label for="creditos_min">Valor mínimo</label></li>
-        <li><input type="number" name="creditos_min" id="creditos_min" placeholder="Escriba el valor"></li>
+        <li><input type="number" name="creditos_min" id="creditos_min" placeholder="Escriba el valor" min="0">
+          <div class="error_message"></div>
+        </li>
 
         <li><label for="creditos_max">Valor máximo</label></li>
-        <li><input type="number" name="creditos_max" id="creditos_max" placeholder="Escriba el valor"></li>
+        <li><input type="number" name="creditos_max" id="creditos_max" placeholder="Escriba el valor" min="0">
+          <div class="error_message"></div>
+        </li>
 
         <li>
           <label for="Type">Tipo de carta</label>
@@ -61,7 +65,7 @@
             <option value="Talent">Talentos</option>
           </select>
         </li>
-        <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+        <button id="filtro_input" onclick="filtrarCartasSubasta()">Filtrar</button>
       </ul>
     </div>
     <div class="container_general">
@@ -84,12 +88,8 @@
   <script src="/carro_compras/js/resumen_flotante.js"></script>
   <script src="/resumen_flotante/js/deployResumen.js"></script>
   <script src="/js/redirects.js"></script>
-  <script src="/vitrina_productos/js/navbar.js"></script>
+  <script src="/subasta/js/filtrarCartasSubasta.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
-  <script src="/vitrina_productos/js/vistaDetallada.js"></script>
-  <script src="/vitrina_productos/js/paginacion.js"></script>
-  <script src="/vitrina_productos/js/addCarro.js"></script>
-  <script src="/vitrina_productos/js/addListaDeseos.js"></script>
   <script src="/inventario/js/miCuenta.js"></script>
 </body>
 
