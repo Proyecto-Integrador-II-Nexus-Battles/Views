@@ -14,25 +14,25 @@ export const defaultR4 = (req, res) => {
   res.render("inventario/descripcion");
 };
 export const defaultR5 = (req, res) => {
-  res.render("inventario/miCuenta");
+  res.render("inventario/micuenta");
 };
 export const defaultR3 = async (req, res) => {
   try {
     console.log(req.params.id);
     const idCard = {
-      IDs: req.params.id
-    }
+      IDs: req.params.id,
+    };
     const response = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(idCard)
-    })
+      body: JSON.stringify(idCard),
+    });
     const datos = await response.json();
     res.render("inventario/modificacioncarta", { datos });
   } catch (err) {
-    console.log('Error: ' + err.message);
+    console.log("Error: " + err.message);
   }
 };
 export const defaultR6 = (req, res) => {
@@ -56,7 +56,7 @@ export const prueba = async (req, res) => {
     const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
     const datos = await response.json();
     console.log(datos);
-    res.render("subasta/subasta_vitrina", { datos }); 
+    res.render("subasta/subasta_vitrina", { datos });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

@@ -19,15 +19,17 @@ function deployEjsScript() {
   const resumen = document.getElementById("mostrar-resumen-flotante");
   resumen.addEventListener("click", async () => {
     const data = await getData();
-    console.log("This is the data");
-    console.log(data);
     const resumenFlotante = document.getElementById("resumen-flotante");
 
     if (resumenFlotante.innerHTML !== "") {
       resumenFlotante.innerHTML = "";
     }
 
-    resumenFlotante.innerHTML = `
+    if (data.message) {
+      resumenFlotante.innerHTML = `<h2>\n\n\n${data.message}</h2>`;
+      return;
+    } else {
+      resumenFlotante.innerHTML = `
     <h2>Resumen de compra</h2>
     <hr class="lineados">
     <div class="resumen-flotante-contenido">
@@ -78,38 +80,41 @@ function deployEjsScript() {
       <p>^</p>
     </div>
   `;
-    const botonGuardar = document.querySelector(".guardar");
-    botonGuardar.addEventListener("click", function () {
-      // Toggle de la clase para mostrar/ocultar el resumen flotante
-      resumenFlotante.classList.toggle("resumen-flotante-oculto");
-    });
-    const botonPago = document.getElementById("checkout");
+      const botonGuardar = document.querySelector(".guardar");
+      botonGuardar.addEventListener("click", function () {
+        // Toggle de la clase para mostrar/ocultar el resumen flotante
+        resumenFlotante.classList.toggle("resumen-flotante-oculto");
+      });
+      const botonPago = document.getElementById("checkout");
 
-    botonPago.addEventListener("click", async () => {
-      try {
-        console.log("Botón de pago presionado");
-        const options = {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        };
-        axios
-          .post("/portal/createOrder", {}, options)
-          .then((response) => {
-            if (response.status === 200) {
-              console.log("Orden creada correctamente");
-              const paypalUrl = response.data.paypalUrl;
-              window.location.href = paypalUrl;
-              res.redirect(paypalUrl);
-            } else {
-              console.error("Error al crear la orden");
-            }
-          })
-          .catch((error) => {
-            console.error("Error al realizar la solicitud:", error);
-          });
-      } catch (error) {
-        console.error("Error al realizar la solicitud:", error);
-      }
-    });
+      botonPago.addEventListener("click", async () => {
+        try {
+          console.log("Botón de pago presionado");
+          const options = {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          };
+          axios
+            .post("/portal/createOrder", {}, options)
+            .then((response) => {
+              if (response.status === 200) {
+                console.log("Orden creada correctamente");
+                const paypalUrl = response.data.paypalUrl;
+                window.location.href = paypalUrl;
+                res.redirect(paypalUrl);
+              } else {
+                console.error("Error al crear la orden");
+              }
+            })
+            .catch((error) => {
+              console.error("Error al realizar la solicitud:", error);
+            });
+        } catch (error) {
+          console.error("Error al realizar la solicitud:", error);
+        }
+      });
+    }
   });
 }
 
@@ -124,8 +129,13 @@ async function getData() {
     const response = await axios.get("/carro/resumenFlotante", options);
     return response.data;
   } catch (error) {
+    if (error.response && error.response.status === 401) {
+      return {
+        message:
+          "Debes iniciar sesión para poder acceder al carrito de compras.",
+      };
+    }
     console.error("Error:", error);
-    throw error;
   }
 }
 
