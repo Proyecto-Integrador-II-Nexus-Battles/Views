@@ -51,48 +51,42 @@ h4 {font-size: 1em;} */
 }
 
 header {
-  height: 87px;
+  height: 70px;
   box-shadow: -2px 2px 45px -20px rgb(0, 0, 0 / 30%);
 }
-
 header .logo img {
   display: flex;
-  height: 60px;
+  height: 40px;
   align-items: center;
 }
-
 header .content {
   display: flex;
   justify-content: space-between;
   line-height: 80px;
   align-items: center;
+  margin-top: -10px;
 }
-
 header .content :where(.left, ul) {
   display: flex;
   gap: 22px;
   align-items: center;
 }
-
 header .logo a {
   font-size: 24px;
   text-transform: uppercase;
   font-weight: 600;
 }
-
 header .content i {
-  font-size: 24px;
+  font-size: 20px;
 }
-
 header .right ul li a {
   position: relative;
   display: flex;
+  cursor: pointer;
 }
-
 header ul li a:hover {
   color: var(--second-color);
 }
-
 header .middle,
 header
   .right
@@ -100,9 +94,7 @@ header
   li:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
   display: none;
 }
-
 /* RESPONSIVE MENU */
-
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -114,17 +106,14 @@ header
   z-index: 1000;
   display: flex;
   flex-direction: row;
-
   transform: translate3d(-100%, 0, 0);
   visibility: hidden;
   transition: transform 0.3s, visibility 0.3s;
 }
-
 .showmenu .mobile-menu {
   transform: translate3d(0, 0, 0);
   visibility: visible;
 }
-
 .mobile-menu .mini {
   display: flex;
   flex-direction: column;
@@ -134,7 +123,6 @@ header
   background-color: var(--second-color);
   z-index: 10;
 }
-
 .mobile-menu .mini-close {
   font-size: 30px;
   display: flex;
@@ -252,6 +240,11 @@ header
   header .middle,
   header .right ul li:not(:nth-child(2)) {
     display: block;
+  }
+}
+@media screen and (max-width:1600px){
+  header .right ul li a {
+    font-size: 15px;
   }
 }
 

@@ -40,34 +40,43 @@
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  background-color: var(--color-card);
+  background-color: white;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  display: block;
+}
+
 .imagen_carta {
-  width: 200px;
+  width: 230px;
   height: 150px;
   overflow: hidden;
   border-radius: 14px 14px 0 0;
 }
+
 .personaje {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 13px 13px 0 0;
 }
-/* .informacion-carta p {
-  font-size: 8px;
+
+.informacion-carta p {
+  font-size: 14.25px;
   font-weight: bold;
   padding-left: 10px;
-} */
+}
+
 #nombre {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
-/* #nombre p {
+#nombre p {
   margin-top: 5px;
   font-size: 9px;
-} */
+}
 .heroe {
   height: 30px;
   margin-right: 10px;
@@ -75,7 +84,7 @@
 /* BOTONES ELIMINAR/ENVIAR*/
 .modificar button {
   border: transparent;
-  background-color:var(--color-price);
+  background-color: #a3b7dc;
   padding: 5px;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -84,10 +93,11 @@
   height: auto;
   align-items: center;
   align-self: center;
-  margin-left: 12px;
+  margin-left: 20px;
 }
+
 .modificar button:hover {
-  background-color:var(--color-button-hover);
+  background-color: #304c8b;
   color: white;
 }
 @media screen and (max-width: 1680px) {
