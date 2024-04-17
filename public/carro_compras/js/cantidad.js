@@ -25,6 +25,7 @@ function sumarCantidad(cantidadParagraph, idUsuario, idCarta) {
 }
 
 function actualizarCantidad(idUsuario, idCarta, cantidad) {
+  debugger
   const headers = {
     Authorization: "Bearer " + localStorage.getItem("token"),
   };
