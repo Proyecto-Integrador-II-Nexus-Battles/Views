@@ -82,10 +82,20 @@ export const actualizarCant = (req, res) =>{
 }).then((response) => {
   console.log("Este es el response de actualizar:",response.data);
   
-  const totalBruto = formatNumber(Number(response.data.totalBruto))
-  const totalNeto = formatNumber(Number(response.data.totalNeto))
-  res.status(200).json({totalBruto: totalBruto, totalNeto: totalNeto, totales: response.data.totales});
+  const totalBruto = calculateTotalBruto(response.data.totalNeto);
+
+    const totalBrutoFormatted = formatNumber(totalBruto);
+    const totalNetoFormatted = formatNumber(response.data.totalNeto);
+    const totales = response.data.totales.map(formatNumber);
+    res.status(200).json({ 
+      totalBruto: totalBrutoFormatted, 
+      totalNeto: totalNetoFormatted, 
+      totales: totales });
 });
+}
+
+function calculateTotalBruto(totalNeto) {
+  return Number((totalNeto * 0.81).toFixed(2));
 }
 
 export const addCantidad = (req, res) => {
