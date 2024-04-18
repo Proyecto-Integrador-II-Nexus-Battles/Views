@@ -14,7 +14,7 @@
 
 <body>
   <!-- Header -->
-  
+
   <header>
     <nav>
       <%- include('../../templates/navbarEcommerce'); %>
@@ -145,6 +145,7 @@
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
     } %>
+    
         <!-- Type Weapon -->
         <% } else if (carta.TypeCard === "Weapon") { %>
         <% switch (carta.Subtype) {
@@ -269,7 +270,7 @@
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
 
-  
+
 </body>
 
 </html>

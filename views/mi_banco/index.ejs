@@ -24,7 +24,7 @@
     <div class="left-side">
       <div class="filtros">
         <ul class="tipo_filtros">
-          <li>
+          <!-- <li>
             <h2>Tipo de carta</h2>
           </li>
           <li><select class="tipo_carta" name="Type">
@@ -37,12 +37,17 @@
             </select>
           </li>
           <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
-          <li class="stats" > 0/30 </li>
-          <li class="stats" > Armas/0 </li>
-          <li class="stats" > Armadura/0 </li>
-          <li class="stats" > Items/0 </li>
-          <li class="stats" > Talentos/0 </li>
+          <hr> -->
+          <li>
+            <h2>Mi mazo</h2>
+          </li>
+          <li class="stats" ><span id="totalDeck">0</span>/30 </li>
+          <li class="stats" > Armas/<span id="wDeck">0</span> </li>
+          <li class="stats" > Armadura/<span id="aDeck">0</span> </li>
+          <li class="stats" > Items/<span id="iDeck">0</span> </li>
+          <li class="stats" > Talentos/<span id="eDeck">0</span> </li>
           <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
+          <button id="filtro_input" onclick="saveDeck()">Guardar mazo</button>
         </ul>
       </div>
     </div>
@@ -69,19 +74,22 @@
       
 
       <div class="row2">
-        <%- include('cartas_banco'); %>
+        <%- include('../../templates/cartas_banco'); %>
     </div>
   </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
 
   <script src="/js/redirects.js"></script>
+  <script src="/mi_banco/js/saveDeck.js"></script>
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
   <script src="/vitrina_productos/js/paginacion.js"></script>
   <script src="/vitrina_productos/js/addCarro.js"></script>
   <script src="/vitrina_productos/js/addListaDeseos.js"></script>
+  <script src=" /mi_banco/js/selectCard.js"></script>
+
 
 </body>
 

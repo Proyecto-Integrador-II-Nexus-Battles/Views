@@ -167,7 +167,7 @@ font-size: 23px;
 height: 30px;
 padding-bottom: 23px;
 }
-
+}
 @media screen and (max-width: 1630px) {
   header {
     margin-right: 15%;
@@ -183,8 +183,11 @@ padding-bottom: 23px;
   .search_form .search_input{
     width: 300px;
   }
+  .right-side{
+    width: 90%;
+  }
 }
-}
+
 
 @media screen and (max-width:1280px) {
   .opciones li a {
@@ -387,15 +390,10 @@ margin-right: 60px;
     top: 40vh;
   }
 }
-
 @media (width<=339px){
 
   .listPage{
     position: relative;
     top: 20vh;
   }
-}
-@media screen and (min-width:431px) and (max-width:539px)
-{
-
 }

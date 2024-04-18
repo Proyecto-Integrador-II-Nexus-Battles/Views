@@ -19,6 +19,7 @@ export const listaDeseos = async (req, res) => {
 
   try {
     const deseosRespuesta = await axios.post(`${url}/deseos`, {}, options); // Conexión con el backend
+
     if (deseosRespuesta.status >= 300) {
       console.error("La solicitud de lista de deseos no fue exitosa");
       return res
@@ -80,7 +81,9 @@ export const listaDeseos = async (req, res) => {
     });
     console.log(listaDeseos); //user: req.session.user, products: rows sesion de usuarios
   } catch (error) {
-    console.error("Error al obtener la lista de deseos:", error);
+    if (error.response && error.response.status === 401) {
+      return res.redirect("/login");
+    }
     // Capturar cualquier error que ocurra durante la solicitud
     res.status(500).send("Error interno del servidor");
   }
@@ -103,6 +106,9 @@ export const moverCartaCarro = async (req, res) => {
       res.status(200).send("Se movió correctamente");
     })
     .catch((error) => {
+      if (error.response && error.response.status === 401) {
+        return res.redirect("/login");
+      }
       console.error("Error al mover la carta al carro:", error);
       res.status(500).send("Error interno del servidor");
     });
@@ -124,6 +130,9 @@ export const eliminarItemDeseos = async (req, res) => {
       res.status(200).send("Se eliminó correctamente");
     })
     .catch((error) => {
+      if (error.response && error.response.status === 401) {
+        return res.redirect("/login");
+      }
       console.error("Error al eliminar el item de la lista de deseos:", error);
       res.status(500).send("Error interno del servidor");
     });

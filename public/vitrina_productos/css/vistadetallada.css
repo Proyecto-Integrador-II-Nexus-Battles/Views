@@ -13,9 +13,8 @@ body {
 
 /* Estilos navbar */
 header {
-background-color: #f5faff;
+  background-color: #f5faff;
 }
-
 
 /* main */
 .container_general {
@@ -258,8 +257,6 @@ background-color: #f5faff;
   }
 }
 
-
-
 @media screen and (max-width: 830px) {
   .container_general {
     flex-wrap: wrap;
@@ -300,4 +297,3 @@ background-color: #f5faff;
     font-size: 24px;
   }
 }
-
