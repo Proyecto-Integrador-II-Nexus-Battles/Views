@@ -25,7 +25,6 @@ function sumarCantidad(cantidadParagraph, idUsuario, idCarta) {
 }
 
 function actualizarCantidad(idUsuario, idCarta, cantidad) {
-  debugger
   const headers = {
     Authorization: "Bearer " + localStorage.getItem("token"),
   };
@@ -46,19 +45,21 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
       if (response.status === 200) {
         // Obtén los nuevos totales del servidor
         axios
-          .post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, { headers: headers })
+          .post(`/carro/actualizarCant`, {}, { headers: headers })
           .then((response) => {
             const responseData = response.data;
             const totalNeto = responseData.totalNeto;
             const totalBruto = responseData.totalBruto;
-            const totalNetoFormateado = formatNumber(totalNeto);
-            const totalBrutoFormateado = formatNumber(totalBruto);
+            const totales = responseData.totales;
 
+            for(let i=0; i<totales.length; i++){
+              document.getElementById(`${i}`).innerHTML = totales[i]+"&nbsp;COP"
+            }
             // Actualiza el contenido de los elementos HTML correspondientes
-            document.getElementById("totalNeto").textContent =
-              totalNetoFormateado;
-            document.getElementById("totalBruto").textContent =
-              totalBrutoFormateado;
+            document.getElementById("totalNeto").innerHTML =
+              "Total Neto:&nbsp;"+totalNeto;
+            document.getElementById("totalBruto").innerHTML =
+              "Total Bruto:&nbsp;"+totalBruto;
           })
           .catch((error) => {
             console.error("Error al obtener los nuevos totales:", error);
