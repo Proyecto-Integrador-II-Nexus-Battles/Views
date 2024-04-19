@@ -23,7 +23,7 @@
           const cartasEnBanco = await comprobarMiBanco();
           if (cartasEnLista.length > 0) {
             const datos = <%- JSON.stringify(datos) %>;
-            for (let  i = 0; i < datos.length; i++) {
+            for (let i = 0; i < datos.length; i++) {
               const carta = datos[i];
               const cartaEnLista = cartasEnLista.includes(carta._id);
               if (cartaEnLista) {
@@ -37,7 +37,7 @@
           console.log(cartasEnBanco);
           if (cartasEnBanco.length > 0) {
             const datos = <%- JSON.stringify(datos) %>;
-            for (let  i = 0; i < datos.length; i++) {
+            for (let i = 0; i < datos.length; i++) {
               const carta = datos[i];
               const cartaEnBanco = cartasEnBanco.includes(carta._id);
               if (cartaEnBanco) {
@@ -60,12 +60,7 @@
         }
       });
     </script>
-    <a href="/">
-      <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
-
-    </a>
     <!-- Barra de navegación -->
-    <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav>
       <%- include('../../templates/navbarEcommerce'); %>
     </nav>
