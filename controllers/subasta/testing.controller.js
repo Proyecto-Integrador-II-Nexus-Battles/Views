@@ -45,9 +45,7 @@ export const valor_carta = async (req, res) => {
     const bancoJSON = await response.json();
     const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
     const inventarioJSON = await dataResponse.json();
-    bancoJSON.forEach((carta, index) => {
-      carta.ID_SUBASTA = bancoJSON[index].ID;
-    });
+    console.log(inventarioJSON);
     res.render("subasta/valor_carta.ejs", {
       banco: bancoJSON,
       datos: null,
