@@ -1,3 +1,6 @@
+import { HOST, PORT } from "../../config.js";
+
+
 function saveDeck() {
     let cartas = []
     const cardsDeck = document.getElementsByClassName('card')
@@ -9,14 +12,13 @@ function saveDeck() {
         }
     });
     if (cartas.length === 31) {
-        fetch('https://localhost:3001/inventario/deckCard', {
+        fetch(`${HOST}:${PORT}/inventario/deckCard`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authorization': `${token}`,
+                'Authorization': `${token}`,
             },
             body: JSON.stringify({
-                IdUsuario: 2,
                 cartas: cartas
             })
         })
@@ -37,15 +39,12 @@ function saveDeck() {
 }
 
 window.onload = function () {
-    fetch('https://localhost:3001/inventario/GetdeckCard', {
+    fetch(`${HOST}:${PORT}/inventario/GetdeckCard`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': `${token}`,
-        },
-        body: JSON.stringify({
-            IdUsuario: 2
-        })
+            'Authorization': `${token}`,
+        }
     })
         .then(response => response.json())
         .then(data => {
