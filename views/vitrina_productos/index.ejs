@@ -14,7 +14,58 @@
 <body>
   <!-- Header -->
   <header>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function() {
+        var token = localStorage.getItem('token');
 
+        if (token !== null) {
+          const cartasEnLista = await comprobarListaDeseos();
+          const cartasEnBanco = await comprobarMiBanco();
+          if (cartasEnLista.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let  i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnLista = cartasEnLista.includes(carta._id);
+              if (cartaEnLista) {
+                console.log('cartas en lista de deseos');
+                document.querySelector('.carta-' + i).style.color = 'red';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en lista de deseos');
+          }
+          console.log(cartasEnBanco);
+          if (cartasEnBanco.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let  i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnBanco = cartasEnBanco.includes(carta._id);
+              if (cartaEnBanco) {
+                console.log('cartas en banco');
+                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" id="bank">&#127974;</span>';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en el banco');
+          }
+
+          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.getElementById('register_btn').remove();
+          document.querySelector('.login_btn').addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.reload(true);
+          });
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
+    <a href="/">
+      <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
+
+    </a>
+    <!-- Barra de navegación -->
+    <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
     <nav>
       <%- include('../../templates/navbarEcommerce'); %>
     </nav>
