@@ -113,29 +113,31 @@ export const fetchLogin = async (req, res) => {
   })
     .then((response) => {
       response.json().then((data) => {
-        res.json(data)
-      })
-    }).catch((error) => {
-      console.log("Error" + error)
+        res.json(data);
+      });
     })
+    .catch((error) => {
+      console.log("Error" + error);
+    });
 };
 
-
 export const fetchRegister = async (req, res) => {
+  console.log(req.body.pregunta_1)
   fetch(`${HOST}:${PORT}/usuario/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      'enctype': 'multipart/form-data',
+      enctype: "multipart/form-data",
       "Access-Control-Allow-Methods": "POST",
     },
     body: JSON.stringify(req.body),
   })
     .then((response) => {
       response.json().then((data) => {
-        res.json(data)
-      })
-    }).catch((error) => {
-      console.log("Error" + error)
+        res.json(data);
+      });
     })
+    .catch((error) => {
+      console.log("Error" + error);
+    });
 };

@@ -2,23 +2,53 @@
 <html lang="en">
 
 <head>
-  <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/icon.png" type="image/x-icon">
   <title>THE NEXUS BATTLES II</title>
   <link rel="stylesheet" href="/vitrina_productos/css/e-commerce.css">
   <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
 </head>
 
 <body>
   <!-- Header -->
   <header>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", async function() {
         var token = localStorage.getItem('token');
 
         if (token !== null) {
+          const cartasEnLista = await comprobarListaDeseos();
+          const cartasEnBanco = await comprobarMiBanco();
+          if (cartasEnLista.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let  i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnLista = cartasEnLista.includes(carta._id);
+              if (cartaEnLista) {
+                console.log('cartas en lista de deseos');
+                document.querySelector('.carta-' + i).style.color = 'red';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en lista de deseos');
+          }
+          console.log(cartasEnBanco);
+          if (cartasEnBanco.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let  i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnBanco = cartasEnBanco.includes(carta._id);
+              if (cartaEnBanco) {
+                console.log('cartas en banco');
+                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" id="bank">&#127974;</span>';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en el banco');
+          }
+
           document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
           document.getElementById('register_btn').remove();
           document.querySelector('.login_btn').addEventListener('click', function() {
@@ -36,290 +66,88 @@
     </a>
     <!-- Barra de navegación -->
     <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
-    <nav class="" id="navbar">
-      <ul class="opciones">
-        <li><a href="/miCuenta" onclick="miCuenta()">Mi cuenta</a></li>
-        <li><a href="/mi_banco">Mi banco</a></li>
-        <li><a href="/subasta">Subasta</a></li>
-        <li><a href="/jugarOnline">Jugar online</a></li>
-        <li><a href="/torneo">Torneo</a></li>
-        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
-        <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
-        <li><a href="/login"><button class="login_btn">Login</button></a></li>
-        <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
-      </ul>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
     </nav>
+
   </header>
-  <!-- Vitrina de productos -->
+
+  <!-- VITRINA -->
   <main>
-    <!-- filtros -->
-    <div class="filtros">
-      <ul class="tipo_filtros">
-        <!-- filtro precios -->
-        <li>
-          <h2>Precios</h2>
-        </li>
 
-        <li><select class="seleccionar_precio" name="sortOrder">
-            <option value="" disabled selected>Orden</soption>
-            <option value="desc">Mayor a menor</option>
-            <option value="asc">Menor a mayor</option>
-          </select></li>
+    <!-- LADO IZQUIERDO FILTRO -->
+    <div class="left-side">
+      <div class="filtros">
+        <ul class="tipo_filtros">
+          <li>
+            <h2>Precios</h2>
+          </li>
+          <li><select class="seleccionar_precio" name="sortOrder">
+              <option value="" disabled selected>Orden</soption>
+              <option value="desc">Mayor a menor</option>
+              <option value="asc">Menor a mayor</option>
+            </select>
+          </li>
 
-        <li><select class="seleccionar_precio" name="min_max">
-            <option value="" disabled selected>Precios</soption>
-            <option value="20000-200000">20.000 - 200.000</option>
-            <option value="200000-800000">200.000 - 800.000</option>
-            <option value="800000-1400000">800.000 - 1.400.000</option>
-            <option value="1400000-2000000">1.400.000 - 2.000.000</option>
-          </select></li>
-
-        <!-- Tipo de carta -->
-        <li>
-          <h2>Tipo de carta</h2>
-        </li>
-        <li><select class="tipo_carta" name="Type">
-            <option value="" disabled selected>Selecciona un tipo</option>
-            <option value="Weapon">Armas</option>
-            <option value="Armor">Armaduras</option>
-            <option value="Hero">Héroes</option>
-            <option value="Item">Items</option>
-            <option value="Talent">Talentos</option>
-          </select></li>
-        <!-- filtro promocion -->
-        <li>
-          <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
-        </li>
-        <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
-      </ul>
-    </div>
-    <div class="container_general">
-      <!--Parte barra de búsqueda  -->
-      <div class="barra_busqueda">
-        <form action="" class="search_form">
-          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
-          <img src="/vitrina_productos/img/search_icon.svg" alt="search_icon" class="search_icon">
-        </form>
-      </div>
-
-      <!-- Cartas -->
-
-      <div class="list">
-        <%
-        // Mapeo de subtipos a imágenes y tipo de icono
-        const subtipoImagen = {
-          "Armas": "/vitrina_productos/img/espadas.png",
-          "Tanque": "/vitrina_productos/img/blindaje.png",
-          "Fuego": "/vitrina_productos/img/fuego.png",
-          "Hielo": "/vitrina_productos/img/hielo.png",
-          "Veneno": "/vitrina_productos/img/veneno.png",
-          "Machete": "/vitrina_productos/img/machete.png"
-        };
-
-        const subtipoIcono = {
-          "Hero": "foto",
-          "Item": "foto",
-          "Armor": "foto",
-          "Talent": "foto",
-          "Weapon": "foto"
-        };
-
-        for (let i = 0; i < datos.length; i++) {
-          const carta = datos[i];
-          const imagen = subtipoImagen[carta.Subtype];
-          const tipoIcono = subtipoIcono[carta.TypeCard];
-        %>
-
-        <div class="card">
-
-          <div class="imagen_carta">
-            <section class="icons">
-              <span onclick="cambiarColor(this, '<%= carta._id %>')" id="like">&#9829;</span>
-            </section>
-            <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
-          </div>
-
-          <div class="informacion_carta">
-            <div id="nombre">
-              <p><%= carta.Name %></p>
-              <img src="<%= imagen %>" class="<%= tipoIcono %>" />
-            </div>
-            <% if (carta.TypeCard === "Hero") { %>
-            <p>Poder: <%= carta.Power %></p>
-            <p>Vida: <%= carta.Live %></p>
-            <p>Defensa: <%= carta.Defense %></p>
-            <p>Ataque: <%= carta.AttackBase %></p>
-            <p>Daño: <%= carta.DamageSides %></p>
-            <% } else if (carta.TypeCard === "Item") { %>
-            <%
-              switch (carta.Subtype) {
-                case "Tanque":
-                  %>
-            <p id="cart">Buff: <%= carta.DamageBuff %></p>
-            <p id="cart2">Poder: <%= carta.EnemyDamageNerf %></p><%
-                  break;
-                case "Veneno":
-                  %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
-                  break;
-                case "Machete":
-                  %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
-                  break;
-                case "Hielo":
-                %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
-                break;
-                case "Fuego":
-                  %><p id="cart">Buff: <%= carta.DamageBuff %></p>
-            <p id="cart2">Buff: <%= carta.EnemyDamageNerf %></p><%
-                  break;
-                case "Armas":
-                  %><p id="cart">Poder: <%= carta.DamageBuff %></p>
-            <p id="cart2">Vida: <%= carta.EnemyDamageNerf %></p><%
-                  break;
-                default:
-                  break;
-              }
-              %>
-            <% } else if (carta.TypeCard === "Armor") { %>
-            <%
-              switch (carta.Subtype) {
-                case "Tanque":
-                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
-                  break;
-                  case "Machete":
-                  %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
-                  break;
-                case "Veneno":
-                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
-                break;
-                case "Hielo":
-                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
-                break;
-                case "Fuego":
-                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
-                break;
-                case "Armas":
-                %><p id="cart">Buff: <%= carta.DefenseBuff %></p><%
-                break;
-                default:
-                  break;
-              }
-              %>
-            <% } else if (carta.TypeCard === "Weapon") { %>
-            <%
-              switch (carta.Subtype) {
-                case "Tanque":
-                  %><p>Ataque: <%= carta.AttackBuff %></p>
-            <p>Daño: <%= carta.DamageBuff %></p>
-            <p>Defensa: <%= carta.DefenseBuff %></p>
-            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
-                  break;
-                case "Veneno":
-                %><p>Ataque: <%= carta.AttackBuff %></p>
-            <p>Daño: <%= carta.DamageBuff %></p>
-            <p>Defensa: <%= carta.DefenseBuff %></p>
-            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
-                break;
-                case "Hielo":
-                %><p>Ataque: <%= carta.AttackBuff %></p>
-            <p>Daño: <%= carta.DamageBuff %></p>
-            <p>Defensa: <%= carta.DefenseBuff %></p>
-            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
-                break;
-                case "Fuego":
-                %><p>Ataque: <%= carta.AttackBuff %></p>
-            <p>Daño: <%= carta.DamageBuff %></p>
-            <p>Defensa: <%= carta.DefenseBuff %></p>
-            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
-                break;
-                case "Armas":
-                %><p>Ataque: <%= carta.AttackBuff %></p>
-            <p>Daño: <%= carta.DamageBuff %></p>
-            <p>Defensa: <%= carta.DefenseBuff %></p>
-            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
-                break;
-                case "Machete":
-                %><p>Ataque: <%= carta.AttackBuff %></p>
-            <p>Daño: <%= carta.DamageBuff %></p>
-            <p>Defensa: <%= carta.DefenseBuff %></p>
-            <p>Daño enemigo: <%= carta.EnemyDamageNerf %></p><%
-                break;
-              }
-              %>
-            <% } else if (carta.TypeCard === "Talent") { %>
-            <%
-              switch (carta.Subtype) {
-                case "Tanque":
-                  %>
-            <p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
-                  break;
-                case "Veneno":
-                  %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
-                  break;
-                case "Hielo":
-                  %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
-            <%
-                  break;
-                case "Fuego":
-                  %><p id="cart">Buff: <%= carta.NormalLiveBuff %></p>
-            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
-                  break;
-                case "Armas":
-                  %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
-            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p><%
-                  break;
-                case "Machete":
-                  %><p id="cart">Poder: <%= carta.NormalLiveBuff %></p>
-            <p id="cart2">Buff: <%= carta.EspecialDamageBuff %></p>
-            <%
-                  break;
-              }
-              %>
-            <% }%>
-            <div id="precio">
-              <button onclick="addCarro('<%= carta._id %>')">
-                <span class="carrito">&#128722;</span>
-                <p>Precio: <%= carta.price %></p>
-              </button>
-            </div>
-            <div class="icons">
-
-            </div>
-          </div>
-        </div>
-
-        <% } %>
-      </div>
-
-
-      <div class="paginas">
-        <ul class="listPage">
-          <li class="active">1</li>
-          <li>2</li>
-          <li>3</li>
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="seleccionar_precio" name="min_max">
+              <option value="" disabled selected>Precios</soption>
+              <option value="20000-200000">20.000 - 200.000</option>
+              <option value="200000-800000">200.000 - 800.000</option>
+              <option value="800000-1400000">800.000 - 1.400.000</option>
+              <option value="1400000-2000000">1.400.000 - 2.000.000</option>
+            </select>
+          </li>
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <li>
+            <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          </li>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
         </ul>
       </div>
     </div>
 
+    <!-- LADO DERECHO CARTAS -->
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;" class="text">VITRINA DE PRODUCTOS</h3>
+        <div class="filtro_busqueda">
+          <form action="" class="form-search">
+            <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+        </div>
 
-    </div>
 
-    </div>
-    </div>
-    </div>
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row2">
+        <%- include('../../templates/cartas_vitrina'); %>
+      </div>
     </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/carro_compras/js/resumen_flotante.js"></script>
-  <script src="/resumen_flotante/js/deployResumen.js"></script>
+
   <script src="/js/redirects.js"></script>
-  <script src="/vitrina_productos/js/navbar.js"></script>
+
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
   <script src="/vitrina_productos/js/paginacion.js"></script>

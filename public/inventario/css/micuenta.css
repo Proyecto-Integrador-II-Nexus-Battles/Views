@@ -11,60 +11,8 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Estilos navbar */
 header {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #D8E9F9;
-  margin-right: 9%;
-}
-
-header .logo_img {
-  height: 50px;
-  position: absolute;
-  left: 1%;
-}
-
-#navbar {
-  height: 60px;
-  background-color: #d8e9f9;
-  padding: 10px;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
-}
-
-.opciones li {
-  display: inline-block;
-
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-}
-#login_btn {
-  font-size: 15px;
-  background-color: #a3b7dc;
-  border: transparent;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-#login_btn:hover {
-  background-color: #304c8b;
-  color: white;
-}
-
-.abrir-btn {
-  display: none;
+  background-color: #f5faff;
 }
 
 .container_general {
@@ -74,10 +22,10 @@ header .logo_img {
   background-color: rgba(9, 32, 43, 0.74);
   border-radius: 10px;
   padding: 20px;
+  transform: translate(0, 25%);
 }
-form{
+form {
   display: flex;
-
 }
 .imagen_usuario {
   width: 350px;
@@ -88,16 +36,16 @@ form{
   height: 100%;
   border-radius: 200px;
 }
-#foto{
+#foto {
   color: white;
 }
-.info_usuario{
+.info_usuario {
   position: relative;
   margin-left: 5%;
   font-size: 20px;
   color: white;
 }
-.input{
+.input {
   width: 150%;
   height: 40px;
   border-radius: 10px;
@@ -107,74 +55,70 @@ form{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 10px;
 }
-input::placeholder{
+input::placeholder {
   font-size: 15px;
 }
-.cambio_contraseña{
+.cambio_contraseña {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   margin-top: 20px;
 }
-.guardar{
+.guardar {
   margin-top: 20px;
   width: 60%;
   cursor: pointer;
   font-size: 15px;
   margin-bottom: 20px;
 }
-.guardar:hover{
+.guardar:hover {
   background-color: #304c8b;
   color: white;
 }
 
-@media screen and (max-width:1600px){
+@media screen and (max-width: 1600px) {
   .imagen_usuario {
     width: 330px;
     height: 310px;
   }
-  #foto{
+  #foto {
     font-size: 15px;
   }
-  .input{
+  .input {
     width: 80%;
   }
 }
-@media screen and (max-width:1366px)
-{
+@media screen and (max-width: 1366px) {
   header .logo_img {
     height: 60px;
   }
-  .opciones li a{
+  .opciones li a {
     font-size: 15px;
   }
-  #login_btn{
+  #login_btn {
     font-size: 15px;
   }
   .imagen_carta {
     width: 250px;
     height: 255px;
   }
-
-
 }
 
-@media screen and (max-width:1280px) {
-
-  #login_btn{
+@media screen and (max-width: 1280px) {
+  #login_btn {
     font-size: 15px;
   }
-  .agregar{
+  .agregar {
     font-size: 10px;
     padding: 8px;
     border-radius: 5px;
   }
-  .container_general{
+  .container_general {
     width: 60%;
   }
 }
 
-@media screen and (max-width:1212px) {
-  #login_btn{
+@media screen and (max-width: 1212px) {
+  #login_btn {
     font-size: 11px;
   }
 
@@ -188,26 +132,25 @@ input::placeholder{
     width: 100px;
     margin-left: 0;
   }
-  .container_general{
+  .container_general {
     width: 70%;
   }
   .listPage li {
     width: 30px;
   }
-
 }
 /* // */
-@media screen and (max-width:1071px){
-  header .logo_img{
+@media screen and (max-width: 1071px) {
+  header .logo_img {
     height: 60px;
   }
-  .opciones li a{
+  .opciones li a {
     font-size: 15px;
   }
 }
 
 @media screen and (max-width: 970px) {
-  header{
+  header {
     height: 60px;
   }
   .abrir-btn {
@@ -236,7 +179,7 @@ input::placeholder{
     position: absolute;
     top: 4%;
     right: 0;
-    background-color: #D8E9F9;
+    background-color: #d8e9f9;
     padding: 1.2rem;
     height: 100%;
     display: flex;
@@ -254,27 +197,25 @@ input::placeholder{
   }
 }
 
-@media screen and (max-width:660px){
-
-.logo_img{
-  margin-left: 10px;
+@media screen and (max-width: 660px) {
+  .logo_img {
+    margin-left: 10px;
+  }
+  .abrir-btn {
+    margin-left: auto;
+    margin-right: 20px;
+  }
 }
-.abrir-btn{
-  margin-left: auto;
-  margin-right: 20px;
+@media screen and (min-width: 591px) and (max-width: 660px) {
 }
-}
-@media screen and (min-width:591px) and (max-width:660px){
-
-}
-@media screen and (min-width:340px) and (max-width:390px){
-  header{
+@media screen and (min-width: 340px) and (max-width: 390px) {
+  header {
     height: 50px;
   }
-  header .logo_img{
+  header .logo_img {
     height: 50px;
   }
-  .abrir-btn{
+  .abrir-btn {
     position: relative;
     margin-right: 0;
     margin-top: 10px;
@@ -285,41 +226,41 @@ input::placeholder{
     position: absolute;
     top: 7%;
   }
-  .container_general{
+  .container_general {
     margin-left: 40px;
   }
-  form{
+  form {
     flex-direction: column;
   }
   .imagen_usuario {
     width: 150px;
     height: 180px;
   }
-  .info_usuario{
+  .info_usuario {
     margin-top: 50px;
   }
-  label{
+  label {
     font-size: 15px;
   }
-  #foto{
+  #foto {
     width: 100%;
   }
-  .input{
+  .input {
     width: 50%;
   }
-  .input::placeholder{
+  .input::placeholder {
     font-size: 15px;
   }
 }
 
-@media screen and (min-width:391px) and (max-width:430px){
-  header{
+@media screen and (min-width: 391px) and (max-width: 430px) {
+  header {
     height: 50px;
   }
-  header .logo_img{
+  header .logo_img {
     height: 50px;
   }
-  .abrir-btn{
+  .abrir-btn {
     position: relative;
     margin-right: 0;
     margin-top: 10px;
@@ -330,82 +271,80 @@ input::placeholder{
     position: absolute;
     top: 5%;
   }
-  .container_general{
+  .container_general {
     margin-left: 40px;
   }
-  form{
+  form {
     flex-direction: column;
   }
   .imagen_usuario {
     width: 150px;
     height: 180px;
   }
-  .info_usuario{
+  .info_usuario {
     margin-top: 50px;
   }
-  label{
+  label {
     font-size: 15px;
   }
-  #foto{
+  #foto {
     width: 100%;
   }
-  .input{
+  .input {
     width: 50%;
   }
-  .input::placeholder{
+  .input::placeholder {
     font-size: 15px;
   }
-
 }
-@media screen and (min-width:540px) and (max-width:590px){
-  header{
+@media screen and (min-width: 540px) and (max-width: 590px) {
+  header {
     height: 50px;
   }
-  header .logo_img{
+  header .logo_img {
     height: 50px;
   }
-  .abrir-btn{
+  .abrir-btn {
     position: relative;
     margin-right: 0;
     margin-top: 10px;
     left: 14em;
     height: 30px;
   }
-  .container_general{
-    margin-left:50px;
+  .container_general {
+    margin-left: 50px;
   }
-  form{
+  form {
     flex-direction: column;
   }
   .imagen_usuario {
     width: 150px;
     height: 180px;
   }
-  .info_usuario{
+  .info_usuario {
     margin-top: 50px;
   }
-  label{
+  label {
     font-size: 15px;
   }
-  #foto{
+  #foto {
     width: 100%;
   }
-  .input{
+  .input {
     width: 60%;
   }
-  .input::placeholder{
+  .input::placeholder {
     font-size: 15px;
   }
-
 }
-@media screen and (min-width:280px) and (max-width:300px){
-  header{
+@media screen and (min-width: 280px) and (max-width: 300px) {
+  header {
     height: 50px;
   }
-  header .logo_img{
+  header .logo_img {
     height: 50px;
   }
-  .abrir-btn{
+  .abrir-btn {
     position: relative;
     margin-right: 0;
     margin-top: 10px;
@@ -416,42 +355,41 @@ input::placeholder{
     position: absolute;
     top: 6%;
   }
-  .container_general{
+  .container_general {
     margin-left: 20px;
   }
-  form{
+  form {
     flex-direction: column;
   }
   .imagen_usuario {
     width: 150px;
     height: 180px;
   }
-  .info_usuario{
+  .info_usuario {
     margin-top: 50px;
   }
-  label{
+  label {
     font-size: 15px;
   }
-  #foto{
+  #foto {
     width: 100%;
   }
-  .input{
+  .input {
     width: 50%;
   }
-  .input::placeholder{
+  .input::placeholder {
     font-size: 15px;
   }
-
 }
 
-@media (width<=339px){
-  header{
+@media (width<=339px) {
+  header {
     height: 50px;
   }
-  header .logo_img{
+  header .logo_img {
     height: 50px;
   }
-  .abrir-btn{
+  .abrir-btn {
     position: relative;
     margin-right: 0;
     margin-top: 10px;
@@ -462,34 +400,31 @@ input::placeholder{
     position: absolute;
     top: 6%;
   }
-  .container_general{
+  .container_general {
     margin-left: 20px;
   }
-  form{
+  form {
     flex-direction: column;
   }
   .imagen_usuario {
     width: 150px;
     height: 180px;
   }
-  .info_usuario{
+  .info_usuario {
     margin-top: 50px;
   }
-  label{
+  label {
     font-size: 15px;
   }
-  #foto{
+  #foto {
     width: 100%;
   }
-  .input{
+  .input {
     width: 50%;
   }
-  .input::placeholder{
+  .input::placeholder {
     font-size: 15px;
   }
 }
-@media screen and (min-width:431px) and (max-width:539px)
-{
-
-
+@media screen and (min-width: 431px) and (max-width: 539px) {
 }
