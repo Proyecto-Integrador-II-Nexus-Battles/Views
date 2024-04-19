@@ -8,14 +8,19 @@
   --precio_hover: #304c8b;
 }
 
+body {
+  background-image: url("/vitrina_productos/img/fondo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  background-color: #ffffff;
+}
 main {
   display: grid;
   grid-template-columns: 30% 70%;
-  background-image: url("/vitrina_productos/img/fondo.png");
   padding: 20px;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* Vitrina de productos */
