@@ -68,7 +68,7 @@ export const crearSubasta = async (req, res) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${req.query.token}`,
+        Authorization: `${req.headers.authorization}`,
       },
       body: JSON.stringify(req.body),
     });
