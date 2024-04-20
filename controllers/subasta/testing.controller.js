@@ -42,6 +42,9 @@ export const valor_carta = async (req, res) => {
         Authorization: `${req.query.token}`,
       },
     });
+    if (response.status === 401) {
+      return res.redirect("/login");
+    }
     const bancoJSON = await response.json();
     const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
     const inventarioJSON = await dataResponse.json();
@@ -67,7 +70,7 @@ export const crearSubasta = async (req, res) => {
         "Content-Type": "application/json",
         Authorization: `${req.query.token}`,
       },
-      body: JSON.stringify(req.body)
+      body: JSON.stringify(req.body),
     });
     const respuestaJson = await response.json();
     res.status(200).send(respuestaJson);
@@ -76,4 +79,3 @@ export const crearSubasta = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
-
