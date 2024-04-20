@@ -74,3 +74,43 @@ export const filtrarCartasSubasta = async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 };
+
+
+export const subastaDetallada = async (_req, res) => {
+    try {
+
+        const id = _req.query.id;
+
+        const options = {
+            headers: {
+                'Authorization': `${_req.query.token}`,
+            },
+        };
+
+        const response = await fetch(`https://localhost:${PORT}/subasta//getSubasta/` + id, options);
+        const date = await response.json();
+        const idCartas = date.map((carta) => carta.ID_CARTA);
+        console.log(idCartas);
+        const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `${_req.query.token}`,
+            },
+            body: JSON.stringify({ IDs: idCartas }),
+        })
+
+        const datos = await conexionInventario.json();
+        console.log(datos);
+        datos.forEach((carta, index) => {
+            carta.ID_SUBASTA = datos[index].ID;
+        });
+
+        res.render("subasta/subasta_vitrina", { datos });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+
+    }
+}
