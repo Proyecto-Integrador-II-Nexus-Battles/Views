@@ -23,18 +23,11 @@
     "Machete": "/inventario/imagenes/machete.png"
   };
 
-  const subtipoIcono = {
-    "Hero": "foto",
-    "Item": "foto",
-    "Armor": "foto",
-    "Talent": "foto",
-    "Weapon": "foto"
-  };
 
   for (let i = 0; i < datos.length; i++) {
     const carta = datos[i];
     const imagen = subtipoImagen[carta.Subtype];
-    const tipoIcono = subtipoIcono[carta.TypeCard];
+    const puja = datos.pujas[i]
   %>
 
 <!-- Informacion y foto de la carta -->
@@ -53,7 +46,7 @@
   <p><b>Valor base</b></p>
   <p><b>Créditos:</b><%= carta.creditos_min %>></p>
   <p><b>Cartas:</b></p>
-  <li><%= carta.cartas_min_id%></li>
+  <li><%= carta.cartas_min %></li>
 </div>
 
 <div class="valor_maximo_subasta">
@@ -61,14 +54,12 @@
   <p><b>Créditos:</b> <%= carta.creditos_max %></p>
   <p><b>Cartas:</b></p>
   <ul class="cartas_v_max">
-    <li>Pícaro Machete</li>
-    <li>Golpe de Defensa</li>
-    <li>Guerrero Tanque</li>
+    <li><% =carta.cartas_max %></li>
   </ul>
 </div>
 <div class="fechas_subasta">
-  <p><b>Fecha de Inicio:</b> 7/04/2024 </p>
-  <p><b>Fecha Fin:</b> 8/04/2024</p>
+  <p><b>Fecha de Inicio:</b> <%= carta.fecha_inicio%> </p>
+  <p><b>Fecha Fin:</b> <%= carta.fecha_fin %></p>
   <p><b>Duración de la subasta:</b> <%= carta.tiempo_inicio &></p>
 </div>
 <div class="tiempo_restante">
@@ -82,32 +73,31 @@
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: 80</p>
-    <p class="cards_player">Cartas: Pícaro Machete, golpe de defensa</p>
+    <p class="credits_player">Créditos: <%= puja.creditos %>></p>
+    <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
 
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: 80</p>
-    <p class="cards_player">Cartas: Pícaro Machete, golpe de defensa</p>
+    <p class="credits_player">Créditos: <%= puja.creditos %></p>
+    <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: 80</p>
-    <p class="cards_player">Cartas: Pícaro Machete, golpe de defensa</p>
+    <p class="credits_player">Créditos: <%= puja.creditos %></p>
+    <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
+
 <div class="buttons">
   <button class="pujar" onclick="abrirPujar()"><b>Pujar</b></button>
   <button class="compra_rapida" onclick="abrirCompraRapida()" ><b>Compra rápida</b></button>
 </div>
 </div>
-<!-- <% } %>
-<% } %> -->
 <!-- Emergente Puja-->
 <div class="puja_container" >
   <label for="cantidad_creditos" class="c_creditos">
@@ -139,15 +129,14 @@
     Cartas
   </label>
   <div class="cards_container">
-    <p>Pícaro Machete</p>
-    <p>Pícaro Machete</p>
-    <p>Pícaro Machete</p>
+    <p><%= carta.name %></p>
   </div>
   <div class="buttons">
     <button class="comprar">Comprar</button>
     <button class="cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
+<% } %>
 </main>
 <script src="../../public/subasta/js/emergentes.js"></script>
 </body>
