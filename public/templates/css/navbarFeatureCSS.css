@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap");
+:root {
+  --primary-color: #a3b7dc;
+  --second-color: #304c8b;
+  --white-color: #ffffff;
+  --light-color: #f5faff;
+  --grey-color: #909090;
+  --dark-color: #252525;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+a {
+  font-size: 24px;
+  text-decoration: none;
+  color: var(--dark-color);
+  -webkit-tab-highlights-colot: transparent;
+}
+
+ul {
+  list-style: none;
+}
+/* h1,h2,h3,h4 {font-weight: 600;line-height: normal;}
+h1 {font-size: 2.5em;}
+h2 {font-size: 2em;}
+h3 {font-size: 1.5em;}
+h4 {font-size: 1em;} */
+
+.container-navbar {
+  max-width: 1800px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+header {
+  height: 70px;
+  box-shadow: -2px 2px 45px -20px rgb(0, 0, 0 / 30%);
+}
+header .logo img {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+header .content {
+  display: flex;
+  justify-content: space-between;
+  line-height: 80px;
+  align-items: center;
+  margin-top: -10px;
+}
+header .content :where(.left, ul) {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+header .logo a {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+header .content i {
+  font-size: 20px;
+}
+header .right ul li a {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+header ul li a:hover {
+  color: var(--second-color);
+}
+header .middle,
+header
+  .right
+  ul
+  li:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
+  display: none;
+}
+/* RESPONSIVE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  background-color: var(--light-color);
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  transform: translate3d(-100%, 0, 0);
+  visibility: hidden;
+  transition: transform 0.3s, visibility 0.3s;
+}
+.showmenu .mobile-menu {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+.mobile-menu .mini {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  width: 100px;
+  height: 100%;
+  background-color: var(--second-color);
+  z-index: 10;
+}
+.mobile-menu .mini-close {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--light-color);
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  transition: background-color 0.3s;
+}
+
+.mobile-menu .mini-close:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.mobile-menu .mini-close i {
+  transition: transform 0.2s;
+}
+
+.mobile-menu .mini-close:hover i {
+  transform: rotate(180deg);
+}
+
+.mobile-menu .menu-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.mobile-menu .logo {
+  margin-top: 100px;
+  writing-mode: vertical-lr;
+}
+
+.mobile-menu .mini ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobile-menu .mini ul li a {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  line-height: 60px;
+  color: var(--light-color);
+  border-radius: 50%;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.mobile-menu .mini ul li a:hover {
+  color: var(--primary-color);
+}
+
+.mobile-menu .wider {
+  position: relative;
+  flex: 1;
+  padding: 40px;
+}
+
+.mobile-menu .main-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-menu .has-list ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mobile-menu .menu-list ul li a {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  border-bottom: 1px solid var(--grey-color);
+  padding: 20px;
+}
+
+.mobile-menu .menu-list ul li a:hover {
+  color: var(--second-color);
+}
+
+.mobile-menu .menu-list ul li a span {
+  font-size: 44px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark-color);
+  visibility: hidden;
+  z-index: 999;
+}
+
+.showmenu .overlay {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+
+@media only screen and (min-width: 1635px) {
+
+@media screen and (max-width:1600px){
+}
+@media only screen and (min-width: 1490px) {
+  header .trigger {
+    display: none;
+  }
+  header .middle,
+  header .right ul li:not(:nth-child(2)) {
+    display: block;
+  }
+}
+@media screen and (max-width:1600px){
+  header .right ul li a {
+    font-size: 15px;
+  }
+}
+
+/* --------------------------------------------------------------------------------------- */

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
   <title>Subasta</title>
   <link rel="stylesheet" href="/subasta/css/subasta.css">
   <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
 </head>
+
+
+
 <body>
 <header>
   <nav>
@@ -46,23 +49,23 @@
 <h2 class="subasta_info_title">Información de la subasta</h2>
 <div class="valor_base_subasta">
   <p><b>Valor base</b></p>
-  <p><b>Créditos:</b><%= carta.creditos_min %></p>
+  <p><b>Créditos:</b><%= carta.CREDITOS_MIN %></p>
   <p><b>Cartas:</b></p>
-  <li><%= carta.cartas_min %></li>
+  <li><%= carta.CARTAS_MIN %></li>
 </div>
 
 <div class="valor_maximo_subasta">
   <p><b>Valor Máximo / Compra Inmediata</b></p>
-  <p><b>Créditos:</b> <%= carta.creditos_max %></p>
+  <p><b>Créditos:</b> <%= carta.CREDITOS_MAX %></p>
   <p><b>Cartas:</b></p>
   <ul class="cartas_v_max">
-    <li><%= carta.cartas_max %></li>
+    <li><%= carta.CARTAS_MAX %></li>
   </ul>
 </div>
 <div class="fechas_subasta">
-  <p><b>Fecha de Inicio:</b> <%= carta.fecha_inicio%> </p>
-  <p><b>Fecha Fin:</b> <%= carta.fecha_fin %></p>
-  <p><b>Duración de la subasta:</b> <%= carta.tiempo_inicio %></p>
+  <p><b>Fecha de Inicio:</b> <%= carta.FECHA_INICIO%> </p>
+  <p><b>Fecha Fin:</b> <%= carta.FECHA_FIN %></p>
+  <p><b>Duración de la subasta:</b> <%= carta.TIEMPO_INICIO %></p>
 </div>
 <div class="tiempo_restante">
   <p><b>Tiempo Restante: &nbsp 00:24:00</b></p>
@@ -75,7 +78,7 @@
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= pujas[0].creditos %></p>
+    <p class="credits_player">Créditos: <%= pujas[0].CREDITOS %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
@@ -83,14 +86,14 @@
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= pujas[1].creditos %></p>
+    <p class="credits_player">Créditos: <%= pujas[1].CREDITOS %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= pujas[2].creditos %></p>
+    <p class="credits_player">Créditos: <%= pujas[2].CREDITOS %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
