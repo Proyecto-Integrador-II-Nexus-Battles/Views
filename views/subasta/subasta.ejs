@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subasta</title>
-  <link rel="stylesheet" href="../../public/subasta/css/subasta.css">
+  <link rel="stylesheet" href="/subasta/css/subasta.css">
 </head>
 <body>
 <header>
-  <%- include('../../templates/navbarEcommerce'); %>
+  <nav>
+    <%- include('../../templates/navbarEcommerce'); %>
+  </nav>
 </header>
 <main class="container_general">
 
@@ -26,8 +28,8 @@
   for (let i = 0; i < datos.length; i++) {
     const carta = datos[i];
     const imagen = subtipoImagen[carta.Subtype];
-    const puja = datos.pujas
-  %>
+    const pujas = carta.PUJAS;
+    %>
 
 <!-- Informacion y foto de la carta -->
   <div class="info_carta">
@@ -72,7 +74,7 @@
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= puja.creditos %></p>
+    <p class="credits_player">Créditos: <%= pujas[0].creditos %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
@@ -80,14 +82,14 @@
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= puja.creditos %></p>
+    <p class="credits_player">Créditos: <%= pujas[1].creditos %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= puja.creditos %></p>
+    <p class="credits_player">Créditos: <%= pujas[2].creditos %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>

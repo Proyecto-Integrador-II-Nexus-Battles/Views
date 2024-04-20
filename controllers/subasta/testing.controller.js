@@ -105,11 +105,6 @@ export const subastaDetallada = async (_req, res) => {
             Object.assign(carta, date[index]);
         });
 
-        console.log(datos);
-
-        const pujas = datos.map((carta) => carta.PUJAS);
-        console.log(pujas);
-
         res.render("subasta/subasta", { datos });
 
     } catch (error) {
