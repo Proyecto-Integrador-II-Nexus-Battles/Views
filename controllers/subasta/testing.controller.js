@@ -79,7 +79,7 @@ export const filtrarCartasSubasta = async (req, res) => {
 export const subastaDetallada = async (_req, res) => {
     try {
 
-        const id = _req.query.id;
+        const id = "1";
 
         const options = {
             headers: {
@@ -106,7 +106,7 @@ export const subastaDetallada = async (_req, res) => {
             carta.ID_SUBASTA = datos[index].ID;
         });
 
-        res.render("subasta/subasta_vitrina", { datos });
+        res.render("subasta/subasta", { datos });
 
     } catch (error) {
         console.error(error);
