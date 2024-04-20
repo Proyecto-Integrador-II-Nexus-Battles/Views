@@ -1,4 +1,5 @@
 import { HOST, PORT } from "../../config.js";
+import axios from "axios";
 
 export const defaultR = async (req, res) => {
   const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
@@ -48,7 +49,24 @@ export const defaultR9 = (req, res) => {
   res.render("inventario/torneo");
 };
 export const default10 = (req, res) => {
-  res.render("inventario/subasta");
+  const options = {
+    headers: {
+      Authorization: req.query.token,
+    },
+  };
+  axios
+    .get(`${HOST}:${PORT}/inventario/get-creditos`, options)
+    .then((response) => {
+      if (response.status === 200) {
+        res.render("inventario/subasta", { credits: response.data.CANTIDAD });
+      } else {
+        res.redirect("/");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.redirect("/");
+    });
 };
 
 export const default11 = (req, res) => {
