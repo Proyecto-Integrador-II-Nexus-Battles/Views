@@ -73,30 +73,18 @@
 </div>
 
 <!-- Ofertas -->
+
+<% for (let j = 0; j < puja.length; j++) { %>
 <div class="ofertas">
 <h2>Ofertas</h2>
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= pujas[0].CREDITOS %></p>
+    <p class="credits_player">Créditos: <%= pujas[j].CREDITOS %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
 </div>
-
-<div class="ofertas_jugadores_container">
-  <div class="oferta_players">
-    <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= pujas[1].CREDITOS %></p>
-    <p class="cards_player">Cartas: <%= carta.Name %></p>
-  </div>
-</div>
-<div class="ofertas_jugadores_container">
-  <div class="oferta_players">
-    <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: <%= pujas[2].CREDITOS %></p>
-    <p class="cards_player">Cartas: <%= carta.Name %></p>
-  </div>
-</div>
+  <% } %>
 
 <div class="buttons">
   <button class="pujar" onclick="abrirPujar()"><b>Pujar</b></button>
