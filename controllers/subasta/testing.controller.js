@@ -90,7 +90,6 @@ export const subastaDetallada = async (_req, res) => {
         const response = await fetch(`https://localhost:${PORT}/subasta//getSubasta/` + id, options);
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
-        console.log(idCartas);
         const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
             method: "POST",
             headers: {
@@ -101,10 +100,15 @@ export const subastaDetallada = async (_req, res) => {
         })
 
         const datos = await conexionInventario.json();
-        console.log(datos);
         datos.forEach((carta, index) => {
             carta.ID_SUBASTA = datos[index].ID;
+            Object.assign(carta, date[index]);
         });
+
+        console.log(datos);
+
+        const pujas = datos.map((carta) => carta.PUJAS);
+        console.log(pujas);
 
         res.render("subasta/subasta", { datos });
 
