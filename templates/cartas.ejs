@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/templates/css/banco.css">
 <body>
   <div class="row2">
     <div class="list">
@@ -27,7 +28,7 @@
             const tipoIcono = subtipoIcono[carta.TypeCard];
           %>
 
-        <div class="card" id="<%= carta._id%>">
+        <div class="cartas" id="<%= carta._id%>">
           <div class="imagen_carta">
             <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
           </div>

@@ -64,72 +64,58 @@
   </header>
 
   <main>
-
-    <div class="container">
-
-      <div class="left-side">
-        <div class="row1">
-          <div class="subrow1">
-            <h3 style="color: white;">MI BANCO</h3>
-            <form action="" class="form-search" role="search">
-              <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
-            </form>
-            <div class="paginas">
-              <ul class="listPage">
-                <li class="active">1</li>
-                <li>2</li>
-                <li>3</li>
-              </ul>
-            </div>
-
+  <div class="container">
+    <div class="left-side">
+      <div class="row1">
+        <div class="subrow1">
+          <h3 style="color: white;">MI BANCO</h3>
+          <form action="" class="form-search" role="search">
+            <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+          <div class="paginas">
+            <ul class="listPageBanco"> <!-- Cambio aquí: ID único para el paginador del banco -->
+              <!-- Contenido generado dinámicamente -->
+            </ul>
           </div>
-          <%- include('../../templates/cartas_banco', {datos: banco}); %>
         </div>
-
-      </div>
-      <div class="right-side">
-        <div class="row1">
-          <div class="subrow1">
-            <h3 style="color: white;">INVENTARIO</h3>
-            <form action="" class="form-search" role="search">
-              <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
-            </form>
-            <div class="paginas">
-              <ul class="listPage">
-                <li class="active">1</li>
-                <li>2</li>
-                <li>3</li>
-              </ul>
-            </div>
-
-          </div>
-          <%- include('../../templates/cartas', {datos: inventario}); %>
-
-        </div>
+        <%- include('../../templates/cartas_banco', {datos: banco}); %>
       </div>
     </div>
-
-    <div class="container-2">
-      <input type="text" placeholder="Creditos Minimos">
-      <input type="text" placeholder="Creditos Maximos">
-      <button>Seleccionar carta como parte de pago</button>
-      <button>Seleccionar mi carta</button>
-      <button>ENVIAR SUBASTA</button>
+    <div class="right-side">
+      <div class="row1">
+        <div class="subrow1">
+          <h3 style="color: white;">INVENTARIO</h3>
+          <form action="" class="form-search" role="search">
+            <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+          <div class="paginas">
+            <ul class="listPageInventario"> <!-- Cambio aquí: ID único para el paginador del inventario -->
+              <!-- Contenido generado dinámicamente -->
+            </ul>
+          </div>
+        </div>
+        <%- include('../../templates/cartas', {datos: inventario}); %>
+      </div>
     </div>
+  </div>
+  <div class="container-2">
+    <input type="text" placeholder="Creditos Minimos">
+    <input type="text" placeholder="Creditos Maximos">
+    <button>Seleccionar carta como parte de pago</button>
+    <button>Seleccionar mi carta</button>
+    <button>ENVIAR SUBASTA</button>
+  </div>
+</main>
 
-
-
-  </main>
 
   <script src="/js/redirects.js"></script>
   <script src="/lista_deseos/js/enviar.js"></script>
   <script src="/lista_deseos/js/eliminar.js"></script>
-  <script src="/subasta/js/paginacionVentaCartas.js"></script>
+  <script src="/subasta/js/paginacionVentaCarta.js"></script>
   <script src="/lista_deseos/js/jugarOnline.js"></script>
   <script src="/lista_deseos/js/hamburguer.js"></script>
   <script src="js/enviar.js"></script>
   <script src="js/eliminar.js"></script>
-  <script src="js/paginacion.js"></script>
   <script src="/subasta/js/valorCartas.js"></script>
   <script src="js/jugarOnline.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
