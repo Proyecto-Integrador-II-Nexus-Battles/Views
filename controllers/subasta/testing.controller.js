@@ -56,3 +56,24 @@ export const valor_carta = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
+export const crearSubasta = async (req, res) => {
+  try {
+    console.log(req.query);
+
+    const response = await fetch(`${HOST}:${PORT}/subasta/add-subastar`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${req.query.token}`,
+      },
+      body: JSON.stringify(req.body)
+    });
+    const respuestaJson = await response.json();
+    res.status(200).send(respuestaJson);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+

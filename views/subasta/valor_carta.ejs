@@ -87,21 +87,27 @@
             <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
           </form>
           <div class="paginas">
-            <ul class="listPageInventario"> <!-- Cambio aquí: ID único para el paginador del inventario -->
-              <!-- Contenido generado dinámicamente -->
+            <ul class="listPageInventario"> 
+              
             </ul>
+          
+
           </div>
+          <h2 style="color: white" id="mensajeCarta">Selecciona tus cartas mínimas</h2>
+          <button id="bontonConfirmarCartas" onclick="confirmarCarta()">Confirmar cartas</button>
         </div>
         <%- include('../../templates/cartas', {datos: inventario}); %>
       </div>
     </div>
   </div>
   <div class="container-2">
-    <input type="text" placeholder="Creditos Minimos">
-    <input type="text" placeholder="Creditos Maximos">
-    <button>Seleccionar carta como parte de pago</button>
-    <button>Seleccionar mi carta</button>
-    <button>ENVIAR SUBASTA</button>
+    <input id="creditosMinimos" type="text" placeholder="Créditos Mínimos">
+    <input id="creditosMaximos" type="text" placeholder="Créditos Máximos">
+    <select name="tiempo" id="tiempo-creditos">
+      <option value="24">24 horas x 1 crédito</option>
+      <option value="48">48 horas x 3 crédito</option>
+    </select>
+    <button onclick="enviarSubasta()">ENVIAR SUBASTA</button>
   </div>
 </main>
 

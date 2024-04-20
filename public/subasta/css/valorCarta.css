@@ -82,7 +82,7 @@ article.icons {
   display: none;
 }
 
-.card {
+.card, .cartas {
   min-height: auto !important;
   height: auto !important;
   line-height: 10px;
@@ -100,7 +100,6 @@ article.icons {
   justify-content: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
 .paginas {
@@ -108,13 +107,12 @@ article.icons {
   bottom: 20px;
   left: 10%;
   text-align: center;
-  margin-left: 7rem;
 }
 
 .listPageBanco,
 .listPageInventario {
   display: flex;
-  padding: 5px;
+
   justify-content: center;
   text-align: center;
   list-style: none;
@@ -126,7 +124,7 @@ article.icons {
   cursor: pointer;
   border: 1px solid black;
   background-color: white;
-  width: 60px;
+  width: 40px;
   border-radius: 10px;
   border: transparent;
 }

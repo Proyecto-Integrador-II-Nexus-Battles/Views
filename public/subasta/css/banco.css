@@ -24,7 +24,7 @@
   padding-top: 22px;
 }
 
-.card {
+.card, .cartas {
   border: 1px solid #9e9e9e;
   border-radius: 14px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -69,12 +69,14 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  max-width: 180px;
 }
 
 #nombre p {
   margin-top: 5px;
   font-weight: bold;
   font-size: 13px;
+  
 }
 
 .foto {
