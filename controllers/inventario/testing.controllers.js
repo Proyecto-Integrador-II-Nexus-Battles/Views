@@ -51,6 +51,10 @@ export const default10 = (req, res) => {
   res.render("inventario/subasta");
 };
 
+export const default11 = (req, res) => {
+  res.render("inventario/subasta/venta_carta");
+};
+
 export const prueba = async (req, res) => {
   try {
     const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard`);
