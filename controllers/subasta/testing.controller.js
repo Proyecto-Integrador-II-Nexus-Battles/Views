@@ -3,7 +3,7 @@ import { HOST, PORT } from "../../config.js";
 
 
 export const cartasSubasta = async (_req, res) => {
-    try {
+    try{
         const response = await fetch(`${HOST}:${PORT}/subasta/get-cartas-subasta`);
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
