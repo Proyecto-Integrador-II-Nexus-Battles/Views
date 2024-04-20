@@ -1,4 +1,3 @@
-
 :root {
   --color-card: white;
   --color-card-power: #2ecc71;
@@ -20,7 +19,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding-top: 22px;
 }
