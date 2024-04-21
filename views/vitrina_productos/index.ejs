@@ -17,7 +17,6 @@
     <script>
       document.addEventListener("DOMContentLoaded", async function() {
         var token = localStorage.getItem('token');
-
         if (token !== null) {
           const cartasEnLista = await comprobarListaDeseos();
           const cartasEnBanco = await comprobarMiBanco();
@@ -34,15 +33,15 @@
           } else {
             console.log('Error encontrando cartas en lista de deseos');
           }
-          console.log(cartasEnBanco);
+
           if (cartasEnBanco.length > 0) {
             const datos = <%- JSON.stringify(datos) %>;
             for (let i = 0; i < datos.length; i++) {
               const carta = datos[i];
               const cartaEnBanco = cartasEnBanco.includes(carta._id);
               if (cartaEnBanco) {
-                console.log('cartas en banco');
-                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" id="bank">&#127974;</span>';
+                console.log(document.querySelector('.icons-' + i).innerHTML);
+                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" id="bank">&#127974;</span>' + document.querySelector('.icons-' + i).innerHTML;
               }
             }
           } else {

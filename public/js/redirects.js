@@ -13,7 +13,7 @@ async function redirectVitrinaSubasta() {
   if (token === "Bearer null") {
     window.location.href = "/login";
   }
-  window.location.href = url;
+  window.location.href = url + "?token=" + token;
 }
 
 async function redirectCarroCompra() {
