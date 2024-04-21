@@ -1,17 +1,17 @@
 #resumen-flotante {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  width: 17rem;
-  height: 37rem;
+  width: 19rem;
+  height: 40rem;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
   border: 1px solid black;
   border-radius: 5px;
   z-index: 1000;
-  margin-left: 19rem;
-  margin-top: -6.5rem;
+  margin-left: 22.3rem;
+  margin-top: -3rem;
 }
 
 .resumen-flotante-oculto {
@@ -97,7 +97,7 @@
   border-radius: 10px;
   background-color: #ebc793;
   width: 9rem;
-  height: 1.8rem;
+  height: 2.3rem;
   text-align: center;
   margin-top: 1.6rem;
   margin-left: 4.5rem;
@@ -106,6 +106,7 @@
 }
 
 .realizardos {
+  
   margin-top: -1rem;
   width: 9rem;
   height: 2.3rem;
@@ -117,7 +118,7 @@
   border-radius: 10px;
   background-color: #ebc793;
   width: 9rem;
-  height: 1.8rem;
+  height: 2.3rem;
   text-align: center;
   margin-top: 0.4rem;
   margin-left: 4.5rem;
@@ -126,6 +127,7 @@
 }
 
 .ircarritodos {
+  
   margin-top: -1rem;
   width: 9rem;
   height: 2.3rem;
