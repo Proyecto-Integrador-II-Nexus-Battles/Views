@@ -50,6 +50,7 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
             const responseData = response.data;
             const totalNeto = responseData.totalNeto;
             const totalBruto = responseData.totalBruto;
+            const cantidadtotal = responseData.cantidadtotal;
             const totales = responseData.totales;
 
             for(let i=0; i<totales.length; i++){
@@ -57,9 +58,11 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
             }
             // Actualiza el contenido de los elementos HTML correspondientes
             document.getElementById("totalNeto").innerHTML =
-              "Total Neto:&nbsp;"+totalNeto;
+              "Total:&nbsp;&nbsp;&nbsp;"+totalNeto+"&nbsp;COP";
             document.getElementById("totalBruto").innerHTML =
-              "Total Bruto:&nbsp;"+totalBruto;
+              "Total Bruto:&nbsp;&nbsp;&nbsp;"+totalBruto+"&nbsp;COP";
+            document.getElementById("cantidaduno").innerHTML =
+              "Productos:&nbsp;&nbsp;&nbsp;"+cantidadtotal;
           })
           .catch((error) => {
             console.error("Error al obtener los nuevos totales:", error);

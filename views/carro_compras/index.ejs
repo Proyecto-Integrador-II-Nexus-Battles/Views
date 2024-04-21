@@ -13,38 +13,17 @@
 
 <body>
   <header>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var token = localStorage.getItem('token');
-
-        if (token !== null) {
-          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
-          document.querySelector('.login_btn').addEventListener('click', function() {
-            localStorage.removeItem('token');
-            window.location.reload(true);
-          });
-        } else {
-          console.log('Not logged in');
-        }
-      });
-    </script>
+    
    
     <nav>
       <%- include('../../templates/navbarEcommerce'); %>
     </nav>
   </header>
-  <section>
-    <div>
-      <button class="regresar">
 
-      </button>
-    </div>
-    <div class="carrito">
-      <h1 class="titulo">Tu carro de compra</h1>
-      <hr class="linea">
-    </div>
-  </section>
-  <main>
+  
+  <main class="mainprincipal">
+    
+
     <div class="container-general">
       <%- include('../../templates/cartas_carrito'); %>
     </div>
@@ -62,12 +41,12 @@
         <hr class="lineados">
       </div>
       <div class="productos">
-        <div class="productosp">
+        <div class="productosp" id="cantidaduno">
           <p>Productos:&nbsp;&nbsp;&nbsp;<%= cantidadtotal %></p>
 
         </div>
         <div class="totalb" id="totalBruto" >
-          <p>Total bruto:&nbsp;&nbsp;&nbsp;<%= totalBruto %>&nbsp;COP</p>
+          <p>Total Bruto:&nbsp;&nbsp;&nbsp;<%= totalBruto %>&nbsp;COP</p>
 
         </div>
         <div class="iva">
@@ -76,7 +55,7 @@
         </div>
         <hr class="lineatres">
         <div class="total" id="totalNeto">
-          <h3>Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= totalNeto %>&nbsp;COP</h3>
+          <h3 class="totalnuno">Total:&nbsp;&nbsp;&nbsp;<%= totalNeto %>&nbsp;COP</h3>
 
         </div>
       </div>

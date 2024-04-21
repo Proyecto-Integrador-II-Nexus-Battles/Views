@@ -57,7 +57,7 @@ export const defaultR = (req, res) => {
       // No es necesario volver a formatear totalBruto aquí, ya que lo formateamos arriba
 
       console.log(totalNetoUSD);
-      console.log(cantidadtotal);
+      
 
       // Renderiza la vista con los datos obtenidos
       res.render("carro_compras/index", {
@@ -73,6 +73,7 @@ export const defaultR = (req, res) => {
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
     });
+   
 };
 
 export const actualizarCant = (req, res) =>{
@@ -87,12 +88,24 @@ export const actualizarCant = (req, res) =>{
     const totalBrutoFormatted = formatNumber(totalBruto);
     const totalNetoFormatted = formatNumber(response.data.totalNeto);
     const totales = response.data.totales.map(formatNumber);
+    const responseData = response.data;
+    const cantidad = responseData.list_price_unit;
+    const cantidadtotal = cantidad.reduce(
+      (total, item) => total + item.CANTIDAD,
+      0
+    );
+
     res.status(200).json({ 
       totalBruto: totalBrutoFormatted, 
       totalNeto: totalNetoFormatted, 
-      totales: totales });
+      totales: totales,
+      cantidadtotal: cantidadtotal,
+      
+     });
+     console.log(cantidadtotal);
 });
 }
+
 
 function calculateTotalBruto(totalNeto) {
   return Number((totalNeto * 0.81).toFixed(2));
