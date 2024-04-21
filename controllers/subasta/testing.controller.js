@@ -12,7 +12,6 @@ export const cartasSubasta = async (_req, res) => {
         const response = await fetch(`${HOST}:${PORT}/subasta/get-cartas-subasta`, options);
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
-        console.log(idCartas);
         const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
             method: "POST",
             headers: {
@@ -23,10 +22,11 @@ export const cartasSubasta = async (_req, res) => {
         })
 
         const datos = await conexionInventario.json();
-        console.log(datos);
         datos.forEach((carta, index) => {
-            carta.ID_SUBASTA = datos[index].ID;
+            carta.ID_SUBASTA = date[index].ID;
         });
+
+        console.log(datos);
 
         res.render("subasta/subasta_vitrina", { datos });
 
@@ -63,7 +63,7 @@ export const filtrarCartasSubasta = async (req, res) => {
         const datos = await conexionInventario.json();
         console.log(datos);
         datos.forEach((carta, index) => {
-            carta.ID_SUBASTA = datos[index].ID;
+            carta.ID_SUBASTA = date[index].ID;
         });
 
         res.render("subasta/subasta_vitrina", { datos });
@@ -77,7 +77,8 @@ export const filtrarCartasSubasta = async (req, res) => {
 export const subastaDetallada = async (_req, res) => {
     try {
 
-        const id = "1";
+        const id = _req.params.id;
+        console.log(id);
 
         const options = {
             headers: {
@@ -85,7 +86,7 @@ export const subastaDetallada = async (_req, res) => {
             },
         };
 
-        const response = await fetch(`${HOST}:${PORT}/subasta//getSubasta/` + id, options);
+        const response = await fetch(`${HOST}:${PORT}/subasta/getSubasta/` + id, options);
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
         const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {

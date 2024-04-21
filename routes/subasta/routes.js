@@ -13,7 +13,7 @@ const router = new Router();
 router.get("/vitrina-subasta", cartasSubasta);
 router.get("/valor_carta", valor_carta);
 router.post("/crear-subasta", crearSubasta);
-router.get("/subastaDetallada", subastaDetallada);
+router.get("/subastaDetallada/:id", subastaDetallada);
 router.get("/filteredCardsSubasta/", filtrarCartasSubasta);
 
 export default router;
