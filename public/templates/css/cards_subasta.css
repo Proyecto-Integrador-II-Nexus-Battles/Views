@@ -114,20 +114,7 @@
 .like:hover {
   color: red;
 }
-.carrito {
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: -5px;
-}
-#precio {
-  background-color: var(--color-price);
-  height: 25px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: bold;
-}
+
 .listPage {
   display: flex;
   padding: 5px;
@@ -153,6 +140,12 @@
 }
 .active {
   color: red;
+}
+#ver_mas{
+  height: 25px;
+  background-color: #304c8b;
+  border:  none;
+  margin-left: 5%;
 }
 @media screen and (max-width: 1680px) {
   .container_general {
