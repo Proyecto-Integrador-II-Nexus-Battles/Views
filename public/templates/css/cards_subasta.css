@@ -126,6 +126,7 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 12px;
+  color: white;
 }
 .listPage {
   display: flex;
@@ -152,6 +153,18 @@
 }
 .active {
   color: red;
+}
+@media screen and (min-width: 1681px) and (max-width:1920px){
+  .informacion_carta p {
+    font-size: 13px;
+    padding-left: 10px;
+  }
+  #nombre p {
+    font-size: 15px;
+  }
+  #ver_mas{
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 1680px) {
   .container_general {
