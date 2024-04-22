@@ -86,8 +86,8 @@
 <div class="ofertas">
 <h2>Ofertas</h2>
 <% if (pujas !== null ) { %>
+  <div class="ofertas_jugadores_container">
   <% for (let j = 0; j < pujas.length; j++) { %>
-<div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
     <p class="credits_player">Créditos: <%= pujas[j].CREDITOS %></p>
@@ -154,30 +154,30 @@
       const startDate_<%= i %> = new Date('<%= datos[i].TIEMPO_INICIO %>');
 
       const duration_<%= i %> = <%= datos[i].TIEMPO %> * 3600;
-  
+
       function updateTimer_<%= i %>() {
         const now = new Date();
-        
+
         const endTime = new Date(startDate_<%= i %>.getTime() + (duration_<%= i %> * 1000)); // Convertir la duración a milisegundos y sumarla a la fecha de inicio
         const timeLeft = Math.max(0, endTime - now); // Tiempo restante en milisegundos
-    
+
         // Convertir el tiempo restante a horas, minutos y segundos
         const hours = Math.floor(timeLeft / (1000 * 60 * 60));
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
+
         // Mostrar el temporizador en el elemento HTML
         document.getElementById('timer_<%= i %>').innerHTML = `<b>Tiempo restante: ${hours}h ${minutes}m ${seconds}s</b>`;
-    
+
         // Si el tiempo restante es cero, detener el temporizador
         if (timeLeft === 0) {
             clearInterval(timerInterval_<%= i %>);
         }
       }
-  
+
       // Actualizar el temporizador cada segundo
       const timerInterval_<%= i %> = setInterval(updateTimer_<%= i %>, 1000);
-  
+
       // Actualizar el temporizador por primera vez
       updateTimer_<%= i %>();
     <% } %>

@@ -20,9 +20,9 @@ margin: 0 5% 6% 5%;
 }
 
 /* Información de la carta */
-.info_carta{
+.info_carta, .subasta_info, .ofertas{
 background-color: white;
-margin:40px 0 40px 5%;
+margin:50px 0 40px 5%;
 grid-column: 1;
 border-radius: 15px;
 }
@@ -44,9 +44,7 @@ border-radius: 15px;
 
 /* info de la subasta */
 .subasta_info{
-  background-color: white;
-  margin:40px 0 40px 5%;
-  border-radius: 15px;
+
   grid-column: 2;
 }
 .subasta_info .subasta_info_title{
@@ -80,10 +78,11 @@ border-radius: 15px;
   margin: 8% 5% 0 0;
 }
 /* Ofertas de jugadores */
+.ofertas_jugadores_container {
+  overflow-y: auto;
+  max-height: 400px;
+}
 .ofertas{
-  background-color: white;
-  margin: 40px 5% 40px 5%;
-  border-radius: 15px;
   grid-column: 3;
 }
 .ofertas h2{
@@ -93,6 +92,7 @@ border-radius: 15px;
 .ofertas .oferta_players{
   background-color: #D9D9D9;
   margin-top: -4px;
+
 }
 .oferta_players .player_name{
   padding-top: 3%;
