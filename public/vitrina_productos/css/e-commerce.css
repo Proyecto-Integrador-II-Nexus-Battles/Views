@@ -7,15 +7,17 @@
   --precio: #a3b7dc;
   --precio_hover: #304c8b;
 }
+body{
+  background-image: url("/vitrina_productos/img/fondo.png");
+  background-position: center;
+  background-attachment: fixed;
 
+}
 main {
   display: grid;
   grid-template-columns: 30% 70%;
-  background-image: url("/vitrina_productos/img/fondo.png");
   padding: 20px;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* Vitrina de productos */
@@ -358,13 +360,6 @@ main {
     }
   }
   @media screen and (min-width: 591px) and (max-width: 660px) {
-    #nombre p {
-      font-size: 10px;
-    }
-    .card {
-      top: 5vh;
-      left: 5vh;
-    }
   }
   @media screen and (min-width: 340px) and (max-width: 390px) {
     .filtros {
