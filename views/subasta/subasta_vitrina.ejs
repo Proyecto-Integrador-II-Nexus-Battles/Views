@@ -34,57 +34,70 @@
       <%- include('../../templates/navbarEcommerce'); %>
     </nav>
   </header>
-  <main>
-    <!-- filtros -->
-    <div class="filtros">
-      <p>Filtros</p>
-      <ul class="tipo_filtros">
-        <!-- filtro precios -->
-        <li>
-          <h2>Créditos</h2>
-        </li>
 
-        <li><label for="creditos_min">Valor mínimo</label></li>
-        <li><input type="number" name="creditos_min" id="creditos_min" placeholder="Escriba el valor" min="0">
-          <div class="error_message"></div>
-        </li>
+    <main>
 
-        <li><label for="creditos_max">Valor máximo</label></li>
-        <li><input type="number" name="creditos_max" id="creditos_max" placeholder="Escriba el valor" min="0">
-          <div class="error_message"></div>
-        </li>
+      <!-- LADO IZQUIERDO FILTRO -->
+      <div class="left-side">
+        <div class="filtros">
+          <p>Filtros</p>
+          <ul class="tipo_filtros">
+            <!-- filtro precios -->
+            <li>
+              <h2>Créditos</h2>
+            </li>
 
-        <li>
-          <label for="Type">Tipo de carta</label>
-        </li>
+            <li><label for="creditos_min">Valor mínimo</label></li>
+            <li><input type="number" name="creditos_min" id="creditos_min" placeholder="Escriba el valor" min="0">
+              <div class="error_message"></div>
+            </li>
 
-        <li>
-          <select class="tipo_carta" name="Type">
-            <option value="" disabled selected>Selecciona un tipo</option>
-            <option value="Weapon">Armas</option>
-            <option value="Armor">Armaduras</option>
-            <option value="Hero">Héroes</option>
-            <option value="Item">Items</option>
-            <option value="Talent">Talentos</option>
-          </select>
-        </li>
-        <button id="filtro_input" onclick="filtrarCartasSubasta()">Filtrar</button>
-      </ul>
-    </div>
-    <div class="container_general">
-      <!--Parte barra de búsqueda  -->
-      <div class="barra_busqueda">
-        <div class="paginas">
-          <ul class="listPage">
-            <li class="active">1</li>
-            <li>2</li>
-            <li>3</li>
+            <li><label for="creditos_max">Valor máximo</label></li>
+            <li><input type="number" name="creditos_max" id="creditos_max" placeholder="Escriba el valor" min="0">
+              <div class="error_message"></div>
+            </li>
+
+            <li>
+              <label for="Type">Tipo de carta</label>
+            </li>
+
+            <li>
+              <select class="tipo_carta" name="Type">
+                <option value="" disabled selected>Selecciona un tipo</option>
+                <option value="Weapon">Armas</option>
+                <option value="Armor">Armaduras</option>
+                <option value="Hero">Héroes</option>
+                <option value="Item">Items</option>
+                <option value="Talent">Talentos</option>
+              </select>
+            </li>
+            <button id="filtro_input" onclick="filtrarCartasSubasta()">Filtrar</button>
           </ul>
+        </div>
       </div>
-      <!-- Cartas -->
-      <%- include('../../templates/cards_vitrina_subasta'); %>
-    </div>
-    </div>
+
+      <!-- LADO DERECHO CARTAS -->
+      <div class="right-side">
+        <div class="row1">
+          <div class="filtro_busqueda">
+            <form action="" class="form-search">
+              <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+            </form>
+          </div>
+
+
+          <div class="paginas">
+            <ul class="listPage">
+              <li class="active">1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row2">
+          <%- include('../../templates/cards_vitrina_subasta'); %>
+        </div>
+      </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

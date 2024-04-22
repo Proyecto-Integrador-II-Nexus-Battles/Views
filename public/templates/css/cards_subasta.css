@@ -121,10 +121,11 @@
 }
 #ver_mas{
   background-color: #304c8b;
- border-radius: 10px;
- width: 30%;
- border: none;
-
+  width: 34%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
 }
 .listPage {
   display: flex;
