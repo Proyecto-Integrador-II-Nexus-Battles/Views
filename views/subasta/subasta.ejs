@@ -116,6 +116,7 @@
   </label>
   <input type="number" name="cantidad_creditos" id="cantidad_creditos" oninput="validarNumero(this)">
 
+  <% if (carta.CARTAS_MIN !== null ) { %>
   <label for="cards_puja">
     Cartas
   </label>
@@ -124,6 +125,7 @@
     <option value="">2</option>
     <option value="">3</option>
   </select>
+  <% } %>
   <div class="buttons">
     <button class="pujar_b">Realizar puja</button>
     <button class="Cancelar" onclick="cerrarEmer()">Cancelar</button>
