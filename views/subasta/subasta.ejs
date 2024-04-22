@@ -89,7 +89,7 @@
     <div class="ofertas_jugadores_container">
       <% for (let j = 0; j < pujas.length; j++) { %>
         <div class="oferta_players">
-          <p class="player_name"><b>@ShadowStriker</b></p>
+          <p class="player_name"><b>@<%=pujas[j].USERNAME %></b></p>
           <p class="credits_player">Créditos: <%= pujas[j].CREDITOS %></p>
           <p class="cards_player">Cartas: <%= carta.Name %></p>
         </div>
