@@ -93,7 +93,6 @@
   <h2>Ofertas</h2>
   <% if (pujas !== null && pujas.length > 0) { %>
     <div class="ofertas_jugadores_container">
-      <% pujas.sort((a, b) => b.CREDITOS - a.CREDITOS); %>
       <% for (let j = 0; j < pujas.length; j++) { %>
         <div class="oferta_players">
           <p class="player_name"><b>@<%=pujas[j].USERNAME %></b></p>
