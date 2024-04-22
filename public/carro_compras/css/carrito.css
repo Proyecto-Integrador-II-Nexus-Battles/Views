@@ -357,52 +357,12 @@
   }
 }
 
-  @media screen and (max-width: 1280px) {
-    .opciones li a {
-      font-size: 18px;
-    }
-    .agregar{
-      font-size: 10px;
-    }
+  @media screen and (max-width: 1140px) {
     .grid-container{
-        width: 70%;
+      width: 58%;
     }
-    .card {
-      max-height: 225px;
-      min-height: 225px;
-    }
-    .imagen_carta {
-      width: 140px;
-      height: 80px;
-    }
-    .informacion_carta p {
-      font-size: 9px;
-      padding-left: 10px;
-      margin-top: 1px;
-    }
-    #nombre p {
-      font-size:8px;
-    }
-    .foto {
-      height: 17px;
-    }
-    #cart {
-      width: 80px;
-    }
-    #cart2 {
-      width: 80px;
-    }
-    .listPage li{
-        font-size: 10px;
-        width: 100px;
-      }
-      .agregar{
-        font-size: 10px;
-      }
-      .modificar button{
-        font-size: 9px;
-      }
 
+    
   }
 
   @media screen and (max-width: 1212px) {
