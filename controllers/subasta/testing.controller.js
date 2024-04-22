@@ -26,9 +26,12 @@ export const cartasSubasta = async (_req, res) => {
         });
 
         res.render("subasta/subasta_vitrina", { datos });
+
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
+
+        res.render("subasta/subasta_vitrina", { datos });
     }
 };
 
@@ -77,25 +80,28 @@ export const crearSubasta = async (req, res) => {
     }
 };
 
-
-export const fetchBuzon = async (data) => {
+export const fetchBuzon = async (req, res) => {
     try {
         const response = await fetch(`${HOST}:${PORT}/subasta/buzon`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `${req.query.token}`
             },
-            body: JSON.stringify(data),
         });
+        if (response.status === 401) {
+            return res.redirect("/")
+        }
         const datos = await response.json();
-        res.render()
+        console.log(datos);
+        res.render("subasta/buzon", { datos })
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
     }
-}
+};
 
-export const fetchClaim = async (data) => {
+export const fetchClaim = async (_req, res) => {
     try {
         const response = await fetch(`${HOST}:${PORT}/subasta/buzon/claim`, {
             method: "GET",
@@ -112,7 +118,8 @@ export const fetchClaim = async (data) => {
         res.status(500).send("Internal Server Error");
     }
 }
-export const fetchAdd = async (data) => {
+
+export const fetchAdd = async (_req, res) => {
     try {
         const response = await fetch(`${HOST}:${PORT}/subasta/buzon/add`, {
             method: "POST",
