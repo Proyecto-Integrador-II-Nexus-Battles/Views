@@ -58,7 +58,12 @@ function filtrarCartasSubasta() {
   }
 
   const queryParams = new URLSearchParams(filtros).toString();
+
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
   console.log(queryParams);
-  const url = '/filteredCardsSubasta/?' + queryParams;
+  const url = '/filteredCardsSubasta/?' + queryParams + '&token=' + token;
   window.location.href = url
 }

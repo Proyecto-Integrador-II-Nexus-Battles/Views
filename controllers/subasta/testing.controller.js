@@ -71,6 +71,10 @@ export const filtrarCartasSubasta = async (req, res) => {
             body: JSON.stringify({ IDs: idCartas }),
         })
 
+        if (conexionInventario.status === 401) {
+            return res.redirect("/login");
+        }
+
         const datos = await conexionInventario.json();
         console.log(datos);
         datos.forEach((carta, index) => {
@@ -113,6 +117,10 @@ export const subastaDetallada = async (_req, res) => {
             },
             body: JSON.stringify({ IDs: idCartas }),
         })
+
+        if (conexionInventario.status === 401) {
+            return res.redirect("/login");
+        }
 
         const datos = await conexionInventario.json();
         datos.forEach((carta, index) => {
