@@ -40,8 +40,8 @@
               const carta = datos[i];
               const cartaEnBanco = cartasEnBanco.includes(carta._id);
               if (cartaEnBanco) {
-                console.log(document.querySelector('.icons-' + i).innerHTML);
-                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" id="bank">&#127974;</span>' + document.querySelector('.icons-' + i).innerHTML;
+                console.log('cartas en banco', document.querySelector('.card-' + i));
+                document.querySelector('.card-' + i).style.opacity = '0.6';
               }
             }
           } else {

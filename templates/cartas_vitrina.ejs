@@ -29,7 +29,7 @@
               const tipoIcono = subtipoIcono[carta.TypeCard];
             %>
 
-        <div class="card">
+        <div class="card card-<%= i %>">
           <div class="imagen_carta">
             <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
           </div>
@@ -177,10 +177,10 @@
                   %>
             <% }%>
             </div>
-            <article class="icons icons-<%= i %>">
+            <article class="icons">
               <span onclick="cambiarColor(this, '<%= carta._id %>')" class="like carta-<%= i %>">&#9829;</span>
               <span class="carrito" onclick="addCarro('<%= carta._id %>')">&#128722;</span>
-              <p id="precio">COP <%= formatNumber(carta.price) %></p>
+              <p class="precio-<%= i %>" id="precio">COP <%= formatNumber(carta.price) %></p>
             </article>
           </div>
         </div>
