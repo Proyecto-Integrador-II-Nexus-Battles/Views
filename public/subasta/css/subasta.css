@@ -232,6 +232,10 @@ text-align: center;
   cursor: pointer;
   font-weight: bold;
 }
+.no_pujas{
+font-size: 30px;
+text-align: center;
+}
 /* Responsive */
 @media screen and (min-width: 1600px) and (max-width: 1920px){
   .info_carta .detalles_card{
