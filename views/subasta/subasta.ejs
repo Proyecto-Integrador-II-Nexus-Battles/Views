@@ -33,6 +33,7 @@
     const carta = datos[i];
     const imagen = subtipoImagen[carta.Subtype];
     const pujas = carta.PUJAS;
+
     %>
 
 <!-- Informacion y foto de la carta -->
@@ -49,42 +50,55 @@
 <h2 class="subasta_info_title">Información de la subasta</h2>
 <div class="valor_base_subasta">
   <p><b>Valor base</b></p>
-  <p><b>Créditos:</b><%= carta.CREDITOS_MIN %></p>
+  <p><b>Créditos: </b><%= carta.CREDITOS_MIN %></p>
+  <% if (carta.CARTAS_MIN !== null ) { %>
   <p><b>Cartas:</b></p>
-  <li><%= carta.CARTAS_MIN %></li>
+  <ul class="cartas_v_max">
+    <li><%= carta.CARTAS_MIN %></li>
+  </ul>
+  <% } %>
 </div>
 
 <div class="valor_maximo_subasta">
   <p><b>Valor Máximo / Compra Inmediata</b></p>
-  <p><b>Créditos:</b> <%= carta.CREDITOS_MAX %></p>
+  <p><b>Créditos: </b><%= carta.CREDITOS_MAX %></p>
+  <% if (carta.CARTAS_MAX !== null ) { %>
   <p><b>Cartas:</b></p>
   <ul class="cartas_v_max">
     <li><%= carta.CARTAS_MAX %></li>
   </ul>
+  <% } %>
 </div>
 <div class="fechas_subasta">
   <p><b>Fecha de Inicio:</b> <%= carta.FECHA_INICIO%> </p>
   <p><b>Fecha Fin:</b> <%= carta.FECHA_FIN %></p>
-  <p><b>Duración de la subasta:</b> <%= carta.TIEMPO_INICIO %></p>
+  <p><b>Duración de la subasta:</b> <%= carta.TIEMPO %> horas</p>
 </div>
 <div class="tiempo_restante">
-  <p><b>Tiempo Restante: &nbsp 00:24:00</b></p>
+  <p id="timer_<%= i %>"></p>
 </div>
 </div>
 
 <!-- Ofertas -->
 
-<% for (let j = 0; j < puja.length; j++) { %>
+
 <div class="ofertas">
 <h2>Ofertas</h2>
+<% if (pujas !== null ) { %>
+  <% for (let j = 0; j < pujas.length; j++) { %>
 <div class="ofertas_jugadores_container">
   <div class="oferta_players">
     <p class="player_name"><b>@ShadowStriker</b></p>
     <p class="credits_player">Créditos: <%= pujas[j].CREDITOS %></p>
     <p class="cards_player">Cartas: <%= carta.Name %></p>
   </div>
-</div>
   <% } %>
+<% } else { %>
+  <div class="oferta_players">
+    <p><b>Aun no hay ofertas!</b></p>
+  </div>
+<% } %>
+</div>
 
 <div class="buttons">
   <button class="pujar" onclick="abrirPujar()"><b>Pujar</b></button>
@@ -129,8 +143,45 @@
     <button class="cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
+
 <% } %>
 </main>
-<script src="../../public/subasta/js/emergentes.js"></script>
+<script src="/subasta/js/emergentes.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    <% for (let i = 0; i < datos.length; i++) { %>
+      const startDate_<%= i %> = new Date('<%= datos[i].TIEMPO_INICIO %>');
+
+      const duration_<%= i %> = <%= datos[i].TIEMPO %> * 3600;
+  
+      function updateTimer_<%= i %>() {
+        const now = new Date();
+        
+        const endTime = new Date(startDate_<%= i %>.getTime() + (duration_<%= i %> * 1000)); // Convertir la duración a milisegundos y sumarla a la fecha de inicio
+        const timeLeft = Math.max(0, endTime - now); // Tiempo restante en milisegundos
+    
+        // Convertir el tiempo restante a horas, minutos y segundos
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+        // Mostrar el temporizador en el elemento HTML
+        document.getElementById('timer_<%= i %>').innerHTML = `<b>Tiempo restante: ${hours}h ${minutes}m ${seconds}s</b>`;
+    
+        // Si el tiempo restante es cero, detener el temporizador
+        if (timeLeft === 0) {
+            clearInterval(timerInterval_<%= i %>);
+        }
+      }
+  
+      // Actualizar el temporizador cada segundo
+      const timerInterval_<%= i %> = setInterval(updateTimer_<%= i %>, 1000);
+  
+      // Actualizar el temporizador por primera vez
+      updateTimer_<%= i %>();
+    <% } %>
+  });
+</script>
+
 </body>
 </html>

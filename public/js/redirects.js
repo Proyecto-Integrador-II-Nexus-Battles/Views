@@ -10,8 +10,11 @@ async function redirectListaDeseos() {
 async function redirectVitrinaSubasta() {
   const url = "/vitrina-subasta";
   const token = "Bearer " + localStorage.getItem("token");
+  console.log("redirectVitrinaSubasta");
+  console.log(token.toString());
   if (token === "Bearer null") {
     window.location.href = "/login";
+    return;
   }
   window.location.href = url + "?token=" + token;
 }
