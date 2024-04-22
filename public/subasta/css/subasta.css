@@ -125,7 +125,12 @@ border-radius: 15px;
 .buttons .compra_rapida{
   margin-left: 3%;
 }
-
+.back_img {
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
 /* Emergente compra rapida*/
 .puja_container{
   position: absolute;
