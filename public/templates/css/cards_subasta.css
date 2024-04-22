@@ -114,7 +114,18 @@
 .like:hover {
   color: red;
 }
+.carrito {
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: -5px;
+}
+#ver_mas{
+  background-color: #304c8b;
+ border-radius: 10px;
+ width: 30%;
+ border: none;
 
+}
 .listPage {
   display: flex;
   padding: 5px;
@@ -140,12 +151,6 @@
 }
 .active {
   color: red;
-}
-#ver_mas{
-  height: 25px;
-  background-color: #304c8b;
-  border:  none;
-  margin-left: 5%;
 }
 @media screen and (max-width: 1680px) {
   .container_general {
