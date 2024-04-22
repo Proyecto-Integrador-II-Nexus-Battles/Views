@@ -14,18 +14,16 @@
   margin-left: 10%;
   margin-top: 10px;
   border-radius: 10px;
-
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 22px;
 }
 
-.card {
+.card, .cartas{
   position: relative;
   border: 1px solid #9e9e9e;
   border-radius: 14px;
@@ -43,14 +41,13 @@
 .Active {
   transition: all 0.3s ease;
   border: 2px solid #2ecc71;
-  box-shadow: 0px 0px 20px #2ecc71; /* Sombra */  
-
+  box-shadow: 0px 0px 20px #2ecc71; /* Sombra */
 }
 
 .activeHero {
   transition: all 1s ease;
   border: 2px solid gold; /* Borde sólido */
-  box-shadow: 0px 0px 50px gold; /* Sombra */  
+  box-shadow: 0px 0px 50px gold; /* Sombra */
 }
 
 .card:hover {
@@ -66,7 +63,7 @@
   cursor: pointer;
 }
 
-.Empty{
+.Empty {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,7 +87,6 @@
       font-weight: bold;
       font-size: 20px;
     }
-    
   }
 }
 .personaje {
@@ -110,6 +106,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  max-width: 180px;
 }
 
 #nombre p {
@@ -203,7 +200,6 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   font-size: 12px;
 }
-
 
 .listPage li:hover {
   background-color: #304c8b;
@@ -341,7 +337,7 @@
   color: white;
 }
 
-.icons>button {
+.icons > button {
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -378,7 +374,7 @@
   font-weight: bold;
   font-size: 20px;
   transform: translate(0%, -50%);
-  -webkit-text-stroke: .5px gold;
+  -webkit-text-stroke: 0.5px gold;
 }
 
 #currentlyHero {
@@ -392,3 +388,6 @@
       .informacion_carta p{
       }
   } */
+
+
+  
