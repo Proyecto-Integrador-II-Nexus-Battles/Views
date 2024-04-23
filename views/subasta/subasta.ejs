@@ -78,7 +78,7 @@
 </div>
 <div class="fechas_subasta">
   <p><b>Fecha de Inicio:</b> <%= carta.FECHA_INICIO%> </p>
-  <p><b>Fecha Fin:</b> <%= carta.FECHA_FIN %></p>
+  <p><b>Fecha de Fin:</b> <%= carta.FECHA_FIN %></p>
   <p><b>Duración de la subasta:</b> <%= carta.TIEMPO %> horas</p>
 </div>
 <div class="tiempo_restante">
@@ -132,11 +132,12 @@
   <label for="cards_puja">
     Cartas
   </label>
-  <select name="cards_puja" id="cards_p">
+  <!-- <select name="cards_puja" id="cards_p">
     <option value="<%= carta.Name %>"><%= carta.Name %></option>
     <option value="">2</option>
     <option value="">3</option>
-  </select>
+  </select> -->
+  <button onclick="addOption()">Añadir carta</button>
   <% } %>
   <div class="buttons">
     <button class="pujar_b">Realizar puja</button>
