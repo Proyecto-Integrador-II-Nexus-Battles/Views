@@ -154,6 +154,10 @@
 .active {
   color: red;
 }
+.pag2{
+  display: none;
+}
+
 @media screen and (min-width: 1681px) and (max-width:1920px){
   .informacion_carta p {
     font-size: 13px;
@@ -243,7 +247,7 @@
     font-size: 15px;
     margin-top: -1px;
   }
-  #ver_mas {
+  #precio {
     font-size: 9px;
   }
   #cart,
@@ -282,8 +286,19 @@
     margin-left: 10%;
   }
   .right-side{
-    margin-left: 30px;
-    width: 80%;
+    margin-left: 50px;
+  }
+  .card{
+    margin-right: 20px;
+  }
+  .listPage{
+    position: absolute;
+    top: 95%;
+    left: 15%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
   }
 }
 @media screen and (max-width: 660px) {
@@ -297,6 +312,7 @@
     top: 50%;
     right: 30%;
   }
+
 }
 @media screen and (min-width: 591px) and (max-width: 660px) {
   .right-side{
@@ -304,6 +320,9 @@
   }
 }
 @media screen and (min-width: 320px) and (max-width: 390px) {
+  .container_general{
+    background-color: transparent;
+  }
   .grid-container{
     grid-template-columns:1fr;
     margin-left: -15%;
@@ -313,6 +332,27 @@
     position: relative;
     top: 26%;
     margin-left: -10px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(0.0rem);
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 35%;
+  }
+  .card{
+    position: relative;
+    left: 45%;
+  }
+  .listPage{
+    position: absolute;
+    top: 100%;
+    left: 15%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
   }
 }
 @media screen and (min-width: 391px) and (max-width: 430px) {
@@ -325,24 +365,86 @@
     position: relative;
     top: 26%;
     margin-left: -10px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(0.0rem);
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 35%;
+  }
+  .card{
+    position: relative;
+    left: 45%;
+  }
+  .listPage{
+    position: absolute;
+    top: 100%;
+    left: 15%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
   }
 }
 @media screen and (min-width: 540px) and (max-width: 590px) {
   .right-side{
-    width: 117%;
+    width: 110%;
+    position: relative;
+    top: 50%;
     margin-left: -10px;
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 50%;
+  }
+  .card{
+    position: relative;
+    left: 5%;
+  }
+  .listPage{
+    position: absolute;
+    top: 95%;
+    left: 20%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
   }
 }
 @media screen and (min-width: 280px) and (max-width: 300px) {
   .grid-container{
     grid-template-columns:1fr;
-    margin-left: -18%;
+    margin-left: 20%;
   }
   .right-side{
-    width: 120%;
+    width: 110%;
     position: relative;
     top: 26%;
     margin-left: -10px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(0.0rem);
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 60%;
+  }
+  .card{
+    position: relative;
+    left: 45%;
+  }
+  .listPage{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
   }
 }
 @media screen and (min-width: 431px) and (max-width: 539px) {
