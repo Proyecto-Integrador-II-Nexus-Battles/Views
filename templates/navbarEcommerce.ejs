@@ -99,7 +99,7 @@
         document.querySelector(".login_btn").setAttribute("href", "#");
         document.querySelector(".login_btn").addEventListener("click", function() {
           localStorage.removeItem("token");
-          window.location.reload(true);
+          window.location.href='/';
         });
         document.querySelector(".register_btn").style.display = "none";
       } else {
