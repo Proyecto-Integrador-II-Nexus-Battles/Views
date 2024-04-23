@@ -255,6 +255,7 @@ text-align: center;
   border-radius: 10px;
 height: 30px;
 font-size: 18px;
+text-align: center;
  }
 .compra_rapida_container .comprar, .cancelar{
   font-size: 22px;
