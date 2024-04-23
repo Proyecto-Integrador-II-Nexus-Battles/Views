@@ -1,4 +1,5 @@
 import { HOST, PORT } from "../../config.js";
+import axios from "axios";
 
 export const defaultR = async (req, res) => {
   const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
@@ -13,9 +14,33 @@ export const defaultR2 = (req, res) => {
 export const defaultR4 = (req, res) => {
   res.render("inventario/descripcion");
 };
-export const defaultR5 = (req, res) => {
-  res.render("inventario/micuenta");
+
+export const rendermiCuenta = async (req, res) => {
+  try {
+    console.log("1");
+    console.log(req.query);
+    const data = await fetch(`${HOST}:${PORT}/usuario/cuenta`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${req.query.token}`,
+      },
+    });
+    const userinfo = await data.json();
+
+    if (userinfo.avatar == null) {
+      res.render("inventario/miCuenta", { userinfo, avatarText: "" });
+      return;
+    }
+    const avatarText = Buffer.from(userinfo.avatar.data).toString("utf-8");
+
+    res.render("inventario/miCuenta", { userinfo, avatarText });
+  } catch (error) {
+    console.error("Error al obtener datos del usuario:", error);
+    res.status(500).send("Error al obtener datos del usuario");
+  }
 };
+
 export const defaultR3 = async (req, res) => {
   try {
     console.log(req.params.id);
@@ -48,7 +73,30 @@ export const defaultR9 = (req, res) => {
   res.render("inventario/torneo");
 };
 export const default10 = (req, res) => {
-  res.render("inventario/subasta");
+  const options = {
+    headers: {
+      Authorization: req.query.token,
+    },
+  };
+  axios
+    .get(`${HOST}:${PORT}/inventario/get-creditos`, options)
+    .then((response) => {
+      if (response.status === 200) {
+        let cantidad;
+        if (!response.data) {
+          cantidad = 0;
+        } else {
+          cantidad = response.data.CANTIDAD;
+        }
+        res.render("inventario/subasta", { credits: cantidad });
+      } else {
+        res.redirect("/login");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.redirect("/login");
+    });
 };
 
 export const default11 = (req, res) => {

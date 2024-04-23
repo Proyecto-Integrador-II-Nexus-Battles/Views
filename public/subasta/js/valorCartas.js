@@ -85,16 +85,14 @@ function confirmarCarta() {
   }
 }
 
-
-async function enviarSubasta(){
-
-  if(!cartaPrincipalSubasta){
-    alert('Por favor selecciona una carta para subastar')
+async function enviarSubasta() {
+  if (!cartaPrincipalSubasta) {
+    alert("Por favor selecciona una carta para subastar");
   }
 
-  var valorCreditosMin = document.getElementById('creditosMinimos').value;
-  var valorCreditosMax = document.getElementById('creditosMaximos').value;
-  var valorTiempoCreditos = document.getElementById('tiempo-creditos').value;
+  var valorCreditosMin = document.getElementById("creditosMinimos").value;
+  var valorCreditosMax = document.getElementById("creditosMaximos").value;
+  var valorTiempoCreditos = document.getElementById("tiempo-creditos").value;
 
   const datosSubasta = {
     ID_CARD: cartaPrincipalSubasta,
@@ -105,32 +103,29 @@ async function enviarSubasta(){
     CARTAS_MAXIMAS: maxCartas,
   };
   const opciones = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
     },
-    body: JSON.stringify(datosSubasta)
+    body: JSON.stringify(datosSubasta),
   };
-  
+
   // Realizar la solicitud Fetch
-  fetch('/crear-subasta', opciones)
-    .then(response => {
+  fetch("/crear-subasta", opciones)
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Hubo un problema con la solicitud.');
+        throw new Error("Hubo un problema con la solicitud.");
       }
       return response.json();
     })
-    .then(data => {
-      console.log('Respuesta del servidor:', data);
-      // window.location.href = 'https://www.ejemplo.com'; //redirecionamintoyoooo
+    .then((data) => {
+      console.log("Respuesta del servidor:", data);
+      if (data.status === 200) {
+        // window.location.href = 'https://www.ejemplo.com'; //redirecionamintoyoooo
+      }
     })
-    .catch(error => {
-      console.error('Error:', error);
+    .catch((error) => {
+      console.error("Error:", error);
     });
-
-};
-
-
-
-
-
+}

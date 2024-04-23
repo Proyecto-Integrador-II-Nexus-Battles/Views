@@ -20,9 +20,9 @@ margin: 0 5% 6% 5%;
 }
 
 /* Información de la carta */
-.info_carta{
+.info_carta, .subasta_info, .ofertas{
 background-color: white;
-margin:40px 0 40px 5%;
+margin:50px 0 40px 5%;
 grid-column: 1;
 border-radius: 15px;
 }
@@ -44,9 +44,7 @@ border-radius: 15px;
 
 /* info de la subasta */
 .subasta_info{
-  background-color: white;
-  margin:40px 0 40px 5%;
-  border-radius: 15px;
+
   grid-column: 2;
 }
 .subasta_info .subasta_info_title{
@@ -80,10 +78,11 @@ border-radius: 15px;
   margin: 8% 5% 0 0;
 }
 /* Ofertas de jugadores */
+.ofertas_jugadores_container {
+  overflow-y: auto;
+  max-height: 400px;
+}
 .ofertas{
-  background-color: white;
-  margin: 40px 5% 40px 5%;
-  border-radius: 15px;
   grid-column: 3;
 }
 .ofertas h2{
@@ -93,6 +92,7 @@ border-radius: 15px;
 .ofertas .oferta_players{
   background-color: #D9D9D9;
   margin-top: -4px;
+
 }
 .oferta_players .player_name{
   padding-top: 3%;
@@ -125,8 +125,15 @@ border-radius: 15px;
 .buttons .compra_rapida{
   margin-left: 3%;
 }
+.back_img {
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
 
-/* Emergente compra rapida*/
+
+/* Emergente puja*/
 .puja_container{
   position: absolute;
   background-color: #A3B7DC;
@@ -136,23 +143,23 @@ border-radius: 15px;
   border-radius: 10px;
   height:70vh;
   width: 26%;
-  display: none; /*aa*/
+  display: flex; /*aa*/
 }
 .puja_container label{
 font-size: 28px;
 font-weight: bold;
-margin: 10px 10px 10px 5px;
+margin: 10px 10px 2px 5px;
 text-align: center;
 }
 .puja_container .c_creditos{
   padding-top: 7%
 }
-.puja_container input, select{
-  width: 75%;
-  height: 5vh;
+.puja_container input{
+  width: 50%;
+  height: 4vh;
   border-radius: 10px;
-  border: none;
-  margin:15px 20% 2% 12%;
+  border: 1px solid black;
+  margin:4px 20% 2% 25%;
   font-size: 20px;
   text-align: center;
 }
@@ -160,14 +167,40 @@ text-align: center;
   text-align: center;
   margin: 5% 0 10% 0;
 }
-.puja_container .pujar_b, .Cancelar{
+
+.puja_container .cards_container{
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
+.cards_max{
+  display: flex;
+  margin-top: 10px;
+}
+.cards_max p{
+  font-size: 16px;
+  width: auto;
+  margin-left: 40px;
+  font-weight: bold;
+}
+.cards_max input{
+  width: 30%;
+  margin: 1px 10px 2px 10px;
+  text-align: center;
+}
+/* .puja_container .pujar_b .Cancelar{
+  font-size: 20px;
+  width: 40%;
+  height: 20px;
+  cursor: pointer;
+} */
+
+ .puja_container .pujar_b, .Cancelar{
   font-size: 22px;
   width: 40%;
   height: 38px;
   background-color: #A3B7DC;
   border: none;
-  margin: 0 0 5% 4%;
-  padding-top: 35%;
+  margin: 10% 0 5% 4%;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
@@ -176,6 +209,8 @@ text-align: center;
 .puja_container .Cancelar{
   margin-left: 5%;
 }
+
+
 /*Emergente Compra rápida*/
 .compra_rapida_container{
   position: absolute;
@@ -214,6 +249,14 @@ text-align: center;
   margin-left:5%;
   padding: 2% 0 2% 0;
  }
+ .creditos_container{
+  background-color: white;
+  margin:5% 15% 2% 15%;
+  border-radius: 10px;
+height: 30px;
+font-size: 18px;
+text-align: center;
+ }
 .compra_rapida_container .comprar, .cancelar{
   font-size: 22px;
   width: 40%;
@@ -227,6 +270,11 @@ text-align: center;
   cursor: pointer;
   font-weight: bold;
 }
+.no_pujas{
+font-size: 30px;
+text-align: center;
+}
+
 /* Responsive */
 @media screen and (min-width: 1600px) and (max-width: 1920px){
   .info_carta .detalles_card{

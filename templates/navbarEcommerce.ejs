@@ -1,23 +1,8 @@
-<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var token = localStorage.getItem("token");
-
-    if (token !== null) {
-      document.querySelector(".login_btn").textContent = "Cerrar Sesión";
-      document
-        .querySelector(".login_btn")
-        .addEventListener("click", function() {
-          localStorage.removeItem("token");
-          window.location.reload(true);
-        });
-    } else {
-      console.log("Not logged in");
-    }
-  });
-</script>
-<!-- Barra de navegación -->
-
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
 <body>
   <div id="page">
     <div class="site">
@@ -33,34 +18,31 @@
             <div class="middle">
               <nav>
                 <ul>
-                  <li><a href="/miCuenta">Mi Cuenta</a></li>
+                  <li><a onclick="redirectMiCuenta()">Mi Cuenta</a></li>
                   <li><a onclick="redirectMiBanco()">Mi Banco</a></li>
-                  <li><a href="/subasta">Subasta</a></li>
+                  <li><a onclick="redirectSubasta()">Subasta</a></li>
                   <li><a href="/jugarOnline">Jugar Online</a></li>
                   <li><a href="/torneo">Torneo</a></li>
                   <li><a id="mostrar-resumen-flotante"> Resumen Flotante</a></li>
-
                 </ul>
               </nav>
             </div>
             <div class="right">
               <ul>
-
                 <li>
                   <a onclick="redirectListaDeseos()" id="lista-deseos"><i class="ri-heart-line"></i></a>
                 </li>
                 <li>
-                  <a href="/login"><i class="ri-user-line"></i>Login</a>
+                  <a href="/login" class="login_btn"><i class="ri-user-line"></i>Login</a>
                 </li>
                 <li>
-                  <a href="/register"><i class="ri-login-box-line"></i>Sign Up</a>
+                  <a href="/register" class="register_btn"><i class="ri-login-box-line"></i>Sign Up</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </header>
-
       <nav class="mobile-menu">
         <div class="mini">
           <a class="mini-close"><i class="ri-close-line"></i></a>
@@ -84,9 +66,9 @@
                 <li class="has-child">
                   <a><span>MIS SERVICIOS</span></a>
                   <ul>
-                    <li><a href="/miCuenta">Mi Cuenta</a></li>
-                    <li><a onclick="redirectMiBanco()"></a>Mi Banco</a></li>
-                    <li><a href="/subasta">Subasta</a></li>
+                    <li><a onclick="redirectMiCuenta()">Mi Cuenta</a></li>
+                    <li><a onclick="redirectMiBanco()">Mi Banco</a></li>
+                    <li><a onclick="redirectSubasta()">Subasta</a></li>
                     <li><a href="/jugarOnline">Jugar Online</a></li>
                     <li><a href="/torneo">Torneo</a></li>
                   </ul>
@@ -103,10 +85,27 @@
     </div>
   </div>
   <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
-
   <script src="/js/navbar.js"></script>
   <script src="/js/redirects.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/resumen_flotante/js/deployResumen.js"></script>
   <script src="/carro_compras/js/resumen_flotante.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var token = localStorage.getItem("token");
+  
+      if (token !== null) {
+        document.querySelector(".login_btn").textContent = "Sign off";
+        document.querySelector(".login_btn").setAttribute("href", "#");
+        document.querySelector(".login_btn").addEventListener("click", function() {
+          localStorage.removeItem("token");
+          window.location.reload(true);
+        });
+        document.querySelector(".register_btn").style.display = "none";
+      } else {
+        console.log("Not logged in");
+      }
+    });
+  </script>
 </body>
+</html>

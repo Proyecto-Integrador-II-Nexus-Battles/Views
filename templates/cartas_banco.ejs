@@ -180,9 +180,9 @@
                 %>
             <% }%>
             <article class="icons" onclick="<% if (carta.TypeCard === 'Hero') { %> seleccionarHeroe('<%= carta.Name%>', '<%= carta._id %>') <% } else { %> seleccionarCarta('<%= carta.TypeCard %>', '<%= carta._id %>') <%}%> ">
-                  <button>
+                  <button|>
                       <p>Seleccionar &nbsp</p>
-                  </button>
+                  </button|>
             </article>
           </div>
         </div>
