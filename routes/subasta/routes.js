@@ -13,6 +13,6 @@ router.get("/vitrina-subasta", cartasSubasta);
 router.get("/valor_carta", valor_carta);
 router.post("/crear-subasta", crearSubasta);
 router.get("/subasta/buzon", fetchBuzon)
-router.post("/subasta/claim", fetchClaim)
+router.post("/subasta/buzon/claim", fetchClaim)
 
 export default router;

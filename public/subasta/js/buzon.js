@@ -1,5 +1,7 @@
 const boton_claim = document.querySelectorAll(".Reclamar_Venta");
-console.log(boton_claim)
+
+let id_user = localStorage.getItem("token");
+console.log(id_user)
 
 
 boton_claim.forEach(boton => {
@@ -7,20 +9,20 @@ boton_claim.forEach(boton => {
         console.log(boton.name + '¡Se hizo clic en un botón!');
         /////////////////////////
 
-        fetch(`/subasta/claim`, {
+        fetch(`/subasta/buzon/claim`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "enctype": "multipart/form-data",
-                "Access-Control-Allow-Methods": "POST",
-
+                "Authorization": `Bearer ${id_user}`
             },
             body: JSON.stringify({ recompensaId: boton.name })
         })
-            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
+                return res.json(); // Agregamos el return aquí
+            })
             .then((result) => {
-                console.log("resultado: " + result);
-
+                console.log("resultado: ", result);
             })
             .catch((err) => console.log(err));
 
@@ -28,17 +30,3 @@ boton_claim.forEach(boton => {
     });
 });
 
-
-//boton_claim.addEventListener("click", claim);
-
-function claim(event) {
-    event.preventDefault();
-    console.log(boton_claim)
-    console.log(boton_claim.name)
-    // Extract datos from the hidden input field
-
-
-    console.log(datos_claim.value);
-
-
-}

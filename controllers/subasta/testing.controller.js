@@ -82,11 +82,12 @@ export const crearSubasta = async (req, res) => {
 
 export const fetchBuzon = async (req, res) => {
     try {
+        const token = req.query.token;
         const response = await fetch(`${HOST}:${PORT}/subasta/buzon`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `${req.query.token}`
+                "Authorization": `${token}`
             },
         });
         if (response.status === 401) {
@@ -94,7 +95,7 @@ export const fetchBuzon = async (req, res) => {
         }
         const datos = await response.json();
         console.log(datos);
-        res.render("subasta/buzon", { datos })
+        res.render("subasta/buzon", { datos, token })
     } catch (error) {
         console.error(error);
         res.status(500).send("Internal Server Error");
@@ -103,19 +104,22 @@ export const fetchBuzon = async (req, res) => {
 
 export const fetchClaim = async (req, res) => {
     console.log(req.body)
-    console.log(req.query.token)
+    console.log("soy gay")
+
+    const token = req.headers.authorization
+    console.log(token)
 
     fetch(`${HOST}:${PORT}/inventario/buzon/claim`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            enctype: "multipart/form-data",
             "Access-Control-Allow-Methods": "POST",
-            "Authorization": `${req.query.token}`
+            "Authorization": `${token}`
         },
         body: JSON.stringify(req.body),
     })
         .then((response) => {
+            console.log(response)
             response.json().then((data) => {
                 res.json(data);
             });
