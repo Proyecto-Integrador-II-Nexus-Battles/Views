@@ -82,13 +82,13 @@ export const default10 = (req, res) => {
     .get(`${HOST}:${PORT}/inventario/get-creditos`, options)
     .then((response) => {
       if (response.status === 200) {
-        if (
-          response.data.CANTIDAD == null ||
-          response.data.CANTIDAD == undefined
-        ) {
-          response.data.CANTIDAD = 0;
+        let cantidad;
+        if (!response.data) {
+          cantidad = 0;
+        } else {
+          cantidad = response.data.CANTIDAD;
         }
-        res.render("inventario/subasta", { credits: response.data.CANTIDAD });
+        res.render("inventario/subasta", { credits: cantidad });
       } else {
         res.redirect("/login");
       }
