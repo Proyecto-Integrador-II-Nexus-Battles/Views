@@ -17,18 +17,22 @@ export const defaultR4 = (req, res) => {
 
 export const rendermiCuenta = async (req, res) => {
   try {
-    console.log("1")
+    console.log("1");
     console.log(req.query);
-    const data = await fetch(`${HOST}:${PORT}/usuario/cuenta`,{
-      method: 'POST',
+    const data = await fetch(`${HOST}:${PORT}/usuario/cuenta`, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json', 
-        'Authorization': `${req.query.token}`,
+        "Content-Type": "application/json",
+        Authorization: `${req.query.token}`,
       },
     });
     const userinfo = await data.json();
-  
-    const avatarText = Buffer.from(userinfo.avatar.data).toString('utf-8');
+
+    if (userinfo.avatar == null) {
+      res.render("inventario/miCuenta", { userinfo, avatarText: "" });
+      return;
+    }
+    const avatarText = Buffer.from(userinfo.avatar.data).toString("utf-8");
 
     res.render("inventario/miCuenta", { userinfo, avatarText });
   } catch (error) {
