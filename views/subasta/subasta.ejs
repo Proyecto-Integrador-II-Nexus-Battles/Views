@@ -140,7 +140,7 @@
 
 
   <% if (carta.CARTAS_MIN !== null ) { %>
-
+    <label for="#">Cartas</label>
     <div class="cards_container">
       <ul class="cartas_v_max puja">
         <% for (let k = 0; k < cartas_min.length; k++) { %>
@@ -152,16 +152,17 @@
     <div class="cartas_max_container">
       <% if (carta.CARTAS_MAX !== null ) { %>
         <% for (let k = 0; k < cartas_max.length; k++) { %>
+          <div class="cards_max">
           <p class="<%= cartas_max[k].ID %>"><%= cartas_max[k].NAME %></p>
           <input type="number" name="amount_<%= k %>" id="amount_<%= k %>" min="0" max="<%= cartas_max[k].CANTIDAD %>">
-        <% } %>
+        </div>
+          <% } %>
       <% } %>
     </div>
 
     <div class="cards error_message"></div>
 
     <% } %>
-
   <div class="buttons">
     <button class="pujar_b"onclick="pujar()">Realizar puja</button>
     <button class="Cancelar" onclick="cerrarEmer()">Cancelar</button>
