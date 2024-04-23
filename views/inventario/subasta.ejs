@@ -27,7 +27,7 @@
       </h2>
       <div class="game-coin-container">
         <h2 class="game-coin">
-          0
+          <%= credits %>
         </h2>
         <img src="/inventario/imagenes/game-coin.png" class="coin-img">
       </div>
@@ -46,13 +46,15 @@
         <h2 class="texto"> COMPRA <br> CARTAS </h2>
 
       </div>
-      <div class="card">
+      <a onclick="redirectVentaCartas()">
+        <div class="card">
 
-        <div class="capa-opaca"></div>
-        <img src="/inventario/imagenes/vender-cartas.JPG" class="personaje" id="imagen">
-        <h2 class="texto"> VENTA <br> CARTAS</h2>
+          <div class="capa-opaca"></div>
+          <img src="/inventario/imagenes/vender-cartas.JPG" class="personaje" id="imagen">
+          <h2 class="texto"> VENTA <br> CARTAS</h2>
 
-      </div>
+        </div>
+      </a>
 
       <div class="card">
         <div class="capa-opaca"></div>

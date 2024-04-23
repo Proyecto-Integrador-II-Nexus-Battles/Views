@@ -9,17 +9,38 @@
 <body>
 <h1>Acá va el navbar</h1>
 <main class="container_general">
+
+  <% // Mapeo de subtipos a imágenes y tipo de icono
+  const subtipoImagen = {
+    "Armas": "/inventario/imagenes/espadas.png",
+    "Tanque": "/inventario/imagenes/blindaje.png",
+    "Fuego": "/inventario/imagenes/Fuego.png",
+    "Hielo": "/inventario/imagenes/hielo.png",
+    "Veneno": "/inventario/imagenes/veneno.png",
+    "Machete": "/inventario/imagenes/machete.png"
+  };
+
+  const subtipoIcono = {
+    "Hero": "foto",
+    "Item": "foto",
+    "Armor": "foto",
+    "Talent": "foto",
+    "Weapon": "foto"
+  };
+
+  for (let i = 0; i < datos.length; i++) {
+    const carta = datos[i];
+    const imagen = subtipoImagen[carta.Subtype];
+    const tipoIcono = subtipoIcono[carta.TypeCard];
+  %>
+
 <!-- Informacion y foto de la carta -->
   <div class="info_carta">
-    <img src="../../public/subasta/img/picaro_ejemplo_img.jpeg" alt="">
-    <p class="nombre_carta"><b>Pícaro Veneno: Nébula Tóxica</b></p>
+    <img src="<%= carta.imagePath %>" alt="">
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
    <ul class="detalles_card">
-    <li class="tipo"><b>Tipo carta:</b>&nbsp Héroe</li>
-    <li class="description"><b>Descripción:</b>&nbsp Entrenado en alquimia
-      puede causar gran daño al adversario
-      afectando sus habilidades y
-      reduciendo la posibilidad de que
-      puedan acertar un golpe.</li>
+    <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+    <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
    </ul>
   </div>
    <!-- Informacion de la subasta -->
@@ -27,14 +48,14 @@
 <h2 class="subasta_info_title">Información de la subasta</h2>
 <div class="valor_base_subasta">
   <p><b>Valor base</b></p>
-  <p><b>Créditos:</b>60</p>
+  <p><b>Créditos:</b><%= carta.creditos_min %>></p>
   <p><b>Cartas:</b></p>
-  <li>Pícaro Machete</li>
+  <li><%= carta.cartas_min_id%></li>
 </div>
 
 <div class="valor_maximo_subasta">
   <p><b>Valor Máximo / Compra Inmediata</b></p>
-  <p><b>Créditos:</b> 200</p>
+  <p><b>Créditos:</b> <%= carta.creditos_max %></p>
   <p><b>Cartas:</b></p>
   <ul class="cartas_v_max">
     <li>Pícaro Machete</li>
@@ -43,15 +64,15 @@
   </ul>
 </div>
 <div class="fechas_subasta">
-  <p><b>Fecha de Inicio:</b> 7/04/2024</p>
+  <p><b>Fecha de Inicio:</b> 7/04/2024 </p>
   <p><b>Fecha Fin:</b> 8/04/2024</p>
-  <p><b>Duración de la subasta:</b> 24 horas</p>
+  <p><b>Duración de la subasta:</b> <%= carta.tiempo_inicio &></p>
 </div>
 <div class="tiempo_restante">
-  <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
+  <p><b>Tiempo Restante: &nbsp <%=  %>00:24:00</b></p>
 </div>
 </div>
-
+} %>
 <!-- Ofertas -->
 <div class="ofertas">
 <h2>Ofertas</h2>
@@ -82,6 +103,8 @@
   <button class="compra_rapida" onclick="abrirCompraRapida()" ><b>Compra rápida</b></button>
 </div>
 </div>
+<!-- <% } %>
+<% } %> -->
 <!-- Emergente Puja-->
 <div class="puja_container" >
   <label for="cantidad_creditos" class="c_creditos">
