@@ -145,7 +145,6 @@
   <div class="creditos_container" id="cantidad_creditos" name="cantidad_creditos">
     <%= carta.CREDITOS_MAX %>
   </div>
-
     <% if (cartas_max !== null ) { %>
       <label for="cards">
         Cartas
@@ -156,9 +155,9 @@
         <li><%= cartas_max[k].CANTIDAD %> <%= cartas_max[k].NAME %></li>
         <% } %>
       </ul>
+      </div>
     <% } %>
 
- 
   <div class="buttons">
     <button class="comprar">Comprar</button>
     <button class="cancelar" onclick="cerrarEmer()">Cancelar</button>

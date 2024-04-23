@@ -219,6 +219,13 @@ text-align: center;
   margin-left:5%;
   padding: 2% 0 2% 0;
  }
+ .creditos_container{
+  background-color: white;
+  margin:5% 15% 2% 15%;
+  border-radius: 10px;
+height: 30px;
+font-size: 18px;
+ }
 .compra_rapida_container .comprar, .cancelar{
   font-size: 22px;
   width: 40%;
