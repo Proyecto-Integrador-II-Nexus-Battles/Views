@@ -10,7 +10,6 @@ async function redirectListaDeseos() {
 async function redirectVitrinaSubasta() {
   const url = "/vitrina-subasta";
   const token = "Bearer " + localStorage.getItem("token");
-  console.log("redirectVitrinaSubasta");
   console.log(token.toString());
   if (token === "Bearer null") {
     window.location.href = "/login";
@@ -37,8 +36,26 @@ async function redirectMiBanco() {
   window.location.href = url + "?token=" + token;
 }
 
+async function redirectMiCuenta() {
+  const url = "/miCuenta";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
+
 async function redirectVentaCartas() {
   const url = "/valor_carta";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
+
+async function redirectSubasta() {
+  const url = "/subasta";
   const token = "Bearer " + localStorage.getItem("token");
   if (token === "Bearer null") {
     window.location.href = "/login";

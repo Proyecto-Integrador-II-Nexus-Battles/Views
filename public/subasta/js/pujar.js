@@ -1,80 +1,108 @@
-function pujar() {
-    const atributos = {}; // donde se almacenaran los atributos que se van a pujar
+async function pujar() {
+    const atributos = {};
+    let flag_puja = true;
 
     const creditos_pujados = document.querySelector('input[name="cantidad_creditos"]').value;
     const cartas_min_elements = Array.from(document.querySelectorAll('.cartas_v_max.puja li'));
 
-    // Extraer IDs y cantidades de las cartas
     const ids_cartas_min = [];
     const cantidad_cartas_min = [];
-    
+
     cartas_min_elements.forEach(li => {
-      const classes = li.classList;
-      const id = classes[0];
-      const cantidad = parseInt(classes[1]);
-      ids_cartas_min.push(id);
-      cantidad_cartas_min.push(cantidad);
+        const classes = li.classList;
+        const id = classes[0];
+        const cantidad = parseInt(classes[1]);
+        ids_cartas_min.push(id);
+        cantidad_cartas_min.push(cantidad);
     });
 
-    console.log(creditos_pujados, cantidad_cartas_min, ids_cartas_min);
+    const cartas_max_elements = Array.from(document.querySelectorAll('.cartas_max_container p'));
+    const cartas_max_input_elements = Array.from(document.querySelectorAll('.cartas_max_container input[type="number"]'));
 
-    // const cartas_min = cartas_min_elements.map(li => li.textContent);
-    // const cartas_min_cantidad = cartas_min_elements.map(li => parseInt(li.querySelector('.quantity').textContent));
-    // const cartas_max = document.querySelector('select[name="Type"]').value;
-    // const cartas_max_cantidad = document.querySelector('input[name="creditos_max"]').value;
+    const ids_cartas_max = cartas_max_elements.map(p => p.classList[0]);
+    const cantidad_cartas_max = cartas_max_input_elements.map(input => parseInt(input.value) || 0);
 
-    // console.log(creditos_pujados, cartas_min, cartas_min_cantidad, cartas_max, cartas_max_cantidad);
 
-    // // Función para mostrar mensaje de error
-    // function showError(inputName, errorMessage) {
-    //     const errorInput = document.querySelector(`input[name="${inputName}"] + .error_message`);
-    //     errorInput.textContent = errorMessage;
-    //     errorInput.style.display = 'block';
-    // }
+    const min_creditos = document.querySelector('input[name="cantidad_creditos"]').getAttribute('min');
 
-    // // Función para ocultar mensaje de error
-    // function hideError(inputName) {
-    //     const errorInput = document.querySelector(`input[name="${inputName}"] + .error_message`);
-    //     errorInput.textContent = '';
-    //     errorInput.style.display = 'none';
-    // }
+    function showError(inputName, errorMessage) {
+        const errorInput = document.querySelector(`input[name="${inputName}"] + .error_message`);
+        errorInput.textContent = errorMessage;
+        errorInput.style.display = 'block';
+    }
 
-    // // Validación de créditos
+    function showErrorCards(errorMessage) {
+        const errorInput = document.querySelector(`.cards.error_message`);
+        errorInput.textContent = errorMessage;
+        errorInput.style.display = 'block';
+    }
 
-    // if (Number(creditos_min) === 0 && Number(creditos_max) === 0) {
-    //     hideError('creditos_max');
-    //     hideError('creditos_min');
-    //     console.log("No se seleccionaron créditos");
-    // } else {
-    //     if (Number(creditos_min) !== "" && Number(creditos_min) >= 0) {
-    //         hideError('creditos_max');
-    //         hideError('creditos_min');
-    //         if (creditos_max !== "" && creditos_max !== 0) {
-    //             hideError('creditos_max');
-    //             hideError('creditos_min');
-    //             if (Number(creditos_min) >= Number(creditos_max)) {
-    //                 showError('creditos_min', "El valor de créditos menores debe ser menor");
-    //                 return;
-    //             } else {
-    //                 hideError('creditos_max');
-    //                 hideError('creditos_min');
-    //                 filtros.creditos_min = creditos_min;
-    //                 filtros.creditos_max = creditos_max;
-    //             }
-    //         } else {
-    //             showError('creditos_max', "El valor de créditos mayores no puede ser 0 o vacío");
-    //             return;
-    //         }
-    //     } else {
-    //         showError('creditos_min', "El valor de créditos menores no puede estar vacío");
-    //         return;
-    //     }
-    // }
+    function hideError(inputName) {
+        const errorInput = document.querySelector(`input[name="${inputName}"] + .error_message`);
+        errorInput.textContent = '';
+        errorInput.style.display = 'none';
+    }
 
-    // if (Type !== "") {
-    //     filtros.Type = Type;
-    // }
+    function hideErrorCards() {
+        const errorInput = document.querySelector(`.cards.error_message`);
+        errorInput.textContent = '';
+        errorInput.style.display = 'none';
+    }
 
+    const creditos_usuario = await comprobarCreditos()
+
+    if (parseInt(creditos_pujados) >= parseInt(min_creditos)) {
+        hideError('cantidad_creditos');
+    } else if (parseInt(creditos_pujados) === 0) {
+        showError('cantidad_creditos', "Tiene que pujar créditos");
+        return;
+    } else {
+        showError('cantidad_creditos', "El valor de créditos pujados debe ser mayor a la ultima puja");
+        return;
+    }
+
+    const cartas_en_banco = await comprobarMiBanco()
+
+    const cartasEnBancoIds = cartas_en_banco.map(card => card.carta._id);
+    const cartasEnBancoCantidades = cartas_en_banco.map(card => card.cantidad);
+
+
+    if (parseInt(creditos_pujados) > creditos_usuario) {
+        showError('cantidad_creditos', `No tienes suficientes créditos! Actualmente tienes ${creditos_usuario} créditos.`);
+        flag_puja = false;
+    }
+
+    for (let i = 0; i < ids_cartas_min.length; i++) {
+        const id = ids_cartas_min[i];
+        const cantidad = cantidad_cartas_min[i];
+        if (!cartasEnBancoIds.includes(id) || cantidad > cartasEnBancoCantidades[cartasEnBancoIds.indexOf(id)]) {
+            showErrorCards("No tienes suficientes cartas mínimas");
+            flag_puja = false;
+            return;
+        }
+    }
+
+    const allZero = cantidad_cartas_max.every(cantidad => cantidad === 0);
+    if (!allZero && ids_cartas_max.length > 0) {
+        for (let i = 0; i < ids_cartas_max.length; i++) {
+            const id = ids_cartas_max[i];
+            const cantidad = cantidad_cartas_max[i];
+            if (!cartasEnBancoIds.includes(id) || cantidad > cartasEnBancoCantidades[cartasEnBancoIds.indexOf(id)]) {
+                showErrorCards("No tienes suficientes cartas maximas");
+                flag_puja = false;
+                return;
+            }
+        }
+    }
+
+    if (!flag_puja) {
+        console.log("No se puede hacer la puja");
+    } else {
+        hideErrorCards();
+        console.log("Se puede hacer la puja!");
+    }
+
+    // Proceed with the rest of the code
     // const queryParams = new URLSearchParams(filtros).toString();
     // console.log(queryParams);
     // const token = "Bearer " + localStorage.getItem("token");
@@ -84,4 +112,62 @@ function pujar() {
     // console.log(queryParams);
     // const url = '/filteredCardsSubasta/?' + queryParams + '&token=' + token;
     // window.location.href = url
+}
+
+async function comprobarMiBanco() {
+    const url = "/vitrina/comprobarMiBanco";
+    const token = "Bearer " + localStorage.getItem("token");
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+        }
+    };
+    try {
+        const response = await fetch(url, options);
+        if (response.ok) {
+            const responseData = await response.json();
+            return responseData;
+        } else if (response.status === 301 || response.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href = "/login";
+        } else if (response.status === 404) {
+            return [];
+        } else {
+            throw new Error("Error en la solicitud POST");
+        }
+    } catch (error) {
+        console.error("Error en la solicitud: ", error);
+        return error;
+    }
+}
+
+async function comprobarCreditos() {
+    const url = "/getCreditos";
+    const token = "Bearer " + localStorage.getItem("token");
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+        }
+    };
+    try {
+        const response = await fetch(url, options);
+        if (response.ok) {
+            const responseData = await response.json();
+            return responseData.CANTIDAD;
+        } else if (response.status === 301 || response.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href = "/login";
+        } else if (response.status === 404) {
+            return [];
+        } else {
+            throw new Error("Error en la solicitud POST");
+        }
+    } catch (error) {
+        console.error("Error en la solicitud: ", error);
+        return error;
+    }
 }

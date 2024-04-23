@@ -133,9 +133,11 @@
 
   <% } else { %>
 
-    <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="1" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
-
+  <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="1" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
+    
   <% } %>
+  <div class="error_message"></div>
+
 
   <% if (carta.CARTAS_MIN !== null ) { %>
 
@@ -156,6 +158,7 @@
       <% } %>
     </div>
 
+    <div class="cards error_message"></div>
 
     <% } %>
 

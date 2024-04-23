@@ -1,8 +1,8 @@
 import { HOST, PORT } from "../../config.js";
+import axios from "axios";
 
 export const cartasSubasta = async (_req, res) => {
     try {
-        console.log(_req.query.token);
         const options = {
             headers: {
                 'Authorization': `${_req.query.token}`,
@@ -113,7 +113,6 @@ export const subastaDetallada = async (_req, res) => {
             },
             body: JSON.stringify({ IDs: idCartas }),
         })
-        console.log(conexionInventario.status);
         if (conexionInventario.status === 401) {
             return res.redirect("/login");
         }
@@ -173,4 +172,27 @@ export const crearSubasta = async (req, res) => {
         console.error(error);
         res.status(500).send("Internal Server Error");
     }
+};
+
+export const getCreditos = async (req, res) => {
+
+    const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: req.headers.authorization,
+        },
+      };
+        try {
+            const response = await fetch(`${HOST}:${PORT}/inventario/get-creditos`, options);
+            const respuestaJson = await response.json();
+            if (response.ok) {
+              res.status(200).send(respuestaJson);  
+            } else {
+              res.redirect("/login");
+            }
+          } catch (error) {
+            console.error(error);
+            res.redirect("/login");
+          }
 };

@@ -3,7 +3,8 @@ import {
   filtrarCartasSubasta,
   subastaDetallada,
   valor_carta,
-  crearSubasta
+  crearSubasta,
+  getCreditos
 } from "../../controllers/subasta/testing.controller.js";
 
 import { Router } from "express";
@@ -15,5 +16,6 @@ router.get("/valor_carta", valor_carta);
 router.post("/crear-subasta", crearSubasta);
 router.get("/subastaDetallada/:id", subastaDetallada);
 router.get("/filteredCardsSubasta/", filtrarCartasSubasta);
+router.get("/getCreditos", getCreditos);
 
 export default router;

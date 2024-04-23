@@ -26,7 +26,6 @@ function validarNumero(input) {
   input.value = input.value.replace(/\D/g, '');
 
   if (parseInt(input.value) > parseInt(input.getAttribute('max'))) {
-    console.log('entro');
     input.value = input.getAttribute('max');
   }
 }
