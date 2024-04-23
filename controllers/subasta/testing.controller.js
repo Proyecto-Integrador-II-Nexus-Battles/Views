@@ -102,7 +102,7 @@ export const subastaDetallada = async (_req, res) => {
         if (response.status === 401) {
             return res.redirect("/login");
         }
-        
+
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
         const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
@@ -197,30 +197,44 @@ export const fetchBuzon = async (req, res) => {
 };
 
 export const fetchClaim = async (req, res) => {
-    console.log(req.body)
-    console.log("soy gay")
 
-    const token = req.headers.authorization
-    console.log(token)
 
-    fetch(`${HOST}:${PORT}/inventario/buzon/claim`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Methods": "POST",
-            "Authorization": `${token}`
-        },
-        body: JSON.stringify(req.body),
-    })
-        .then((response) => {
-            console.log(response)
-            response.json().then((data) => {
-                res.json(data);
-            });
+    try {
+
+        console.log(req.body)
+
+        const token = req.headers.authorization
+        console.log(token)
+
+        const response = await fetch(`${HOST}:${PORT}/subasta/buzon/claim`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Methods": "POST",
+                "Authorization": `${token}`
+            },
+            body: JSON.stringify(req.body),
         })
-        .catch((error) => {
-            console.log("Error" + error);
-        });
+        const respuestaJson = await response.json();
+        console.log(respuestaJson)
+        res.status(200).send(respuestaJson);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+
+
+
+    /*  .then((response) => {
+         console.log(response)
+         response.json().then((data) => {
+             res.json(data);
+         });
+     })
+     .catch((error) => {
+         console.log("Error" + error);
+     }); */
 };
 
 
@@ -247,20 +261,20 @@ export const getCreditos = async (req, res) => {
     const options = {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: req.headers.authorization,
+            "Content-Type": "application/json",
+            Authorization: req.headers.authorization,
         },
-      };
-        try {
-            const response = await fetch(`${HOST}:${PORT}/inventario/get-creditos`, options);
-            const respuestaJson = await response.json();
-            if (response.ok) {
-              res.status(200).send(respuestaJson);  
-            } else {
-              res.redirect("/login");
-            }
-          } catch (error) {
-            console.error(error);
+    };
+    try {
+        const response = await fetch(`${HOST}:${PORT}/inventario/get-creditos`, options);
+        const respuestaJson = await response.json();
+        if (response.ok) {
+            res.status(200).send(respuestaJson);
+        } else {
             res.redirect("/login");
-          }
+        }
+    } catch (error) {
+        console.error(error);
+        res.redirect("/login");
+    }
 };

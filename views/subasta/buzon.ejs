@@ -38,7 +38,7 @@
 
 <!-- navbar -->
  <header>
-  <nav><%- include('../../templates/navbarEcommerce'); %></nav>
+  <nav style="background-color: #dbe4f5; margin-top: -30px"><%- include('../../templates/navbarEcommerce'); %></nav>
       
  </header>
 <!-- Ventana Modal_Detalles_Buzon -->
@@ -57,6 +57,7 @@
       <br>
             <% console.log(datos) %>
             <%let id_iterable=0%>
+            <%if(datos.length>0){%>
             <% datos.forEach(dato => { %>
        
       <% id_iterable=id_iterable+1 %>
@@ -72,7 +73,9 @@
 <% }); %>
 
 
-
+<%}else{%>
+  <p style="font-size: large; color: white; text-align: center;">No tienes recompensas que reclamar</p>
+<%}%>
 
      <div class="buttons_Detalle_Modal">
         <a href="/subasta"><button class="Cerrar_Modal_Detalle">Volver</button></a>

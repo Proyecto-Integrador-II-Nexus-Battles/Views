@@ -1,9 +1,9 @@
-<div class="info_Buzon_Modal">
+<div class="info_Buzon_Modal" id="<%=dato.ID%>">
     <% console.log(dato.ID_CARTA) %>
      <% console.log(id_iterable) %>
-     <input type="hidden" id="<%= id_iterable %>" value="dato.ID"> 
+    
 
-    <div class="valor_maximo_subasta_Modal">
+    <div class="valor_maximo_subasta_Modal" >
         <h2>¡Carta Obtenida en subasta ganada!</h2>
         <p><b>Carta:</b> <%= dato.ID_CARTA %></p>
         <p><b>Cantidad de cartas:</b> <%= dato.CANTIDAD %></p>
