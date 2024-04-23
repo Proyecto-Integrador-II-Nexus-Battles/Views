@@ -141,7 +141,7 @@ border-radius: 15px;
   left: 37%;
   flex-direction: column;
   border-radius: 10px;
-  height:70vh;
+  height: auto;
   width: 26%;
   display: none; /*aa*/
 }
@@ -202,7 +202,13 @@ text-align: center;
 .puja_container .Cancelar{
   margin-left: 5%;
 }
-
+.cards_error_message, .error_message{
+color: red;
+font-size: 15px;
+text-align: center;
+font-weight: bold;
+margin: 0 5% 0 5%
+}
 
 /*Emergente Compra rápida*/
 .compra_rapida_container{
@@ -212,7 +218,7 @@ text-align: center;
   left: 37%;
   flex-direction: column;
   border-radius: 10px;
-  height:70vh;
+  height: auto;
   width: 26%;
   display: none;
 }
@@ -258,8 +264,7 @@ border: 1px solid black;
   height: 38px;
   background-color: #A3B7DC;
   border: none;
-  margin-left: 4%;
-  padding-top: 18%;
+  margin: 10% 0 5% 4%;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
@@ -304,6 +309,9 @@ text-align: center;
 .oferta_players .credits_player, .cards_player{
   font-size: 20px;
 }
+.no_pujas{
+  font-size: 40px;
+  }
 /* buttons */
 .buttons{
   text-align: center;
@@ -342,6 +350,13 @@ margin-top: 5%;
   font-size: 30px;
   margin-top: 6%;
 }
+.cards_error_message, .error_message{
+  color: red;
+  font-size: 23px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 10% 0 10%
+  }
 /* compra rapida */
 .compra_rapida_container{
   top: 15%;
