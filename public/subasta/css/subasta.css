@@ -390,11 +390,18 @@ font-size: 26px;
 .buttons{
   margin-top: 30px;
 }
+.creditos_container{
+  height: auto;
+}
 }
 @media screen and (max-width:930px){
   .container_general {
     grid-template-columns: 1.5fr 1.5fr;
   }
+
+.creditos_container{
+  height: auto;
+}
   .ofertas {
     grid-column: span 1;
     order: 3;
@@ -475,4 +482,8 @@ font-size: 26px;
     padding-top: 5%;
     text-align: center;
   }
+
+.creditos_container{
+  height: auto;
+}
 }
