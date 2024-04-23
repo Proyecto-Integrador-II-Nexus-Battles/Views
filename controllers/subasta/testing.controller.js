@@ -10,7 +10,7 @@ export const cartasSubasta = async (_req, res) => {
         };
 
 
-        const response = await fetch(`${HOST}:${PORT}/subasta/get-cartas-subasta`, options);
+        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -32,8 +32,6 @@ export const cartasSubasta = async (_req, res) => {
             carta.ID_SUBASTA = date[index].ID;
         });
 
-        console.log(datos);
-
         res.render("subasta/subasta_vitrina", { datos });
 
     } catch (error) {
@@ -54,7 +52,7 @@ export const filtrarCartasSubasta = async (req, res) => {
 
         const query = req.query;
         const params = new URLSearchParams(query).toString();
-        const response = await fetch(`${HOST}:${PORT}/subasta/get-cartas-subasta?${params}`, options);
+        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta?${params}`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -76,7 +74,6 @@ export const filtrarCartasSubasta = async (req, res) => {
         }
 
         const datos = await conexionInventario.json();
-        console.log(datos);
         datos.forEach((carta, index) => {
             carta.ID_SUBASTA = date[index].ID;
         });
@@ -93,7 +90,6 @@ export const subastaDetallada = async (_req, res) => {
     try {
 
         const id = _req.params.id;
-        console.log(id);
 
         const options = {
             headers: {
@@ -139,7 +135,6 @@ export const subastaDetallada = async (_req, res) => {
 
 export const valor_carta = async (req, res) => {
     try {
-        console.log(req.query);
         const response = await fetch(`${HOST}:${PORT}/inventario/getBankCards`, {
             method: "POST",
             headers: {
@@ -150,7 +145,6 @@ export const valor_carta = async (req, res) => {
         const bancoJSON = await response.json();
         const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
         const inventarioJSON = await dataResponse.json();
-        console.log(inventarioJSON);
         res.render("subasta/valor_carta.ejs", {
             banco: bancoJSON,
             datos: null,
@@ -164,7 +158,6 @@ export const valor_carta = async (req, res) => {
 
 export const crearSubasta = async (req, res) => {
     try {
-        console.log(req.query);
 
         const response = await fetch(`${HOST}:${PORT}/subasta/add-subastar`, {
             method: "POST",

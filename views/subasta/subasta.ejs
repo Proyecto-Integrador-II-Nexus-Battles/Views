@@ -97,7 +97,13 @@
         <div class="oferta_players">
           <p class="player_name"><b>@<%=pujas[j].USERNAME %></b></p>
           <p class="credits_player">Créditos: <%= pujas[j].CREDITOS %></p>
-          <p class="cards_player">Cartas: <%= carta.Name %></p>
+          <% if (pujas[j].CARTAS_PUJA !== null) { %>
+            <p class="cards_player">Cartas:
+            <% for (let k = 0; k < pujas[j].CARTAS_PUJA.length; k++) { %>
+              <%= pujas[j].CARTAS_PUJA[k].CANTIDAD %> <%= pujas[j].CARTAS_PUJA[k].NAME %><%= k !== pujas[j].CARTAS_PUJA.length - 1 ? ',' : '' %>
+            <% } %>
+            </p>
+          <% } %>
         </div>
       <% } %>
     </div>
