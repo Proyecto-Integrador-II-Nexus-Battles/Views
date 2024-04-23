@@ -21,7 +21,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px;
   width: 1800px;
-  height: 650px;
+  height: 750px;
   margin-top: 20px;
   transform: translateX(3%);
 }
@@ -50,14 +50,15 @@ main {
   background: #02020279;
   border: 3px solid #0202021f;
 
-  width: 1800px;
+  width: 1200px;
   height: 100px;
-  transform: translateX(3%);
+  transform: translateX(30%);
   border-radius: 14px;
   grid-gap: 20px;
   padding: 30px;
+  margin-top: 10px;
 
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   display: grid;
 }
 
@@ -69,8 +70,17 @@ main {
 
 .subrow1 {
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 30% 30% 40%;
+  
 }
+
+.right-side .subrow1 {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+} 
 
 .subrow2 {
   display: grid;
@@ -89,9 +99,19 @@ article.icons {
 }
 
 .card-select {
-  border: 3px solid yellow !important;
-  background-color: yellow !important;
+  transition: all 1s ease !important;
+  border: 2px solid gold !important;
+  box-shadow: 0px 0px 50px gold !important;
 }
+
+
+#bontonConfirmarCartas{
+  width: 150px;
+  height: 80px;
+  border-radius: 15px;
+  background-color: #304c8b;
+}
+
 
 /* PAGINACION */
 
