@@ -101,23 +101,27 @@ export const fetchBuzon = async (req, res) => {
     }
 };
 
-export const fetchClaim = async (_req, res) => {
-    try {
-        const response = await fetch(`${HOST}:${PORT}/subasta/buzon/claim`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
+export const fetchClaim = async (req, res) => {
+    console.log(req.body)
+    fetch(`${HOST}:${PORT}/inventario/buzon/claim`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            enctype: "multipart/form-data",
+            "Access-Control-Allow-Methods": "POST",
+        },
+        body: JSON.stringify(req.body),
+    })
+        .then((response) => {
+            response.json().then((data) => {
+                res.json(data);
+            });
+        })
+        .catch((error) => {
+            console.log("Error" + error);
         });
-        const datos = await response.json();
-        console.log(datos);
-        return datos
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Internal Server Error");
-    }
-}
+};
+
 
 export const fetchAdd = async (_req, res) => {
     try {
