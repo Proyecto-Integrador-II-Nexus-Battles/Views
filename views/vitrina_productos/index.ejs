@@ -40,7 +40,6 @@
               const carta = datos[i];
               const cartaEnBanco = cartasEnBanco.includes(carta._id);
               if (cartaEnBanco) {
-                console.log('cartas en banco', document.querySelector('.card-' + i));
                 document.querySelector('.card-' + i).style.opacity = '0.6';
               }
             }
