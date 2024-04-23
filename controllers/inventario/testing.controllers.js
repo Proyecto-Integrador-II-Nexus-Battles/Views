@@ -18,13 +18,12 @@ export const rendermiCuenta = async (req, res) => {
   try {
     console.log("1")
     console.log(req.query);
-    const data = await fetch('https://localhost:3000/usuario/cuenta',{
+    const data = await fetch(`${HOST}:${PORT}/usuario/cuenta`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', 
         'Authorization': `${req.query.token}`,
       },
-      body: JSON.stringify({ "IdUsuario": 21 })
     });
     const userinfo = await data.json();
   

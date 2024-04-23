@@ -63,7 +63,6 @@ form{
   width: 100%;
   height: auto;
   overflow: hidden;
-  border: 1px solid white;
 }
 
 .user_img{
@@ -71,7 +70,6 @@ form{
   height: 400px;
   object-fit: cover;
   border-radius: 100%;
-  border: 1px solid white;
 }
 
 .user_container{
@@ -112,6 +110,29 @@ form{
   display: none;
 }
 
+.eye{
+  width: 30px;
+  height: auto;
+  position: relative;
+  right: 45px;
+  top:8px;
+  cursor: pointer;
+}
+
+#show{
+  display: none;
+}
+
+#conf_show{
+  display: none;
+}
+
+.svg_container {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0px 10px 0px;
+}
+
 .submit_btn{
   justify-content: center;
   align-items: center;
@@ -124,3 +145,9 @@ form{
   height: 36px;
 }
 
+@media screen and (max-width: 1530px) {
+  form{
+    flex-direction: column;
+    align-items: center;
+  }
+}
