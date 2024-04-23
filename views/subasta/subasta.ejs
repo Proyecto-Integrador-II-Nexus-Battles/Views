@@ -126,21 +126,41 @@
   <label for="cantidad_creditos" class="c_creditos">
     Cantidad de créditos
   </label>
-  <input type="number" name="cantidad_creditos" id="cantidad_creditos" oninput="validarNumero(this)">
+
+  <% if (pujas !== null && pujas.length > 0) { %>
+
+  <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="<%= pujas[0].CREDITOS + 1 %>" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
+
+  <% } else { %>
+
+    <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="1" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
+
+  <% } %>
 
   <% if (carta.CARTAS_MIN !== null ) { %>
-  <label for="cards_puja">
-    Cartas
-  </label>
-  <!-- <select name="cards_puja" id="cards_p">
-    <option value="<%= carta.Name %>"><%= carta.Name %></option>
-    <option value="">2</option>
-    <option value="">3</option>
-  </select> -->
-  <button onclick="addOption()">Añadir carta</button>
-  <% } %>
+
+    <div class="cards_container">
+      <ul class="cartas_v_max puja">
+        <% for (let k = 0; k < cartas_min.length; k++) { %>
+          <li class="<%= cartas_min[k].ID %> <%= cartas_min[k].CANTIDAD %>"><%= cartas_min[k].CANTIDAD %> <%= cartas_min[k].NAME %></li>
+        <% } %>
+      </ul>
+    </div>
+
+    <div class="cartas_max_container">
+      <% if (carta.CARTAS_MAX !== null ) { %>
+        <% for (let k = 0; k < cartas_max.length; k++) { %>
+          <p class="<%= cartas_max[k].ID %>"><%= cartas_max[k].NAME %></p>
+          <input type="number" name="amount_<%= k %>" id="amount_<%= k %>" min="0" max="<%= cartas_max[k].CANTIDAD %>">
+        <% } %>
+      <% } %>
+    </div>
+
+
+    <% } %>
+
   <div class="buttons">
-    <button class="pujar_b">Realizar puja</button>
+    <button class="pujar_b"onclick="pujar()">Realizar puja</button>
     <button class="Cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
@@ -157,11 +177,11 @@
         Cartas
       </label>
       <div class="cards_container">
-      <ul class="cartas_v_max">
-        <% for (let k = 0; k < cartas_max.length; k++) { %>
-        <li><%= cartas_max[k].CANTIDAD %> <%= cartas_max[k].NAME %></li>
-        <% } %>
-      </ul>
+        <ul class="cartas_v_max">
+          <% for (let k = 0; k < cartas_max.length; k++) { %>
+          <li><%= cartas_max[k].CANTIDAD %> <%= cartas_max[k].NAME %></li>
+          <% } %>
+        </ul>
       </div>
     <% } %>
 
@@ -175,6 +195,7 @@
 </main>
 <script src="/subasta/js/redirectVitrinaSubasta.js"></script>
 <script src="/subasta/js/emergentes.js"></script>
+<script src="/subasta/js/pujar.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     <% for (let i = 0; i < datos.length; i++) { %>

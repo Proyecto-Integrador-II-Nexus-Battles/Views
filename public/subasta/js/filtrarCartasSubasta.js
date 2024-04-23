@@ -5,8 +5,6 @@ function filtrarCartasSubasta() {
   const creditos_max = document.querySelector('input[name="creditos_max"]').value;
   const Type = document.querySelector('select[name="Type"]').value;
 
-  console.log(creditos_min, creditos_max, Type);
-
   // Función para mostrar mensaje de error
   function showError(inputName, errorMessage) {
     const errorInput = document.querySelector(`input[name="${inputName}"] + .error_message`);

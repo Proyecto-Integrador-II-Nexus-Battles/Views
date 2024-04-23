@@ -113,7 +113,7 @@ export const subastaDetallada = async (_req, res) => {
             },
             body: JSON.stringify({ IDs: idCartas }),
         })
-
+        console.log(conexionInventario.status);
         if (conexionInventario.status === 401) {
             return res.redirect("/login");
         }
