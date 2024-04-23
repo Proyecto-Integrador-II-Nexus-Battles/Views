@@ -51,14 +51,18 @@
       </div>
       <br>
             <% console.log(datos) %>
-<% datos.forEach(dato => { %>
+            <%let id_iterable=0%>
+            <% datos.forEach(dato => { %>
+       
+      <% id_iterable=id_iterable+1 %>
+       
     <!-- si la carta no es vacía significa que obtuvo una carta  -->
-    <% if (dato.CARTA_BUZON_ID !== null && dato.CREDITOS !== null) { %>
-        <%- include('../../templates/buzon_both.ejs', { dato }); %>
-    <% } else if (dato.CARTA_BUZON_ID !== null && dato.CREDITOS === null) { %>
-        <%- include('../../templates/buzon_solocarta.ejs', { dato }); %>
-    <% } else if (dato.CARTA_BUZON_ID === null && dato.CREDITOS !== null) { %>
-        <%- include('../../templates/buzon_credito.ejs', { dato }); %>
+    <% if (dato.ID_CARTA !== undefined && dato.CREDITOS !== undefined) { %>
+        <%- include('../../templates/buzon_both.ejs', { dato,id_iterable }); %>
+    <% } else if (dato.ID_CARTA !== undefined && dato.CREDITOS === undefined) { %>
+        <%- include('../../templates/buzon_solocarta.ejs', { dato,id_iterable }); %>
+    <% } else if (dato.ID_CARTA === undefined && dato.CREDITOS !== undefined) { %>
+        <%- include('../../templates/buzon_credito.ejs', { dato,id_iterable }); %>
     <% } %>
 <% }); %>
 
@@ -78,6 +82,8 @@
 <!-- <button id="btn_AbrirModal_01">Abrir_Modal</button>
 <button id="btn_AbrirModal_02">Abrir_Modal</button> -->
 <script src="/subasta/js/emergentes.js"></script>
+
+<script src="/subasta/js/buzon.js"></script>
 
 
 </body>

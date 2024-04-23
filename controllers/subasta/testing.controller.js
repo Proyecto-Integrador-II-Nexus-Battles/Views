@@ -103,12 +103,15 @@ export const fetchBuzon = async (req, res) => {
 
 export const fetchClaim = async (req, res) => {
     console.log(req.body)
+    console.log(req.query.token)
+
     fetch(`${HOST}:${PORT}/inventario/buzon/claim`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             enctype: "multipart/form-data",
             "Access-Control-Allow-Methods": "POST",
+            "Authorization": `${req.query.token}`
         },
         body: JSON.stringify(req.body),
     })

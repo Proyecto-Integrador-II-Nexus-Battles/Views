@@ -1,7 +1,7 @@
 <div class="info_Buzon_Modal">
-    <% console.log(dato.CARTA_BUZON_ID) %>
-
-    <input type="hidden" id="datos_claim" value="<%= dato.ID %>"> 
+    <% console.log(dato.ID_CARTA) %>
+    <% console.log(id_iterable) %>
+  <input type="hidden" id="<%= dato.ID %>" value="dato.ID"> 
 
     <div class="valor_maximo_subasta_Modal">
         <h2>¡Créditos ganado de venta de subasta!</h2>
@@ -11,9 +11,7 @@
     <div class="Creditos_Total">
         <p><b>Créditos Totales: </b><%= dato.CREDITOS %></p>
        <div class="buttons">
-            <button class="Reclamar_Venta" id="boton_claim">Reclamar</button>
+            <button class="Reclamar_Venta" id="boton_claim" name="<%= dato.ID %>">Reclamar</button>
           </div>
     </div>
 </div>
-
-<script src="/subasta/js/buzon.js"></script>
