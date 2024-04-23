@@ -22,47 +22,52 @@
   <main>
     <div class="left-side">
       <div class="filtros">
-        <h1>Filtros</h1>
-        <form action="">
-          <ul class="tipo_filtros">
-            <!-- filtro precios -->
-            <li>
-              <h2>Precios</h2>
-            </li>
-            <li><select class="seleccionar_precio">
-                <option value="#" disabled selected>Precios</option>
-                <option value="desc">Mayor a menor</option>
-                <option value="asc">Menor a mayor</option>
-              </select></li>
+        <ul class="tipo_filtros">
+          <li>
+            <h2>Precios</h2>
+          </li>
+          <li><select class="seleccionar_precio" name="sortOrder">
+              <option value="" disabled selected>Orden</soption>
+              <option value="desc">Mayor a menor</option>
+              <option value="asc">Menor a mayor</option>
+            </select>
+          </li>
 
-            <!-- Tipo de carta -->
-            <li>
-              <h2>Tipo de carta</h2>
-            </li>
-            <li><select class="tipo_carta">
-                <option value="#" disabled selected>Selecciona un tipo</option>
-                <option value="Guerrero Tanque">Guerrero Tanque</option>
-                <option value="Guerrero Armas">Guerrero Armas</option>
-                <option value="Mago fuego">Guerrero fuego</option>
-                <option value="Mago hielo">Guerrero hielo</option>
-                <option value="Picaro veneno">Picaro veneno</option>
-                <option value="Picaro machete">Picaro machete</option>
-              </select></li>
-            <!-- filtro promocion -->
-            <li>
-              <input type="checkbox" name="promociones" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
-            </li>
-            <li><input type="submit" id="filtro_input" value="Filtrar"></li>
-          </ul>
-        </form>
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="seleccionar_precio" name="min_max">
+              <option value="" disabled selected>Precios</soption>
+              <option value="20000-200000">20.000 - 200.000</option>
+              <option value="200000-800000">200.000 - 800.000</option>
+              <option value="800000-1400000">800.000 - 1.400.000</option>
+              <option value="1400000-2000000">1.400.000 - 2.000.000</option>
+            </select>
+          </li>
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <li>
+            <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+          </li>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+        </ul>
       </div>
     </div>
     <div class="right-side">
       <div class="row1">
         <h3 style="color: white;">LISTA DE DESEOS</h3>
-        <form class="form-search" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form action="" class="form-search" role="search">
+          <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
         </form>
         <div class="paginas">
           <ul class="listPage">
@@ -78,7 +83,7 @@
           <div class="imagen_carta">
             <img src="<%= item.imagePath %>" class="personaje" />
           </div>
-          <div class="informacion_carta">
+          <div class="informacion-carta">
             <div id="nombre">
               <p> <%= item.Name %> </p>
               <p> Precio: <%= item.divisa %><%= item.precio %></p>
@@ -119,7 +124,8 @@
   <script src="js/eliminar.js"></script>
   <script src="js/paginacion.js"></script>
   <script src="js/jugarOnline.js"></script>
-  
+  <script src="/vitrina_productos/js/filtrarCartas.js"></script>
+
 
 </body>
 

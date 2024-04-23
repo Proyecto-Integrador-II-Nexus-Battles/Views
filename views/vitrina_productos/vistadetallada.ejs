@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/img/icon.png" type="image/x-icon">
@@ -15,7 +14,7 @@
 
 <body>
   <!-- Header -->
-  
+
   <header>
     <nav>
       <%- include('../../templates/navbarEcommerce'); %>
@@ -146,6 +145,7 @@
         <p><b>Descripción:</b> <%= carta.Description %></p>
         <% break;
     } %>
+    
         <!-- Type Weapon -->
         <% } else if (carta.TypeCard === "Weapon") { %>
         <% switch (carta.Subtype) {
@@ -270,7 +270,7 @@
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
 
-  
+
 </body>
 
 </html>

@@ -38,8 +38,8 @@ function handleSubmit(event) {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-        window.location.href = "/";
+        console.log("resultado: " + result);
+        //window.location.href = "/";
       })
       .catch((err) => console.log(err));
   };

@@ -7,42 +7,54 @@
   <title>Inventario</title>
   <link rel="stylesheet" href="/inventario/css/visualizacion.css">
   <link rel="icon" href="/img/icon.png" type="image/x-icon">
-
-  
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
 </head>
 
 <body>
   <!-- Header -->
   <header>
-  
+
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+
   </header>
-  <!-- Vitrina de productos -->
   <main>
-
-    <!-- Cartas -->
-
-    <div class="container_general">
-      <%- include('../../templates/cartas_inventario'); %>
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;" class="text">VISUALIZACIÓN DEL INVENTARIO</h3>
+        <button class="agregar" onclick="abrir()">Agregar Carta</button>
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row2">
+        <%- include('../../templates/cartas_inventario'); %>
+      </div>
     </div>
-      <div class="wrapper" id="modal-toast">
-        <div class="toast">
-          <div class="content">
-            <div class="details">
-              <span>ALERTA!</span>
-              <p>Cambios correctamente realizados</p>
-            </div>
+    <div class="wrapper" id="modal-toast">
+      <div class="toast">
+        <div class="content">
+          <div class="details">
+            <span>ALERTA!</span>
+            <p>Cambios correctamente realizados</p>
           </div>
         </div>
       </div>
-      <div id="tipocarta" class="ventana-emergente">
-        <div class="contenido-ventana">
-          <span class="cerrar" onclick="cerrar()">&times;</span>
-          <div class="button">
-            <button onclick="a()">Heroe</button>
-            <button onclick="creacion_carta_items()">Item, Arma, Habilidad</button>
-          </div>
-
+    </div>
+    <div id="tipocarta" class="ventana-emergente">
+      <div class="contenido-ventana">
+        <span class="cerrar" onclick="cerrar()">&times;</span>
+        <div class="button">
+          <button onclick="a()">Heroe</button>
+          <button onclick="creacion_carta_items()">Item, Arma, Habilidad</button>
         </div>
+
+      </div>
     </div>
 
   </main>

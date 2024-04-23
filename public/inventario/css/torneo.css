@@ -46,10 +46,11 @@ header {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 1rem;
   background-color: transparent;
-  padding-top: 5rem;
+  padding-top: 3rem;
   padding-bottom: 4rem;
+  transform: translate(0, 3%);
 }
 
 .personaje {
@@ -107,11 +108,10 @@ header {
   }
 }
 @media screen and (max-width: 1366px) {
-
-  .opciones li a{
+  .opciones li a {
     font-size: 15px;
   }
-  #login_btn{
+  #login_btn {
     font-size: 15px;
   }
   .personaje {

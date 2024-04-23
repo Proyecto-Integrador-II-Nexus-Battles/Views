@@ -27,9 +27,9 @@
       </h2>
       <div class="game-coin-container">
         <h2 class="game-coin">
-          0
+          <%= credits %>
         </h2>
-        <img src="inventario/imagenes/game-coin.png" class="coin-img">
+        <img src="/inventario/imagenes/game-coin.png" class="coin-img">
       </div>
     </div>
     <!-- Cartas -->
@@ -46,13 +46,15 @@
         <h2 class="texto"> COMPRA <br> CARTAS </h2>
 
       </div>
-      <div class="card">
+      <a onclick="redirectVentaCartas()">
+        <div class="card">
 
-        <div class="capa-opaca"></div>
-        <img src="/inventario/imagenes/vender-cartas.JPG" class="personaje" id="imagen">
-        <h2 class="texto"> VENTA <br> CARTAS</h2>
+          <div class="capa-opaca"></div>
+          <img src="/inventario/imagenes/vender-cartas.JPG" class="personaje" id="imagen">
+          <h2 class="texto"> VENTA <br> CARTAS</h2>
 
-      </div>
+        </div>
+      </a>
 
       <div class="card">
         <div class="capa-opaca"></div>
@@ -63,7 +65,6 @@
       <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
 
   </main>
-
   <script src="/inventario/js/jugarOnline.js"></script>
   <script src="/js/redirects.js"></script>
 </body>

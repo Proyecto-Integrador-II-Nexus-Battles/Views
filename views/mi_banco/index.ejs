@@ -2,121 +2,106 @@
 <html lang="en">
 
 <head>
-  <base href="/public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Banco</title>
   <link rel="stylesheet" href="/mi_banco/css/e-commerce_banco.css">
   <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
 </head>
 
 <body>
-  <!-- Header -->
+
   <header>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var token = localStorage.getItem('token');
-        if (token !== null) {
-          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
-          document.getElementById('register_btn').remove();
-          document.querySelector('.login_btn').addEventListener('click', function() {
-            localStorage.removeItem('token');
-            window.location.reload(true);
-          });
-        } else {
-          console.log('Not logged in');
-        }
-      });
-    </script>
-    <a href="/">
-      <img src="/vitrina_productos/img/logo.png" class="logo_img" alt="">
 
-    </a>
-    <!-- Barra de navegación -->
-    <img src="/vitrina_productos/img/hamburguer_icon.svg" class="abrir-btn" alt="">
-    <nav class="" id="navbar">
-      <ul class="opciones">
-        <li><a href="/cuenta">Mi cuenta</a></li>
-        <li><a onclick="redirectMiBanco()">Mi banco</a></li>
-        <li><a href="/subasta">Subasta</a></li>
-        <li><a href="/jugarOnline">Jugar online</a></li>
-        <li><a href="/torneo">Torneo</a></li>
-        <li><a id="mostrar-resumen-flotante">Resumen Flotante</a></li>
-        <li><a onclick="redirectListaDeseos()" id="lista-deseos">Lista Deseos</a></li>
-        <li><a href="/login"><button class="login_btn">Login</button></a></li>
-        <li id="btn-listica"><a href="/register"><button class="login_btn" id="register_btn">Sign Up</button></a></li>
-      </ul>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
     </nav>
+
   </header>
-  <!-- Vitrina de productos -->
+
   <main>
-    <!-- filtros -->
-    <div class="filtros">
-      <ul class="tipo_filtros">
-
-        <!-- Tipo de carta -->
-        <li>
-          <h2>Tipo de carta</h2>
-        </li>
-        <li><select class="tipo_carta" name="Type">
-            <option value="" disabled selected>Selecciona un tipo</option>
-            <option value="Weapon">Armas</option>
-            <option value="Armor">Armaduras</option>
-            <option value="Hero">Héroes</option>
-            <option value="Item">Items</option>
-            <option value="Talent">Talentos</option>
-          </select>
-        </li>
-        <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
-        <li class="stats" > 0/30 </li>
-        <li class="stats" > Armas/0 </li>
-        <li class="stats" > Armadura/0 </li>
-        <li class="stats" > Items/0 </li>
-        <li class="stats" > Talentos/0 </li>
-        <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
-      </ul>
-    </div>
-    <div class="container_general">
-      <!--Parte barra de búsqueda  -->
-      <div class="barra_busqueda">
-        <form action="" class="search_form">
-          <input type="text" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35">
-          <img src="/vitrina_productos/img/search_icon.svg" alt="search_icon" class="search_icon">
-        </form>
+    <div class="wrapper" id="modal-toast">
+      <div class="toast">
+        <div class="content">
+          <div class="details">
+            <span>ALERTA!</span>
+            <p id="textoAlerta" ></p>
+          </div>
+        </div>
       </div>
-
-      <!-- Cartas -->
-
-      <%- include('cartas_banco'); %>
-
-      <div class="paginas">
-        <ul class="listPage">
-          <li class="active">1</li>
-          <li>2</li>
-          <li>3</li>
+    </div>
+    <div class="left-side">
+      <div class="filtros">
+        <ul class="tipo_filtros">
+          <!-- <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+          <hr> -->
+          <li>
+            <h2>Mi mazo</h2>
+          </li>
+          <li class="stats" ><span id="totalDeck">0</span>/30 </li>
+          <li class="stats" > Armas/<span id="wDeck">0</span> </li>
+          <li class="stats" > Armadura/<span id="aDeck">0</span> </li>
+          <li class="stats" > Items/<span id="iDeck">0</span> </li>
+          <li class="stats" > Talentos/<span id="eDeck">0</span> </li>
+          <li class="stats heroe" > <h3>Heroe</h3> <span id="currentlyHero" ></span> </li>
+          <button id="filtro_input" onclick="saveDeck()">Guardar mazo</button>
         </ul>
       </div>
     </div>
 
+      <!-- Cartas -->
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;">MI BANCO</h3>
+        <div class="filtro_busqueda">
+          <form action="" class="form-search">
+            <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+        </div>
 
-    </div>
+    
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      
 
+      <div class="row2">
+        <%- include('../../templates/cartas_banco'); %>
     </div>
-    </div>
-    </div>
-    </div>
+  </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/carro_compras/js/resumen_flotante.js"></script>
-  <script src="/resumen_flotante/js/deployResumen.js"></script>
+
   <script src="/js/redirects.js"></script>
+  <script src="/mi_banco/js/saveDeck.js"></script>
   <script src="/vitrina_productos/js/navbar.js"></script>
   <script src="/vitrina_productos/js/filtrarCartas.js"></script>
   <script src="/vitrina_productos/js/vistaDetallada.js"></script>
   <script src="/vitrina_productos/js/paginacion.js"></script>
   <script src="/vitrina_productos/js/addCarro.js"></script>
   <script src="/vitrina_productos/js/addListaDeseos.js"></script>
+  <script src=" /mi_banco/js/selectCard.js"></script>
+  <script src="/inventario/js/index.js" type="module"></script>
+
+
 
 </body>
 

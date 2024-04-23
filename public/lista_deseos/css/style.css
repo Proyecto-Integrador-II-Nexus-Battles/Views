@@ -1,15 +1,19 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  
+  background-image: url("../img/fondoooo.jpg");
+  background-size: cover;
 }
+
+header {
+  background-color: #ffffff;
+}
+
 
 main {
   display: grid;
   grid-template-columns: 30% 70%;
   padding: 20px;
-  background-image: url("../img/fondoooo.jpg");
-  background-size: cover;
 }
 
 /* LADO IZQUIERDO */
@@ -25,7 +29,7 @@ main {
   display: grid;
   grid-template-rows: auto auto;
   border-radius: 14px;
-  background:#02020279;
+  background: #02020279;
   border: 3px solid #0202021f;
   backdrop-filter: blur(0.2rem);
 }
@@ -35,7 +39,6 @@ main {
   grid-template-columns: 30% 40% 30%;
   align-items: center;
   margin-top: -25px;
-
 }
 .row1 h3 {
   text-decoration: underline;
@@ -50,7 +53,7 @@ main {
 
 /* FILTROS */
 .filtros {
-  background:#02020279;
+  background: #02020279;
   border: 3px solid #0202021f;
   backdrop-filter: blur(0.2rem);
   width: 300px;
@@ -69,7 +72,7 @@ main {
 }
 .tipo_filtros li {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 24px;
   cursor: pointer;
   margin-left: 10px;
   text-align: center;
@@ -119,6 +122,11 @@ main {
   background-color: white;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  display: block;
+}
+
 .imagen_carta {
   width: 230px;
   height: 150px;
@@ -133,8 +141,8 @@ main {
   border-radius: 13px 13px 0 0;
 }
 
-.informacion_carta p {
-  font-size: 8px;
+.informacion-carta p {
+  font-size: 14.25px;
   font-weight: bold;
   padding-left: 10px;
 }
@@ -252,4 +260,3 @@ main {
 .active {
   color: red;
 }
-
