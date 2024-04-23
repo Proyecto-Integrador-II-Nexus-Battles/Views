@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subasta</title>
+  <link rel="stylesheet" href="/subasta/css/subasta.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+</head>
+<body> 
+<br>
+<!-- Ventana Modal_Compra carta -->
+<dialog class="modal_01">
+  <h2>¡Haz ganado la subasta!</h2>
+  <hr>
+  <p><b>Carta:</b> <span>Nombre de la carta</span></p>
+  <p><b>Créditos pagados:</b> <span>120</span></p>
+  <p><b>Fecha de inicio de Subasta:</b> <span>7/14/2024</span></p>
+  <p><b>Fecha Fin de Subasta:</b> <span>8/14/2024</span></p>
+  <div class="buttons">
+    <button class="Detalles_Modal_01">Detalles</button>
+    <button class="Cerrar_Modal_01">Cerrar</button>
+  </div>
+</dialog>
+<!-- Ventana Modal_Venta carta -->
+<dialog class="modal_02">
+  <h2>Tu carta ha sido vendida</h2>
+  <hr>
+  <p><b>Carta:</b> <span></span></p>
+  <p><b>Créditos pagados:</b> <span>120</span></p>
+  <p><b>Fecha de inicio de Subasta:</b> <span>7/14/2024</span></p>
+  <p><b>Fecha Fin de Subasta:</b> <span>8/14/2024</span></p>
+  <div class="buttons">
+    <button class="Detalles_Modal_02">Detalles</button>
+    <button class="Cerrar_Modal_02">Cerrar</button>
+  </div>
+</dialog>
+
+<!-- navbar -->
+ <header>
+  <nav><%- include('../../templates/navbarEcommerce'); %></nav>
+      
+ </header>
+<!-- Ventana Modal_Detalles_Buzon -->
+<br>
+
+
+<input type="hidden" id="user_token" value="<%=token%>">
+
+
+<dialog open class="modal_Detalles_01">
+    <!-- Informacion y foto de la carta -->
+    <div class="container_Modal_Detalles">
+      <div class="container_Buzon">
+        <h1 class="nombre_carta"><b>Bandeja de compra y venta</b></h1>
+      </div>
+      <br>
+            <% console.log(datos) %>
+            <%let id_iterable=0%>
+            <% datos.forEach(dato => { %>
+       
+      <% id_iterable=id_iterable+1 %>
+       
+    <!-- si la carta no es vacía significa que obtuvo una carta  -->
+    <% if (dato.ID_CARTA !== undefined && dato.CREDITOS !== undefined) { %>
+        <%- include('../../templates/buzon_both.ejs', { dato,id_iterable }); %>
+    <% } else if (dato.ID_CARTA !== undefined && dato.CREDITOS === undefined) { %>
+        <%- include('../../templates/buzon_solocarta.ejs', { dato,id_iterable }); %>
+    <% } else if (dato.ID_CARTA === undefined && dato.CREDITOS !== undefined) { %>
+        <%- include('../../templates/buzon_credito.ejs', { dato,id_iterable }); %>
+    <% } %>
+<% }); %>
+
+
+
+
+     <div class="buttons_Detalle_Modal">
+        <a href="/subasta"><button class="Cerrar_Modal_Detalle">Volver</button></a>
+    </div>
+ 
+
+    </div>
+    <!-- <div class="buttons_Detalle_Modal">
+        <a href="/subasta"><button class="Cerrar_Modal_Detalle" style="background-color: #18a31f; color: white" id="boton_claim">RECLAMAR TODO</button></a>
+    </div> -->
+</dialog>
+<!-- <button id="btn_AbrirModal_01">Abrir_Modal</button>
+<button id="btn_AbrirModal_02">Abrir_Modal</button> -->
+<script src="/subasta/js/emergentes.js"></script>
+
+<script src="/subasta/js/buzon.js"></script>
+
+
+</body>
+</html>

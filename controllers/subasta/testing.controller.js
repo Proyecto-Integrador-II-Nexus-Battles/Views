@@ -174,6 +174,74 @@ export const crearSubasta = async (req, res) => {
     }
 };
 
+export const fetchBuzon = async (req, res) => {
+    try {
+        const token = req.query.token;
+        const response = await fetch(`${HOST}:${PORT}/subasta/buzon`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `${token}`
+            },
+        });
+        if (response.status === 401) {
+            return res.redirect("/")
+        }
+        const datos = await response.json();
+        console.log(datos);
+        res.render("subasta/buzon", { datos, token })
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+};
+
+export const fetchClaim = async (req, res) => {
+    console.log(req.body)
+    console.log("soy gay")
+
+    const token = req.headers.authorization
+    console.log(token)
+
+    fetch(`${HOST}:${PORT}/inventario/buzon/claim`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Methods": "POST",
+            "Authorization": `${token}`
+        },
+        body: JSON.stringify(req.body),
+    })
+        .then((response) => {
+            console.log(response)
+            response.json().then((data) => {
+                res.json(data);
+            });
+        })
+        .catch((error) => {
+            console.log("Error" + error);
+        });
+};
+
+
+export const fetchAdd = async (_req, res) => {
+    try {
+        const response = await fetch(`${HOST}:${PORT}/subasta/buzon/add`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const datos = await response.json();
+        console.log(datos);
+        return datos
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+};
+
 export const getCreditos = async (req, res) => {
 
     const options = {
