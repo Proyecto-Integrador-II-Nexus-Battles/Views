@@ -20,6 +20,7 @@ import {
   renderConfirmarCuenta,
   renderNuevaContrasena,
   renderRecuperarContrasena,
+  renderVerificarCuenta,
   verifyCode,
 } from "../../controllers/manejo_usuarios/emailController.js";
 
@@ -39,6 +40,7 @@ router.get("/usuario/recover", renderRecuperarContrasena);
 router.get("/usuario/recover/new", renderNuevaContrasena);
 router.patch("/usuario/recover/new", fetchNewPassword);
 router.post("/usuario/verify", verifyCode);
+router.get("/usuario/mail/verify", renderVerificarCuenta);
 router.get("/usuario/confirmar", renderConfirmarCuenta);
 
 export default router;

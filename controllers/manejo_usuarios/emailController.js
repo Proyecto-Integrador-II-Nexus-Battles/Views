@@ -6,6 +6,10 @@ export const renderConfirmarCuenta = async (req, res) => {
   res.render("manejo_usuarios/cuentaCreadaConfirmada");
 };
 
+export const renderVerificarCuenta = async (req, res) => {
+  res.render("manejo_usuarios/verificarCuenta");
+};
+
 export const renderRecuperarContrasena = async (req, res) => {
   res.render("manejo_usuarios/recuperarContrasena");
 };

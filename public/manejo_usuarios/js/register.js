@@ -43,7 +43,7 @@ function handleSubmit(event) {
           return;
         }
         console.log("resultado: " + result);
-        window.location.href = "/usuario/confirmar";
+        window.location.href = "/usuario/mail/verify";
       })
       .catch((err) => console.log(err));
   };
