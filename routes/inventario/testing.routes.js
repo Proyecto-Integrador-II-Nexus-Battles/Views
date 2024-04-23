@@ -3,6 +3,7 @@ import {
   defaultR,
   defaultR2,
   defaultR4,
+  rendermiCuenta,
   defaultR3,
   defaultR6,
   defaultR7,

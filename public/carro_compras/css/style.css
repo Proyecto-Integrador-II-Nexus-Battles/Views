@@ -16,55 +16,7 @@ main {
 
 header {
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #d8e9f9;
-  margin-right: 9%;
-}
-
-header .logo_img {
-  width: 70px;
-}
-
-#navbar {
-  height: 60px;
-  background-color: #d8e9f9;
-}
-
-.opciones {
-  display: flex;
-  list-style: none;
-  padding-top: 9px;
-  gap: 2.2em;
-  margin-left: 10px;
-}
-
-.opciones li {
-  display: inline-block;
-  padding-top: 9px;
-}
-
-.opciones li a {
-  text-decoration: none;
-  color: black;
-  font-size: 24px;
-}
-
-.opciones li button {
-  font-size: 17px;
-  color: white;
-  height: 90%;
-  width: 110px;
-  cursor: pointer;
-  margin-right: 1%;
-  border-radius: 10px;
-  border: none;
-  text-align: center;
-  margin-top: 2px;
-  background-color: #789dca;
-}
-.abrir-btn {
-  display: none;
+background-color: white;
 }
 
 .titulo {

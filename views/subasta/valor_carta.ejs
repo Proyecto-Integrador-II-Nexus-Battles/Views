@@ -17,50 +17,6 @@
     </nav>
   </header>
 
-  <nav class="mobile-menu">
-    <div class="mini">
-      <a href="#" class="mini-close"><i class="ri-close-line"></i></a>
-      <div class="menu-head">
-        <div class="top">
-          <ul>
-            <li>
-              <a href="/login"><i class="ri-user-line"></i></a>
-            </li>
-            <li>
-              <a href="/register"><i class="ri-login-box-line"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="wider">
-      <div class="main-menu">
-        <div class="menu-list">
-          <ul>
-            <li class="has-child">
-              <a><span>MIS SERVICIOS</span></a>
-              <ul>
-                <li><a href="/miCuenta">Mi Cuenta</a></li>
-                <li><a onclick="redirectMiBanco()"></a>Mi Banco</a></li>
-                <li><a href="/subasta">Subasta</a></li>
-                <li><a href="/jugarOnline">Jugar Online</a></li>
-                <li><a href="/torneo">Torneo</a></li>
-              </ul>
-            </li>
-            <div class="logo">
-              <a href=""><img src="/vista_valor_carta/logo_img.png" alt="" /></a>
-            </div>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="overlay"></div>
-  </div>
-  </div>
-
-  </header>
-
   <main>
   <div class="container">
     <div class="left-side">
@@ -71,8 +27,7 @@
             <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
           </form>
           <div class="paginas">
-            <ul class="listPageBanco"> <!-- Cambio aquí: ID único para el paginador del banco -->
-              <!-- Contenido generado dinámicamente -->
+            <ul class="listPageBanco"> 
             </ul>
           </div>
         </div>
@@ -93,7 +48,7 @@
           
 
           </div>
-          <h2 style="color: white" id="mensajeCarta">Selecciona tus cartas mínimas</h2>
+          <h3 style="color: white" id="mensajeCarta">Selecciona tus cartas mínimas</h3 >
           <button id="bontonConfirmarCartas" onclick="confirmarCarta()">Confirmar cartas</button>
         </div>
         <%- include('../../templates/cartas', {datos: inventario}); %>
