@@ -26,21 +26,28 @@
           <li>
             <h2>Precios</h2>
           </li>
-          <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min_price" min="0" step="1000"> </li>
-          <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max_price" min="0" step="1000"> </li>
-          <li>
-            <h2>Orden</h2>
-          </li>
-          <li><select class="seleccionar\_precio" id="sortOrder">
-              <option value="" disabled selected>Orden</option>
+          <li><select class="seleccionar_precio" name="sortOrder">
+              <option value="" disabled selected>Orden</soption>
               <option value="desc">Mayor a menor</option>
               <option value="asc">Menor a mayor</option>
-            </select></li>
+            </select>
+          </li>
 
           <li>
             <h2>Tipo de carta</h2>
           </li>
-          <li><select class="tipo_carta" id="Type">
+          <li><select class="seleccionar_precio" name="min_max">
+              <option value="" disabled selected>Precios</soption>
+              <option value="20000-200000">20.000 - 200.000</option>
+              <option value="200000-800000">200.000 - 800.000</option>
+              <option value="800000-1400000">800.000 - 1.400.000</option>
+              <option value="1400000-2000000">1.400.000 - 2.000.000</option>
+            </select>
+          </li>
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" name="Type">
               <option value="" disabled selected>Selecciona un tipo</option>
               <option value="Weapon">Armas</option>
               <option value="Armor">Armaduras</option>
@@ -50,24 +57,18 @@
             </select>
           </li>
           <li>
-            <input type="checkbox" name="sale" class="promociones" id="sale" value="promociones"> <b>Promoción</b>
+            <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
           </li>
-          <button id="botonFiltrar" onclick="filtrarCartas()">Filtrar</button>
+          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
         </ul>
       </div>
     </div>
     <div class="right-side">
       <div class="row1">
         <h3 style="color: white;">LISTA DE DESEOS</h3>
-        <!-- Tu código HTML -->
-        <form class="form-search" onsubmit="event.preventDefault()">
-          <input class="search_input" type="search" placeholder="Search" maxlength="35">
-          <button type="button" onclick="filtrarPorBusqueda()">Buscar</button>
+        <form action="" class="form-search" role="search">
+          <input class="search_input" type="search" placeholder="Search" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
         </form>
-        
-        
-        
-          
         <div class="paginas">
           <ul class="listPage">
             <li class="active">1</li>
@@ -76,7 +77,7 @@
           </ul>
         </div>
       </div>
-      <div class="row2" id="cartasContainer">
+      <div class="row2">
         <% products.forEach(function(item) { %>
         <div class="card card-<%= item.TypeCard %> " id="carta-<%= item.id %>">
           <div class="imagen_carta">

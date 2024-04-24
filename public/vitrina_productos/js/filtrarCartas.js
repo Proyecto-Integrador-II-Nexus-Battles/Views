@@ -25,28 +25,16 @@ function filtrarCartas() {
   window.location.href = url
 }
 
-
-function filtrarPorBusqueda() {
-  const valorBusqueda = document.querySelector(".search_input").value.toLowerCase();
-
-  // Obtener todas las cartas
-  const cartas = document.querySelectorAll(".card");
-
-  cartas.forEach(function(carta) {
-    const nombreCarta = carta.querySelector("#nombre").textContent.toLowerCase();
-
-    if (nombreCarta.includes(valorBusqueda)) {
-      carta.style.display = "block";  // Mostrar la carta si coincide con la búsqueda
-    } else {
-      carta.style.display = "none";   // Ocultar la carta si no coincide con la búsqueda
+function filtrarPorBusqueda(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    const valorBusqueda = document.querySelector(".search_input").value.replace(/ /g, "_");
+    if (valorBusqueda === "") {
+      window.location.href = "/";
+      return;
     }
-  });
+    const url = `/search/${valorBusqueda}`;
+    console.log(url);
+    window.location.href = url
+  }
 }
-
-
-
-
-
-
-
-

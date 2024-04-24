@@ -104,10 +104,9 @@
       <div class="row1">
         <h3 style="color: white;" class="text">VITRINA DE PRODUCTOS</h3>
         <div class="filtro_busqueda">
-          <form class="form-search" onsubmit="event.preventDefault()">
-          <input class="search_input" type="search" placeholder="Search" maxlength="35">
-          <button type="button" onclick="filtrarPorBusqueda()">Buscar</button>
-        </form>
+          <form action="" class="form-search">
+            <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
         </div>
 
         <div class="pag">
