@@ -1,4 +1,3 @@
-import { HOST, PORT } from "../../config.js";
 
 
 function saveDeck() {
@@ -12,20 +11,17 @@ function saveDeck() {
         }
     });
     if (cartas.length === 31) {
-        fetch(`${HOST}:${PORT}/inventario/deckCard`, {
+        fetch(`/saveDeck`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${token}`,
+                Authorization: `${token}`,
             },
             body: JSON.stringify({
                 cartas: cartas
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                alert('Mazo guadado correctamente', '#2ecc71')
-            })
+            .then( alert('Mazo guadado correctamente', '#2ecc71') )
             .catch(error => {
                 console.error('Error al enviar la solicitud:', error);
             });
@@ -39,15 +35,18 @@ function saveDeck() {
 }
 
 window.onload = function () {
-    fetch(`${HOST}:${PORT}/inventario/GetdeckCard`, {
-        method: 'POST',
+    const token = "Bearer " + localStorage.getItem("token");
+
+    fetch(`/deck`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `${token}`,
+            Authorization: `${token}`,
         }
     })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             // Iterar sobre cada carta en el arreglo de IDs
             data.forEach(cardId => {
                 const carta = document.getElementById(cardId);
