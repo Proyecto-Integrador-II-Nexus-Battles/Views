@@ -24,12 +24,12 @@ async function navRouter(rute) {
 
     // Inicializar el objeto data con los valores comunes
     const data = {
-        _id: _id, 
+        _id: _id,
         TypeCard: TypeCard
     };
 
     console.log(data);
-
+    console.log(1)
     // Recopilar valores adicionales según el tipo de carta
     if (TypeCard === 'Hero') {
         const Name = document.getElementById('Name').value;
@@ -38,8 +38,8 @@ async function navRouter(rute) {
         const Defense = document.getElementById('HDefense').value;
         const AttackBase = document.getElementById('HAttackBase').value;
         const DamageSides = document.getElementById('HDamageSides').value;
-        const Description  = document.getElementById('DescripcionCard').value;
-        
+        const Description = document.getElementById('DescripcionCard').value;
+
         // Verificar si cada campo tiene un valor antes de asignarlo
         const heroData = {};
         if (Name) heroData.Name = Name;
@@ -49,35 +49,35 @@ async function navRouter(rute) {
         if (AttackBase) heroData.AttackBase = AttackBase;
         if (DamageSides) heroData.DamageSides = DamageSides;
         if (Description) heroData.Description = Description;
-    
+
         // Asignar los datos recopilados al objeto data
         Object.assign(data, heroData);
     } else if (TypeCard === 'Item') {
         const Name = document.getElementById('Name').value;
         const DamageBuff = document.getElementById('IDamageBuff').value;
         const EnemyDamageNerf = document.getElementById('IEnemyDamageNerf').value;
-        const Description  = document.getElementById('DescripcionCard').value;
-        
+        const Description = document.getElementById('DescripcionCard').value;
+
         // Verificar si cada campo tiene un valor antes de asignarlo
         const itemData = {};
         if (Name) itemData.Name = Name;
         if (DamageBuff) itemData.DamageBuff = DamageBuff;
         if (EnemyDamageNerf) itemData.EnemyDamageNerf = EnemyDamageNerf;
         if (Description) itemData.Description = Description;
-    
+
         // Asignar los datos recopilados al objeto data
         Object.assign(data, itemData);
     } else if (TypeCard === 'Armor') {
         const Name = document.getElementById('Name').value;
         const DefenseBuff = document.getElementById('ADefenseBuff').value;
-        const Description  = document.getElementById('DescripcionCard').value;
+        const Description = document.getElementById('DescripcionCard').value;
 
         // Verificar si cada campo tiene un valor antes de asignarlo
         const armorData = {};
         if (Name) armorData.Name = Name;
         if (DefenseBuff) armorData.DefenseBuff = DefenseBuff;
         if (Description) armorData.Description = Description;
-    
+
         // Asignar los datos recopilados al objeto data
         Object.assign(data, armorData);
     } else if (TypeCard === 'Weapon') {
@@ -86,8 +86,8 @@ async function navRouter(rute) {
         const DamageBuff = document.getElementById('WDamageBuff').value;
         const DefenseBuff = document.getElementById('WDefenseBuff').value;
         const EnemyDamageNerf = document.getElementById('WEnemyDamageNerf').value;
-        const Description  = document.getElementById('DescripcionCard').value;
-        
+        const Description = document.getElementById('DescripcionCard').value;
+
         // Verificar si cada campo tiene un valor antes de asignarlo
         const weaponData = {};
         if (Name) weaponData.Name = Name;
@@ -96,28 +96,29 @@ async function navRouter(rute) {
         if (DefenseBuff) weaponData.DefenseBuff = DefenseBuff;
         if (EnemyDamageNerf) weaponData.EnemyDamageNerf = EnemyDamageNerf;
         if (Description) weaponData.Description = Description;
-    
+
         // Asignar los datos recopilados al objeto data
         Object.assign(data, weaponData);
     } else if (TypeCard === 'Talent') {
         const Name = document.getElementById('Name').value;
         const NormalLiveBuff = document.getElementById('TNormalLiveBuff').value;
         const EspecialDamageBuff = document.getElementById('TEspecialDamageBuff').value;
-        const Description  = document.getElementById('DescripcionCard').value;
-        
+        const Description = document.getElementById('DescripcionCard').value;
+
         // Verificar si cada campo tiene un valor antes de asignarlo
         const talentData = {};
         if (Name) talentData.Name = Name;
         if (NormalLiveBuff) talentData.NormalLiveBuff = NormalLiveBuff;
         if (EspecialDamageBuff) talentData.EspecialDamageBuff = EspecialDamageBuff;
         if (Description) talentData.Description = Description;
-    
+
         // Asignar los datos recopilados al objeto data
         Object.assign(data, talentData);
     }
-        // Enviar los datos al backend utilizando fetch - Utilizar el HOST y PORT correspondiente
-    fetch('/modifyCard', {
-        method: 'POST',
+    // Enviar los datos al backend utilizando fetch - Utilizar el HOST y PORT correspondiente
+    console.log("hola")
+    fetch('/inventario/modifyCard', {
+        method: 'POST',  
         headers: {
             'Content-Type': 'application/json'
         },

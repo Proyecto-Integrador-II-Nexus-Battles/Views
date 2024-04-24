@@ -39,11 +39,11 @@ h1{
   color: white;
 }
 
-h2{
+.h2{
   font-size: 230%;
 }
 
-h3{
+.h3{
   font-size: 180%;
 }
 
@@ -192,11 +192,11 @@ form{
     height: 300px;
   }
   
-  h2{
+  .h2{
     font-size: 190%;
   }
 
-  h3{
+  .h3{
     font-size: 175%;
   }
 
@@ -211,11 +211,11 @@ form{
     height: 200px;
   }
   
-  h2{
+  .h2{
     font-size: 140%;
   }
 
-  h3{
+  .h3{
     font-size: 120%;
   }
 
