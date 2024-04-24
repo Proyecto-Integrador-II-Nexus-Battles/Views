@@ -32,7 +32,6 @@ export const defaultR2 = async (req, res) => {
         'Content-Type': 'application/json',
         Authorization: token,
       },
-      // body: JSON.stringify({ IdUsuario: 2 })    
     });
     const cartas = await response.json();
     res.json(cartas);
