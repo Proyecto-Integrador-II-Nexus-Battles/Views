@@ -1,9 +1,11 @@
 import { Router } from "express";
 
-import { defaultR } from '../../controllers/mi_Banco/testing.cotroller.js'
+import { defaultR, defaultR2, defaultR3 } from '../../controllers/mi_Banco/testing.controller.js'
 
 const router = Router();
 router.get("/mi_banco", defaultR);
+router.get("/deck", defaultR2);
+router.post("/saveDeck", defaultR3);
 
 
 

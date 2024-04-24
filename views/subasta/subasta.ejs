@@ -3,23 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
   <title>Subasta</title>
-  <link rel="stylesheet" href="../../public/subasta/css/subasta.css">
+  <link rel="stylesheet" href="/subasta/css/subasta.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
 </head>
+
+
+
 <body>
-<h1>Acá va el navbar</h1>
+<header>
+  <nav>
+    <%- include('../../templates/navbarEcommerce'); %>
+  </nav>
+</header>
 <main class="container_general">
+  <img class="back_img" src="/vitrina_productos/img/Vector.png" onclick="VitrinaSubasta()">
+
+  <% // Mapeo de subtipos a imágenes y tipo de icono
+  const subtipoImagen = {
+    "Armas": "/inventario/imagenes/espadas.png",
+    "Tanque": "/inventario/imagenes/blindaje.png",
+    "Fuego": "/inventario/imagenes/Fuego.png",
+    "Hielo": "/inventario/imagenes/hielo.png",
+    "Veneno": "/inventario/imagenes/veneno.png",
+    "Machete": "/inventario/imagenes/machete.png"
+  };
+
+  for (let i = 0; i < datos.length; i++) {
+    const carta = datos[i];
+    const imagen = subtipoImagen[carta.Subtype];
+    const pujas = carta.PUJAS;
+    const cartas_min = carta.CARTAS_MIN;
+    const cartas_max = carta.CARTAS_MAX;
+
+    %>
+
 <!-- Informacion y foto de la carta -->
   <div class="info_carta">
-    <img src="../../public/subasta/img/picaro_ejemplo_img.jpeg" alt="">
-    <p class="nombre_carta"><b>Pícaro Veneno: Nébula Tóxica</b></p>
+    <img src="<%= carta.imagePath %>" alt="">
+    <p class="nombre_carta"><b><%= carta.Name %></b></p>
    <ul class="detalles_card">
-    <li class="tipo"><b>Tipo carta:</b>&nbsp Héroe</li>
-    <li class="description"><b>Descripción:</b>&nbsp Entrenado en alquimia
-      puede causar gran daño al adversario
-      afectando sus habilidades y
-      reduciendo la posibilidad de que
-      puedan acertar un golpe.</li>
+    <li class="tipo"><b>Tipo carta:</b>&nbsp <%= carta.Type %></li>
+    <li class="description"><b>Descripción:</b>&nbsp <%= carta.Description %></li>
    </ul>
   </div>
    <!-- Informacion de la subasta -->
@@ -27,78 +53,118 @@
 <h2 class="subasta_info_title">Información de la subasta</h2>
 <div class="valor_base_subasta">
   <p><b>Valor base</b></p>
-  <p><b>Créditos:</b>60</p>
+  <p><b>Créditos: </b><%= carta.CREDITOS_MIN %></p>
+  <% if (cartas_min !== null ) { %>
   <p><b>Cartas:</b></p>
-  <li>Pícaro Machete</li>
+  <ul class="cartas_v_max">
+    <% for (let k = 0; k < cartas_min.length; k++) { %>
+    <li><%= cartas_min[k].CANTIDAD %> <%= cartas_min[k].NAME %></li>
+    <% } %>
+  </ul>
+  <% } %>
 </div>
 
 <div class="valor_maximo_subasta">
   <p><b>Valor Máximo / Compra Inmediata</b></p>
-  <p><b>Créditos:</b> 200</p>
-  <p><b>Cartas:</b></p>
-  <ul class="cartas_v_max">
-    <li>Pícaro Machete</li>
-    <li>Golpe de Defensa</li>
-    <li>Guerrero Tanque</li>
-  </ul>
+  <p><b>Créditos: </b><%= carta.CREDITOS_MAX %></p>
+  <% if (cartas_max !== null ) { %>
+    <p><b>Cartas:</b></p>
+    <ul class="cartas_v_max">
+      <% for (let k = 0; k < cartas_max.length; k++) { %>
+      <li><%= cartas_max[k].CANTIDAD %> <%= cartas_max[k].NAME %></li>
+      <% } %>
+    </ul>
+    <% } %>
 </div>
 <div class="fechas_subasta">
-  <p><b>Fecha de Inicio:</b> 7/04/2024</p>
-  <p><b>Fecha Fin:</b> 8/04/2024</p>
-  <p><b>Duración de la subasta:</b> 24 horas</p>
+  <p><b>Fecha de Inicio:</b> <%= carta.FECHA_INICIO%> </p>
+  <p><b>Fecha de Fin:</b> <%= carta.FECHA_FIN %></p>
+  <p><b>Duración de la subasta:</b> <%= carta.TIEMPO %> horas</p>
 </div>
 <div class="tiempo_restante">
-  <p><b>Tiempo Restante: &nbsp00:24:00</b></p>
+  <p id="timer_<%= i %>"></p>
 </div>
 </div>
 
 <!-- Ofertas -->
-<div class="ofertas">
-<h2>Ofertas</h2>
-<div class="ofertas_jugadores_container">
-  <div class="oferta_players">
-    <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: 80</p>
-    <p class="cards_player">Cartas: Pícaro Machete, golpe de defensa</p>
-  </div>
-</div>
 
-<div class="ofertas_jugadores_container">
-  <div class="oferta_players">
-    <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: 80</p>
-    <p class="cards_player">Cartas: Pícaro Machete, golpe de defensa</p>
-  </div>
-</div>
-<div class="ofertas_jugadores_container">
-  <div class="oferta_players">
-    <p class="player_name"><b>@ShadowStriker</b></p>
-    <p class="credits_player">Créditos: 80</p>
-    <p class="cards_player">Cartas: Pícaro Machete, golpe de defensa</p>
-  </div>
-</div>
+
+<div class="ofertas">
+  <h2>Ofertas</h2>
+  <% if (pujas !== null && pujas.length > 0) { %>
+    <div class="ofertas_jugadores_container">
+      <% for (let j = 0; j < pujas.length; j++) { %>
+        <div class="oferta_players">
+          <p class="player_name"><b>@<%=pujas[j].USERNAME %></b></p>
+          <p class="credits_player">Créditos: <%= pujas[j].CREDITOS %></p>
+          <% if (pujas[j].CARTAS_PUJA !== null) { %>
+            <p class="cards_player">Cartas:
+            <% for (let k = 0; k < pujas[j].CARTAS_PUJA.length; k++) { %>
+              <%= pujas[j].CARTAS_PUJA[k].CANTIDAD %> <%= pujas[j].CARTAS_PUJA[k].NAME %><%= k !== pujas[j].CARTAS_PUJA.length - 1 ? ',' : '' %>
+            <% } %>
+            </p>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  <% } else { %>
+    <div class="ofertas_jugadores_container">
+      <div class="oferta_players">
+        <p class="no_pujas"><b>Aun no hay ofertas!</b></p>
+      </div>
+    </div>
+  <% } %>
+
 <div class="buttons">
   <button class="pujar" onclick="abrirPujar()"><b>Pujar</b></button>
-  <button class="compra_rapida" onclick="abrirCompraRapida()" ><b>Compra rápida</b></button>
+  <button class="compra_rapida" onclick="abrirCompraRapida()"><b>Compra rápida</b></button>
 </div>
 </div>
+
 <!-- Emergente Puja-->
 <div class="puja_container" >
   <label for="cantidad_creditos" class="c_creditos">
     Cantidad de créditos
   </label>
-  <input type="number" name="cantidad_creditos" id="cantidad_creditos" oninput="validarNumero(this)">
 
-  <label for="cards_puja">
-    Cartas
-  </label>
-  <select name="cards_puja" id="cards_p">
-    <option value="">1</option>
-    <option value="">2</option>
-    <option value="">3</option>
-  </select>
+  <% if (pujas !== null && pujas.length > 0) { %>
+
+  <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="<%= pujas[0].CREDITOS + 1 %>" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
+
+  <% } else { %>
+
+  <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="1" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
+    
+  <% } %>
+  <div class="error_message"></div>
+
+
+  <% if (carta.CARTAS_MIN !== null ) { %>
+    <label for="#">Cartas</label>
+    <div class="cards_container">
+      <ul class="cartas_v_max puja">
+        <% for (let k = 0; k < cartas_min.length; k++) { %>
+          <li class="<%= cartas_min[k].ID %> <%= cartas_min[k].CANTIDAD %>"><%= cartas_min[k].CANTIDAD %> <%= cartas_min[k].NAME %></li>
+        <% } %>
+      </ul>
+    </div>
+
+    <div class="cartas_max_container">
+      <% if (carta.CARTAS_MAX !== null ) { %>
+        <% for (let k = 0; k < cartas_max.length; k++) { %>
+          <div class="cards_max">
+          <p class="<%= cartas_max[k].ID %>"><%= cartas_max[k].NAME %></p>
+          <input type="number" name="amount_<%= k %>" id="amount_<%= k %>" min="0" max="<%= cartas_max[k].CANTIDAD %>">
+        </div>
+          <% } %>
+      <% } %>
+    </div>
+
+    <div class="cards error_message"></div>
+
+    <% } %>
   <div class="buttons">
-    <button class="pujar_b">Realizar puja</button>
+    <button class="pujar_b"onclick="pujar()">Realizar puja</button>
     <button class="Cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
@@ -107,22 +173,68 @@
   <label for="cantidad_creditos" class="c_creditos">
     Cantidad de créditos
   </label>
-  <input type="number" name="cantidad_creditos" oninput="validarNumero(this)" id="cantidad_creditos">
-
-  <label for="cards">
-    Cartas
-  </label>
-  <div class="cards_container">
-    <p>Pícaro Machete</p>
-    <p>Pícaro Machete</p>
-    <p>Pícaro Machete</p>
+  <div class="creditos_container" id="cantidad_creditos" name="cantidad_creditos">
+    <%= carta.CREDITOS_MAX %>
   </div>
+    <% if (cartas_max !== null ) { %>
+      <label for="cards">
+        Cartas
+      </label>
+      <div class="cards_container">
+        <ul class="cartas_v_max">
+          <% for (let k = 0; k < cartas_max.length; k++) { %>
+          <li><%= cartas_max[k].CANTIDAD %> <%= cartas_max[k].NAME %></li>
+          <% } %>
+        </ul>
+      </div>
+    <% } %>
+
   <div class="buttons">
     <button class="comprar">Comprar</button>
     <button class="cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
+
+<% } %>
 </main>
-<script src="../../public/subasta/js/emergentes.js"></script>
+<script src="/subasta/js/redirectVitrinaSubasta.js"></script>
+<script src="/subasta/js/emergentes.js"></script>
+<script src="/subasta/js/pujar.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    <% for (let i = 0; i < datos.length; i++) { %>
+      const startDate_<%= i %> = new Date('<%= datos[i].TIEMPO_INICIO %>');
+
+      const duration_<%= i %> = <%= datos[i].TIEMPO %> * 3600;
+
+      function updateTimer_<%= i %>() {
+        const now = new Date();
+
+        const endTime = new Date(startDate_<%= i %>.getTime() + (duration_<%= i %> * 1000)); // Convertir la duración a milisegundos y sumarla a la fecha de inicio
+        const timeLeft = Math.max(0, endTime - now); // Tiempo restante en milisegundos
+
+        // Convertir el tiempo restante a horas, minutos y segundos
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Mostrar el temporizador en el elemento HTML
+        document.getElementById('timer_<%= i %>').innerHTML = `<b>Tiempo restante: ${hours}h ${minutes}m ${seconds}s</b>`;
+
+        // Si el tiempo restante es cero, detener el temporizador
+        if (timeLeft === 0) {
+            clearInterval(timerInterval_<%= i %>);
+        }
+      }
+
+      // Actualizar el temporizador cada segundo
+      const timerInterval_<%= i %> = setInterval(updateTimer_<%= i %>, 1000);
+
+      // Actualizar el temporizador por primera vez
+      updateTimer_<%= i %>();
+    <% } %>
+  });
+</script>
+
 </body>
 </html>
