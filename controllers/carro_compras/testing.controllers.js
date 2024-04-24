@@ -1,6 +1,10 @@
 import axios from "axios";
 import { HOST, PORT } from "../../config.js";
 
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 export const defaultR = (req, res) => {
   const options = {
     headers: { Authorization: `${req.query.token}` },
@@ -12,24 +16,42 @@ export const defaultR = (req, res) => {
       console.log(responseData);
 
       const info = responseData.Info;
-      const totales = responseData.totales;
+      const totales = responseData.totales.map(formatNumber);
       const totalNeto = responseData.totalNeto;
-      const totalBruto = responseData.totalBruto;
+      let totalBruto = responseData.totalBruto;
+
+      if (!isNaN(totalBruto)) {
+        // Formatea el número con coma como separador decimal
+        totalBruto = parseFloat(totalBruto).toLocaleString("es-ES", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+      }
+
       const cantidad = responseData.list_price_unit;
       const cantidadtotal = cantidad.reduce(
         (total, item) => total + item.CANTIDAD,
         0
       );
 
+      const tasaCambio = 3900;
+      const totalNetoUSD = totalNeto / tasaCambio;
+
+      const totalNetoFormateado = formatNumber(totalNeto);
+      // No es necesario volver a formatear totalBruto aquí, ya que lo formateamos arriba
+
+      console.log(totalNetoUSD);
       console.log(cantidadtotal);
+
       // Renderiza la vista con los datos obtenidos
       res.render("carro_compras/index", {
         info: info,
         totales: totales,
-        totalNeto: totalNeto,
-        totalBruto: totalBruto,
+        totalNeto: totalNetoFormateado,
+        totalBruto: totalBruto, // No es necesario volver a formatearlo aquí
         cantidad: cantidad,
         cantidadtotal: cantidadtotal,
+        totalNetoUSD: totalNetoUSD,
       });
     })
     .catch((error) => {
@@ -108,6 +130,12 @@ export const resumenFlotante = (req, res) => {
       res.json(response.data);
     })
     .catch((error) => {
+      if (error.response && error.response.status === 401) {
+        res.status(401).json({
+          message:
+            "Debes iniciar sesión para poder acceder al carrito de compras.",
+        });
+      }
       console.error("Error al realizar la solicitud:", error);
     });
 };

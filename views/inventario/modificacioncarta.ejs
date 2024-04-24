@@ -79,7 +79,6 @@
                 <p>Debuff de daño:</p>
                 <input type="text" name="" id="IEnemyDamageNerf" class="opcion" placeholder="<%= carta.EnemyDamageNerf %>">
               </div>
-
             <% } else if (carta.TypeCard === 'Armor') { %>
               <div class="nombre">
                 <p>Buff defensivo:</p>
@@ -123,7 +122,7 @@
             Descripcion:
           </h2>
           <div class="textarea-container">
-            <textarea name="" id="" cols="45" rows="23">
+            <textarea name="" id="DescripcionCard" cols="45" rows="23">
                 <%=carta.Description%>
             </textarea>
           </div>

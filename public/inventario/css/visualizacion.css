@@ -7,26 +7,14 @@
   --carta:white;
 }
 
-body {
-  
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Estilos navbar */
-header {
-  width: 100%;
-  display: flex;
-  background-color: #d8e9f9;
-  justify-content: space-between;
-  height: 90px;
-}
 
 
 /* Main */
 main {
-  background-image: url("../Imagenes/fondo.png");
-  background-repeat: no-repeat;
+  background-image: url("/vitrina_productos/img/fondo.png");
+  padding: 20px;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   display: grid;
   padding: 20px;
@@ -41,7 +29,6 @@ main {
   width: 30%;
   padding-right:10px ;
   border-radius: 10px;
-  
 }
 .button{
   display: flex;
@@ -197,200 +184,12 @@ main {
   display: block;
 }
 
-
-@media screen and (max-width: 1687px) {
-
-}
-
-@media screen and (min-width: 1630px) {
-  header {
-    margin-right: 15%;
-  }
-  .opciones li a {
-    font-size: 30px;
-  }
-  .opciones{
-    margin-top: -10px;
-  }
-  .opciones li button {
-    font-size: 35px;
-    width: 150px;
-  }
-
-}
-
-@media (width>=1360px) and (width<=1366px)
-{
-  header{
-    height: 60px;
-  }
-  header .logo_img{
-    height: 50px;
-  }
-  .opciones li a{
-    font-size: 15px;
-  }
-  #login_btn{
-    font-size: 15px;
-  }
-}
-
-@media screen and (max-width:1280px) {
-  header{
-    height: 60px;
-  }
-  header .logo_img{
-    height: 50px;
-  }
-  .opciones li a{
-    font-size: 15px;
-  }
-  #login_btn{
-    font-size: 15px;
-  }
-
-}
-
-@media screen and (max-width:1212px) {
-  header{
-    height: 60px;
-  }
-  header .logo_img{
-    height: 50px;
-  }
-  .opciones li a{
-    font-size: 15px;
-  }
-  #login_btn{
-    font-size: 11px;
-  }
-
-  .opciones {
-    gap: 1em;
-    margin-left: 10px;
-  }
-
-  .opciones li button {
-    font-size: 22px;
-    width: 100px;
-    margin-left: 0;
-  }
-}
-/* // */
-@media screen and (max-width:1071px){
-
-}
-@media screen and (max-width: 1045px) {
-  .opciones {
-    padding-top: 10px;
-  }
-
-  .opciones li a {
-    font-size: 20px;
-  }
-
-  .opciones li button {
-    font-size: 19px;
-    height: 24px;
-  }
-
-  .opciones {
-    gap: 0.6em;
-  }
-
-}
-
-@media screen and (max-width: 970px) {
-
-  .abrir-btn {
-    display: block;
-    margin-left: 80%;
-    height: 30px;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  .opciones {
-    flex-direction: column;
-    align-items: end;
-    color: black;
-  }
-
-  .opciones li {
-    margin-top: 2px;
-  }
-
-  .opciones li button {
-    width: 100px;
-  }
-
-  #navbar {
-    position: absolute;
-    top: 9.7%;
-    right: 0;
-    background-color: #D8E9F9;
-    padding: 1.2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin-right: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 2;
-  }
-
-  #navbar.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@media screen and (max-width:660px){
-
-.logo_img{
-  margin-left: 10px;
-}
-.abrir-btn{
-  margin-left: auto;
-  margin-right: 20px;
-}
-.paginas{
-  margin-left: 10px;
-}
-}
-@media screen and (min-width:591px) and (max-width:660px){
-  .container_general{
-    background: transparent;
-  }
-  .card
-  {
-   top: 5vh;
-  left: 5vh;
-  }
-}
-@media screen and (min-width:340px) and (max-width:390px){  
-}
-
 @media screen and (min-width:391px) and (max-width:430px){
-
   .contenido-ventana{
     width: 40%;
     margin-left: 80px;
   }
-  
   .contenido-ventana button {
     font-size:9px;
   }
-}
-@media screen and (min-width:540px) and (max-width:590px){
-}
-@media screen and (min-width:280px) and (max-width:300px){
-}
-
-@media (width<=339px){
- 
-}
-@media screen and (min-width:431px) and (max-width:539px)
-{
-
 }
