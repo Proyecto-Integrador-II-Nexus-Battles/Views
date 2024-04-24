@@ -26,6 +26,10 @@ export const rendermiCuenta = async (req, res) => {
         Authorization: `${req.query.token}`,
       },
     });
+    console.log(data.status);
+    if (data.status === 401) {
+      return res.redirect("/login");
+    }
     const userinfo = await data.json();
 
     if (userinfo.avatar == null) {
