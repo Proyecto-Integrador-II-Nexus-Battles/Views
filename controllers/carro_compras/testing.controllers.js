@@ -5,21 +5,20 @@ function formatNumber(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-
 function formatNumberCOP(totalNeto) {
-    // Convierte el número a string
-    let numeroString = totalNeto.toString();
-    
-    // Divide el número en partes por cada 3 dígitos, empezando desde el final
-    let partes = [];
-    while (numeroString.length > 3) {
-        partes.unshift(numeroString.slice(-3)); // Agrega los últimos 3 dígitos al principio del array
-        numeroString = numeroString.slice(0, -3); // Elimina los últimos 3 dígitos
-    }
-    partes.unshift(numeroString); // Agrega el resto del número al principio del array
-    
-    // Une las partes con puntos como separadores y devuelve el número formateado
-    return partes.join('.');
+  // Convierte el número a string
+  let numeroString = totalNeto.toString();
+
+  // Divide el número en partes por cada 3 dígitos, empezando desde el final
+  let partes = [];
+  while (numeroString.length > 3) {
+    partes.unshift(numeroString.slice(-3)); // Agrega los últimos 3 dígitos al principio del array
+    numeroString = numeroString.slice(0, -3); // Elimina los últimos 3 dígitos
+  }
+  partes.unshift(numeroString); // Agrega el resto del número al principio del array
+
+  // Une las partes con puntos como separadores y devuelve el número formateado
+  return partes.join(".");
 }
 
 export const defaultR = (req, res) => {
@@ -57,7 +56,6 @@ export const defaultR = (req, res) => {
       // No es necesario volver a formatear totalBruto aquí, ya que lo formateamos arriba
 
       console.log(totalNetoUSD);
-      
 
       // Renderiza la vista con los datos obtenidos
       res.render("carro_compras/index", {
@@ -73,39 +71,43 @@ export const defaultR = (req, res) => {
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
     });
-   
 };
 
-export const actualizarCant = (req, res) =>{
-  axios.post(`${HOST}:${PORT}/carro/INFO-CARDS`, {}, { headers: {
-            Authorization: req.headers.authorization
-}
-}).then((response) => {
-  console.log("Este es el response de actualizar:",response.data);
-  
-  const totalBruto = calculateTotalBruto(response.data.totalNeto);
+export const actualizarCant = (req, res) => {
+  axios
+    .post(
+      `${HOST}:${PORT}/carro/INFO-CARDS`,
+      {},
+      {
+        headers: {
+          Authorization: req.headers.authorization,
+        },
+      }
+    )
+    .then((response) => {
+      console.log("Este es el response de actualizar:", response.data);
 
-    const totalBrutoFormatted = formatNumber(totalBruto);
-    const totalNetoFormatted = formatNumber(response.data.totalNeto);
-    const totales = response.data.totales.map(formatNumber);
-    const responseData = response.data;
-    const cantidad = responseData.list_price_unit;
-    const cantidadtotal = cantidad.reduce(
-      (total, item) => total + item.CANTIDAD,
-      0
-    );
+      const totalBruto = calculateTotalBruto(response.data.totalNeto);
 
-    res.status(200).json({ 
-      totalBruto: totalBrutoFormatted, 
-      totalNeto: totalNetoFormatted, 
-      totales: totales,
-      cantidadtotal: cantidadtotal,
-      
-     });
-     console.log(cantidadtotal);
-});
-}
+      const totalBrutoFormatted = formatNumber(totalBruto);
+      const totalNetoFormatted = formatNumber(response.data.totalNeto);
+      const totales = response.data.totales.map(formatNumber);
+      const responseData = response.data;
+      const cantidad = responseData.list_price_unit;
+      const cantidadtotal = cantidad.reduce(
+        (total, item) => total + item.CANTIDAD,
+        0
+      );
 
+      res.status(200).json({
+        totalBruto: totalBrutoFormatted,
+        totalNeto: totalNetoFormatted,
+        totales: totales,
+        cantidadtotal: cantidadtotal,
+      });
+      console.log(cantidadtotal);
+    });
+};
 
 function calculateTotalBruto(totalNeto) {
   return Number((totalNeto * 0.81).toFixed(2));

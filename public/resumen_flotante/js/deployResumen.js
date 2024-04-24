@@ -17,6 +17,7 @@ function deployEjsScript() {
 
   // Create a wrapper div element
   const resumen = document.getElementById("mostrar-resumen-flotante");
+  console.log(resumen);
   resumen.addEventListener("click", async () => {
     const data = await getData();
     const resumenFlotante = document.getElementById("resumen-flotante");
