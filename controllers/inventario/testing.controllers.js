@@ -27,6 +27,10 @@ export const rendermiCuenta = async (req, res) => {
       },
 
     });
+    console.log(data.status);
+    if (data.status === 401) {
+      return res.redirect("/login");
+    }
     const userinfo = await data.json();
     const avatarText = Buffer.from(userinfo.avatar.data).toString('utf-8');
 
