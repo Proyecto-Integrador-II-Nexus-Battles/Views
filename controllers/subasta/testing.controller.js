@@ -18,6 +18,7 @@ export const cartasSubasta = async (_req, res) => {
 
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
+
         const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
             method: "POST",
             headers: {
@@ -28,9 +29,24 @@ export const cartasSubasta = async (_req, res) => {
         })
 
         const datos = await conexionInventario.json();
-        datos.forEach((carta, index) => {
-            carta.ID_SUBASTA = date[index].ID;
+
+        const subastaMap = new Map();
+        date.forEach(carta => {
+            subastaMap.set(carta.ID_CARTA, carta.ID);
         });
+
+        console.log(idCartas);
+        console.log(subastaMap);
+
+        datos.forEach(carta => {
+            carta.ID_SUBASTA = subastaMap.get(carta._id);
+        });
+
+        console.log(datos);
+
+        // datos.forEach((carta, index) => {
+        //     carta.ID_SUBASTA = date[index].ID;
+        // });
 
         res.render("subasta/subasta_vitrina", { datos });
 
@@ -195,4 +211,25 @@ export const getCreditos = async (req, res) => {
             console.error(error);
             res.redirect("/login");
           }
+};
+
+
+export const publishPuja = async (req, res) => {
+    
+    try {
+        const response = await fetch(`https://localhost:${PORT}/subasta/addPuja`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `${req.headers.authorization}`,
+            },
+            body: JSON.stringify(req.body)
+        });
+        const respuestaJson = await response.json();
+        res.status(200).send(respuestaJson);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+
 };
