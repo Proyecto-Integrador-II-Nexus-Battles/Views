@@ -164,8 +164,8 @@ h1 {
 
 .pedido {
   border-radius: 10px;
-  background-color: #ebc793;
-  width: 9rem;
+  background-color: #a3b7dc;
+  width: 10rem;
   height: 2.4rem;
   text-align: center;
   margin-top: 3.7rem;
@@ -175,13 +175,15 @@ h1 {
 }
 
 .pedido:hover {
-  background-color: #ddb77f;
+  background-color: #789dca;
 }
-
-.añadir {
+.agregarmas{
+  margin-left: 7.7rem;
+  margin-top: 0.2rem;
+}
+.añadir{
   margin-top: -0.7rem;
-  padding: 14px;
-  width: 20rem;
+  font-size: 1rem;
   margin-left: -5.5rem;
   cursor: pointer;
 }
@@ -193,7 +195,7 @@ h1 {
 .paginas {
   width: 400px;
   height: 40px;
-  margin-top: 41.7rem;
+  margin-top: 45rem;
   margin-left: -14rem;
 }
 
@@ -482,6 +484,7 @@ h1 {
   height: 36px;
   text-align: center;
   background-color: #d8e9f9;
+  cursor: pointer;
 }
 
 .confirmar {
@@ -491,7 +494,8 @@ h1 {
   width: 80px;
   height: 36px;
   text-align: center;
-  background-color: #ebc793;
+  background-color: #789dca;
+  cursor: pointer;
 }
 
 .fondo {
@@ -509,19 +513,44 @@ h1 {
 
 @media screen and (max-width: 1670px) and (min-width: 1600px) {
   .resumen{
-    margin-left: 3rem;
+    margin-left: 2rem;
   }
 }
 
 @media screen and (max-width: 1600px) and (min-width: 1400px) {
   .resumen{
-    margin-left: -4rem;
+    margin-left: -5rem;
+  }
+}
+
+@media screen and (max-width:1614px){
+  .resumen{
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width:1566px){
+  .resumen{
+    margin-left: -3rem;
+  }
+}
+
+@media screen and (max-width:1535px){
+  .resumen{
+    margin-left: -5rem;
   }
 }
 
 @media screen and (max-width:1520px){
   .resumen{
     margin-left: -10rem;
+  }
+}
+
+@media screen and (max-width:1422px){
+  
+  .resumen{
+    margin-left: -15rem;
   }
 }
 
@@ -537,32 +566,87 @@ h1 {
   }
 }
 
+@media screen and (max-width:1322px){
+  .paginas{
+    margin-left: -14rem;
+  }
+}
+
+@media screen and (max-width:1320px){
+  .resumen{
+    margin-left: -20rem;
+  }
+}
+
 @media screen and (max-width:1280px){
   .resumen{
-    margin-left: -25rem;
+    margin-left: 16rem;
   }
+  .paginas {
+ 
+  margin-left: -50rem;
+}
+  
 }
 
 @media screen and (max-width:1185px){
   .resumen{
-    margin-left: -27rem;
+    margin-left: 13rem;
+  }
+  .paginas{
+    margin-top: 70rem;
+    margin-left: -50rem;
+  }
+  .mainprincipal {
+  
+    height: 1250px;
+  
   }
 }
 
 @media screen and (max-width:1150px){
-  .resumen{
-    margin-left: -28rem;
-  }
+  
 }
 
 @media screen and (max-width:1137px){
-  .resumen{
-    margin-left: -30rem;
-  }
+  
+  
 }
 
-@media screen and (max-width: 1100px) and (min-width: 820px) {
+@media screen and (max-width:1100px){
   .resumen{
-    margin-left: -42rem;
+    margin-left: -5rem;
+    
   }
+  .paginas{
+    margin-left: -35rem;
+  }
+  .mainprincipal {
+  
+    height: 1700px;
+  
+  }
+  
+}
+
+@media screen and (max-width:968px){
+  .resumen{
+    margin-left: -7rem;
+    
+  }
+  
+}
+
+@media screen and (max-width:942px){
+  
+  .resumen{
+    margin-left: -23.2rem;
+    margin-top: 75rem;
+    
+  }
+
+  .paginas{
+    margin-left: -37rem;
+  }
+  
 }

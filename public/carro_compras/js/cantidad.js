@@ -78,7 +78,7 @@ function actualizarCantidad(idUsuario, idCarta, cantidad) {
 
 function restarCantidad(cantidadParagraph, idUsuario, idCarta) {
   let cantidad = parseInt(cantidadParagraph.textContent);
-  if (cantidad > 0) {
+  if (cantidad > 1) {
     cantidad--;
     cantidadParagraph.textContent = cantidad;
     actualizarCantidad(idUsuario, idCarta, cantidad);
