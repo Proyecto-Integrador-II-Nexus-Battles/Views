@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("../Imagenes/Background.jpg");
+  background-image: url(/inventario/imagenes/Background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -28,6 +28,7 @@ main{
   display: flex;
   flex-direction: column;
   width: 70%;
+  height: 670px;
   border-radius: 20px;
   padding-bottom: 30px;
 }
@@ -146,8 +147,85 @@ form{
 }
 
 @media screen and (max-width: 1530px) {
+  .container_general{
+    height: auto;
+  }
+
   form{
     flex-direction: column;
-    align-items: center;
+  }
+
+  .imagen_usuario{
+    display: flex;
+    justify-content: center;
+  }
+
+  .user_container{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .user_container{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .user_container{
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .submit_btn{
+    width: 70%;
+  }
+
+  .input{
+    width: 82%;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .user_img{
+    width: 300px;
+    height: 300px;
+  }
+  
+  h2{
+    font-size: 190%;
+  }
+
+  h3{
+    font-size: 175%;
+  }
+
+  .input{
+    font-size:medium;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  .user_img{
+    width: 200px;
+    height: 200px;
+  }
+  
+  h2{
+    font-size: 140%;
+  }
+
+  h3{
+    font-size: 120%;
+  }
+
+  .input{
+    font-size:12px;
+  }
+
+  .eye{
+    width: 20px;
+    right: 30px;
+    top:4px;
   }
 }

@@ -1,5 +1,5 @@
-async function pujar() {
-    const atributos = {};
+async function pujar(idSubasta) {
+
     let flag_puja = true;
 
     const creditos_pujados = document.querySelector('input[name="cantidad_creditos"]').value;
@@ -44,6 +44,7 @@ async function pujar() {
     }
 
     function hideErrorCards() {
+        if (!document.querySelector(`.cards.error_message`)) return;
         const errorInput = document.querySelector(`.cards.error_message`);
         errorInput.textContent = '';
         errorInput.style.display = 'none';
@@ -55,6 +56,9 @@ async function pujar() {
         hideError('cantidad_creditos');
     } else if (parseInt(creditos_pujados) === 0) {
         showError('cantidad_creditos', "Tiene que pujar créditos");
+        return;
+    } else if (parseInt(creditos_pujados) < parseInt(min_creditos)) {
+        showError('cantidad_creditos', "El valor de créditos es menor al valor mínimo de puja");
         return;
     } else {
         showError('cantidad_creditos', "El valor de créditos pujados debe ser mayor a la ultima puja");
@@ -98,20 +102,60 @@ async function pujar() {
     if (!flag_puja) {
         console.log("No se puede hacer la puja");
     } else {
-        hideErrorCards();
+        hideErrorCards?.();
         console.log("Se puede hacer la puja!");
-    }
 
-    // Proceed with the rest of the code
-    // const queryParams = new URLSearchParams(filtros).toString();
-    // console.log(queryParams);
-    // const token = "Bearer " + localStorage.getItem("token");
-    // if (token === "Bearer null") {
-    //   window.location.href = "/login";
-    // }
-    // console.log(queryParams);
-    // const url = '/filteredCardsSubasta/?' + queryParams + '&token=' + token;
-    // window.location.href = url
+        //ENVIO DE DATOS DE PUJA
+        const url = "/publishPuja";
+        const token = "Bearer " + localStorage.getItem("token");
+
+        const consts = {
+            id_subasta: idSubasta,
+            creditos_pujados: creditos_pujados,
+            cartas_min: ids_cartas_min.reduce((acc, id, index) => {
+            acc[id] = cantidad_cartas_min[index];
+            return acc;
+            }, {}),
+            cartas_max: ids_cartas_max.reduce((acc, id, index) => {
+            if (cantidad_cartas_max[index] !== 0) {
+                acc[id] = cantidad_cartas_max[index];
+            }
+            return acc;
+            }, {})
+        };
+
+        console.log(consts);
+
+        const options = {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+            },
+            body: JSON.stringify( consts )
+        };
+
+        try {
+            console.log("Enviando puja");
+            const response = await fetch(url, options);
+            if (response.ok) {
+                location.reload();
+            } else if (response.status === 301 || response.status === 401) {
+                localStorage.removeItem('token');
+                window.location.href = "/login";
+            } else if (response.status === 404) {
+                return [];
+            } else {
+                throw new Error("Error en la solicitud POST");
+            }
+        } catch (error) {
+            console.error("Error en la solicitud: ", error);
+            return error;
+        }
+        
+
+
+    }
 }
 
 async function comprobarMiBanco() {

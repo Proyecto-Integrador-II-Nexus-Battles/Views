@@ -210,36 +210,29 @@ export const fetchBuzon = async (req, res) => {
 };
 
 export const fetchClaim = async (req, res) => {
+  try {
+    console.log(req.body);
 
+    const token = req.headers.authorization;
+    console.log(token);
 
-    try {
+    const response = await fetch(`${HOST}:${PORT}/subasta/buzon/claim`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Methods": "POST",
+        Authorization: `${token}`,
+      },
+      body: JSON.stringify(req.body),
+    });
+    const respuestaJson = await response.json();
+    res.status(200).send(respuestaJson);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 
-        console.log(req.body)
-
-        const token = req.headers.authorization
-        console.log(token)
-
-        const response = await fetch(`${HOST}:${PORT}/subasta/buzon/claim`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Methods": "POST",
-                "Authorization": `${token}`
-            },
-            body: JSON.stringify(req.body),
-        })
-        const respuestaJson = await response.json();
-        console.log(respuestaJson)
-        res.status(200).send(respuestaJson);
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Internal Server Error");
-    }
-
-
-
-    /*  .then((response) => {
+  /*  .then((response) => {
          console.log(response)
          response.json().then((data) => {
              res.json(data);
@@ -290,5 +283,55 @@ export const getCreditos = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.redirect("/login");
+  }
+};
+
+export const publishPuja = async (req, res) => {
+  try {
+    const response = await fetch(`${PORT}:${PORT}/subasta/addPuja`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${req.headers.authorization}`,
+      },
+      body: JSON.stringify(req.body),
+    });
+    const respuestaJson = await response.json();
+    res.status(200).send(respuestaJson);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+export const compraRapida = async (req, res) => {
+  try {
+    const { ID_SUBASTA } = req.body;
+    const options = {
+      headers: {
+        Authorization: req.headers.authorization,
+      },
+    };
+    axios
+      .post(
+        `${HOST}:${PORT}/subasta/compraRapida`,
+        { ID_SUBASTA: ID_SUBASTA },
+        options
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          res.status(200).send("Compra realizada con exito");
+        } else if (response.status === 401) {
+          res.redirect("/login");
+        } else {
+          res.status(500).send("Internal Server Error");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+      });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
   }
 };
