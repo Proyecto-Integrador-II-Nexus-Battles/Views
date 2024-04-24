@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("../Imagenes/Background.jpg");
+  background-image: url(/inventario/imagenes/Background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
