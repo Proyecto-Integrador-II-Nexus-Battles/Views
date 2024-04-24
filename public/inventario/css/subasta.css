@@ -67,6 +67,7 @@ header {
   position: relative;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .informacion_carta {
