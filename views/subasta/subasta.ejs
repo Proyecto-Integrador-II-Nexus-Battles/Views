@@ -133,8 +133,8 @@
 
   <% } else { %>
 
-  <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="1" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
-    
+  <input type="number" name="cantidad_creditos" id="cantidad_creditos" min="<%= carta.CREDITOS_MIN %>" max="<%= carta.CREDITOS_MAX %>" oninput="validarNumero(this)">
+
   <% } %>
   <div class="error_message"></div>
 
@@ -163,8 +163,9 @@
     <div class="cards error_message"></div>
 
     <% } %>
+
   <div class="buttons">
-    <button class="pujar_b"onclick="pujar()">Realizar puja</button>
+    <button class="pujar_b"onclick="pujar('<%= carta.ID %>')">Realizar puja</button>
     <button class="Cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
