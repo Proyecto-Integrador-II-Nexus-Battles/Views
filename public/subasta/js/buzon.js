@@ -27,8 +27,8 @@ boton_claim.forEach(boton => {
 
                     console.log("girlllllllll bye")
                     console.log(document.getElementById(`${boton.name}`))
-                    document.getElementById(`${boton.name}`).style.display = "none";
-
+                    //document.getElementById(`${boton.name}`).style.display = "none";
+                    fadeOut(boton.name);
                 } else {
 
 
@@ -40,3 +40,21 @@ boton_claim.forEach(boton => {
     });
 });
 
+function fadeOut(element) {
+    var el = document.getElementById(element);
+    var opacity = 1;
+    var intervalTime = 50; // Time interval for opacity change
+    var duration = 500; // Duration of fade effect in milliseconds
+    var steps = duration / intervalTime; // Number of steps to complete the fade effect
+    var deltaOpacity = 1 / steps; // Opacity change per step
+
+    var fadeInterval = setInterval(function () {
+        if (opacity > 0) {
+            opacity -= deltaOpacity;
+            el.style.opacity = opacity;
+        } else {
+            clearInterval(fadeInterval); // Clear interval when opacity reaches 0
+            el.style.display = 'none'; // Hide the element after fading out
+        }
+    }, intervalTime);
+}
