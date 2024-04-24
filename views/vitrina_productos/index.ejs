@@ -46,13 +46,6 @@
           } else {
             console.log('Error encontrando cartas en el banco');
           }
-
-          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
-          document.getElementById('register_btn').remove();
-          document.querySelector('.login_btn').addEventListener('click', function() {
-            localStorage.removeItem('token');
-            window.location.reload(true);
-          });
         } else {
           console.log('Not logged in');
         }
@@ -75,14 +68,16 @@
           <li>
             <h2>Precios</h2>
           </li>
-          <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min_price" min="0" step="1000"> </li> 
-        <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max_price" min="0" step="1000"> </li> 
-        <li> <h2>Orden</h2> </li>
-        <li><select class="seleccionar\_precio" id="sortOrder"> 
-          <option value="" disabled selected>Orden</option> 
-          <option value="desc">Mayor a menor</option> 
-          <option value="asc">Menor a mayor</option> 
-        </select></li>
+          <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min_price" min="0" step="1000"> </li>
+          <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max_price" min="0" step="1000"> </li>
+          <li>
+            <h2>Orden</h2>
+          </li>
+          <li><select class="seleccionar\_precio" id="sortOrder">
+              <option value="" disabled selected>Orden</option>
+              <option value="desc">Mayor a menor</option>
+              <option value="asc">Menor a mayor</option>
+            </select></li>
 
           <li>
             <h2>Tipo de carta</h2>
@@ -134,7 +129,7 @@
             <li>2</li>
             <li>3</li>
           </ul>
-        </div>  
+        </div>
       </div>
     </div>
     </div>
