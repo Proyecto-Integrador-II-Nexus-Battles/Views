@@ -144,7 +144,6 @@ export const prueba = async (req, res) => {
 };
 
 export const default12 = (req, res) => {
-  console.log("hola juanito")
   const data = req.body.data
   fetch(`${HOST}:${PORT}/inventario/modifyCard/`, {
     method: 'PATCH',

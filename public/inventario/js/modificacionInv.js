@@ -116,7 +116,6 @@ async function navRouter(rute) {
         Object.assign(data, talentData);
     }
     // Enviar los datos al backend utilizando fetch - Utilizar el HOST y PORT correspondiente
-    console.log("ajajajsj de q habla el profe")
     fetch('/inventario/modifyCard', {
         method: 'POST',
         headers: {
