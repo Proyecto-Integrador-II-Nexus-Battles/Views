@@ -10,7 +10,7 @@
   border: 1px solid black;
   border-radius: 5px;
   z-index: 1000;
-  margin-left: 19rem;
+  margin-left: 22.5rem;
   margin-top: -4.7rem;
 }
 
@@ -95,13 +95,13 @@
 
 .pedidodos {
   border-radius: 10px;
-  background-color: #ebc793;
+  background-color: #a3b7dc;
   width: 9rem;
   height: 2.3rem;
   text-align: center;
   margin-top: 1.6rem;
   margin-left: 4.5rem;
-  padding-top: 10px;
+  padding-top: 5px;
   border: 1px solid black;
 }
 
@@ -112,17 +112,18 @@
   height: 2.3rem;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .ircarrito {
   border-radius: 10px;
-  background-color: #ebc793;
+  background-color: #a3b7dc;
   width: 9rem;
   height: 2.3rem;
   text-align: center;
   margin-top: 0.4rem;
   margin-left: 4.5rem;
-  padding-top: 10px;
+  padding-top: 5px;
   border: 1px solid black;
 }
 
@@ -133,6 +134,7 @@
   height: 2.3rem;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .informacion_cartados {
@@ -180,4 +182,5 @@
   font-weight: bold;
   margin-top: 1rem;
   margin-left: 8.5rem;
+  cursor: pointer;
 }

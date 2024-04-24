@@ -164,7 +164,7 @@ h1 {
 
 .pedido {
   border-radius: 10px;
-  background-color: #ebc793;
+  background-color: #a3b7dc;
   width: 9rem;
   height: 2.4rem;
   text-align: center;
@@ -175,7 +175,7 @@ h1 {
 }
 
 .pedido:hover {
-  background-color: #ddb77f;
+  background-color: #789dca;
 }
 
 .añadir {
@@ -193,7 +193,7 @@ h1 {
 .paginas {
   width: 400px;
   height: 40px;
-  margin-top: 41.7rem;
+  margin-top: 45rem;
   margin-left: -14rem;
 }
 
@@ -482,6 +482,7 @@ h1 {
   height: 36px;
   text-align: center;
   background-color: #d8e9f9;
+  cursor: pointer;
 }
 
 .confirmar {
@@ -491,7 +492,8 @@ h1 {
   width: 80px;
   height: 36px;
   text-align: center;
-  background-color: #ebc793;
+  background-color: #789dca;
+  cursor: pointer;
 }
 
 .fondo {
@@ -509,19 +511,44 @@ h1 {
 
 @media screen and (max-width: 1670px) and (min-width: 1600px) {
   .resumen{
-    margin-left: 3rem;
+    margin-left: 2rem;
   }
 }
 
 @media screen and (max-width: 1600px) and (min-width: 1400px) {
   .resumen{
-    margin-left: -4rem;
+    margin-left: -5rem;
+  }
+}
+
+@media screen and (max-width:1614px){
+  .resumen{
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width:1566px){
+  .resumen{
+    margin-left: -3rem;
+  }
+}
+
+@media screen and (max-width:1535px){
+  .resumen{
+    margin-left: -5rem;
   }
 }
 
 @media screen and (max-width:1520px){
   .resumen{
     margin-left: -10rem;
+  }
+}
+
+@media screen and (max-width:1422px){
+  
+  .resumen{
+    margin-left: -15rem;
   }
 }
 
@@ -537,15 +564,41 @@ h1 {
   }
 }
 
+@media screen and (max-width:1322px){
+  .paginas{
+    margin-left: -14rem;
+  }
+}
+
+@media screen and (max-width:1320px){
+  .resumen{
+    margin-left: -20rem;
+  }
+}
+
 @media screen and (max-width:1280px){
   .resumen{
-    margin-left: -25rem;
+    margin-left: 16rem;
   }
+  .paginas {
+ 
+  margin-left: -50rem;
+}
+  
 }
 
 @media screen and (max-width:1185px){
   .resumen{
-    margin-left: -27rem;
+    margin-left: 13rem;
+  }
+  .paginas{
+    margin-top: 70rem;
+    margin-left: -50rem;
+  }
+  .mainprincipal {
+  
+    height: 1250px;
+  
   }
 }
 

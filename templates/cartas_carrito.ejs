@@ -46,6 +46,10 @@
         <img src="carro_compras/img/astrid.jpeg" class="personaje" />
       </div>
       <div class="informacion_carta">
+        <div class="nombreuno">
+          <p ><%= carta.Name %></p>
+          <img  src="<%= imagen %>" class="<%= tipoIcono %>" />
+        </div>
         <% if (carta.TypeCard === "Hero") { %>
         <p>Poder: <%= carta.Power %></p>
         <p>Vida: <%= carta.Live %></p>
