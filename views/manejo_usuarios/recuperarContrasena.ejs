@@ -22,23 +22,23 @@
 
       <a href="/"><img src="/manejo_usuarios/img/imagen_logo_columna.png" alt=""></a>
 
-      <form>
+      <form id="preguntas-form">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
           <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">¿Cuál fue el nombre de tu primera mascota?</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="a">
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">¿Cuál fue el nombre de tu colegio de la infancia?</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="b">
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">¿Cuál fue tu primer videojuego?</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" id="exampleInputPassword1" name="c">
         </div>
 
         <button id="show-recovery-form-btn">Enviar Código</button>
@@ -48,9 +48,9 @@
             <!-- Aquí van los campos para el código de verificación -->
             <div class="form-group">
               <label for="verification-code">Código de Verificación:</label>
-              <input type="text" id="verification-code" name="verification-code" required>
+              <input type="text" id="verification-code" name="code" required>
             </div>
-            <button type="submit">Verificar Código</button>
+            <button type="submit" id="verify-code">Verificar Código</button>
           </form>
         </div>
 

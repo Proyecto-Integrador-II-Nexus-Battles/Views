@@ -17,7 +17,6 @@
     <script>
       document.addEventListener("DOMContentLoaded", async function() {
         var token = localStorage.getItem('token');
-
         if (token !== null) {
           const cartasEnLista = await comprobarListaDeseos();
           const cartasEnBanco = await comprobarMiBanco();
@@ -34,15 +33,14 @@
           } else {
             console.log('Error encontrando cartas en lista de deseos');
           }
-          console.log(cartasEnBanco);
+
           if (cartasEnBanco.length > 0) {
             const datos = <%- JSON.stringify(datos) %>;
             for (let i = 0; i < datos.length; i++) {
               const carta = datos[i];
               const cartaEnBanco = cartasEnBanco.includes(carta._id);
               if (cartaEnBanco) {
-                console.log('cartas en banco');
-                document.querySelector('.icons-' + i).innerHTML = '<span class="dot" id="bank">&#127974;</span>';
+                document.querySelector('.card-' + i).style.opacity = '0.6';
               }
             }
           } else {
@@ -116,18 +114,29 @@
           </form>
         </div>
 
-
+        <div class="pag">
+          <div class="paginas">
+            <ul class="listPage">
+              <li class="active">1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row2">
+        <%- include('../../templates/cartas_vitrina'); %>
+      </div>
+      <div class="pag2">
         <div class="paginas">
           <ul class="listPage">
             <li class="active">1</li>
             <li>2</li>
             <li>3</li>
           </ul>
-        </div>
+        </div>  
       </div>
-      <div class="row2">
-        <%- include('../../templates/cartas_vitrina'); %>
-      </div>
+    </div>
     </div>
     <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
   </main>

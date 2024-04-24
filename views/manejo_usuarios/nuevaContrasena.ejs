@@ -21,18 +21,20 @@
         <form id="form-new-password">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nueva Contraseña</label>
-            <input type="password" class="form-control" id="new-password" aria-describedby="emailHelp">
+            <input type="password" class="form-control" id="new-password" aria-describedby="emailHelp" oninput="ValidarContrasena(); ConfirmPassword()">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="new-password-2" aria-describedby="emailHelp">
+            <input type="password" class="form-control" id="confirm_password" aria-describedby="emailHelp" oninput="ConfirmPassword()">
           </div>
         </form>
 
-        <button href="/">¡CONFIRMAR!</button>
+        <button type="submit" id="submit_btn" class="submit_btn">¡CONFIRMAR!</button>
       </div>
     </div>
   </div>
+  <script src="/manejo_usuarios/js/newPassword.js"></script>
+  <script src="/inventario/js/validaciones_miCuenta.js"></script>
 </body>
 
 </html>

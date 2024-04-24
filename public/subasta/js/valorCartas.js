@@ -114,6 +114,7 @@ async function enviarSubasta() {
   // Realizar la solicitud Fetch
   fetch("/crear-subasta", opciones)
     .then((response) => {
+      console.log(response);
       if (!response.ok) {
         throw new Error("Hubo un problema con la solicitud.");
       }
@@ -121,9 +122,9 @@ async function enviarSubasta() {
     })
     .then((data) => {
       console.log("Respuesta del servidor:", data);
-      if (data.status === 200) {
-        // window.location.href = 'https://www.ejemplo.com'; //redirecionamintoyoooo
-      }
+      window.location.href = `/vitrina-subasta?token=Bearer%20${localStorage.getItem(
+        "token"
+      )}`;
     })
     .catch((error) => {
       console.error("Error:", error);

@@ -1,0 +1,50 @@
+/* Emergente compra rapida*/
+.puja_container{
+  position: absolute;
+  background-color: #A3B7DC;
+  top: 20%;
+  left: 37%;
+  flex-direction: column;
+  border-radius: 10px;
+  height:70vh;
+  width: 26%;
+  display: none; /*aa*/
+}
+.puja_container label{
+font-size: 28px;
+font-weight: bold;
+margin: 10px 10px 10px 5px;
+text-align: center;
+}
+.puja_container .c_creditos{
+  padding-top: 7%
+}
+.puja_container input, select{
+  width: 75%;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  margin:15px 20% 2% 12%;
+  font-size: 20px;
+  text-align: center;
+}
+.puja_container .buttons{
+  text-align: center;
+  margin: 5% 0 10% 0;
+}
+.puja_container .pujar_b, .Cancelar{
+  font-size: 22px;
+  width: 40%;
+  height: 38px;
+  background-color: #A3B7DC;
+  border: none;
+  margin: 0 0 5% 4%;
+  padding-top: 35%;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+.puja_container .Cancelar{
+  margin-left: 5%;
+}
