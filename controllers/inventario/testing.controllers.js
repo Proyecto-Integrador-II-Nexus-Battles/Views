@@ -115,7 +115,7 @@ export const prueba = async (req, res) => {
   }
 };
 
-export default (req, res) => {
+export const default12 =  (req, res) => {
   const  data =  req.body.data
   fetch(`${HOST}:${PORT}/inventario/modifyCard/`, {
     method: 'PATCH',

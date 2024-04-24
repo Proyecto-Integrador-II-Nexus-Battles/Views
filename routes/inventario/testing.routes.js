@@ -1,5 +1,5 @@
 import { Router } from "express";
-import default12, {
+import {
   defaultR,
   defaultR2,
   defaultR4,
@@ -11,6 +11,7 @@ import default12, {
   defaultR9,
   default10,
   default11,
+  default12,
   prueba,
 } from "../../controllers/inventario/testing.controllers.js";
 
@@ -27,6 +28,6 @@ router.get("/torneo", defaultR9);
 router.get("/subasta", default10);
 router.get("/subasta/detallada", prueba);
 router.get("/subasta/venta_carta", default11);
-router.post("/modifyCard", default12)
+router.post("/modifyCard", default12);
 
 export default router;
