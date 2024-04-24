@@ -67,16 +67,13 @@ export const fetchNewData = async (req, res) => {
 
 export const defaultR3 = async (req, res) => {
   try {
-    console.log(req.params.id);
-    const idCard = {
-      IDs: req.params.id,
-    };
-    const response = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
-      method: "POST",
+    const idCarta = req.params.id
+    const encodedID = encodeURIComponent(idCarta);
+    const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard/${encodedID}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(idCard),
     });
     const datos = await response.json();
     res.render("inventario/modificacioncarta", { datos });
