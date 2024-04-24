@@ -33,7 +33,7 @@
   padding-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--color-card);
+  background-color: white;
   max-height: 345px;
   min-height: 345px;
 }
@@ -236,37 +236,53 @@
 }
 
 @media screen and (max-width: 1360px) {
-  .filtros{
-    margin-left: 30px;
-  }
-  .right-side{
-    margin-left: 60px;
-  }
   .card {
     max-height: 250px;
     min-height: 250px;
   }
+
   .imagen_carta {
     width: 160px;
     height: 100px;
   }
+
   .informacion_carta p {
     font-size: 8px;
     padding-left: 10px;
     margin-top: 1px;
   }
+
   #nombre p {
     font-size: 8px;
   }
+
   .foto {
     height: 25px;
   }
+
+  .like {
+    font-size: 21px;
+    margin-top: -6px;
+  }
+
+  .carrito {
+    font-size: 15px;
+    margin-top: -1px;
+  }
+
+  #precio {
+    font-size: 9px;
+  }
+
   #cart {
     width: 130px;
   }
+
   #cart2 {
     width: 130px;
   }
+}
+
 .icons {
   cursor: pointer;
   margin: auto;
@@ -289,6 +305,7 @@
   background-color: transparent;
   border: none;
 }
+
 .stats {
   display: flex;
   justify-content: center;
@@ -326,20 +343,10 @@
 #currentlyHero {
   font-size: small;
 }
-.listPage{
-  margin-left: -50%;
-}
-.listPage li{
-  font-size: 7px;
-}
-}
 @media screen and (max-width:1152px)
 {
   .listPage{
     margin-left: -80px;
-    position: absolute;
-    top: 95%;
-    left: 20%;
   }
   .listPage li{
     font-size: 8px;
@@ -363,22 +370,18 @@
 @media screen and (max-width: 970px) {
   .grid-container{
     grid-template-columns: repeat(2, 1fr);
-    width: 40%;
+    width: 60%;
     margin-left: 10%;
   }
   .right-side{
     margin-left: 50px;
-    width: 79%;
-  }
-  .filtros{
-    width: 100%;
   }
   .card{
     margin-right: 20px;
   }
   .listPage{
     position: absolute;
-    top: 98%;
+    top: 95%;
     left: 15%;
   }
   .listPage li{
@@ -423,7 +426,7 @@
   .filtros{
     position: relative;
     top: -1%;
-    left: 10%;
+    left: 25%;
     width: 200%;
   }
   .card{
