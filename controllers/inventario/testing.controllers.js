@@ -17,22 +17,18 @@ export const defaultR4 = (req, res) => {
 
 export const rendermiCuenta = async (req, res) => {
   try {
-    console.log("1");
+    console.log("1")
     console.log(req.query);
-    const data = await fetch(`${HOST}:${PORT}/usuario/cuenta`, {
-      method: "POST",
+    const data = await fetch(`${HOST}:${PORT}/usuario/cuenta`,{
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `${req.query.token}`,
+        'Content-Type': 'application/json', 
+        'Authorization': `${req.query.token}`,
       },
+
     });
     const userinfo = await data.json();
-
-    if (userinfo.avatar == null) {
-      res.render("inventario/miCuenta", { userinfo, avatarText: "" });
-      return;
-    }
-    const avatarText = Buffer.from(userinfo.avatar.data).toString("utf-8");
+    const avatarText = Buffer.from(userinfo.avatar.data).toString('utf-8');
 
     res.render("inventario/miCuenta", { userinfo, avatarText });
   } catch (error) {
@@ -40,6 +36,27 @@ export const rendermiCuenta = async (req, res) => {
     res.status(500).send("Error al obtener datos del usuario");
   }
 };
+
+export const fetchNewData = async (req, res) => {
+  const newData = {
+    new_username: req.body.new_username,
+    new_password: req.body.new_password
+  };
+  try {
+    fetch(`${HOST}:${PORT}/usuario/newData`,{
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${req.body.IdUsuario}`,
+      },
+      body: JSON.stringify(newData),
+    });
+  } catch (error) {
+    console.error("Error al obtener datos del usuario:", error);
+    res.status(500).send("Error al obtener datos del usuario");
+  }
+};
+
 
 export const defaultR3 = async (req, res) => {
   try {

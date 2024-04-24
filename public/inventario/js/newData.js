@@ -1,4 +1,3 @@
-import { HOST, PORT } from "../../config.js";
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function (event) {
@@ -13,12 +12,10 @@ form.addEventListener('submit', function (event) {
         new_password: confirmarContraseña,
     };
     console.log(datos)
-
-    fetch(`${HOST}:${PORT}/usuario/newData`, {
-        method: 'PATCH',
+    fetch(`/usuario/newData`, {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `${token}`,
         },
         body: JSON.stringify(datos)
     })
@@ -30,8 +27,10 @@ form.addEventListener('submit', function (event) {
         })
         .then(data => {
             console.log(data);
+            location.reload();
         })
         .catch(error => {
             console.error('Error:', error);
         });
+    location.reload();
 });
