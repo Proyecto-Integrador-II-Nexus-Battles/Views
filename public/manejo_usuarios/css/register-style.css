@@ -64,19 +64,6 @@ input {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.eye{
-  width: 30px;
-  height: auto;
-  position: relative;
-  right: 45px;
-  top:8px;
-  cursor: pointer;
-}
-
-#show{
-  display: none;
-}
-
 .file_input_container {
   display: flex;
 }

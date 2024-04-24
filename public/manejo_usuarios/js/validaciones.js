@@ -35,15 +35,14 @@ function ValidarContrasena() {
 
 function LimitarNumeros(event) {
     const inputValue = event.key;
-    const isCtrlPressed = event.ctrlKey || event.metaKey;
+    const regex = /^[0-9]+$/;
 
-    if (inputValue === "Backspace" || isCtrlPressed || /^[0-9]+$/.test(inputValue)) {
+    if (inputValue === "Backspace" || regex.test(inputValue)) {
         return true;
     } else {
         event.preventDefault();
     }
 }
-
 
 function ValidarArchivo() {
     const archivoInput = document.getElementById('avatar');
@@ -81,13 +80,13 @@ function ValidarFecha() {
 function ValidarNombreUsuario() {
     const inputUsuario = document.getElementById('username')
     fetch('manejo_usuarios/ApodosInhabilitados.json')
-        .then(function (res) {
+        .then(function (res){
             return res.json();
         })
-        .then(function (data) {
+        .then(function(data){
             let flag = false;
             let value = inputUsuario.value.replace(/\s/g, "").toLowerCase();
-            data.forEach(function (nombre) {
+            data.forEach(function(nombre){
                 if (value.includes(nombre.name.toLowerCase())) {
                     flag = true;
                 }
@@ -98,46 +97,7 @@ function ValidarNombreUsuario() {
                 inputUsuario.setCustomValidity("");
             }
         })
-        .catch(function (error) {
+        .catch(function(error) {
             console.error('Error al cargar el JSON:', error);
         });
 }
-
-function validarTarjetaVisa() {
-    const numeroTarjeta = document.getElementById('numero_tarjeta').value.replace(/\s/g, "");
-
-    if (!numeroTarjeta.startsWith("4")) {
-        document.getElementById('numero_tarjeta').setCustomValidity("El número de tarjeta Visa ingresado es inválido");
-        return;
-    }
-
-    if (numeroTarjeta.length !== 13 && numeroTarjeta.length !== 16) {
-        document.getElementById('numero_tarjeta').setCustomValidity("El número de tarjeta Visa ingresado es inválido");
-        return;
-    }
-
-    let suma = 0;
-    let longitudPar = numeroTarjeta.length % 2 === 0;
-
-    for (let i = 0; i < numeroTarjeta.length; i++) {
-        let digito = parseInt(numeroTarjeta.charAt(i));
-
-        if (i % 2 === (longitudPar ? 0 : 1)) {
-            digito *= 2;
-            if (digito > 9) {
-                digito -= 9;
-            }
-        }
-        suma += digito;
-    }
-
-    if (suma % 10 !== 0){
-        document.getElementById('numero_tarjeta').setCustomValidity("El número de tarjeta Visa ingresado es inválido");
-    } else {
-        document.getElementById('numero_tarjeta').setCustomValidity("");
-    }
-}
-
-
-
-

@@ -232,14 +232,7 @@ header
   opacity: 0.5;
   visibility: visible;
 }
-
-
-@media only screen and (min-width: 1635px) {
-}
-
-@media screen and (max-width:1600px){
-}
-@media only screen and (min-width: 1660px) {
+@media only screen and (min-width: 1490px) {
   header .trigger {
     display: none;
   }
@@ -251,4 +244,3 @@ header
 
 
 /* --------------------------------------------------------------------------------------- */
-}

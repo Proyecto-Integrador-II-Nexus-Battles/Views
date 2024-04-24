@@ -1,19 +1,14 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("../img/fondoooo.jpg");
-  background-size: cover;
 }
-
-header {
-  background-color: #ffffff;
-}
-
 
 main {
   display: grid;
   grid-template-columns: 30% 70%;
   padding: 20px;
+  background-image: url("../img/fondoooo.jpg");
+  background-size: cover;
 }
 
 /* LADO IZQUIERDO */

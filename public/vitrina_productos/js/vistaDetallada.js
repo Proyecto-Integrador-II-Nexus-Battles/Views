@@ -4,6 +4,6 @@ function vistaDetallada(id) {
   window.location.href = `/vistaDetallada/${encodedID}`;
 };
 
-function vistaEcommerce() {
-  window.history.back();
+function vistaEcommerce(){
+  window.location.href="/";
 }

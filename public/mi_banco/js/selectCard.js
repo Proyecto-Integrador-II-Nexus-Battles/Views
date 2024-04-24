@@ -61,33 +61,16 @@ function seleccionarCarta(tipoCarta, idCarta) {
 
     switch(tipoCarta) {
         case 'Armor':
-            if(aDeck.innerHTML === '1' && !carta.classList.contains('Active')){
-                alert('Ya excediste el límite de armaduras', 'orange');
-                break;
-            }
             actualizarCarta(aDeck, !carta.classList.contains('Active'));
             break;
         case 'Weapon':
-            if(wDeck.innerHTML === '2' && !carta.classList.contains('Active')){
-                alert('Ya excediste el límite de armas', 'orange');
-                break;
-            }
             actualizarCarta(wDeck, !carta.classList.contains('Active'));
             break;
         case 'Item':
-            if(iDeck.innerHTML === '1' && !carta.classList.contains('Active')){
-                alert('Ya excediste el límite de Items', 'orange');
-                break;
-            }
             actualizarCarta(iDeck, !carta.classList.contains('Active'));
             break;
         case 'Talent':
-            if(eDeck.innerHTML === '6' && !carta.classList.contains('Active')){
-                alert('Ya excediste el límite de Talentos', 'orange');
-                break;
-            }
             actualizarCarta(eDeck, !carta.classList.contains('Active'));
             break;
     }
 }
-
