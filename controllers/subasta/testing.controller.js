@@ -10,7 +10,7 @@ export const cartasSubasta = async (_req, res) => {
         };
 
 
-        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta`, options);
+        const response = await fetch(`${PORT}:${PORT}/subasta/get-cartas-subasta`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -28,25 +28,12 @@ export const cartasSubasta = async (_req, res) => {
             body: JSON.stringify({ IDs: idCartas }),
         })
 
+
         const datos = await conexionInventario.json();
 
-        const subastaMap = new Map();
-        date.forEach(carta => {
-            subastaMap.set(carta.ID_CARTA, carta.ID);
+        datos.forEach((carta, index) => {
+            carta.ID_SUBASTA = date[index].ID;
         });
-
-        console.log(idCartas);
-        console.log(subastaMap);
-
-        datos.forEach(carta => {
-            carta.ID_SUBASTA = subastaMap.get(carta._id);
-        });
-
-        console.log(datos);
-
-        // datos.forEach((carta, index) => {
-        //     carta.ID_SUBASTA = date[index].ID;
-        // });
 
         res.render("subasta/subasta_vitrina", { datos });
 
@@ -68,7 +55,7 @@ export const filtrarCartasSubasta = async (req, res) => {
 
         const query = req.query;
         const params = new URLSearchParams(query).toString();
-        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta?${params}`, options);
+        const response = await fetch(`${PORT}:${PORT}/subasta/get-cartas-subasta?${params}`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -113,7 +100,7 @@ export const subastaDetallada = async (_req, res) => {
             },
         };
 
-        const response = await fetch(`https://localhost:${PORT}/subasta/getSubasta/` + id, options);
+        const response = await fetch(`${PORT}:${PORT}/subasta/getSubasta/` + id, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -217,7 +204,7 @@ export const getCreditos = async (req, res) => {
 export const publishPuja = async (req, res) => {
     
     try {
-        const response = await fetch(`https://localhost:${PORT}/subasta/addPuja`, {
+        const response = await fetch(`${PORT}:${PORT}/subasta/addPuja`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
