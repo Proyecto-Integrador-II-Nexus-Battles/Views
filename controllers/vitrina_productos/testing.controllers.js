@@ -149,7 +149,12 @@ export const defaultR8 = async (req, res) => {
       const lowerSubtype = dato.Subtype.toLowerCase();
       const lowerTypeCard = dato.TypeCard.toLowerCase();
 
-      return lowerName.includes(lowerSearchTerm) || lowerType.includes(lowerSearchTerm) || lowerSubtype.includes(lowerSearchTerm) || lowerTypeCard.includes(lowerSearchTerm);
+      return (
+        lowerName.includes(lowerSearchTerm) ||
+        lowerType.includes(lowerSearchTerm) ||
+        lowerSubtype.includes(lowerSearchTerm) ||
+        lowerTypeCard.includes(lowerSearchTerm)
+      );
     });
 
     res.render("vitrina_productos/index", { datos });
@@ -157,4 +162,68 @@ export const defaultR8 = async (req, res) => {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
+};
+
+export const defaultR9 = async (req, res) => {
+  const url = `${HOST}:${PORT}/deseos/getWishedCards`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: req.headers.authorization,
+    },
+  };
+  fetch(url, options)
+    .then(async (response) => {
+      if (response.ok) {
+        const responseData = await response.json();
+        return res.status(200).json(responseData);
+      }
+      if (response.status === 301) {
+        res.status(301).send("No autorizado");
+      }
+      if (response.status === 404) {
+        res.status(404).send("No encontrado");
+      }
+      if (response.status === 401) {
+        res.status(401).send("No autorizado");
+      } else {
+        console.log(response.status);
+      }
+    })
+    .catch((error) => {
+      console.error("Error en la solicitud: ", error);
+    });
+};
+
+export const defaultR10 = async (req, res) => {
+  const url = `${HOST}:${PORT}/inventario/getBankCards`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: req.headers.authorization,
+    },
+  };
+  fetch(url, options)
+    .then(async (response) => {
+      if (response.ok) {
+        const responseData = await response.json();
+        return res.status(200).json(responseData);
+      }
+      if (response.status === 301) {
+        res.status(301).send("No autorizado");
+      }
+      if (response.status === 404) {
+        res.status(404).send("No encontrado");
+      }
+      if (response.status === 401) {
+        res.status(401).send("No autorizado");
+      } else {
+        throw new Error("Error en la solicitud POST");
+      }
+    })
+    .catch((error) => {
+      console.error("Error en la solicitud: ", error);
+    });
 };

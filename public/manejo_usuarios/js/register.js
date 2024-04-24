@@ -38,8 +38,12 @@ function handleSubmit(event) {
     })
       .then((res) => res.json())
       .then((result) => {
+        if (result.error) {
+          alert(result.error);
+          return;
+        }
         console.log("resultado: " + result);
-        //window.location.href = "/";
+        window.location.href = "/usuario/mail/verify";
       })
       .catch((err) => console.log(err));
   };

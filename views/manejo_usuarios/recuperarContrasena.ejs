@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Contraseña</title>
+
+  <link rel="stylesheet" href="/manejo_usuarios/css/recuperarContrasena.css">
+
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="background-Account">
+
+    <div class="colum1"></div>
+
+    <div class="colum2 glass-effect">
+
+      <a href="/"><img src="/manejo_usuarios/img/imagen_logo_columna.png" alt=""></a>
+
+      <form id="preguntas-form">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+          <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">¿Cuál fue el nombre de tu primera mascota?</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="a">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">¿Cuál fue el nombre de tu colegio de la infancia?</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="b">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">¿Cuál fue tu primer videojuego?</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="c">
+        </div>
+
+        <button id="show-recovery-form-btn">Enviar Código</button>
+
+        <div id="recovery-form-container" style="display: none;">
+          <form id="recovery-form">
+            <!-- Aquí van los campos para el código de verificación -->
+            <div class="form-group">
+              <label for="verification-code">Código de Verificación:</label>
+              <input type="text" id="verification-code" name="code" required>
+            </div>
+            <button type="submit" id="verify-code">Verificar Código</button>
+          </form>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script src="/manejo_usuarios/js/recuperarContrasena.js"></script>
+</body>
+
+</html>

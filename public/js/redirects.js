@@ -7,6 +7,17 @@ async function redirectListaDeseos() {
   window.location.href = url + "?token=" + token;
 }
 
+async function redirectVitrinaSubasta() {
+  const url = "/vitrina-subasta";
+  const token = "Bearer " + localStorage.getItem("token");
+  console.log(token.toString());
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+    return;
+  }
+  window.location.href = url + "?token=" + token;
+}
+
 async function redirectCarroCompra() {
   const url = "/carro/carroCompras";
   const token = "Bearer " + localStorage.getItem("token");
@@ -18,6 +29,42 @@ async function redirectCarroCompra() {
 
 async function redirectMiBanco() {
   const url = "/mi_banco";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
+
+async function redirectMiCuenta() {
+  const url = "/miCuenta";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
+
+async function redirectVentaCartas() {
+  const url = "/valor_carta";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
+
+async function redirectBuzon() {
+  const url = "/subasta/buzon";
+  const token = "Bearer " + localStorage.getItem("token");
+  if (token === "Bearer null") {
+    window.location.href = "/login";
+  }
+  window.location.href = url + "?token=" + token;
+}
+
+async function redirectSubasta() {
+  const url = "/subasta";
   const token = "Bearer " + localStorage.getItem("token");
   if (token === "Bearer null") {
     window.location.href = "/login";

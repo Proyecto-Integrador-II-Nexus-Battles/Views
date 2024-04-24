@@ -14,7 +14,51 @@
 <body>
   <!-- Header -->
   <header>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function() {
+        var token = localStorage.getItem('token');
+        if (token !== null) {
+          const cartasEnLista = await comprobarListaDeseos();
+          const cartasEnBanco = await comprobarMiBanco();
+          if (cartasEnLista.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnLista = cartasEnLista.includes(carta._id);
+              if (cartaEnLista) {
+                console.log('cartas en lista de deseos');
+                document.querySelector('.carta-' + i).style.color = 'red';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en lista de deseos');
+          }
 
+          if (cartasEnBanco.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnBanco = cartasEnBanco.includes(carta._id);
+              if (cartaEnBanco) {
+                document.querySelector('.card-' + i).style.opacity = '0.6';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en el banco');
+          }
+
+          document.querySelector('.login_btn').textContent = 'Cerrar Sesión';
+          document.getElementById('register_btn').remove();
+          document.querySelector('.login_btn').addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.reload(true);
+          });
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
+    <!-- Barra de navegación -->
     <nav>
       <%- include('../../templates/navbarEcommerce'); %>
     </nav>
@@ -31,28 +75,19 @@
           <li>
             <h2>Precios</h2>
           </li>
-          <li><select class="seleccionar_precio" name="sortOrder">
-              <option value="" disabled selected>Orden</soption>
-              <option value="desc">Mayor a menor</option>
-              <option value="asc">Menor a mayor</option>
-            </select>
-          </li>
+          <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min_price" min="0" step="1000"> </li> 
+        <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max_price" min="0" step="1000"> </li> 
+        <li> <h2>Orden</h2> </li>
+        <li><select class="seleccionar\_precio" id="sortOrder"> 
+          <option value="" disabled selected>Orden</option> 
+          <option value="desc">Mayor a menor</option> 
+          <option value="asc">Menor a mayor</option> 
+        </select></li>
 
           <li>
             <h2>Tipo de carta</h2>
           </li>
-          <li><select class="seleccionar_precio" name="min_max">
-              <option value="" disabled selected>Precios</soption>
-              <option value="20000-200000">20.000 - 200.000</option>
-              <option value="200000-800000">200.000 - 800.000</option>
-              <option value="800000-1400000">800.000 - 1.400.000</option>
-              <option value="1400000-2000000">1.400.000 - 2.000.000</option>
-            </select>
-          </li>
-          <li>
-            <h2>Tipo de carta</h2>
-          </li>
-          <li><select class="tipo_carta" name="Type">
+          <li><select class="tipo_carta" id="Type">
               <option value="" disabled selected>Selecciona un tipo</option>
               <option value="Weapon">Armas</option>
               <option value="Armor">Armaduras</option>
@@ -62,9 +97,9 @@
             </select>
           </li>
           <li>
-            <input type="checkbox" name="sale" class="promociones" id="promociones" value="promociones"> <b>Promoción</b>
+            <input type="checkbox" name="sale" class="promociones" id="sale" value="promociones"> <b>Promoción</b>
           </li>
-          <button id="filtro_input" onclick="filtrarCartas()">Filtrar</button>
+          <button id="botonFiltrar" onclick="filtrarCartas()">Filtrar</button>
         </ul>
       </div>
     </div>

@@ -14,13 +14,23 @@
 
   <header>
 
-    <nav>
+    <nav  style="background-color: #dbe4f5">
       <%- include('../../templates/navbarEcommerce'); %>
     </nav>
 
   </header>
 
   <main>
+    <div class="wrapper" id="modal-toast">
+      <div class="toast">
+        <div class="content">
+          <div class="details">
+            <span>ALERTA!</span>
+            <p id="textoAlerta" ></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="left-side">
       <div class="filtros">
         <ul class="tipo_filtros">
@@ -41,7 +51,7 @@
           <li>
             <h2>Mi mazo</h2>
           </li>
-          <li class="stats" ><span id="totalDeck">0</span>/30 </li>
+          <li class="stats" ><span id="totalDeck">0</span>/10 </li>
           <li class="stats" > Armas/<span id="wDeck">0</span> </li>
           <li class="stats" > Armadura/<span id="aDeck">0</span> </li>
           <li class="stats" > Items/<span id="iDeck">0</span> </li>
@@ -89,6 +99,8 @@
   <script src="/vitrina_productos/js/addCarro.js"></script>
   <script src="/vitrina_productos/js/addListaDeseos.js"></script>
   <script src=" /mi_banco/js/selectCard.js"></script>
+  <script src="/inventario/js/index.js" type="module"></script>
+
 
 
 </body>

@@ -11,7 +11,16 @@ body{
   background-image: url("/vitrina_productos/img/fondo.png");
   background-position: center;
   background-attachment: fixed;
+}
 
+body {
+  background-image: url("/vitrina_productos/img/fondo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  background-color: #ffffff;
 }
 main {
   display: grid;
