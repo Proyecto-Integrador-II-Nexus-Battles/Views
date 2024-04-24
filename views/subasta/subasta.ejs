@@ -173,24 +173,27 @@
   <label for="cantidad_creditos" class="c_creditos">
     Cantidad de créditos
   </label>
-  <div class="creditos_container" id="cantidad_creditos" name="cantidad_creditos">
+  <div class="creditos_container" id="creditosCompra" name="cantidad_creditos">
     <%= carta.CREDITOS_MAX %>
   </div>
+
+  
     <% if (cartas_max !== null ) { %>
       <label for="cards">
         Cartas
       </label>
       <div class="cards_container">
-        <ul class="cartas_v_max">
+        <ul class="cartas_v_max compra">
           <% for (let k = 0; k < cartas_max.length; k++) { %>
           <li><%= cartas_max[k].CANTIDAD %> <%= cartas_max[k].NAME %></li>
           <% } %>
         </ul>
       </div>
     <% } %>
+    <div class="compra error_message" id="error_message"></div>
 
   <div class="buttons">
-    <button class="comprar">Comprar</button>
+    <button class="comprar" onclick="comprar('<%= carta.ID %>')">Comprar</button>
     <button class="cancelar" onclick="cerrarEmer()">Cancelar</button>
   </div>
 </div>
@@ -200,6 +203,7 @@
 <script src="/subasta/js/redirectVitrinaSubasta.js"></script>
 <script src="/subasta/js/emergentes.js"></script>
 <script src="/subasta/js/pujar.js"></script>
+<script src="/subasta/js/compraRapida.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     <% for (let i = 0; i < datos.length; i++) { %>

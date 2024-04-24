@@ -11,8 +11,7 @@ import {
   defaultR9,
   default10,
   default11,
-  prueba,
-  rendermiCuenta
+  prueba
 } from "../../controllers/inventario/testing.controllers.js";
 
 const router = Router();

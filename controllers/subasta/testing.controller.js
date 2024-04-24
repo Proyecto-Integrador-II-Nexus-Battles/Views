@@ -10,7 +10,7 @@ export const cartasSubasta = async (_req, res) => {
         };
 
 
-        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta`, options);
+        const response = await fetch(`${HOST}:${PORT}/subasta/get-cartas-subasta`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -52,7 +52,7 @@ export const filtrarCartasSubasta = async (req, res) => {
 
         const query = req.query;
         const params = new URLSearchParams(query).toString();
-        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta?${params}`, options);
+        const response = await fetch(`${HOST}:${PORT}/subasta/get-cartas-subasta?${params}`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -97,7 +97,7 @@ export const subastaDetallada = async (_req, res) => {
             },
         };
 
-        const response = await fetch(`https://localhost:${PORT}/subasta/getSubasta/` + id, options);
+        const response = await fetch(`${HOST}:${PORT}/subasta/getSubasta/` + id, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -195,4 +195,22 @@ export const getCreditos = async (req, res) => {
             console.error(error);
             res.redirect("/login");
           }
+};
+
+export const compraRapida = async (req, res) => {
+    try {
+        const {ID_SUBASTA} = req.body;
+        const options = {
+            headers: {
+                Authorization: req.headers.authorization,
+            },
+        };
+        const response = await axios.post(`${HOST}:${PORT}/subasta/compraRapida`,
+        {ID_SUBASTA: ID_SUBASTA}, options
+    );
+    console.log(response);
+    }catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
 };
