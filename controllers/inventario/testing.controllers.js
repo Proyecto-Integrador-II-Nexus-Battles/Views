@@ -41,6 +41,26 @@ export const rendermiCuenta = async (req, res) => {
   }
 };
 
+export const fetchNewData = async (req, res) => {
+  const newData = {
+    new_username: req.body.new_username,
+    new_password: req.body.new_password,
+  };
+  try {
+    fetch(`${HOST}:${PORT}/usuario/newData`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${req.body.IdUsuario}`,
+      },
+      body: JSON.stringify(newData),
+    });
+  } catch (error) {
+    console.error("Error al obtener datos del usuario:", error);
+    res.status(500).send("Error al obtener datos del usuario");
+  }
+};
+
 export const defaultR3 = async (req, res) => {
   try {
     console.log(req.params.id);
