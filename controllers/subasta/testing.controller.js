@@ -10,7 +10,7 @@ export const cartasSubasta = async (_req, res) => {
         };
 
 
-        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta`, options);
+        const response = await fetch(`${PORT}:${PORT}/subasta/get-cartas-subasta`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -18,6 +18,7 @@ export const cartasSubasta = async (_req, res) => {
 
         const date = await response.json();
         const idCartas = date.map((carta) => carta.ID_CARTA);
+
         const conexionInventario = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
             method: "POST",
             headers: {
@@ -27,7 +28,9 @@ export const cartasSubasta = async (_req, res) => {
             body: JSON.stringify({ IDs: idCartas }),
         })
 
+
         const datos = await conexionInventario.json();
+
         datos.forEach((carta, index) => {
             carta.ID_SUBASTA = date[index].ID;
         });
@@ -52,7 +55,7 @@ export const filtrarCartasSubasta = async (req, res) => {
 
         const query = req.query;
         const params = new URLSearchParams(query).toString();
-        const response = await fetch(`https://localhost:${PORT}/subasta/get-cartas-subasta?${params}`, options);
+        const response = await fetch(`${PORT}:${PORT}/subasta/get-cartas-subasta?${params}`, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -97,7 +100,7 @@ export const subastaDetallada = async (_req, res) => {
             },
         };
 
-        const response = await fetch(`https://localhost:${PORT}/subasta/getSubasta/` + id, options);
+        const response = await fetch(`${PORT}:${PORT}/subasta/getSubasta/` + id, options);
 
         if (response.status === 401) {
             return res.redirect("/login");
@@ -195,4 +198,25 @@ export const getCreditos = async (req, res) => {
             console.error(error);
             res.redirect("/login");
           }
+};
+
+
+export const publishPuja = async (req, res) => {
+    
+    try {
+        const response = await fetch(`${PORT}:${PORT}/subasta/addPuja`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `${req.headers.authorization}`,
+            },
+            body: JSON.stringify(req.body)
+        });
+        const respuestaJson = await response.json();
+        res.status(200).send(respuestaJson);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+
 };
