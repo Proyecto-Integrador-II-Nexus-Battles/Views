@@ -2,9 +2,16 @@ import { HOST, PORT } from "../../config.js";
 import axios from "axios";
 
 export const defaultR = async (req, res) => {
-  const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
-  const datos = await dataResponse.json();
-  res.render("inventario/index", { datos });
+
+  try {
+    const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
+    const datos = await dataResponse.json();
+    res.render("inventario/index", { datos });
+  } catch {
+
+
+  }
+
 };
 
 export const defaultR2 = (req, res) => {
@@ -136,8 +143,8 @@ export const prueba = async (req, res) => {
   }
 };
 
-export const default12 =  (req, res) => {
-  const  data =  req.body.data
+export const default12 = (req, res) => {
+  const data = req.body.data
   fetch(`${HOST}:${PORT}/inventario/modifyCard/`, {
     method: 'PATCH',
     headers: {
