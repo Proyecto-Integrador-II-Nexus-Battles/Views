@@ -288,7 +288,7 @@ export const getCreditos = async (req, res) => {
 
 export const publishPuja = async (req, res) => {
   try {
-    const response = await fetch(`${PORT}:${PORT}/subasta/addPuja`, {
+    const response = await fetch(`${HOST}:${PORT}/subasta/addPuja`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
