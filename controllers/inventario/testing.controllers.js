@@ -29,12 +29,12 @@ export const rendermiCuenta = async (req, res) => {
     const userinfo = await data.json();
 
     if (userinfo.avatar == null) {
-      res.render("inventario/miCuenta", { userinfo, avatarText: "" });
+      res.render("inventario/micuenta", { userinfo, avatarText: "" });
       return;
     }
     const avatarText = Buffer.from(userinfo.avatar.data).toString("utf-8");
 
-    res.render("inventario/miCuenta", { userinfo, avatarText });
+    res.render("inventario/micuenta", { userinfo, avatarText });
   } catch (error) {
     console.error("Error al obtener datos del usuario:", error);
     res.status(500).send("Error al obtener datos del usuario");
