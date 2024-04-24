@@ -47,14 +47,13 @@ export const defaultR3 = async (req, res) => {
   const cards = req.body.cartas
   console.log(typeof(cards));
   try {
-    const response = await fetch(`https://localhost:3001/inventario/deckCard`, {
+    const response = await fetch(`${HOST}:${PORT}/inventario/deckCard`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: token,
       },
       body: JSON.stringify({
-        IdUsuario: 2,
         cartas: cards
       })
     })
