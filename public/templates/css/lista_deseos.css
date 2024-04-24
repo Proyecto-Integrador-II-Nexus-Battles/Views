@@ -1,0 +1,275 @@
+:root {
+  --color-card: white;
+  --color-card-power: #2ecc71;
+  --color-card-power2: #d8e9f9;
+  --color-price: #a3b7dc;
+  --color-button-hover: #304c8b;
+}
+/* LADO DERECHO */
+.right-side {
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto;
+  border-radius: 14px;
+  background: #02020279;
+  border: 3px solid #0202021f;
+  backdrop-filter: blur(0.2rem);
+}
+.row1 {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: center;
+  margin-top: -25px;
+}
+.row1 h3 {
+  text-decoration: underline;
+}
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-top: 10px;
+}
+.card {
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  display: block;
+}
+
+.imagen_carta {
+  width: 230px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.personaje {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 13px 13px 0 0;
+}
+
+.informacion-carta p {
+  font-size: 14.25px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#nombre {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#nombre p {
+  margin-top: 5px;
+  font-size: 9px;
+}
+.heroe {
+  height: 30px;
+  margin-right: 10px;
+}
+/* BOTONES ELIMINAR/ENVIAR*/
+.modificar button {
+  border: transparent;
+  background-color: #a3b7dc;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  align-items: center;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.modificar button:hover {
+  background-color: #304c8b;
+  color: white;
+}
+@media screen and (max-width: 1680px) {
+  .row1 h3 {
+    font-size: 15px;
+  }
+  .card {
+    max-height: 305px;
+    min-height: 305px;
+  }
+  .imagen_carta {
+    width: 180px;
+    height: 130px;
+  }
+  .informacion-carta p {
+    font-size: 11px;
+    padding-left: 10px;
+    margin-top: 1px;
+  }
+  #nombre p {
+    font-size: 11px;
+  }
+  .foto {
+    height: 25px;
+  }
+  .icons{
+    margin-top: 5px;
+  }
+  .like {
+    font-size: 25px;
+  }
+  .carrito {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .row1{
+    margin-top: -20px;
+  }
+  .row1 h3 {
+    font-size: 12px;
+  }
+  .grid-container{
+    margin-top: 5px;
+  }
+  .card {
+    max-height: 250px;
+    min-height: 250px;
+  }
+  .imagen_carta {
+    width: 160px;
+    height: 100px;
+  }
+  #nombre p {
+    font-size: 5px;
+  }
+  .like {
+    font-size: 21px;
+    margin-top: -6px;
+  }
+  .carrito {
+    font-size: 15px;
+    margin-top: -1px;
+  }
+  #precio {
+    font-size: 9px;
+  }
+  #cart,
+  #cart2 {
+    width: 130px;
+  }
+}
+@media screen and (max-width:1152px)
+{
+  .listPage{
+    margin-left: -80px;
+  }
+  .listPage li{
+    font-size: 8px;
+  }
+}
+@media screen and (max-width:1024px)
+{
+  .right-side{
+    margin-left: 20px;
+  }
+  .grid-container{
+    margin-left: 10px;
+  }
+  .listPage{
+    margin-left: -80px;
+  }
+  .listPage li{
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .grid-container{
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
+    margin-left: 10%;
+  }
+  .right-side{
+    margin-left: 30px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 660px) {
+  .grid-container{
+    grid-template-columns:repeat(2, 1fr);
+    margin-left: -1%;
+  }
+  .right-side{
+    width: 100%;
+    position: relative;
+    top: 50%;
+    right: 30%;
+  }
+}
+@media screen and (min-width: 591px) and (max-width: 660px) {
+  .right-side{
+    width: 110%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 390px) {
+  .grid-container{
+    grid-template-columns:1fr;
+    margin-left: -15%;
+  }
+  .right-side{
+    width: 120%;
+    position: relative;
+    top: 26%;
+    margin-left: -10px;
+  }
+}
+@media screen and (min-width: 391px) and (max-width: 430px) {
+  .grid-container{
+    grid-template-columns:1fr;
+    margin-left: -15%;
+  }
+  .right-side{
+    width: 110%;
+    position: relative;
+    top: 26%;
+    margin-left: -10px;
+  }
+}
+@media screen and (min-width: 540px) and (max-width: 590px) {
+  .right-side{
+    width: 117%;
+    margin-left: -10px;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 300px) {
+  .grid-container{
+    grid-template-columns:1fr;
+    margin-left: -18%;
+  }
+  .right-side{
+    width: 120%;
+    position: relative;
+    top: 26%;
+    margin-left: -10px;
+  }
+}
+@media screen and (min-width: 431px) and (max-width: 539px) {
+  .right-side{
+    width: 145%;
+    margin-left: -40px;
+  }
+  .grid-container{
+    margin-left: -3%;
+  }
+}

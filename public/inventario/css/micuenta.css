@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(/inventario/imagenes/Background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: #f5faff;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container_general{
+  background-color: rgba(9, 32, 43, 0.9);
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 670px;
+  border-radius: 20px;
+  padding-bottom: 30px;
+}
+
+h1{
+  padding: 2% 0px 0px 3%;
+  font-size: 300%;
+  color: white;
+}
+
+h2{
+  font-size: 230%;
+}
+
+h3{
+  font-size: 180%;
+}
+
+form{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding: 0px 3% 0px 8%;
+  color: white;
+}
+.container_img{
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen_usuario{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.user_img{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.user_container{
+  width: 60%;
+  padding-left: 10%;
+}
+
+.u_container{
+  display: flex;
+  flex-direction: row;
+}
+
+.edit{
+  width: 20px;
+  height: auto;
+  margin-left: 2%;
+  cursor: pointer;
+  fill: white;
+}
+
+.cambio_contraseña{
+  display: flex;
+  flex-direction: column;
+}
+
+.input{
+  margin-bottom: 30px;
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 5px;
+  font-size: larger;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#user_input{
+  display: none;
+}
+
+.eye{
+  width: 30px;
+  height: auto;
+  position: relative;
+  right: 45px;
+  top:8px;
+  cursor: pointer;
+}
+
+#show{
+  display: none;
+}
+
+#conf_show{
+  display: none;
+}
+
+.svg_container {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0px 10px 0px;
+}
+
+.submit_btn{
+  justify-content: center;
+  align-items: center;
+  background-color: #789dca;
+  color: white;
+  margin: 0 auto;
+  width: 40%;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 36px;
+}
+
+@media screen and (max-width: 1530px) {
+  .container_general{
+    height: auto;
+  }
+
+  form{
+    flex-direction: column;
+  }
+
+  .imagen_usuario{
+    display: flex;
+    justify-content: center;
+  }
+
+  .user_container{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .user_container{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .user_container{
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .submit_btn{
+    width: 70%;
+  }
+
+  .input{
+    width: 82%;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .user_img{
+    width: 300px;
+    height: 300px;
+  }
+  
+  h2{
+    font-size: 190%;
+  }
+
+  h3{
+    font-size: 175%;
+  }
+
+  .input{
+    font-size:medium;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  .user_img{
+    width: 200px;
+    height: 200px;
+  }
+  
+  h2{
+    font-size: 140%;
+  }
+
+  h3{
+    font-size: 120%;
+  }
+
+  .input{
+    font-size:12px;
+  }
+
+  .eye{
+    width: 20px;
+    right: 30px;
+    top:4px;
+  }
+}

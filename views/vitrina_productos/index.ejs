@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+  <title>THE NEXUS BATTLES II</title>
+  <link rel="stylesheet" href="/vitrina_productos/css/e-commerce.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function() {
+        var token = localStorage.getItem('token');
+        if (token !== null) {
+          const cartasEnLista = await comprobarListaDeseos();
+          const cartasEnBanco = await comprobarMiBanco();
+          if (cartasEnLista.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnLista = cartasEnLista.includes(carta._id);
+              if (cartaEnLista) {
+                console.log('cartas en lista de deseos');
+                document.querySelector('.carta-' + i).style.color = 'red';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en lista de deseos');
+          }
+
+          if (cartasEnBanco.length > 0) {
+            const datos = <%- JSON.stringify(datos) %>;
+            for (let i = 0; i < datos.length; i++) {
+              const carta = datos[i];
+              const cartaEnBanco = cartasEnBanco.includes(carta._id);
+              if (cartaEnBanco) {
+                document.querySelector('.card-' + i).style.opacity = '0.6';
+              }
+            }
+          } else {
+            console.log('Error encontrando cartas en el banco');
+          }
+        } else {
+          console.log('Not logged in');
+        }
+      });
+    </script>
+    <!-- Barra de navegación -->
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+
+  </header>
+
+  <!-- VITRINA -->
+  <main>
+
+    <!-- LADO IZQUIERDO FILTRO -->
+    <div class="left-side">
+      <div class="filtros">
+        <ul class="tipo_filtros">
+          <li>
+            <h2>Precios</h2>
+          </li>
+          <li> <label for="min\_price"><strong>Precio mínimo:</strong></label> <input type="number" id="min_price" min="0" step="1000"> </li>
+          <li> <label for="max\_price"><strong>Precio máximo:</strong></label> <input type="number" id="max_price" min="0" step="1000"> </li>
+          <li>
+            <h2>Orden</h2>
+          </li>
+          <li><select class="seleccionar\_precio" id="sortOrder">
+              <option value="" disabled selected>Orden</option>
+              <option value="desc">Mayor a menor</option>
+              <option value="asc">Menor a mayor</option>
+            </select></li>
+
+          <li>
+            <h2>Tipo de carta</h2>
+          </li>
+          <li><select class="tipo_carta" id="Type">
+              <option value="" disabled selected>Selecciona un tipo</option>
+              <option value="Weapon">Armas</option>
+              <option value="Armor">Armaduras</option>
+              <option value="Hero">Héroes</option>
+              <option value="Item">Items</option>
+              <option value="Talent">Talentos</option>
+            </select>
+          </li>
+          <li>
+            <input type="checkbox" name="sale" class="promociones" id="sale" value="promociones"> <b>Promoción</b>
+          </li>
+          <button id="botonFiltrar" onclick="filtrarCartas()">Filtrar</button>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LADO DERECHO CARTAS -->
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;" class="text">VITRINA DE PRODUCTOS</h3>
+        <div class="filtro_busqueda">
+          <form action="" class="form-search">
+            <input type="search" class="search_input" placeholder="Ingresa tu búsqueda" maxlength="35" onkeydown="filtrarPorBusqueda(event)">
+          </form>
+        </div>
+
+        <div class="pag">
+          <div class="paginas">
+            <ul class="listPage">
+              <li class="active">1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row2">
+        <%- include('../../templates/cartas_vitrina'); %>
+      </div>
+      <div class="pag2">
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
+  </main>
+
+  <script src="/js/redirects.js"></script>
+  <script src="/resumen_flotante/js/deployResumen.js"></script>
+  <script src="/vitrina_productos/js/filtrarCartas.js"></script>
+  <script src="/vitrina_productos/js/vistaDetallada.js"></script>
+  <script src="/vitrina_productos/js/paginacion.js"></script>
+  <script src="/vitrina_productos/js/addCarro.js"></script>
+  <script src="/vitrina_productos/js/addListaDeseos.js"></script>
+  <script src="/inventario/js/miCuenta.js"></script>
+</body>
+
+</html>

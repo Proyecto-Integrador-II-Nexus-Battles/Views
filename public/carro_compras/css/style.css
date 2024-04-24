@@ -1,0 +1,568 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.mainprincipal {
+  display: flex;
+  background-image: url(../img/fondocuatro.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 50px;
+  height: 850px;
+
+}
+
+
+
+.titulo {
+  margin-top: -2rem;
+  margin-left: 20rem;
+  color: white;
+}
+
+
+
+
+
+.carrito {
+  margin-top: 4rem;
+  margin-left: 11rem;
+  height: 50px;
+ 
+}
+
+section {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.regresar {
+  width: 4rem;
+  height: 3rem;
+  background: none;
+  border: none;
+}
+
+.flecha {
+  width: 50%;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.linea {
+  width: 60rem;
+  border-color: white;
+  margin-top: 0.4rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 210px 210px 210px;
+  column-gap: 20px;
+  justify-content: center;
+  margin-top: 10rem;
+  font-size: 1px;
+  width: 60rem;
+  margin-left: 15rem;
+  justify-content: space-between;
+}
+
+/* Carta */
+
+.resumen {
+  border: 1px solid black;
+  background-color: white;
+  height: 27rem;
+  width: 18rem;
+  border-radius: 10px; /* Cambiar a posición absoluta */
+  margin-left: 10rem;
+  margin-top: 6rem;
+}
+
+.masmenos {
+  background: none;
+  border: none;
+}
+
+.compra {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.lineados {
+  margin-top: 1rem;
+  border-color: #292023;
+  margin-left: -0.5rem;
+}
+
+.productos {
+  padding: 14px;
+  margin-bottom: 1rem;
+}
+
+.productosp {
+  display: flex;
+}
+
+.numproductos {
+  margin-left: 20px;
+}
+
+.totalb {
+  display: flex;
+  margin-top: 19px;
+}
+
+.numtotalb {
+  margin-left: 20px;
+}
+
+.iva {
+  display: flex;
+  margin-top: 19px;
+}
+
+.numiva {
+  margin-left: 20px;
+}
+
+.lineatres {
+  margin-top: 1rem;
+  border-color: #292023;
+}
+
+.total {
+  display: flex;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+.totalnuno{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#totalNeto{
+  font-size: 1.1rem;
+  font-weight: bold;
+
+}
+
+.numtotal {
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
+.pedido {
+  border-radius: 10px;
+  background-color: #ebc793;
+  width: 9rem;
+  height: 2.4rem;
+  text-align: center;
+  margin-top: 3.7rem;
+  margin-left: 4.5rem;
+  padding-top: 5px;
+  border: 1px solid black;
+}
+
+.pedido:hover {
+  background-color: #ddb77f;
+}
+
+.añadir {
+  margin-top: -0.7rem;
+  padding: 14px;
+  width: 20rem;
+  margin-left: -5.5rem;
+  cursor: pointer;
+}
+
+.añadir:hover {
+  color: #789dca;
+}
+
+.paginas {
+  width: 400px;
+  height: 40px;
+  margin-top: 41.7rem;
+  margin-left: -14rem;
+}
+
+.realizar {
+  margin-top: -1rem;
+  width: 9rem;
+  height: 2.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.flecha {
+  background: none;
+  border: none;
+}
+
+.paginacion {
+  background: none;
+  border: none;
+}
+
+.paginacionuno {
+  background: none;
+  border: none;
+  color: red;
+}
+
+.listPage {
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  list-style: none;
+  margin-top: -5.7rem;
+  margin-left: 53rem;
+}
+
+.listPage li {
+  background: white;
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.active {
+  color: red;
+}
+
+/* RESUMEN FLOTANTE */
+
+.resumen-flotante-oculto {
+  display: none;
+}
+
+.comprados {
+  text-align: center;
+  width: 240px;
+  height: 220px;
+}
+
+.productosdos {
+  margin-top: 1rem;
+}
+
+.cartas_flotante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carta_resumen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.price {
+  font-size: 16px;
+  color: #666;
+}
+
+.pedidodos {
+  border-radius: 10px;
+  background-color: #ebc793;
+  width: 9rem;
+  height: 1.8rem;
+  text-align: center;
+  margin-top: 1.6rem;
+  margin-left: 4.5rem;
+  padding-top: 10px;
+  border: 1px solid black;
+}
+
+.realizardos {
+  margin-top: -1rem;
+  width: 9rem;
+  height: 2.3rem;
+  background: none;
+  border: none;
+}
+
+.ircarrito {
+  border-radius: 10px;
+  background-color: #ebc793;
+  width: 9rem;
+  height: 1.8rem;
+  text-align: center;
+  margin-top: 0.4rem;
+  margin-left: 4.5rem;
+  padding-top: 10px;
+  border: 1px solid black;
+}
+
+.ircarritodos {
+  margin-top: -1rem;
+  width: 9rem;
+  height: 2.3rem;
+  background: none;
+  border: none;
+}
+
+.informacion_cartados {
+  width: 120px;
+  height: 100px;
+  background-color: white;
+  padding-left: 5px;
+  border-radius: 0px 0px 14px 14px;
+}
+
+.informacion_carta p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.imagen_cartados {
+  width: 100px; /* ajusta el ancho según tus necesidades */
+  height: 100px; /* ajusta la altura según tus necesidades */
+  overflow: hidden;
+}
+
+.personajedos {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.resumen-flotante-contenido {
+  /* Otros estilos que ya tienes */
+
+  /* Añadir scroll vertical */
+  overflow-y: auto; /* Esto agrega un scroll vertical cuando sea necesario */
+
+  /* Establecer una altura máxima para el div */
+  max-height: 300px; /* Puedes ajustar este valor según tus necesidades */
+}
+
+.guardar_cartas {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.guardar {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left: 8.5rem;
+}
+
+/* VENTANA EMERGENTE */
+
+.resumentres {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 800px;
+  background-color: white;
+  height: 360px;
+  z-index: 9999;
+  margin-left: -65rem;
+  margin-top: 7rem;
+  border-radius: 2px;
+  border: 4px solid #304c8b;
+}
+
+.productostres {
+  grid-column: 1 / 2;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+.totaltres {
+  font-weight: bold;
+}
+
+.lineacuatro {
+  margin-top: 2.5rem;
+  width: 230px;
+}
+
+.productosptres {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.convertidor {
+  width: 400px;
+  height: 250px;
+  grid-column: 2 / 3;
+  border: 1px solid black;
+  margin-left: 22rem;
+  margin-top: -17.5rem;
+}
+
+.cajauno {
+  display: grid;
+  padding-left: 7px;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 10px;
+  width: 300px;
+  height: 32px;
+  align-items: center;
+  margin-top: 1.6rem;
+  background-color: #d8e9f9;
+}
+
+.cajados {
+  display: grid;
+  padding-left: 7px;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 10px;
+  width: 300px;
+  height: 32px;
+  align-items: center;
+  background-color: #d8e9f9;
+}
+
+.flechados {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  font-size: 1.3rem;
+  margin-top: -0.2rem;
+}
+
+.tasacambio {
+  margin-left: 3rem;
+  margin-top: 0.7rem;
+}
+
+.tituloconv {
+  font-size: 1.1rem;
+  margin-left: 2rem;
+  margin-top: 1.3rem;
+}
+
+.tasa {
+  font-weight: bold;
+}
+
+.botones {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  margin-top: 1rem;
+  margin-left: 35.8rem;
+}
+
+.cancelar {
+  border: 1px solid black;
+  border-radius: 10px;
+  grid-column: 1 / 2;
+  width: 80px;
+  height: 36px;
+  text-align: center;
+  background-color: #d8e9f9;
+}
+
+.confirmar {
+  border: 1px solid black;
+  border-radius: 10px;
+  grid-column: 2 / 3;
+  width: 80px;
+  height: 36px;
+  text-align: center;
+  background-color: #ebc793;
+}
+
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  z-index: 999; /* Asegura que esté por encima de otros elementos */
+  display: none; /* Por defecto oculto */
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1670px) and (min-width: 1600px) {
+  .resumen{
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1400px) {
+  .resumen{
+    margin-left: -4rem;
+  }
+}
+
+@media screen and (max-width:1520px){
+  .resumen{
+    margin-left: -10rem;
+  }
+}
+
+@media screen and (max-width:1400px){
+  .resumen{
+    margin-left: -16rem;
+  }
+}
+
+@media screen and (max-width:1330px){
+  .resumen{
+    margin-left: -19rem;
+  }
+}
+
+@media screen and (max-width:1280px){
+  .resumen{
+    margin-left: -25rem;
+  }
+}
+
+@media screen and (max-width:1185px){
+  .resumen{
+    margin-left: -27rem;
+  }
+}
+
+@media screen and (max-width:1150px){
+  .resumen{
+    margin-left: -28rem;
+  }
+}
+
+@media screen and (max-width:1137px){
+  .resumen{
+    margin-left: -30rem;
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 820px) {
+  .resumen{
+    margin-left: -42rem;
+  }
+}

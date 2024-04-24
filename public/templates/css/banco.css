@@ -1,0 +1,547 @@
+:root {
+  --color-card: white;
+  --color-card-power: #2ecc71;
+  --color-card-power2: #d8e9f9;
+  --color-price: #a3b7dc;
+  --color-button-hover: #304c8b;
+}
+
+/* visualizacion de las cartas */
+.container_general {
+  display: grid;
+  grid-template-rows: auto auto;
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card, .cartas{
+  position: relative;
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  max-height: 345px;
+  min-height: 345px;
+}
+
+.Active {
+  transition: all 0.3s ease;
+  border: 2px solid #2ecc71;
+  box-shadow: 0px 0px 20px #2ecc71; /* Sombra */
+}
+
+.activeHero {
+  transition: all 1s ease;
+  border: 2px solid gold; /* Borde sólido */
+  box-shadow: 0px 0px 50px gold; /* Sombra */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  display: block;
+}
+
+.imagen_carta {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  cursor: pointer;
+}
+
+.Empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 150px;
+  border: 1px solid black;
+  background: #49494973;
+  border-radius: 10%;
+
+  button {
+    padding: 10px 20px;
+    border-radius: 10%;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
+.personaje {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 13px 13px 0 0;
+}
+.informacion_carta p {
+  font-size: 12px;
+  padding-left: 10px;
+  margin-top: 1px;
+}
+#nombre {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  max-width: 180px;
+}
+#nombre p {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.foto {
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* CARTAS ITEMS, ARMOS ETC */
+
+#cart {
+  background-color: var(--color-card-power);
+  text-align: center;
+  width: 150px;
+  margin-top: 13px;
+  margin-left: 17px;
+  padding: 5px;
+  border-radius: 8px;
+}
+#cart2 {
+  background-color: var(--color-card-power2);
+  text-align: center;
+  width: 150px;
+  margin-top: 10px;
+  margin-left: 17px;
+  padding: 5px;
+  border-radius: 8px;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flecha,
+.paginacion,
+.paginacionuno {
+  background: none;
+  border: none;
+}
+
+.listPage {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+}
+
+.listPage li {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+  width: 60px;
+  border-radius: 10px;
+  border: transparent;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  font-size: 12px;
+}
+.listPage li:hover {
+  background-color: #304c8b;
+  color: white;
+}
+.active {
+  color: red;
+}
+.quantity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 25px;
+  background-color: #ebc793;
+  border-radius: 14px 0px 14px 0px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+/* .quantity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(137, 140, 185);
+  border: rgb(66, 71, 141) 2px solid;
+  box-shadow: inset 0 0 0 2px black;
+  padding: 5px 10px;
+  border-radius: 50%;
+} */
+@media screen and (max-width: 1680px) {
+  .container_general {
+    width: 60%;
+  }
+
+  .card {
+    max-height: 305px;
+    min-height: 305px;
+  }
+
+  .imagen_carta {
+    width: 180px;
+    height: 130px;
+  }
+
+  .informacion_carta p {
+    font-size: 11px;
+    padding-left: 10px;
+    margin-top: 1px;
+  }
+
+  #nombre p {
+    font-size: 11px;
+  }
+
+  .foto {
+    height: 25px;
+  }
+
+  .like {
+    font-size: 25px;
+  }
+
+  .carrito {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .card {
+    max-height: 250px;
+    min-height: 250px;
+  }
+
+  .imagen_carta {
+    width: 160px;
+    height: 100px;
+  }
+
+  .informacion_carta p {
+    font-size: 8px;
+    padding-left: 10px;
+    margin-top: 1px;
+  }
+
+  #nombre p {
+    font-size: 8px;
+  }
+
+  .foto {
+    height: 25px;
+  }
+
+  .like {
+    font-size: 21px;
+    margin-top: -6px;
+  }
+
+  .carrito {
+    font-size: 15px;
+    margin-top: -1px;
+  }
+
+  #precio {
+    font-size: 9px;
+  }
+
+  #cart {
+    width: 130px;
+  }
+
+  #cart2 {
+    width: 130px;
+  }
+}
+
+.icons {
+  cursor: pointer;
+  margin: auto;
+  margin-top: 15px;
+  width: 160px;
+  height: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  background-color: rgba(59, 64, 133, 0.35);
+  border: 1px solid black;
+  text-align: center;
+  color: white;
+}
+
+.icons > button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 19px 10px 10px;
+  width: auto;
+  height: 35px;
+  font-weight: lighter;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  background-color: rgba(156, 156, 156, 0.123);
+  border: 1px solid black;
+  text-align: center;
+  color: white;
+}
+
+.heroe {
+  position: relative;
+  border: solid 1px gold;
+  padding: 20px;
+}
+
+.heroe > h3 {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  font-weight: bold;
+  font-size: 20px;
+  transform: translate(0%, -50%);
+  -webkit-text-stroke: 0.5px gold;
+}
+
+#currentlyHero {
+  font-size: small;
+}
+@media screen and (max-width:1152px)
+{
+  .listPage{
+    margin-left: -80px;
+  }
+  .listPage li{
+    font-size: 8px;
+  }
+}
+@media screen and (max-width:1024px)
+{
+  .right-side{
+    margin-left: 20px;
+  }
+  .grid-container{
+    margin-left: 10px;
+  }
+  .listPage{
+    margin-left: -80px;
+  }
+  .listPage li{
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .grid-container{
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
+    margin-left: 10%;
+  }
+  .right-side{
+    margin-left: 50px;
+  }
+  .card{
+    margin-right: 20px;
+  }
+  .listPage{
+    position: absolute;
+    top: 95%;
+    left: 15%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .grid-container{
+    grid-template-columns:repeat(2, 1fr);
+    margin-left: -1%;
+  }
+  .right-side{
+    width: 100%;
+    position: relative;
+    top: 50%;
+    right: 30%;
+  }
+
+}
+@media screen and (min-width: 591px) and (max-width: 660px) {
+  .right-side{
+    width: 110%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 390px) {
+  .container_general{
+    background-color: transparent;
+  }
+  .grid-container{
+    grid-template-columns:1fr;
+    margin-left: -15%;
+  }
+  .right-side{
+    position: relative;
+    top: 30%;
+    margin-left: -10px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(0.0rem);
+  }
+  .filtros{
+    position: relative;
+    top: -1%;
+    left: 25%;
+    width: 200%;
+  }
+  .card{
+    position: relative;
+    left: 45%;
+  }
+  .listPage{
+    position: absolute;
+    top: 100%;
+    left: 25%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
+  }
+}
+@media screen and (min-width: 391px) and (max-width: 430px) {
+  .grid-container{
+    grid-template-columns:1fr;
+    margin-left: -15%;
+  }
+  .right-side{
+    width: 110%;
+    position: relative;
+    top: 35%;
+    margin-left: -10px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(0.0rem);
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 25%;
+    width: 200%;
+  }
+  .card{
+    position: relative;
+    left: 45%;
+  }
+  .listPage{
+    position: absolute;
+    top: 100%;
+    left: 20%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
+  }
+}
+@media screen and (min-width: 540px) and (max-width: 590px) {
+  .right-side{
+    width: 110%;
+    position: relative;
+    top: 50%;
+    margin-left: -10px;
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 50%;
+  }
+  .card{
+    position: relative;
+    left: 5%;
+  }
+  .listPage{
+    position: absolute;
+    top: 95%;
+    left: 20%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 300px) {
+  .grid-container{
+    grid-template-columns:1fr;
+    margin-left: 20%;
+  }
+  .right-side{
+    width: 110%;
+    position: relative;
+    top: 26%;
+    margin-left: -10px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    backdrop-filter: blur(0.0rem);
+  }
+  .filtros{
+    position: relative;
+    top: 3%;
+    left: 60%;
+  }
+  .card{
+    position: relative;
+    left: 45%;
+  }
+  .listPage{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  }
+  .listPage li{
+    font-size: 10px;
+    width: 30px;
+  }
+}
+@media screen and (min-width: 431px) and (max-width: 539px) {
+  .right-side{
+    width: 145%;
+    margin-left: -40px;
+  }
+  .grid-container{
+    margin-left: -3%;
+  }
+}

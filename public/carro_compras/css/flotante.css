@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #A3B7DC;
+}
+
+main{
+  display: flex;
+}
+
+#navbar {
+  height: 60px;
+  background-color: #D8E9F9;
+}
+
+.opciones {
+  display: flex;
+  list-style: none;
+  padding-top: 9px;
+  gap: 2.2em;
+  margin-left: 10px;
+}
+
+.opciones li {
+  display: inline-block;
+  padding-top: 9px;
+}
+
+.opciones li a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.opciones li button {
+  font-size: 24px;
+  color:white;
+  height: 90%;
+  width: 110px;
+  cursor: pointer;
+  margin-right: 1%;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  margin-top: 2px;
+  background-color: #789DCA;
+}
+.abrir-btn{
+  display: none;
+}
+
+
+/* Estilos CSS para el resumen flotante */
+#resumen-flotante {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+padding: 20px;
+border: 1px solid black;
+border-radius: 5px;
+z-index: 1000;
+}
+
+.resumen-flotante-oculto {
+display: none;
+}

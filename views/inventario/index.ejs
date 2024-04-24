@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario</title>
+  <link rel="stylesheet" href="/inventario/css/visualizacion.css">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+
+    <nav style="background-color: #f0f2f7">
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+
+  </header>
+  <main>
+    <div class="right-side">
+      <div class="row1">
+        <h3 style="color: white;" class="text">VISUALIZACIÓN DEL INVENTARIO</h3>
+        <button class="agregar" onclick="abrir()">Agregar Carta</button>
+        <div class="paginas">
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      
+      
+
+      
+        <!-- <%- include('../../templates/cartas_inventario'); %> -->
+</div>
+   
+        
+        
+      
+    </div>
+    
+<%- include('../../templates/cartas_inventario'); %>
+    
+    
+    <div class="wrapper" id="modal-toast">
+      <div class="toast">
+        <div class="content">
+          <div class="details">
+            <span>ALERTA!</span>
+            <p>Cambios correctamente realizados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tipocarta" class="ventana-emergente">
+      <div class="contenido-ventana">
+        <span class="cerrar" onclick="cerrar()">&times;</span>
+        <div class="button">
+          <button onclick="a()">Heroe</button>
+          <button onclick="creacion_carta_items()">Item, Arma, Habilidad</button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+  <script src="/inventario/js/nav.js"></script>
+  <script src="/inventario/js/vistaCrea.js"></script>
+  <script src="/inventario/js/paginacion.js"></script>
+  <script src="/inventario/js/miCuenta.js"></script>
+  <script src="/inventario/js/modificacionInv.js"></script>
+  <script src="/inventario/js/index.js" type="module"></script>
+  <script src="/inventario/js/torneo.js"></script>
+  <script src="/inventario/js/jugarOnline.js"></script>
+  <script src="/inventario/js/tipo_crea.js"></script>
+  <script src="/inventario/js/vista_crea_items.js"></script>
+</body>
+
+</html>

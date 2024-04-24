@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("../img/fondoooo.jpg");
+  background-size: cover;
+}
+
+header {
+  background-color: #ffffff;
+}
+
+
+main {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px;
+}
+
+/* LADO IZQUIERDO */
+.left-side {
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* LADO DERECHO */
+.right-side {
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto;
+  border-radius: 14px;
+  background: #02020279;
+  border: 3px solid #0202021f;
+  backdrop-filter: blur(0.2rem);
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: center;
+  margin-top: -25px;
+}
+.row1 h3 {
+  text-decoration: underline;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-top: 10px;
+}
+
+/* FILTROS */
+.filtros {
+  background: #02020279;
+  border: 3px solid #0202021f;
+  backdrop-filter: blur(0.2rem);
+  width: 300px;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
+}
+
+.filtros h1 {
+  text-align: center;
+  border-bottom: 1px solid white;
+  margin-top: 10px;
+}
+.tipo_filtros {
+  list-style: none;
+}
+.tipo_filtros li {
+  margin-top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.tipo_carta,
+.seleccionar_precio {
+  width: 170px;
+  margin-right: 20px;
+  font-size: 14px;
+  height: 25px;
+}
+.promociones + b {
+  font-size: 20px;
+  padding-top: 2px;
+  margin-top: 10px;
+}
+.promociones {
+  transform: scale(1.4);
+}
+
+#filtro_input {
+  margin-top: 18px;
+  width: 160px;
+  margin-left: 19px;
+  margin-right: 20px;
+  height: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+/* CARTA */
+.card {
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  display: block;
+}
+
+.imagen_carta {
+  width: 230px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.personaje {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 13px 13px 0 0;
+}
+
+.informacion-carta p {
+  font-size: 14.25px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#nombre {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#nombre p {
+  margin-top: 5px;
+  font-size: 9px;
+}
+.heroe {
+  height: 30px;
+  margin-right: 10px;
+}
+/* BOTONES ELIMINAR/ENVIAR*/
+.modificar button {
+  border: transparent;
+  background-color: #a3b7dc;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  align-items: center;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.modificar button:hover {
+  background-color: #304c8b;
+  color: white;
+}
+
+/* LOGIN Y REGISTER */
+#login_btn {
+  font-size: 20px;
+  background-color: #a3b7dc;
+  border: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#login_btn:hover {
+  background-color: #304c8b;
+  color: white;
+}
+
+/* SEARCH */
+.form-search {
+  justify-self: center;
+}
+
+/* PAGINACION */
+.list {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.paginas {
+  margin-top: 10px;
+  bottom: 20px;
+  left: 10%;
+  text-align: center;
+  margin-left: 7rem;
+}
+.flecha {
+  background: none;
+  border: none;
+}
+.opciones li a {
+  font-size: 25px;
+}
+.paginacion {
+  background: none;
+  border: none;
+}
+.paginacionuno {
+  background: none;
+  border: none;
+  color: red;
+}
+.opciones li button {
+  width: 200px;
+  padding-top: 5px;
+  font-size: 25px;
+}
+.listPage {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+}
+.listPage li {
+  margin: 0 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+  width: 60px;
+  border-radius: 10px;
+  border: transparent;
+}
+.listPage li:hover {
+  background-color: #304c8b;
+  color: white;
+}
+
+.active {
+  color: red;
+}

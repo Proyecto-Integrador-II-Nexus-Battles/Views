@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/carro_compras/css/style.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+  <title>Carro Compras</title>
+</head>
+
+<body>
+  <header>
+    
+   
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+  </header>
+
+  
+  <main class="mainprincipal">
+    
+
+    <div class="container-general">
+      <%- include('../../templates/cartas_carrito'); %>
+    </div>
+    <div class="paginas">
+      <ul class="listPage">
+        <li class="active">1</li>
+        <li class="numeros">2</li>
+        <li class="numeros">3</li>
+      </ul>
+    </div>
+    </div>
+    <div class="resumen">
+      <div class="compra">
+        <h2>Resumen de compra</h2>
+        <hr class="lineados">
+      </div>
+      <div class="productos">
+        <div class="productosp" id="cantidaduno">
+          <p>Productos:&nbsp;&nbsp;&nbsp;<%= cantidadtotal %></p>
+
+        </div>
+        <div class="totalb" id="totalBruto" >
+          <p>Total Bruto:&nbsp;&nbsp;&nbsp;<%= totalBruto %>&nbsp;COP</p>
+
+        </div>
+        <div class="iva">
+          <p>Impuesto(IVA):&nbsp;&nbsp;&nbsp;19%</p>
+
+        </div>
+        <hr class="lineatres">
+        <div class="total" id="totalNeto">
+          <h3 class="totalnuno">Total:&nbsp;&nbsp;&nbsp;<%= totalNeto %>&nbsp;COP</h3>
+
+        </div>
+      </div>
+
+      <div class="pedido">
+        <button class="realizar"> Realizar pedido</button>
+        <p class="añadir">¿Quieres añadir más productos?</p>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      </div>
+    </div>
+    <div id="resumen-flotante" class="resumen-flotante-oculto">
+      <h2>Resumen de compra</h2>
+      <hr class="lineados">
+      <div class="resumen-flotante-contenido">
+        <div class="comprados">
+          <% for (let i = 0; i < info.length; i++) { 
+                          const carta = info[i];
+                          %>
+          <div class="guardar_cartas">
+            <div class="imagen_cartados">
+              <img src="<%= carta.imagePath %>" class="personajedos" />
+            </div>
+            <div class="informacion_cartados">
+              <p><%= carta.Name %></p>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="productosdos">
+        <div class="productosp">
+          <p>Productos:</p>
+          <p class="numproductos"><%= cantidadtotal %></p>
+        </div>
+        <div class="totalb">
+          <p>Total bruto:</p>
+          <p class="numtotalb"><%= totalBruto %></p>
+        </div>
+        <div class="iva">
+          <p>Impuesto(IVA):</p>
+          <p class="numiva">19%</p>
+        </div>
+        <hr class="lineatres">
+        <div class="total">
+          <h3>Total</h3>
+          <p class="numtotal"><%= totalNeto %></p>
+        </div>
+      </div>
+      <div class="pedidodos">
+        <button class="realizardos" id="realizarPedido">Realizar pedido</button>
+      </div>
+      <div class="ircarrito">
+        <button class="ircarritodos" id="checkout"> Ir al carrito</button>
+      </div>
+      <div class="guardar">
+        <p>^</p>
+      </div>
+    </div>
+    </div>
+    <div class="fondo"></div>
+    <div class="resumentres" style="display: none;">
+      <div class="resumenptres">
+        <div class="productostres">
+          <h2 class="titulotres">Resumen compra</h2>
+          <div class="productosptres">
+            <p>Productos:&nbsp;&nbsp;&nbsp;<%= cantidadtotal %></p>
+          </div>
+          <div class="totalb">
+            <p class="p2">Total bruto:&nbsp;&nbsp;&nbsp;<%= totalBruto %>&nbsp;COP</p>
+          </div>
+          <div class="iva">
+            <p class="p3">Impuesto(IVA):&nbsp;&nbsp;&nbsp;19%</p>
+          </div>
+          <hr class="lineacuatro">
+          <div class="total">
+            <p class="totaltres">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= totalNeto %>&nbsp;COP</p>
+          </div>
+        </div>
+        <div class="convertidor">
+          <h2 class="tituloconv">Conversor de divisas</h2>
+          <div class="cajauno">
+            <div class="divisauno">COP&nbsp;<%= totalNeto %></div>
+          </div>
+          <div class="flechados">↓</div>
+          <div class="cajados">
+            <div class="divisados">USD&nbsp;<%= totalNetoUSD.toFixed(2) %></div>
+          </div>
+          <div class="tasacambio">
+            <p class="tasa">Tasa de cambio</p>
+            <p class="cambiodiv">1 USD =&nbsp; 3773&nbsp;COP</p>
+          </div>
+        </div>
+        <div class="botones">
+          <button class="cancelar">Cancelar</button>
+          <button class="confirmar" id="realizarConfirmar">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/js/redirects.js"></script>
+  
+  <script src="/carro_compras/js/paginacion.js"></script>
+  <script src="/carro_compras/js/resumen_flotante.js"></script>
+  <script src="/carro_compras/js/cantidad.js"></script>
+  <script src="/carro_compras/js/eliminar.js"></script>
+  <script src="/carro_compras/js/paypal.js"></script>
+  <script src="/carro_compras/js/ventana_emergente.js"></script>
+</body>
+
+</html>

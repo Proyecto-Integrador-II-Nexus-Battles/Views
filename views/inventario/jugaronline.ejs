@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/inventario/css/jugar_online.css">
+  <link rel="icon" href="/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/templates/css/navbarFeatureCSS.css">
+  <link rel="stylesheet" href="/resumen_flotante/css/style.css">
+  <title>Jugar Online</title>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <%- include('../../templates/navbarEcommerce'); %>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Cartas -->
+
+    <!-- <div class="front">
+              <img class="agregar" src="../Imagenes/agregar.png" alt="">
+          </div> -->
+    <!-- /////////// -->
+    <div class="card">
+
+      <a href="https://www.friv.com/"><div class="capa-opaca"></div>
+      <img src="/inventario/imagenes/Batalla_jugadores.PNG" class="personaje" id="imagen">
+      <h2 class="texto"> BATALLA <br> CONTRA <br> JUGADORES</h2>
+
+    </div></a>
+
+    <div class="contenedor-intermedio">
+
+      <p class="texto-arriba"> SELECCIONE EL <br> MODO DE JUEGO</p>
+      <img src="/inventario/imagenes/logo.png" class="imagen-medio" id="imagen">
+      <p class="texto-abajo"> PODRÁS LUCHAR Y VENCER?</p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="capa-opaca"></div>
+      <img src="/inventario/imagenes/Batalla_IA.PNG" class="personaje" id="imagen">
+      <h2 class="texto"> BATALLA <br> CONTRA <br> IA</h2>
+
+    </div>
+
+    <div id="resumen-flotante" class="resumen-flotante-oculto"></div>
+  </main>
+  <script src="/inventario/js/jugarOnline.js"></script>
+  <script src="/js/redirects.js"></script>
+
+
+</body>
+
+</html>
