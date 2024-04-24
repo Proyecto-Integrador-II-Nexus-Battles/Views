@@ -10,7 +10,7 @@ function saveDeck() {
             cartas.push(carta.id)
         }
     });
-    if (cartas.length === 31) {
+    if (cartas.length === 11) {
         fetch(`/saveDeck`, {
             method: 'POST',
             headers: {
@@ -26,7 +26,7 @@ function saveDeck() {
                 console.error('Error al enviar la solicitud:', error);
             });
     } else {
-        alert('Necesitas 30 cartas para guardar', 'red')
+        alert('Necesitas 10 cartas para guardar', 'red')
         console.log('No puede guardar el mazo');
         cartas = []
     }
