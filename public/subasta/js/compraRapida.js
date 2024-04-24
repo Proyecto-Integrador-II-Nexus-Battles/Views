@@ -50,11 +50,13 @@ async function comprar(idSubasta) {
     ) {
       flag_cartas = false;
       console.log("No tienes cartas");
-      return;
     } else {
       flag_cartas = true;
     }
   }
+
+  console.log("cartas: ", flag_cartas);
+  console.log("creditos: ", flag_creditos);
 
   if (flag_cartas === true && flag_creditos === true) {
 
