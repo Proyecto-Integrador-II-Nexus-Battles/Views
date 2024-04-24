@@ -200,8 +200,20 @@ export const fetchBuzon = async (req, res) => {
     if (response.status === 401) {
       return res.redirect("/");
     }
-    const datos = await response.json();
-    console.log(datos);
+    let datos = await response.json();
+    const ids_cartas = [];
+    datos.forEach((carta) => {
+      ids_cartas.push(carta.ID_CARTA);
+    });
+    const responseCartas = await axios.post(
+      `${HOST}:${PORT}/inventario/getCardsByIDs`,
+      { IDs: ids_cartas }
+    );
+    if (responseCartas.data.length > 0) {
+      for (let i = 0; i < responseCartas.data.length; i++) {
+        datos[i]["NOMBRE"] = responseCartas.data[i]["Name"];
+      }
+    }
     res.render("subasta/buzon", { datos, token });
   } catch (error) {
     console.error(error);

@@ -5,10 +5,10 @@ export const defaultR = async (req, res) => {
   try {
     console.log(req.query);
     const response = await fetch(`${HOST}:${PORT}/inventario/getBankCards`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json', 
-        'Authorization': `${req.query.token}`,
+        "Content-Type": "application/json",
+        Authorization: `${req.query.token}`,
       },
     });
     if (response.status === 401) {
@@ -16,7 +16,6 @@ export const defaultR = async (req, res) => {
     }
     const datos = await response.json();
     res.render("mi_banco/index", { datos });
-    
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
@@ -24,28 +23,40 @@ export const defaultR = async (req, res) => {
 };
 
 export const defaultR2 = async (req, res) => {
-  const token = req.headers.authorization
+  const token = req.headers.authorization;
   try {
     const response = await fetch(`${HOST}:${PORT}/inventario/GetdeckCard`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: token,
       },
     });
-    const cartas = await response.json();
-    res.json(cartas);
+    if (response.status === 401) {
+      return res.redirect("/login");
+    }
+    if (response.status === 500) {
+      return res
+        .status(500)
+        .json({ error: "Hubo un problema al obtener las cartas" });
+    }
+    if (response.status === 200) {
+      if (response.data) {
+        const cartas = await response.json();
+        return res.status(200).json(cartas);
+      }
+    }
   } catch (error) {
-    console.error('Error al obtener las cartas:', error);
-    res.status(500).json({ error: 'Hubo un problema al obtener las cartas' });
+    console.error("Error al obtener las cartas:", error);
+    res.status(500).json({ error: "Hubo un problema al obtener las cartas" });
   }
-}
+};
 
 export const defaultR3 = async (req, res) => {
   console.log(req.headers.authorization);
-  const token = req.headers.authorization
-  const cards = req.body.cartas
-  console.log(typeof(cards));
+  const token = req.headers.authorization;
+  const cards = req.body.cartas;
+  console.log(typeof cards);
   try {
     const response = await fetch(`${HOST}:${PORT}/inventario/deckCard`, {
       method: "POST",
@@ -54,12 +65,11 @@ export const defaultR3 = async (req, res) => {
         Authorization: token,
       },
       body: JSON.stringify({
-        cartas: cards
-      })
-    })
+        cartas: cards,
+      }),
+    });
   } catch (e) {
     console.error(e);
-    res.status(500).json({ error: 'Hubo un problema al obtener las cartas' });
+    res.status(500).json({ error: "Hubo un problema al obtener las cartas" });
   }
-}
-
+};
