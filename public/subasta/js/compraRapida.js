@@ -1,4 +1,5 @@
 async function comprar(idSubasta) {
+  console.log("comprar");
   let flag_creditos = false;
   let flag_cartas = true;
   const creditos = document.getElementById("creditosCompra").textContent.trim();
@@ -56,6 +57,7 @@ async function comprar(idSubasta) {
   }
 
   if (flag_cartas === true && flag_creditos === true) {
+
     fetch("/subasta/compraRapida", {
       method: "POST",
       headers: {
@@ -69,6 +71,18 @@ async function comprar(idSubasta) {
       .then((response) => {
         if (response.status === 200) {
           showError("Compra realizada con exito");
+          setTimeout(() => {
+            const url = "/vitrina-subasta";
+          const token = "Bearer " + localStorage.getItem("token");
+          console.log(token.toString());
+          if (token === "Bearer null") {
+            window.location.href = "/login";
+            return;
+          }
+           window.location.href = url + "?token=" + token;    
+
+          }, 3000);
+              
         } else {
           console.error("Error en la solicitud POST");
         }
@@ -77,9 +91,7 @@ async function comprar(idSubasta) {
         console.error("Error en la solicitud: ", error);
       });
   } else {
-    showError(
-      "No tienes suficientes creditos o cartas para realizar la compra"
-    );
+    showError( "No tienes suficientes creditos o cartas para realizar la compra");
   }
 
   console.log("cartas: ", flag_cartas);
