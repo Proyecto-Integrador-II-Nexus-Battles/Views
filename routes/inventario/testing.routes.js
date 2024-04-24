@@ -30,6 +30,6 @@ router.get("/torneo", defaultR9);
 router.get("/subasta", default10);
 router.get("/subasta/detallada", prueba);
 router.get("/subasta/venta_carta", default11);
-router.post("/modifyCard", default12);
+router.post("/inventario/modifyCard", default12);
 
 export default router;

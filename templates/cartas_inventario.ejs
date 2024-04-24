@@ -1,9 +1,7 @@
 <link rel="stylesheet" href="/templates/css/inventario.css">
 
 <body>
-  <div class="list">
-    <div class="grid-container">
-      <%
+  <%
             // Mapeo de subtipos a imágenes y tipo de icono
             const subtipoImagen = {
               "Armas": "/vitrina_productos/img/espadas.png",
@@ -28,6 +26,9 @@
               const tipoIcono = subtipoIcono[carta.TypeCard];
             %>
 
+
+<div id="cartas-container">
+  <div class="list">
       <div class="card">
         <div class="imagen_carta">
           <img src="<%= carta.imagePath %>" class="personaje" onclick="vistaDetallada('<%= carta._id %>')" />
@@ -177,7 +178,7 @@
                 <article class="botones">
                     <div class="modificar">
                         <button>Suspender</button>
-                        <button onclick="modificarCarta('<%= carta._id %>')">Modificar</button>
+                        <button onclick="modificarCarta('<%=carta._id%>')">Modificar</button>
                     </div>
                 </article>
               </div>
@@ -188,10 +189,10 @@
       </div>
 
       <% } %>
-    </div>
+    
 
   </div>
-
+</div>
 
   <script src="/inventario/js/tipo_crea.js"></script>
   <script src="/inventario/js/modificarCarta.js"></script>

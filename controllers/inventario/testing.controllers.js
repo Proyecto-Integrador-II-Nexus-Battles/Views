@@ -2,9 +2,16 @@ import { HOST, PORT } from "../../config.js";
 import axios from "axios";
 
 export const defaultR = async (req, res) => {
-  const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
-  const datos = await dataResponse.json();
-  res.render("inventario/index", { datos });
+
+  try {
+    const dataResponse = await fetch(`${HOST}:${PORT}/inventario/getAllCards`);
+    const datos = await dataResponse.json();
+    res.render("inventario/index", { datos });
+  } catch {
+
+
+  }
+
 };
 
 export const defaultR2 = (req, res) => {
@@ -63,6 +70,7 @@ export const fetchNewData = async (req, res) => {
 
 export const defaultR3 = async (req, res) => {
   try {
+    console.log("ajajajsj de q habla el profe")
     console.log(req.params.id);
     const idCard = {
       IDs: req.params.id,
@@ -135,8 +143,9 @@ export const prueba = async (req, res) => {
   }
 };
 
-export const default12 =  (req, res) => {
-  const  data =  req.body.data
+export const default12 = (req, res) => {
+  console.log("hola juanito")
+  const data = req.body.data
   fetch(`${HOST}:${PORT}/inventario/modifyCard/`, {
     method: 'PATCH',
     headers: {
