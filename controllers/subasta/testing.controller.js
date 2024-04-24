@@ -226,7 +226,6 @@ export const fetchClaim = async (req, res) => {
       body: JSON.stringify(req.body),
     });
     const respuestaJson = await response.json();
-    console.log(respuestaJson);
     res.status(200).send(respuestaJson);
   } catch (error) {
     console.error(error);
@@ -299,6 +298,38 @@ export const publishPuja = async (req, res) => {
     });
     const respuestaJson = await response.json();
     res.status(200).send(respuestaJson);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+export const compraRapida = async (req, res) => {
+  try {
+    const { ID_SUBASTA } = req.body;
+    const options = {
+      headers: {
+        Authorization: req.headers.authorization,
+      },
+    };
+    axios
+      .post(
+        `${HOST}:${PORT}/subasta/compraRapida`,
+        { ID_SUBASTA: ID_SUBASTA },
+        options
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          res.status(200).send("Compra realizada con exito");
+        } else if (response.status === 401) {
+          res.redirect("/login");
+        } else {
+          res.status(500).send("Internal Server Error");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+      });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

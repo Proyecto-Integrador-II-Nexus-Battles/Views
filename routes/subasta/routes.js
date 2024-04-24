@@ -8,6 +8,7 @@ import {
   fetchClaim,
   getCreditos,
   publishPuja,
+  compraRapida,
 } from "../../controllers/subasta/testing.controller.js";
 
 import { Router } from "express";
@@ -23,5 +24,6 @@ router.get("/subastaDetallada/:id", subastaDetallada);
 router.get("/filteredCardsSubasta/", filtrarCartasSubasta);
 router.get("/getCreditos", getCreditos);
 router.post("/publishPuja", publishPuja);
+router.post("/subasta/compraRapida", compraRapida);
 
 export default router;
