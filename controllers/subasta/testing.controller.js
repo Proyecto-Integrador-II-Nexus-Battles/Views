@@ -210,30 +210,44 @@ export const fetchBuzon = async (req, res) => {
 };
 
 export const fetchClaim = async (req, res) => {
-  console.log(req.body);
-  console.log("soy gay");
 
-  const token = req.headers.authorization;
-  console.log(token);
 
-  fetch(`${HOST}:${PORT}/inventario/buzon/claim`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Methods": "POST",
-      Authorization: `${token}`,
-    },
-    body: JSON.stringify(req.body),
-  })
-    .then((response) => {
-      console.log(response);
-      response.json().then((data) => {
-        res.json(data);
-      });
-    })
-    .catch((error) => {
-      console.log("Error" + error);
-    });
+    try {
+
+        console.log(req.body)
+
+        const token = req.headers.authorization
+        console.log(token)
+
+        const response = await fetch(`${HOST}:${PORT}/subasta/buzon/claim`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Methods": "POST",
+                "Authorization": `${token}`
+            },
+            body: JSON.stringify(req.body),
+        })
+        const respuestaJson = await response.json();
+        console.log(respuestaJson)
+        res.status(200).send(respuestaJson);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+
+
+
+    /*  .then((response) => {
+         console.log(response)
+         response.json().then((data) => {
+             res.json(data);
+         });
+     })
+     .catch((error) => {
+         console.log("Error" + error);
+     }); */
 };
 
 export const fetchAdd = async (_req, res) => {

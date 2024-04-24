@@ -9,7 +9,7 @@ boton_claim.forEach(boton => {
         console.log(boton.name + '¡Se hizo clic en un botón!');
         /////////////////////////
 
-        fetch(`/subasta/buzon/claim`, {
+        const response = fetch(`/subasta/buzon/claim`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -23,6 +23,16 @@ boton_claim.forEach(boton => {
             })
             .then((result) => {
                 console.log("resultado: ", result);
+                if (result.success === true) {
+
+                    console.log("girlllllllll bye")
+                    console.log(document.getElementById(`${boton.name}`))
+                    document.getElementById(`${boton.name}`).style.display = "none";
+
+                } else {
+
+
+                }
             })
             .catch((err) => console.log(err));
 
