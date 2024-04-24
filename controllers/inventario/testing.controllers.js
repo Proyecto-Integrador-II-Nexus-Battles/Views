@@ -114,3 +114,14 @@ export const prueba = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
+export default (req, res) => {
+  const  data =  req.body.data
+  fetch(`${HOST}:${PORT}/inventario/modifyCard/`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ data: data })
+  });
+};

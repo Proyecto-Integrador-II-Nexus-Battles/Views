@@ -116,8 +116,8 @@ async function navRouter(rute) {
         Object.assign(data, talentData);
     }
         // Enviar los datos al backend utilizando fetch - Utilizar el HOST y PORT correspondiente
-    fetch('https://localhost:3001/inventario/modifyCard/', {
-        method: 'PATCH',
+    fetch('/modifyCard', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
