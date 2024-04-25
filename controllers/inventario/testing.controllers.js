@@ -33,6 +33,10 @@ export const rendermiCuenta = async (req, res) => {
         Authorization: `${req.query.token}`,
       },
     });
+    console.log(data.status);
+    if (data.status === 401) {
+      return res.redirect("/login");
+    }
     const userinfo = await data.json();
 
     if (userinfo.avatar == null) {
@@ -70,17 +74,13 @@ export const fetchNewData = async (req, res) => {
 
 export const defaultR3 = async (req, res) => {
   try {
-    console.log("ajajajsj de q habla el profe")
-    console.log(req.params.id);
-    const idCard = {
-      IDs: req.params.id,
-    };
-    const response = await fetch(`${HOST}:${PORT}/inventario/getCardsByIDs`, {
-      method: "POST",
+    const idCarta = req.params.id
+    const encodedID = encodeURIComponent(idCarta);
+    const response = await fetch(`${HOST}:${PORT}/inventario/getEcommerceCard/${encodedID}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(idCard),
     });
     const datos = await response.json();
     res.render("inventario/modificacioncarta", { datos });
